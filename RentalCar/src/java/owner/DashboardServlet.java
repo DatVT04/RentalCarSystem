@@ -42,7 +42,7 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("customerContactStats", stats.getCustomerContactStats());
         request.setAttribute("topVIPCustomers", stats.getTopVIPCustomers());
 
-        request.getRequestDispatcher("/owner/mktdashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("/owner/ownerdashboard.jsp").forward(request, response);
     }
 
     @Override
