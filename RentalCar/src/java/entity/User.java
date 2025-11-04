@@ -18,7 +18,7 @@ public class User {
     private String gender;
     private String mobile;
     private String avatar;
-    private String role;           // Vai trò (admin, sale, marketing, customer)
+    private String role;           // Vai trò (admin, sale, owner, customer)
     private String status;         // Trạng thái (active, inactive, pending)
     private String createdAt;
     private String updatedAt;

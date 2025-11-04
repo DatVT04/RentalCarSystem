@@ -4,15 +4,12 @@
  */
 
 import DAO.CategoryDAO;
-import DAO.FooterDAO;
 import DAO.MessageDAO;
-import DAO.PostDAO;
+
 import DAO.ProductDAO;
-import DAO.SliderDAO;
 import entity.Category;
-import entity.Footer;
 import entity.Message;
-import entity.Post;
+
 import entity.Product;
 import entity.Slider;
 import java.io.IOException;
@@ -71,16 +68,12 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        SliderDAO sliderDAO = new SliderDAO();
-        PostDAO postDAO = new PostDAO();
+
+
         ProductDAO productDAO = new ProductDAO();
         CategoryDAO categoryDAO = new CategoryDAO();
         MessageDAO messageDAO = new MessageDAO();
 
-        
-        // Lấy danh sách các slider và bài đăng
-        List<Slider> activeSliders = sliderDAO.getAllSliders("active");
-        List<Post> latestPosts = postDAO.getPostToHome(1, 4, "", null, "published", null, "created_at", "DESC");
 
         // Lấy danh mục cấp 1 có trạng thái active
         List<Category> level1Categories = categoryDAO.getActiveLevel1Categories();
@@ -99,8 +92,7 @@ public class HomeServlet extends HttpServlet {
         
 
         // Set attributes cho request
-        request.setAttribute("sliders", activeSliders);
-        request.setAttribute("latestPosts", latestPosts);
+        
         request.setAttribute("featuredProducts", featuredProducts);
         request.setAttribute("level1Categories", level1Categories);
         request.setAttribute("productsByCategory", productsByCategory);

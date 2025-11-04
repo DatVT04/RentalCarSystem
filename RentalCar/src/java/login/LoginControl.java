@@ -182,8 +182,8 @@ public class LoginControl extends HttpServlet {
                         case "admin":
                             response.sendRedirect(request.getContextPath() + "/admin/dashboard");
                             break;
-                        case "marketing":
-                            response.sendRedirect(request.getContextPath() + "/marketing/dashboard");
+                        case "owner":
+                            response.sendRedirect(request.getContextPath() + "/owner/dashboard");
                             break;
                         case "sale":
                             response.sendRedirect(request.getContextPath() + "/sale/dashboard");

@@ -81,7 +81,7 @@
                     <!-- Mục "Danh mục" với dropdown phân cấp - giữ nguyên -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button">
-                            Danh mục
+                            Dòng xe
                         </a>
                         <ul class="dropdown-menu">
                             <c:forEach items="${level1Categories}" var="level1">
@@ -122,18 +122,16 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listproduct">Danh sách sản phẩm</a>
+                        <a class="nav-link" href="listproduct">Danh sách xe cho thuê</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="posts">Danh sách bài đăng</a>
-                    </li>
+                    
                 </ul>
 
                 <!-- Right Side Items -->
                 <div class="d-flex align-items-center justify-content-end">
                     <!-- Search Form -->
                     <form class="search-form" action="listproduct" method="GET">
-                        <input type="text" name="keyword" placeholder="Nhập tên sản phẩm...">
+                        <input type="text" name="keyword" placeholder="Nhập tên xe, hãng xe...">
                         <button type="submit">
                             <i class="fas fa-search"></i>
                         </button>
@@ -159,11 +157,11 @@
                                             <c:choose>
                                                 <c:when test="${sessionScope.acc.role == 'admin'}">
                                                     <a href="${pageContext.request.contextPath}/admin/dashboard">Trang quản trị</a>
-                                                    <a href="${pageContext.request.contextPath}/marketing/dashboard">Trang tiếp thị</a>
+                                                    <a href="${pageContext.request.contextPath}/owner/dashboard">Trang tiếp thị</a>
                                                     <a href="${pageContext.request.contextPath}/sale/dashboard">Trang bán hàng</a>
                                                 </c:when>
-                                                <c:when test="${sessionScope.acc.role == 'marketing'}">
-                                                    <a href="${pageContext.request.contextPath}/marketing/dashboard">Trang tiếp thị</a>
+                                                <c:when test="${sessionScope.acc.role == 'owner'}">
+                                                    <a href="${pageContext.request.contextPath}/owner/dashboard">Trang tiếp thị</a>
                                                 </c:when>
                                                 <c:when test="${sessionScope.acc.role == 'sale'}">
                                                     <a href="${pageContext.request.contextPath}/sale/dashboard">Trang bán hàng</a>

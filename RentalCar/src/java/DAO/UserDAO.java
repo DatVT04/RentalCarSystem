@@ -703,7 +703,7 @@ public class UserDAO extends DBContext {
 
     public List<User> getAuthorsByRole() {
         List<User> authors = new ArrayList<>();
-        String query = "SELECT id, full_name, role FROM users WHERE role IN ('admin', 'marketing')";
+        String query = "SELECT id, full_name, role FROM users WHERE role IN ('admin', 'owner')";
 
         try (PreparedStatement ps = connection.prepareStatement(query); ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
