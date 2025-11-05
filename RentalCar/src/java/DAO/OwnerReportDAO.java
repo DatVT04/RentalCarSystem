@@ -307,12 +307,12 @@ public class OwnerReportDAO {
         return result;
     }
 
-    // Get highest/lowest rated products
-    public List<Map<String, Object>> getProductsByRating(boolean highest, int limit) {
+    // Get highest/lowest rated cars
+    public List<Map<String, Object>> getCarsByRating(boolean highest, int limit) {
         List<Map<String, Object>> result = new ArrayList<>();
         String sql = "SELECT p.id, p.title, AVG(CAST(f.rating AS FLOAT)) as avg_rating, COUNT(f.id) as review_count "
-                + "FROM products p "
-                + "JOIN order_items oi ON p.id = oi.product_id "
+                + "FROM cars p "
+                + "JOIN order_items oi ON p.id = oi.car_id "
                 + "JOIN feedback f ON oi.id = f.order_item_id "
                 + "WHERE f.status = 'approved' "
                 + // Thêm điều kiện lấy feedback đã được duyệt
@@ -331,50 +331,50 @@ public class OwnerReportDAO {
             }
             rs = ps.executeQuery();
             while (rs.next()) {
-                Map<String, Object> product = new HashMap<>();
-                product.put("id", rs.getInt("id"));
-                product.put("title", rs.getString("title"));
-                product.put("avg_rating", rs.getBigDecimal("avg_rating").setScale(2, RoundingMode.HALF_UP));
-                product.put("review_count", rs.getInt("review_count"));
-                result.add(product);
+                Map<String, Object> car = new HashMap<>();
+                car.put("id", rs.getInt("id"));
+                car.put("title", rs.getString("title"));
+                car.put("avg_rating", rs.getBigDecimal("avg_rating").setScale(2, RoundingMode.HALF_UP));
+                car.put("review_count", rs.getInt("review_count"));
+                result.add(car);
             }
         } catch (SQLException e) {
-            System.out.println("Error getting products by rating: " + e.getMessage());
+            System.out.println("Error getting cars by rating: " + e.getMessage());
         }
         return result;
     }
 
-    // Get product rating coverage
-    public Map<String, Object> getProductRatingCoverage() {
+    // Get car rating coverage
+    public Map<String, Object> getCarRatingCoverage() {
         Map<String, Object> result = new HashMap<>();
         String sql = "SELECT "
                 + "(SELECT COUNT(DISTINCT p.id) "
-                + " FROM products p "
-                + " JOIN order_items oi ON p.id = oi.product_id "
+                + " FROM cars p "
+                + " JOIN order_items oi ON p.id = oi.car_id "
                 + " JOIN feedback f ON oi.id = f.order_item_id "
-                + " WHERE f.status = 'approved') AS rated_products_count, "
-                + "(SELECT COUNT(*) FROM products) AS total_products_count";
+                + " WHERE f.status = 'approved') AS rated_cars_count, "
+                + "(SELECT COUNT(*) FROM cars) AS total_cars_count";
 
         try {
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             if (rs.next()) {
-                int ratedProductsCount = rs.getInt("rated_products_count");
-                int totalProductsCount = rs.getInt("total_products_count");
-                result.put("rated_products_count", ratedProductsCount);
-                result.put("total_products_count", totalProductsCount);
+                int ratedCarsCount = rs.getInt("rated_cars_count");
+                int totalCarsCount = rs.getInt("total_cars_count");
+                result.put("rated_cars_count", ratedCarsCount);
+                result.put("total_cars_count", totalCarsCount);
 
                 BigDecimal coverageRate = BigDecimal.ZERO;
-                if (totalProductsCount > 0) {
-                    coverageRate = new BigDecimal(ratedProductsCount)
-                            .divide(new BigDecimal(totalProductsCount), 4, RoundingMode.HALF_UP)
+                if (totalCarsCount > 0) {
+                    coverageRate = new BigDecimal(ratedCarsCount)
+                            .divide(new BigDecimal(totalCarsCount), 4, RoundingMode.HALF_UP)
                             .multiply(new BigDecimal(100))
                             .setScale(2, RoundingMode.HALF_UP);
                 }
                 result.put("coverage_rate", coverageRate);
             }
         } catch (SQLException e) {
-            System.out.println("Error getting product rating coverage: " + e.getMessage());
+            System.out.println("Error getting car rating coverage: " + e.getMessage());
         }
         return result;
     }
@@ -480,11 +480,11 @@ public class OwnerReportDAO {
         return result;
     }
 
-    // 3. PRODUCT REPORT METHODS
-    // Get products by status
-    public Map<String, Integer> getProductsByStatus() {
+    // 3. CAR REPORT METHODS
+    // Get cars by status
+    public Map<String, Integer> getCarsByStatus() {
         Map<String, Integer> result = new HashMap<>();
-        String sql = "SELECT status, COUNT(*) as count FROM products GROUP BY status";
+        String sql = "SELECT status, COUNT(*) as count FROM cars GROUP BY status";
 
         try {
             ps = conn.prepareStatement(sql);
@@ -493,17 +493,17 @@ public class OwnerReportDAO {
                 result.put(rs.getString("status"), rs.getInt("count"));
             }
         } catch (SQLException e) {
-            System.out.println("Error getting products by status: " + e.getMessage());
+            System.out.println("Error getting cars by status: " + e.getMessage());
         }
         return result;
     }
 
-    // Get products by category
-    public List<Map<String, Object>> getProductsByCategory() {
+    // Get cars by category
+    public List<Map<String, Object>> getCarsByCategory() {
         List<Map<String, Object>> result = new ArrayList<>();
-        String sql = "SELECT c.id, c.name, COUNT(p.id) as product_count "
-                + "FROM categories c LEFT JOIN products p ON c.id = p.category_id "
-                + "GROUP BY c.id, c.name ORDER BY product_count DESC";
+        String sql = "SELECT c.id, c.name, COUNT(p.id) as car_count "
+                + "FROM categories c LEFT JOIN cars p ON c.id = p.category_id "
+                + "GROUP BY c.id, c.name ORDER BY car_count DESC";
 
         try {
             ps = conn.prepareStatement(sql);
@@ -512,19 +512,19 @@ public class OwnerReportDAO {
                 Map<String, Object> category = new HashMap<>();
                 category.put("id", rs.getInt("id"));
                 category.put("name", rs.getString("name"));
-                category.put("product_count", rs.getInt("product_count"));
+                category.put("car_count", rs.getInt("car_count"));
                 result.add(category);
             }
         } catch (SQLException e) {
-            System.out.println("Error getting products by category: " + e.getMessage());
+            System.out.println("Error getting cars by category: " + e.getMessage());
         }
         return result;
     }
 
-    // Get combo products count
-    public int getComboProductsCount() {
+    // Get combo cars count
+    public int getComboCarsCount() {
         int result = 0;
-        String sql = "SELECT COUNT(*) as count FROM products WHERE is_combo = 1";
+        String sql = "SELECT COUNT(*) as count FROM cars WHERE is_combo = 1";
 
         try {
             ps = conn.prepareStatement(sql);
@@ -533,7 +533,7 @@ public class OwnerReportDAO {
                 result = rs.getInt("count");
             }
         } catch (SQLException e) {
-            System.out.println("Error getting combo products count: " + e.getMessage());
+            System.out.println("Error getting combo cars count: " + e.getMessage());
         }
         return result;
     }
@@ -542,7 +542,7 @@ public class OwnerReportDAO {
     public List<Map<String, Object>> getAveragePriceByCategory() {
         List<Map<String, Object>> result = new ArrayList<>();
         String sql = "SELECT c.id, c.name, AVG(p.sale_price) as avg_price "
-                + "FROM categories c JOIN products p ON c.id = p.category_id "
+                + "FROM categories c JOIN cars p ON c.id = p.category_id "
                 + "GROUP BY c.id, c.name ORDER BY avg_price DESC";
 
         try {
@@ -561,12 +561,12 @@ public class OwnerReportDAO {
         return result;
     }
 
-    // Get products with highest discount
-    public List<Map<String, Object>> getProductsWithHighestPriceIncrease(int limit) {
+    // Get cars with highest discount
+    public List<Map<String, Object>> getCarsWithHighestPriceIncrease(int limit) {
         List<Map<String, Object>> result = new ArrayList<>();
         String sql = "SELECT id, title, original_price, sale_price, "
                 + "((sale_price - original_price) / original_price) * 100 as increase_percentage "
-                + "FROM products WHERE sale_price > original_price "
+                + "FROM cars WHERE sale_price > original_price "
                 + "ORDER BY increase_percentage DESC";
 
         if (limit > 0) {
@@ -580,25 +580,25 @@ public class OwnerReportDAO {
             }
             rs = ps.executeQuery();
             while (rs.next()) {
-                Map<String, Object> product = new HashMap<>();
-                product.put("id", rs.getInt("id"));
-                product.put("title", rs.getString("title"));
-                product.put("original_price", rs.getBigDecimal("original_price"));
-                product.put("sale_price", rs.getBigDecimal("sale_price"));
-                product.put("increase_percentage", rs.getBigDecimal("increase_percentage").setScale(2, RoundingMode.HALF_UP));
-                result.add(product);
+                Map<String, Object> car = new HashMap<>();
+                car.put("id", rs.getInt("id"));
+                car.put("title", rs.getString("title"));
+                car.put("original_price", rs.getBigDecimal("original_price"));
+                car.put("sale_price", rs.getBigDecimal("sale_price"));
+                car.put("increase_percentage", rs.getBigDecimal("increase_percentage").setScale(2, RoundingMode.HALF_UP));
+                result.add(car);
             }
         } catch (SQLException e) {
-            System.out.println("Error getting products with highest price increase: " + e.getMessage());
+            System.out.println("Error getting cars with highest price increase: " + e.getMessage());
         }
         return result;
     }
 
-    // Get best selling products
-    public List<Map<String, Object>> getBestSellingProducts(int limit) {
+    // Get best selling cars
+    public List<Map<String, Object>> getBestSellingCars(int limit) {
         List<Map<String, Object>> result = new ArrayList<>();
         String sql = "SELECT p.id, p.title, SUM(oi.quantity) as total_sold "
-                + "FROM products p JOIN order_items oi ON p.id = oi.product_id "
+                + "FROM cars p JOIN order_items oi ON p.id = oi.car_id "
                 + "JOIN orders o ON oi.order_id = o.id "
                 + "WHERE o.status = 'completed' "
                 + "GROUP BY p.id, p.title "
@@ -615,14 +615,14 @@ public class OwnerReportDAO {
             }
             rs = ps.executeQuery();
             while (rs.next()) {
-                Map<String, Object> product = new HashMap<>();
-                product.put("id", rs.getInt("id"));
-                product.put("title", rs.getString("title"));
-                product.put("total_sold", rs.getInt("total_sold"));
-                result.add(product);
+                Map<String, Object> car = new HashMap<>();
+                car.put("id", rs.getInt("id"));
+                car.put("title", rs.getString("title"));
+                car.put("total_sold", rs.getInt("total_sold"));
+                result.add(car);
             }
         } catch (SQLException e) {
-            System.out.println("Error getting best selling products: " + e.getMessage());
+            System.out.println("Error getting best selling cars: " + e.getMessage());
         }
         return result;
     }
@@ -644,7 +644,7 @@ public class OwnerReportDAO {
                 + ") "
                 + "SELECT c.id, c.name, SUM(oi.quantity * oi.unit_price_at_order) AS revenue "
                 + "FROM order_items oi "
-                + "JOIN products p ON oi.product_id = p.id "
+                + "JOIN cars p ON oi.car_id = p.id "
                 + "JOIN CategoryHierarchy ch ON p.category_id = ch.id "
                 + "JOIN categories c ON ch.top_level_id = c.id "
                 + "JOIN orders o ON oi.order_id = o.id "
@@ -668,10 +668,10 @@ public class OwnerReportDAO {
         return result;
     }
 
-    // Get product variations by size
-    public Map<String, Integer> getProductVariationsBySize() {
+    // Get car variations by size
+    public Map<String, Integer> getCarVariationsBySize() {
         Map<String, Integer> result = new HashMap<>();
-        String sql = "SELECT size, COUNT(*) as count FROM product_sizes GROUP BY size ORDER BY count DESC";
+        String sql = "SELECT size, COUNT(*) as count FROM car_sizes GROUP BY size ORDER BY count DESC";
 
         try {
             ps = conn.prepareStatement(sql);
@@ -680,15 +680,15 @@ public class OwnerReportDAO {
                 result.put(rs.getString("size"), rs.getInt("count"));
             }
         } catch (SQLException e) {
-            System.out.println("Error getting product variations by size: " + e.getMessage());
+            System.out.println("Error getting car variations by size: " + e.getMessage());
         }
         return result;
     }
 
-    // Get product variations by color
-    public Map<String, Integer> getProductVariationsByColor() {
+    // Get car variations by color
+    public Map<String, Integer> getCarVariationsByColor() {
         Map<String, Integer> result = new HashMap<>();
-        String sql = "SELECT color, COUNT(*) as count FROM product_colors GROUP BY color ORDER BY count DESC";
+        String sql = "SELECT color, COUNT(*) as count FROM car_colors GROUP BY color ORDER BY count DESC";
 
         try {
             ps = conn.prepareStatement(sql);
@@ -697,18 +697,18 @@ public class OwnerReportDAO {
                 result.put(rs.getString("color"), rs.getInt("count"));
             }
         } catch (SQLException e) {
-            System.out.println("Error getting product variations by color: " + e.getMessage());
+            System.out.println("Error getting car variations by color: " + e.getMessage());
         }
         return result;
     }
 
     // 4. INVENTORY REPORT METHODS
-    // Get total inventory by product
-    public List<Map<String, Object>> getTotalInventoryByProduct(int limit) {
+    // Get total inventory by car
+    public List<Map<String, Object>> getTotalInventoryByCar(int limit) {
         List<Map<String, Object>> result = new ArrayList<>();
         String sql = "SELECT p.id, p.title, SUM(pv.stock_quantity) as total_stock "
-                + "FROM products p "
-                + "JOIN product_variants pv ON p.id = pv.product_id "
+                + "FROM cars p "
+                + "JOIN car_variants pv ON p.id = pv.car_id "
                 + "GROUP BY p.id, p.title "
                 + "ORDER BY total_stock DESC";
 
@@ -723,14 +723,14 @@ public class OwnerReportDAO {
             }
             rs = ps.executeQuery();
             while (rs.next()) {
-                Map<String, Object> product = new HashMap<>();
-                product.put("id", rs.getInt("id"));
-                product.put("title", rs.getString("title"));
-                product.put("total_stock", rs.getInt("total_stock"));
-                result.add(product);
+                Map<String, Object> car = new HashMap<>();
+                car.put("id", rs.getInt("id"));
+                car.put("title", rs.getString("title"));
+                car.put("total_stock", rs.getInt("total_stock"));
+                result.add(car);
             }
         } catch (SQLException e) {
-            System.out.println("Error getting total inventory by product: " + e.getMessage());
+            System.out.println("Error getting total inventory by car: " + e.getMessage());
         }
         return result;
     }
@@ -751,8 +751,8 @@ public class OwnerReportDAO {
                 + "    LEFT JOIN categories c3 ON c2.parent_id = c3.id "
                 + ") "
                 + "SELECT c.name AS category_name, SUM(pv.stock_quantity) AS total_stock "
-                + "FROM product_variants pv "
-                + "JOIN products p ON pv.product_id = p.id "
+                + "FROM car_variants pv "
+                + "JOIN cars p ON pv.car_id = p.id "
                 + "JOIN CategoryHierarchy ch ON p.category_id = ch.id "
                 + "JOIN categories c ON ch.top_level_id = c.id "
                 + "WHERE p.status = 'active' "
@@ -780,14 +780,14 @@ public class OwnerReportDAO {
         return result;
     }
 
-    // Get low stock products
-    public List<Map<String, Object>> getLowStockProducts(int threshold) {
+    // Get low stock cars
+    public List<Map<String, Object>> getLowStockCars(int threshold) {
         List<Map<String, Object>> result = new ArrayList<>();
         String sql = "SELECT p.id, p.title, ps.size, pc.color, pv.stock_quantity "
-                + "FROM product_variants pv "
-                + "JOIN products p ON pv.product_id = p.id "
-                + "JOIN product_sizes ps ON pv.size_id = ps.id "
-                + "JOIN product_colors pc ON pv.color_id = pc.id "
+                + "FROM car_variants pv "
+                + "JOIN cars p ON pv.car_id = p.id "
+                + "JOIN car_sizes ps ON pv.size_id = ps.id "
+                + "JOIN car_colors pc ON pv.color_id = pc.id "
                 + "WHERE pv.stock_quantity < ? "
                 + "ORDER BY pv.stock_quantity ASC";
 
@@ -799,32 +799,32 @@ public class OwnerReportDAO {
             ps.setInt(1, threshold);
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    Map<String, Object> product = new HashMap<>();
-                    product.put("id", rs.getInt("id"));
-                    product.put("title", rs.getString("title"));
-                    product.put("size", rs.getString("size"));
-                    product.put("color", rs.getString("color"));
-                    product.put("stock_quantity", rs.getInt("stock_quantity"));
-                    result.add(product);
+                    Map<String, Object> car = new HashMap<>();
+                    car.put("id", rs.getInt("id"));
+                    car.put("title", rs.getString("title"));
+                    car.put("size", rs.getString("size"));
+                    car.put("color", rs.getString("color"));
+                    car.put("stock_quantity", rs.getInt("stock_quantity"));
+                    result.add(car);
                 }
                 if (result.isEmpty()) {
-                    System.out.println("No products found with stock below threshold: " + threshold);
+                    System.out.println("No cars found with stock below threshold: " + threshold);
                 }
             }
         } catch (SQLException e) {
-            System.out.println("Error getting low stock products: " + e.getMessage());
+            System.out.println("Error getting low stock cars: " + e.getMessage());
             e.printStackTrace();
         }
         return result;
     }
 
-    // Get products with no restocking recently
-    public List<Map<String, Object>> getProductsWithoutRecentRestocking(int days) {
+    // Get cars with no restocking recently
+    public List<Map<String, Object>> getCarsWithoutRecentRestocking(int days) {
         List<Map<String, Object>> result = new ArrayList<>();
         String sql = "SELECT p.id, p.title, MAX(pv.last_restock_date) as last_restock_date, "
                 + "DATEDIFF(day, MAX(pv.last_restock_date), GETDATE()) as days_since_restock "
-                + "FROM products p "
-                + "JOIN product_variants pv ON p.id = pv.product_id "
+                + "FROM cars p "
+                + "JOIN car_variants pv ON p.id = pv.car_id "
                 + "WHERE pv.last_restock_date IS NOT NULL "
                 + "GROUP BY p.id, p.title "
                 + "HAVING DATEDIFF(day, MAX(pv.last_restock_date), GETDATE()) >= ? "
@@ -835,15 +835,15 @@ public class OwnerReportDAO {
             ps.setInt(1, days);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Map<String, Object> product = new HashMap<>();
-                product.put("id", rs.getInt("id"));
-                product.put("title", rs.getString("title"));
-                product.put("last_restock_date", rs.getDate("last_restock_date"));
-                product.put("days_since_restock", rs.getInt("days_since_restock"));
-                result.add(product);
+                Map<String, Object> car = new HashMap<>();
+                car.put("id", rs.getInt("id"));
+                car.put("title", rs.getString("title"));
+                car.put("last_restock_date", rs.getDate("last_restock_date"));
+                car.put("days_since_restock", rs.getInt("days_since_restock"));
+                result.add(car);
             }
         } catch (SQLException e) {
-            System.out.println("Error getting products without recent restocking: " + e.getMessage());
+            System.out.println("Error getting cars without recent restocking: " + e.getMessage());
         }
         return result;
     }
@@ -852,22 +852,22 @@ public class OwnerReportDAO {
     public Map<String, Object> getOutOfStockRate() {
         Map<String, Object> result = new HashMap<>();
         String sql = "SELECT "
-                + "(SELECT COUNT(*) FROM products WHERE status = 'EOStock') as out_of_stock_count, "
-                + "(SELECT COUNT(*) FROM products) as total_products_count";
+                + "(SELECT COUNT(*) FROM cars WHERE status = 'EOStock') as out_of_stock_count, "
+                + "(SELECT COUNT(*) FROM cars) as total_cars_count";
 
         try {
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             if (rs.next()) {
                 int outOfStockCount = rs.getInt("out_of_stock_count");
-                int totalProductsCount = rs.getInt("total_products_count");
+                int totalCarsCount = rs.getInt("total_cars_count");
                 result.put("out_of_stock_count", outOfStockCount);
-                result.put("total_products_count", totalProductsCount);
+                result.put("total_cars_count", totalCarsCount);
 
                 BigDecimal outOfStockRate = BigDecimal.ZERO;
-                if (totalProductsCount > 0) {
+                if (totalCarsCount > 0) {
                     outOfStockRate = new BigDecimal(outOfStockCount)
-                            .divide(new BigDecimal(totalProductsCount), 4, RoundingMode.HALF_UP)
+                            .divide(new BigDecimal(totalCarsCount), 4, RoundingMode.HALF_UP)
                             .multiply(new BigDecimal(100))
                             .setScale(2, RoundingMode.HALF_UP);
                 }
@@ -1128,19 +1128,19 @@ public class OwnerReportDAO {
         return result;
     }
 
-    // Get combined product metrics
-    public List<Map<String, Object>> getCombinedProductMetrics(int limit) {
+    // Get combined car metrics
+    public List<Map<String, Object>> getCombinedCarMetrics(int limit) {
         List<Map<String, Object>> result = new ArrayList<>();
         String sql = "SELECT p.id, p.title, "
                 + "AVG(CAST(f.rating AS FLOAT)) as avg_rating, "
                 + "COUNT(DISTINCT f.id) as review_count, "
                 + "SUM(oi.quantity) as total_sold, "
                 + "SUM(pv.stock_quantity) as stock_quantity "
-                + "FROM products p "
-                + "LEFT JOIN order_items oi ON p.id = oi.product_id "
+                + "FROM cars p "
+                + "LEFT JOIN order_items oi ON p.id = oi.car_id "
                 + "LEFT JOIN orders o ON oi.order_id = o.id "
                 + "LEFT JOIN feedback f ON oi.id = f.order_item_id "
-                + "LEFT JOIN product_variants pv ON p.id = pv.product_id "
+                + "LEFT JOIN car_variants pv ON p.id = pv.car_id "
                 + "WHERE o.status = 'completed' "
                 + "GROUP BY p.id, p.title "
                 + "ORDER BY total_sold DESC";
@@ -1156,25 +1156,25 @@ public class OwnerReportDAO {
             }
             rs = ps.executeQuery();
             while (rs.next()) {
-                Map<String, Object> product = new HashMap<>();
-                product.put("id", rs.getInt("id"));
-                product.put("title", rs.getString("title"));
+                Map<String, Object> car = new HashMap<>();
+                car.put("id", rs.getInt("id"));
+                car.put("title", rs.getString("title"));
 
                 // Handle null values for average rating
                 BigDecimal avgRating = rs.getBigDecimal("avg_rating");
                 if (avgRating != null) {
-                    product.put("avg_rating", avgRating.setScale(2, RoundingMode.HALF_UP));
+                    car.put("avg_rating", avgRating.setScale(2, RoundingMode.HALF_UP));
                 } else {
-                    product.put("avg_rating", BigDecimal.ZERO);
+                    car.put("avg_rating", BigDecimal.ZERO);
                 }
 
-                product.put("review_count", rs.getInt("review_count"));
-                product.put("total_sold", rs.getInt("total_sold"));
-                product.put("stock_quantity", rs.getInt("stock_quantity"));
-                result.add(product);
+                car.put("review_count", rs.getInt("review_count"));
+                car.put("total_sold", rs.getInt("total_sold"));
+                car.put("stock_quantity", rs.getInt("stock_quantity"));
+                result.add(car);
             }
         } catch (SQLException e) {
-            System.out.println("Error getting combined product metrics: " + e.getMessage());
+            System.out.println("Error getting combined car metrics: " + e.getMessage());
         }
         return result;
     }
@@ -1183,7 +1183,7 @@ public class OwnerReportDAO {
     public BigDecimal getTotalInventoryValue() {
         BigDecimal result = BigDecimal.ZERO;
         String sql = "SELECT SUM(p.sale_price * pv.stock_quantity) as total_value "
-                + "FROM products p JOIN product_variants pv ON p.id = pv.product_id";
+                + "FROM cars p JOIN car_variants pv ON p.id = pv.car_id";
 
         try {
             ps = conn.prepareStatement(sql);

@@ -133,7 +133,7 @@
         <!--<div class="shoes">👠</div>-->
         
         <a href="${pageContext.request.contextPath}/home" class="btn">Quay về trang chủ</a>
-        <a href="${pageContext.request.contextPath}/listproduct" class="btn">Xem Sản phẩm khác</a>
+        <a href="${pageContext.request.contextPath}/listcar" class="btn">Xem Sản phẩm khác</a>
     </div>
 </body>
 </html>

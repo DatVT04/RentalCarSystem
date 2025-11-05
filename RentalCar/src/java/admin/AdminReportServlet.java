@@ -3,8 +3,8 @@ package admin;
 import DAO.AdminReportDAO;
 import entity.UserReport;
 import entity.OrderReport;
-import entity.ProductInventoryReport;
-import entity.ProductReport;
+import entity.CarInventoryReport;
+import entity.CarReport;
 import entity.UserRoleReport;
 
 import jakarta.servlet.ServletException;
@@ -53,31 +53,31 @@ public class AdminReportServlet extends HttpServlet {
         request.setAttribute("orderReportTotalDiscount", orderReportTotalDiscount);
         request.setAttribute("orderReportTotalDiscountedOrders", orderReportTotalDiscountedOrders);
 
-        // Get product inventory report data
-        String productStatusFilter = request.getParameter("productStatus") != null ? request.getParameter("productStatus") : "all";
-        List<ProductInventoryReport> productInventoryReports = reportDAO.getProductInventoryReports(productStatusFilter);
-        request.setAttribute("productInventoryReports", productInventoryReports);
-        request.setAttribute("productCount", productInventoryReports.stream().mapToInt(ProductInventoryReport::getTotalProducts).sum());
+        // Get car inventory report data
+        String carStatusFilter = request.getParameter("carStatus") != null ? request.getParameter("carStatus") : "all";
+        List<CarInventoryReport> carInventoryReports = reportDAO.getCarInventoryReports(carStatusFilter);
+        request.setAttribute("carInventoryReports", carInventoryReports);
+        request.setAttribute("carCount", carInventoryReports.stream().mapToInt(CarInventoryReport::getTotalCars).sum());
 
         // Tính tổng cho footer
-        int totalStock = productInventoryReports.stream().mapToInt(ProductInventoryReport::getTotalStock).sum();
-        int totalLowStockCount = productInventoryReports.stream().mapToInt(ProductInventoryReport::getLowStockCount).sum();
-        int totalSoldQuantity = productInventoryReports.stream().mapToInt(ProductInventoryReport::getTotalSoldQuantity).sum();
-        BigDecimal totalRevenue = productInventoryReports.stream()
-                .map(ProductInventoryReport::getTotalRevenue)
+        int totalStock = carInventoryReports.stream().mapToInt(CarInventoryReport::getTotalStock).sum();
+        int totalLowStockCount = carInventoryReports.stream().mapToInt(CarInventoryReport::getLowStockCount).sum();
+        int totalSoldQuantity = carInventoryReports.stream().mapToInt(CarInventoryReport::getTotalSoldQuantity).sum();
+        BigDecimal totalRevenue = carInventoryReports.stream()
+                .map(CarInventoryReport::getTotalRevenue)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-        int totalBestSellerCount = productInventoryReports.stream().mapToInt(ProductInventoryReport::getBestSellerCount).sum();
+        int totalBestSellerCount = carInventoryReports.stream().mapToInt(CarInventoryReport::getBestSellerCount).sum();
 
         request.setAttribute("totalStock", totalStock);
         request.setAttribute("totalLowStockCount", totalLowStockCount);
         request.setAttribute("totalSoldQuantity", totalSoldQuantity);
-        request.setAttribute("productTotalRevenue", totalRevenue); // Instead of "totalRevenue"
+        request.setAttribute("carTotalRevenue", totalRevenue); // Instead of "totalRevenue"
         request.setAttribute("totalBestSellerCount", totalBestSellerCount);
 
         // Get summary statistics
         request.setAttribute("userSummary", reportDAO.getUserSummary());
         request.setAttribute("orderSummary", reportDAO.getOrderSummary());
-        request.setAttribute("productSummary", reportDAO.getProductSummary());
+        request.setAttribute("carSummary", reportDAO.getCarSummary());
 
         // Calculate totals from userRoleReports
         BigDecimal userRoleTotalRevenue = userRoleReports.stream()

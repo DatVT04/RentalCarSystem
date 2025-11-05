@@ -12,13 +12,13 @@ public class Slider {
     private int display_order;
     private String notes;
     private int postId;
-    private int productId;
+    private int carId;
 
     public Slider() {
     }
 
     public Slider(int id, String title, String image_url, String link, String status,
-            int display_order, String notes, int postId, int productId) {
+            int display_order, String notes, int postId, int carId) {
         this.id = id;
         this.title = title;
         this.image_url = image_url;
@@ -27,7 +27,7 @@ public class Slider {
         this.display_order = display_order;
         this.notes = notes;
         this.postId = postId;
-        this.productId = productId;
+        this.carId = carId;
     }
 
     public int getId() {
@@ -94,12 +94,12 @@ public class Slider {
         this.postId = postId;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
 }

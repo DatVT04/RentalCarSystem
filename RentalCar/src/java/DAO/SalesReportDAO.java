@@ -34,7 +34,7 @@ public class SalesReportDAO extends DBContext {
 
             getTimeBasedMetrics(report, sqlStartDate, sqlEndDate);
 
-            getProductPerformance(report, sqlStartDate, sqlEndDate);
+            getCarPerformance(report, sqlStartDate, sqlEndDate);
 
             getOrderProcessingMetrics(report, sqlStartDate, sqlEndDate);
 
@@ -87,7 +87,7 @@ public class SalesReportDAO extends DBContext {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    report.setTotalProducts(rs.getInt("total_quantity")); // Sửa lại thành đúng tên cột
+                    report.setTotalCars(rs.getInt("total_quantity")); // Sửa lại thành đúng tên cột
                 }
             }
         }
@@ -165,10 +165,10 @@ public class SalesReportDAO extends DBContext {
     }
 
     /**
-     * Gets product performance metrics
+     * Gets car performance metrics
      */
-    private void getProductPerformance(SalesReport report, java.sql.Date startDate, java.sql.Date endDate) throws SQLException {
-        // Top products by revenue with variant distribution
+    private void getCarPerformance(SalesReport report, java.sql.Date startDate, java.sql.Date endDate) throws SQLException {
+        // Top cars by revenue with variant distribution
         String sql = "WITH CategoryHierarchy AS ( "
                 + "   SELECT c1.id AS category_id, "
                 + "          c1.name AS category_name, "
@@ -184,8 +184,8 @@ public class SalesReportDAO extends DBContext {
                 + "   LEFT JOIN categories c3 ON c2.parent_id = c3.id "
                 + ") "
                 + "SELECT TOP 10 "
-                + "    p.id AS product_id, "
-                + "    p.title AS product_name, "
+                + "    p.id AS car_id, "
+                + "    p.title AS car_name, "
                 + "    c1.name AS category_name, "
                 + "    SUM(oi.quantity) AS total_quantity, "
                 + "    SUM(oi.quantity * oi.unit_price_at_order) AS total_revenue, "
@@ -193,7 +193,7 @@ public class SalesReportDAO extends DBContext {
                 + "    SUM(oi.quantity) AS variant_quantity "
                 + "FROM order_items oi "
                 + "JOIN orders o ON oi.order_id = o.id "
-                + "JOIN products p ON oi.product_id = p.id "
+                + "JOIN cars p ON oi.car_id = p.id "
                 + "JOIN CategoryHierarchy ch ON p.category_id = ch.category_id "
                 + "JOIN categories c1 ON ch.top_level_id = c1.id "
                 + "WHERE o.created_at BETWEEN ? AND ? "
@@ -201,8 +201,8 @@ public class SalesReportDAO extends DBContext {
                 + "GROUP BY p.id, p.title, c1.name, oi.variant_name "
                 + "ORDER BY total_revenue DESC, total_quantity DESC";
 
-        List<SalesReport.ProductPerformance> topProducts = new ArrayList<>();
-        Map<Integer, SalesReport.ProductPerformance> productMap = new HashMap<>();
+        List<SalesReport.CarPerformance> topCars = new ArrayList<>();
+        Map<Integer, SalesReport.CarPerformance> carMap = new HashMap<>();
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setDate(1, startDate);
@@ -210,22 +210,22 @@ public class SalesReportDAO extends DBContext {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    int productId = rs.getInt("product_id");
-                    SalesReport.ProductPerformance product;
+                    int carId = rs.getInt("car_id");
+                    SalesReport.CarPerformance car;
 
-                    if (!productMap.containsKey(productId)) {
-                        product = new SalesReport.ProductPerformance();
-                        product.setProductId(productId);
-                        product.setProductName(rs.getString("product_name"));
-                        product.setCategory(rs.getString("category_name"));
-                        product.setTotalQuantitySold(rs.getInt("total_quantity"));
-                        product.setTotalRevenue(rs.getBigDecimal("total_revenue"));
-                        product.setVariantDistribution(new HashMap<>()); // Khởi tạo map
+                    if (!carMap.containsKey(carId)) {
+                        car = new SalesReport.CarPerformance();
+                        car.setCarId(carId);
+                        car.setCarName(rs.getString("car_name"));
+                        car.setCategory(rs.getString("category_name"));
+                        car.setTotalQuantitySold(rs.getInt("total_quantity"));
+                        car.setTotalRevenue(rs.getBigDecimal("total_revenue"));
+                        car.setVariantDistribution(new HashMap<>()); // Khởi tạo map
 
-                        productMap.put(productId, product);
-                        topProducts.add(product);
+                        carMap.put(carId, car);
+                        topCars.add(car);
                     } else {
-                        product = productMap.get(productId);
+                        car = carMap.get(carId);
                     }
 
                     // Thêm phân phối variant
@@ -234,15 +234,15 @@ public class SalesReportDAO extends DBContext {
 
                     // Kiểm tra null trước khi thêm
                     if (variant != null) {
-                        product.getVariantDistribution().put(variant, variantQuantity);
+                        car.getVariantDistribution().put(variant, variantQuantity);
                     }
                 }
             }
         }
 
-        report.setTopProducts(topProducts);
+        report.setTopCars(topCars);
 
-        // Revenue by category - keeping consistent with top products query
+        // Revenue by category - keeping consistent with top cars query
         sql = "WITH CategoryHierarchy AS ("
                 + " SELECT c1.id, c1.name, c1.parent_id, "
                 + " CASE "
@@ -260,12 +260,12 @@ public class SalesReportDAO extends DBContext {
                 + " COUNT(DISTINCT o.id) AS category_orders "
                 + "FROM order_items oi "
                 + "JOIN orders o ON oi.order_id = o.id "
-                + "JOIN products p ON oi.product_id = p.id "
+                + "JOIN cars p ON oi.car_id = p.id "
                 + "JOIN CategoryHierarchy ch ON p.category_id = ch.id "
                 + "JOIN categories c1 ON ch.top_level_id = c1.id "
                 + "WHERE o.created_at BETWEEN ? AND ? "
                 + "AND o.status = 'completed' "
-                + // Changed to match top products condition
+                + // Changed to match top cars condition
                 "GROUP BY c1.name "
                 + "ORDER BY category_revenue DESC";
 
@@ -293,15 +293,15 @@ public class SalesReportDAO extends DBContext {
     }
 
     /**
-     * Gets distribution of sizes and colors for a product with time constraint
+     * Gets distribution of sizes and colors for a car with time constraint
      */
-    private void getProductVariantDistribution(SalesReport.ProductPerformance product, java.sql.Date startDate, java.sql.Date endDate) throws SQLException {
+    private void getCarVariantDistribution(SalesReport.CarPerformance car, java.sql.Date startDate, java.sql.Date endDate) throws SQLException {
         // Size distribution with time constraint
         String sqlSizes = "SELECT ps.size, SUM(oi.quantity) AS count "
                 + "FROM order_items oi "
                 + "JOIN orders o ON oi.order_id = o.id "
-                + "JOIN product_sizes ps ON oi.product_id = ps.product_id "
-                + "WHERE oi.product_id = ? "
+                + "JOIN car_sizes ps ON oi.car_id = ps.car_id "
+                + "WHERE oi.car_id = ? "
                 + "AND o.created_at BETWEEN ? AND ? "
                 + "AND o.status = 'completed' "
                 + "GROUP BY ps.size "
@@ -310,7 +310,7 @@ public class SalesReportDAO extends DBContext {
         Map<String, Integer> sizeDistribution = new HashMap<>();
 
         try (PreparedStatement stmt = connection.prepareStatement(sqlSizes)) {
-            stmt.setInt(1, product.getProductId());
+            stmt.setInt(1, car.getCarId());
             stmt.setDate(2, startDate);
             stmt.setDate(3, endDate);
 
@@ -323,16 +323,16 @@ public class SalesReportDAO extends DBContext {
             }
         }
 
-        product.setSizeDistribution(sizeDistribution);
+        car.setSizeDistribution(sizeDistribution);
 
         // Color distribution with time constraint
         String sqlColors = "SELECT pc.color, SUM(oi.quantity) AS count "
                 + // Changed COUNT to SUM for consistency
                 "FROM order_items oi "
                 + "JOIN orders o ON oi.order_id = o.id "
-                + "JOIN products p ON oi.product_id = p.id "
-                + "JOIN product_variants pv ON p.id = pv.product_id "
-                + "JOIN product_colors pc ON pv.color_id = pc.id "
+                + "JOIN cars p ON oi.car_id = p.id "
+                + "JOIN car_variants pv ON p.id = pv.car_id "
+                + "JOIN car_colors pc ON pv.color_id = pc.id "
                 + "WHERE p.id = ? "
                 + "AND o.created_at BETWEEN ? AND ? "
                 + "AND o.status = 'completed' "
@@ -342,7 +342,7 @@ public class SalesReportDAO extends DBContext {
         Map<String, Integer> colorDistribution = new HashMap<>();
 
         try (PreparedStatement stmt = connection.prepareStatement(sqlColors)) {
-            stmt.setInt(1, product.getProductId());
+            stmt.setInt(1, car.getCarId());
             stmt.setDate(2, startDate);
             stmt.setDate(3, endDate);
 
@@ -355,7 +355,7 @@ public class SalesReportDAO extends DBContext {
             }
         }
 
-        product.setColorDistribution(colorDistribution);
+        car.setColorDistribution(colorDistribution);
 
         // Category is already set from the main query, no need to query again
     }

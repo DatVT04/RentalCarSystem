@@ -8,15 +8,15 @@ import java.util.Date;
  */
 public class Variant {
     private int id;
-    private int productId;
+    private int carId;
     private Color color;
     private Size size;
     private int quantity;
     private Date lastRestockDate;
 
-    public Variant(int id, int productId, Color color, Size size, int quantity, Date lastRestockDate) {
+    public Variant(int id, int carId, Color color, Size size, int quantity, Date lastRestockDate) {
         this.id = id;
-        this.productId = productId;
+        this.carId = carId;
         this.color = color;
         this.size = size;
         this.quantity = quantity;
@@ -31,12 +31,12 @@ public class Variant {
         this.id = id;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
     public Color getColor() {
@@ -73,7 +73,7 @@ public class Variant {
 
     @Override
     public String toString() {
-        return "Variant{" + "id=" + id + ", productId=" + productId + ", color=" + color + ", size=" + size + ", quantity=" + quantity + ", lastRestockDate=" + lastRestockDate + '}';
+        return "Variant{" + "id=" + id + ", carId=" + carId + ", color=" + color + ", size=" + size + ", quantity=" + quantity + ", lastRestockDate=" + lastRestockDate + '}';
     }
     
     

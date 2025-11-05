@@ -51,9 +51,9 @@ public class ReportServlet extends HttpServlet {
                 commonData.put("averageRating", reportDAO.getAverageRating());
                 commonData.put("ratingDistribution", reportDAO.getRatingDistribution());
                 commonData.put("feedbackByStatus", reportDAO.getFeedbackByStatus());
-                commonData.put("highestRatedProducts", reportDAO.getProductsByRating(true, 5));
-                commonData.put("lowestRatedProducts", reportDAO.getProductsByRating(false, 5));
-                commonData.put("productRatingCoverage", reportDAO.getProductRatingCoverage());
+                commonData.put("highestRatedCars", reportDAO.getCarsByRating(true, 5));
+                commonData.put("lowestRatedCars", reportDAO.getCarsByRating(false, 5));
+                commonData.put("carRatingCoverage", reportDAO.getCarRatingCoverage());
                 commonData.put("mostActiveReviewers", reportDAO.getMostActiveReviewers(5));
                 commonData.put("customerFeedbackRate", reportDAO.getCustomerFeedbackRate());
                 commonData.put("feedbackWithImagesCount", reportDAO.getFeedbackWithImagesCount());
@@ -67,37 +67,37 @@ public class ReportServlet extends HttpServlet {
                 commonData.put("selectedTable", selectedTable);
             }
             
-            // 3. Product Report
-            if (reportType.equals("overview") || reportType.equals("product")) {
-                commonData.put("productsByStatus", reportDAO.getProductsByStatus());
-                commonData.put("productsByCategory", reportDAO.getProductsByCategory());
-                commonData.put("comboProductsCount", reportDAO.getComboProductsCount());
+            // 3. Car Report
+            if (reportType.equals("overview") || reportType.equals("car")) {
+                commonData.put("carsByStatus", reportDAO.getCarsByStatus());
+                commonData.put("carsByCategory", reportDAO.getCarsByCategory());
+                commonData.put("comboCarsCount", reportDAO.getComboCarsCount());
                 commonData.put("averagePriceByCategory", reportDAO.getAveragePriceByCategory());
-                commonData.put("productsWithHighestPriceIncrease", reportDAO.getProductsWithHighestPriceIncrease(5));
-                commonData.put("bestSellingProducts", reportDAO.getBestSellingProducts(5));
+                commonData.put("carsWithHighestPriceIncrease", reportDAO.getCarsWithHighestPriceIncrease(5));
+                commonData.put("bestSellingCars", reportDAO.getBestSellingCars(5));
                 commonData.put("revenueByCategory", reportDAO.getRevenueByCategory());
-                commonData.put("productVariationsBySize", reportDAO.getProductVariationsBySize());
-                commonData.put("productVariationsByColor", reportDAO.getProductVariationsByColor());
-                commonData.put("combinedProductMetrics", reportDAO.getCombinedProductMetrics(10));
+                commonData.put("carVariationsBySize", reportDAO.getCarVariationsBySize());
+                commonData.put("carVariationsByColor", reportDAO.getCarVariationsByColor());
+                commonData.put("combinedCarMetrics", reportDAO.getCombinedCarMetrics(10));
                 commonData.put("selectedTable", selectedTable);
-                Map<String, Integer> productsByStatus = reportDAO.getProductsByStatus();
-                int totalProducts = 0;
-                for (Integer value : productsByStatus.values()) {
-                    totalProducts += value;
+                Map<String, Integer> carsByStatus = reportDAO.getCarsByStatus();
+                int totalCars = 0;
+                for (Integer value : carsByStatus.values()) {
+                    totalCars += value;
                 }
-                commonData.put("totalProducts", totalProducts);
+                commonData.put("totalCars", totalCars);
             }
             
             // 4. Inventory Report
             if (reportType.equals("overview") || reportType.equals("inventory")) {
                 commonData.put("totalInventoryValue", reportDAO.getTotalInventoryValue());
-                commonData.put("totalInventoryByProduct", reportDAO.getTotalInventoryByProduct(5));
+                commonData.put("totalInventoryByCar", reportDAO.getTotalInventoryByCar(5));
                 commonData.put("inventoryByCategory", reportDAO.getInventoryByCategory());
-                commonData.put("lowStockProducts", reportDAO.getLowStockProducts(10));
-                commonData.put("productsWithoutRecentRestocking", reportDAO.getProductsWithoutRecentRestocking(29));
+                commonData.put("lowStockCars", reportDAO.getLowStockCars(10));
+                commonData.put("carsWithoutRecentRestocking", reportDAO.getCarsWithoutRecentRestocking(29));
                 commonData.put("outOfStockRate", reportDAO.getOutOfStockRate());
-                commonData.put("productVariationsBySize", reportDAO.getProductVariationsBySize());
-                commonData.put("productVariationsByColor", reportDAO.getProductVariationsByColor());
+                commonData.put("carVariationsBySize", reportDAO.getCarVariationsBySize());
+                commonData.put("carVariationsByColor", reportDAO.getCarVariationsByColor());
                 commonData.put("selectedTable", selectedTable);
             }
             
@@ -135,7 +135,7 @@ public class ReportServlet extends HttpServlet {
             
             // 7. Comprehensive Report
             if (reportType.equals("comprehensive")) {
-                commonData.put("combinedProductMetrics", reportDAO.getCombinedProductMetrics(10));
+                commonData.put("combinedCarMetrics", reportDAO.getCombinedCarMetrics(10));
                 commonData.put("couponUsageMetrics", reportDAO.getCouponUsageMetrics());
             }
             

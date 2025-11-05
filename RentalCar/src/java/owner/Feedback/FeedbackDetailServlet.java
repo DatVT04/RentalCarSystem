@@ -26,7 +26,7 @@ public class FeedbackDetailServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int productId = Integer.parseInt(request.getParameter("productId"));
+        int carId = Integer.parseInt(request.getParameter("carId"));
         String searchKeyword = request.getParameter("searchKeyword");
         String filterRating = request.getParameter("filterRating");
         String filterStatus = request.getParameter("filterStatus");
@@ -43,16 +43,16 @@ public class FeedbackDetailServlet extends HttpServlet {
         int recordsPerPage = 10;
 
         FeedbackDAO feedbackDAO = new FeedbackDAO();
-        List<Feedback> feedbackList = feedbackDAO.getFeedbacksByProduct(searchKeyword, filterRating, filterStatus,
-                sortField, sortOrder, productId, page, recordsPerPage);
-        int totalRecords = feedbackDAO.getTotalFeedbacksByProduct(searchKeyword, filterRating, filterStatus, productId);
+        List<Feedback> feedbackList = feedbackDAO.getFeedbacksByCar(searchKeyword, filterRating, filterStatus,
+                sortField, sortOrder, carId, page, recordsPerPage);
+        int totalRecords = feedbackDAO.getTotalFeedbacksByCar(searchKeyword, filterRating, filterStatus, carId);
         int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage);
 
-        // Lấy số lượng đánh giá cho từng mức sao theo productId
-        int[] ratingCounts = feedbackDAO.getRatingCountsByProduct(searchKeyword, productId);
+        // Lấy số lượng đánh giá cho từng mức sao theo carId
+        int[] ratingCounts = feedbackDAO.getRatingCountsByCar(searchKeyword, carId);
 
         request.setAttribute("feedbackList", feedbackList);
-        request.setAttribute("productId", productId);
+        request.setAttribute("carId", carId);
         request.setAttribute("searchKeyword", searchKeyword);
         request.setAttribute("filterRating", filterRating);
         request.setAttribute("filterStatus", filterStatus);
@@ -79,7 +79,7 @@ public class FeedbackDetailServlet extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getParameter("action");
         FeedbackDAO feedbackDAO = new FeedbackDAO();
-        int productId = Integer.parseInt(request.getParameter("productId"));
+        int carId = Integer.parseInt(request.getParameter("carId"));
 
         if ("updateStatus".equals(action)) {
             try {
@@ -87,9 +87,9 @@ public class FeedbackDetailServlet extends HttpServlet {
                 String status = request.getParameter("status");
                 boolean updated = feedbackDAO.updateFeedbackStatus(id, status);
                 if (updated) {
-                    response.sendRedirect(request.getContextPath() + "/owner/feedbackdetail?productId=" + productId + "&success=update");
+                    response.sendRedirect(request.getContextPath() + "/owner/feedbackdetail?carId=" + carId + "&success=update");
                 } else {
-                    response.sendRedirect(request.getContextPath() + "/owner/feedbackdetail?productId=" + productId + "&error=update");
+                    response.sendRedirect(request.getContextPath() + "/owner/feedbackdetail?carId=" + carId + "&error=update");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -100,9 +100,9 @@ public class FeedbackDetailServlet extends HttpServlet {
                 int id = Integer.parseInt(request.getParameter("id"));
                 boolean deleted = feedbackDAO.deleteFeedback(id);
                 if (deleted) {
-                    response.sendRedirect(request.getContextPath() + "/owner/feedbackdetail?productId=" + productId + "&success=delete_feedback");
+                    response.sendRedirect(request.getContextPath() + "/owner/feedbackdetail?carId=" + carId + "&success=delete_feedback");
                 } else {
-                    response.sendRedirect(request.getContextPath() + "/owner/feedbackdetail?productId=" + productId + "&error=delete_feedback");
+                    response.sendRedirect(request.getContextPath() + "/owner/feedbackdetail?carId=" + carId + "&error=delete_feedback");
                 }
             } catch (Exception e) {
                 e.printStackTrace();

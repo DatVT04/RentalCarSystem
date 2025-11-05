@@ -467,7 +467,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <p><strong>Sản phẩm:</strong> ${feedback.productTitle}</p>
+                                <p><strong>Sản phẩm:</strong> ${feedback.carTitle}</p>
                                 <p><strong>Tài khoản:</strong> ${feedback.userName}</p>
                                 <p><strong>Tên người dùng:</strong> ${feedback.userFullName}</p>
                                 <p><strong>Nội dung:</strong></p>
@@ -559,7 +559,7 @@
                                             <input type="hidden" name="feedbackId" value="${feedback.id}">
                                             <input type="hidden" name="replyId" value="${reply.id}">
                                             <input type="hidden" name="returnUrl" value="${returnUrl}"> <!-- Gửi returnUrl -->
-                                            <input type="hidden" name="productId" value="${productId}"> <!-- Gửi productId nếu có -->
+                                            <input type="hidden" name="carId" value="${carId}"> <!-- Gửi carId nếu có -->
                                             <div class="form-group">
                                                 <textarea name="comment" class="form-control" rows="3" required>${reply.comment}</textarea>
                                             </div>
@@ -588,7 +588,7 @@
                                                         <input type="hidden" name="feedbackId" value="${feedback.id}">
                                                         <input type="hidden" name="replyId" value="${reply.id}">
                                                         <input type="hidden" name="returnUrl" value="${returnUrl}"> <!-- Gửi returnUrl -->
-                                                        <input type="hidden" name="productId" value="${productId}"> <!-- Gửi productId nếu có -->
+                                                        <input type="hidden" name="carId" value="${carId}"> <!-- Gửi carId nếu có -->
                                                         <button type="submit" class="btn btn-danger">Xóa</button>
                                                     </form>
                                                 </div>
@@ -615,7 +615,7 @@
                     <form action="feedbackreply" method="POST" class="new-reply-form" id="new-reply-form">
                         <input type="hidden" name="feedbackId" value="${feedback.id}">
                         <input type="hidden" name="returnUrl" value="${returnUrl}">
-                        <input type="hidden" name="productId" value="${productId}">
+                        <input type="hidden" name="carId" value="${carId}">
                         <div class="mb-3">
                             <label for="new-comment" class="form-label">Nội dung phản hồi</label>
                             <textarea class="form-control" id="new-comment" name="comment" rows="3" required maxlength="500"></textarea>
@@ -623,8 +623,8 @@
                         </div>
                             <div class="form-buttons">
                                 <c:choose>
-                                    <c:when test="${returnUrl == 'feedbackdetail' && not empty productId}">
-                                        <a href="feedbackdetail?productId=${productId}" class="btn btn-secondary">
+                                    <c:when test="${returnUrl == 'feedbackdetail' && not empty carId}">
+                                        <a href="feedbackdetail?carId=${carId}" class="btn btn-secondary">
                                             <i class="fas fa-arrow-left me-2"></i>Quay lại
                                         </a>
                                     </c:when>

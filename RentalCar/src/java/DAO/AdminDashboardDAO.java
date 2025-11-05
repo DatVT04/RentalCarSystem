@@ -2,7 +2,7 @@ package DAO;
 
 import Context.DBContext;
 import entity.CategoryCount;
-import entity.ProductStatusCount;
+import entity.CarStatusCount;
 import entity.UserStatusCount;
 import entity.CustomerSpendData;
 import entity.TimeSeriesData;
@@ -79,13 +79,13 @@ public class AdminDashboardDAO extends DBContext {
                 + "    LEFT JOIN categories c2 ON c1.parent_id = c2.id "
                 + "    LEFT JOIN categories c3 ON c2.parent_id = c3.id "
                 + ") "
-                + "SELECT TOP 5 c.name AS category_name, COUNT(p.id) AS product_count "
-                + "FROM products p "
+                + "SELECT TOP 5 c.name AS category_name, COUNT(p.id) AS car_count "
+                + "FROM cars p "
                 + "JOIN CategoryHierarchy ch ON p.category_id = ch.id "
                 + "JOIN categories c ON ch.top_level_id = c.id "
                 + "WHERE p.status = 'active' "
                 + "GROUP BY c.name "
-                + "ORDER BY product_count DESC;";
+                + "ORDER BY car_count DESC;";
 
         try {
             PreparedStatement st = connection.prepareStatement(sql);
@@ -94,7 +94,7 @@ public class AdminDashboardDAO extends DBContext {
             while (rs.next()) {
                 CategoryCount category = new CategoryCount();
                 category.setName(rs.getString("category_name"));
-                category.setProductCount(rs.getInt("product_count"));
+                category.setCarCount(rs.getInt("car_count"));
                 categories.add(category);
             }
         } catch (SQLException e) {
@@ -128,15 +128,15 @@ public class AdminDashboardDAO extends DBContext {
     }
 
     /**
-     * Get product counts by status
+     * Get car counts by status
      *
-     * @return ProductStatusCount object containing counts of active, inactive,
-     * and EOStock products
+     * @return CarStatusCount object containing counts of active, inactive,
+     * and EOStock cars
      */
-    public ProductStatusCount getProductStatusCounts() {
-        ProductStatusCount productCount = new ProductStatusCount();
+    public CarStatusCount getCarStatusCounts() {
+        CarStatusCount carCount = new CarStatusCount();
 
-        String sql = "SELECT status, COUNT(*) as count FROM products GROUP BY status";
+        String sql = "SELECT status, COUNT(*) as count FROM cars GROUP BY status";
 
         try {
             PreparedStatement st = connection.prepareStatement(sql);
@@ -148,25 +148,25 @@ public class AdminDashboardDAO extends DBContext {
 
                 switch (status) {
                     case "active":
-                        productCount.setActiveCount(count);
+                        carCount.setActiveCount(count);
                         break;
                     case "inactive":
-                        productCount.setInactiveCount(count);
+                        carCount.setInactiveCount(count);
                         break;
                     case "EOStock":
-                        productCount.setEoStockCount(count);
+                        carCount.setEoStockCount(count);
                         break;
                 }
             }
 
-            // Calculate total products
-            productCount.setTotalProducts(productCount.getActiveCount() + productCount.getInactiveCount() + productCount.getEoStockCount());
+            // Calculate total cars
+            carCount.setTotalCars(carCount.getActiveCount() + carCount.getInactiveCount() + carCount.getEoStockCount());
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return productCount;
+        return carCount;
     }
 
     /**
@@ -249,17 +249,17 @@ public class AdminDashboardDAO extends DBContext {
     }
 
     /**
-     * Get monthly product additions over time
+     * Get monthly car additions over time
      *
-     * @return List of TimeSeriesData objects with month and product count
+     * @return List of TimeSeriesData objects with month and car count
      * information
      */
-    public List<TimeSeriesData> getMonthlyProductAdditions() {
+    public List<TimeSeriesData> getMonthlyCarAdditions() {
         List<TimeSeriesData> timeSeriesData = new ArrayList<>();
 
-        // SQL query to get product count by month
+        // SQL query to get car count by month
         String sql = "SELECT FORMAT(created_at, 'yyyy-MM') AS month, COUNT(*) AS count "
-                + "FROM products "
+                + "FROM cars "
                 + "GROUP BY FORMAT(created_at, 'yyyy-MM') "
                 + "ORDER BY month";
 

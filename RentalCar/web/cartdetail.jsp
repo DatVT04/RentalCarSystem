@@ -91,7 +91,7 @@
             font-size: 14px;
         }
 
-        .product-image {
+        .car-image {
             width: 80px;
             height: 80px;
             object-fit: cover;
@@ -99,7 +99,7 @@
             border: 1px solid #f0f0f0;
         }
 
-        .product-title {
+        .car-title {
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 5px;
@@ -111,7 +111,7 @@
             max-width: 250px;
         }
 
-        .product-meta {
+        .car-meta {
             font-size: 13px;
             color: #64748b;
         }
@@ -298,7 +298,7 @@
                 border: none;
             }
 
-            .product-title {
+            .car-title {
                 max-width: 150px;
                 -webkit-line-clamp: 3;
             }
@@ -441,7 +441,7 @@
                                                 <tr>
                                                     <th scope="col">
                                                         <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="selectAll" onchange="toggleAllProducts()">
+                                                            <input type="checkbox" class="form-check-input" id="selectAll" onchange="toggleAllCars()">
                                                             <label class="form-check-label" for="selectAll"></label>
                                                         </div>
                                                     </th>
@@ -454,30 +454,30 @@
                                             </thead>
                                             <tbody>
                                                 <c:forEach items="${cart.items}" var="item">
-                                                    <tr data-id="${item.id}" data-product-id="${item.productId}" data-variant-id="${item.variantId}">
+                                                    <tr data-id="${item.id}" data-car-id="${item.carId}" data-variant-id="${item.variantId}">
                                                         <td>
                                                             <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input product-select" 
+                                                                <input type="checkbox" class="form-check-input car-select" 
                                                                        name="selectedItems" value="${item.id}"
                                                                        onchange="updateTotalAmount()"
-                                                                       ${stockMap[item.id] <= 0 || productStatusMap[item.id] == 'inactive' ? 'disabled' : ''}
+                                                                       ${stockMap[item.id] <= 0 || carStatusMap[item.id] == 'inactive' ? 'disabled' : ''}
                                                                        data-stock="${stockMap[item.id]}"
-                                                                       data-status="${productStatusMap[item.id]}">
+                                                                       data-status="${carStatusMap[item.id]}">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="d-flex align-items-center">
-                                                                <a href="productdetail?id=${item.productId}" class="product-link">
-                                                                    <img src="${item.productThumbnail}" alt="${item.productTitle}" 
-                                                                         class="product-image me-3">
+                                                                <a href="cardetail?id=${item.carId}" class="car-link">
+                                                                    <img src="${item.carThumbnail}" alt="${item.carTitle}" 
+                                                                         class="car-image me-3">
                                                                 </a>
                                                                 <div>
-                                                                    <h6 class="product-title">
-                                                                        <a href="productdetail?id=${item.productId}" class="product-link text-decoration-none">
-                                                                            ${item.productTitle}
+                                                                    <h6 class="car-title">
+                                                                        <a href="cardetail?id=${item.carId}" class="car-link text-decoration-none">
+                                                                            ${item.carTitle}
                                                                         </a>
                                                                     </h6>
-                                                                    <div class="product-meta">
+                                                                    <div class="car-meta">
                                                                         Size: <span class="fw-semibold">${item.size}</span> | Màu: <span class="fw-semibold">${item.color}</span>
                                                                     </div>
                                                                 </div>
@@ -485,7 +485,7 @@
                                                         </td>
                                                         <td>
                                                             <div class="price">
-                                                                <fmt:formatNumber value="${item.productPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                                                <fmt:formatNumber value="${item.carPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
                                                             </div>
                                                         </td>
                                                         <td>
@@ -493,20 +493,20 @@
                                                                 <div class="input-group">
                                                                     <button type="button" class="btn btn-outline-secondary" 
                                                                             onclick="updateQuantity(this, -1)"
-                                                                            ${stockMap[item.id] <= 0 || productStatusMap[item.id] == 'inactive' ? 'disabled' : ''}>
+                                                                            ${stockMap[item.id] <= 0 || carStatusMap[item.id] == 'inactive' ? 'disabled' : ''}>
                                                                         <i class="fas fa-minus"></i>
                                                                     </button>
                                                                     <input type="number" value="${item.quantity}" min="1" max="${stockMap[item.id]}"
-                                                                           class="form-control text-center quantity-input ${stockMap[item.id] <= 0 || productStatusMap[item.id] == 'inactive' ? 'bg-light' : ''}"
+                                                                           class="form-control text-center quantity-input ${stockMap[item.id] <= 0 || carStatusMap[item.id] == 'inactive' ? 'bg-light' : ''}"
                                                                            data-item-id="${item.id}"
                                                                            data-variant-id="${item.variantId}"
                                                                            data-max-stock="${stockMap[item.id]}"
-                                                                           data-status="${productStatusMap[item.id]}"
+                                                                           data-status="${carStatusMap[item.id]}"
                                                                            onchange="handleQuantityChange(this)"
-                                                                           ${stockMap[item.id] <= 0 || productStatusMap[item.id] == 'inactive' ? 'disabled' : ''}>
+                                                                           ${stockMap[item.id] <= 0 || carStatusMap[item.id] == 'inactive' ? 'disabled' : ''}>
                                                                     <button type="button" class="btn btn-outline-secondary" 
                                                                             onclick="updateQuantity(this, 1)"
-                                                                            ${stockMap[item.id] <= 0 || productStatusMap[item.id] == 'inactive' ? 'disabled' : ''}>
+                                                                            ${stockMap[item.id] <= 0 || carStatusMap[item.id] == 'inactive' ? 'disabled' : ''}>
                                                                         <i class="fas fa-plus"></i>
                                                                     </button>
                                                                 </div>
@@ -514,10 +514,10 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <div class="stock-status ${productStatusMap[item.id] == 'inactive' ? 'paused' : stockMap[item.id] > 0 ? 'in-stock' : 'out-of-stock'}">
-                                                                <i class="fas ${productStatusMap[item.id] == 'inactive' ? 'fa-times-circle' : stockMap[item.id] > 0 ? 'fa-check-circle' : 'fa-pause-circle'}"></i>
+                                                            <div class="stock-status ${carStatusMap[item.id] == 'inactive' ? 'paused' : stockMap[item.id] > 0 ? 'in-stock' : 'out-of-stock'}">
+                                                                <i class="fas ${carStatusMap[item.id] == 'inactive' ? 'fa-times-circle' : stockMap[item.id] > 0 ? 'fa-check-circle' : 'fa-pause-circle'}"></i>
                                                                 <span class="ms-2">
-                                                                    ${productStatusMap[item.id] == 'inactive' ? 'Ngưng Bán' : stockMap[item.id] > 0 ? 'Còn Hàng' : 'Hết Hàng'}
+                                                                    ${carStatusMap[item.id] == 'inactive' ? 'Ngưng Bán' : stockMap[item.id] > 0 ? 'Còn Hàng' : 'Hết Hàng'}
                                                                 </span>
                                                             </div>
                                                         </td>
@@ -539,7 +539,7 @@
                 </div>
 
                 <div class="text-center mb-4">
-                    <a href="listproduct" class="btn btn-outline-primary">
+                    <a href="listcar" class="btn btn-outline-primary">
                         <i class="fas fa-plus me-2"></i> Tiếp tục mua sắm
                     </a>
                 </div>
@@ -725,7 +725,7 @@
         // Xử lý thanh toán
         function submitCheckout() {
             const form = document.getElementById('checkoutForm');
-            const checkboxes = document.getElementsByClassName('product-select');
+            const checkboxes = document.getElementsByClassName('car-select');
             let hasSelectedItems = false;
             let hasInvalidItemSelected = false;
 
@@ -780,7 +780,7 @@
 
         // Tính tổng tiền hàng
         function calculateTotalAmount() {
-            const checkboxes = document.getElementsByClassName('product-select');
+            const checkboxes = document.getElementsByClassName('car-select');
             let totalAmount = 0;
 
             for (let checkbox of checkboxes) {
@@ -798,7 +798,7 @@
 
         // Cập nhật tổng tiền
         function updateTotalAmount() {
-            const checkboxes = document.getElementsByClassName('product-select');
+            const checkboxes = document.getElementsByClassName('car-select');
             let totalAmount = 0;
             let selectedCount = 0;
 
@@ -896,9 +896,9 @@
         }
 
         // Chọn hoặc bỏ chọn tất cả sản phẩm
-        function toggleAllProducts() {
+        function toggleAllCars() {
             const selectAll = document.getElementById('selectAll');
-            const checkboxes = document.getElementsByClassName('product-select');
+            const checkboxes = document.getElementsByClassName('car-select');
             for (let checkbox of checkboxes) {
                 if (!checkbox.disabled) {
                     checkbox.checked = selectAll.checked;
@@ -1098,7 +1098,7 @@
 
         // Khởi tạo trang
         document.addEventListener('DOMContentLoaded', function () {
-            const checkboxes = document.getElementsByClassName('product-select');
+            const checkboxes = document.getElementsByClassName('car-select');
             if (checkboxes.length > 0) {
                 validateAllQuantities();
                 updateTotalAmount();

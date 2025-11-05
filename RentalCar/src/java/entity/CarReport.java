@@ -6,7 +6,7 @@ import java.math.BigDecimal;
  *
  * @author VuxD4t
  */
-public class ProductReport {
+public class CarReport {
     private int id;
     private String title;  // Changed from name to match database
     private int categoryId;
@@ -16,7 +16,7 @@ public class ProductReport {
     private String status;
     private String createdAt;
     
-    public ProductReport() {
+    public CarReport() {
     }
 
     public int getId() {

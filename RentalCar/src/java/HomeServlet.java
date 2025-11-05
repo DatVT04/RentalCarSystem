@@ -6,11 +6,11 @@
 import DAO.CategoryDAO;
 import DAO.MessageDAO;
 
-import DAO.ProductDAO;
+import DAO.CarDAO;
 import entity.Category;
 import entity.Message;
 
-import entity.Product;
+import entity.Car;
 import entity.Slider;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -70,7 +70,7 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
 
 
-        ProductDAO productDAO = new ProductDAO();
+        CarDAO carDAO = new CarDAO();
         CategoryDAO categoryDAO = new CategoryDAO();
         MessageDAO messageDAO = new MessageDAO();
 
@@ -79,23 +79,23 @@ public class HomeServlet extends HttpServlet {
         List<Category> level1Categories = categoryDAO.getActiveLevel1Categories();
 
         // Lấy sản phẩm cho mỗi danh mục
-        Map<Integer, List<Product>> productsByCategory = new HashMap<>();
+        Map<Integer, List<Car>> carsByCategory = new HashMap<>();
 
         for (Category category : level1Categories) {
             // Lấy 4 sản phẩm cho mỗi danh mục
-            List<Product> products = productDAO.getProductsByCategory(category.getId(), 4);
-            productsByCategory.put(category.getId(), products);
+            List<Car> cars = carDAO.getCarsByCategory(category.getId(), 4);
+            carsByCategory.put(category.getId(), cars);
         }
 
         // Lấy sản phẩm nổi bật
-        List<Product> featuredProducts = productDAO.getFeaturedProducts(8);
+        List<Car> featuredCars = carDAO.getFeaturedCars(8);
         
 
         // Set attributes cho request
         
-        request.setAttribute("featuredProducts", featuredProducts);
+        request.setAttribute("featuredCars", featuredCars);
         request.setAttribute("level1Categories", level1Categories);
-        request.setAttribute("productsByCategory", productsByCategory);
+        request.setAttribute("carsByCategory", carsByCategory);
 
         request.getRequestDispatcher("homepage.jsp").forward(request, response);
     }

@@ -16,15 +16,15 @@ public class InventoryDAO extends DBContext {
         Map<Integer, Inventory> inventoryMap = new LinkedHashMap<>();
 
         StringBuilder query = new StringBuilder("""
-        WITH ProductPagination AS (
+        WITH CarPagination AS (
             SELECT 
-                p.id AS product_id, 
-                p.title AS product_name, 
+                p.id AS car_id, 
+                p.title AS car_name, 
                 c.name AS category, 
                 COALESCE(SUM(pv.stock_quantity), 0) AS total_stock_quantity
-            FROM products p
+            FROM cars p
             JOIN categories c ON p.category_id = c.id
-            LEFT JOIN product_variants pv ON p.id = pv.product_id
+            LEFT JOIN car_variants pv ON p.id = pv.car_id
             WHERE 1=1
         """);
 
@@ -50,17 +50,17 @@ public class InventoryDAO extends DBContext {
 
         query.append("""
         SELECT 
-            pp.product_id, 
-            pp.product_name, 
+            pp.car_id, 
+            pp.car_name, 
             pp.category, 
             pp.total_stock_quantity, 
             pc.id AS color_id, 
             pc.color AS color_name, 
             ps.id AS size_id, 
             ps.size AS size_name
-        FROM ProductPagination pp
-        LEFT JOIN product_colors pc ON pp.product_id = pc.product_id
-        LEFT JOIN product_sizes ps ON pp.product_id = ps.product_id
+        FROM CarPagination pp
+        LEFT JOIN car_colors pc ON pp.car_id = pc.car_id
+        LEFT JOIN car_sizes ps ON pp.car_id = ps.car_id
         """);
 
         // Add pagination para
@@ -74,8 +74,8 @@ public class InventoryDAO extends DBContext {
             }
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                int productId = rs.getInt("product_id");
-                String productName = rs.getString("product_name");
+                int carId = rs.getInt("car_id");
+                String carName = rs.getString("car_name");
                 String category = rs.getString("category");
                 int totalQuantity = rs.getInt("total_stock_quantity");
                 int colorId = rs.getInt("color_id");
@@ -83,8 +83,8 @@ public class InventoryDAO extends DBContext {
                 int sizeId = rs.getInt("size_id");
                 String sizeName = rs.getString("size_name");
 
-                Inventory inventory = inventoryMap.computeIfAbsent(productId,
-                        id -> new Inventory(id, productName, category, new HashSet<>(), new HashSet<>(), totalQuantity));
+                Inventory inventory = inventoryMap.computeIfAbsent(carId,
+                        id -> new Inventory(id, carName, category, new HashSet<>(), new HashSet<>(), totalQuantity));
 
                 if (colorName != null) {
                     inventory.getColors().add(new Color(colorId, colorName));
@@ -103,7 +103,7 @@ public class InventoryDAO extends DBContext {
 
     public int getTotalInventoryCount(String keyword, Integer categoryId) {
         int totalRecords = 0;
-        String query = "SELECT COUNT(DISTINCT p.id) FROM products p WHERE 1=1 ";
+        String query = "SELECT COUNT(DISTINCT p.id) FROM cars p WHERE 1=1 ";
 
         List<Object> params = new ArrayList<>();
 
@@ -132,7 +132,7 @@ public class InventoryDAO extends DBContext {
         return totalRecords;
     }
 
-    public Inventory getInventoryDetail(int productId) {
+    public Inventory getInventoryDetail(int carId) {
         String sql = """
                 SELECT 
                     p.id, 
@@ -143,28 +143,28 @@ public class InventoryDAO extends DBContext {
                     ps.id as size_id, 
                     ps.size as size_name,
                     SUM(pv.stock_quantity) as total_quantity
-                FROM products p
+                FROM cars p
                 JOIN categories c ON p.category_id = c.id
-                LEFT JOIN product_variants pv ON p.id = pv.product_id
-                LEFT JOIN product_colors pc ON pv.color_id = pc.id
-                LEFT JOIN product_sizes ps ON pv.size_id = ps.id
+                LEFT JOIN car_variants pv ON p.id = pv.car_id
+                LEFT JOIN car_colors pc ON pv.color_id = pc.id
+                LEFT JOIN car_sizes ps ON pv.size_id = ps.id
                 WHERE p.id = ?
                 GROUP BY p.id, p.title, c.name, pc.id, pc.color, ps.id, ps.size
                 """;
 
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             ResultSet rs = st.executeQuery();
 
             Set<Color> colors = new TreeSet<>((c1, c2) -> c1.getName().compareToIgnoreCase(c2.getName()));
             Set<Size> sizes = new TreeSet<>((s1, s2) -> s1.getName().compareToIgnoreCase(s2.getName()));
-            String productName = null;
+            String carName = null;
             String category = null;
             int totalQuantity = 0;
 
             while (rs.next()) {
-                if (productName == null) {
-                    productName = rs.getString("title");
+                if (carName == null) {
+                    carName = rs.getString("title");
                     category = rs.getString("category_name");
                 }
 
@@ -178,35 +178,35 @@ public class InventoryDAO extends DBContext {
                 totalQuantity += rs.getInt("total_quantity");
             }
 
-            return new Inventory(productId, productName, category, colors, sizes, totalQuantity);
+            return new Inventory(carId, carName, category, colors, sizes, totalQuantity);
         } catch (SQLException e) {
             System.out.println("Error: " + e.getMessage());
         }
         return null;
     }
 
-    public List<Variant> getProductVariants(int productId) {
+    public List<Variant> getCarVariants(int carId) {
         String sql = """
                     SELECT 
                         pv.id, 
-                        pv.product_id, 
+                        pv.car_id, 
                         pc.id as color_id, 
                         pc.color as color_name,
                         ps.id as size_id, 
                         ps.size as size_name,
                         pv.stock_quantity, 
                         pv.last_restock_date
-                    FROM product_variants pv
-                    JOIN product_colors pc ON pv.color_id = pc.id
-                    JOIN product_sizes ps ON pv.size_id = ps.id
-                    WHERE pv.product_id = ?
+                    FROM car_variants pv
+                    JOIN car_colors pc ON pv.color_id = pc.id
+                    JOIN car_sizes ps ON pv.size_id = ps.id
+                    WHERE pv.car_id = ?
                     ORDER BY pc.color, ps.size
                     """;
 
         List<Variant> variants = new ArrayList<>();
 
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             ResultSet rs = st.executeQuery();
 
             while (rs.next()) {
@@ -215,7 +215,7 @@ public class InventoryDAO extends DBContext {
 
                 variants.add(new Variant(
                         rs.getInt("id"),
-                        productId,
+                        carId,
                         color,
                         size,
                         rs.getInt("stock_quantity"),
@@ -229,11 +229,11 @@ public class InventoryDAO extends DBContext {
         return variants;
     }
 
-    public Color getColorByName(int productId, String colorName) {
+    public Color getColorByName(int carId, String colorName) {
         colorName = colorName.trim();
-        String sql = "SELECT id, color FROM product_colors WHERE product_id = ? AND UPPER(TRIM(color)) = UPPER(?)";
+        String sql = "SELECT id, color FROM car_colors WHERE car_id = ? AND UPPER(TRIM(color)) = UPPER(?)";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             st.setString(2, colorName);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
@@ -245,11 +245,11 @@ public class InventoryDAO extends DBContext {
         return null;
     }
 
-    public Size getSizeByName(int productId, String sizeName) {
+    public Size getSizeByName(int carId, String sizeName) {
         sizeName = sizeName.trim();
-        String sql = "SELECT id, size FROM product_sizes WHERE product_id = ? AND UPPER(TRIM(size)) = UPPER(?)";
+        String sql = "SELECT id, size FROM car_sizes WHERE car_id = ? AND UPPER(TRIM(size)) = UPPER(?)";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             st.setString(2, sizeName);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
@@ -265,13 +265,13 @@ public class InventoryDAO extends DBContext {
         String sql = """
                     SELECT 
                         pv.id, 
-                        pv.product_id,
+                        pv.car_id,
                         pc.id as color_id, pc.color as color_name,
                         ps.id as size_id, ps.size as size_name,
                         pv.stock_quantity, pv.last_restock_date
-                    FROM product_variants pv
-                    JOIN product_colors pc ON pv.color_id = pc.id
-                    JOIN product_sizes ps ON pv.size_id = ps.id
+                    FROM car_variants pv
+                    JOIN car_colors pc ON pv.color_id = pc.id
+                    JOIN car_sizes ps ON pv.size_id = ps.id
                     WHERE pv.id = ?
                     """;
 
@@ -285,7 +285,7 @@ public class InventoryDAO extends DBContext {
 
                 return new Variant(
                         rs.getInt("id"),
-                        rs.getInt("product_id"),
+                        rs.getInt("car_id"),
                         color,
                         size,
                         rs.getInt("stock_quantity"),
@@ -298,10 +298,10 @@ public class InventoryDAO extends DBContext {
         return null;
     }
 
-    public boolean isVariantExists(int productId, int colorId, int sizeId) {
-        String sql = "SELECT COUNT(*) FROM product_variants WHERE product_id = ? AND color_id = ? AND size_id = ?";
+    public boolean isVariantExists(int carId, int colorId, int sizeId) {
+        String sql = "SELECT COUNT(*) FROM car_variants WHERE car_id = ? AND color_id = ? AND size_id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             st.setInt(2, colorId);
             st.setInt(3, sizeId);
             ResultSet rs = st.executeQuery();
@@ -314,10 +314,10 @@ public class InventoryDAO extends DBContext {
         return false;
     }
 
-    public boolean isVariantExists(int productId, int colorId, int sizeId, int excludeVariantId) {
-        String sql = "SELECT COUNT(*) FROM product_variants WHERE product_id = ? AND color_id = ? AND size_id = ? AND id <> ?";
+    public boolean isVariantExists(int carId, int colorId, int sizeId, int excludeVariantId) {
+        String sql = "SELECT COUNT(*) FROM car_variants WHERE car_id = ? AND color_id = ? AND size_id = ? AND id <> ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             st.setInt(2, colorId);
             st.setInt(3, sizeId);
             st.setInt(4, excludeVariantId);
@@ -331,11 +331,11 @@ public class InventoryDAO extends DBContext {
         return false;
     }
 
-    public List<Color> getColorsByProductId(int productId) {
+    public List<Color> getColorsByCarId(int carId) {
         List<Color> colors = new ArrayList<>();
-        String sql = "SELECT id, color FROM product_colors WHERE product_id = ?";
+        String sql = "SELECT id, color FROM car_colors WHERE car_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setInt(1, productId);
+            ps.setInt(1, carId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 colors.add(new Color(rs.getInt("id"), rs.getString("color")));
@@ -346,11 +346,11 @@ public class InventoryDAO extends DBContext {
         return colors;
     }
 
-    public List<Size> getSizesByProductId(int productId) {
+    public List<Size> getSizesByCarId(int carId) {
         List<Size> sizes = new ArrayList<>();
-        String sql = "SELECT id, size FROM product_sizes WHERE product_id = ?";
+        String sql = "SELECT id, size FROM car_sizes WHERE car_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setInt(1, productId);
+            ps.setInt(1, carId);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 sizes.add(new Size(rs.getInt("id"), rs.getString("size")));
@@ -361,10 +361,10 @@ public class InventoryDAO extends DBContext {
         return sizes;
     }
 
-    public int addColor(int productId, String colorName) {
-        String sql = "INSERT INTO product_colors (product_id, color) OUTPUT INSERTED.id VALUES (?, ?)";
+    public int addColor(int carId, String colorName) {
+        String sql = "INSERT INTO car_colors (car_id, color) OUTPUT INSERTED.id VALUES (?, ?)";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             st.setString(2, colorName);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
@@ -376,10 +376,10 @@ public class InventoryDAO extends DBContext {
         return -1;
     }
 
-    public int addSize(int productId, String sizeName) {
-        String sql = "INSERT INTO product_sizes (product_id, size) OUTPUT INSERTED.id VALUES (?, ?)";
+    public int addSize(int carId, String sizeName) {
+        String sql = "INSERT INTO car_sizes (car_id, size) OUTPUT INSERTED.id VALUES (?, ?)";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             st.setString(2, sizeName);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
@@ -391,10 +391,10 @@ public class InventoryDAO extends DBContext {
         return -1;
     }
 
-    public void addNewVariant(int productId, int colorId, int sizeId, int quantity) {
-        String sql = "INSERT INTO product_variants (product_id, color_id, size_id, stock_quantity, last_restock_date) VALUES (?, ?, ?, ?, GETDATE())";
+    public void addNewVariant(int carId, int colorId, int sizeId, int quantity) {
+        String sql = "INSERT INTO car_variants (car_id, color_id, size_id, stock_quantity, last_restock_date) VALUES (?, ?, ?, ?, GETDATE())";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             st.setInt(2, colorId);
             st.setInt(3, sizeId);
             st.setInt(4, quantity);
@@ -405,7 +405,7 @@ public class InventoryDAO extends DBContext {
     }
 
     public void updateSize(int sizeId, String newSize) {
-        String sql = "UPDATE product_sizes SET size = ? WHERE id = ?";
+        String sql = "UPDATE car_sizes SET size = ? WHERE id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setString(1, newSize);
             st.setInt(2, sizeId);
@@ -416,7 +416,7 @@ public class InventoryDAO extends DBContext {
     }
 
     public void updateColor(int colorId, String newColor) {
-        String sql = "UPDATE product_colors SET color = ? WHERE id = ?";
+        String sql = "UPDATE car_colors SET color = ? WHERE id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setString(1, newColor);
             st.setInt(2, colorId);
@@ -427,7 +427,7 @@ public class InventoryDAO extends DBContext {
     }
 
     public void updateVariant(int variantId, int colorId, int sizeId, int quantity) {
-        String sql = "UPDATE product_variants SET color_id = ?, size_id = ?, stock_quantity = ?, last_restock_date = GETDATE() WHERE id = ?";
+        String sql = "UPDATE car_variants SET color_id = ?, size_id = ?, stock_quantity = ?, last_restock_date = GETDATE() WHERE id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, colorId);
             st.setInt(2, sizeId);
@@ -440,7 +440,7 @@ public class InventoryDAO extends DBContext {
     }
 
     public void updateVariantQuantity(int variantId, int quantity) {
-        String sql = "UPDATE product_variants SET stock_quantity = ?, last_restock_date = GETDATE() WHERE id = ?";
+        String sql = "UPDATE car_variants SET stock_quantity = ?, last_restock_date = GETDATE() WHERE id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, quantity);
             st.setInt(2, variantId);
@@ -452,7 +452,7 @@ public class InventoryDAO extends DBContext {
 
     public boolean deleteVariant(int variantId) {
         // lấy color_id and size_id
-        String getIdsSQL = "SELECT color_id, size_id FROM product_variants WHERE id = ?";
+        String getIdsSQL = "SELECT color_id, size_id FROM car_variants WHERE id = ?";
         int colorId = 0;
         int sizeId = 0;
         try (PreparedStatement st = connection.prepareStatement(getIdsSQL)) {
@@ -469,14 +469,14 @@ public class InventoryDAO extends DBContext {
         // Bắt đầu transaction
         try {
             connection.setAutoCommit(false);
-            // Xóa từ bảng product_variants
-            try (PreparedStatement st = connection.prepareStatement("DELETE FROM product_variants WHERE id = ?")) {
+            // Xóa từ bảng car_variants
+            try (PreparedStatement st = connection.prepareStatement("DELETE FROM car_variants WHERE id = ?")) {
                 st.setInt(1, variantId);
                 st.executeUpdate();
             }
             // Kiểm tra và xóa color nếu không còn sử dụng
             boolean colorInUse = false;
-            try (PreparedStatement st = connection.prepareStatement("SELECT COUNT(*) FROM product_variants WHERE color_id = ?")) {
+            try (PreparedStatement st = connection.prepareStatement("SELECT COUNT(*) FROM car_variants WHERE color_id = ?")) {
                 st.setInt(1, colorId);
                 ResultSet rs = st.executeQuery();
                 if (rs.next()) {
@@ -484,14 +484,14 @@ public class InventoryDAO extends DBContext {
                 }
             }
             if (!colorInUse) {
-                try (PreparedStatement st = connection.prepareStatement("DELETE FROM product_colors WHERE id = ?")) {
+                try (PreparedStatement st = connection.prepareStatement("DELETE FROM car_colors WHERE id = ?")) {
                     st.setInt(1, colorId);
                     st.executeUpdate();
                 }
             }
             // Kiểm tra và xóa size nếu không còn sử dụng
             boolean sizeInUse = false;
-            try (PreparedStatement st = connection.prepareStatement("SELECT COUNT(*) FROM product_variants WHERE size_id = ?")) {
+            try (PreparedStatement st = connection.prepareStatement("SELECT COUNT(*) FROM car_variants WHERE size_id = ?")) {
                 st.setInt(1, sizeId);
                 ResultSet rs = st.executeQuery();
                 if (rs.next()) {
@@ -499,7 +499,7 @@ public class InventoryDAO extends DBContext {
                 }
             }
             if (!sizeInUse) {
-                try (PreparedStatement st = connection.prepareStatement("DELETE FROM product_sizes WHERE id = ?")) {
+                try (PreparedStatement st = connection.prepareStatement("DELETE FROM car_sizes WHERE id = ?")) {
                     st.setInt(1, sizeId);
                     st.executeUpdate();
                 }
@@ -525,12 +525,12 @@ public class InventoryDAO extends DBContext {
     }
 
     public void cleanupOrphanColor(int colorId) {
-        String sql = "SELECT COUNT(*) FROM product_variants WHERE color_id = ?";
+        String sql = "SELECT COUNT(*) FROM car_variants WHERE color_id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, colorId);
             ResultSet rs = st.executeQuery();
             if (rs.next() && rs.getInt(1) == 0) {
-                try (PreparedStatement del = connection.prepareStatement("DELETE FROM product_colors WHERE id = ?")) {
+                try (PreparedStatement del = connection.prepareStatement("DELETE FROM car_colors WHERE id = ?")) {
                     del.setInt(1, colorId);
                     del.executeUpdate();
                 }
@@ -541,12 +541,12 @@ public class InventoryDAO extends DBContext {
     }
 
     public void cleanupOrphanSize(int sizeId) {
-        String sql = "SELECT COUNT(*) FROM product_variants WHERE size_id = ?";
+        String sql = "SELECT COUNT(*) FROM car_variants WHERE size_id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, sizeId);
             ResultSet rs = st.executeQuery();
             if (rs.next() && rs.getInt(1) == 0) {
-                try (PreparedStatement del = connection.prepareStatement("DELETE FROM product_sizes WHERE id = ?")) {
+                try (PreparedStatement del = connection.prepareStatement("DELETE FROM car_sizes WHERE id = ?")) {
                     del.setInt(1, sizeId);
                     del.executeUpdate();
                 }
@@ -557,7 +557,7 @@ public class InventoryDAO extends DBContext {
     }
 
     public int countVariantsUsingColor(int colorId) {
-        String sql = "SELECT COUNT(*) FROM product_variants WHERE color_id = ?";
+        String sql = "SELECT COUNT(*) FROM car_variants WHERE color_id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, colorId);
             ResultSet rs = st.executeQuery();
@@ -571,7 +571,7 @@ public class InventoryDAO extends DBContext {
     }
 
     public int countVariantsUsingSize(int sizeId) {
-        String sql = "SELECT COUNT(*) FROM product_variants WHERE size_id = ?";
+        String sql = "SELECT COUNT(*) FROM car_variants WHERE size_id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
             st.setInt(1, sizeId);
             ResultSet rs = st.executeQuery();
@@ -584,10 +584,10 @@ public class InventoryDAO extends DBContext {
         return 0;
     }
 
-    public int getVariantId(int productId, int colorId, int sizeId) {
-        String sql = "SELECT id FROM product_variants WHERE product_id = ? AND color_id = ? AND size_id = ?";
+    public int getVariantId(int carId, int colorId, int sizeId) {
+        String sql = "SELECT id FROM car_variants WHERE car_id = ? AND color_id = ? AND size_id = ?";
         try (PreparedStatement st = connection.prepareStatement(sql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             st.setInt(2, colorId);
             st.setInt(3, sizeId);
             ResultSet rs = st.executeQuery();
@@ -605,7 +605,7 @@ public class InventoryDAO extends DBContext {
     public boolean decreaseVariantStock(int variantId, int quantity) {
         try {
             // First, check current stock to ensure we don't go below 0
-            String checkSql = "SELECT stock_quantity FROM product_variants WHERE id = ?";
+            String checkSql = "SELECT stock_quantity FROM car_variants WHERE id = ?";
             PreparedStatement checkStmt = connection.prepareStatement(checkSql);
             checkStmt.setInt(1, variantId);
             ResultSet rs = checkStmt.executeQuery();
@@ -615,7 +615,7 @@ public class InventoryDAO extends DBContext {
                 int newStock = Math.max(0, currentStock - quantity); // Ensure we don't go below 0
 
                 // Update the stock
-                String updateSql = "UPDATE product_variants SET stock_quantity = ? WHERE id = ?";
+                String updateSql = "UPDATE car_variants SET stock_quantity = ? WHERE id = ?";
                 PreparedStatement updateStmt = connection.prepareStatement(updateSql);
                 updateStmt.setInt(1, newStock);
                 updateStmt.setInt(2, variantId);
@@ -638,25 +638,25 @@ public class InventoryDAO extends DBContext {
     }
 
 // Thêm phương thức kiểm tra và cập nhật trạng thái sản phẩm
-    private void updateProductStatus(int productId) {
-        String checkStockSql = "SELECT SUM(stock_quantity) as total FROM product_variants WHERE product_id = ?";
+    private void updateCarStatus(int carId) {
+        String checkStockSql = "SELECT SUM(stock_quantity) as total FROM car_variants WHERE car_id = ?";
         try (PreparedStatement st = connection.prepareStatement(checkStockSql)) {
-            st.setInt(1, productId);
+            st.setInt(1, carId);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 int totalStock = rs.getInt("total");
                 String newStatus = totalStock > 0 ? "active" : "EOStock";
 
                 // Cập nhật trạng thái sản phẩm
-                String updateStatusSql = "UPDATE products SET status = ? WHERE id = ?";
+                String updateStatusSql = "UPDATE cars SET status = ? WHERE id = ?";
                 try (PreparedStatement updateSt = connection.prepareStatement(updateStatusSql)) {
                     updateSt.setString(1, newStatus);
-                    updateSt.setInt(2, productId);
+                    updateSt.setInt(2, carId);
                     updateSt.executeUpdate();
                 }
             }
         } catch (SQLException e) {
-            System.out.println("Error updating product status: " + e.getMessage());
+            System.out.println("Error updating car status: " + e.getMessage());
         }
     }
 
@@ -666,29 +666,29 @@ public class InventoryDAO extends DBContext {
         }
 
         try {
-            // Cập nhật số lượng trong bảng product_variants
-            String sql = "UPDATE product_variants SET stock_quantity = stock_quantity + ?, last_restock_date = GETDATE() WHERE id = ?";
+            // Cập nhật số lượng trong bảng car_variants
+            String sql = "UPDATE car_variants SET stock_quantity = stock_quantity + ?, last_restock_date = GETDATE() WHERE id = ?";
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, quantity);
             stmt.setInt(2, variantId);
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                // Lấy product_id từ variant_id
-                String sqlGetProduct = "SELECT product_id FROM product_variants WHERE id = ?";
-                PreparedStatement stmtGetProduct = connection.prepareStatement(sqlGetProduct);
-                stmtGetProduct.setInt(1, variantId);
-                ResultSet rs = stmtGetProduct.executeQuery();
+                // Lấy car_id từ variant_id
+                String sqlGetCar = "SELECT car_id FROM car_variants WHERE id = ?";
+                PreparedStatement stmtGetCar = connection.prepareStatement(sqlGetCar);
+                stmtGetCar.setInt(1, variantId);
+                ResultSet rs = stmtGetCar.executeQuery();
 
                 if (rs.next()) {
-                    int productId = rs.getInt("product_id");
+                    int carId = rs.getInt("car_id");
 
                     // Cập nhật trạng thái sản phẩm nếu cần
-                    updateProductStatus(productId);
+                    updateCarStatus(carId);
                 }
 
                 rs.close();
-                stmtGetProduct.close();
+                stmtGetCar.close();
                 return true;
             }
 
@@ -700,15 +700,15 @@ public class InventoryDAO extends DBContext {
         }
     }
 
-    public Integer getVariantId(int productId, String size, String color) {
-        String query = "SELECT pv.id FROM product_variants pv "
-                + "JOIN product_sizes ps ON pv.size_id = ps.id "
-                + "JOIN product_colors pc ON pv.color_id = pc.id "
-                + "WHERE pv.product_id = ? AND ps.size = ? AND pc.color = ?";
+    public Integer getVariantId(int carId, String size, String color) {
+        String query = "SELECT pv.id FROM car_variants pv "
+                + "JOIN car_sizes ps ON pv.size_id = ps.id "
+                + "JOIN car_colors pc ON pv.color_id = pc.id "
+                + "WHERE pv.car_id = ? AND ps.size = ? AND pc.color = ?";
 
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
 
-            stmt.setInt(1, productId);
+            stmt.setInt(1, carId);
             stmt.setString(2, size);
             stmt.setString(3, color);
 

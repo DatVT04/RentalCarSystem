@@ -122,7 +122,7 @@ public class CartCompletion extends HttpServlet {
     // Tính toán tổng tiền
     double subtotal = 0;
     for (CartItem item : selectedItems) {
-        subtotal += item.getProductPrice() * item.getQuantity();
+        subtotal += item.getCarPrice() * item.getQuantity();
     }
     // Kiểm tra lại phí vận chuyển dựa trên subtotal
     if (subtotal > 500000) {
@@ -191,7 +191,7 @@ public class CartCompletion extends HttpServlet {
         request.setAttribute("paymentStatus", order.getPaymentStatus());
         double subtotal = 0;
         for (CartItem item : order.getItems()) {
-            subtotal += item.getProductPrice() * item.getQuantity();
+            subtotal += item.getCarPrice() * item.getQuantity();
         }
         request.setAttribute("subtotal", subtotal);
         if (order.getDiscountAmount() > 0) {

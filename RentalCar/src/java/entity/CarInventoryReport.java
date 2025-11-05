@@ -10,10 +10,10 @@ import java.math.BigDecimal;
  *
  * @author VuxD4t
  */
-public class ProductInventoryReport {
+public class CarInventoryReport {
 
     private String status;
-    private int totalProducts;
+    private int totalCars;
     private int totalStock;
     private int lowStockCount;
     private int totalSoldQuantity;
@@ -29,12 +29,12 @@ public class ProductInventoryReport {
         this.status = status;
     }
 
-    public int getTotalProducts() {
-        return totalProducts;
+    public int getTotalCars() {
+        return totalCars;
     }
 
-    public void setTotalProducts(int totalProducts) {
-        this.totalProducts = totalProducts;
+    public void setTotalCars(int totalCars) {
+        this.totalCars = totalCars;
     }
 
     public int getTotalStock() {

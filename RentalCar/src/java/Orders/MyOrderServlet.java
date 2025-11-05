@@ -141,7 +141,7 @@ public class MyOrderServlet extends HttpServlet {
                             if (i > 0) {
                                 queryParams.append("&");
                             }
-                            queryParams.append("productId=").append(item.getProductId())
+                            queryParams.append("carId=").append(item.getCarId())
                                     .append("&size=").append(URLEncoder.encode(item.getSize(), StandardCharsets.UTF_8.toString()))
                                     .append("&color=").append(URLEncoder.encode(item.getColor(), StandardCharsets.UTF_8.toString()))
                                     .append("&quantity=").append(item.getQuantity());

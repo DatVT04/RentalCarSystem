@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package owner.Product;
+package owner.Car;
 
 import DAO.CartDAO;
 import DAO.InventoryDAO;
-import DAO.ProductDAO;
-import entity.Product;
+import DAO.CarDAO;
+import entity.Car;
 import entity.User;
 import entity.Variant;
 import jakarta.servlet.ServletException;
@@ -24,13 +24,13 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@WebServlet(name = "DeleteProductServlet", urlPatterns = {"/owner/deleteproduct"})
-public class DeleteProductServlet extends HttpServlet {
+@WebServlet(name = "DeleteCarServlet", urlPatterns = {"/owner/deletecar"})
+public class DeleteCarServlet extends HttpServlet {
 
-    private ProductDAO productDAO = new ProductDAO();
+    private CarDAO carDAO = new CarDAO();
     private CartDAO cartDAO = new CartDAO();
     private InventoryDAO inventoryDAO = new InventoryDAO();
-    private static final String UPLOAD_DIR = "uploads/productImages";
+    private static final String UPLOAD_DIR = "uploads/carImages";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,10 +39,10 @@ public class DeleteProductServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DeleteProductServlet</title>");
+            out.println("<title>Servlet DeleteCarServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DeleteProductServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet DeleteCarServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -52,22 +52,22 @@ public class DeleteProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            int productId = Integer.parseInt(request.getParameter("productId"));
+            int carId = Integer.parseInt(request.getParameter("carId"));
             String uploadPath = getServletContext().getRealPath("/" + UPLOAD_DIR);
-            Product product = productDAO.getProductById(productId);
+            Car car = carDAO.getCarById(carId);
 
             // Kiểm tra đơn hàng
-            if (productDAO.hasProcessOrders(productId)) {
-                response.sendRedirect("productlist?alert=ER1_OP");
+            if (carDAO.hasProcessOrders(carId)) {
+                response.sendRedirect("carlist?alert=ER1_OP");
                 return;
             }
 
             // Kiểm tra kho
-            if (productDAO.hasStock(productId)) {
-                response.sendRedirect("productlist?alert=ER2_HS");
+            if (carDAO.hasStock(carId)) {
+                response.sendRedirect("carlist?alert=ER2_HS");
                 return;
             } else {
-                List<Variant> listVariants = inventoryDAO.getProductVariants(productId);
+                List<Variant> listVariants = inventoryDAO.getCarVariants(carId);
                 List<Integer> variantIds = new ArrayList<>();
                 for (Variant tempV : listVariants) {
                     variantIds.add(tempV.getId());
@@ -89,12 +89,12 @@ public class DeleteProductServlet extends HttpServlet {
             }
 
             // Xử lý combo
-            Product tempP = productDAO.getProductById(productId);
+            Car tempP = carDAO.getCarById(carId);
             if (tempP.isIsCombo()) {
-                List<Product> comboList = productDAO.getComboProduct(tempP.getComboGroupId());
+                List<Car> comboList = carDAO.getComboCar(tempP.getComboGroupId());
                 if (comboList.size() >= 2) {
-                    int upProductId = comboList.get(comboList.size() - 2).getId();
-                    productDAO.setIsComboByProductId(upProductId, true);
+                    int upCarId = comboList.get(comboList.size() - 2).getId();
+                    carDAO.setIsComboByCarId(upCarId, true);
                 }
             }
 
@@ -108,10 +108,10 @@ public class DeleteProductServlet extends HttpServlet {
             }
 
             // Xóa sản phẩm và ảnh liên quan
-            if (productDAO.deleteProduct(productId, uploadPath)) {
-                response.sendRedirect("productlist?alert=SSD");
+            if (carDAO.deleteCar(carId, uploadPath)) {
+                response.sendRedirect("carlist?alert=SSD");
             } else {
-                response.sendRedirect("productlist?alert=ERR");
+                response.sendRedirect("carlist?alert=ERR");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -137,9 +137,9 @@ public class DeleteProductServlet extends HttpServlet {
         Matcher matcher = pattern.matcher(htmlContent);
         while (matcher.find()) {
             String src = matcher.group(1);
-            // Chỉ lấy các URL thuộc thư mục uploads/productImages
+            // Chỉ lấy các URL thuộc thư mục uploads/carImages
             if (src.contains(UPLOAD_DIR)) {
-                // Loại bỏ context path nếu có (ví dụ: /context/uploads/productImages/...)
+                // Loại bỏ context path nếu có (ví dụ: /context/uploads/carImages/...)
                 String relativePath = src.substring(src.indexOf(UPLOAD_DIR));
                 imageUrls.add(relativePath);
             }

@@ -5,7 +5,7 @@
 package owner.Inventory;
 
 import DAO.InventoryDAO;
-import DAO.ProductDAO;
+import DAO.CarDAO;
 import entity.Color;
 import entity.Size;
 import entity.Variant;
@@ -43,9 +43,9 @@ public class EditModelServlet extends HttpServlet {
                 return;
             }
 
-            List<Color> colorList = dao.getColorsByProductId(variant.getProductId());
-            List<Size> sizeList = dao.getSizesByProductId(variant.getProductId());
-            List<Variant> variants = dao.getProductVariants(variant.getProductId()); // Lấy danh sách variants
+            List<Color> colorList = dao.getColorsByCarId(variant.getCarId());
+            List<Size> sizeList = dao.getSizesByCarId(variant.getCarId());
+            List<Variant> variants = dao.getCarVariants(variant.getCarId()); // Lấy danh sách variants
 
             request.setAttribute("variant", variant);
             request.setAttribute("colorList", colorList);
@@ -64,11 +64,11 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
     request.setCharacterEncoding("UTF-8");
     InventoryDAO inventoryDao = new InventoryDAO();
-    ProductDAO productDao = new ProductDAO();
+    CarDAO carDao = new CarDAO();
 
     try {
         int variantId = Integer.parseInt(request.getParameter("variantId"));
-        int productId = Integer.parseInt(request.getParameter("productId"));
+        int carId = Integer.parseInt(request.getParameter("carId"));
         String source = request.getParameter("source");
         String colorName = request.getParameter("color").trim();
         String sizeName = request.getParameter("size").trim();
@@ -76,9 +76,9 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         String stockAction = request.getParameter("stockAction");
         String stockChangeStr = request.getParameter("stockChange");
 
-        List<Color> colorList = inventoryDao.getColorsByProductId(productId);
-        List<Size> sizeList = inventoryDao.getSizesByProductId(productId);
-        List<Variant> variants = inventoryDao.getProductVariants(productId);
+        List<Color> colorList = inventoryDao.getColorsByCarId(carId);
+        List<Size> sizeList = inventoryDao.getSizesByCarId(carId);
+        List<Variant> variants = inventoryDao.getCarVariants(carId);
 
         if (colorName.isEmpty() || sizeName.isEmpty()) {
             request.setAttribute("errorMessage", "Màu sắc và kích thước không được để trống");
@@ -112,7 +112,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
             }
         } catch (NumberFormatException e) {
             request.setAttribute("errorMessage", "Số lượng phải là số nguyên từ 0 đến " + MAX_QUANTITY);
-            request.setAttribute("productId", productId);
+            request.setAttribute("carId", carId);
             request.setAttribute("source", source);
             request.setAttribute("colorList", colorList);
             request.setAttribute("sizeList", sizeList);
@@ -181,14 +181,14 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         if (currentVariant.getColor().getName().equalsIgnoreCase(colorName)) {
             newColor = currentVariant.getColor();
         } else {
-            newColor = inventoryDao.getColorByName(productId, colorName);
+            newColor = inventoryDao.getColorByName(carId, colorName);
             if (newColor == null) {
                 int usageCount = inventoryDao.countVariantsUsingColor(oldColorId);
                 if (usageCount == 1) {
                     inventoryDao.updateColor(oldColorId, colorName);
                     newColor = new Color(oldColorId, colorName);
                 } else {
-                    int newColorId = inventoryDao.addColor(productId, colorName);
+                    int newColorId = inventoryDao.addColor(carId, colorName);
                     newColor = new Color(newColorId, colorName);
                 }
             }
@@ -198,20 +198,20 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         if (currentVariant.getSize().getName().equalsIgnoreCase(sizeName)) {
             newSize = currentVariant.getSize();
         } else {
-            newSize = inventoryDao.getSizeByName(productId, sizeName);
+            newSize = inventoryDao.getSizeByName(carId, sizeName);
             if (newSize == null) {
                 int usageCount = inventoryDao.countVariantsUsingSize(oldSizeId);
                 if (usageCount == 1) {
                     inventoryDao.updateSize(oldSizeId, sizeName);
                     newSize = new Size(oldSizeId, sizeName);
                 } else {
-                    int newSizeId = inventoryDao.addSize(productId, sizeName);
+                    int newSizeId = inventoryDao.addSize(carId, sizeName);
                     newSize = new Size(newSizeId, sizeName);
                 }
             }
         }
 
-        if (inventoryDao.isVariantExists(productId, newColor.getId(), newSize.getId(), variantId)) {
+        if (inventoryDao.isVariantExists(carId, newColor.getId(), newSize.getId(), variantId)) {
             request.setAttribute("errorMessage", "Mẫu với màu sắc và kích thước này đã tồn tại");
             request.setAttribute("variant", currentVariant);
             request.setAttribute("colorList", colorList);
@@ -223,7 +223,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         }
 
         inventoryDao.updateVariant(variantId, newColor.getId(), newSize.getId(), finalQuantity);
-        productDao.updateProductStatusIfNeeded(productId);
+        carDao.updateCarStatusIfNeeded(carId);
 
         if (oldColorId != newColor.getId()) {
             inventoryDao.cleanupOrphanColor(oldColorId);
@@ -232,17 +232,17 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
             inventoryDao.cleanupOrphanSize(oldSizeId);
         }
 
-        String redirectUrl = "inventoryDetail?id=" + productId + "&success=edit";
+        String redirectUrl = "inventoryDetail?id=" + carId + "&success=edit";
         if (source != null && !source.trim().isEmpty()) {
             redirectUrl += "&source=" + source;
         }
         response.sendRedirect(redirectUrl);
 
     } catch (NumberFormatException e) {
-        int productId = Integer.parseInt(request.getParameter("productId"));
-        List<Color> colorList = inventoryDao.getColorsByProductId(productId);
-        List<Size> sizeList = inventoryDao.getSizesByProductId(productId);
-        List<Variant> variants = inventoryDao.getProductVariants(productId);
+        int carId = Integer.parseInt(request.getParameter("carId"));
+        List<Color> colorList = inventoryDao.getColorsByCarId(carId);
+        List<Size> sizeList = inventoryDao.getSizesByCarId(carId);
+        List<Variant> variants = inventoryDao.getCarVariants(carId);
 
         request.setAttribute("errorMessage", "Dữ liệu không hợp lệ");
         request.setAttribute("variant", inventoryDao.getVariant(Integer.parseInt(request.getParameter("variantId"))));

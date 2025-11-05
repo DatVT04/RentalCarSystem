@@ -351,8 +351,8 @@
                                                 <tr>
                                                     <td class="text-center">${status.index + 1 + (currentPage - 1)*10}</td>
                                                     <td>
-                                                        <img src="${feedback.productThumbnail}" alt="Thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
-                                                        ${feedback.productTitle}
+                                                        <img src="${feedback.carThumbnail}" alt="Thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
+                                                        ${feedback.carTitle}
                                                     </td>
                                                     <td>
                                                         <span class="rating">
@@ -370,7 +370,7 @@
                                                     </td>
                                                     <td>${feedback.comment}</td> <!-- feedback_count lưu trong comment -->
                                                     <td class="text-center">
-                                                        <a href="feedbackdetail?productId=${feedback.productId}" class="btn btn-outline-primary btn-sm">
+                                                        <a href="feedbackdetail?carId=${feedback.carId}" class="btn btn-outline-primary btn-sm">
                                                             <i class="fas fa-eye"></i> Xem chi tiết
                                                         </a>
                                                     </td>

@@ -521,7 +521,7 @@
                                             <td>
                                                 <c:choose>
                                                     <c:when test="${not empty order.items and order.items.size() > 0}">
-                                                        ${order.getItems().get(0).getProductTitle()}
+                                                        ${order.getItems().get(0).getCarTitle()}
                                                         <c:if test="${order.items.size() > 1}">
                                                             và ${order.items.size() - 1} sản phẩm khác
                                                         </c:if>
@@ -544,7 +544,7 @@
 <!--                                                <a href="orderdetails?id=${order.id}" class="btn btn-primary btn-sm action-btn" title="Xem chi tiết">
                                                     <i class="fas fa-eye"></i>
                                                 </a>-->
-                                                <a href="orderdetails?id=${order.id}" class="btn btn-info btn-sm action-btn" title="Chỉnh sửa">
+                                                <a href="${pageContext.request.contextPath}/sale/orderdetails?id=${order.id}" class="btn btn-info btn-sm action-btn" title="Chỉnh sửa">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                             </td>

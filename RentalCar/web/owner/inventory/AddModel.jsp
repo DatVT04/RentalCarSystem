@@ -159,7 +159,7 @@
                 <div class="info-section">
                     <h5>Thêm Mẫu Mới</h5>
                     <form action="addModel" method="POST">
-                        <input type="hidden" name="productId" value="${productId}">
+                        <input type="hidden" name="carId" value="${carId}">
                         <input type="hidden" name="source" value="${param.source}">
 
                         <div class="row g-3">

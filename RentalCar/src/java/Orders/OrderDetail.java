@@ -73,7 +73,7 @@ public class OrderDetail extends HttpServlet {
         double subtotal = 0;
         if (order.getItems() != null && !order.getItems().isEmpty()) {
             for (CartItem item : order.getItems()) {
-                subtotal += item.getProductPrice() * item.getQuantity();
+                subtotal += item.getCarPrice() * item.getQuantity();
             }
         }
         if (subtotal > 500000) {
@@ -133,7 +133,7 @@ public class OrderDetail extends HttpServlet {
                     if (i > 0) {
                         queryParams.append("&");
                     }
-                    queryParams.append("productId=").append(item.getProductId())
+                    queryParams.append("carId=").append(item.getCarId())
                             .append("&size=").append(URLEncoder.encode(item.getSize(), StandardCharsets.UTF_8.toString()))
                             .append("&color=").append(URLEncoder.encode(item.getColor(), StandardCharsets.UTF_8.toString()))
                             .append("&quantity=").append(item.getQuantity());

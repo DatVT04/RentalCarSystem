@@ -93,7 +93,7 @@
         border: 1px solid #dee2e6;
     }
 
-    /* Product Image */
+    /* Car Image */
     .main-content .table img {
         max-width: 150px;
         max-height: 150px;
@@ -300,13 +300,13 @@
                                 <c:forEach items="${order.items}" var="item">
                                     <tr>
                                         <td>
-                                            <img src="${item.productThumbnail.contains('http') ? item.productThumbnail : pageContext.request.contextPath+item.productThumbnail}" alt="alt" height="150px"/>
+                                            <img src="${item.carThumbnail.contains('http') ? item.carThumbnail : pageContext.request.contextPath+item.carThumbnail}" alt="alt" height="150px"/>
                                         </td>
-                                        <td>${item.productTitle}</td>
+                                        <td>${item.carTitle}</td>
                                         <td>${item.size}</td>
                                         <td>${item.color}</td>
                                         <td>${item.quantity}</td>
-                                        <td><fmt:formatNumber value="${item.productPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
+                                        <td><fmt:formatNumber value="${item.carPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
                                     </tr>
                                 </c:forEach>
                             </tbody>

@@ -203,8 +203,8 @@
                 margin-top: 15px;
             }
 
-            /* Product Card */
-            .product-card {
+            /* Car Card */
+            .car-card {
                 border: none;
                 border-radius: 20px;
                 overflow: hidden;
@@ -216,29 +216,29 @@
                 flex-direction: column;
             }
 
-            .product-card:hover {
+            .car-card:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             }
 
-            .product-card .img-wrapper {
+            .car-card .img-wrapper {
                 position: relative;
                 overflow: hidden;
                 height: 280px;
             }
 
-            .product-card .thumbnail-img {
+            .car-card .thumbnail-img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 transition: transform 0.5s ease;
             }
 
-            .product-card:hover .thumbnail-img {
+            .car-card:hover .thumbnail-img {
                 transform: scale(1.15);
             }
 
-            .product-badge {
+            .car-badge {
                 position: absolute;
                 top: 15px;
                 right: 15px;
@@ -252,14 +252,14 @@
                 box-shadow: 0 3px 10px rgba(30, 136, 229, 0.4);
             }
 
-            .product-card .card-body {
+            .car-card .card-body {
                 padding: 25px;
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
             }
 
-            .product-title {
+            .car-title {
                 font-size: 1.2rem;
                 font-weight: 700;
                 color: var(--text-dark);
@@ -272,7 +272,7 @@
                 min-height: 60px;
             }
 
-            .product-specs {
+            .car-specs {
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 15px;
@@ -293,7 +293,7 @@
                 color: var(--primary-color);
             }
 
-            .product-price {
+            .car-price {
                 color: var(--primary-color);
                 font-size: 1.6rem;
                 font-weight: 800;
@@ -301,7 +301,7 @@
                 margin-top: auto;
             }
 
-            .product-price span {
+            .car-price span {
                 font-size: 0.9rem;
                 color: var(--text-light);
                 font-weight: 400;
@@ -326,7 +326,7 @@
             }
 
             /* Swiper */
-            .productSwiper {
+            .carSwiper {
                 padding: 30px 0 60px;
             }
 
@@ -516,7 +516,7 @@
                     font-size: 1.8rem;
                 }
 
-                .product-card .img-wrapper {
+                .car-card .img-wrapper {
                     height: 220px;
                 }
 
@@ -544,7 +544,7 @@
                     <div class="carousel-caption">
                         <h1>Thuê Xe Ô Tô Chất Lượng Cao</h1>
                         <p>Đa dạng dòng xe - Giá tốt nhất - Giao xe nhanh chóng</p>
-                        <a href="listproduct" class="btn btn-hero">Xem Dòng Xe</a>
+                        <a href="listcar" class="btn btn-hero">Xem Dòng Xe</a>
                     </div>
                 </div>
 
@@ -553,7 +553,7 @@
                     <div class="carousel-caption">
                         <h1>Ưu Đãi Lên Đến 30%</h1>
                         <p>Giảm giá đặc biệt cho thuê dài ngày và đặt xe online</p>
-                        <a href="listproduct" class="btn btn-hero">Đặt Xe Ngay</a>
+                        <a href="listcar" class="btn btn-hero">Đặt Xe Ngay</a>
                     </div>
                 </div>
 
@@ -562,7 +562,7 @@
                     <div class="carousel-caption">
                         <h1>Dòng Xe Đời Mới Nhất</h1>
                         <p>Xe 4-7 chỗ, tự lái hoặc có tài xế, phục vụ 24/7</p>
-                        <a href="listproduct" class="btn btn-hero">Khám Phá Ngay</a>
+                        <a href="listcar" class="btn btn-hero">Khám Phá Ngay</a>
                     </div>
                 </div>
             </div>
@@ -611,7 +611,7 @@
             </div>
         </section>
 
-        <!-- Featured Products -->
+        <!-- Featured Cars -->
         <section class="category-section">
             <div class="container">
                 <div class="section-title">
@@ -619,19 +619,19 @@
                     <p>Những dòng xe mới nhất, chất lượng cao được nhiều khách hàng tin tưởng</p>
                 </div>
 
-                <div class="swiper productSwiper">
+                <div class="swiper carSwiper">
                     <div class="swiper-wrapper">
-                        <c:forEach items="${featuredProducts}" var="product">
+                        <c:forEach items="${featuredCars}" var="car">
                             <div class="swiper-slide">
-                                <a href="productdetail?id=${product.id}" class="text-decoration-none">
-                                    <div class="card product-card">
+                                <a href="cardetail?id=${car.id}" class="text-decoration-none">
+                                    <div class="card car-card">
                                         <div class="img-wrapper">
-                                            <img src="${product.thumbnail}" class="thumbnail-img" alt="${product.title}">
-                                            <span class="product-badge">Mới</span>
+                                            <img src="${car.thumbnail}" class="thumbnail-img" alt="${car.title}">
+                                            <span class="car-badge">Mới</span>
                                         </div>
                                         <div class="card-body">
-                                            <h5 class="product-title">${product.title}</h5>
-                                            <div class="product-specs">
+                                            <h5 class="car-title">${car.title}</h5>
+                                            <div class="car-specs">
                                                     <%
                                                         java.util.Random rand = new java.util.Random();
                                                         java.util.List<String[]> specList = java.util.Arrays.asList(
@@ -643,7 +643,7 @@
                                                             new String[]{"fa-snowflake", "Điều hòa " + (rand.nextBoolean() ? "2 vùng" : "tự động")}  // Random AC info
                                                         );
                                                         java.util.Collections.shuffle(specList);
-                                                        for (int i = 0; i < 2; i++) {  // Show 2 random specs per product
+                                                        for (int i = 0; i < 2; i++) {  // Show 2 random specs per car
                                                             String[] spec = specList.get(i);
                                                     %>
                                                     <div class="spec-item">
@@ -654,8 +654,8 @@
                                                         }
                                                     %>
                                                 </div>
-                                            <div class="product-price">
-                                                <fmt:formatNumber value="${product.salePrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/>
+                                            <div class="car-price">
+                                                <fmt:formatNumber value="${car.salePrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/>
                                                 <span>/ngày</span>
                                             </div>
                                             <button class="btn-rent">Thuê Xe Ngay</button>
@@ -679,23 +679,23 @@
                 <div class="container">
                     <div class="section-title" style="display: flex; justify-content: space-between; align-items: center;">
                         <h2>${category.name}</h2>
-                        <a href="listproduct?category=${category.id}" class="btn btn-cta-secondary">
+                        <a href="listcar?category=${category.id}" class="btn btn-cta-secondary">
                             Xem Tất Cả <i class="fas fa-arrow-right ms-2"></i>
                         </a>
                     </div>
 
                     <div class="row g-4">
-                        <c:forEach items="${productsByCategory[category.id]}" var="product" varStatus="status">
+                        <c:forEach items="${carsByCategory[category.id]}" var="car" varStatus="status">
                             <c:if test="${status.index < 4}">
                                 <div class="col-lg-3 col-md-6">
-                                    <a href="productdetail?id=${product.id}" class="text-decoration-none">
-                                        <div class="card product-card">
+                                    <a href="cardetail?id=${car.id}" class="text-decoration-none">
+                                        <div class="card car-card">
                                             <div class="img-wrapper">
-                                                <img src="${product.thumbnail}" class="thumbnail-img" alt="${product.title}">
+                                                <img src="${car.thumbnail}" class="thumbnail-img" alt="${car.title}">
                                             </div>
                                             <div class="card-body">
-                                                <h5 class="product-title">${product.title}</h5>
-                                                <div class="product-specs">
+                                                <h5 class="car-title">${car.title}</h5>
+                                                <div class="car-specs">
                                                     <%
                                                         java.util.Random rand = new java.util.Random();
                                                         java.util.List<String[]> specList = java.util.Arrays.asList(
@@ -707,7 +707,7 @@
                                                             new String[]{"fa-snowflake", "Điều hòa " + (rand.nextBoolean() ? "2 vùng" : "tự động")}  // Random AC info
                                                         );
                                                         java.util.Collections.shuffle(specList);
-                                                        for (int i = 0; i < 2; i++) {  // Show 2 random specs per product
+                                                        for (int i = 0; i < 2; i++) {  // Show 2 random specs per car
                                                             String[] spec = specList.get(i);
                                                     %>
                                                     <div class="spec-item">
@@ -718,8 +718,8 @@
                                                         }
                                                     %>
                                                 </div>
-                                                <div class="product-price">
-                                                    <fmt:formatNumber value="${product.salePrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/>
+                                                <div class="car-price">
+                                                    <fmt:formatNumber value="${car.salePrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/>
                                                     <span>/ngày</span>
                                                 </div>
                                                 <button class="btn-rent">Thuê Xe Ngay</button>
@@ -776,7 +776,7 @@
                 <h2>Sẵn Sàng Bắt Đầu Hành Trình?</h2>
                 <p>Đặt xe ngay hôm nay và nhận ưu đãi đặc biệt cho khách hàng mới</p>
                 <div class="cta-buttons">
-                    <a href="listproduct" class="btn btn-cta-primary">Đặt Xe Ngay</a>
+                    <a href="listcar" class="btn btn-cta-primary">Đặt Xe Ngay</a>
                     <a href="tel:0778395957" class="btn btn-cta-secondary">Gọi: 0778395957</a>
                 </div>
             </div>
@@ -799,7 +799,7 @@
 
         <script>
             // Swiper initialization
-            var swiper = new Swiper(".productSwiper", {
+            var swiper = new Swiper(".carSwiper", {
                 slidesPerView: 1,
                 spaceBetween: 30,
                 loop: true,

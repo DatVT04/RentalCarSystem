@@ -1,14 +1,14 @@
 package DAO;
 
 import Context.DBContext;
-import entity.LowStockProductReport;
+import entity.LowStockCarReport;
 import entity.UserReport;
 import entity.OrderReport;
-import entity.ProductReport;
+import entity.CarReport;
 import entity.UserStatusCount;
 import entity.OrderStatusReport;
-import entity.ProductInventoryReport;
-import entity.ProductStatusCount;
+import entity.CarInventoryReport;
+import entity.CarStatusCount;
 import entity.UserRoleReport;
 
 import java.sql.PreparedStatement;
@@ -145,18 +145,18 @@ public class AdminReportDAO extends DBContext {
     }
 
     /**
-     * Get product reports filtered by status
+     * Get car reports filtered by status
      *
-     * @param statusFilter Filter by product status (active, inactive, EOStock,
+     * @param statusFilter Filter by car status (active, inactive, EOStock,
      * or all)
-     * @return List of ProductReport objects
+     * @return List of CarReport objects
      */
-    public List<ProductReport> getProductReports(String statusFilter) {
-        List<ProductReport> products = new ArrayList<>();
+    public List<CarReport> getCarReports(String statusFilter) {
+        List<CarReport> cars = new ArrayList<>();
         StringBuilder sql = new StringBuilder(
                 "SELECT p.id, p.title, p.category_id, c.name as category_name, "
                 + "p.original_price, p.sale_price, p.status, p.created_at "
-                + "FROM products p "
+                + "FROM cars p "
                 + "JOIN categories c ON p.category_id = c.id "
                 + "WHERE 1=1"
         );
@@ -173,21 +173,21 @@ public class AdminReportDAO extends DBContext {
             }
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                ProductReport product = new ProductReport();
-                product.setId(rs.getInt("id"));
-                product.setTitle(rs.getString("title"));
-                product.setCategoryId(rs.getInt("category_id"));
-                product.setCategoryName(rs.getString("category_name"));
-                product.setOriginalPrice(rs.getBigDecimal("original_price"));
-                product.setSalePrice(rs.getBigDecimal("sale_price"));
-                product.setStatus(rs.getString("status"));
-                product.setCreatedAt(rs.getString("created_at"));
-                products.add(product);
+                CarReport car = new CarReport();
+                car.setId(rs.getInt("id"));
+                car.setTitle(rs.getString("title"));
+                car.setCategoryId(rs.getInt("category_id"));
+                car.setCategoryName(rs.getString("category_name"));
+                car.setOriginalPrice(rs.getBigDecimal("original_price"));
+                car.setSalePrice(rs.getBigDecimal("sale_price"));
+                car.setStatus(rs.getString("status"));
+                car.setCreatedAt(rs.getString("created_at"));
+                cars.add(car);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return products;
+        return cars;
     }
 
     /**
@@ -290,14 +290,14 @@ public class AdminReportDAO extends DBContext {
     }
 
     /**
-     * Get product summary statistics
+     * Get car summary statistics
      *
-     * @return ProductStatusCount object with counts for each status
+     * @return CarStatusCount object with counts for each status
      */
-    public ProductStatusCount getProductSummary() {
-        ProductStatusCount summary = new ProductStatusCount();
+    public CarStatusCount getCarSummary() {
+        CarStatusCount summary = new CarStatusCount();
 
-        String sql = "SELECT status, COUNT(*) as count FROM products GROUP BY status";
+        String sql = "SELECT status, COUNT(*) as count FROM cars GROUP BY status";
 
         try {
             PreparedStatement st = connection.prepareStatement(sql);
@@ -320,7 +320,7 @@ public class AdminReportDAO extends DBContext {
                 }
             }
 
-            summary.setTotalProducts(summary.getActiveCount() + summary.getInactiveCount() + summary.getEoStockCount());
+            summary.setTotalCars(summary.getActiveCount() + summary.getInactiveCount() + summary.getEoStockCount());
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -376,14 +376,14 @@ public class AdminReportDAO extends DBContext {
 //////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Get product inventory reports grouped by status
+     * Get car inventory reports grouped by status
      *
-     * @param statusFilter Filter by product status (active, inactive, EOStock,
+     * @param statusFilter Filter by car status (active, inactive, EOStock,
      * or all)
-     * @return List of ProductInventoryReport objects
+     * @return List of CarInventoryReport objects
      */
-    public List<ProductInventoryReport> getProductInventoryReports(String statusFilter) {
-        List<ProductInventoryReport> reports = new ArrayList<>();
+    public List<CarInventoryReport> getCarInventoryReports(String statusFilter) {
+        List<CarInventoryReport> reports = new ArrayList<>();
         StringBuilder sql = new StringBuilder(
                 "SELECT "
                 + "    p.status AS 'Trạng thái sản phẩm', "
@@ -392,22 +392,22 @@ public class AdminReportDAO extends DBContext {
                 + "    COUNT(DISTINCT CASE WHEN pv.stock_quantity <= 10 AND p.status = 'active' THEN p.id END) AS 'Sản phẩm tồn thấp', "
                 + "    COALESCE((SELECT SUM(oi.quantity) FROM order_items oi "
                 + "      JOIN orders o ON oi.order_id = o.id "
-                + "      JOIN products prod ON oi.product_id = prod.id "
+                + "      JOIN cars prod ON oi.car_id = prod.id "
                 + "      WHERE o.status = 'completed' AND prod.status = p.status), 0) AS 'Tổng số lượng bán ra', "
                 + "    COALESCE((SELECT SUM(oi.quantity * oi.unit_price_at_order) FROM order_items oi "
                 + "      JOIN orders o ON oi.order_id = o.id "
-                + "      JOIN products prod ON oi.product_id = prod.id "
+                + "      JOIN cars prod ON oi.car_id = prod.id "
                 + "      WHERE o.status = 'completed' AND prod.status = p.status), 0) AS 'Tổng doanh thu', "
-                + "    (SELECT COUNT(DISTINCT product_id) FROM "
-                + "      (SELECT oi2.product_id, SUM(oi2.quantity) as total_qty "
+                + "    (SELECT COUNT(DISTINCT car_id) FROM "
+                + "      (SELECT oi2.car_id, SUM(oi2.quantity) as total_qty "
                 + "        FROM order_items oi2 "
                 + "        JOIN orders o2 ON oi2.order_id = o2.id "
-                + "        JOIN products p2 ON oi2.product_id = p2.id "
+                + "        JOIN cars p2 ON oi2.car_id = p2.id "
                 + "        WHERE o2.status = 'completed' AND p2.status = p.status "
-                + "        GROUP BY oi2.product_id "
+                + "        GROUP BY oi2.car_id "
                 + "        HAVING SUM(oi2.quantity) >= 50) as bestsellers) AS 'Sản phẩm bán chạy' "
-                + "FROM products p "
-                + "LEFT JOIN product_variants pv ON p.id = pv.product_id "
+                + "FROM cars p "
+                + "LEFT JOIN car_variants pv ON p.id = pv.car_id "
                 + "WHERE 1=1"
         );
         if (!"all".equals(statusFilter)) {
@@ -421,9 +421,9 @@ public class AdminReportDAO extends DBContext {
             }
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                ProductInventoryReport report = new ProductInventoryReport();
+                CarInventoryReport report = new CarInventoryReport();
                 report.setStatus(rs.getString("Trạng thái sản phẩm"));
-                report.setTotalProducts(rs.getInt("Tổng số sản phẩm"));
+                report.setTotalCars(rs.getInt("Tổng số sản phẩm"));
                 report.setTotalStock(rs.getInt("Tổng tồn kho"));
                 report.setLowStockCount(rs.getInt("Sản phẩm tồn thấp"));
                 report.setTotalSoldQuantity(rs.getInt("Tổng số lượng bán ra"));
@@ -438,12 +438,12 @@ public class AdminReportDAO extends DBContext {
     }
 
     /**
-     * Get products with low stock
+     * Get cars with low stock
      *
-     * @return List of LowStockProduct objects
+     * @return List of LowStockCar objects
      */
-    public List<LowStockProductReport> getLowStockProducts() {
-        List<LowStockProductReport> products = new ArrayList<>();
+    public List<LowStockCarReport> getLowStockCars() {
+        List<LowStockCarReport> cars = new ArrayList<>();
         String sql
                 = "SELECT "
                 + "    p.id AS 'Mã sản phẩm', "
@@ -452,11 +452,11 @@ public class AdminReportDAO extends DBContext {
                 + "    ps.size AS 'Kích thước', "
                 + "    pc.color AS 'Màu sắc', "
                 + "    COALESCE(pv.stock_quantity, 0) AS 'Số lượng tồn kho' "
-                + "FROM products p "
+                + "FROM cars p "
                 + "LEFT JOIN categories c ON p.category_id = c.id "
-                + "LEFT JOIN product_variants pv ON p.id = pv.product_id "
-                + "LEFT JOIN product_sizes ps ON pv.size_id = ps.id "
-                + "LEFT JOIN product_colors pc ON pv.color_id = pc.id "
+                + "LEFT JOIN car_variants pv ON p.id = pv.car_id "
+                + "LEFT JOIN car_sizes ps ON pv.size_id = ps.id "
+                + "LEFT JOIN car_colors pc ON pv.color_id = pc.id "
                 + "WHERE "
                 + "    p.status = 'active' "
                 + "    AND COALESCE(pv.stock_quantity, 0) <= 10 "
@@ -470,18 +470,18 @@ public class AdminReportDAO extends DBContext {
             ResultSet rs = st.executeQuery();
 
             while (rs.next()) {
-                LowStockProductReport product = new LowStockProductReport();
-                product.setId(rs.getInt("Mã sản phẩm"));
-                product.setTitle(rs.getString("Tên sản phẩm"));
-                product.setCategoryName(rs.getString("Danh mục"));
-                product.setSize(rs.getString("Kích thước"));
-                product.setColor(rs.getString("Màu sắc"));
-                product.setStockQuantity(rs.getInt("Số lượng tồn kho"));
-                products.add(product);
+                LowStockCarReport car = new LowStockCarReport();
+                car.setId(rs.getInt("Mã sản phẩm"));
+                car.setTitle(rs.getString("Tên sản phẩm"));
+                car.setCategoryName(rs.getString("Danh mục"));
+                car.setSize(rs.getString("Kích thước"));
+                car.setColor(rs.getString("Màu sắc"));
+                car.setStockQuantity(rs.getInt("Số lượng tồn kho"));
+                cars.add(car);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return products;
+        return cars;
     }
 }

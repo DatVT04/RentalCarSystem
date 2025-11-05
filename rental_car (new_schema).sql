@@ -44,8 +44,8 @@ CREATE TABLE categories (
 GO
 
 
--- Products table
-CREATE TABLE products (
+-- cars table
+CREATE TABLE cars (
     id INT IDENTITY(1,1) PRIMARY KEY,
     title NVARCHAR(255) NOT NULL,
     category_id INT NOT NULL,
@@ -61,40 +61,40 @@ CREATE TABLE products (
     FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
--- Product images table
-CREATE TABLE product_images (
+-- car images table
+CREATE TABLE car_images (
     id INT IDENTITY(1,1) PRIMARY KEY,
-    product_id INT NOT NULL,
+    car_id INT NOT NULL,
     image_url NVARCHAR(255) NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES products(id)
+    FOREIGN KEY (car_id) REFERENCES cars(id)
 );
 
 
-CREATE TABLE product_sizes (
+CREATE TABLE car_sizes (
     id INT IDENTITY(1,1) PRIMARY KEY,
-    product_id INT NOT NULL,
+    car_id INT NOT NULL,
     size NVARCHAR(20) NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES products(id)
+    FOREIGN KEY (car_id) REFERENCES cars(id)
 );
 
-CREATE TABLE product_colors (
+CREATE TABLE car_colors (
     id INT IDENTITY(1,1) PRIMARY KEY,
-    product_id INT NOT NULL,
+    car_id INT NOT NULL,
     color NVARCHAR(50) NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES products(id)
+    FOREIGN KEY (car_id) REFERENCES cars(id)
 );
 
--- Product variants table (for sizes and colors)
-CREATE TABLE product_variants (
+-- car variants table (for sizes and colors)
+CREATE TABLE car_variants (
     id INT IDENTITY(1,1) PRIMARY KEY,
-    product_id INT NOT NULL,
+    car_id INT NOT NULL,
     size_id INT NOT NULL,
     color_id INT NOT NULL,
     stock_quantity INT NOT NULL DEFAULT 0,
     last_restock_date DATETIME2 NULL,
-    FOREIGN KEY (product_id) REFERENCES products(id),
-    FOREIGN KEY (size_id) REFERENCES product_sizes(id),
-    FOREIGN KEY (color_id) REFERENCES product_colors(id)
+    FOREIGN KEY (car_id) REFERENCES cars(id),
+    FOREIGN KEY (size_id) REFERENCES car_sizes(id),
+    FOREIGN KEY (color_id) REFERENCES car_colors(id)
 );
 
 -- Orders table
@@ -119,9 +119,9 @@ CREATE TABLE orders (
 CREATE TABLE order_items (
     id INT IDENTITY(1,1) PRIMARY KEY,
     order_id INT NOT NULL,
-    product_id INT,
-    product_name NVARCHAR(255) NOT NULL,
-    product_image NVARCHAR(255),
+    car_id INT,
+    car_name NVARCHAR(255) NOT NULL,
+    car_image NVARCHAR(255),
     variant_name NVARCHAR(255),
     quantity INT NOT NULL,
     unit_price_at_order DECIMAL(10,2) NOT NULL,
@@ -174,18 +174,6 @@ CREATE TABLE feedback_reply (
 );
 
 
-
--- Settings table
-CREATE TABLE dbo.footer_settings (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    type NVARCHAR(50) NOT NULL CHECK (type IN ('social', 'contact', 'info')),
-    field_name NVARCHAR(50) NOT NULL,
-    value NVARCHAR(MAX) NOT NULL,
-    image NVARCHAR(255) NULL,
-    status NVARCHAR(20) CHECK (status IN ('active', 'inactive')) DEFAULT 'active'
-);
-
-
 -- Customer contact history table
 CREATE TABLE customer_contact_history (
     id INT IDENTITY(1,1) PRIMARY KEY,
@@ -222,12 +210,12 @@ CREATE TABLE cart (
 CREATE TABLE cart_items (
     id INT IDENTITY(1,1) PRIMARY KEY,
     cart_id INT NOT NULL,
-    product_id INT NOT NULL,
+    car_id INT NOT NULL,
     variant_id INT NOT NULL,
     quantity INT NOT NULL DEFAULT 1,
     FOREIGN KEY (cart_id) REFERENCES cart(id),
-    FOREIGN KEY (product_id) REFERENCES products(id),
-    FOREIGN KEY (variant_id) REFERENCES product_variants(id)
+    FOREIGN KEY (car_id) REFERENCES cars(id),
+    FOREIGN KEY (variant_id) REFERENCES car_variants(id)
 );
 
 CREATE TABLE payments (

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : productList
+    Document   : carList
     Created on : Feb 24, 2025, 1:40:02 AM
     Author     : tphon
 --%>
@@ -194,15 +194,15 @@
                 box-shadow: 0 6px 20px rgba(30, 136, 229, 0.5);
             }
 
-            /* Product Grid */
-            .product-grid {
+            /* Car Grid */
+            .car-grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 30px;
             }
 
-            /* Product Card - Đồng bộ với homepage */
-            .product-card {
+            /* Car Card - Đồng bộ với homepage */
+            .car-card {
                 border: none;
                 border-radius: 20px;
                 overflow: hidden;
@@ -214,7 +214,7 @@
                 flex-direction: column;
             }
 
-            .product-card:hover {
+            .car-card:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             }
@@ -225,18 +225,18 @@
                 height: 280px;
             }
 
-            .product-image {
+            .car-image {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 transition: transform 0.5s ease;
             }
 
-            .product-card:hover .product-image {
+            .car-card:hover .car-image {
                 transform: scale(1.15);
             }
 
-            .product-badge {
+            .car-badge {
                 position: absolute;
                 top: 15px;
                 right: 15px;
@@ -250,7 +250,7 @@
                 box-shadow: 0 3px 10px rgba(30, 136, 229, 0.4);
             }
 
-            .product-info {
+            .car-info {
                 padding: 25px;
                 background: white;
                 flex-grow: 1;
@@ -258,7 +258,7 @@
                 flex-direction: column;
             }
 
-            .product-title {
+            .car-title {
                 font-size: 1.2rem;
                 font-weight: 700;
                 color: var(--text-dark);
@@ -271,7 +271,7 @@
                 min-height: 60px;
             }
 
-            .product-specs {
+            .car-specs {
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 15px;
@@ -292,7 +292,7 @@
                 color: var(--primary-color);
             }
 
-            .product-price {
+            .car-price {
                 color: var(--primary-color);
                 font-size: 1.6rem;
                 font-weight: 800;
@@ -300,7 +300,7 @@
                 margin-top: auto;
             }
 
-            .product-price span {
+            .car-price span {
                 font-size: 0.9rem;
                 color: var(--text-light);
                 font-weight: 400;
@@ -324,8 +324,8 @@
                 box-shadow: 0 5px 15px rgba(30, 136, 229, 0.3);
             }
 
-            /* No Products */
-            .no-products {
+            /* No Cars */
+            .no-cars {
                 background: white;
                 border-radius: 20px;
                 box-shadow: var(--card-shadow);
@@ -333,21 +333,21 @@
                 text-align: center;
             }
 
-            .no-products i {
+            .no-cars i {
                 color: var(--primary-color);
                 font-size: 100px;
                 margin-bottom: 30px;
                 opacity: 0.7;
             }
 
-            .no-products h3 {
+            .no-cars h3 {
                 color: var(--text-dark);
                 font-size: 1.8rem;
                 font-weight: 700;
                 margin-bottom: 15px;
             }
 
-            .no-products p {
+            .no-cars p {
                 color: var(--text-light);
                 font-size: 1.1rem;
             }
@@ -391,7 +391,7 @@
                     margin-bottom: 40px;
                 }
 
-                .product-grid {
+                .car-grid {
                     grid-template-columns: repeat(2, 1fr);
                     gap: 25px;
                 }
@@ -402,7 +402,7 @@
                     font-size: 2rem;
                 }
 
-                .product-grid {
+                .car-grid {
                     grid-template-columns: 1fr;
                     gap: 20px;
                 }
@@ -436,7 +436,7 @@
                 <!-- Sidebar Filters -->
                 <div class="col-lg-3">
                     <div class="sidebar-filters">
-                        <form action="listproduct" method="GET" id="filterForm">
+                        <form action="listcar" method="GET" id="filterForm">
                             <input type="hidden" name="category" value="${category}">
 
                             <!-- Price Range Filter -->
@@ -504,24 +504,24 @@
                     </div>
                 </div>
 
-                <!-- Products Content -->
+                <!-- Cars Content -->
                 <div class="col-lg-9">
-                    <!-- Products Grid -->
+                    <!-- Cars Grid -->
                     <c:choose>
-                        <c:when test="${not empty products}">
-                            <div class="product-grid">
-                                <c:forEach items="${products}" var="product">
-                                    <a href="productdetail?id=${product.id}" class="text-decoration-none">
-                                        <div class="card product-card">
+                        <c:when test="${not empty cars}">
+                            <div class="car-grid">
+                                <c:forEach items="${cars}" var="car">
+                                    <a href="cardetail?id=${car.id}" class="text-decoration-none">
+                                        <div class="card car-card">
                                             <div class="img-wrapper">
-                                                <img src="${product.thumbnail}" class="product-image" alt="${product.title}">
-                                                <c:if test="${product.isCombo}">
-                                                    <span class="product-badge">Combo</span>
+                                                <img src="${car.thumbnail}" class="car-image" alt="${car.title}">
+                                                <c:if test="${car.isCombo}">
+                                                    <span class="car-badge">Combo</span>
                                                 </c:if>
                                             </div>
-                                            <div class="product-info">
-                                                <h5 class="product-title">${product.title}</h5>
-                                                <div class="product-specs">
+                                            <div class="car-info">
+                                                <h5 class="car-title">${car.title}</h5>
+                                                <div class="car-specs">
                                                     <%
                                                         java.util.Random rand = new java.util.Random();
                                                         java.util.List<String[]> specList = java.util.Arrays.asList(
@@ -533,7 +533,7 @@
                                                             new String[]{"fa-snowflake", "Điều hòa " + (rand.nextBoolean() ? "2 vùng" : "tự động")}  // Random AC info
                                                         );
                                                         java.util.Collections.shuffle(specList);
-                                                        for (int i = 0; i < 2; i++) {  // Show 2 random specs per product
+                                                        for (int i = 0; i < 2; i++) {  // Show 2 random specs per car
                                                             String[] spec = specList.get(i);
                                                     %>
                                                     <div class="spec-item">
@@ -544,8 +544,8 @@
                                                         }
                                                     %>
                                                 </div>
-                                                <div class="product-price">
-                                                    <fmt:formatNumber value="${product.salePrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/>
+                                                <div class="car-price">
+                                                    <fmt:formatNumber value="${car.salePrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/>
                                                     <span>/ngày</span>
                                                 </div>
                                                 <button class="btn-rent">Thuê Xe Ngay</button>
@@ -556,7 +556,7 @@
                             </div>
                         </c:when>
                         <c:otherwise>
-                            <div class="no-products">
+                            <div class="no-cars">
                                 <i class="fas fa-car-side"></i>
                                 <h3>Không Tìm Thấy Xe Phù Hợp</h3>
                                 <p>Vui lòng điều chỉnh tiêu chí tìm kiếm hoặc xem tất cả các dòng xe của chúng tôi</p>
@@ -566,12 +566,12 @@
 
                     <!-- Pagination -->
                     <c:if test="${totalPages > 1}">
-                        <nav aria-label="Product pagination">
+                        <nav aria-label="Car pagination">
                             <ul class="pagination">
                                 <!-- Previous page -->
                                 <c:if test="${currentPage > 1}">
                                     <li class="page-item">
-                                        <a class="page-link" href="listproduct?page=${currentPage - 1}&keyword=${keyword}&category=${selectedCategory}&minPrice=${minPrice}&maxPrice=${maxPrice}&sortBy=${sortBy}">
+                                        <a class="page-link" href="listcar?page=${currentPage - 1}&keyword=${keyword}&category=${selectedCategory}&minPrice=${minPrice}&maxPrice=${maxPrice}&sortBy=${sortBy}">
                                             <i class="fas fa-chevron-left"></i>
                                         </a>
                                     </li>
@@ -580,7 +580,7 @@
                                 <!-- Page numbers -->
                                 <c:forEach begin="1" end="${totalPages}" var="i">
                                     <li class="page-item ${currentPage == i ? 'active' : ''}">
-                                        <a class="page-link" href="listproduct?page=${i}&keyword=${keyword}&category=${selectedCategory}&minPrice=${minPrice}&maxPrice=${maxPrice}&sortBy=${sortBy}">
+                                        <a class="page-link" href="listcar?page=${i}&keyword=${keyword}&category=${selectedCategory}&minPrice=${minPrice}&maxPrice=${maxPrice}&sortBy=${sortBy}">
                                             ${i}
                                         </a>
                                     </li>
@@ -589,7 +589,7 @@
                                 <!-- Next page -->
                                 <c:if test="${currentPage < totalPages}">
                                     <li class="page-item">
-                                        <a class="page-link" href="listproduct?page=${currentPage + 1}&keyword=${keyword}&category=${selectedCategory}&minPrice=${minPrice}&maxPrice=${maxPrice}&sortBy=${sortBy}">
+                                        <a class="page-link" href="listcar?page=${currentPage + 1}&keyword=${keyword}&category=${selectedCategory}&minPrice=${minPrice}&maxPrice=${maxPrice}&sortBy=${sortBy}">
                                             <i class="fas fa-chevron-right"></i>
                                         </a>
                                     </li>

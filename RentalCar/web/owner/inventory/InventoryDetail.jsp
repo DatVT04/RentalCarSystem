@@ -145,9 +145,9 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control read-only-field" id="productName" 
-                                       value="${inventory.productName}" readonly>
-                                <label for="productName">Tên sản phẩm</label>
+                                <input type="text" class="form-control read-only-field" id="carName" 
+                                       value="${inventory.carName}" readonly>
+                                <label for="carName">Tên sản phẩm</label>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -174,7 +174,7 @@
                             <span class="input-group-text"><i class="fas fa-search"></i></span>
                             <input type="text" class="form-control" id="searchInput" placeholder="Tìm kiếm mẫu sản phẩm...">
                         </div>
-                        <a href="addModel?productId=${inventory.productId}&source=${param.source}" class="btn btn-success">
+                        <a href="addModel?carId=${inventory.carId}&source=${param.source}" class="btn btn-success">
                             <i class="fas fa-plus me-2"></i>Thêm Mẫu Mới
                         </a>
                     </div>
@@ -198,7 +198,7 @@
                                         <td><fmt:formatDate value="${variant.lastRestockDate}" pattern="dd/MM/yyyy"/></td>
                                         <td>
                                             <div class="action-buttons">
-                                                <a href="editModel?variantId=${variant.id}&productId=${inventory.productId}&source=${param.source}" 
+                                                <a href="editModel?variantId=${variant.id}&carId=${inventory.carId}&source=${param.source}" 
                                                    class="btn btn-outline-primary btn-sm">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
@@ -217,8 +217,8 @@
 
                 <div class="d-flex justify-content-start mt-3">
                     <c:choose>
-                        <c:when test="${param.source == 'productlist'}">
-                            <a href="productlist" class="btn btn-secondary">
+                        <c:when test="${param.source == 'carlist'}">
+                            <a href="carlist" class="btn btn-secondary">
                                 <i class="fas fa-arrow-left me-2"></i>Quay lại
                             </a>
                         </c:when>
@@ -250,7 +250,7 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                             <form action="inventoryDetail" method="POST" style="display: inline;">
                                 <input type="hidden" name="action" value="delete">
-                                <input type="hidden" name="productId" value="${inventory.productId}">
+                                <input type="hidden" name="carId" value="${inventory.carId}">
                                 <input type="hidden" name="variantId" value="${variant.id}">
                                 <input type="hidden" name="source" value="${param.source}"> 
                                 <button type="submit" class="btn btn-danger">Xóa</button>

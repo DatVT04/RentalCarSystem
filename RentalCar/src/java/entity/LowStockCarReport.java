@@ -8,7 +8,7 @@ package entity;
  *
  * @author VuxD4t
  */
-public class LowStockProductReport {
+public class LowStockCarReport {
     private int id;
     private String title;
     private String categoryName;
@@ -17,11 +17,11 @@ public class LowStockProductReport {
     private int stockQuantity;
 
     // Constructor không tham số
-    public LowStockProductReport() {
+    public LowStockCarReport() {
     }
 
     // Constructor đầy đủ
-    public LowStockProductReport(int id, String title, String categoryName, String size, String color, int stockQuantity) {
+    public LowStockCarReport(int id, String title, String categoryName, String size, String color, int stockQuantity) {
         this.id = id;
         this.title = title;
         this.categoryName = categoryName;

@@ -60,7 +60,7 @@ public class Email {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(user.getEmail()));
             message.setSubject("Xác Minh Tài Khoản Của Bạn");
 
-            String verificationLink = "http://localhost:9999/fashionshop/verify?token=" + verificationToken;
+            String verificationLink = "http://localhost:9999/RentalCar/verify?token=" + verificationToken;
             String htmlContent = String.format(
                     "<html>"
                     + "<head>"
@@ -119,7 +119,7 @@ public class Email {
 //            message.setSubject("Đặt Lại Mật Khẩu");
             message.setSubject(MimeUtility.encodeText("Đặt Lại Mật Khẩu", "UTF-8", "B"));
 
-            String resetLink = "http://localhost:9999/fashionshop/resetpassword?token=" + resetToken;
+            String resetLink = "http://localhost:9999/RentalCar/resetpassword?token=" + resetToken;
             String htmlContent = String.format(
                     "<html>"
                     + "<head>"
@@ -192,9 +192,9 @@ public class Email {
                     .append(".container {padding: 20px; max-width: 600px; margin: 20px auto; background-color: #ffffff; border: 1px solid #dddddd; border-radius: 5px;}")
                     .append(".header {background-color: #4CAF50; padding: 15px; text-align: center; color: #ffffff; border-radius: 5px 5px 0 0;}")
                     .append(".content {padding: 20px; line-height: 1.6;}")
-                    .append(".product-table {width: 100%; border-collapse: collapse; margin-top: 20px;}")
-                    .append(".product-table th, .product-table td {border: 1px solid #dddddd; padding: 10px; text-align: left;}")
-                    .append(".product-table th {background-color: #f2f2f2; font-weight: bold;}")
+                    .append(".car-table {width: 100%; border-collapse: collapse; margin-top: 20px;}")
+                    .append(".car-table th, .car-table td {border: 1px solid #dddddd; padding: 10px; text-align: left;}")
+                    .append(".car-table th {background-color: #f2f2f2; font-weight: bold;}")
                     .append(".button {background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px;}")
                     .append(".footer {padding: 20px; text-align: center; color: #888888; font-size: 12px; border-top: 1px solid #dddddd;}")
                     .append("</style></head><body><div class='container'>")
@@ -211,27 +211,27 @@ public class Email {
             
             // Thêm chi tiết đơn hàng
             htmlContent.append("<h3>Chi tiết đơn hàng:</h3>")
-                    .append("<table class='product-table'><thead><tr>")
+                    .append("<table class='car-table'><thead><tr>")
                     .append("<th>Hình ảnh</th><th>Tên sản phẩm</th><th>Kích thước</th><th>Màu sắc</th><th>Số lượng</th><th>Đơn giá</th></tr></thead><tbody>");
             for (CartItem item : order.getItems()) {
-                String imageUrl = item.getProductThumbnail();
+                String imageUrl = item.getCarThumbnail();
                 if (!imageUrl.startsWith("http://") && !imageUrl.startsWith("https://")) {
-                    imageUrl = "http://localhost:9999/fashionshop" + imageUrl; // Thêm domain nếu là đường dẫn tương đối
+                    imageUrl = "http://localhost:9999/RentalCar" + imageUrl; // Thêm domain nếu là đường dẫn tương đối
                 }
                 htmlContent.append("<tr>")
-                        .append("<td><img src='").append(imageUrl).append("' width='50' height='50' alt='").append(item.getProductTitle()).append("'></td>")
-                        .append("<td>").append(item.getProductTitle()).append("</td>")
+                        .append("<td><img src='").append(imageUrl).append("' width='50' height='50' alt='").append(item.getCarTitle()).append("'></td>")
+                        .append("<td>").append(item.getCarTitle()).append("</td>")
                         .append("<td>").append(item.getSize()).append("</td>")
                         .append("<td>").append(item.getColor()).append("</td>")
                         .append("<td>").append(item.getQuantity()).append("</td>")
-                        .append("<td>").append(String.format("%,.0f", item.getProductPrice())).append(" ₫</td>")
+                        .append("<td>").append(String.format("%,.0f", item.getCarPrice())).append(" ₫</td>")
                         .append("</tr>");
             }
             htmlContent.append("</tbody></table>");
 
             // Thêm phần footer
             htmlContent.append("</div><div class='footer'>")
-                    .append("<p>Trân trọng,<br>Fasshion Shop</p>")
+                    .append("<p>Trân trọng,<br>Rental Car</p>")
                     .append("<p>Liên hệ chúng tôi: support@fasshionshop.com | Hotline: 0123 456 789</p>")
                     .append("</div></div></body></html>");
 

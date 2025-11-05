@@ -8,13 +8,13 @@ package entity;
  *
  * @author thanh
  */
-public class ProductColor {
+public class CarColor {
     private int id;
     private String color;
     private int colorId;
-    private int productId;
+    private int carId;
 
-    public ProductColor() {
+    public CarColor() {
     }
 
     public int getId() {
@@ -41,11 +41,11 @@ public class ProductColor {
         this.colorId = colorId;
     }
     
-    public int getProductId() {
-        return productId;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 }

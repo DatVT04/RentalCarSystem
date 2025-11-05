@@ -35,10 +35,10 @@ public class FeedbackListServlet extends HttpServlet {
         int recordsPerPage = 10;
 
         FeedbackDAO feedbackDAO = new FeedbackDAO();
-        List<Feedback> feedbackList = feedbackDAO.getFeedbacksGroupedByProduct(
+        List<Feedback> feedbackList = feedbackDAO.getFeedbacksGroupedByCar(
                 searchKeyword, filterRating, sortField, sortOrder, page, recordsPerPage
         );
-        int totalRecords = feedbackDAO.getTotalProductsWithFeedback(searchKeyword, filterRating);
+        int totalRecords = feedbackDAO.getTotalCarsWithFeedback(searchKeyword, filterRating);
         int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage);
 
         request.setAttribute("feedbackList", feedbackList);

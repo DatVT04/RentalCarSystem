@@ -9,11 +9,11 @@ import java.time.LocalDate;
 public class OrderItem {
     private int id;
     private int orderId;
-    private int productId;
+    private int carId;
     private int variantId;
     private int quantity;
     private BigDecimal unitPrice;
-    private String productName;
+    private String carName;
     private String variantName;
     private String categoryName;
     
@@ -34,12 +34,12 @@ public class OrderItem {
         this.orderId = orderId;
     }
     
-    public int getProductId() {
-        return productId;
+    public int getCarId() {
+        return carId;
     }
     
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
     
     public int getVariantId() {
@@ -66,12 +66,12 @@ public class OrderItem {
         this.unitPrice = unitPrice;
     }
     
-    public String getProductName() {
-        return productName;
+    public String getCarName() {
+        return carName;
     }
     
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setCarName(String carName) {
+        this.carName = carName;
     }
     
     public String getVariantName() {

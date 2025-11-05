@@ -273,7 +273,7 @@
                         <a class="nav-link" href="#order-report" data-report="order-report">Báo cáo đơn hàng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#product-report" data-report="product-report">Báo cáo sản phẩm</a>
+                        <a class="nav-link" href="#car-report" data-report="car-report">Báo cáo sản phẩm</a>
                     </li>
                 </ul>
 
@@ -319,17 +319,17 @@
                                         </div>
                                     </div>
                 
-                                     Product Stats 
+                                     Car Stats 
                                     <div class="col-md-4">
                                         <div class="card dashboard-card h-100">
                                             <div class="card-body d-flex justify-content-between align-items-start">
                                                 <div>
                                                     <p class="stat-title mb-1">Tổng sản phẩm</p>
-                                                    <h3 class="stat-value">${productSummary.totalProducts}</h3>
+                                                    <h3 class="stat-value">${carSummary.totalCars}</h3>
                                                     <div class="mt-2">
-                                                        <span class="badge bg-success">${productSummary.activeCount} Có sẵn</span>
-                                                        <span class="badge bg-danger">${productSummary.inactiveCount} Không hoạt động</span>
-                                                        <span class="badge bg-warning">${productSummary.eoStockCount} Hết hàng</span>
+                                                        <span class="badge bg-success">${carSummary.activeCount} Có sẵn</span>
+                                                        <span class="badge bg-danger">${carSummary.inactiveCount} Không hoạt động</span>
+                                                        <span class="badge bg-warning">${carSummary.eoStockCount} Hết hàng</span>
                                                     </div>
                                                 </div>
                                                 <div class="icon-bg bg-warning bg-opacity-10">
@@ -737,15 +737,15 @@
                     </div>
                 </div>
 
-                <!-- Product Reports Section -->
-                <div id="product-report" class="report-section report-card">
+                <!-- Car Reports Section -->
+                <div id="car-report" class="report-section report-card">
                     <div class="card-header bg-warning text-dark">
                         <span><i class="fas fa-boxes me-2"></i>Báo cáo sản phẩm</span>
                         <div>
                             <button class="btn btn-danger me-2" id="showLowStockBtn" data-bs-toggle="modal" data-bs-target="#lowStockModal">
                                 <i class="fas fa-exclamation-triangle me-1"></i>Sản phẩm tồn thấp
                             </button>
-                            <button class="btn btn-dark" id="exportProductBtn">
+                            <button class="btn btn-dark" id="exportCarBtn">
                                 <i class="fas fa-file-export me-1"></i>Xuất báo cáo
                             </button>
                         </div>
@@ -755,12 +755,12 @@
                         <div class="filters p-3 bg-light rounded mb-3">
                             <form action="${pageContext.request.contextPath}/admin/report" method="get" class="row">
                                 <div class="col-md-10 mb-3 mb-md-0">
-                                    <label for="productStatus" class="form-label">Trạng thái sản phẩm</label>
-                                    <select class="form-select" id="productStatus" name="productStatus" onchange="this.form.submit()">
-                                        <option value="all" ${productStatusFilter eq 'all' ? 'selected' : ''}>Tất cả trạng thái</option>
-                                        <option value="active" ${productStatusFilter eq 'active' ? 'selected' : ''}>Hoạt động</option>
-                                        <option value="inactive" ${productStatusFilter eq 'inactive' ? 'selected' : ''}>Không hoạt động</option>
-                                        <option value="EOStock" ${productStatusFilter eq 'EOStock' ? 'selected' : ''}>Hết hàng</option>
+                                    <label for="carStatus" class="form-label">Trạng thái sản phẩm</label>
+                                    <select class="form-select" id="carStatus" name="carStatus" onchange="this.form.submit()">
+                                        <option value="all" ${carStatusFilter eq 'all' ? 'selected' : ''}>Tất cả trạng thái</option>
+                                        <option value="active" ${carStatusFilter eq 'active' ? 'selected' : ''}>Hoạt động</option>
+                                        <option value="inactive" ${carStatusFilter eq 'inactive' ? 'selected' : ''}>Không hoạt động</option>
+                                        <option value="EOStock" ${carStatusFilter eq 'EOStock' ? 'selected' : ''}>Hết hàng</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2 d-flex align-items-end">
@@ -769,9 +769,9 @@
                             </form>
                         </div>
 
-                        <!-- Product Inventory Table -->
+                        <!-- Car Inventory Table -->
                         <div class="table-responsive mt-3">
-                            <table class="table table-striped table-hover" id="productTable">
+                            <table class="table table-striped table-hover" id="carTable">
                                 <thead class="table-warning">
                                     <tr>
                                         <th>Trạng thái sản phẩm</th>
@@ -784,19 +784,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:if test="${empty productInventoryReports}">
+                                    <c:if test="${empty carInventoryReports}">
                                         <tr>
                                             <td colspan="7" class="text-center">Không có dữ liệu để hiển thị</td>
                                         </tr>
                                     </c:if>
-                                    <c:forEach items="${productInventoryReports}" var="product">
+                                    <c:forEach items="${carInventoryReports}" var="car">
                                         <tr>
                                             <td>
                                                 <c:choose>
-                                                    <c:when test="${product.status eq 'active'}">
+                                                    <c:when test="${car.status eq 'active'}">
                                                         <span class="badge bg-success">Hoạt động</span>
                                                     </c:when>
-                                                    <c:when test="${product.status eq 'inactive'}">
+                                                    <c:when test="${car.status eq 'inactive'}">
                                                         <span class="badge bg-danger">Không hoạt động</span>
                                                     </c:when>
                                                     <c:otherwise>
@@ -804,23 +804,23 @@
                                                     </c:otherwise>
                                                 </c:choose>
                                             </td>
-                                            <td>${product.totalProducts}</td>
-                                            <td>${product.totalStock}</td>
-                                            <td>${product.lowStockCount}</td>
-                                            <td>${product.totalSoldQuantity}</td>
-                <!--                            <td><fmt:formatNumber type="currency" value="${product.totalRevenue}" currencySymbol="₫" maxFractionDigits="0"/></td>-->
-                                            <td>${product.bestSellerCount}</td>
+                                            <td>${car.totalCars}</td>
+                                            <td>${car.totalStock}</td>
+                                            <td>${car.lowStockCount}</td>
+                                            <td>${car.totalSoldQuantity}</td>
+                <!--                            <td><fmt:formatNumber type="currency" value="${car.totalRevenue}" currencySymbol="₫" maxFractionDigits="0"/></td>-->
+                                            <td>${car.bestSellerCount}</td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>
                                 <tfoot class="table-warning fw-bold">
                                     <tr class="summary-row">
                                         <td>Tổng cộng</td>
-                                        <td>${productCount}</td>
+                                        <td>${carCount}</td>
                                         <td>${totalStock}</td>
                                         <td>${totalLowStockCount}</td>
                                         <td>${totalSoldQuantity}</td>
-                <!--                        <td><fmt:formatNumber type="currency" value="${productTotalRevenue}" currencySymbol="₫" maxFractionDigits="0"/></td>-->
+                <!--                        <td><fmt:formatNumber type="currency" value="${carTotalRevenue}" currencySymbol="₫" maxFractionDigits="0"/></td>-->
                                         <td>${totalBestSellerCount}</td>
                                     </tr>
                                 </tfoot>
@@ -835,7 +835,7 @@
                                     <ul class="list-group">
                                         <!-- Nhận xét về tỷ lệ sản phẩm tồn thấp -->
                                         <li class="list-group-item">
-                                            <c:set var="lowStockPercentage" value="${(totalLowStockCount / productCount) * 100}" />
+                                            <c:set var="lowStockPercentage" value="${(totalLowStockCount / carCount) * 100}" />
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <span>Tỷ lệ sản phẩm tồn thấp: <span class="fw-bold"><fmt:formatNumber value="${lowStockPercentage}" maxFractionDigits="1"/>%</span></span>
                                                 <c:choose>
@@ -873,7 +873,7 @@
 
                                         <!-- Phân tích sản phẩm bán chạy -->
                                         <li class="list-group-item">
-                                            <c:set var="bestSellerPercentage" value="${(totalBestSellerCount / productCount) * 100}" />
+                                            <c:set var="bestSellerPercentage" value="${(totalBestSellerCount / carCount) * 100}" />
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <span>Tỷ lệ sản phẩm bán chạy: <span class="fw-bold"><fmt:formatNumber value="${bestSellerPercentage}" maxFractionDigits="1"/>%</span></span>
                                                 <c:choose>
@@ -914,7 +914,7 @@
                 </div>
             </div>
 
-            <!-- Low Stock Products Modal -->
+            <!-- Low Stock Cars Modal -->
             <div class="modal fade" id="lowStockModal" tabindex="-1" aria-labelledby="lowStockModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
@@ -996,7 +996,7 @@
                                                 }
                                             });
 
-                                            const productTable = $('#productTable').DataTable({
+                                            const carTable = $('#carTable').DataTable({
                                                 "language": {
                                                     "lengthMenu": "Hiển thị _MENU_ dòng mỗi trang",
                                                     "zeroRecords": "Không tìm thấy dữ liệu",
@@ -1039,14 +1039,14 @@
                                                 exportTableToExcel('orderTable', 'order_report');
                                             });
 
-                                            $('#exportProductBtn').click(function () {
-                                                exportTableToExcel('productTable', 'product_report');
+                                            $('#exportCarBtn').click(function () {
+                                                exportTableToExcel('carTable', 'car_report');
                                             });
 
                                             // Low Stock Modal AJAX (unchanged)
                                             $('#lowStockModal').on('shown.bs.modal', function () {
                                                 $.ajax({
-                                                    url: '${pageContext.request.contextPath}/admin/low-stock-products',
+                                                    url: '${pageContext.request.contextPath}/admin/low-stock-cars',
                                                     method: 'GET',
                                                     dataType: 'json',
                                                     success: function (data) {
@@ -1081,7 +1081,7 @@
                                                         });
                                                     },
                                                     error: function (xhr, status, error) {
-                                                        console.error('Error loading low stock products:', error);
+                                                        console.error('Error loading low stock cars:', error);
                                                         $('#lowStockTableBody').html('<tr><td colspan="6" class="text-center">Lỗi khi tải dữ liệu</td></tr>');
                                                     }
                                                 });
@@ -1090,7 +1090,7 @@
                                             $('#exportLowStockBtn').click(function () {
                                                 const table = document.getElementById('lowStockTable');
                                                 const wb = XLSX.utils.table_to_book(table, {sheet: "Sheet1"});
-                                                XLSX.writeFile(wb, 'low_stock_products.xlsx');
+                                                XLSX.writeFile(wb, 'low_stock_cars.xlsx');
                                             });
                                         });
             </script>

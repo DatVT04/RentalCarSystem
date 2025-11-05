@@ -85,28 +85,28 @@
                 color: #6c757d;
             }
 
-            .product-item {
+            .car-item {
                 padding: 15px 0;
                 border-bottom: 1px solid #e9ecef;
             }
 
-            .product-item:last-child {
+            .car-item:last-child {
                 border-bottom: none;
             }
 
-            .product-img {
+            .car-img {
                 width: 70px;
                 height: 70px;
                 object-fit: cover;
                 border-radius: 5px;
             }
 
-            .product-name {
+            .car-name {
                 font-weight: 600;
                 margin-bottom: 5px;
             }
 
-            .product-variant {
+            .car-variant {
                 font-size: 0.85rem;
                 color: #6c757d;
             }
@@ -275,7 +275,7 @@
                     margin-bottom: 5px;
                 }
 
-                .product-img {
+                .car-img {
                     width: 60px;
                     height: 60px;
                 }
@@ -689,24 +689,24 @@
                                 <div class="text-danger">Debug: order.items is empty</div>
                             </c:if>
                             <c:forEach items="${order.items}" var="item">
-                                <div class="product-item">
+                                <div class="car-item">
                                     <div class="row align-items-center">
                                         <div class="col-2 col-md-1">
-                                            <img src="${item.productThumbnail}" alt="${item.productTitle}" class="product-img">
+                                            <img src="${item.carThumbnail}" alt="${item.carTitle}" class="car-img">
                                         </div>
                                         <div class="col-10 col-md-6">
-                                            <div class="product-name">${item.productTitle}</div>
-                                            <div class="product-variant">Size: ${item.size} | Màu: ${item.color}</div>
+                                            <div class="car-name">${item.carTitle}</div>
+                                            <div class="car-variant">Size: ${item.size} | Màu: ${item.color}</div>
                                         </div>
                                         <div class="col-md-2 text-center">
                                             <div class="quantity">x${item.quantity}</div>
                                         </div>
                                         <div class="col-md-3 text-end">
                                             <div class="price">
-                                                <fmt:formatNumber value="${item.productPrice * item.quantity}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                                <fmt:formatNumber value="${item.carPrice * item.quantity}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
                                             </div>
                                             <small class="text-muted">
-                                                <fmt:formatNumber value="${item.productPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/> / sản phẩm
+                                                <fmt:formatNumber value="${item.carPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/> / sản phẩm
                                             </small>
                                         </div>
                                     </div>

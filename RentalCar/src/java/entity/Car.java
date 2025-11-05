@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author tphon
  */
-public class Product {
+public class Car {
 
     private int id;
     private String title;
@@ -28,13 +28,13 @@ public class Product {
     private String createdAt;
     private String updatedAt;
 
-    private List<Product> comboProducts;
+    private List<Car> comboCars;
     private List<String> subImages;
 
-    public Product() {
+    public Car() {
     }
 
-    public Product(int id, String title, int categoryId, BigDecimal originalPrice, BigDecimal salePrice, String thumbnail, String status, int stock, String description, int comboGroupId, boolean isCombo, String createdAt, String updatedAt, List<Product> comboProducts, List<String> subImages) {
+    public Car(int id, String title, int categoryId, BigDecimal originalPrice, BigDecimal salePrice, String thumbnail, String status, int stock, String description, int comboGroupId, boolean isCombo, String createdAt, String updatedAt, List<Car> comboCars, List<String> subImages) {
         this.id = id;
         this.title = title;
         this.categoryId = categoryId;
@@ -48,11 +48,11 @@ public class Product {
         this.isCombo = isCombo;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.comboProducts = comboProducts;
+        this.comboCars = comboCars;
         this.subImages = subImages;
     }
 
-    public Product(int id, String title, int categoryId, BigDecimal originalPrice, BigDecimal salePrice, String thumbnail, String status, int stock, String description, int comboGroupId, boolean isCombo, String createdAt, String updatedAt) {
+    public Car(int id, String title, int categoryId, BigDecimal originalPrice, BigDecimal salePrice, String thumbnail, String status, int stock, String description, int comboGroupId, boolean isCombo, String createdAt, String updatedAt) {
         this.id = id;
         this.title = title;
         this.categoryId = categoryId;
@@ -68,7 +68,7 @@ public class Product {
         this.updatedAt = updatedAt;
     }
 
-    public Product(int id, String title, int categoryId, BigDecimal originalPrice, BigDecimal salePrice, String thumbnail, String status, int stock) {
+    public Car(int id, String title, int categoryId, BigDecimal originalPrice, BigDecimal salePrice, String thumbnail, String status, int stock) {
         this.id = id;
         this.title = title;
         this.categoryId = categoryId;
@@ -184,12 +184,12 @@ public class Product {
         this.stock = stock;
     }
 
-    public void setComboProducts(List<Product> comboProducts) {
-        this.comboProducts = comboProducts;
+    public void setComboCars(List<Car> comboCars) {
+        this.comboCars = comboCars;
     }
 
-    public List<Product> getComboProducts() {
-        return comboProducts;
+    public List<Car> getComboCars() {
+        return comboCars;
     }
 
     public List<String> getSubImages() {

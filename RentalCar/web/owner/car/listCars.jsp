@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Product Management</title>
+        <title>Car Management</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
@@ -62,7 +62,7 @@
                 font-weight: 600;
             }
 
-            .product-thumbnail {
+            .car-thumbnail {
                 width: 80px;
                 height: 80px;
                 object-fit: cover;
@@ -131,12 +131,12 @@
                 color: #6c757d;
             }
 
-            .combo-product {
+            .combo-car {
                 background-color: rgba(52, 152, 219, 0.05);
                 border-left: 4px solid var(--accent-color);
             }
 
-            .combo-product td {
+            .combo-car td {
                 padding: 15px 10px;
             }
 
@@ -351,7 +351,7 @@
                         <i class="fas fa-filter me-2"></i>Bộ lọc tìm kiếm
                     </div>
                     <div class="card-body">
-                        <form action="productlist" method="GET" class="row g-3">
+                        <form action="carlist" method="GET" class="row g-3">
                             <div class="col-md-4">
                                 <div class="input-group">
                                     <span class="input-group-text bg-white">
@@ -404,7 +404,7 @@
                                     <button type="submit" class="btn btn-primary me-md-2">
                                         <i class="fas fa-filter me-2"></i>Lọc
                                     </button>
-                                    <a href="productlist" class="btn btn-secondary">
+                                    <a href="carlist" class="btn btn-secondary">
                                         <i class="fas fa-eraser me-2"></i>Xóa bộ lọc
                                     </a>
                                 </div>
@@ -413,13 +413,13 @@
                     </div>
                 </div>
 
-                <!-- Products Table -->
+                <!-- Cars Table -->
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
                             <i class="fas fa-list me-2"></i>Danh sách sản phẩm
                         </div>
-                        <a href="addproduct" class="btn btn-success">
+                        <a href="addcar" class="btn btn-success">
                             <i class="fas fa-plus me-2"></i>Thêm sản phẩm
                         </a>
                     </div>
@@ -431,7 +431,7 @@
                                         <th class="text-center" style="width: 60px;">STT</th>
                                         <th>Ảnh minh họa</th>
                                         <th>
-                                            <a href="productlist?sortField=title&sortDir=${sortField == 'title' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
+                                            <a href="carlist?sortField=title&sortDir=${sortField == 'title' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
                                                 Tên sản phẩm
                                                 <span class="sort-icons">
                                                     ${sortField == 'title' ? (sortDir == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
@@ -439,7 +439,7 @@
                                             </a>
                                         </th>
                                         <th>
-                                            <a href="productlist?sortField=category_id&sortDir=${sortField == 'category_id' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
+                                            <a href="carlist?sortField=category_id&sortDir=${sortField == 'category_id' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
                                                 Danh mục
                                                 <span class="sort-icons">
                                                     ${sortField == 'category_id' ? (sortDir == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
@@ -447,7 +447,7 @@
                                             </a>
                                         </th>
                                         <th>
-                                            <a href="productlist?sortField=original_price&sortDir=${sortField == 'original_price' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
+                                            <a href="carlist?sortField=original_price&sortDir=${sortField == 'original_price' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
                                                 Giá nhập
                                                 <span class="sort-icons">
                                                     ${sortField == 'original_price' ? (sortDir == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
@@ -455,7 +455,7 @@
                                             </a>
                                         </th>
                                         <th>
-                                            <a href="productlist?sortField=sale_price&sortDir=${sortField == 'sale_price' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
+                                            <a href="carlist?sortField=sale_price&sortDir=${sortField == 'sale_price' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
                                                 Giá bán
                                                 <span class="sort-icons">
                                                     ${sortField == 'sale_price' ? (sortDir == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
@@ -463,7 +463,7 @@
                                             </a>
                                         </th>
                                         <th>
-                                            <a href="productlist?sortField=status&sortDir=${sortField == 'status' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
+                                            <a href="carlist?sortField=status&sortDir=${sortField == 'status' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
                                                 Trạng thái
                                                 <span class="sort-icons">
                                                     ${sortField == 'status' ? (sortDir == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
@@ -476,41 +476,41 @@
                                 </thead>
                                 <tbody>
                                     <c:choose>
-                                        <c:when test="${not empty products}">
-                                            <c:forEach items="${products}" var="product" varStatus="status">
+                                        <c:when test="${not empty cars}">
+                                            <c:forEach items="${cars}" var="car" varStatus="status">
                                                 <tr>
-                                                    <!--<td>${product.id}</td>-->
+                                                    <!--<td>${car.id}</td>-->
                                                     <td class="text-center">${status.index + 1 + (currentPage - 1)*10}</td>
                                                     <td>
-                                                        <img src="${product.thumbnail.contains('https')? product.thumbnail : pageContext.request.contextPath.concat('/').concat(product.thumbnail)}" alt="${product.title}" class="product-thumbnail">
+                                                        <img src="${car.thumbnail.contains('https')? car.thumbnail : pageContext.request.contextPath.concat('/').concat(car.thumbnail)}" alt="${car.title}" class="car-thumbnail">
                                                     </td>
-                                                    <td>${product.title}</td>
+                                                    <td>${car.title}</td>
                                                     <td>
                                                         <c:forEach items="${categories}" var="cate">
-                                                            ${(product.categoryId==cate.id)?cate.name:''}
+                                                            ${(car.categoryId==cate.id)?cate.name:''}
                                                         </c:forEach>
                                                     </td>
-                                                    <td><fmt:formatNumber value="${product.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
-                                                    <td><fmt:formatNumber value="${product.salePrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
+                                                    <td><fmt:formatNumber value="${car.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
+                                                    <td><fmt:formatNumber value="${car.salePrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
                                                     <td>
-                                                        <span class="status-badge bg-${product.status == 'active' ? 'success' : product.status == 'inactive' ? 'danger' : 'warning'}">
-                                                            ${product.status == 'active' ? 'Đang bán' : product.status == 'inactive' ? 'Ngưng bán' : 'Hết hàng'}
+                                                        <span class="status-badge bg-${car.status == 'active' ? 'success' : car.status == 'inactive' ? 'danger' : 'warning'}">
+                                                            ${car.status == 'active' ? 'Đang bán' : car.status == 'inactive' ? 'Ngưng bán' : 'Hết hàng'}
                                                         </span>
                                                     </td>
                                                     <td class="text-center">
-                                                        <a href="inventoryDetail?id=${product.id}&source=productlist" class="stock-link">
-                                                            ${product.stock}
+                                                        <a href="inventoryDetail?id=${car.id}&source=carlist" class="stock-link">
+                                                            ${car.stock}
                                                             <i class="fas fa-external-link-alt ms-1"></i>
                                                         </a>
                                                     </td>
                                                     <td class="text-center">
-<!--                                                        <a href="product/view?id=${product.id}" class="btn btn-sm btn-info me-1" title="Xem chi tiết">
+<!--                                                        <a href="car/view?id=${car.id}" class="btn btn-sm btn-info me-1" title="Xem chi tiết">
                                                             <i class="fas fa-eye"></i>
                                                         </a>-->
-                                                        <a href="editproduct?id=${product.id}" class="btn btn-primary btn-sm" title="Chỉnh sửa">
+                                                        <a href="editcar?id=${car.id}" class="btn btn-primary btn-sm" title="Chỉnh sửa">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
-                                                        <button onclick="deleteProduct(${product.id})" class="btn btn-danger btn-sm" title="Xóa">
+                                                        <button onclick="deleteCar(${car.id})" class="btn btn-danger btn-sm" title="Xóa">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     </td>
@@ -535,13 +535,13 @@
                 <!-- Pagination -->
                 <div class="d-flex justify-content-between align-items-center mt-3">
                     <div class="text-muted small">
-                        Hiển thị ${products.size()} / ${totalItems} sản phẩm
+                        Hiển thị ${cars.size()} / ${totalItems} sản phẩm
                     </div>
                     <nav>
                         <ul class="pagination">
                             <c:if test="${currentPage > 1}">
                                 <li class="page-item">
-                                    <a class="page-link" href="productlist?page=${currentPage-1}&keyword=${keyword}&categoryId=${categoryId}&status=${status}&sortField=${sortField}&sortDir=${sortDir}" aria-label="Previous">
+                                    <a class="page-link" href="carlist?page=${currentPage-1}&keyword=${keyword}&categoryId=${categoryId}&status=${status}&sortField=${sortField}&sortDir=${sortDir}" aria-label="Previous">
                                         <i class="fas fa-chevron-left"></i>
                                     </a>
                                 </li>
@@ -549,13 +549,13 @@
 
                             <c:forEach begin="1" end="${totalPages}" var="i">
                                 <li class="page-item ${currentPage == i ? 'active' : ''}">
-                                    <a class="page-link" href="productlist?page=${i}&keyword=${keyword}&categoryId=${categoryId}&status=${status}&sortField=${sortField}&sortDir=${sortDir}">${i}</a>
+                                    <a class="page-link" href="carlist?page=${i}&keyword=${keyword}&categoryId=${categoryId}&status=${status}&sortField=${sortField}&sortDir=${sortDir}">${i}</a>
                                 </li>
                             </c:forEach>
 
                             <c:if test="${currentPage < totalPages}">
                                 <li class="page-item">
-                                    <a class="page-link" href="productlist?page=${currentPage+1}&keyword=${keyword}&categoryId=${categoryId}&status=${status}&sortField=${sortField}&sortDir=${sortDir}" aria-label="Next">
+                                    <a class="page-link" href="carlist?page=${currentPage+1}&keyword=${keyword}&categoryId=${categoryId}&status=${status}&sortField=${sortField}&sortDir=${sortDir}" aria-label="Next">
                                         <i class="fas fa-chevron-right"></i>
                                     </a>
                                 </li>
@@ -611,9 +611,9 @@
                                                                 });
                                                             });
 
-                                                            function deleteProduct(id) {
+                                                            function deleteCar(id) {
                                                                 if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) {
-                                                                    window.location.href = 'deleteproduct?productId=' + id;
+                                                                    window.location.href = 'deletecar?carId=' + id;
                                                                 }
                                                             }
         </script>

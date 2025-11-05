@@ -191,7 +191,7 @@
                                     <td><fmt:formatNumber value="${salesReport.totalRevenue}" type="currency" currencySymbol="VNĐ"/></td>
                                     <td><fmt:formatNumber value="${salesReport.averageOrderValue}" type="currency" currencySymbol="VNĐ"/></td>
                                     <td>${salesReport.totalCustomers}</td>
-                                    <td>${salesReport.totalProducts}</td>
+                                    <td>${salesReport.totalCars}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -355,7 +355,7 @@
                             <i class="fas fa-file-export me-1"></i>Xuất báo cáo
                         </button>
                         <h6>3.1 Top Sản Phẩm Theo Doanh Thu</h6>
-                        <table class="table table-bordered table-report" id="topProductsTable">
+                        <table class="table table-bordered table-report" id="topCarsTable">
                             <thead>
                                 <tr>
                                     <th>Mã SP</th>
@@ -368,21 +368,21 @@
                             </thead>
                             <tbody>
                                 <c:choose>
-                                    <c:when test="${empty salesReport.topProducts}">
+                                    <c:when test="${empty salesReport.topCars}">
                                         <tr>
                                             <td colspan="6">Không có dữ liệu sản phẩm</td>
                                         </tr>
                                     </c:when>
                                     <c:otherwise>
-                                        <c:forEach items="${salesReport.topProducts}" var="product">
+                                        <c:forEach items="${salesReport.topCars}" var="car">
                                             <tr>
-                                                <td>${product.productId}</td>
-                                                <td>${product.productName}</td>
-                                                <td>${product.category}</td>
-                                                <td>${product.totalQuantitySold}</td>
-                                                <td><fmt:formatNumber value="${product.totalRevenue}" type="currency" currencySymbol="VNĐ"/></td>
+                                                <td>${car.carId}</td>
+                                                <td>${car.carName}</td>
+                                                <td>${car.category}</td>
+                                                <td>${car.totalQuantitySold}</td>
+                                                <td><fmt:formatNumber value="${car.totalRevenue}" type="currency" currencySymbol="VNĐ"/></td>
                                                 <td>
-                                                    <c:forEach items="${product.variantDistribution}" var="variantEntry">
+                                                    <c:forEach items="${car.variantDistribution}" var="variantEntry">
                                                         ${variantEntry.key}: ${variantEntry.value}<br>
                                                     </c:forEach>
                                                 </td>
@@ -425,7 +425,7 @@
                         <div class="recommendations-box">
                             <h6>3.3 Nhận Xét Hiệu Suất Sản Phẩm</h6>
                             <div class="table-container">
-                                <table class="table table-bordered" id="productPerformanceRecommendationsTable">
+                                <table class="table table-bordered" id="carPerformanceRecommendationsTable">
                                     <thead>
                                         <tr><th>Hạng mục</th><th>Thông tin chi tiết & Đề xuất</th></tr>
                                     </thead>
@@ -434,10 +434,10 @@
                                             <td>Top Sản Phẩm</td>
                                             <td>
                                                 <c:choose>
-                                                    <c:when test="${not empty salesReport.topProducts}">
-                                                        Sản phẩm hàng đầu là "${salesReport.topProducts[0].productName}" 
-                                                        với doanh thu <span class="highlight-number"><fmt:formatNumber value="${salesReport.topProducts[0].totalRevenue}" type="currency" currencySymbol="VNĐ"/></span> 
-                                                        và số lượng bán <span class="highlight-number">${salesReport.topProducts[0].totalQuantitySold}</span> sản phẩm. 
+                                                    <c:when test="${not empty salesReport.topCars}">
+                                                        Sản phẩm hàng đầu là "${salesReport.topCars[0].carName}" 
+                                                        với doanh thu <span class="highlight-number"><fmt:formatNumber value="${salesReport.topCars[0].totalRevenue}" type="currency" currencySymbol="VNĐ"/></span> 
+                                                        và số lượng bán <span class="highlight-number">${salesReport.topCars[0].totalQuantitySold}</span> sản phẩm. 
                                                         Đề xuất: Đầu tư phát triển và mở rộng dòng sản phẩm thành công này.
                                                     </c:when>
                                                     <c:otherwise>
@@ -616,7 +616,7 @@
 
         $('#exportSection3Btn').click(function () {
             exportTablesToExcel(
-                ['topProductsTable', 'revenueByCategoryTable', 'productPerformanceRecommendationsTable'], // Thêm bảng đề xuất
+                ['topCarsTable', 'revenueByCategoryTable', 'carPerformanceRecommendationsTable'], // Thêm bảng đề xuất
                 ['TopSanPham', 'DoanhThuTheoDanhMuc', 'DeXuatHieuSuatSanPham'],                   // Tên sheet tương ứng
                 'sales_section3_' + getDateRange()
             );

@@ -175,7 +175,7 @@
                     <i class="fas fa-info-circle me-2"></i>Thông tin sản phẩm
                 </div>
                 <div class="card-body">
-                    <form action="addproduct" method="post" enctype="multipart/form-data" class="row g-3">
+                    <form action="addcar" method="post" enctype="multipart/form-data" class="row g-3">
                         <div class="col-md-6">
                             <label for="title" class="form-label">Tên sản phẩm</label>
                             <input type="text" class="form-control" id="title" name="title" maxlength="100" required />
@@ -214,8 +214,8 @@
                             </label>
                             <select class="form-select" id="comboGroupId" name="comboGroupId" style="width: 50%;">
                                 <option value="">Không thuộc combo nào</option>
-                                <c:forEach var="comboProduct" items="${comboProducts}">
-                                    <option value="${comboProduct.comboGroupId}">${comboProduct.title}</option>
+                                <c:forEach var="comboCar" items="${comboCars}">
+                                    <option value="${comboCar.comboGroupId}">${comboCar.title}</option>
                                 </c:forEach>
                             </select>
                         </div>
@@ -244,7 +244,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fas fa-save me-2"></i>Thêm sản phẩm
                                 </button>
-                                <a href="productlist" class="btn btn-secondary">
+                                <a href="carlist" class="btn btn-secondary">
                                     <i class="fas fa-arrow-left me-2"></i>Quay lại
                                 </a>
                             </div>
@@ -309,8 +309,8 @@
             });
 
             $('.menu-item').removeClass('active');
-            $('.menu-item a[href="addproduct"]').closest('.menu-item').addClass('active');
-            $('#productSubmenu').addClass('show');
+            $('.menu-item a[href="addcar"]').closest('.menu-item').addClass('active');
+            $('#carSubmenu').addClass('show');
 
             $('#salePrice').on('change', function () {
                 const originalPrice = parseInt($('#originalPrice').val().replace(/\./g, '')) || 0;
@@ -330,7 +330,7 @@
                         let data = new FormData();
                         data.append("file", files[0]);
                         $.ajax({
-                            url: '${pageContext.request.contextPath}/marketing/addproduct?action=uploadImage',
+                            url: '${pageContext.request.contextPath}/owner/addcar?action=uploadImage',
                             method: 'POST',
                             data: data,
                             contentType: false,

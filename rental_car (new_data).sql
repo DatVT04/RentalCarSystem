@@ -130,7 +130,7 @@ INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [s
 GO
 INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (21, N'Hyundai Tucson', N'Xe Hyundai Tucson các ??i', 8, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (22, N'Kia Seltos', N'Xe Kia Seltos các ??i', 8, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (22, N'Kia Seltos', N'Xe Kia Seltos các i', 8, 3, N'active')
 GO
 INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (23, N'Toyota Corolla Cross', N'Xe Toyota Corolla Cross các ??i', 8, 3, N'active')
 GO
@@ -257,11 +257,11 @@ SET IDENTITY_INSERT [dbo].[categories] OFF
 GO
 
 
-SET IDENTITY_INSERT [dbo].[products] ON 
+SET IDENTITY_INSERT [dbo].[cars] ON 
 GO
 
--- Product 1: Toyota Vios
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 1: Toyota Vios
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (1, N'Toyota Vios 2023', 12, N'<p><strong>Toyota Vios 2023 – Sedan Ti?t Ki?m, B?n B?, Phù H?p M?i Nhu C?u</strong></p>
 <p>?? <strong>Toyota Vios 2023</strong> là m?u sedan 5 ch? ph? bi?n nh?t t?i Vi?t Nam, l?a ch?n hoàn h?o cho gia ?ình và doanh nghi?p v?i chi phí h?p lý.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -278,8 +278,8 @@ N'active', 1, N'1',
 CAST(N'2024-02-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:30:33.0233333' AS DateTime2))
 GO
 
--- Product 2: Honda City
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 2: Honda City
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (2, N'Honda City 2024', 13, N'<p><strong>Honda City 2024 – Sedan Sang Tr?ng, Công Ngh? Hi?n ??i</strong></p>
 <p>?? <strong>Honda City 2024</strong> n?i b?t v?i thi?t k? th? thao, n?i th?t cao c?p và công ngh? an toàn hàng ??u phân khúc sedan h?ng B.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -296,8 +296,8 @@ N'active', 0, N'0',
 CAST(N'2024-03-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:37:34.0566667' AS DateTime2))
 GO
 
--- Product 3: Mazda CX-5
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 3: Mazda CX-5
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (3, N'Mazda CX-5 2024', 19, N'<p><strong>Mazda CX-5 2024 – SUV Sang Tr?ng, V?n Hành M??t Mà</strong></p>
 <p>?? <strong>Mazda CX-5 2024</strong> là m?u SUV 5 ch? cao c?p v?i thi?t k? KODO ??y c?m h?ng, ??ng c? SkyActiv và công ngh? i-Activsense tiên ti?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -314,8 +314,8 @@ N'active', 0, N'0',
 CAST(N'2024-04-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:36:54.0533333' AS DateTime2))
 GO
 
--- Product 4: Toyota Fortuner
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 4: Toyota Fortuner
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (4, N'Toyota Fortuner 2024', 24, N'<p><strong>Toyota Fortuner 2024 – SUV 7 Ch? M?nh M?, V??t M?i ??a Hình</strong></p>
 <p>?? <strong>Toyota Fortuner 2024</strong> là m?u SUV 7 ch? hàng ??u v?i kh? n?ng v?n hành m?nh m?, phù h?p cho gia ?ình ?ông ng??i và các chuy?n ?i xa.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -332,8 +332,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:36:31.4233333' AS DateTime2))
 GO
 
--- Product 5: Ford Everest
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 5: Ford Everest
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (5, N'Ford Everest 2024', 25, N'<p><strong>Ford Everest 2024 – SUV 7 Ch? Cao C?p, Công Ngh? V??t Tr?i</strong></p>
 <p>?? <strong>Ford Everest 2024</strong> là m?u SUV 7 ch? th? h? m?i v?i thi?t k? hi?n ??i, ??ng c? m?nh m? và trang b? công ngh? an toàn hàng ??u phân khúc.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -350,8 +350,8 @@ N'active', 1, N'2',
 CAST(N'2024-05-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:21:20.9966667' AS DateTime2))
 GO
 
--- Product 6: Toyota Innova
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 6: Toyota Innova
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (6, N'Toyota Innova Cross 2024', 29, N'<p><strong>Toyota Innova Cross 2024 – MPV 7 Ch? ?a N?ng, Ti?n Nghi V??t Tr?i</strong></p>
 <p>?? <strong>Toyota Innova Cross 2024</strong> là m?u MPV 7 ch? th? h? m?i v?i thi?t k? crossover hi?n ??i, không gian r?ng rãi và trang b? công ngh? tiên ti?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -368,8 +368,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:36:12.8733333' AS DateTime2))
 GO
 
--- Product 7: Ford Transit
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 7: Ford Transit
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (7, N'Ford Transit 16 Ch? 2024', 33, N'<p><strong>Ford Transit 16 Ch? 2024 – Xe Khách ?a D?ng, R?ng Rãi, An Toàn</strong></p>
 <p>?? <strong>Ford Transit 16 ch? 2024</strong> là l?a ch?n hàng ??u cho d?ch v? v?n chuy?n hành khách, tour du l?ch và ??a ?ón nhóm ?ông ng??i v?i không gian r?ng rãi và ti?n nghi.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -386,8 +386,8 @@ N'active', 0, N'0',
 CAST(N'2024-07-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:35:49.2233333' AS DateTime2))
 GO
 
--- Product 8: Mercedes C-Class
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 8: Mercedes C-Class
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (8, N'Mercedes C200 2024', 42, N'<p><strong>Mercedes C200 2024 – Sedan H?ng Sang, ??ng C?p Doanh Nhân</strong></p>
 <p>?? <strong>Mercedes C200 2024</strong> là bi?u t??ng c?a s? sang tr?ng và ??ng c?p, l?a ch?n hoàn h?o cho doanh nhân và khách hàng VIP.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -404,8 +404,8 @@ N'active', 0, N'0',
 CAST(N'2024-08-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-02-10T05:35:14.1666667' AS DateTime2))
 GO
 
--- Product 9: BMW 5 Series
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 9: BMW 5 Series
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (9, N'BMW 530i 2024', 46, N'<p><strong>BMW 530i 2024 – Sedan Th? Thao, Công Ngh? ??nh Cao</strong></p>
 <p>?? <strong>BMW 530i 2024</strong> k?t h?p hoàn h?o gi?a s?c m?nh v?n hành th? thao và công ngh? tiên ti?n, dành cho nh?ng ng??i yêu thích tr?i nghi?m lái xe ??ng c?p.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -422,8 +422,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:35:32.9733333' AS DateTime2))
 GO
 
--- Product 10: Hyundai Accent
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 10: Hyundai Accent
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (10, N'Hyundai Accent 2024', 14, N'<p><strong>Hyundai Accent 2024 – Sedan Thông Minh, Ti?t Ki?m, ?áng Tin C?y</strong></p>
 <p>?? <strong>Hyundai Accent 2024</strong> là m?u sedan h?ng B v?i thi?t k? hi?n ??i, trang b? ??y ?? ti?n nghi và giá thuê h?p lý, phù h?p cho m?i nhu c?u di chuy?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -440,8 +440,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:35:15.5866667' AS DateTime2))
 GO
 
--- Product 11: Mazda 3
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 11: Mazda 3
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (11, N'Mazda 3 2024', 15, N'<p><strong>Mazda 3 2024 – Sedan Th? Thao, Sang Tr?ng, V?n Hành ??nh Cao</strong></p>
 <p>?? <strong>Mazda 3 2024</strong> là m?u sedan h?ng C n?i b?t v?i thi?t k? KODO ??ng c?p, công ngh? SkyActiv và tr?i nghi?m lái xe th? thao.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -458,8 +458,8 @@ N'active', 0, N'2',
 CAST(N'2025-02-10T05:35:14.1666667' AS DateTime2), CAST(N'2025-03-29T18:23:52.0366667' AS DateTime2))
 GO
 
--- Product 12: Kia Cerato
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 12: Kia Cerato
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (12, N'Kia Cerato 2024', 16, N'<p><strong>Kia Cerato 2024 – Sedan Hi?n ??i, ??y ?? Tính N?ng, Giá H?p Lý</strong></p>
 <p>?? <strong>Kia Cerato 2024</strong> là m?u sedan h?ng C v?i thi?t k? tr? trung, trang b? công ngh? hi?n ??i và không gian n?i th?t r?ng rãi, phù h?p cho gia ?ình và doanh nghi?p.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -476,8 +476,8 @@ N'active', 0, N'1',
 CAST(N'2025-02-10T08:08:36.0633333' AS DateTime2), CAST(N'2025-03-29T18:31:28.0800000' AS DateTime2))
 GO
 
--- Product 13: Honda CR-V
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 13: Honda CR-V
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (13, N'Honda CR-V 2024', 18, N'<p><strong>Honda CR-V 2024 – SUV 5 Ch? ?a N?ng, An Toàn, Ti?n Nghi</strong></p>
 <p>?? <strong>Honda CR-V 2024</strong> là m?u SUV 5 ch? bán ch?y nh?t phân khúc v?i thi?t k? sang tr?ng, công ngh? Honda Sensing và không gian linh ho?t.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -494,8 +494,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-24T10:15:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:34:47.1600000' AS DateTime2))
 GO
 
--- Product 14: Hyundai Tucson
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 14: Hyundai Tucson
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (14, N'Hyundai Tucson 2024', 21, N'<p><strong>Hyundai Tucson 2024 – SUV Công Ngh?, Thi?t K? T??ng Lai</strong></p>
 <p>?? <strong>Hyundai Tucson 2024</strong> gây ?n t??ng v?i ngôn ng? thi?t k? Parametric Dynamics táo b?o, công ngh? hi?n ??i và ??ng c? Turbo m?nh m?.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -512,8 +512,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-24T10:20:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:34:27.4900000' AS DateTime2))
 GO
 
--- Product 15: Kia Seltos
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 15: Kia Seltos
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (15, N'Kia Seltos 2024', 22, N'<p><strong>Kia Seltos 2024 – SUV Tr? Trung, N?ng ??ng, ??y Cá Tính</strong></p>
 <p>?? <strong>Kia Seltos 2024</strong> là m?u SUV ?ô th? v?i thi?t k? th? thao, công ngh? k?t n?i thông minh và kh? n?ng v?n hành linh ho?t trong thành ph?.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -530,8 +530,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-24T10:25:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:34:07.1066667' AS DateTime2))
 GO
 
--- Product 16: Toyota Corolla Cross
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 16: Toyota Corolla Cross
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (16, N'Toyota Corolla Cross 2024', 23, N'<p><strong>Toyota Corolla Cross 2024 – SUV ?ô Th?, Ti?n Nghi, ?áng Tin C?y</strong></p>
 <p>?? <strong>Toyota Corolla Cross 2024</strong> là m?u SUV ?ô th? hoàn h?o v?i thi?t k? th?i th??ng, công ngh? an toàn Toyota Safety Sense và ?? tin c?y cao.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -548,8 +548,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-24T10:30:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:33:47.7000000' AS DateTime2))
 GO
 
--- Product 17: Mitsubishi Xpander
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 17: Mitsubishi Xpander
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (17, N'Mitsubishi Xpander 2024', 28, N'<p><strong>Mitsubishi Xpander 2024 – MPV 7 Ch? Linh Ho?t, Ti?t Ki?m, ?a D?ng</strong></p>
 <p>?? <strong>Mitsubishi Xpander 2024</strong> là m?u MPV 7 ch? ph? bi?n v?i thi?t k? crossover, không gian linh ho?t và giá thuê h?p lý cho gia ?ình.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -566,8 +566,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-24T10:35:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:33:27.5400000' AS DateTime2))
 GO
 
--- Product 18: Hyundai SantaFe
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 18: Hyundai SantaFe
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (18, N'Hyundai SantaFe 2024', 27, N'<p><strong>Hyundai SantaFe 2024 – SUV 7 Ch? Cao C?p, Sang Tr?ng, M?nh M?</strong></p>
 <p>?? <strong>Hyundai SantaFe 2024</strong> là m?u SUV 7 ch? cao c?p v?i thi?t k? hi?n ??i, công ngh? v??t tr?i và không gian n?i th?t sang tr?ng.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -584,8 +584,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-24T10:40:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:33:08.0166667' AS DateTime2))
 GO
 
--- Product 19: Mazda CX-8
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 19: Mazda CX-8
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (19, N'Mazda CX-8 2024', 26, N'<p><strong>Mazda CX-8 2024 – SUV 7 Ch? Cao C?p, Sang Tr?ng, V?n Hành M??t Mà</strong></p>
 <p>?? <strong>Mazda CX-8 2024</strong> là m?u SUV 7 ch? cao c?p v?i thi?t k? KODO ??ng c?p, công ngh? SkyActiv và tr?i nghi?m lái xe th? thao.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -602,8 +602,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-24T10:45:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:32:42.2200000' AS DateTime2))
 GO
 
--- Product 20: Ford Ranger
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 20: Ford Ranger
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (20, N'Ford Ranger Wildtrak 2024', 64, N'<p><strong>Ford Ranger Wildtrak 2024 – Bán T?i M?nh M?, ?a D?ng, V??t M?i ??a Hình</strong></p>
 <p>?? <strong>Ford Ranger Wildtrak 2024</strong> là m?u bán t?i cao c?p v?i ??ng c? Bi-Turbo m?nh m?, kh? n?ng v??t ??a hình t?t và ti?n nghi nh? SUV.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -620,8 +620,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-24T10:50:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:32:15.3233333' AS DateTime2))
 GO
 
--- Product 21: Toyota Hilux
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 21: Toyota Hilux
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (21, N'Toyota Hilux 2024', 65, N'<p><strong>Toyota Hilux 2024 – Bán T?i B?n B?, Tin C?y, Kinh T?</strong></p>
 <p>?? <strong>Toyota Hilux 2024</strong> là bi?u t??ng c?a s? b?n b? và ?? tin c?y trong phân khúc bán t?i, phù h?p cho m?i công vi?c t? v?n chuy?n ??n off-road.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -638,8 +638,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-24T10:55:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:29:57.7733333' AS DateTime2))
 GO
 
--- Product 22: Hyundai Solati
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 22: Hyundai Solati
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (22, N'Hyundai Solati 16 Ch? 2024', 34, N'<p><strong>Hyundai Solati 16 Ch? 2024 – Xe Khách Cao C?p, Ti?n Nghi, An Toàn</strong></p>
 <p>?? <strong>Hyundai Solati 16 ch? 2024</strong> là m?u xe khách cao c?p v?i thi?t k? hi?n ??i, n?i th?t sang tr?ng và công ngh? an toàn v??t tr?i.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -655,8 +655,8 @@ N'https://hyundaivn.com.vn/wp-content/uploads/2023/09/hyundai-solati-dl-2024-ghe
 N'active', 0, N'0', 
 CAST(N'2025-02-24T11:00:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:29:35.7866667' AS DateTime2))
 GO
--- Product 23: Mercedes GLC
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 23: Mercedes GLC
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (23, N'Mercedes GLC 300 2024', 48, N'<p><strong>Mercedes GLC 300 2024 – SUV H?ng Sang, ??ng C?p, Công Ngh? ??nh Cao</strong></p>
 <p>?? <strong>Mercedes GLC 300 2024</strong> là m?u SUV h?ng sang v?i thi?t k? tinh t?, công ngh? MBUX thông minh và tr?i nghi?m lái xe ??ng c?p.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -673,8 +673,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-25T10:00:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:29:15.0066667' AS DateTime2))
 GO
 
--- Product 24: BMW X3
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 24: BMW X3
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (24, N'BMW X3 xDrive30i 2024', 49, N'<p><strong>BMW X3 xDrive30i 2024 – SUV Th? Thao, Sang Tr?ng, V?n Hành ??nh Cao</strong></p>
 <p>?? <strong>BMW X3 xDrive30i 2024</strong> k?t h?p hoàn h?o gi?a thi?t k? th? thao, công ngh? hi?n ??i và tr?i nghi?m lái xe ??m ch?t BMW.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -691,8 +691,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-25T10:05:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:28:56.0200000' AS DateTime2))
 GO
 
--- Product 25: Lexus RX
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 25: Lexus RX
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (25, N'Lexus RX 350 2024', 51, N'<p><strong>Lexus RX 350 2024 – SUV H?ng Sang, Êm Ái, ??ng C?p Nh?t B?n</strong></p>
 <p>?? <strong>Lexus RX 350 2024</strong> là m?u SUV h?ng sang v?i thi?t k? tinh t?, n?i th?t xa hoa và ?? êm ái v??t tr?i, ??i di?n cho ??ng c?p Omotenashi c?a Nh?t B?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -709,8 +709,8 @@ N'active', 0, N'0',
 CAST(N'2024-11-25T10:10:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:28:36.1900000' AS DateTime2))
 GO
 
--- Product 26: VinFast VF8
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 26: VinFast VF8
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (26, N'VinFast VF8 Plus 2024', 69, N'<p><strong>VinFast VF8 Plus 2024 – SUV ?i?n Vi?t Nam, Công Ngh? Xanh, Hi?n ??i</strong></p>
 <p>?? <strong>VinFast VF8 Plus 2024</strong> là m?u SUV ?i?n 5 ch? ??u tiên c?a Vi?t Nam v?i công ngh? hi?n ??i, thân thi?n môi tr??ng và chi phí v?n hành siêu ti?t ki?m.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -727,8 +727,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-25T10:15:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:28:17.7800000' AS DateTime2))
 GO
 
--- Product 27: Kia Carnival
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 27: Kia Carnival
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (27, N'Kia Carnival 2024', 32, N'<p><strong>Kia Carnival 2024 – MPV Cao C?p, Sang Tr?ng, ?a N?ng</strong></p>
 <p>?? <strong>Kia Carnival 2024</strong> là m?u MPV cao c?p v?i thi?t k? sang tr?ng, không gian r?ng rãi và trang b? ti?n nghi ??ng c?p, x?ng danh "Limousine 7 ch?".</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -745,8 +745,8 @@ N'active', 0, N'0',
 CAST(N'2024-12-25T10:20:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:27:54.7966667' AS DateTime2))
 GO
 
--- Product 28: Suzuki Ertiga
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 28: Suzuki Ertiga
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (28, N'Suzuki Ertiga 2024', 31, N'<p><strong>Suzuki Ertiga 2024 – MPV 7 Ch? Ti?t Ki?m, Linh Ho?t, Phù H?p Gia ?ình</strong></p>
 <p>?? <strong>Suzuki Ertiga 2024</strong> là m?u MPV 7 ch? v?i thi?t k? nh? g?n, ti?t ki?m nhiên li?u và giá thuê h?p lý, lý t??ng cho gia ?ình và taxi công ngh?.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -763,8 +763,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-25T10:25:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:27:03.4100000' AS DateTime2))
 GO
 
--- Product 29: Honda Accord
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 29: Honda Accord
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (29, N'Honda Accord 2024', 57, N'<p><strong>Honda Accord 2024 – Sedan H?ng D, Sang Tr?ng, Công Ngh? Hi?n ??i</strong></p>
 <p>?? <strong>Honda Accord 2024</strong> là m?u sedan h?ng D v?i thi?t k? thanh l?ch, ??ng c? m?nh m? và công ngh? Honda Sensing tiên ti?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -781,8 +781,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-25T10:30:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:26:38.6800000' AS DateTime2))
 GO
 
--- Product 30: Toyota Camry
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 30: Toyota Camry
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (30, N'Toyota Camry 2024', 58, N'<p><strong>Toyota Camry 2024 – Sedan H?ng D, ??ng C?p, B?n B?</strong></p>
 <p>?? <strong>Toyota Camry 2024</strong> là m?u sedan h?ng D bi?u t??ng v?i thi?t k? sang tr?ng, ??ng c? Hybrid ti?t ki?m và ?? b?n b? v??t th?i gian.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -799,8 +799,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-25T10:35:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:26:17.9700000' AS DateTime2))
 GO
 
--- Product 31: Mazda 6
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+-- car 31: Mazda 6
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (31, N'Mazda 6 2024', 59, N'<p><strong>Mazda 6 2024 – Sedan H?ng D, Th? Thao, Sang Tr?ng</strong></p>
 <p>?? <strong>Mazda 6 2024</strong> là m?u sedan h?ng D v?i thi?t k? KODO ??ng c?p, ??ng c? SkyActiv m?nh m? và tr?i nghi?m lái xe th? thao.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -817,8 +817,8 @@ N'active', 0, N'0',
 CAST(N'2025-02-25T10:40:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:25:56.6233333' AS DateTime2))
 GO
 
---Product 32: VinFast Lux A2.0
-INSERT [dbo].[products] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
+--car 32: VinFast Lux A2.0
+INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
 VALUES (32, N'VinFast Lux A2.0 2024', 17, N'<p><strong>VinFast Lux A2.0 2024 – Sedan H?ng D Vi?t Nam, Sang Tr?ng, Công Ngh?</strong></p>
 <p>?? <strong>VinFast Lux A2.0 2024</strong> là m?u sedan h?ng D ??u tiên c?a Vi?t Nam v?i thi?t k? sang tr?ng, công ngh? hi?n ??i và giá thuê c?nh tranh.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
@@ -835,1027 +835,1027 @@ N'active', 0, N'0',
 CAST(N'2025-02-25T10:45:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:25:29.0233333' AS DateTime2))
 GO
 
-SET IDENTITY_INSERT [dbo].[products] OFF
+SET IDENTITY_INSERT [dbo].[cars] OFF
 GO
 
-SET IDENTITY_INSERT [dbo].[product_sizes] ON 
+SET IDENTITY_INSERT [dbo].[car_sizes] ON 
 GO
 
--- Product 1: Toyota Vios (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (1, 1, N'5 ch?')
+-- car 1: Toyota Vios (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (1, 1, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (2, 1, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (2, 1, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (3, 1, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (3, 1, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (4, 1, N'Thuê theo ngày')
-GO
-
--- Product 2: Honda City (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (5, 2, N'5 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (6, 2, N'T? lái')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (7, 2, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (8, 2, N'Thuê theo tháng')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (4, 1, N'Thuê theo ngày')
 GO
 
--- Product 3: Mazda CX-5 (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (9, 3, N'5 ch?')
+-- car 2: Honda City (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (5, 2, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (10, 3, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (6, 2, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (11, 3, N'Thuê theo ngày')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (7, 2, N'Có tài x?')
 GO
-
--- Product 4: Toyota Fortuner (7 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (12, 4, N'7 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (13, 4, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (14, 4, N'Thuê theo ngày')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (8, 2, N'Thuê theo tháng')
 GO
 
--- Product 5: Ford Everest (7 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (15, 5, N'7 ch?')
+-- car 3: Mazda CX-5 (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (9, 3, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (16, 5, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (10, 3, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (17, 5, N'Có tài x?')
-GO
-
--- Product 6: Toyota Innova Cross (7 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (18, 6, N'7 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (19, 6, N'T? lái')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (20, 6, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (11, 3, N'Thuê theo ngày')
 GO
 
--- Product 7: Ford Transit (16 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (21, 7, N'16 ch?')
+-- car 4: Toyota Fortuner (7 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (12, 4, N'7 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (22, 7, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (13, 4, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (23, 7, N'Thuê theo ngày')
-GO
-
--- Product 8: Mercedes C200 (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (24, 8, N'5 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (25, 8, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (26, 8, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (14, 4, N'Thuê theo ngày')
 GO
 
--- Product 9: BMW 530i (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (28, 9, N'5 ch?')
+-- car 5: Ford Everest (7 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (15, 5, N'7 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (29, 9, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (16, 5, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (30, 9, N'Xe c??i')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (31, 9, N'S? ki?n VIP')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (32, 9, N'Thuê theo gi?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (17, 5, N'Có tài x?')
 GO
 
--- Product 10: Hyundai Accent (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (33, 10, N'5 ch?')
+-- car 6: Toyota Innova Cross (7 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (18, 6, N'7 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (34, 10, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (19, 6, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (35, 10, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (36, 10, N'Thuê theo ngày')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (37, 10, N'Thuê theo tháng')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (20, 6, N'Có tài x?')
 GO
 
--- Product 11: Mazda 3 (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (38, 11, N'5 ch?')
+-- car 7: Ford Transit (16 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (21, 7, N'16 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (39, 11, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (22, 7, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (40, 11, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (41, 11, N'Thuê theo tháng')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (23, 7, N'Thuê theo ngày')
 GO
 
--- Product 12: Kia Cerato (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (42, 12, N'5 ch?')
+-- car 8: Mercedes C200 (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (24, 8, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (43, 12, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (25, 8, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (44, 12, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (45, 12, N'Thuê theo ngày')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (26, 8, N'Xe c??i')
 GO
 
--- Product 13: Honda CR-V (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (46, 13, N'5 ch?')
+-- car 9: BMW 530i (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (28, 9, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (47, 13, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (29, 9, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (48, 13, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (30, 9, N'Xe c??i')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (49, 13, N'Thuê theo ngày')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (31, 9, N'S? ki?n VIP')
 GO
-
--- Product 14: Hyundai Tucson (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (50, 14, N'5 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (51, 14, N'T? lái')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (52, 14, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (32, 9, N'Thuê theo gi?')
 GO
 
--- Product 15: Kia Seltos (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (53, 15, N'5 ch?')
+-- car 10: Hyundai Accent (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (33, 10, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (54, 15, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (34, 10, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (55, 15, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (35, 10, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (56, 15, N'Thuê theo ngày')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (36, 10, N'Thuê theo ngày')
 GO
-
--- Product 16: Toyota Corolla Cross (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (57, 16, N'5 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (58, 16, N'T? lái')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (59, 16, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (37, 10, N'Thuê theo tháng')
 GO
 
--- Product 17: Mitsubishi Xpander (7 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (60, 17, N'7 ch?')
+-- car 11: Mazda 3 (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (38, 11, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (61, 17, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (39, 11, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (62, 17, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (40, 11, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (63, 17, N'Thuê theo tháng')
-GO
-
--- Product 18: Hyundai SantaFe (7 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (64, 18, N'7 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (65, 18, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (66, 18, N'Thuê theo ngày')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (67, 18, N'Du l?ch gia ?ình')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (68, 18, N'Xe VIP')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (41, 11, N'Thuê theo tháng')
 GO
 
--- Product 19: Mazda CX-8 (7 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (69, 19, N'7 ch?')
+-- car 12: Kia Cerato (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (42, 12, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (70, 19, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (43, 12, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (71, 19, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (44, 12, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (72, 19, N'S? ki?n cao c?p')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (73, 19, N'Thuê theo ngày')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (45, 12, N'Thuê theo ngày')
 GO
 
--- Product 20: Ford Ranger (Bán t?i 5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (74, 20, N'5 ch?')
+-- car 13: Honda CR-V (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (46, 13, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (75, 20, N'Bán t?i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (47, 13, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (76, 20, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (48, 13, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (77, 20, N'Có tài x?')
-GO
-
--- Product 21: Toyota Hilux (Bán t?i 5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (78, 21, N'5 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (79, 21, N'Bán t?i')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (80, 21, N'T? lái')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (81, 21, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (49, 13, N'Thuê theo ngày')
 GO
 
--- Product 22: Hyundai Solati (16 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (82, 22, N'16 ch?')
+-- car 14: Hyundai Tucson (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (50, 14, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (83, 22, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (51, 14, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (84, 22, N'Tour du l?ch')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (85, 22, N'Thuê theo ngày')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (86, 22, N'Limousine')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (52, 14, N'Có tài x?')
 GO
 
--- Product 23: Mercedes GLC (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (87, 23, N'5 ch?')
+-- car 15: Kia Seltos (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (53, 15, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (88, 23, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (54, 15, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (89, 23, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (55, 15, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (90, 23, N'S? ki?n VIP')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (91, 23, N'Thu? theo gi?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (56, 15, N'Thuê theo ngày')
 GO
 
--- Product 24: BMW X3 (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (92, 24, N'5 ch?')
+-- car 16: Toyota Corolla Cross (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (57, 16, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (93, 24, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (58, 16, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (94, 24, N'Xe c??i')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (95, 24, N'S? ki?n VIP')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (59, 16, N'Có tài x?')
 GO
 
--- Product 25: Lexus RX (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (96, 25, N'5 ch?')
+-- car 17: Mitsubishi Xpander (7 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (60, 17, N'7 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (97, 25, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (61, 17, N'T? lái')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (98, 25, N'Xe c??i cao c?p')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (62, 17, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (99, 25, N'Khách VIP')
-GO
-
--- Product 26: VinFast VF8 (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (100, 26, N'5 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (101, 26, N'Xe ?i?n')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (102, 26, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (63, 17, N'Thuê theo tháng')
 GO
 
--- Product 27: Kia Carnival (7 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (103, 27, N'7 ch?')
+-- car 18: Hyundai SantaFe (7 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (64, 18, N'7 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (104, 27, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (65, 18, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (105, 27, N'Limousine')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (66, 18, N'Thuê theo ngày')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (106, 27, N'Xe VIP')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (67, 18, N'Du l?ch gia ?ình')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (107, 27, N'Du l?ch gia ?ình')
-GO
-
--- Product 28: Suzuki Ertiga (7 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (108, 28, N'7 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (109, 28, N'T? lái')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (110, 28, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (111, 28, N'Thuê theo tháng')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (68, 18, N'Xe VIP')
 GO
 
--- Product 29: Honda Accord (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (112, 29, N'5 ch?')
+-- car 19: Mazda CX-8 (7 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (69, 19, N'7 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (113, 29, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (70, 19, N'Có tài x?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (114, 29, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (71, 19, N'Xe c??i')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (115, 29, N'Thuê theo ngày')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (72, 19, N'S? ki?n cao c?p')
 GO
-
--- Product 30: Toyota Camry (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (116, 30, N'5 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (117, 30, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (118, 30, N'Xe c??i')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (119, 30, N'??a ?ón sân bay')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (73, 19, N'Thuê theo ngày')
 GO
 
--- Product 31: Mazda 6 (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (120, 31, N'5 ch?')
+-- car 20: Ford Ranger (Bán t?i 5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (74, 20, N'5 ch?')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (121, 31, N'T? lái')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (75, 20, N'Bán t?i')
 GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (122, 31, N'Có tài x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (76, 20, N'T? lái')
 GO
-
--- Product 32: VinFast Lux A2.0 (5 ch?)
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (123, 32, N'5 ch?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (124, 32, N'T? lái')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (125, 32, N'Có tài x?')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (126, 32, N'Xe c??i')
-GO
-INSERT [dbo].[product_sizes] ([id], [product_id], [size]) VALUES (127, 32, N'Thuê theo ngày')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (77, 20, N'Có tài x?')
 GO
 
-SET IDENTITY_INSERT [dbo].[product_sizes] OFF
+-- car 21: Toyota Hilux (Bán t?i 5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (78, 21, N'5 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (79, 21, N'Bán t?i')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (80, 21, N'T? lái')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (81, 21, N'Có tài x?')
+GO
+
+-- car 22: Hyundai Solati (16 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (82, 22, N'16 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (83, 22, N'Có tài x?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (84, 22, N'Tour du l?ch')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (85, 22, N'Thuê theo ngày')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (86, 22, N'Limousine')
+GO
+
+-- car 23: Mercedes GLC (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (87, 23, N'5 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (88, 23, N'Có tài x?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (89, 23, N'Xe c??i')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (90, 23, N'S? ki?n VIP')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (91, 23, N'Thu? theo gi?')
+GO
+
+-- car 24: BMW X3 (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (92, 24, N'5 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (93, 24, N'Có tài x?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (94, 24, N'Xe c??i')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (95, 24, N'S? ki?n VIP')
+GO
+
+-- car 25: Lexus RX (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (96, 25, N'5 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (97, 25, N'Có tài x?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (98, 25, N'Xe c??i cao c?p')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (99, 25, N'Khách VIP')
+GO
+
+-- car 26: VinFast VF8 (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (100, 26, N'5 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (101, 26, N'Xe ?i?n')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (102, 26, N'T? lái')
+GO
+
+-- car 27: Kia Carnival (7 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (103, 27, N'7 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (104, 27, N'Có tài x?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (105, 27, N'Limousine')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (106, 27, N'Xe VIP')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (107, 27, N'Du l?ch gia ?ình')
+GO
+
+-- car 28: Suzuki Ertiga (7 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (108, 28, N'7 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (109, 28, N'T? lái')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (110, 28, N'Có tài x?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (111, 28, N'Thuê theo tháng')
+GO
+
+-- car 29: Honda Accord (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (112, 29, N'5 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (113, 29, N'Có tài x?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (114, 29, N'Xe c??i')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (115, 29, N'Thuê theo ngày')
+GO
+
+-- car 30: Toyota Camry (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (116, 30, N'5 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (117, 30, N'Có tài x?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (118, 30, N'Xe c??i')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (119, 30, N'??a ?ón sân bay')
+GO
+
+-- car 31: Mazda 6 (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (120, 31, N'5 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (121, 31, N'T? lái')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (122, 31, N'Có tài x?')
+GO
+
+-- car 32: VinFast Lux A2.0 (5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (123, 32, N'5 ch?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (124, 32, N'T? lái')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (125, 32, N'Có tài x?')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (126, 32, N'Xe c??i')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (127, 32, N'Thuê theo ngày')
+GO
+
+SET IDENTITY_INSERT [dbo].[car_sizes] OFF
 GO
 
 
-SET IDENTITY_INSERT [dbo].[product_colors] ON 
+SET IDENTITY_INSERT [dbo].[car_colors] ON 
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (1, 1, N'Tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (1, 1, N'Tr?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (2, 1, N'Xanh nh?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (2, 1, N'Xanh nh?t')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (3, 2, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (3, 2, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (4, 2, N'Xám')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (4, 2, N'Xám')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (5, 3, N'Hoa xanh')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (5, 3, N'Hoa xanh')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (6, 3, N'Hoa ??')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (6, 3, N'Hoa ??')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (7, 4, N'Xanh ??m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (7, 4, N'Xanh ??m')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (8, 4, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (8, 4, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (9, 5, N'??')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (9, 5, N'??')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (10, 5, N'Xanh')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (10, 5, N'Xanh')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (11, 6, N'Xanh navy')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (11, 6, N'Xanh navy')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (12, 6, N'Xám')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (12, 6, N'Xám')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (13, 7, N'Nâu')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (13, 7, N'Nâu')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (14, 7, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (14, 7, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (17, 9, N'Tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (17, 9, N'Tr?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (18, 9, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (18, 9, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (19, 10, N'Tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (19, 10, N'Tr?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (20, 10, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (20, 10, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (21, 10, N'Xanh')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (21, 10, N'Xanh')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (22, 11, N'Xanh')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (22, 11, N'Xanh')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (23, 11, N'??')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (23, 11, N'??')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (24, 12, N'Xanh')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (24, 12, N'Xanh')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (25, 12, N'Xanh ??m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (25, 12, N'Xanh ??m')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (26, 13, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (26, 13, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (27, 13, N'Navy')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (27, 13, N'Navy')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (29, 14, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (29, 14, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (30, 14, N'Xám')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (30, 14, N'Xám')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (31, 14, N'Xanh ??m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (31, 14, N'Xanh ??m')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (32, 15, N'Tr?ng h?a ti?t hoa xanh')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (32, 15, N'Tr?ng h?a ti?t hoa xanh')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (33, 15, N'H?ng h?a ti?t hoa tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (33, 15, N'H?ng h?a ti?t hoa tr?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (34, 16, N'Tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (34, 16, N'Tr?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (35, 16, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (35, 16, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (36, 16, N'Xám')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (36, 16, N'Xám')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (37, 17, N'H?ng pastel')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (37, 17, N'H?ng pastel')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (38, 17, N'Tím lavender')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (38, 17, N'Tím lavender')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (39, 18, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (39, 18, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (40, 18, N'Xám')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (40, 18, N'Xám')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (41, 18, N'Xanh navy')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (41, 18, N'Xanh navy')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (42, 19, N'B?c')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (42, 19, N'B?c')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (43, 19, N'Vàng h?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (43, 19, N'Vàng h?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (44, 20, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (44, 20, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (45, 20, N'Kem')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (45, 20, N'Kem')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (46, 20, N'?? ?ô')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (46, 20, N'?? ?ô')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (47, 21, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (47, 21, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (48, 21, N'Nâu')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (48, 21, N'Nâu')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (49, 21, N'Vàng gold')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (49, 21, N'Vàng gold')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (50, 22, N'Tr?ng s?c xanh')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (50, 22, N'Tr?ng s?c xanh')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (51, 22, N'Tr?ng s?c ?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (51, 22, N'Tr?ng s?c ?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (52, 22, N'Xanh nh?t s?c tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (52, 22, N'Xanh nh?t s?c tr?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (53, 23, N'Xanh ??m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (53, 23, N'Xanh ??m')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (54, 23, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (54, 23, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (55, 23, N'Xanh nh?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (55, 23, N'Xanh nh?t')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (56, 24, N'Kem')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (56, 24, N'Kem')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (57, 24, N'Xám')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (57, 24, N'Xám')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (58, 24, N'Nâu')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (58, 24, N'Nâu')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (59, 25, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (59, 25, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (60, 25, N'H?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (60, 25, N'H?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (61, 25, N'Kem')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (61, 25, N'Kem')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (62, 26, N'B?c')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (62, 26, N'B?c')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (63, 26, N'Vàng h?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (63, 26, N'Vàng h?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (64, 27, N'Kem')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (64, 27, N'Kem')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (65, 27, N'Xanh mint')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (65, 27, N'Xanh mint')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (66, 27, N'H?ng nh?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (66, 27, N'H?ng nh?t')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (67, 28, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (67, 28, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (68, 28, N'Nâu')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (68, 28, N'Nâu')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (69, 29, N'Tr?ng h?a ti?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (69, 29, N'Tr?ng h?a ti?t')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (70, 29, N'Xanh da tr?i h?a ti?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (70, 29, N'Xanh da tr?i h?a ti?t')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (71, 29, N'Vàng h?a ti?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (71, 29, N'Vàng h?a ti?t')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (72, 30, N'B?c')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (72, 30, N'B?c')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (73, 30, N'Vàng h?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (73, 30, N'Vàng h?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (74, 31, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (74, 31, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (75, 31, N'Xám')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (75, 31, N'Xám')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (76, 31, N'K? caro')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (76, 31, N'K? caro')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (77, 32, N'Be')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (77, 32, N'Be')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (78, 32, N'Xanh navy')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (78, 32, N'Xanh navy')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (79, 32, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (79, 32, N'?en')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (80, 32, N'H?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (80, 32, N'H?ng')
 GO
-INSERT [dbo].[product_colors] ([id], [product_id], [color]) VALUES (81, 32, N'??')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (81, 32, N'??')
 GO
-SET IDENTITY_INSERT [dbo].[product_colors] OFF
+SET IDENTITY_INSERT [dbo].[car_colors] OFF
 GO
-SET IDENTITY_INSERT [dbo].[product_variants] ON 
+SET IDENTITY_INSERT [dbo].[car_variants] ON 
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (1, 1, 1, 1, 50, CAST(N'2025-03-01T05:32:49.6166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (1, 1, 1, 1, 50, CAST(N'2025-03-01T05:32:49.6166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (2, 1, 2, 1, 74, CAST(N'2025-03-01T05:32:46.1733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (2, 1, 2, 1, 74, CAST(N'2025-03-01T05:32:46.1733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (3, 1, 3, 1, 60, CAST(N'2025-03-01T05:32:44.3233333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (3, 1, 3, 1, 60, CAST(N'2025-03-01T05:32:44.3233333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (4, 1, 4, 1, 40, CAST(N'2025-03-01T05:32:47.8333333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (4, 1, 4, 1, 40, CAST(N'2025-03-01T05:32:47.8333333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (5, 1, 1, 2, 45, CAST(N'2025-03-01T05:32:56.7500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (5, 1, 1, 2, 45, CAST(N'2025-03-01T05:32:56.7500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (6, 1, 2, 2, 68, CAST(N'2025-03-01T05:32:53.2233333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (6, 1, 2, 2, 68, CAST(N'2025-03-01T05:32:53.2233333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (7, 1, 3, 2, 55, CAST(N'2025-03-01T05:32:51.3033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (7, 1, 3, 2, 55, CAST(N'2025-03-01T05:32:51.3033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (8, 1, 4, 2, 35, CAST(N'2025-03-01T05:32:54.7833333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (8, 1, 4, 2, 35, CAST(N'2025-03-01T05:32:54.7833333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (9, 2, 5, 3, 40, CAST(N'2025-03-01T05:33:56.5733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (9, 2, 5, 3, 40, CAST(N'2025-03-01T05:33:56.5733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (10, 2, 6, 3, 62, CAST(N'2025-03-01T05:33:54.9400000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (10, 2, 6, 3, 62, CAST(N'2025-03-01T05:33:54.9400000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (11, 2, 7, 3, 50, CAST(N'2025-03-01T05:33:52.9966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (11, 2, 7, 3, 50, CAST(N'2025-03-01T05:33:52.9966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (12, 2, 8, 3, 30, CAST(N'2025-03-01T05:33:58.3033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (12, 2, 8, 3, 30, CAST(N'2025-03-01T05:33:58.3033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (13, 2, 5, 4, 35, CAST(N'2025-03-01T05:34:03.8566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (13, 2, 5, 4, 35, CAST(N'2025-03-01T05:34:03.8566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (14, 2, 6, 4, 60, CAST(N'2025-03-01T05:34:02.0033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (14, 2, 6, 4, 60, CAST(N'2025-03-01T05:34:02.0033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (15, 2, 7, 4, 45, CAST(N'2025-03-01T05:34:00.2000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (15, 2, 7, 4, 45, CAST(N'2025-03-01T05:34:00.2000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (16, 2, 8, 4, 25, CAST(N'2025-03-01T05:34:15.2900000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (16, 2, 8, 4, 25, CAST(N'2025-03-01T05:34:15.2900000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (17, 3, 9, 5, 30, CAST(N'2025-03-01T05:37:04.1966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (17, 3, 9, 5, 30, CAST(N'2025-03-01T05:37:04.1966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (18, 3, 10, 5, 45, CAST(N'2025-03-01T05:37:02.6533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (18, 3, 10, 5, 45, CAST(N'2025-03-01T05:37:02.6533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (19, 3, 11, 5, 20, CAST(N'2025-03-01T05:37:01.1000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (19, 3, 11, 5, 20, CAST(N'2025-03-01T05:37:01.1000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (20, 3, 9, 6, 21, CAST(N'2025-03-01T05:36:59.4766667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (20, 3, 9, 6, 21, CAST(N'2025-03-01T05:36:59.4766667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (21, 3, 10, 6, 39, CAST(N'2025-03-01T05:36:56.9100000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (21, 3, 10, 6, 39, CAST(N'2025-03-01T05:36:56.9100000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (22, 3, 11, 6, 15, CAST(N'2025-03-01T05:36:55.2233333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (22, 3, 11, 6, 15, CAST(N'2025-03-01T05:36:55.2233333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (23, 4, 12, 7, 35, CAST(N'2025-03-01T05:33:28.4200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (23, 4, 12, 7, 35, CAST(N'2025-03-01T05:33:28.4200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (24, 4, 13, 7, 49, CAST(N'2025-03-01T05:33:26.4733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (24, 4, 13, 7, 49, CAST(N'2025-03-01T05:33:26.4733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (25, 4, 14, 7, 24, CAST(N'2025-03-01T05:33:24.7666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (25, 4, 14, 7, 24, CAST(N'2025-03-01T05:33:24.7666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (26, 4, 12, 8, 30, CAST(N'2025-03-01T05:33:23.1033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (26, 4, 12, 8, 30, CAST(N'2025-03-01T05:33:23.1033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (27, 4, 13, 8, 44, CAST(N'2025-03-01T05:33:21.2866667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (27, 4, 13, 8, 44, CAST(N'2025-03-01T05:33:21.2866667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (28, 4, 14, 8, 20, CAST(N'2025-03-01T05:33:19.7200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (28, 4, 14, 8, 20, CAST(N'2025-03-01T05:33:19.7200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (29, 5, 15, 9, 60, CAST(N'2025-03-01T05:33:02.6033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (29, 5, 15, 9, 60, CAST(N'2025-03-01T05:33:02.6033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (30, 5, 16, 9, 73, CAST(N'2025-03-01T05:33:04.3900000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (30, 5, 16, 9, 73, CAST(N'2025-03-01T05:33:04.3900000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (31, 5, 17, 9, 50, CAST(N'2025-03-01T05:33:08.3566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (31, 5, 17, 9, 50, CAST(N'2025-03-01T05:33:08.3566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (32, 5, 15, 10, 54, CAST(N'2025-03-01T05:33:06.7300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (32, 5, 15, 10, 54, CAST(N'2025-03-01T05:33:06.7300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (33, 5, 16, 10, 70, CAST(N'2025-03-01T05:33:09.9700000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (33, 5, 16, 10, 70, CAST(N'2025-03-01T05:33:09.9700000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (34, 5, 17, 10, 45, CAST(N'2025-03-01T05:33:12.7200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (34, 5, 17, 10, 45, CAST(N'2025-03-01T05:33:12.7200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (35, 6, 18, 11, 63, CAST(N'2025-03-01T05:34:24.9300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (35, 6, 18, 11, 63, CAST(N'2025-03-01T05:34:24.9300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (36, 6, 19, 11, 80, CAST(N'2025-03-01T05:34:23.2400000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (36, 6, 19, 11, 80, CAST(N'2025-03-01T05:34:23.2400000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (37, 6, 20, 11, 55, CAST(N'2025-03-01T05:34:21.4366667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (37, 6, 20, 11, 55, CAST(N'2025-03-01T05:34:21.4366667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (38, 6, 18, 12, 60, CAST(N'2025-03-01T05:34:30.2333333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (38, 6, 18, 12, 60, CAST(N'2025-03-01T05:34:30.2333333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (39, 6, 19, 12, 75, CAST(N'2025-03-01T05:34:28.4800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (39, 6, 19, 12, 75, CAST(N'2025-03-01T05:34:28.4800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (40, 6, 20, 12, 50, CAST(N'2025-03-01T05:34:26.6366667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (40, 6, 20, 12, 50, CAST(N'2025-03-01T05:34:26.6366667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (41, 7, 24, 13, 40, CAST(N'2025-03-01T05:34:46.2300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (41, 7, 24, 13, 40, CAST(N'2025-03-01T05:34:46.2300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (42, 7, 25, 13, 50, CAST(N'2025-03-01T05:34:44.6233333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (42, 7, 25, 13, 50, CAST(N'2025-03-01T05:34:44.6233333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (43, 7, 26, 13, 30, CAST(N'2025-03-01T05:34:43.1500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (43, 7, 26, 13, 30, CAST(N'2025-03-01T05:34:43.1500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (44, 7, 24, 14, 35, CAST(N'2025-03-01T05:34:41.5633333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (44, 7, 24, 14, 35, CAST(N'2025-03-01T05:34:41.5633333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (45, 7, 25, 14, 45, CAST(N'2025-03-01T05:34:38.2533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (45, 7, 25, 14, 45, CAST(N'2025-03-01T05:34:38.2533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (46, 7, 26, 14, 25, CAST(N'2025-03-01T05:34:40.0266667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (46, 7, 26, 14, 25, CAST(N'2025-03-01T05:34:40.0266667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (49, 9, 28, 17, 25, CAST(N'2025-03-01T05:35:49.7300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (49, 9, 28, 17, 25, CAST(N'2025-03-01T05:35:49.7300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (50, 9, 29, 17, 34, CAST(N'2025-03-01T05:35:45.2166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (50, 9, 29, 17, 34, CAST(N'2025-03-01T05:35:45.2166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (51, 9, 30, 17, 40, CAST(N'2025-03-01T05:35:52.1066667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (51, 9, 30, 17, 40, CAST(N'2025-03-01T05:35:52.1066667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (52, 9, 31, 17, 30, CAST(N'2025-03-01T05:35:57.1700000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (52, 9, 31, 17, 30, CAST(N'2025-03-01T05:35:57.1700000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (53, 9, 32, 17, 20, CAST(N'2025-03-01T05:35:54.7366667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (53, 9, 32, 17, 20, CAST(N'2025-03-01T05:35:54.7366667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (54, 9, 28, 18, 20, CAST(N'2025-03-01T05:35:36.2066667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (54, 9, 28, 18, 20, CAST(N'2025-03-01T05:35:36.2066667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (55, 9, 29, 18, 30, CAST(N'2025-03-01T05:35:39.6033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (55, 9, 29, 18, 30, CAST(N'2025-03-01T05:35:39.6033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (56, 9, 30, 18, 35, CAST(N'2025-03-01T05:35:37.9700000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (56, 9, 30, 18, 35, CAST(N'2025-03-01T05:35:37.9700000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (57, 9, 31, 18, 25, CAST(N'2025-03-01T05:35:41.3400000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (57, 9, 31, 18, 25, CAST(N'2025-03-01T05:35:41.3400000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (58, 9, 32, 18, 15, CAST(N'2025-03-01T05:35:47.2166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (58, 9, 32, 18, 15, CAST(N'2025-03-01T05:35:47.2166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (59, 10, 33, 19, 30, CAST(N'2025-03-01T05:34:59.9733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (59, 10, 33, 19, 30, CAST(N'2025-03-01T05:34:59.9733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (60, 10, 34, 19, 40, CAST(N'2025-03-01T05:35:03.4600000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (60, 10, 34, 19, 40, CAST(N'2025-03-01T05:35:03.4600000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (61, 10, 35, 19, 50, CAST(N'2025-03-01T05:35:05.2566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (61, 10, 35, 19, 50, CAST(N'2025-03-01T05:35:05.2566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (62, 10, 36, 19, 35, CAST(N'2025-03-01T05:35:06.9266667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (62, 10, 36, 19, 35, CAST(N'2025-03-01T05:35:06.9266667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (63, 10, 37, 19, 25, CAST(N'2025-03-01T05:35:09.0933333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (63, 10, 37, 19, 25, CAST(N'2025-03-01T05:35:09.0933333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (64, 10, 33, 20, 20, CAST(N'2025-03-01T05:34:53.1966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (64, 10, 33, 20, 20, CAST(N'2025-03-01T05:34:53.1966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (65, 10, 34, 20, 28, CAST(N'2025-03-01T05:34:55.0733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (65, 10, 34, 20, 28, CAST(N'2025-03-01T05:34:55.0733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (66, 10, 35, 20, 45, CAST(N'2025-03-01T05:34:56.6600000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (66, 10, 35, 20, 45, CAST(N'2025-03-01T05:34:56.6600000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (67, 10, 36, 20, 40, CAST(N'2025-03-01T05:34:58.1466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (67, 10, 36, 20, 40, CAST(N'2025-03-01T05:34:58.1466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (68, 10, 37, 20, 30, CAST(N'2025-03-01T05:35:01.5366667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (68, 10, 37, 20, 30, CAST(N'2025-03-01T05:35:01.5366667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (69, 10, 33, 21, 25, CAST(N'2025-03-01T05:35:11.7233333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (69, 10, 33, 21, 25, CAST(N'2025-03-01T05:35:11.7233333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (70, 10, 34, 21, 35, CAST(N'2025-03-01T05:35:17.1533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (70, 10, 34, 21, 35, CAST(N'2025-03-01T05:35:17.1533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (71, 10, 35, 21, 50, CAST(N'2025-03-01T05:35:20.3666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (71, 10, 35, 21, 50, CAST(N'2025-03-01T05:35:20.3666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (72, 10, 36, 21, 45, CAST(N'2025-03-01T05:35:23.5666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (72, 10, 36, 21, 45, CAST(N'2025-03-01T05:35:23.5666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (73, 10, 37, 21, 30, CAST(N'2025-03-01T05:35:14.4900000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (73, 10, 37, 21, 30, CAST(N'2025-03-01T05:35:14.4900000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (74, 11, 21, 22, 54, CAST(N'2025-03-29T17:11:08.7000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (74, 11, 21, 22, 54, CAST(N'2025-03-29T17:11:08.7000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (75, 11, 22, 22, 65, CAST(N'2025-03-01T05:37:42.5333333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (75, 11, 22, 22, 65, CAST(N'2025-03-01T05:37:42.5333333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (76, 11, 23, 22, 50, CAST(N'2025-03-01T05:37:44.3800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (76, 11, 23, 22, 50, CAST(N'2025-03-01T05:37:44.3800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (77, 11, 21, 23, 45, CAST(N'2025-03-01T05:37:36.0500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (77, 11, 21, 23, 45, CAST(N'2025-03-01T05:37:36.0500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (78, 11, 22, 23, 60, CAST(N'2025-03-01T05:37:37.9966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (78, 11, 22, 23, 60, CAST(N'2025-03-01T05:37:37.9966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (79, 11, 23, 23, 55, CAST(N'2025-03-01T05:37:39.5366667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (79, 11, 23, 23, 55, CAST(N'2025-03-01T05:37:39.5366667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (80, 12, 38, 24, 40, CAST(N'2025-03-01T05:32:29.2166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (80, 12, 38, 24, 40, CAST(N'2025-03-01T05:32:29.2166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (81, 12, 39, 24, 55, CAST(N'2025-03-01T05:32:26.0466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (81, 12, 39, 24, 55, CAST(N'2025-03-01T05:32:26.0466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (82, 12, 40, 24, 33, CAST(N'2025-03-01T05:32:24.5433333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (82, 12, 40, 24, 33, CAST(N'2025-03-01T05:32:24.5433333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (83, 12, 41, 24, 50, CAST(N'2025-03-01T05:32:32.7566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (83, 12, 41, 24, 50, CAST(N'2025-03-01T05:32:32.7566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (84, 12, 38, 25, 45, CAST(N'2025-03-01T05:32:38.0100000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (84, 12, 38, 25, 45, CAST(N'2025-03-01T05:32:38.0100000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (85, 12, 39, 25, 60, CAST(N'2025-03-01T05:32:30.8466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (85, 12, 39, 25, 60, CAST(N'2025-03-01T05:32:30.8466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (86, 12, 40, 25, 30, CAST(N'2025-03-01T05:32:34.5133333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (86, 12, 40, 25, 30, CAST(N'2025-03-01T05:32:34.5133333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (87, 12, 41, 25, 55, CAST(N'2025-03-01T05:32:36.2933333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (87, 12, 41, 25, 55, CAST(N'2025-03-01T05:32:36.2933333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (88, 13, 42, 26, 39, CAST(N'2025-03-01T05:30:59.8700000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (88, 13, 42, 26, 39, CAST(N'2025-03-01T05:30:59.8700000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (89, 13, 43, 26, 60, CAST(N'2025-03-01T05:30:55.6000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (89, 13, 43, 26, 60, CAST(N'2025-03-01T05:30:55.6000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (90, 13, 44, 26, 50, CAST(N'2025-03-01T05:30:53.9466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (90, 13, 44, 26, 50, CAST(N'2025-03-01T05:30:53.9466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (91, 13, 45, 26, 30, CAST(N'2025-03-01T05:30:57.5000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (91, 13, 45, 26, 30, CAST(N'2025-03-01T05:30:57.5000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (92, 13, 42, 27, 35, CAST(N'2025-03-01T05:31:05.5466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (92, 13, 42, 27, 35, CAST(N'2025-03-01T05:31:05.5466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (93, 13, 43, 27, 55, CAST(N'2025-03-01T05:31:03.5166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (93, 13, 43, 27, 55, CAST(N'2025-03-01T05:31:03.5166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (94, 13, 44, 27, 45, CAST(N'2025-03-01T05:31:01.7566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (94, 13, 44, 27, 45, CAST(N'2025-03-01T05:31:01.7566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (95, 13, 45, 27, 25, CAST(N'2025-03-01T05:31:08.3633333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (95, 13, 45, 27, 25, CAST(N'2025-03-01T05:31:08.3633333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (100, 14, 46, 29, 45, CAST(N'2025-03-01T05:31:37.6933333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (100, 14, 46, 29, 45, CAST(N'2025-03-01T05:31:37.6933333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (101, 14, 47, 29, 65, CAST(N'2025-03-01T05:31:34.0066667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (101, 14, 47, 29, 65, CAST(N'2025-03-01T05:31:34.0066667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (102, 14, 48, 29, 55, CAST(N'2025-03-01T05:31:31.0666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (102, 14, 48, 29, 55, CAST(N'2025-03-01T05:31:31.0666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (103, 14, 49, 29, 35, CAST(N'2025-03-01T05:31:35.6833333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (103, 14, 49, 29, 35, CAST(N'2025-03-01T05:31:35.6833333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (104, 14, 46, 30, 38, CAST(N'2025-03-01T05:31:44.9633333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (104, 14, 46, 30, 38, CAST(N'2025-03-01T05:31:44.9633333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (105, 14, 47, 30, 58, CAST(N'2025-03-01T05:31:42.9900000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (105, 14, 47, 30, 58, CAST(N'2025-03-01T05:31:42.9900000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (106, 14, 48, 30, 50, CAST(N'2025-03-01T05:31:40.2200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (106, 14, 48, 30, 50, CAST(N'2025-03-01T05:31:40.2200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (107, 14, 49, 30, 30, CAST(N'2025-03-01T05:31:46.7166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (107, 14, 49, 30, 30, CAST(N'2025-03-01T05:31:46.7166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (108, 14, 46, 31, 35, CAST(N'2025-03-01T05:31:55.0566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (108, 14, 46, 31, 35, CAST(N'2025-03-01T05:31:55.0566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (109, 14, 47, 31, 55, CAST(N'2025-03-01T05:31:51.9633333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (109, 14, 47, 31, 55, CAST(N'2025-03-01T05:31:51.9633333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (110, 14, 48, 31, 45, CAST(N'2025-03-01T05:31:49.3600000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (110, 14, 48, 31, 45, CAST(N'2025-03-01T05:31:49.3600000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (111, 14, 49, 31, 25, CAST(N'2025-03-01T05:31:57.5966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (111, 14, 49, 31, 25, CAST(N'2025-03-01T05:31:57.5966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (112, 15, 50, 32, 29, CAST(N'2025-03-01T05:32:14.0900000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (112, 15, 50, 32, 29, CAST(N'2025-03-01T05:32:14.0900000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (113, 15, 51, 32, 45, CAST(N'2025-03-01T05:32:10.7633333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (113, 15, 51, 32, 45, CAST(N'2025-03-01T05:32:10.7633333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (114, 15, 52, 32, 25, CAST(N'2025-03-01T05:32:12.4100000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (114, 15, 52, 32, 25, CAST(N'2025-03-01T05:32:12.4100000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (115, 15, 50, 33, 35, CAST(N'2025-03-29T17:06:01.0000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (115, 15, 50, 33, 35, CAST(N'2025-03-29T17:06:01.0000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (116, 15, 51, 33, 50, CAST(N'2025-03-01T05:32:06.5033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (116, 15, 51, 33, 50, CAST(N'2025-03-01T05:32:06.5033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (117, 15, 52, 33, 30, CAST(N'2025-03-01T05:32:04.3800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (117, 15, 52, 33, 30, CAST(N'2025-03-01T05:32:04.3800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (118, 16, 53, 34, 49, CAST(N'2025-03-01T05:30:33.9566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (118, 16, 53, 34, 49, CAST(N'2025-03-01T05:30:33.9566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (119, 16, 54, 34, 70, CAST(N'2025-03-01T05:30:24.7866667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (119, 16, 54, 34, 70, CAST(N'2025-03-01T05:30:24.7866667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (120, 16, 55, 34, 60, CAST(N'2025-03-01T05:30:31.8500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (120, 16, 55, 34, 60, CAST(N'2025-03-01T05:30:31.8500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (121, 16, 56, 34, 40, CAST(N'2025-03-01T05:30:36.4300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (121, 16, 56, 34, 40, CAST(N'2025-03-01T05:30:36.4300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (122, 16, 53, 35, 55, CAST(N'2025-03-01T05:30:27.0500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (122, 16, 53, 35, 55, CAST(N'2025-03-01T05:30:27.0500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (123, 16, 54, 35, 75, CAST(N'2025-03-01T05:30:22.6733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (123, 16, 54, 35, 75, CAST(N'2025-03-01T05:30:22.6733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (124, 16, 55, 35, 65, CAST(N'2025-03-01T05:30:17.3166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (124, 16, 55, 35, 65, CAST(N'2025-03-01T05:30:17.3166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (125, 16, 56, 35, 45, CAST(N'2025-03-01T05:30:29.3466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (125, 16, 56, 35, 45, CAST(N'2025-03-01T05:30:29.3466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (126, 16, 53, 36, 45, CAST(N'2025-03-01T05:30:44.3900000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (126, 16, 53, 36, 45, CAST(N'2025-03-01T05:30:44.3900000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (127, 16, 54, 36, 65, CAST(N'2025-03-01T05:30:41.5300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (127, 16, 54, 36, 65, CAST(N'2025-03-01T05:30:41.5300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (128, 16, 55, 36, 55, CAST(N'2025-03-01T05:30:39.4133333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (128, 16, 55, 36, 55, CAST(N'2025-03-01T05:30:39.4133333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (129, 16, 56, 36, 35, CAST(N'2025-03-01T05:30:47.0933333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (129, 16, 56, 36, 35, CAST(N'2025-03-01T05:30:47.0933333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (130, 17, 57, 37, 40, CAST(N'2025-03-01T05:29:52.5600000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (130, 17, 57, 37, 40, CAST(N'2025-03-01T05:29:52.5600000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (131, 17, 58, 37, 49, CAST(N'2025-03-01T05:29:54.0866667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (131, 17, 58, 37, 49, CAST(N'2025-03-01T05:29:54.0866667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (132, 17, 59, 37, 35, CAST(N'2025-03-01T05:29:55.4700000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (132, 17, 59, 37, 35, CAST(N'2025-03-01T05:29:55.4700000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (133, 17, 57, 38, 45, CAST(N'2025-03-01T05:29:57.4000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (133, 17, 57, 38, 45, CAST(N'2025-03-01T05:29:57.4000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (134, 17, 58, 38, 55, CAST(N'2025-03-01T05:29:59.3200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (134, 17, 58, 38, 55, CAST(N'2025-03-01T05:29:59.3200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (135, 17, 59, 38, 40, CAST(N'2025-03-01T05:30:01.0166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (135, 17, 59, 38, 40, CAST(N'2025-03-01T05:30:01.0166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (136, 18, 60, 39, 60, CAST(N'2025-03-01T05:29:39.2666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (136, 18, 60, 39, 60, CAST(N'2025-03-01T05:29:39.2666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (137, 18, 60, 40, 65, CAST(N'2025-03-01T05:29:40.9066667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (137, 18, 60, 40, 65, CAST(N'2025-03-01T05:29:40.9066667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (138, 18, 60, 41, 55, CAST(N'2025-03-01T05:29:42.5666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (138, 18, 60, 41, 55, CAST(N'2025-03-01T05:29:42.5666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (139, 19, 61, 42, 29, CAST(N'2025-03-01T05:29:22.3866667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (139, 19, 61, 42, 29, CAST(N'2025-03-01T05:29:22.3866667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (140, 19, 62, 42, 40, CAST(N'2025-03-01T05:29:24.2033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (140, 19, 62, 42, 40, CAST(N'2025-03-01T05:29:24.2033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (141, 19, 63, 42, 20, CAST(N'2025-03-01T05:29:29.9100000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (141, 19, 63, 42, 20, CAST(N'2025-03-01T05:29:29.9100000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (142, 19, 61, 43, 25, CAST(N'2025-03-01T05:29:25.8733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (142, 19, 61, 43, 25, CAST(N'2025-03-01T05:29:25.8733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (143, 19, 62, 43, 35, CAST(N'2025-03-01T05:29:27.5466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (143, 19, 62, 43, 35, CAST(N'2025-03-01T05:29:27.5466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (144, 19, 63, 43, 15, CAST(N'2025-03-01T05:29:31.7000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (144, 19, 63, 43, 15, CAST(N'2025-03-01T05:29:31.7000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (145, 20, 64, 44, 25, CAST(N'2025-03-01T05:28:35.0333333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (145, 20, 64, 44, 25, CAST(N'2025-03-01T05:28:35.0333333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (146, 20, 65, 44, 35, CAST(N'2025-03-01T05:28:37.2400000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (146, 20, 65, 44, 35, CAST(N'2025-03-01T05:28:37.2400000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (147, 20, 66, 44, 45, CAST(N'2025-03-01T05:28:42.5166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (147, 20, 66, 44, 45, CAST(N'2025-03-01T05:28:42.5166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (148, 20, 67, 44, 40, CAST(N'2025-03-01T05:28:44.7433333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (148, 20, 67, 44, 40, CAST(N'2025-03-01T05:28:44.7433333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (149, 20, 68, 44, 30, CAST(N'2025-03-01T05:28:40.6700000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (149, 20, 68, 44, 30, CAST(N'2025-03-01T05:28:40.6700000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (150, 20, 64, 45, 19, CAST(N'2025-03-01T05:29:02.5600000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (150, 20, 64, 45, 19, CAST(N'2025-03-01T05:29:02.5600000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (151, 20, 65, 45, 30, CAST(N'2025-03-01T05:29:05.3500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (151, 20, 65, 45, 30, CAST(N'2025-03-01T05:29:05.3500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (152, 20, 66, 45, 40, CAST(N'2025-03-01T05:29:08.5833333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (152, 20, 66, 45, 40, CAST(N'2025-03-01T05:29:08.5833333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (153, 20, 67, 45, 35, CAST(N'2025-03-01T05:29:11.8866667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (153, 20, 67, 45, 35, CAST(N'2025-03-01T05:29:11.8866667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (154, 20, 68, 45, 25, CAST(N'2025-03-01T05:29:14.6566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (154, 20, 68, 45, 25, CAST(N'2025-03-01T05:29:14.6566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (155, 20, 64, 46, 15, CAST(N'2025-03-01T05:28:49.3633333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (155, 20, 64, 46, 15, CAST(N'2025-03-01T05:28:49.3633333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (156, 20, 65, 46, 25, CAST(N'2025-03-01T05:28:51.9500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (156, 20, 65, 46, 25, CAST(N'2025-03-01T05:28:51.9500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (157, 20, 66, 46, 35, CAST(N'2025-03-01T05:28:54.7533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (157, 20, 66, 46, 35, CAST(N'2025-03-01T05:28:54.7533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (158, 20, 67, 46, 30, CAST(N'2025-03-01T05:28:57.6900000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (158, 20, 67, 46, 30, CAST(N'2025-03-01T05:28:57.6900000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (159, 20, 68, 46, 20, CAST(N'2025-03-01T05:29:00.1233333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (159, 20, 68, 46, 20, CAST(N'2025-03-01T05:29:00.1233333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (160, 21, 69, 47, 49, CAST(N'2025-03-01T05:28:23.5800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (160, 21, 69, 47, 49, CAST(N'2025-03-01T05:28:23.5800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (161, 21, 69, 48, 45, CAST(N'2025-03-01T05:28:25.1700000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (161, 21, 69, 48, 45, CAST(N'2025-03-01T05:28:25.1700000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (162, 21, 69, 49, 40, CAST(N'2025-03-01T05:28:26.6266667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (162, 21, 69, 49, 40, CAST(N'2025-03-01T05:28:26.6266667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (163, 22, 70, 50, 35, CAST(N'2025-03-01T05:28:03.0966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (163, 22, 70, 50, 35, CAST(N'2025-03-01T05:28:03.0966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (164, 22, 71, 50, 50, CAST(N'2025-03-01T05:27:55.7566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (164, 22, 71, 50, 50, CAST(N'2025-03-01T05:27:55.7566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (165, 22, 72, 50, 40, CAST(N'2025-03-01T05:27:53.1566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (165, 22, 72, 50, 40, CAST(N'2025-03-01T05:27:53.1566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (166, 22, 73, 50, 30, CAST(N'2025-03-01T05:28:05.5400000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (166, 22, 73, 50, 30, CAST(N'2025-03-01T05:28:05.5400000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (167, 22, 70, 51, 30, CAST(N'2025-03-01T05:27:49.6533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (167, 22, 70, 51, 30, CAST(N'2025-03-01T05:27:49.6533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (168, 22, 71, 51, 44, CAST(N'2025-03-01T05:27:47.7933333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (168, 22, 71, 51, 44, CAST(N'2025-03-01T05:27:47.7933333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (169, 22, 72, 51, 35, CAST(N'2025-03-01T05:27:45.6300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (169, 22, 72, 51, 35, CAST(N'2025-03-01T05:27:45.6300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (170, 22, 73, 51, 25, CAST(N'2025-03-01T05:27:51.3533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (170, 22, 73, 51, 25, CAST(N'2025-03-01T05:27:51.3533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (171, 22, 70, 52, 24, CAST(N'2025-03-01T05:28:13.2666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (171, 22, 70, 52, 24, CAST(N'2025-03-01T05:28:13.2666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (172, 22, 71, 52, 40, CAST(N'2025-03-01T05:28:10.6200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (172, 22, 71, 52, 40, CAST(N'2025-03-01T05:28:10.6200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (173, 22, 72, 52, 30, CAST(N'2025-03-01T05:28:08.2266667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (173, 22, 72, 52, 30, CAST(N'2025-03-01T05:28:08.2266667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (174, 22, 73, 52, 20, CAST(N'2025-03-01T05:28:16.0233333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (174, 22, 73, 52, 20, CAST(N'2025-03-01T05:28:16.0233333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (175, 23, 74, 53, 40, CAST(N'2025-03-01T05:27:17.6100000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (175, 23, 74, 53, 40, CAST(N'2025-03-01T05:27:17.6100000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (176, 23, 75, 53, 60, CAST(N'2025-03-01T05:27:14.9200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (176, 23, 75, 53, 60, CAST(N'2025-03-01T05:27:14.9200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (177, 23, 76, 53, 50, CAST(N'2025-03-01T05:27:09.6000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (177, 23, 76, 53, 50, CAST(N'2025-03-01T05:27:09.6000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (178, 23, 77, 53, 30, CAST(N'2025-03-01T05:27:25.1033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (178, 23, 77, 53, 30, CAST(N'2025-03-01T05:27:25.1033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (179, 23, 74, 54, 45, CAST(N'2025-03-01T05:27:03.9733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (179, 23, 74, 54, 45, CAST(N'2025-03-01T05:27:03.9733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (180, 23, 75, 54, 65, CAST(N'2025-03-01T05:26:58.5833333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (180, 23, 75, 54, 65, CAST(N'2025-03-01T05:26:58.5833333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (181, 23, 76, 54, 55, CAST(N'2025-03-01T05:26:57.0500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (181, 23, 76, 54, 55, CAST(N'2025-03-01T05:26:57.0500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (182, 23, 77, 54, 35, CAST(N'2025-03-01T05:27:02.2800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (182, 23, 77, 54, 35, CAST(N'2025-03-01T05:27:02.2800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (183, 23, 74, 55, 35, CAST(N'2025-03-01T05:27:32.9466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (183, 23, 74, 55, 35, CAST(N'2025-03-01T05:27:32.9466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (184, 23, 75, 55, 55, CAST(N'2025-03-01T05:27:30.5733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (184, 23, 75, 55, 55, CAST(N'2025-03-01T05:27:30.5733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (185, 23, 76, 55, 45, CAST(N'2025-03-01T05:27:28.0966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (185, 23, 76, 55, 45, CAST(N'2025-03-01T05:27:28.0966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (186, 23, 77, 55, 25, CAST(N'2025-03-01T05:27:35.6400000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (186, 23, 77, 55, 25, CAST(N'2025-03-01T05:27:35.6400000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (187, 24, 78, 56, 30, CAST(N'2025-03-01T05:26:03.7366667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (187, 24, 78, 56, 30, CAST(N'2025-03-01T05:26:03.7366667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (188, 24, 79, 56, 45, CAST(N'2025-03-01T05:26:02.1633333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (188, 24, 79, 56, 45, CAST(N'2025-03-01T05:26:02.1633333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (189, 24, 80, 56, 40, CAST(N'2025-03-01T05:26:00.2733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (189, 24, 80, 56, 40, CAST(N'2025-03-01T05:26:00.2733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (190, 24, 81, 56, 25, CAST(N'2025-03-01T05:26:05.3500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (190, 24, 81, 56, 25, CAST(N'2025-03-01T05:26:05.3500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (191, 24, 78, 57, 35, CAST(N'2025-03-01T05:26:48.7033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (191, 24, 78, 57, 35, CAST(N'2025-03-01T05:26:48.7033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (192, 24, 79, 57, 50, CAST(N'2025-03-01T05:26:45.1800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (192, 24, 79, 57, 50, CAST(N'2025-03-01T05:26:45.1800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (193, 24, 80, 57, 45, CAST(N'2025-03-01T05:26:24.5800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (193, 24, 80, 57, 45, CAST(N'2025-03-01T05:26:24.5800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (194, 24, 81, 57, 30, CAST(N'2025-03-01T05:26:51.6466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (194, 24, 81, 57, 30, CAST(N'2025-03-01T05:26:51.6466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (195, 24, 78, 58, 25, CAST(N'2025-03-01T05:26:14.5733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (195, 24, 78, 58, 25, CAST(N'2025-03-01T05:26:14.5733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (196, 24, 79, 58, 40, CAST(N'2025-03-01T05:26:11.5666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (196, 24, 79, 58, 40, CAST(N'2025-03-01T05:26:11.5666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (197, 24, 80, 58, 35, CAST(N'2025-03-01T05:26:07.5566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (197, 24, 80, 58, 35, CAST(N'2025-03-01T05:26:07.5566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (198, 24, 81, 58, 20, CAST(N'2025-03-01T05:26:17.1166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (198, 24, 81, 58, 20, CAST(N'2025-03-01T05:26:17.1166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (199, 25, 82, 59, 49, CAST(N'2025-03-29T17:06:52.3766667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (199, 25, 82, 59, 49, CAST(N'2025-03-29T17:06:52.3766667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (200, 25, 82, 60, 45, CAST(N'2025-03-01T05:25:51.0066667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (200, 25, 82, 60, 45, CAST(N'2025-03-01T05:25:51.0066667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (201, 25, 82, 61, 40, CAST(N'2025-03-01T05:25:52.7800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (201, 25, 82, 61, 40, CAST(N'2025-03-01T05:25:52.7800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (202, 26, 83, 62, 59, CAST(N'2025-03-01T05:25:41.6866667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (202, 26, 83, 62, 59, CAST(N'2025-03-01T05:25:41.6866667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (203, 26, 83, 63, 55, CAST(N'2025-03-01T05:25:43.2966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (203, 26, 83, 63, 55, CAST(N'2025-03-01T05:25:43.2966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (204, 27, 84, 64, 35, CAST(N'2025-03-01T05:25:00.1066667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (204, 27, 84, 64, 35, CAST(N'2025-03-01T05:25:00.1066667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (205, 27, 85, 64, 50, CAST(N'2025-03-01T05:24:56.8533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (205, 27, 85, 64, 50, CAST(N'2025-03-01T05:24:56.8533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (206, 27, 86, 64, 40, CAST(N'2025-03-01T05:24:55.0133333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (206, 27, 86, 64, 40, CAST(N'2025-03-01T05:24:55.0133333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (207, 27, 84, 65, 30, CAST(N'2025-03-01T05:25:06.7300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (207, 27, 84, 65, 30, CAST(N'2025-03-01T05:25:06.7300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (208, 27, 85, 65, 45, CAST(N'2025-03-01T05:25:04.4333333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (208, 27, 85, 65, 45, CAST(N'2025-03-01T05:25:04.4333333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (209, 27, 86, 65, 35, CAST(N'2025-03-01T05:25:02.0933333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (209, 27, 86, 65, 35, CAST(N'2025-03-01T05:25:02.0933333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (210, 27, 84, 66, 25, CAST(N'2025-03-01T05:18:35.2833333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (210, 27, 84, 66, 25, CAST(N'2025-03-01T05:18:35.2833333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (211, 27, 85, 66, 40, CAST(N'2025-03-01T05:18:33.6066667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (211, 27, 85, 66, 40, CAST(N'2025-03-01T05:18:33.6066667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (212, 27, 86, 66, 30, CAST(N'2025-03-01T05:18:31.8800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (212, 27, 86, 66, 30, CAST(N'2025-03-01T05:18:31.8800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (213, 28, 87, 67, 44, CAST(N'2025-03-01T05:07:28.7233333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (213, 28, 87, 67, 44, CAST(N'2025-03-01T05:07:28.7233333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (214, 28, 88, 67, 60, CAST(N'2025-03-01T05:07:30.5033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (214, 28, 88, 67, 60, CAST(N'2025-03-01T05:07:30.5033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (215, 28, 89, 67, 55, CAST(N'2025-03-01T05:07:32.1733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (215, 28, 89, 67, 55, CAST(N'2025-03-01T05:07:32.1733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (216, 28, 90, 67, 50, CAST(N'2025-03-01T05:07:33.7733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (216, 28, 90, 67, 50, CAST(N'2025-03-01T05:07:33.7733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (217, 28, 91, 67, 40, CAST(N'2025-03-01T05:07:35.4500000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (217, 28, 91, 67, 40, CAST(N'2025-03-01T05:07:35.4500000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (218, 28, 87, 68, 40, CAST(N'2025-03-29T16:47:58.3866667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (218, 28, 87, 68, 40, CAST(N'2025-03-29T16:47:58.3866667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (219, 28, 88, 68, 54, CAST(N'2025-03-01T05:07:40.4733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (219, 28, 88, 68, 54, CAST(N'2025-03-01T05:07:40.4733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (220, 28, 89, 68, 50, CAST(N'2025-03-01T05:07:43.7200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (220, 28, 89, 68, 50, CAST(N'2025-03-01T05:07:43.7200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (221, 28, 90, 68, 45, CAST(N'2025-03-01T05:07:46.3200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (221, 28, 90, 68, 45, CAST(N'2025-03-01T05:07:46.3200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (222, 28, 91, 68, 35, CAST(N'2025-03-01T05:07:48.9600000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (222, 28, 91, 68, 35, CAST(N'2025-03-01T05:07:48.9600000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (223, 29, 92, 69, 49, CAST(N'2025-03-01T05:06:43.1100000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (223, 29, 92, 69, 49, CAST(N'2025-03-01T05:06:43.1100000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (224, 29, 93, 69, 65, CAST(N'2025-03-29T20:08:25.3533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (224, 29, 93, 69, 65, CAST(N'2025-03-29T20:08:25.3533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (225, 29, 94, 69, 55, CAST(N'2025-03-01T05:06:53.3000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (225, 29, 94, 69, 55, CAST(N'2025-03-01T05:06:53.3000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (226, 29, 95, 69, 45, CAST(N'2025-03-01T05:06:51.1733333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (226, 29, 95, 69, 45, CAST(N'2025-03-01T05:06:51.1733333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (227, 29, 92, 70, 40, CAST(N'2025-03-01T05:07:10.9900000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (227, 29, 92, 70, 40, CAST(N'2025-03-01T05:07:10.9900000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (228, 29, 93, 70, 60, CAST(N'2025-03-01T05:07:20.0133333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (228, 29, 93, 70, 60, CAST(N'2025-03-01T05:07:20.0133333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (229, 29, 94, 70, 50, CAST(N'2025-03-01T05:07:17.0166667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (229, 29, 94, 70, 50, CAST(N'2025-03-01T05:07:17.0166667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (230, 29, 95, 70, 40, CAST(N'2025-03-01T05:07:14.2666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (230, 29, 95, 70, 40, CAST(N'2025-03-01T05:07:14.2666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (231, 29, 92, 71, 40, CAST(N'2025-03-01T05:06:56.0033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (231, 29, 92, 71, 40, CAST(N'2025-03-01T05:06:56.0033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (232, 29, 93, 71, 55, CAST(N'2025-03-01T05:06:58.2533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (232, 29, 93, 71, 55, CAST(N'2025-03-01T05:06:58.2533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (233, 29, 94, 71, 45, CAST(N'2025-03-01T05:07:01.8100000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (233, 29, 94, 71, 45, CAST(N'2025-03-01T05:07:01.8100000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (234, 29, 95, 71, 35, CAST(N'2025-03-01T05:07:06.8766667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (234, 29, 95, 71, 35, CAST(N'2025-03-01T05:07:06.8766667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (235, 30, 96, 72, 28, CAST(N'2025-03-01T04:44:23.9066667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (235, 30, 96, 72, 28, CAST(N'2025-03-01T04:44:23.9066667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (236, 30, 97, 72, 39, CAST(N'2025-03-01T04:44:30.8933333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (236, 30, 97, 72, 39, CAST(N'2025-03-01T04:44:30.8933333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (237, 30, 98, 72, 35, CAST(N'2025-03-01T04:57:43.5466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (237, 30, 98, 72, 35, CAST(N'2025-03-01T04:57:43.5466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (238, 30, 99, 72, 25, CAST(N'2025-03-01T04:57:45.6966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (238, 30, 99, 72, 25, CAST(N'2025-03-01T04:57:45.6966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (239, 30, 96, 73, 24, CAST(N'2025-03-01T05:05:25.7800000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (239, 30, 96, 73, 24, CAST(N'2025-03-01T05:05:25.7800000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (240, 30, 97, 73, 35, CAST(N'2025-03-01T05:06:23.2533333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (240, 30, 97, 73, 35, CAST(N'2025-03-01T05:06:23.2533333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (241, 30, 98, 73, 30, CAST(N'2025-03-01T05:06:26.2366667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (241, 30, 98, 73, 30, CAST(N'2025-03-01T05:06:26.2366667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (242, 30, 99, 73, 20, CAST(N'2025-03-01T05:06:29.0633333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (242, 30, 99, 73, 20, CAST(N'2025-03-01T05:06:29.0633333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (243, 31, 100, 74, 38, CAST(N'2025-03-01T04:26:19.1566667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (243, 31, 100, 74, 38, CAST(N'2025-03-01T04:26:19.1566667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (244, 31, 101, 74, 55, CAST(N'2025-03-01T04:26:17.3833333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (244, 31, 101, 74, 55, CAST(N'2025-03-01T04:26:17.3833333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (245, 31, 102, 74, 45, CAST(N'2025-03-01T04:26:15.5300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (245, 31, 102, 74, 45, CAST(N'2025-03-01T04:26:15.5300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (246, 31, 100, 75, 33, CAST(N'2025-03-01T04:26:39.4000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (246, 31, 100, 75, 33, CAST(N'2025-03-01T04:26:39.4000000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (247, 31, 101, 75, 48, CAST(N'2025-03-01T04:26:32.6266667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (247, 31, 101, 75, 48, CAST(N'2025-03-01T04:26:32.6266667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (248, 31, 102, 75, 40, CAST(N'2025-03-01T04:26:29.6300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (248, 31, 102, 75, 40, CAST(N'2025-03-01T04:26:29.6300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (249, 31, 100, 76, 30, CAST(N'2025-03-01T05:05:18.6300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (249, 31, 100, 76, 30, CAST(N'2025-03-01T05:05:18.6300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (250, 31, 101, 76, 45, CAST(N'2025-03-01T05:05:16.5200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (250, 31, 101, 76, 45, CAST(N'2025-03-01T05:05:16.5200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (251, 31, 102, 76, 35, CAST(N'2025-03-01T05:04:58.2700000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (251, 31, 102, 76, 35, CAST(N'2025-03-01T05:04:58.2700000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (252, 32, 103, 80, 45, CAST(N'2025-03-01T04:25:44.3400000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (252, 32, 103, 80, 45, CAST(N'2025-03-01T04:25:44.3400000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (253, 32, 104, 77, 60, CAST(N'2025-03-01T04:15:31.7700000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (253, 32, 104, 77, 60, CAST(N'2025-03-01T04:15:31.7700000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (254, 32, 105, 77, 55, CAST(N'2025-03-01T04:15:34.3033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (254, 32, 105, 77, 55, CAST(N'2025-03-01T04:15:34.3033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (255, 32, 106, 77, 38, CAST(N'2025-03-01T04:15:36.9300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (255, 32, 106, 77, 38, CAST(N'2025-03-01T04:15:36.9300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (256, 32, 107, 77, 30, CAST(N'2025-03-01T04:15:39.3333333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (256, 32, 107, 77, 30, CAST(N'2025-03-01T04:15:39.3333333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (257, 32, 103, 78, 37, CAST(N'2025-03-01T05:04:34.5466667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (257, 32, 103, 78, 37, CAST(N'2025-03-01T05:04:34.5466667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (258, 32, 104, 78, 53, CAST(N'2025-03-01T05:04:41.9300000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (258, 32, 104, 78, 53, CAST(N'2025-03-01T05:04:41.9300000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (259, 32, 105, 78, 50, CAST(N'2025-03-01T05:04:45.7666667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (259, 32, 105, 78, 50, CAST(N'2025-03-01T05:04:45.7666667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (260, 32, 106, 78, 35, CAST(N'2025-03-01T05:04:48.6333333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (260, 32, 106, 78, 35, CAST(N'2025-03-01T05:04:48.6333333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (261, 32, 107, 78, 25, CAST(N'2025-03-01T05:04:51.2233333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (261, 32, 107, 78, 25, CAST(N'2025-03-01T05:04:51.2233333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (262, 32, 103, 79, 35, CAST(N'2025-03-01T04:24:59.3200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (262, 32, 103, 79, 35, CAST(N'2025-03-01T04:24:59.3200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (263, 32, 104, 79, 50, CAST(N'2025-03-01T04:25:22.7033333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (263, 32, 104, 79, 50, CAST(N'2025-03-01T04:25:22.7033333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (264, 32, 105, 79, 45, CAST(N'2025-03-01T04:25:25.0966667' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (264, 32, 105, 79, 45, CAST(N'2025-03-01T04:25:25.0966667' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (265, 32, 106, 79, 30, CAST(N'2025-03-01T04:25:29.8200000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (265, 32, 106, 79, 30, CAST(N'2025-03-01T04:25:29.8200000' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (266, 32, 107, 79, 20, CAST(N'2025-03-01T04:25:33.5133333' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (266, 32, 107, 79, 20, CAST(N'2025-03-01T04:25:33.5133333' AS DateTime2))
 GO
-INSERT [dbo].[product_variants] ([id], [product_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (268, 32, 107, 81, 1, CAST(N'2025-03-01T04:25:38.7000000' AS DateTime2))
+INSERT [dbo].[car_variants] ([id], [car_id], [size_id], [color_id], [stock_quantity], [last_restock_date]) VALUES (268, 32, 107, 81, 1, CAST(N'2025-03-01T04:25:38.7000000' AS DateTime2))
 GO
-SET IDENTITY_INSERT [dbo].[product_variants] OFF
+SET IDENTITY_INSERT [dbo].[car_variants] OFF
 GO
 SET IDENTITY_INSERT [dbo].[cart_items] ON 
 GO
-INSERT [dbo].[cart_items] ([id], [cart_id], [product_id], [variant_id], [quantity]) VALUES (1, 1, 1, 1, 2)
+INSERT [dbo].[cart_items] ([id], [cart_id], [car_id], [variant_id], [quantity]) VALUES (1, 1, 1, 1, 2)
 GO
-INSERT [dbo].[cart_items] ([id], [cart_id], [product_id], [variant_id], [quantity]) VALUES (2, 2, 2, 2, 1)
+INSERT [dbo].[cart_items] ([id], [cart_id], [car_id], [variant_id], [quantity]) VALUES (2, 2, 2, 2, 1)
 GO
-INSERT [dbo].[cart_items] ([id], [cart_id], [product_id], [variant_id], [quantity]) VALUES (3, 3, 3, 3, 1)
+INSERT [dbo].[cart_items] ([id], [cart_id], [car_id], [variant_id], [quantity]) VALUES (3, 3, 3, 3, 1)
 GO
-INSERT [dbo].[cart_items] ([id], [cart_id], [product_id], [variant_id], [quantity]) VALUES (6, 5, 31, 246, 1)
+INSERT [dbo].[cart_items] ([id], [cart_id], [car_id], [variant_id], [quantity]) VALUES (6, 5, 31, 246, 1)
 GO
 SET IDENTITY_INSERT [dbo].[cart_items] OFF
 GO
@@ -1917,105 +1917,105 @@ SET IDENTITY_INSERT [dbo].[orders] OFF
 GO
 SET IDENTITY_INSERT [dbo].[order_items] ON 
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (1, 1, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'28 - Xanh navy', 3, CAST(350000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (1, 1, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'28 - Xanh navy', 3, CAST(350000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (2, 1, 29, N'Áo thun tr? em ho?t hình', N'https://product.hstatic.net/1000387570/product/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (2, 1, 29, N'Áo thun tr? em ho?t hình', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (3, 2, 11, N'Qu?n short siêu nhân', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (3, 2, 11, N'Qu?n short siêu nhân', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (4, 2, 6, N'Qu?n short cotton', N'https://ardilla.com.vn/wp-content/uploads/2022/03/TB1601QST.jpg', N'2-4 - Xanh navy', 2, CAST(120000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (4, 2, 6, N'Qu?n short cotton', N'https://ardilla.com.vn/wp-content/uploads/2022/03/TB1601QST.jpg', N'2-4 - Xanh navy', 2, CAST(120000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (5, 3, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'S - Xám', 2, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (5, 3, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'S - Xám', 2, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (6, 4, 10, N'Giày sneaker', N'https://bizweb.dktcdn.net/thumb/large/100/041/044/products/48f5343d-9f9a-4ed2-aa02-de2ad1f4fabc-jpeg.jpg?v=1694597357733', N'39 - ?en', 2, CAST(400000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (6, 4, 10, N'Giày sneaker', N'https://bizweb.dktcdn.net/thumb/large/100/041/044/cars/48f5343d-9f9a-4ed2-aa02-de2ad1f4fabc-jpeg.jpg?v=1694597357733', N'39 - ?en', 2, CAST(400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (7, 4, 9, N'Giày th? thao', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/Product/2024/09/22/z5855779313414_2914371405362ca7f474791328971969.jpg', N'39 - Tr?ng', 1, CAST(500000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (7, 4, 9, N'Giày th? thao', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/car/2024/09/22/z5855779313414_2914371405362ca7f474791328971969.jpg', N'39 - Tr?ng', 1, CAST(500000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (8, 5, 28, N'Dép lào nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - Nâu', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (8, 5, 28, N'Dép lào nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - Nâu', 1, CAST(180000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (9, 6, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'6 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (9, 6, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'6 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (10, 7, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - Xám', 2, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (10, 7, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - Xám', 2, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (11, 8, 12, N'Áo s? mi xanh', N'https://pos.nvncdn.com/a36e05-151378/ps/20230712_TkKQqMtkUO.jpeg', N'L - Xanh', 2, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (11, 8, 12, N'Áo s? mi xanh', N'https://pos.nvncdn.com/a36e05-151378/ps/20230712_TkKQqMtkUO.jpeg', N'L - Xanh', 2, CAST(200000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (12, 8, 22, N'Áo s? mi nam k? s?c', N'https://aoxuanhe.com/upload/product/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'M - Tr?ng s?c ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (12, 8, 22, N'Áo s? mi nam k? s?c', N'https://aoxuanhe.com/upload/car/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'M - Tr?ng s?c ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (13, 8, 1, N'Áo s? mi tr?ng', N'https://product.hstatic.net/1000333436/product/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Xanh nh?t', 2, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (13, 8, 1, N'Áo s? mi tr?ng', N'https://car.hstatic.net/1000333436/car/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Xanh nh?t', 2, CAST(200000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (14, 9, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'30 - Xanh navy', 2, CAST(350000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (14, 9, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'30 - Xanh navy', 2, CAST(350000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (15, 9, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - Xám', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (15, 9, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - Xám', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (16, 9, 4, N'Chân váy denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'L - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (16, 9, 4, N'Chân váy denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'L - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (17, 9, 25, N'Túi ?eo chéo n? mini', N'https://image.kacana.vn/images/product/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (17, 9, 25, N'Túi ?eo chéo n? mini', N'https://image.kacana.vn/images/car/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (18, 10, 3, N'??m hoa mùa hè', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'M - Hoa ??', 1, CAST(400000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (18, 10, 3, N'??m hoa mùa hè', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'M - Hoa ??', 1, CAST(400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (19, 10, 28, N'Dép lào nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - ?en', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (19, 10, 28, N'Dép lào nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - ?en', 1, CAST(180000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (20, 11, 29, N'Áo thun tr? em ho?t hình', N'https://product.hstatic.net/1000387570/product/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (20, 11, 29, N'Áo thun tr? em ho?t hình', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (21, 12, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (21, 12, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (22, 13, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'M - Xám', 2, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (22, 13, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'M - Xám', 2, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (23, 13, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'34 - Be', 2, CAST(350000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (23, 13, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'34 - Be', 2, CAST(350000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (24, 13, 28, N'Dép lào nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'40 - Nâu', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (24, 13, 28, N'Dép lào nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'40 - Nâu', 1, CAST(180000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (25, 14, 5, N'Áo thun siêu nhân', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'2-4 - Xanh', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (25, 14, 5, N'Áo thun siêu nhân', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'2-4 - Xanh', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (26, 15, 15, N'??m maxi hoa nhí', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - H?ng h?a ti?t hoa tr?ng', 1, CAST(420000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (26, 15, 15, N'??m maxi hoa nhí', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - H?ng h?a ti?t hoa tr?ng', 1, CAST(420000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (27, 16, 25, N'Túi ?eo chéo n? mini', N'https://image.kacana.vn/images/product/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (27, 16, 25, N'Túi ?eo chéo n? mini', N'https://image.kacana.vn/images/car/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (28, 17, 29, N'Áo thun tr? em ho?t hình', N'https://product.hstatic.net/1000387570/product/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 4, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (28, 17, 29, N'Áo thun tr? em ho?t hình', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 4, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (29, 17, 5, N'Áo thun siêu nhân', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'4-6 - ??', 2, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (29, 17, 5, N'Áo thun siêu nhân', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'4-6 - ??', 2, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (30, 18, 2, N'Qu?n tây ?en', N'https://product.hstatic.net/200000053174/product/20_bddc67b2b01a4fc6a89b6d5ca1e78b33_master.jpg', N'M - ?en', 3, CAST(300000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (30, 18, 2, N'Qu?n tây ?en', N'https://car.hstatic.net/200000053174/car/20_bddc67b2b01a4fc6a89b6d5ca1e78b33_master.jpg', N'M - ?en', 3, CAST(300000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (31, 18, 3, N'??m hoa mùa hè', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'S - Hoa ??', 4, CAST(400000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (31, 18, 3, N'??m hoa mùa hè', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'S - Hoa ??', 4, CAST(400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (32, 18, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - Xám', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (32, 18, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - Xám', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (33, 18, 4, N'Chân váy denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (33, 18, 4, N'Chân váy denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (34, 18, 1, N'Áo s? mi tr?ng', N'https://product.hstatic.net/1000333436/product/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Tr?ng', 1, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (34, 18, 1, N'Áo s? mi tr?ng', N'https://car.hstatic.net/1000333436/car/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Tr?ng', 1, CAST(200000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (35, 19, 11, N'Qu?n short siêu nhân', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (35, 19, 11, N'Qu?n short siêu nhân', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (36, 20, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (36, 20, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (37, 20, 4, N'Chân váy denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (37, 20, 4, N'Chân váy denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (38, 20, 26, N'Bông tai b?c hình gi?t n??c', N'https://lili.vn/wp-content/uploads/2021/12/Bong-tai-bac-nu-ma-bach-kim-dinh-da-CZ-hinh-giot-nuoc-LILI_416496_13.jpg', N'Onesize - B?c', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (38, 20, 26, N'Bông tai b?c hình gi?t n??c', N'https://lili.vn/wp-content/uploads/2021/12/Bong-tai-bac-nu-ma-bach-kim-dinh-da-CZ-hinh-giot-nuoc-LILI_416496_13.jpg', N'Onesize - B?c', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (39, 21, 13, N'Áo khoác bomber nam', N'https://ginstore.com.vn/files/sanpham/1885/1/png/ao-khoac-bomber-local-brand-rg-butterfly-varsity-jacket-nam-nu-tay-da-vasity-bong-chay-form-rong-unisex.png', N'S - ?en', 1, CAST(450000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (39, 21, 13, N'Áo khoác bomber nam', N'https://ginstore.com.vn/files/sanpham/1885/1/png/ao-khoac-bomber-local-brand-rg-butterfly-varsity-jacket-nam-nu-tay-da-vasity-bong-chay-form-rong-unisex.png', N'S - ?en', 1, CAST(450000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (40, 21, 17, N'Váy công chúa cho bé gái', N'https://tutupetti.com/wp-content/uploads/2023/07/dam_dep_cho_be_du_tiec_04.jpg', N'4-6 - H?ng pastel', 1, CAST(320000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (40, 21, 17, N'Váy công chúa cho bé gái', N'https://tutupetti.com/wp-content/uploads/2023/07/dam_dep_cho_be_du_tiec_04.jpg', N'4-6 - H?ng pastel', 1, CAST(320000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (41, 21, 15, N'??m maxi hoa nhí', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - Tr?ng h?a ti?t hoa xanh', 1, CAST(420000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (41, 21, 15, N'??m maxi hoa nhí', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - Tr?ng h?a ti?t hoa xanh', 1, CAST(420000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (42, 21, 21, N'Kính mát th?i trang', N'https://hoyahc.vn/wp-content/uploads/2022/01/kinh-redex-kinh-mat.jpg', N'Onesize - ?en', 1, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (42, 21, 21, N'Kính mát th?i trang', N'https://hoyahc.vn/wp-content/uploads/2022/01/kinh-redex-kinh-mat.jpg', N'Onesize - ?en', 1, CAST(200000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (43, 21, 19, N'Dây chuy?n b?c n?', N'https://pos.nvncdn.com/211f76-106986/ps/20240805_RdCu2zj3rc.jpeg', N'40cm - B?c', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (43, 21, 19, N'Dây chuy?n b?c n?', N'https://pos.nvncdn.com/211f76-106986/ps/20240805_RdCu2zj3rc.jpeg', N'40cm - B?c', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (44, 21, 20, N'Giày cao gót n?', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/Product/2024/09/20/z5850479583248_27cb755c82bd913bc95a09019f771777.jpg', N'35 - Kem', 1, CAST(380000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (44, 21, 20, N'Giày cao gót n?', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/car/2024/09/20/z5850479583248_27cb755c82bd913bc95a09019f771777.jpg', N'35 - Kem', 1, CAST(380000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (45, 22, 22, N'Áo s? mi nam k? s?c', N'https://aoxuanhe.com/upload/product/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'S - Xanh nh?t s?c tr?ng', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (45, 22, 22, N'Áo s? mi nam k? s?c', N'https://aoxuanhe.com/upload/car/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'S - Xanh nh?t s?c tr?ng', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (46, 23, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (46, 23, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (47, 23, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (47, 23, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (48, 24, 16, N'Áo thun unisex', N'https://sure.vn/wp-content/uploads/2024/08/7-1-scaled.jpg', N'S - Tr?ng', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (48, 24, 16, N'Áo thun unisex', N'https://sure.vn/wp-content/uploads/2024/08/7-1-scaled.jpg', N'S - Tr?ng', 1, CAST(180000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (49, 25, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - Vàng h?ng', 1, CAST(230000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (49, 25, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - Vàng h?ng', 1, CAST(230000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [product_id], [product_name], [product_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (50, 26, 29, N'Áo thun tr? em ho?t hình', N'https://product.hstatic.net/1000387570/product/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'4-6 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (50, 26, 29, N'Áo thun tr? em ho?t hình', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'4-6 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
 SET IDENTITY_INSERT [dbo].[order_items] OFF
 GO
@@ -2506,21 +2506,4 @@ INSERT [dbo].[feedback_images] ([id], [feedback_id], [image_url], [created_at]) 
 GO
 SET IDENTITY_INSERT [dbo].[feedback_images] OFF
 GO
-SET IDENTITY_INSERT [dbo].[footer_settings] ON 
-GO
-INSERT [dbo].[footer_settings] ([id], [type], [field_name], [value], [image], [status]) VALUES (1, N'info', N'Tên c?a hàng', N'Fashion Store', NULL, N'active')
-GO
-INSERT [dbo].[footer_settings] ([id], [type], [field_name], [value], [image], [status]) VALUES (2, N'info', N'Gi?i thi?u', N'Chuyên bán qu?n áo th?i trang', NULL, N'active')
-GO
-INSERT [dbo].[footer_settings] ([id], [type], [field_name], [value], [image], [status]) VALUES (3, N'contact', N'Email', N'support@fashionstore.com', NULL, N'active')
-GO
-INSERT [dbo].[footer_settings] ([id], [type], [field_name], [value], [image], [status]) VALUES (4, N'contact', N'??a ch?', N'thôn 4, xã Th?ch Hòa, huy?n Th?ch Th?t, Hà N?i', NULL, N'active')
-GO
-INSERT [dbo].[footer_settings] ([id], [type], [field_name], [value], [image], [status]) VALUES (5, N'contact', N'T?ng ?ài h? tr?', N'+84 123 456 789', NULL, N'active')
-GO
-INSERT [dbo].[footer_settings] ([id], [type], [field_name], [value], [image], [status]) VALUES (6, N'social', N'Facebook', N'https://facebook.com/fashion', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT83dd8_4WZCT-LsYC477q2WKocjms9OHCg0g&s', N'active')
-GO
-INSERT [dbo].[footer_settings] ([id], [type], [field_name], [value], [image], [status]) VALUES (7, N'social', N'Instagram', N'https://instagram.com/fashion', N'https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid', N'active')
-GO
-SET IDENTITY_INSERT [dbo].[footer_settings] OFF
-GO
+

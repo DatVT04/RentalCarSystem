@@ -80,7 +80,7 @@ public class OrderDetailsServlet extends HttpServlet {
             int orderId = Integer.parseInt(request.getParameter("id"));
             Order order = orderDAO.getOrderById(orderId);
             if (order == null) {
-                response.sendRedirect(request.getContextPath() + "error/error.jsp");
+                response.sendRedirect(request.getContextPath() + "/error/error.jsp");
                 return;
             }
 
@@ -92,7 +92,7 @@ public class OrderDetailsServlet extends HttpServlet {
             request.setAttribute("history", history);
             request.getRequestDispatcher("/sale/orderDetails.jsp").forward(request, response);
         } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/error.jsp");
+            response.sendRedirect(request.getContextPath() + "/error/error.jsp");
         }
     }
 
@@ -124,7 +124,7 @@ public class OrderDetailsServlet extends HttpServlet {
                 success = orderDAO.updateOrderStatus(orderId, newStatus, updatedBy, null, null);
                 if ("cancelled".equals(newStatus)) {
                     for (CartItem temp : order.getItems()) {
-                        int variantId = inventoryDAO.getVariantId(temp.getProductId(), temp.getSize(), temp.getColor());
+                        int variantId = inventoryDAO.getVariantId(temp.getCarId(), temp.getSize(), temp.getColor());
                         inventoryDAO.increaseVariantStock(variantId, temp.getQuantity());
                     }
                 }
@@ -168,7 +168,7 @@ public class OrderDetailsServlet extends HttpServlet {
                 success = orderDAO.updateOrderStatus(orderId, newStatus, updatedBy, null, null);
                 orderDAO.updatePayStatus(orderId, "refunded");
                 for (CartItem temp : order.getItems()) {
-                    int variantId = inventoryDAO.getVariantId(temp.getProductId(), temp.getSize(), temp.getColor());
+                    int variantId = inventoryDAO.getVariantId(temp.getCarId(), temp.getSize(), temp.getColor());
                     inventoryDAO.increaseVariantStock(variantId, temp.getQuantity());
                 }
             }
@@ -180,7 +180,7 @@ public class OrderDetailsServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/sale/orderdetails?id=" + orderId + "&alert=ERR");
             }
         } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/error.jsp");
+            response.sendRedirect(request.getContextPath() + "/error/error.jsp");
         }
     }
 

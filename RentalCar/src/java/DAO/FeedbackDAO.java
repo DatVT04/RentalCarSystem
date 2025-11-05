@@ -20,17 +20,17 @@ import java.sql.Statement;
 public class FeedbackDAO extends DBContext {
 
     public List<Feedback> getFeedbacks(String searchKeyword, String filterRating, String filterStatus,
-            String sortField, String sortOrder, int productId, int page, int recordsPerPage) {
+            String sortField, String sortOrder, int carId, int page, int recordsPerPage) {
         List<Feedback> list = new ArrayList<>();
-        StringBuilder sql = new StringBuilder("SELECT f.*, u.full_name, u.username, p.title, p.thumbnail, oi.product_id ");
+        StringBuilder sql = new StringBuilder("SELECT f.*, u.full_name, u.username, p.title, p.thumbnail, oi.car_id ");
         sql.append("FROM feedback f ");
         sql.append("JOIN users u ON f.user_id = u.id ");
         sql.append("JOIN order_items oi ON f.order_item_id = oi.id ");
-        sql.append("JOIN products p ON oi.product_id = p.id ");
+        sql.append("JOIN cars p ON oi.car_id = p.id ");
         sql.append("WHERE 1=1");
 
         // Điều kiện tìm kiếm và lọc
-        if (productId > 0) {
+        if (carId > 0) {
             sql.append(" AND p.id = ?");
         }
         if (searchKeyword != null && !searchKeyword.isEmpty()) {
@@ -56,8 +56,8 @@ public class FeedbackDAO extends DBContext {
         try (PreparedStatement ps = connection.prepareStatement(sql.toString())) {
             int paramIndex = 1;
 
-            if (productId > 0) {
-                ps.setInt(paramIndex++, productId);
+            if (carId > 0) {
+                ps.setInt(paramIndex++, carId);
             }
             if (searchKeyword != null && !searchKeyword.isEmpty()) {
                 ps.setString(paramIndex++, "%" + searchKeyword + "%");
@@ -86,9 +86,9 @@ public class FeedbackDAO extends DBContext {
                 feedback.setUpdatedAt(rs.getTimestamp("updated_at"));
                 feedback.setUserFullName(rs.getString("full_name"));
                 feedback.setUserName(rs.getString("username"));
-                feedback.setProductTitle(rs.getString("title"));
-                feedback.setProductThumbnail(rs.getString("thumbnail"));
-                feedback.setProductId(rs.getInt("product_id"));
+                feedback.setCarTitle(rs.getString("title"));
+                feedback.setCarThumbnail(rs.getString("thumbnail"));
+                feedback.setCarId(rs.getInt("car_id"));
                 list.add(feedback);
             }
         } catch (SQLException e) {
@@ -97,14 +97,14 @@ public class FeedbackDAO extends DBContext {
         return list;
     }
 
-    public int getTotalFeedbacks(String searchKeyword, String filterRating, String filterStatus, int productId) {
+    public int getTotalFeedbacks(String searchKeyword, String filterRating, String filterStatus, int carId) {
         StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM feedback f ");
         sql.append("JOIN users u ON f.user_id = u.id ");
         sql.append("JOIN order_items oi ON f.order_item_id = oi.id ");
-        sql.append("JOIN products p ON oi.product_id = p.id ");
+        sql.append("JOIN cars p ON oi.car_id = p.id ");
         sql.append("WHERE 1=1");
 
-        if (productId > 0) {
+        if (carId > 0) {
             sql.append(" AND p.id = ?");
         }
         if (searchKeyword != null && !searchKeyword.isEmpty()) {
@@ -120,8 +120,8 @@ public class FeedbackDAO extends DBContext {
         try (PreparedStatement ps = connection.prepareStatement(sql.toString())) {
             int paramIndex = 1;
 
-            if (productId > 0) {
-                ps.setInt(paramIndex++, productId);
+            if (carId > 0) {
+                ps.setInt(paramIndex++, carId);
             }
             if (searchKeyword != null && !searchKeyword.isEmpty()) {
                 ps.setString(paramIndex++, "%" + searchKeyword + "%");
@@ -145,10 +145,10 @@ public class FeedbackDAO extends DBContext {
     }
 
     public Feedback getFeedbackById(int id) {
-        String sql = "SELECT f.*, u.full_name, u.username, p.title, p.thumbnail, oi.product_id FROM feedback f "
+        String sql = "SELECT f.*, u.full_name, u.username, p.title, p.thumbnail, oi.car_id FROM feedback f "
                 + "JOIN users u ON f.user_id = u.id "
                 + "JOIN order_items oi ON f.order_item_id = oi.id "
-                + "JOIN products p ON oi.product_id = p.id "
+                + "JOIN cars p ON oi.car_id = p.id "
                 + "WHERE f.id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, id);
@@ -165,9 +165,9 @@ public class FeedbackDAO extends DBContext {
                 feedback.setUpdatedAt(rs.getTimestamp("updated_at"));
                 feedback.setUserFullName(rs.getString("full_name"));
                 feedback.setUserName(rs.getString("username"));
-                feedback.setProductTitle(rs.getString("title"));
-                feedback.setProductThumbnail(rs.getString("thumbnail"));
-                feedback.setProductId(rs.getInt("product_id"));
+                feedback.setCarTitle(rs.getString("title"));
+                feedback.setCarThumbnail(rs.getString("thumbnail"));
+                feedback.setCarId(rs.getInt("car_id"));
                 return feedback;
             }
         } catch (SQLException e) {
@@ -189,21 +189,21 @@ public class FeedbackDAO extends DBContext {
         }
     }
 
-    /*--------- cho feedbackdetail có gửi productId  ----------*/
+    /*--------- cho feedbackdetail có gửi carId  ----------*/
  /*--------- --------------------------- ----------*/
  /*--------- --------------------------- ----------*/
-    public List<Feedback> getFeedbacksByProduct(String searchKeyword, String filterRating, String filterStatus,
-            String sortField, String sortOrder, int productId, int page, int recordsPerPage) {
+    public List<Feedback> getFeedbacksByCar(String searchKeyword, String filterRating, String filterStatus,
+            String sortField, String sortOrder, int carId, int page, int recordsPerPage) {
         List<Feedback> list = new ArrayList<>();
-        StringBuilder sql = new StringBuilder("SELECT f.*, u.full_name, u.username, p.title, p.thumbnail, oi.product_id ");
+        StringBuilder sql = new StringBuilder("SELECT f.*, u.full_name, u.username, p.title, p.thumbnail, oi.car_id ");
         sql.append("FROM feedback f ");
         sql.append("JOIN users u ON f.user_id = u.id ");
         sql.append("JOIN order_items oi ON f.order_item_id = oi.id ");
-        sql.append("JOIN products p ON oi.product_id = p.id ");
+        sql.append("JOIN cars p ON oi.car_id = p.id ");
         sql.append("WHERE 1=1");
 
         // Điều kiện tìm kiếm và lọc
-        if (productId > 0) {
+        if (carId > 0) {
             sql.append(" AND p.id = ?");
         }
         if (searchKeyword != null && !searchKeyword.isEmpty()) {
@@ -246,8 +246,8 @@ public class FeedbackDAO extends DBContext {
         try (PreparedStatement ps = connection.prepareStatement(sql.toString())) {
             int paramIndex = 1;
 
-            if (productId > 0) {
-                ps.setInt(paramIndex++, productId);
+            if (carId > 0) {
+                ps.setInt(paramIndex++, carId);
             }
             if (searchKeyword != null && !searchKeyword.isEmpty()) {
                 ps.setString(paramIndex++, "%" + searchKeyword + "%");
@@ -276,9 +276,9 @@ public class FeedbackDAO extends DBContext {
                 feedback.setUpdatedAt(rs.getTimestamp("updated_at"));
                 feedback.setUserFullName(rs.getString("full_name"));
                 feedback.setUserName(rs.getString("username"));
-                feedback.setProductTitle(rs.getString("title"));
-                feedback.setProductThumbnail(rs.getString("thumbnail"));
-                feedback.setProductId(rs.getInt("product_id"));
+                feedback.setCarTitle(rs.getString("title"));
+                feedback.setCarThumbnail(rs.getString("thumbnail"));
+                feedback.setCarId(rs.getInt("car_id"));
                 list.add(feedback);
             }
         } catch (SQLException e) {
@@ -287,14 +287,14 @@ public class FeedbackDAO extends DBContext {
         return list;
     }
 
-    public int getTotalFeedbacksByProduct(String searchKeyword, String filterRating, String filterStatus, int productId) {
+    public int getTotalFeedbacksByCar(String searchKeyword, String filterRating, String filterStatus, int carId) {
         StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM feedback f ");
         sql.append("JOIN users u ON f.user_id = u.id ");
         sql.append("JOIN order_items oi ON f.order_item_id = oi.id ");
-        sql.append("JOIN products p ON oi.product_id = p.id ");
+        sql.append("JOIN cars p ON oi.car_id = p.id ");
         sql.append("WHERE 1=1");
 
-        if (productId > 0) {
+        if (carId > 0) {
             sql.append(" AND p.id = ?");
         }
         if (searchKeyword != null && !searchKeyword.isEmpty()) {
@@ -310,8 +310,8 @@ public class FeedbackDAO extends DBContext {
         try (PreparedStatement ps = connection.prepareStatement(sql.toString())) {
             int paramIndex = 1;
 
-            if (productId > 0) {
-                ps.setInt(paramIndex++, productId);
+            if (carId > 0) {
+                ps.setInt(paramIndex++, carId);
             }
             if (searchKeyword != null && !searchKeyword.isEmpty()) {
                 ps.setString(paramIndex++, "%" + searchKeyword + "%");
@@ -338,13 +338,13 @@ public class FeedbackDAO extends DBContext {
  /*--------- Không in sản phẩm trùng lặp ----------*/
  /*--------- Không in sản phẩm trùng lặp ----------*/
  /*--------- Không in sản phẩm trùng lặp ----------*/
-    public List<Feedback> getFeedbacksGroupedByProduct(String searchKeyword, String filterRating,
+    public List<Feedback> getFeedbacksGroupedByCar(String searchKeyword, String filterRating,
             String sortField, String sortOrder, int page, int recordsPerPage) {
         List<Feedback> list = new ArrayList<>();
-        StringBuilder sql = new StringBuilder("SELECT p.id AS product_id, p.title, p.thumbnail, ");
+        StringBuilder sql = new StringBuilder("SELECT p.id AS car_id, p.title, p.thumbnail, ");
         sql.append("AVG(f.rating) AS avg_rating, COUNT(f.id) AS feedback_count ");
-        sql.append("FROM products p ");
-        sql.append("INNER JOIN order_items oi ON p.id = oi.product_id "); // Thay LEFT JOIN bằng INNER JOIN
+        sql.append("FROM cars p ");
+        sql.append("INNER JOIN order_items oi ON p.id = oi.car_id "); // Thay LEFT JOIN bằng INNER JOIN
         sql.append("INNER JOIN feedback f ON oi.id = f.order_item_id "); // Thay LEFT JOIN bằng INNER JOIN
         sql.append("WHERE 1=1");
 
@@ -382,9 +382,9 @@ public class FeedbackDAO extends DBContext {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Feedback feedback = new Feedback();
-                feedback.setProductId(rs.getInt("product_id"));
-                feedback.setProductTitle(rs.getString("title"));
-                feedback.setProductThumbnail(rs.getString("thumbnail"));
+                feedback.setCarId(rs.getInt("car_id"));
+                feedback.setCarTitle(rs.getString("title"));
+                feedback.setCarThumbnail(rs.getString("thumbnail"));
                 feedback.setRating(rs.getInt("avg_rating")); // Lấy giá trị trung bình rating
                 feedback.setComment(rs.getString("feedback_count")); // Số lượng feedback lưu trong comment
                 list.add(feedback);
@@ -395,10 +395,10 @@ public class FeedbackDAO extends DBContext {
         return list;
     }
 
-    public int getTotalProductsWithFeedback(String searchKeyword, String filterRating) {
+    public int getTotalCarsWithFeedback(String searchKeyword, String filterRating) {
         StringBuilder sql = new StringBuilder("SELECT COUNT(DISTINCT p.id) ");
-        sql.append("FROM products p ");
-        sql.append("INNER JOIN order_items oi ON p.id = oi.product_id ");
+        sql.append("FROM cars p ");
+        sql.append("INNER JOIN order_items oi ON p.id = oi.car_id ");
         sql.append("INNER JOIN feedback f ON oi.id = f.order_item_id ");
         sql.append("WHERE 1=1");
 
@@ -492,7 +492,7 @@ public class FeedbackDAO extends DBContext {
         StringBuilder sql = new StringBuilder("SELECT rating, COUNT(*) as count ");
         sql.append("FROM feedback f ");
         sql.append("JOIN order_items oi ON f.order_item_id = oi.id ");
-        sql.append("JOIN products p ON oi.product_id = p.id ");
+        sql.append("JOIN cars p ON oi.car_id = p.id ");
         sql.append("WHERE 1=1");
 
         if (searchKeyword != null && !searchKeyword.isEmpty()) {
@@ -520,12 +520,12 @@ public class FeedbackDAO extends DBContext {
         return ratingCounts;
     }
 
-    public int[] getRatingCountsByProduct(String searchKeyword, int productId) {
+    public int[] getRatingCountsByCar(String searchKeyword, int carId) {
         int[] ratingCounts = new int[5]; // Mảng lưu số lượng đánh giá từ 1 đến 5 sao
         StringBuilder sql = new StringBuilder("SELECT rating, COUNT(*) as count ");
         sql.append("FROM feedback f ");
         sql.append("JOIN order_items oi ON f.order_item_id = oi.id ");
-        sql.append("JOIN products p ON oi.product_id = p.id ");
+        sql.append("JOIN cars p ON oi.car_id = p.id ");
         sql.append("WHERE f.status ='approved' AND p.id = ?");
 
         if (searchKeyword != null && !searchKeyword.isEmpty()) {
@@ -536,7 +536,7 @@ public class FeedbackDAO extends DBContext {
 
         try (PreparedStatement ps = connection.prepareStatement(sql.toString())) {
             int paramIndex = 1;
-            ps.setInt(paramIndex++, productId);
+            ps.setInt(paramIndex++, carId);
             if (searchKeyword != null && !searchKeyword.isEmpty()) {
                 ps.setString(paramIndex++, "%" + searchKeyword + "%");
                 ps.setString(paramIndex++, "%" + searchKeyword + "%");
@@ -599,17 +599,17 @@ public class FeedbackDAO extends DBContext {
         }
     }
 
-    public List<Feedback> getFeedbacksByProduct(String filterRating, String notFilterStatus, int productId, int page, int recordsPerPage) {
+    public List<Feedback> getFeedbacksByCar(String filterRating, String notFilterStatus, int carId, int page, int recordsPerPage) {
         List<Feedback> list = new ArrayList<>();
-        StringBuilder sql = new StringBuilder("SELECT f.*, u.full_name, u.username, p.title, p.thumbnail, oi.product_id ");
+        StringBuilder sql = new StringBuilder("SELECT f.*, u.full_name, u.username, p.title, p.thumbnail, oi.car_id ");
         sql.append("FROM feedback f ");
         sql.append("JOIN users u ON f.user_id = u.id ");
         sql.append("JOIN order_items oi ON f.order_item_id = oi.id ");
-        sql.append("JOIN products p ON oi.product_id = p.id ");
+        sql.append("JOIN cars p ON oi.car_id = p.id ");
         sql.append("WHERE 1=1");
 
         // Điều kiện tìm kiếm và lọc
-        if (productId > 0) {
+        if (carId > 0) {
             sql.append(" AND p.id = ?");
         }
         if (filterRating != null && !filterRating.isEmpty()) {
@@ -626,8 +626,8 @@ public class FeedbackDAO extends DBContext {
         try (PreparedStatement ps = connection.prepareStatement(sql.toString())) {
             int paramIndex = 1;
 
-            if (productId > 0) {
-                ps.setInt(paramIndex++, productId);
+            if (carId > 0) {
+                ps.setInt(paramIndex++, carId);
             }
             if (filterRating != null && !filterRating.isEmpty()) {
                 ps.setInt(paramIndex++, Integer.parseInt(filterRating));
@@ -652,9 +652,9 @@ public class FeedbackDAO extends DBContext {
                 feedback.setUpdatedAt(rs.getTimestamp("updated_at"));
                 feedback.setUserFullName(rs.getString("full_name"));
                 feedback.setUserName(rs.getString("username"));
-                feedback.setProductTitle(rs.getString("title"));
-                feedback.setProductThumbnail(rs.getString("thumbnail"));
-                feedback.setProductId(rs.getInt("product_id"));
+                feedback.setCarTitle(rs.getString("title"));
+                feedback.setCarThumbnail(rs.getString("thumbnail"));
+                feedback.setCarId(rs.getInt("car_id"));
                 list.add(feedback);
             }
         } catch (SQLException e) {
@@ -663,14 +663,14 @@ public class FeedbackDAO extends DBContext {
         return list;
     }
 
-    public int getTotalFeedbacksByProduct(String filterRating, String notFilterStatus, int productId) {
+    public int getTotalFeedbacksByCar(String filterRating, String notFilterStatus, int carId) {
         StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM feedback f ");
         sql.append("JOIN users u ON f.user_id = u.id ");
         sql.append("JOIN order_items oi ON f.order_item_id = oi.id ");
-        sql.append("JOIN products p ON oi.product_id = p.id ");
+        sql.append("JOIN cars p ON oi.car_id = p.id ");
         sql.append("WHERE 1=1");
 
-        if (productId > 0) {
+        if (carId > 0) {
             sql.append(" AND p.id = ?");
         }
         if (filterRating != null && !filterRating.isEmpty()) {
@@ -683,8 +683,8 @@ public class FeedbackDAO extends DBContext {
         try (PreparedStatement ps = connection.prepareStatement(sql.toString())) {
             int paramIndex = 1;
 
-            if (productId > 0) {
-                ps.setInt(paramIndex++, productId);
+            if (carId > 0) {
+                ps.setInt(paramIndex++, carId);
             }
             if (filterRating != null && !filterRating.isEmpty()) {
                 ps.setInt(paramIndex++, Integer.parseInt(filterRating));

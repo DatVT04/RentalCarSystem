@@ -178,10 +178,10 @@
                             <tbody>
                                 <c:forEach items="${selectedItems}" var="item">
                                     <tr>
-                                        <td>${item.productTitle} - ${item.color}, Size ${item.size}</td>
+                                        <td>${item.carTitle} - ${item.color}, Size ${item.size}</td>
                                         <td>${item.quantity}</td>
-                                        <td><fmt:formatNumber value="${item.productPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
-                                        <td><fmt:formatNumber value="${item.productPrice * item.quantity}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
+                                        <td><fmt:formatNumber value="${item.carPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
+                                        <td><fmt:formatNumber value="${item.carPrice * item.quantity}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
                                     </tr>
                                 </c:forEach>
                                 <tr>

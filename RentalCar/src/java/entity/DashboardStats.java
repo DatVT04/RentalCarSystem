@@ -9,14 +9,14 @@ public class DashboardStats {
     private Date startDate;
     private Date endDate;
 
-    private int totalProducts;
-    private int activeProducts;
-    private int outOfStockProducts;
-    private int inactiveProducts;
-    private Map<String, Integer> productsByCategory;
+    private int totalCars;
+    private int activeCars;
+    private int outOfStockCars;
+    private int inactiveCars;
+    private Map<String, Integer> carsByCategory;
 
     private int totalStock;
-    private List<LowStockProduct> lowStockProducts;
+    private List<LowStockCar> lowStockCars;
 
     private int totalCustomers;
     private int activeCustomers;
@@ -48,16 +48,16 @@ public class DashboardStats {
 
     }
 
-    public DashboardStats(Date startDate, Date endDate, int totalProducts, int activeProducts, int outOfStockProducts, int inactiveProducts, Map<String, Integer> productsByCategory, int totalStock, List<LowStockProduct> lowStockProducts, int totalCustomers, int activeCustomers, int inactiveCustomers, int pendingCustomers, Map<Date, Integer> newCustomersByDay, int totalPosts, int publishedPosts, int draftPosts, int totalFeedback, double averageRating, Map<Integer, Integer> feedbackByRating, int totalSliders, int activeSliders, int totalCoupons, int activeCoupons, int inactiveCoupons, int expiredCoupons, Map<String, String> couponUsage, Map<String, Integer> couponExpirations, Map<String, Integer> customerContactStats, List<Customer> topVIPCustomers) {
+    public DashboardStats(Date startDate, Date endDate, int totalCars, int activeCars, int outOfStockCars, int inactiveCars, Map<String, Integer> carsByCategory, int totalStock, List<LowStockCar> lowStockCars, int totalCustomers, int activeCustomers, int inactiveCustomers, int pendingCustomers, Map<Date, Integer> newCustomersByDay, int totalPosts, int publishedPosts, int draftPosts, int totalFeedback, double averageRating, Map<Integer, Integer> feedbackByRating, int totalSliders, int activeSliders, int totalCoupons, int activeCoupons, int inactiveCoupons, int expiredCoupons, Map<String, String> couponUsage, Map<String, Integer> couponExpirations, Map<String, Integer> customerContactStats, List<Customer> topVIPCustomers) {
         this.startDate = startDate;
         this.endDate = endDate;
-        this.totalProducts = totalProducts;
-        this.activeProducts = activeProducts;
-        this.outOfStockProducts = outOfStockProducts;
-        this.inactiveProducts = inactiveProducts;
-        this.productsByCategory = productsByCategory;
+        this.totalCars = totalCars;
+        this.activeCars = activeCars;
+        this.outOfStockCars = outOfStockCars;
+        this.inactiveCars = inactiveCars;
+        this.carsByCategory = carsByCategory;
         this.totalStock = totalStock;
-        this.lowStockProducts = lowStockProducts;
+        this.lowStockCars = lowStockCars;
         this.totalCustomers = totalCustomers;
         this.activeCustomers = activeCustomers;
         this.inactiveCustomers = inactiveCustomers;
@@ -81,44 +81,44 @@ public class DashboardStats {
         this.topVIPCustomers = topVIPCustomers;
     }
 
-    public int getTotalProducts() {
-        return totalProducts;
+    public int getTotalCars() {
+        return totalCars;
     }
 
-    public void setTotalProducts(int totalProducts) {
-        this.totalProducts = totalProducts;
+    public void setTotalCars(int totalCars) {
+        this.totalCars = totalCars;
     }
 
-    public int getActiveProducts() {
-        return activeProducts;
+    public int getActiveCars() {
+        return activeCars;
     }
 
-    public void setActiveProducts(int activeProducts) {
-        this.activeProducts = activeProducts;
+    public void setActiveCars(int activeCars) {
+        this.activeCars = activeCars;
     }
 
-    public int getOutOfStockProducts() {
-        return outOfStockProducts;
+    public int getOutOfStockCars() {
+        return outOfStockCars;
     }
 
-    public void setOutOfStockProducts(int outOfStockProducts) {
-        this.outOfStockProducts = outOfStockProducts;
+    public void setOutOfStockCars(int outOfStockCars) {
+        this.outOfStockCars = outOfStockCars;
     }
 
-    public int getInactiveProducts() {
-        return inactiveProducts;
+    public int getInactiveCars() {
+        return inactiveCars;
     }
 
-    public void setInactiveProducts(int inactiveProducts) {
-        this.inactiveProducts = inactiveProducts;
+    public void setInactiveCars(int inactiveCars) {
+        this.inactiveCars = inactiveCars;
     }
 
-    public Map<String, Integer> getProductsByCategory() {
-        return productsByCategory;
+    public Map<String, Integer> getCarsByCategory() {
+        return carsByCategory;
     }
 
-    public void setProductsByCategory(Map<String, Integer> productsByCategory) {
-        this.productsByCategory = productsByCategory;
+    public void setCarsByCategory(Map<String, Integer> carsByCategory) {
+        this.carsByCategory = carsByCategory;
     }
 
     public int getTotalStock() {
@@ -129,12 +129,12 @@ public class DashboardStats {
         this.totalStock = totalStock;
     }
 
-    public List<LowStockProduct> getLowStockProducts() {
-        return lowStockProducts;
+    public List<LowStockCar> getLowStockCars() {
+        return lowStockCars;
     }
 
-    public void setLowStockProducts(List<LowStockProduct> lowStockProducts) {
-        this.lowStockProducts = lowStockProducts;
+    public void setLowStockCars(List<LowStockCar> lowStockCars) {
+        this.lowStockCars = lowStockCars;
     }
 
     public int getTotalCustomers() {

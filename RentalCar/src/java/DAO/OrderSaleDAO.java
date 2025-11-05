@@ -74,11 +74,11 @@ public class OrderSaleDAO extends DBContext {
      */
     public List<OrderItem> getOrderItems(int orderId) {
         List<OrderItem> items = new ArrayList<>();
-        String sql = "SELECT oi.*, p.name as product_name, pv.name as variant_name, pc.name as category_name "
+        String sql = "SELECT oi.*, p.name as car_name, pv.name as variant_name, pc.name as category_name "
                 + "FROM order_items oi "
-                + "JOIN products p ON oi.product_id = p.id "
-                + "JOIN product_variants pv ON oi.variant_id = pv.id "
-                + "JOIN product_categories pc ON p.category_id = pc.id "
+                + "JOIN cars p ON oi.car_id = p.id "
+                + "JOIN car_variants pv ON oi.variant_id = pv.id "
+                + "JOIN car_categories pc ON p.category_id = pc.id "
                 + "WHERE oi.order_id = ?";
 
         try {
@@ -90,11 +90,11 @@ public class OrderSaleDAO extends DBContext {
                 OrderItem item = new OrderItem();
                 item.setId(rs.getInt("id"));
                 item.setOrderId(rs.getInt("order_id"));
-                item.setProductId(rs.getInt("product_id"));
+                item.setCarId(rs.getInt("car_id"));
                 item.setVariantId(rs.getInt("variant_id"));
                 item.setQuantity(rs.getInt("quantity"));
                 item.setUnitPrice(rs.getBigDecimal("unit_price"));
-                item.setProductName(rs.getString("product_name"));
+                item.setCarName(rs.getString("car_name"));
                 item.setVariantName(rs.getString("variant_name"));
                 item.setCategoryName(rs.getString("category_name"));
                 items.add(item);
@@ -332,7 +332,7 @@ public class OrderSaleDAO extends DBContext {
                 + " COUNT(oi.id) AS total_items, "
                 + " SUM(oi.quantity * oi.unit_price_at_order) AS total_amount "
                 + " FROM order_items oi "
-                + " JOIN products p ON oi.product_id = p.id "
+                + " JOIN cars p ON oi.car_id = p.id "
                 + " JOIN CategoryHierarchy ch ON p.category_id = ch.id "
                 + " JOIN categories c ON ch.top_level_id = c.id "
                 + " JOIN orders o ON oi.order_id = o.id "

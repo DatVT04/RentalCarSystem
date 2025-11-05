@@ -29,7 +29,7 @@ public class FeedbackReplyServlet extends HttpServlet {
             throws ServletException, IOException {
         int feedbackId = Integer.parseInt(request.getParameter("feedbackId"));
         String returnUrl = request.getParameter("returnUrl"); // Lấy returnUrl từ request
-        String productId = request.getParameter("productId"); // Lấy productId nếu có
+        String carId = request.getParameter("carId"); // Lấy carId nếu có
 
         FeedbackDAO feedbackDAO = new FeedbackDAO();
         Feedback feedback = feedbackDAO.getFeedbackById(feedbackId);
@@ -43,7 +43,7 @@ public class FeedbackReplyServlet extends HttpServlet {
         request.setAttribute("replies", replies);
         request.setAttribute("feedbackImages", feedbackImages);
         request.setAttribute("returnUrl", returnUrl); // Truyền returnUrl vào request
-        request.setAttribute("productId", productId); // Truyền productId nếu có
+        request.setAttribute("carId", carId); // Truyền carId nếu có
 
         request.getRequestDispatcher("/owner/feedback/feedbackReply.jsp").forward(request, response);
     }
@@ -54,7 +54,7 @@ public class FeedbackReplyServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userID");
         String returnUrl = request.getParameter("returnUrl"); // Lấy returnUrl từ request
-        String productId = request.getParameter("productId"); // Lấy productId nếu có
+        String carId = request.getParameter("carId"); // Lấy carId nếu có
 
         String action = request.getParameter("action");
         int feedbackId = Integer.parseInt(request.getParameter("feedbackId"));
@@ -66,7 +66,7 @@ public class FeedbackReplyServlet extends HttpServlet {
             boolean deleted = replyDAO.deleteReply(replyId);
             redirectUrl = request.getContextPath() + "/owner/feedbackreply?feedbackId=" + feedbackId
                     + "&returnUrl=" + (returnUrl != null ? returnUrl : "feedbackall")
-                    + (productId != null ? "&productId=" + productId : "")
+                    + (carId != null ? "&carId=" + carId : "")
                     + (deleted ? "&success=delete_reply" : "&error=delete_reply");
         } else if ("updateReply".equals(action)) {
             int replyId = Integer.parseInt(request.getParameter("replyId"));
@@ -74,7 +74,7 @@ public class FeedbackReplyServlet extends HttpServlet {
             boolean updated = replyDAO.updateReply(replyId, comment);
             redirectUrl = request.getContextPath() + "/owner/feedbackreply?feedbackId=" + feedbackId
                     + "&returnUrl=" + (returnUrl != null ? returnUrl : "feedbackall")
-                    + (productId != null ? "&productId=" + productId : "")
+                    + (carId != null ? "&carId=" + carId : "")
                     + (updated ? "&success=update_reply" : "&error=update_reply");
         } else {
             // Thêm reply mới
@@ -87,7 +87,7 @@ public class FeedbackReplyServlet extends HttpServlet {
             boolean added = replyDAO.addReply(reply);
             redirectUrl = request.getContextPath() + "/owner/feedbackreply?feedbackId=" + feedbackId
                     + "&returnUrl=" + (returnUrl != null ? returnUrl : "feedbackall")
-                    + (productId != null ? "&productId=" + productId : "")
+                    + (carId != null ? "&carId=" + carId : "")
                     + (added ? "&success=add" : "&error=add");
         }
 

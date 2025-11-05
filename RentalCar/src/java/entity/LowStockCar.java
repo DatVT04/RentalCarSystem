@@ -1,39 +1,39 @@
 package entity;
 
-public class LowStockProduct {
-    private int productId;
-    private String productName;
+public class LowStockCar {
+    private int carId;
+    private String carName;
     private String size;
     private String color;
     private int stockQuantity;
 
     // Thêm constructor không tham số
-    public LowStockProduct() {
+    public LowStockCar() {
         // Constructor không tham số
     }
 
-    public LowStockProduct(int productId, String productName, String size, String color, int stockQuantity) {
-        this.productId = productId;
-        this.productName = productName;
+    public LowStockCar(int carId, String carName, String size, String color, int stockQuantity) {
+        this.carId = carId;
+        this.carName = carName;
         this.size = size;
         this.color = color;
         this.stockQuantity = stockQuantity;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getCarName() {
+        return carName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setCarName(String carName) {
+        this.carName = carName;
     }
 
     public String getSize() {

@@ -66,16 +66,16 @@
         </li>
         
         <li class="menu-item p-2">
-            <a href="#productSubmenu" data-bs-toggle="collapse" class="text-decoration-none text-light d-flex align-items-center justify-content-between collapsed">
+            <a href="#carSubmenu" data-bs-toggle="collapse" class="text-decoration-none text-light d-flex align-items-center justify-content-between collapsed">
                 <div>
                     <i class="fas fa-box me-2"></i>
                     Quản lý sản phẩm
                 </div>
                 <i class="fas fa-chevron-down ms-auto"></i>
             </a>
-            <ul class="submenu collapse list-unstyled ms-3 mt-1" id="productSubmenu">
+            <ul class="submenu collapse list-unstyled ms-3 mt-1" id="carSubmenu">
                 <li class="submenu-item py-1">
-                    <a href="${pageContext.request.contextPath}/owner/productlist" class="text-decoration-none text-light">Danh sách sản phẩm</a>
+                    <a href="${pageContext.request.contextPath}/owner/carlist" class="text-decoration-none text-light">Danh sách sản phẩm</a>
                 </li>
                 <li class="submenu-item py-1">
                     <a href="${pageContext.request.contextPath}/owner/inventorylist" class="text-decoration-none text-light">Quản lý kho hàng</a>
@@ -264,31 +264,31 @@
             submenu.classList.remove('show');
         });
 
-        // Handle product management section
-        if (currentPath.includes('/owner/productlist') ||
+        // Handle car management section
+        if (currentPath.includes('/owner/carlist') ||
                 currentPath.includes('/owner/inventorylist') ||
-                currentPath.includes('/owner/addproduct') ||
-                currentPath.includes('/owner/editproduct') ||
-                currentPath.includes('/owner/deleteproduct') ||
+                currentPath.includes('/owner/addcar') ||
+                currentPath.includes('/owner/editcar') ||
+                currentPath.includes('/owner/deletecar') ||
                 currentPath.includes('/owner/inventoryDetail')) {
 
-            // Show product submenu
-            const productSubmenu = document.getElementById('productSubmenu');
-            if (productSubmenu) {
-                productSubmenu.classList.add('show');
+            // Show car submenu
+            const carSubmenu = document.getElementById('carSubmenu');
+            if (carSubmenu) {
+                carSubmenu.classList.add('show');
             }
 
             // Highlight parent menu item
-            const productMenuItem = document.querySelector('a[href="#productSubmenu"]').closest('.menu-item');
-            if (productMenuItem) {
-                productMenuItem.classList.add('active');
+            const carMenuItem = document.querySelector('a[href="#carSubmenu"]').closest('.menu-item');
+            if (carMenuItem) {
+                MenuItem.classList.add('active');
             }
 
             // Highlight specific submenu item based on current page
-            if (currentPath.includes('/owner/productlist')) {
-                const productListItem = document.querySelector('a[href$="/owner/productlist"]').closest('.submenu-item');
-                if (productListItem) {
-                    productListItem.classList.add('active');
+            if (currentPath.includes('/owner/carlist')) {
+                const carListItem = document.querySelector('a[href$="/owner/carlist"]').closest('.submenu-item');
+                if (carListItem) {
+                    carListItem.classList.add('active');
                 }
             } else if (currentPath.includes('/owner/inventorylist')) {
                 const inventoryListItem = document.querySelector('a[href$="/owner/inventorylist"]').closest('.submenu-item');

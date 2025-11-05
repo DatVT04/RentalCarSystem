@@ -23,9 +23,9 @@ public class Feedback {
     private Date updatedAt;
     private String userFullName;
     private String userName;
-    private String productTitle;
-    private String productThumbnail;
-    private int productId;
+    private String carTitle;
+    private String carThumbnail;
+    private int carId;
     private List<FeedbackReply> replies;
     private List<String> feedbackImages;
 
@@ -124,33 +124,33 @@ public class Feedback {
         this.userName = userName;
     }
 
-    public String getProductTitle() {
-        return productTitle;
+    public String getCarTitle() {
+        return carTitle;
     }
 
-    public void setProductTitle(String productTitle) {
-        this.productTitle = productTitle;
+    public void setCarTitle(String carTitle) {
+        this.carTitle = carTitle;
     }
 
-    public String getProductThumbnail() {
-        return productThumbnail;
+    public String getCarThumbnail() {
+        return carThumbnail;
     }
 
-    public void setProductThumbnail(String productThumbnail) {
-        this.productThumbnail = productThumbnail;
+    public void setCarThumbnail(String carThumbnail) {
+        this.carThumbnail = carThumbnail;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
     @Override
     public String toString() {
-        return "Feedback{id=" + id + ", rating=" + rating + ", comment=" + comment + ", status=" + status + ", productId=" + productId + "}";
+        return "Feedback{id=" + id + ", rating=" + rating + ", comment=" + comment + ", status=" + status + ", carId=" + carId + "}";
     }
 
     public void setReplies(List<FeedbackReply> replies) {

@@ -27,17 +27,17 @@ public class DashboardServlet extends HttpServlet {
         DashboardDAO dashboardDAO = new DashboardDAO();
         DashboardStats stats = dashboardDAO.getDashboardStats(startDate, endDate);
 
-        Map<String, Integer> productsByCategory = dashboardDAO.getProductsByCategory();
+        Map<String, Integer> carsByCategory = dashboardDAO.getCarsByCategory();
         Map<Integer, Integer> feedbackByRating = dashboardDAO.getFeedbackByRating();
 
-        stats.setProductsByCategory(productsByCategory);
+        stats.setCarsByCategory(carsByCategory);
         stats.setFeedbackByRating(feedbackByRating);
 
         request.setAttribute("stats", stats);
         request.setAttribute("startDateStr", formatDate(startDate));
         request.setAttribute("endDateStr", formatDate(endDate));
 
-        request.setAttribute("productsByCategory", productsByCategory);
+        request.setAttribute("carsByCategory", carsByCategory);
         request.setAttribute("feedbackByRating", feedbackByRating);
         request.setAttribute("customerContactStats", stats.getCustomerContactStats());
         request.setAttribute("topVIPCustomers", stats.getTopVIPCustomers());

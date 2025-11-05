@@ -179,66 +179,66 @@
                 <div class="card">
                     <div class="card-header"><i class="fas fa-info-circle me-2"></i>Thông tin sản phẩm</div>
                     <div class="card-body">
-                        <form action="editproduct" method="post" enctype="multipart/form-data" class="row g-3">
-                            <input type="hidden" name="action" value="updateProduct">
-                            <input type="hidden" name="productId" value="${product.id}">
+                        <form action="editcar" method="post" enctype="multipart/form-data" class="row g-3">
+                            <input type="hidden" name="action" value="updateCar">
+                            <input type="hidden" name="carId" value="${car.id}">
                             <div class="col-md-6">
                                 <label for="title" class="form-label">Tên sản phẩm</label>
-                                <input type="text" class="form-control" id="title" name="title" value="${product.title}" maxlength="100" required />
+                                <input type="text" class="form-control" id="title" name="title" value="${car.title}" maxlength="100" required />
                             </div>
                             <div class="col-md-6">
                                 <label for="categoryId" class="form-label">Danh mục</label>
                                 <select class="form-select" id="categoryId" name="categoryId" required>
                                     <c:forEach var="category" items="${categories}">
-                                        <option value="${category.id}" ${category.id == product.categoryId ? 'selected' : ''}>${category.name}</option>
+                                        <option value="${category.id}" ${category.id == car.categoryId ? 'selected' : ''}>${category.name}</option>
                                     </c:forEach>
                                 </select>
                             </div>
                             <div class="col-md-6">
                                 <label for="originalPrice" class="form-label">Giá gốc (₫)</label>
-                                <input type="text" class="form-control" id="originalPrice" name="originalPrice" value="${product.originalPrice.intValue()}" required />
+                                <input type="text" class="form-control" id="originalPrice" name="originalPrice" value="${car.originalPrice.intValue()}" required />
                             </div>
                             <div class="col-md-6">
                                 <label for="salePrice" class="form-label">Giá bán (₫)</label>
-                                <input type="text" class="form-control" id="salePrice" name="salePrice" value="${product.salePrice.intValue()}" required />
+                                <input type="text" class="form-control" id="salePrice" name="salePrice" value="${car.salePrice.intValue()}" required />
                             </div>
                             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
                                 <label for="comboGroupId" class="form-label mb-2">
                                     <div class="form-check d-flex justify-content-center align-items-center">
-                                        <input class="form-check-input me-2" type="checkbox" id="isCombo" name="isCombo" ${product.isCombo ? 'checked' : ''}>
+                                        <input class="form-check-input me-2" type="checkbox" id="isCombo" name="isCombo" ${car.isCombo ? 'checked' : ''}>
                                         <label class="form-check-label" for="isCombo">Là sản phẩm chính của combo</label>
                                     </div>
                                 </label>
                                 <select class="form-select" id="comboGroupId" name="comboGroupId" style="width: 50%;">
-                                    <option value="0" ${0 == product.comboGroupId ? 'selected' : ''}>Không thuộc combo nào</option>
-                                    <c:forEach var="comboProduct" items="${comboProducts}">
-                                        <option value="${comboProduct.comboGroupId}" ${comboProduct.comboGroupId == product.comboGroupId ? 'selected' : ''}>${comboProduct.title}</option>
+                                    <option value="0" ${0 == car.comboGroupId ? 'selected' : ''}>Không thuộc combo nào</option>
+                                    <c:forEach var="comboCar" items="${comboCars}">
+                                        <option value="${comboCar.comboGroupId}" ${comboCar.comboGroupId == car.comboGroupId ? 'selected' : ''}>${comboCar.title}</option>
                                     </c:forEach>
                                 </select>
                             </div>
                             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
                                 <label for="status" class="form-label mb-2">Trạng thái sản phẩm</label>
-                                <select class="form-select" id="status" name="status" style="width: 50%;" ${product.status.equals('EOStock') ? 'disabled' : ''}>
-                                    <option value="active" ${product.status eq 'active' ? 'selected' : ''}>Đang Bán</option>
-                                    <option value="inactive" ${product.status eq 'inactive' ? 'selected' : ''}>Ngưng Bán</option>
-                                    <option value="EOStock" ${product.status.equals('EOStock') ? 'selected' : ''}>Hết hàng</option>
+                                <select class="form-select" id="status" name="status" style="width: 50%;" ${car.status.equals('EOStock') ? 'disabled' : ''}>
+                                    <option value="active" ${car.status eq 'active' ? 'selected' : ''}>Đang Bán</option>
+                                    <option value="inactive" ${car.status eq 'inactive' ? 'selected' : ''}>Ngưng Bán</option>
+                                    <option value="EOStock" ${car.status.equals('EOStock') ? 'selected' : ''}>Hết hàng</option>
                                 </select>
                             </div>
 
                             <div class="col-12">
                                 <label for="description" class="form-label">Mô tả sản phẩm</label>
-                                <textarea class="form-control" id="description" name="description">${product.description}</textarea>
+                                <textarea class="form-control" id="description" name="description">${car.description}</textarea>
                             </div>
 
                             <div class="col-md-6 mt-3">
                                 <label for="thumbnail" class="form-label">Ảnh chính</label>
                                 <input type="file" class="form-control" id="thumbnail" name="thumbnail" accept="image/*" onchange="previewThumbnail(this)" />
-                                <img src="${product.thumbnail.contains('https') ? product.thumbnail : pageContext.request.contextPath.concat('/').concat(product.thumbnail)}" class="preview-image" alt="Current Thumbnail">
+                                <img src="${car.thumbnail.contains('https') ? car.thumbnail : pageContext.request.contextPath.concat('/').concat(car.thumbnail)}" class="preview-image" alt="Current Thumbnail">
                             </div>
 
                             <div class="col-12 mt-4">
                                 <button type="submit" class="btn btn-primary"><i class="fas fa-save me-2"></i>Lưu thay đổi</button>
-                                <a href="productlist" class="btn btn-secondary"><i class="fas fa-arrow-left me-2"></i>Quay lại</a>
+                                <a href="carlist" class="btn btn-secondary"><i class="fas fa-arrow-left me-2"></i>Quay lại</a>
                             </div>
                         </form>
 
@@ -246,20 +246,20 @@
                         <div class="col-12 mt-3" id="subimagepart">
                             <label class="form-label">Ảnh phụ</label>
                             <div class="sub-images-container">
-                                <c:forEach var="subImage" items="${product.subImages}" varStatus="loop">
+                                <c:forEach var="subImage" items="${car.subImages}" varStatus="loop">
                                     <div class="sub-image-card">
                                         <img src="${pageContext.request.contextPath}/${subImage}" class="sub-image-preview" alt="Sub Image ${loop.count}" onclick="previewSubImage('${pageContext.request.contextPath}/${subImage}')">
                                         <div class="sub-image-actions">
-                                            <form action="editproduct" method="post" enctype="multipart/form-data">
+                                            <form action="editcar" method="post" enctype="multipart/form-data">
                                                 <input type="hidden" name="action" value="replaceSubImage">
                                                 <input type="hidden" name="oldSubImg" value="${subImage}">
-                                                <input type="hidden" name="productId" value="${product.id}">
+                                                <input type="hidden" name="carId" value="${car.id}">
                                                 <input type="file" class="form-control" name="subImage" accept="image/*" onchange="this.form.submit();">
                                             </form>
-                                            <form action="editproduct" method="post" enctype="multipart/form-data" onsubmit="return confirm('Bạn có chắc muốn xóa ảnh này?')">
+                                            <form action="editcar" method="post" enctype="multipart/form-data" onsubmit="return confirm('Bạn có chắc muốn xóa ảnh này?')">
                                                 <input type="hidden" name="action" value="deleteSubImage">
                                                 <input type="hidden" name="oldSubImg" value="${subImage}">
-                                                <input type="hidden" name="productId" value="${product.id}">
+                                                <input type="hidden" name="carId" value="${car.id}">
                                                 <button type="submit" class="btn btn-danger btn-sm" style="height: 38px">Xóa</button>
                                             </form>
                                         </div>
@@ -267,9 +267,9 @@
                                 </c:forEach>
                             </div>
                             <div class="mt-3">
-                                <form action="editproduct" method="post" enctype="multipart/form-data">
+                                <form action="editcar" method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="action" value="addNewSubImage">
-                                    <input type="hidden" name="productId" value="${product.id}">
+                                    <input type="hidden" name="carId" value="${car.id}">
                                     <input type="file" class="form-control" name="newSubImage" accept="image/*" multiple onchange="this.form.submit();">
                                     <div class="form-text">Thêm ảnh phụ mới (tổng cũ và mới tối đa 5 ảnh)</div>
                                 </form>
@@ -335,8 +335,8 @@
                                             });
 
                                             $('.menu-item').removeClass('active');
-                                            $('.menu-item a[href="editproduct"]').closest('.menu-item').addClass('active');
-                                            $('#productSubmenu').addClass('show');
+                                            $('.menu-item a[href="editcar"]').closest('.menu-item').addClass('active');
+                                            $('#carSubmenu').addClass('show');
 
                                             $('#salePrice').on('change', function () {
                                                 const originalPrice = parseInt($('#originalPrice').val().replace(/\./g, '')) || 0;
@@ -365,7 +365,7 @@
                                                         let data = new FormData();
                                                         data.append("file", files[0]);
                                                         $.ajax({
-                                                            url: '${pageContext.request.contextPath}/marketing/editproduct?productId='+${product.id}+'&action=uploadImage',
+                                                            url: '${pageContext.request.contextPath}/owner/editcar?carId='+${car.id}+'&action=uploadImage',
                                                             method: 'POST',
                                                             data: data,
                                                             contentType: false,
@@ -395,9 +395,9 @@
                                                 const comboBoxElement = $("#comboGroupId");
                                                 if (isCombo) {
                                                     comboBoxElement.prop("disabled", true);
-                                                    comboBoxElement.val(${requestScope.product.getComboGroupId()});
+                                                    comboBoxElement.val(${requestScope.car.getComboGroupId()});
                                                 } else {
-                                                    comboBoxElement.val(${requestScope.product.getComboGroupId()});
+                                                    comboBoxElement.val(${requestScope.car.getComboGroupId()});
                                                     comboBoxElement.prop("disabled", false);
                                                 }
                                             }

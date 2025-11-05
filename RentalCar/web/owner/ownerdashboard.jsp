@@ -116,11 +116,11 @@
                                 </div>
                                 <div>
                                     <div class="text-muted text-uppercase fw-bold small">Tổng Sản Phẩm</div>
-                                    <div class="h4 mb-0 fw-bold text-dark">${stats.totalProducts}</div>
+                                    <div class="h4 mb-0 fw-bold text-dark">${stats.totalCars}</div>
                                     <div class="mt-2 small">
-                                        <span class="badge bg-success">${stats.activeProducts} Đang bán</span>
-                                        <span class="badge bg-danger">${stats.outOfStockProducts} Hết hàng</span>
-                                        <span class="badge bg-secondary">${stats.totalProducts - stats.activeProducts - stats.outOfStockProducts} Ngừng bán</span>
+                                        <span class="badge bg-success">${stats.activeCars} Đang bán</span>
+                                        <span class="badge bg-danger">${stats.outOfStockCars} Hết hàng</span>
+                                        <span class="badge bg-secondary">${stats.totalCars - stats.activeCars - stats.outOfStockCars} Ngừng bán</span>
                                     </div>
                                 </div>
                             </div>
@@ -235,15 +235,15 @@
                         </div>
                         <div class="card-body">
                             <div class="chart-container">
-                                <canvas id="productsByCategoryChart"></canvas>
+                                <canvas id="carsByCategoryChart"></canvas>
                             </div>
                             <div class="mt-3 small text-center">
                                 <c:choose>
-                                    <c:when test="${empty stats.productsByCategory}">
+                                    <c:when test="${empty stats.carsByCategory}">
                                         <span class="text-muted">Không có dữ liệu có sẵn</span>
                                     </c:when>
                                     <c:otherwise>
-                                        <c:forEach items="${stats.productsByCategory}" var="category" varStatus="status">
+                                        <c:forEach items="${stats.carsByCategory}" var="category" varStatus="status">
                                             <span class="me-2 mb-1 d-inline-block">
                                                 <c:set var="colorIndex" value="${status.index % 7}" />
                                                 <i class="fas fa-circle" style="color: ${colorIndex == 0 ? '#36b9cc' : colorIndex == 1 ? '#4e73df' : colorIndex == 2 ? '#f6c23e' : colorIndex == 3 ? '#1cc88a' : colorIndex == 4 ? '#d65b4f' : colorIndex == 5 ? '#6f42c1' : '#20c997'}"></i>
@@ -263,22 +263,22 @@
                         </div>
                         <div class="card-body">
                             <h4 class="small fw-bold">Sản phẩm đang bán <span class="float-end">
-                                <fmt:formatNumber value="${stats.activeProducts / (stats.totalProducts == 0 ? 1 : stats.totalProducts) * 100}" pattern="0.0" />%
+                                <fmt:formatNumber value="${stats.activeCars / (stats.totalCars == 0 ? 1 : stats.totalCars) * 100}" pattern="0.0" />%
                             </span></h4>
                             <div class="progress mb-4">
-                                <div class="progress-bar bg-success" style="width: ${stats.activeProducts / (stats.totalProducts == 0 ? 1 : stats.totalProducts) * 100}%"></div>
+                                <div class="progress-bar bg-success" style="width: ${stats.activeCars / (stats.totalCars == 0 ? 1 : stats.totalCars) * 100}%"></div>
                             </div>
                             <h4 class="small fw-bold">Hết hàng <span class="float-end">
-                                <fmt:formatNumber value="${stats.outOfStockProducts / (stats.totalProducts == 0 ? 1 : stats.totalProducts) * 100}" pattern="0.0" />%
+                                <fmt:formatNumber value="${stats.outOfStockCars / (stats.totalCars == 0 ? 1 : stats.totalCars) * 100}" pattern="0.0" />%
                             </span></h4>
                             <div class="progress mb-4">
-                                <div class="progress-bar bg-danger" style="width: ${stats.outOfStockProducts / (stats.totalProducts == 0 ? 1 : stats.totalProducts) * 100}%"></div>
+                                <div class="progress-bar bg-danger" style="width: ${stats.outOfStockCars / (stats.totalCars == 0 ? 1 : stats.totalCars) * 100}%"></div>
                             </div>
                             <h4 class="small fw-bold">Sản phẩm ngừng bán <span class="float-end">
-                                <fmt:formatNumber value="${stats.inactiveProducts / (stats.totalProducts == 0 ? 1 : stats.totalProducts) * 100}" pattern="0.0" />%
+                                <fmt:formatNumber value="${stats.inactiveCars / (stats.totalCars == 0 ? 1 : stats.totalCars) * 100}" pattern="0.0" />%
                             </span></h4>
                             <div class="progress mb-4">
-                                <div class="progress-bar bg-secondary" style="width: ${stats.inactiveProducts / (stats.totalProducts == 0 ? 1 : stats.totalProducts) * 100}%"></div>
+                                <div class="progress-bar bg-secondary" style="width: ${stats.inactiveCars / (stats.totalCars == 0 ? 1 : stats.totalCars) * 100}%"></div>
                             </div>
                             <h4 class="small fw-bold">Tổng kho: ${stats.totalStock} mặt hàng</h4>
                         </div>
@@ -305,16 +305,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <c:forEach items="${stats.lowStockProducts}" var="product">
+                                        <c:forEach items="${stats.lowStockCars}" var="car">
                                             <tr>
-                                                <td>${product.productId}</td>
-                                                <td>${product.productName}</td>
-                                                <td>${product.size}</td>
-                                                <td>${product.color}</td>
-                                                <td><span class="badge bg-danger">${product.stockQuantity}</span></td>
+                                                <td>${car.carId}</td>
+                                                <td>${car.carName}</td>
+                                                <td>${car.size}</td>
+                                                <td>${car.color}</td>
+                                                <td><span class="badge bg-danger">${car.stockQuantity}</span></td>
                                             </tr>
                                         </c:forEach>
-                                        <c:if test="${empty stats.lowStockProducts}">
+                                        <c:if test="${empty stats.lowStockCars}">
                                             <tr>
                                                 <td colspan="5" class="text-center">Không có sản phẩm tồn kho thấp</td>
                                             </tr>
@@ -571,15 +571,15 @@
             }
         });
 
-        // Products by Category Chart
+        // Cars by Category Chart
         document.addEventListener("DOMContentLoaded", function() {
-            var ctx = document.getElementById("productsByCategoryChart").getContext('2d');
+            var ctx = document.getElementById("carsByCategoryChart").getContext('2d');
             var labels = [], data = [];
-            <c:forEach items="${productsByCategory}" var="category">
+            <c:forEach items="${carsByCategory}" var="category">
                 labels.push("${category.key}");
                 data.push(${category.value});
             </c:forEach>
-            var productChart = new Chart(ctx, {
+            var carChart = new Chart(ctx, {
                 type: 'pie',
                 data: {
                     labels: labels,

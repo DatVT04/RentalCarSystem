@@ -4,9 +4,9 @@
  */
 
 import DAO.CategoryDAO;
-import DAO.ProductDAO;
+import DAO.CarDAO;
 import entity.Category;
-import entity.Product;
+import entity.Car;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -23,11 +23,11 @@ import java.util.stream.Collectors;
  *
  * @author tphon
  */
-@WebServlet(urlPatterns = {"/listproduct"})
-public class ListProductServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/listcar"})
+public class ListCarServlet extends HttpServlet {
 
     private static final int RECORDS_PER_PAGE = 12;
-    private ProductDAO productDAO = new ProductDAO();
+    private CarDAO carDAO = new CarDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,10 +46,10 @@ public class ListProductServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ListProductServlet</title>");
+            out.println("<title>Servlet ListCarServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ListProductServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ListCarServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -85,7 +85,7 @@ public class ListProductServlet extends HttpServlet {
             }
 
             // Build base query
-            StringBuilder sql = new StringBuilder("SELECT p.*, c.name as category_name FROM products p "
+            StringBuilder sql = new StringBuilder("SELECT p.*, c.name as category_name FROM cars p "
                     + "JOIN categories c ON p.category_id = c.id WHERE p.status = 'active' AND c.status != 'inactive' AND 1=1");
             List<Object> params = new ArrayList<>();
 
@@ -122,7 +122,7 @@ public class ListProductServlet extends HttpServlet {
             }
 
             // Get total records for pagination
-            int totalRecords = productDAO.getTotalFilteredRecords(sql.toString(), params);
+            int totalRecords = carDAO.getTotalFilteredRecords(sql.toString(), params);
             int totalPages = (int) Math.ceil(totalRecords * 1.0 / RECORDS_PER_PAGE);
 //            System.out.println(totalRecords + ";" + totalPages + "Dòng 133");
 //            System.out.println(page);
@@ -154,7 +154,7 @@ public class ListProductServlet extends HttpServlet {
             params.add(RECORDS_PER_PAGE);
 
             // Execute query
-            List<Product> products = productDAO.getProductsByFilter(sql.toString(), params);
+            List<Car> cars = carDAO.getCarsByFilter(sql.toString(), params);
             // Get category name if category filter is applied
             String categoryName = null;
             if (categoryId != null && !categoryId.trim().isEmpty()) {
@@ -168,7 +168,7 @@ public class ListProductServlet extends HttpServlet {
             List<Category> categories = categoryDAO.getAll();
 
             // Set attributes for JSP
-            request.setAttribute("products", products);
+            request.setAttribute("cars", cars);
             request.setAttribute("categories", categories);
             request.setAttribute("categoryName", categoryName);
             request.setAttribute("currentPage", page);
@@ -182,7 +182,7 @@ public class ListProductServlet extends HttpServlet {
             request.setAttribute("totalItems", totalRecords);
 
             // Forward to JSP
-            request.getRequestDispatcher("productList.jsp").forward(request, response);
+            request.getRequestDispatcher("carList.jsp").forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();

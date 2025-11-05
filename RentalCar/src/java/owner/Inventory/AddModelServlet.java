@@ -5,7 +5,7 @@
 package owner.Inventory;
 
 import DAO.InventoryDAO;
-import DAO.ProductDAO;
+import DAO.CarDAO;
 import entity.Color;
 import entity.Size;
 import entity.Variant;
@@ -32,20 +32,20 @@ public class AddModelServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String productIdStr = request.getParameter("productId");
-        if (productIdStr == null || productIdStr.trim().isEmpty()) {
+        String carIdStr = request.getParameter("carId");
+        if (carIdStr == null || carIdStr.trim().isEmpty()) {
             response.sendRedirect("inventorylist");
             return;
         }
 
-        int productId = Integer.parseInt(productIdStr);
+        int carId = Integer.parseInt(carIdStr);
         InventoryDAO inventoryDao = new InventoryDAO();
 
-        List<Color> colorList = inventoryDao.getColorsByProductId(productId);
-        List<Size> sizeList = inventoryDao.getSizesByProductId(productId);
-        List<Variant> variants = inventoryDao.getProductVariants(productId); // Lấy danh sách variants
+        List<Color> colorList = inventoryDao.getColorsByCarId(carId);
+        List<Size> sizeList = inventoryDao.getSizesByCarId(carId);
+        List<Variant> variants = inventoryDao.getCarVariants(carId); // Lấy danh sách variants
 
-        request.setAttribute("productId", productId);
+        request.setAttribute("carId", carId);
         request.setAttribute("colorList", colorList);
         request.setAttribute("sizeList", sizeList);
         request.setAttribute("variants", variants); // Thêm variants vào request
@@ -58,22 +58,22 @@ public class AddModelServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         InventoryDAO inventoryDao = new InventoryDAO();
-        ProductDAO productDao = new ProductDAO();
+        CarDAO carDao = new CarDAO();
 
         try {
-            int productId = Integer.parseInt(request.getParameter("productId"));
+            int carId = Integer.parseInt(request.getParameter("carId"));
             String source = request.getParameter("source");
             String colorName = request.getParameter("color").trim();
             String sizeName = request.getParameter("size").trim();
             String quantityStr = request.getParameter("quantity");
 
-            List<Color> colorList = inventoryDao.getColorsByProductId(productId);
-            List<Size> sizeList = inventoryDao.getSizesByProductId(productId);
-            List<Variant> variants = inventoryDao.getProductVariants(productId);
+            List<Color> colorList = inventoryDao.getColorsByCarId(carId);
+            List<Size> sizeList = inventoryDao.getSizesByCarId(carId);
+            List<Variant> variants = inventoryDao.getCarVariants(carId);
 
             if (!COLOR_PATTERN.matcher(colorName).matches()) {
                 request.setAttribute("errorMessage", "Màu sắc chỉ được phép chứa chữ cái và khoảng trắng");
-                request.setAttribute("productId", productId);
+                request.setAttribute("carId", carId);
                 request.setAttribute("source", source);
                 request.setAttribute("colorList", colorList);
                 request.setAttribute("sizeList", sizeList);
@@ -90,7 +90,7 @@ public class AddModelServlet extends HttpServlet {
                 }
             } catch (NumberFormatException e) {
                 request.setAttribute("errorMessage", "Số lượng phải là số nguyên từ 0 đến " + MAX_QUANTITY);
-                request.setAttribute("productId", productId);
+                request.setAttribute("carId", carId);
                 request.setAttribute("source", source);
                 request.setAttribute("colorList", colorList);
                 request.setAttribute("sizeList", sizeList);
@@ -99,14 +99,14 @@ public class AddModelServlet extends HttpServlet {
                 return;
             }
 
-            Color color = inventoryDao.getColorByName(productId, colorName);
-            Size size = inventoryDao.getSizeByName(productId, sizeName);
+            Color color = inventoryDao.getColorByName(carId, colorName);
+            Size size = inventoryDao.getSizeByName(carId, sizeName);
 
             int colorId;
             if (color != null) {
                 colorId = color.getId();
             } else {
-                colorId = inventoryDao.addColor(productId, colorName);
+                colorId = inventoryDao.addColor(carId, colorName);
                 if (colorId == -1) {
                     throw new SQLException("Không thể tạo màu mới");
                 }
@@ -116,15 +116,15 @@ public class AddModelServlet extends HttpServlet {
             if (size != null) {
                 sizeId = size.getId();
             } else {
-                sizeId = inventoryDao.addSize(productId, sizeName);
+                sizeId = inventoryDao.addSize(carId, sizeName);
                 if (sizeId == -1) {
                     throw new SQLException("Không thể tạo kích thước mới");
                 }
             }
 
-            if (inventoryDao.isVariantExists(productId, colorId, sizeId)) {
+            if (inventoryDao.isVariantExists(carId, colorId, sizeId)) {
                 request.setAttribute("errorMessage", "Mẫu với màu " + colorName + " và kích thước " + sizeName + " đã tồn tại");
-                request.setAttribute("productId", productId);
+                request.setAttribute("carId", carId);
                 request.setAttribute("source", source);
                 request.setAttribute("colorList", colorList);
                 request.setAttribute("sizeList", sizeList);
@@ -133,10 +133,10 @@ public class AddModelServlet extends HttpServlet {
                 return;
             }
 
-            inventoryDao.addNewVariant(productId, colorId, sizeId, quantity);
-            productDao.updateProductStatusIfNeeded(productId);
+            inventoryDao.addNewVariant(carId, colorId, sizeId, quantity);
+            carDao.updateCarStatusIfNeeded(carId);
 
-            String redirectUrl = "inventoryDetail?id=" + productId + "&success=add";
+            String redirectUrl = "inventoryDetail?id=" + carId + "&success=add";
             if (source != null && !source.trim().isEmpty()) {
                 redirectUrl += "&source=" + source;
             }
@@ -144,11 +144,11 @@ public class AddModelServlet extends HttpServlet {
 
         } catch (SQLException e) {
             request.setAttribute("errorMessage", "Lỗi hệ thống: " + e.getMessage());
-            request.setAttribute("productId", request.getParameter("productId"));
+            request.setAttribute("carId", request.getParameter("carId"));
             request.setAttribute("source", request.getParameter("source"));
-            request.setAttribute("colorList", inventoryDao.getColorsByProductId(Integer.parseInt(request.getParameter("productId"))));
-            request.setAttribute("sizeList", inventoryDao.getSizesByProductId(Integer.parseInt(request.getParameter("productId"))));
-            request.setAttribute("variants", inventoryDao.getProductVariants(Integer.parseInt(request.getParameter("productId"))));
+            request.setAttribute("colorList", inventoryDao.getColorsByCarId(Integer.parseInt(request.getParameter("carId"))));
+            request.setAttribute("sizeList", inventoryDao.getSizesByCarId(Integer.parseInt(request.getParameter("carId"))));
+            request.setAttribute("variants", inventoryDao.getCarVariants(Integer.parseInt(request.getParameter("carId"))));
             request.getRequestDispatcher("/owner/inventory/AddModel.jsp").forward(request, response);
         }
     }

@@ -12,14 +12,14 @@ public class SalesReport {
     private BigDecimal totalRevenue;
     private BigDecimal averageOrderValue;
     private int totalCustomers;
-    private int totalProducts;
+    private int totalCars;
 
     private Map<String, BigDecimal> dailyRevenue;
     private Map<String, BigDecimal> monthlyRevenue;
     private Map<String, Integer> ordersPerDay;
     private Map<String, Integer> ordersPerMonth;
 
-    private List<ProductPerformance> topProducts;
+    private List<CarPerformance> topCars;
     private Map<String, BigDecimal> revenueByCategoryMap;
     private Map<String, Integer> ordersByCategoryMap;
 
@@ -40,16 +40,16 @@ public class SalesReport {
         this.totalRevenue = BigDecimal.ZERO;
         this.averageOrderValue = BigDecimal.ZERO;
         this.totalCustomers = 0;
-        this.totalProducts = 0;
+        this.totalCars = 0;
         this.newCustomers = 0;
         this.returningCustomers = 0;
         this.averageFulfillmentTime = 0.0;
     }
 
     public SalesReport(int totalOrders, BigDecimal totalRevenue, BigDecimal averageOrderValue,
-            int totalCustomers, int totalProducts, Map<String, BigDecimal> dailyRevenue,
+            int totalCustomers, int totalCars, Map<String, BigDecimal> dailyRevenue,
             Map<String, BigDecimal> monthlyRevenue, Map<String, Integer> ordersPerDay,
-            Map<String, Integer> ordersPerMonth, List<ProductPerformance> topProducts,
+            Map<String, Integer> ordersPerMonth, List<CarPerformance> topCars,
             Map<String, BigDecimal> revenueByCategoryMap, Map<String, Integer> ordersByCategoryMap,
             int newCustomers, int returningCustomers, Map<String, Integer> customersByGender,
             List<CustomerPerformance> topCustomers, Map<String, Integer> ordersByStatus,
@@ -58,12 +58,12 @@ public class SalesReport {
         this.totalRevenue = totalRevenue;
         this.averageOrderValue = averageOrderValue;
         this.totalCustomers = totalCustomers;
-        this.totalProducts = totalProducts;
+        this.totalCars = totalCars;
         this.dailyRevenue = dailyRevenue;
         this.monthlyRevenue = monthlyRevenue;
         this.ordersPerDay = ordersPerDay;
         this.ordersPerMonth = ordersPerMonth;
-        this.topProducts = topProducts;
+        this.topCars = topCars;
         this.revenueByCategoryMap = revenueByCategoryMap;
         this.ordersByCategoryMap = ordersByCategoryMap;
         this.newCustomers = newCustomers;
@@ -76,10 +76,10 @@ public class SalesReport {
         this.endDate = endDate;
     }
 
-    public static class ProductPerformance {
+    public static class CarPerformance {
 
-        private int productId;
-        private String productName;
+        private int carId;
+        private String carName;
         private String category;
         private int totalQuantitySold;
         private BigDecimal totalRevenue;
@@ -87,20 +87,20 @@ public class SalesReport {
         private Map<String, Integer> colorDistribution;
         private Map<String, Integer> variantDistribution = new HashMap<>();
 
-        public int getProductId() {
-            return productId;
+        public int getCarId() {
+            return carId;
         }
 
-        public void setProductId(int productId) {
-            this.productId = productId;
+        public void setCarId(int carId) {
+            this.carId = carId;
         }
 
-        public String getProductName() {
-            return productName;
+        public String getCarName() {
+            return carName;
         }
 
-        public void setProductName(String productName) {
-            this.productName = productName;
+        public void setCarName(String carName) {
+            this.carName = carName;
         }
 
         public String getCategory() {
@@ -260,12 +260,12 @@ public class SalesReport {
         this.totalCustomers = totalCustomers;
     }
 
-    public int getTotalProducts() {
-        return totalProducts;
+    public int getTotalCars() {
+        return totalCars;
     }
 
-    public void setTotalProducts(int totalProducts) {
-        this.totalProducts = totalProducts;
+    public void setTotalCars(int totalCars) {
+        this.totalCars = totalCars;
     }
 
     public Map<String, BigDecimal> getDailyRevenue() {
@@ -300,12 +300,12 @@ public class SalesReport {
         this.ordersPerMonth = ordersPerMonth;
     }
 
-    public List<ProductPerformance> getTopProducts() {
-        return topProducts;
+    public List<CarPerformance> getTopCars() {
+        return topCars;
     }
 
-    public void setTopProducts(List<ProductPerformance> topProducts) {
-        this.topProducts = topProducts;
+    public void setTopCars(List<CarPerformance> topCars) {
+        this.topCars = topCars;
     }
 
     public Map<String, BigDecimal> getRevenueByCategoryMap() {

@@ -1,17 +1,17 @@
 package entity;
 
-public class ProductStatusCount {
-    private int totalProducts;
+public class CarStatusCount {
+    private int totalCars;
     private int activeCount;
     private int inactiveCount;
     private int eoStockCount;
     
-    public int getTotalProducts() {
-        return totalProducts;
+    public int getTotalCars() {
+        return totalCars;
     }
     
-    public void setTotalProducts(int totalProducts) {
-        this.totalProducts = totalProducts;
+    public void setTotalCars(int totalCars) {
+        this.totalCars = totalCars;
     }
     
     public int getActiveCount() {

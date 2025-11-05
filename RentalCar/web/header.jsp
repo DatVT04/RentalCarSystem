@@ -87,7 +87,7 @@
                             <c:forEach items="${level1Categories}" var="level1">
                                 <c:if test="${level1.status == 'active'}">
                                     <li class="dropdown-submenu">
-                                        <a class="dropdown-item" href="listproduct?category=${level1.id}">
+                                        <a class="dropdown-item" href="listcar?category=${level1.id}">
                                             ${level1.name}
                                         </a>
                                         <c:if test="${not empty level2ByParent[level1.id]}">
@@ -95,7 +95,7 @@
                                                 <c:forEach items="${level2ByParent[level1.id]}" var="level2">
                                                     <c:if test="${level2.status == 'active'}">
                                                         <li class="dropdown-submenu">
-                                                            <a class="dropdown-item" href="listproduct?category=${level2.id}">
+                                                            <a class="dropdown-item" href="listcar?category=${level2.id}">
                                                                 ${level2.name}
                                                             </a>
                                                             <c:if test="${not empty level3ByParent[level2.id]}">
@@ -103,7 +103,7 @@
                                                                     <c:forEach items="${level3ByParent[level2.id]}" var="level3">
                                                                         <c:if test="${level3.status == 'active'}">
                                                                             <li>
-                                                                                <a class="dropdown-item" href="listproduct?category=${level3.id}">
+                                                                                <a class="dropdown-item" href="listcar?category=${level3.id}">
                                                                                     ${level3.name}
                                                                                 </a>
                                                                             </li>
@@ -122,7 +122,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listproduct">Danh sách xe cho thuê</a>
+                        <a class="nav-link" href="listcar">Danh sách xe cho thuê</a>
                     </li>
                     
                 </ul>
@@ -130,7 +130,7 @@
                 <!-- Right Side Items -->
                 <div class="d-flex align-items-center justify-content-end">
                     <!-- Search Form -->
-                    <form class="search-form" action="listproduct" method="GET">
+                    <form class="search-form" action="listcar" method="GET">
                         <input type="text" name="keyword" placeholder="Nhập tên xe, hãng xe...">
                         <button type="submit">
                             <i class="fas fa-search"></i>

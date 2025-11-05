@@ -76,7 +76,7 @@ public class CartDAO extends DBContext {
         // Kiểm tra sản phẩm đã tồn tại chưa
         boolean itemExists = false;
         for (CartItem existingItem : cart.getItems()) {
-            if (existingItem.getProductId() == item.getProductId()
+            if (existingItem.getCarId() == item.getCarId()
                     && existingItem.getVariantId() == item.getVariantId()) {
                 // Tăng số lượng thay vì thêm mới
                 existingItem.setQuantity(existingItem.getQuantity() + item.getQuantity());
@@ -151,10 +151,10 @@ public class CartDAO extends DBContext {
         }
     }
 
-    public boolean deleteProductFromCart(int productId) {
-        String query = "DELETE FROM cart_items WHERE product_id = ?";
+    public boolean deleteCarFromCart(int carId) {
+        String query = "DELETE FROM cart_items WHERE car_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setInt(1, productId);
+            ps.setInt(1, carId);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -189,7 +189,7 @@ public class CartDAO extends DBContext {
         double total = 0;
         if (cart != null && cart.getItems() != null) {
             for (CartItem item : cart.getItems()) {
-                total += item.getProductPrice() * item.getQuantity();
+                total += item.getCarPrice() * item.getQuantity();
             }
         }
         return total;
@@ -224,10 +224,10 @@ public class CartDAO extends DBContext {
         String sql = "SELECT ci.*, pv.size_id, pv.color_id, "
                 + "ps.size, pc.color, p.title, p.thumbnail, p.sale_price "
                 + "FROM cart_items ci "
-                + "INNER JOIN product_variants pv ON ci.variant_id = pv.id "
-                + "INNER JOIN product_sizes ps ON pv.size_id = ps.id "
-                + "INNER JOIN product_colors pc ON pv.color_id = pc.id "
-                + "INNER JOIN products p ON ci.product_id = p.id "
+                + "INNER JOIN car_variants pv ON ci.variant_id = pv.id "
+                + "INNER JOIN car_sizes ps ON pv.size_id = ps.id "
+                + "INNER JOIN car_colors pc ON pv.color_id = pc.id "
+                + "INNER JOIN cars p ON ci.car_id = p.id "
                 + "WHERE ci.cart_id = ?";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
@@ -237,13 +237,13 @@ public class CartDAO extends DBContext {
                 CartItem item = new CartItem();
                 item.setId(rs.getInt("id"));
                 item.setCartId(cartId);
-                item.setProductId(rs.getInt("product_id"));
+                item.setCarId(rs.getInt("car_id"));
                 item.setVariantId(rs.getInt("variant_id"));
                 item.setQuantity(rs.getInt("quantity"));
 
-                item.setProductTitle(rs.getString("title"));
-                item.setProductThumbnail(rs.getString("thumbnail"));
-                item.setProductPrice(rs.getDouble("sale_price"));
+                item.setCarTitle(rs.getString("title"));
+                item.setCarThumbnail(rs.getString("thumbnail"));
+                item.setCarPrice(rs.getDouble("sale_price"));
                 item.setSize(rs.getString("size"));
                 item.setColor(rs.getString("color"));
 
@@ -286,7 +286,7 @@ public class CartDAO extends DBContext {
     }
 
     public boolean addCartItem(CartItem item) {
-        String sql = "INSERT INTO cart_items (cart_id, product_id, variant_id, quantity) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO cart_items (cart_id, car_id, variant_id, quantity) VALUES (?, ?, ?, ?)";
         try {
 
             Cart cart = getCartByUserId(item.getCartId());
@@ -297,7 +297,7 @@ public class CartDAO extends DBContext {
 
             PreparedStatement st = connection.prepareStatement(sql);
             st.setInt(1, item.getCartId());
-            st.setInt(2, item.getProductId());
+            st.setInt(2, item.getCarId());
             st.setInt(3, item.getVariantId());
             st.setInt(4, item.getQuantity());
             return st.executeUpdate() > 0;

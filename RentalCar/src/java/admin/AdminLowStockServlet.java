@@ -1,7 +1,7 @@
 package admin;
 
 import DAO.AdminReportDAO;
-import entity.LowStockProductReport; // Sử dụng class mới
+import entity.LowStockCarReport; // Sử dụng class mới
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,18 +11,18 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "AdminLowStockServlet", urlPatterns = {"/admin/low-stock-products"})
+@WebServlet(name = "AdminLowStockServlet", urlPatterns = {"/admin/low-stock-cars"})
 public class AdminLowStockServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AdminReportDAO reportDAO = new AdminReportDAO();
-        List<LowStockProductReport> lowStockProducts = reportDAO.getLowStockProducts();
+        List<LowStockCarReport> lowStockCars = reportDAO.getLowStockCars();
 
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         Gson gson = new Gson();
-        String json = gson.toJson(lowStockProducts);
+        String json = gson.toJson(lowStockCars);
         response.getWriter().write(json);
     }
 }

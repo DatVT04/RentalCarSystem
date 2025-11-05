@@ -66,31 +66,31 @@ public class OrderDAO extends DBContext {
             // Bước 2: Thêm các sản phẩm vào bảng order_items và giảm số lượng kho
             if (orderId > 0) {
                 if (order.getItems() != null && !order.getItems().isEmpty()) {
-                    String sqlItems = "INSERT INTO order_items (order_id, product_id, product_name, product_image, variant_name, quantity, unit_price_at_order) "
+                    String sqlItems = "INSERT INTO order_items (order_id, car_id, car_name, car_image, variant_name, quantity, unit_price_at_order) "
                             + "VALUES (?, ?, ?, ?, ?, ?, ?)";
                     stmtItems = conn.prepareStatement(sqlItems);
 
                     for (CartItem item : order.getItems()) {
                         stmtItems.setInt(1, orderId);
-                        stmtItems.setInt(2, item.getProductId());
-                        stmtItems.setString(3, item.getProductTitle());
-                        stmtItems.setString(4, item.getProductThumbnail());
+                        stmtItems.setInt(2, item.getCarId());
+                        stmtItems.setString(3, item.getCarTitle());
+                        stmtItems.setString(4, item.getCarThumbnail());
                         stmtItems.setString(5, item.getSize() + " - " + item.getColor());
                         stmtItems.setInt(6, item.getQuantity());
-                        stmtItems.setDouble(7, item.getProductPrice());
+                        stmtItems.setDouble(7, item.getCarPrice());
                         stmtItems.addBatch();
 
                         // Giảm số lượng kho bằng cách gọi InventoryDAO
-                        int variantId = inventoryDAO.getVariantId(item.getProductId(),
-                                inventoryDAO.getColorByName(item.getProductId(), item.getColor()).getId(),
-                                inventoryDAO.getSizeByName(item.getProductId(), item.getSize()).getId());
+                        int variantId = inventoryDAO.getVariantId(item.getCarId(),
+                                inventoryDAO.getColorByName(item.getCarId(), item.getColor()).getId(),
+                                inventoryDAO.getSizeByName(item.getCarId(), item.getSize()).getId());
                         if (variantId != -1) {
                             boolean stockReduced = inventoryDAO.decreaseVariantStock(variantId, item.getQuantity());
                             if (!stockReduced) {
                                 throw new SQLException("Không thể giảm số lượng kho cho variantId: " + variantId);
                             }
                         } else {
-                            throw new SQLException("Không tìm thấy variant cho productId: " + item.getProductId());
+                            throw new SQLException("Không tìm thấy variant cho carId: " + item.getCarId());
                         }
                     }
 
@@ -125,10 +125,10 @@ public class OrderDAO extends DBContext {
             stmtPayment.setString(3, paymentStatus);
             stmtPayment.executeUpdate();
 
-            // Bước 4: Nếu có sử dụng mã giảm giá, lưu thông tin sử dụng mã giảm giá
-            if (order.getCouponCode() != null && !order.getCouponCode().isEmpty() && order.getDiscountAmount() > 0) {
-                applyCouponToOrder(conn, orderId, order.getCouponCode(), order.getDiscountAmount(), order.getRecipientEmail());
-            }
+//            // Bước 4: Nếu có sử dụng mã giảm giá, lưu thông tin sử dụng mã giảm giá
+//            if (order.getCouponCode() != null && !order.getCouponCode().isEmpty() && order.getDiscountAmount() > 0) {
+//                applyCouponToOrder(conn, orderId, order.getCouponCode(), order.getDiscountAmount(), order.getRecipientEmail());
+//            }
 
             // Bước 5: Thêm thông tin vận chuyển
             if (order.getShippingMethod() != null && !order.getShippingMethod().isEmpty()) {
@@ -296,7 +296,7 @@ public class OrderDAO extends DBContext {
             // Thêm điều kiện tìm kiếm
             if (keyword != null && !keyword.trim().isEmpty()) {
                 sql.append("AND (o.notes LIKE ? OR o.recipient_name LIKE ? OR EXISTS (SELECT 1 FROM order_items oi "
-                        + "INNER JOIN products pr ON oi.product_id = pr.id "
+                        + "INNER JOIN cars pr ON oi.car_id = pr.id "
                         + "WHERE oi.order_id = o.id AND pr.title LIKE ?)) ");
                 params.add("%" + keyword + "%");
                 params.add("%" + keyword + "%");
@@ -378,7 +378,7 @@ public class OrderDAO extends DBContext {
             // Thêm điều kiện tìm kiếm
             if (keyword != null && !keyword.trim().isEmpty()) {
                 sql.append("AND (o.notes LIKE ? OR o.recipient_name LIKE ? OR EXISTS (SELECT 1 FROM order_items oi "
-                        + "INNER JOIN products pr ON oi.product_id = pr.id "
+                        + "INNER JOIN cars pr ON oi.car_id = pr.id "
                         + "WHERE oi.order_id = o.id AND pr.title LIKE ?)) ");
                 params.add("%" + keyword + "%");
                 params.add("%" + keyword + "%");
@@ -420,7 +420,7 @@ public class OrderDAO extends DBContext {
         try {
             String sql = "SELECT oi.*, p.title, p.thumbnail "
                     + "FROM order_items oi "
-                    + "LEFT JOIN products p ON oi.product_id = p.id "
+                    + "LEFT JOIN cars p ON oi.car_id = p.id "
                     + "WHERE oi.order_id = ?";
 
             stmt = connection.prepareStatement(sql);
@@ -430,12 +430,12 @@ public class OrderDAO extends DBContext {
             while (rs.next()) {
                 CartItem item = new CartItem();
                 item.setId(rs.getInt("id"));
-                item.setProductId(rs.getInt("product_id"));
+                item.setCarId(rs.getInt("car_id"));
                 item.setQuantity(rs.getInt("quantity"));
                 // Sử dụng cột unit_price_at_order thay vì unit_price
-                item.setProductPrice(rs.getDouble("unit_price_at_order"));
-                item.setProductTitle(rs.getString("product_name"));
-                item.setProductThumbnail(rs.getString("product_image"));
+                item.setCarPrice(rs.getDouble("unit_price_at_order"));
+                item.setCarTitle(rs.getString("car_name"));
+                item.setCarThumbnail(rs.getString("car_image"));
 
                 // Lấy variant_name và tách thành size và color
                 String variantName = rs.getString("variant_name");
@@ -480,22 +480,16 @@ public class OrderDAO extends DBContext {
         Order order = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-
         try {
             String sql = "SELECT o.*, p.payment_method, p.payment_status, "
-                    + "s.shipping_provider, s.tracking_number, s.estimated_delivery, "
-                    + "oc.coupon_id, oc.discount_applied, c.code AS coupon_code "
+                    + "s.shipping_provider, s.tracking_number, s.estimated_delivery "
                     + "FROM orders o "
                     + "LEFT JOIN payments p ON o.id = p.order_id "
                     + "LEFT JOIN shipping s ON o.id = s.order_id "
-                    + "LEFT JOIN order_coupons oc ON o.id = oc.order_id "
-                    + "LEFT JOIN coupons c ON oc.coupon_id = c.id "
                     + "WHERE o.id = ?";
-
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, orderId);
             rs = stmt.executeQuery();
-
             if (rs.next()) {
                 order = new Order();
                 order.setId(rs.getInt("id"));
@@ -527,19 +521,9 @@ public class OrderDAO extends DBContext {
                     order.setShippingMethod("standard"); // Mặc định nếu không có thông tin
                 }
 
-                double discountAmount = rs.getDouble("discount_applied");
-                if (!rs.wasNull() && discountAmount > 0) {
-                    order.setDiscountAmount(discountAmount);
-                    order.setCouponCode(rs.getString("coupon_code"));
-                } else {
-                    order.setDiscountAmount(0.0);
-                    order.setCouponCode(null);
-                }
-
                 List<CartItem> items = getOrderItems(order.getId());
                 order.setItems(items);
             }
-
         } catch (SQLException e) {
             System.out.println("Error getting order: " + e.getMessage());
             e.printStackTrace();
@@ -555,7 +539,6 @@ public class OrderDAO extends DBContext {
                 System.out.println("Error closing resources: " + e.getMessage());
             }
         }
-
         return order;
     }
 
@@ -670,16 +653,16 @@ public class OrderDAO extends DBContext {
             // Lấy danh sách các item trong đơn hàng để hoàn lại kho
             List<CartItem> items = getOrderItems(orderId);
             for (CartItem item : items) {
-                int variantId = inventoryDAO.getVariantId(item.getProductId(),
-                        inventoryDAO.getColorByName(item.getProductId(), item.getColor()).getId(),
-                        inventoryDAO.getSizeByName(item.getProductId(), item.getSize()).getId());
+                int variantId = inventoryDAO.getVariantId(item.getCarId(),
+                        inventoryDAO.getColorByName(item.getCarId(), item.getColor()).getId(),
+                        inventoryDAO.getSizeByName(item.getCarId(), item.getSize()).getId());
                 if (variantId != -1) {
                     boolean stockIncreased = inventoryDAO.increaseVariantStock(variantId, item.getQuantity());
                     if (!stockIncreased) {
                         throw new SQLException("Không thể tăng số lượng kho cho variantId: " + variantId);
                     }
                 } else {
-                    throw new SQLException("Không tìm thấy variant cho productId: " + item.getProductId());
+                    throw new SQLException("Không tìm thấy variant cho carId: " + item.getCarId());
                 }
             }
 
@@ -734,69 +717,75 @@ public class OrderDAO extends DBContext {
     }
 // Add this method to your OrderDAO class
 
-   public boolean updatePaymentStatus(int orderId, String status) {
-    Connection conn = null;
-    PreparedStatement stmt = null;
+    public boolean updatePaymentStatus(int orderId, String status) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
 
-    try {
-        conn = connection; // Giả sử 'connection' là biến đã được khởi tạo trong class
-        conn.setAutoCommit(false);
-
-        // Câu lệnh SQL không bao gồm cột updated_at
-        String sql = "UPDATE payments SET payment_status = ? WHERE order_id = ?";
-        stmt = conn.prepareStatement(sql);
-        stmt.setString(1, status); // "pending", "completed", "failed", hoặc "refunded"
-        stmt.setInt(2, orderId);
-        int result = stmt.executeUpdate();
-
-        if (result <= 0) {
-            System.out.println("Warning: No payment record found for order ID: " + orderId);
-        }
-
-        // Ghi lịch sử thay đổi trạng thái vào bảng order_history
-        String historyNote = switch (status) {
-            case "pending" -> "Đang chờ thanh toán";
-            case "completed" -> "Đã thanh toán thành công";
-            case "failed" -> "Thanh toán không thành công";
-            case "refunded" -> "Đã hoàn tiền";
-            default -> "Cập nhật trạng thái thanh toán: " + status;
-        };
-
-        stmt.close();
-        String orderHistorySql = "INSERT INTO order_history (order_id, updated_by, status, notes, updated_at) "
-                + "VALUES (?, 1, (SELECT status FROM orders WHERE id = ?), ?, GETDATE())";
-        stmt = conn.prepareStatement(orderHistorySql);
-        stmt.setInt(1, orderId);
-        stmt.setInt(2, orderId);
-        stmt.setString(3, historyNote);
-        stmt.executeUpdate();
-
-        conn.commit();
-        return true;
-    } catch (SQLException e) {
         try {
-            if (conn != null) {
-                conn.rollback();
+            conn = connection; // Giả sử 'connection' là biến đã được khởi tạo trong class
+            conn.setAutoCommit(false);
+
+            // Câu lệnh SQL không bao gồm cột updated_at
+            String sql = "UPDATE payments SET payment_status = ? WHERE order_id = ?";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, status); // "pending", "completed", "failed", hoặc "refunded"
+            stmt.setInt(2, orderId);
+            int result = stmt.executeUpdate();
+
+            if (result <= 0) {
+                System.out.println("Warning: No payment record found for order ID: " + orderId);
             }
-        } catch (SQLException ex) {
-            System.out.println("Error rolling back transaction: " + ex.getMessage());
-        }
-        System.out.println("Error updating payment status: " + e.getMessage());
-        e.printStackTrace();
-        return false;
-    } finally {
-        try {
-            if (stmt != null) {
-                stmt.close();
-            }
-            if (conn != null) {
-                conn.setAutoCommit(true);
-            }
+
+            // Ghi lịch sử thay đổi trạng thái vào bảng order_history
+            String historyNote = switch (status) {
+                case "pending" ->
+                    "Đang chờ thanh toán";
+                case "completed" ->
+                    "Đã thanh toán thành công";
+                case "failed" ->
+                    "Thanh toán không thành công";
+                case "refunded" ->
+                    "Đã hoàn tiền";
+                default ->
+                    "Cập nhật trạng thái thanh toán: " + status;
+            };
+
+            stmt.close();
+            String orderHistorySql = "INSERT INTO order_history (order_id, updated_by, status, notes, updated_at) "
+                    + "VALUES (?, 1, (SELECT status FROM orders WHERE id = ?), ?, GETDATE())";
+            stmt = conn.prepareStatement(orderHistorySql);
+            stmt.setInt(1, orderId);
+            stmt.setInt(2, orderId);
+            stmt.setString(3, historyNote);
+            stmt.executeUpdate();
+
+            conn.commit();
+            return true;
         } catch (SQLException e) {
-            System.out.println("Error closing resources: " + e.getMessage());
+            try {
+                if (conn != null) {
+                    conn.rollback();
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error rolling back transaction: " + ex.getMessage());
+            }
+            System.out.println("Error updating payment status: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.setAutoCommit(true);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error closing resources: " + e.getMessage());
+            }
         }
     }
-}
+
     public List<Order> getAllOrders() {
         List<Order> orders = new ArrayList<>();
         PreparedStatement stmt = null;
@@ -982,56 +971,65 @@ public class OrderDAO extends DBContext {
         }
         return false;
     }
+
     public void checkAndCancelExpiredPendingPayOrders() {
-    Connection conn = null;
-    PreparedStatement stmtSelect = null;
-    PreparedStatement stmtUpdate = null;
-    ResultSet rs = null;
+        Connection conn = null;
+        PreparedStatement stmtSelect = null;
+        PreparedStatement stmtUpdate = null;
+        ResultSet rs = null;
 
-    try {
-        conn = connection;
-        conn.setAutoCommit(false);
-
-        // Lấy tất cả đơn hàng pending_pay quá 3 ngày
-        String sqlSelect = "SELECT id, user_id, created_at FROM orders " +
-                          "WHERE status = 'pending_pay' AND " +
-                          "DATEDIFF(day, created_at, GETDATE()) >= 3";
-        
-        stmtSelect = conn.prepareStatement(sqlSelect);
-        rs = stmtSelect.executeQuery();
-
-        while (rs.next()) {
-            int orderId = rs.getInt("id");
-            int userId = rs.getInt("user_id");
-
-            // Hủy đơn hàng
-            boolean cancelled = cancelOrder(orderId, userId);
-            if (cancelled) {
-                System.out.println("Automatically cancelled expired order: " + orderId);
-            } else {
-                System.out.println("Failed to cancel expired order: " + orderId);
-            }
-        }
-
-        conn.commit();
-    } catch (SQLException e) {
-        System.out.println("Error checking expired orders: " + e.getMessage());
         try {
-            if (conn != null) {
-                conn.rollback();
+            conn = connection;
+            conn.setAutoCommit(false);
+
+            // Lấy tất cả đơn hàng pending_pay quá 3 ngày
+            String sqlSelect = "SELECT id, user_id, created_at FROM orders "
+                    + "WHERE status = 'pending_pay' AND "
+                    + "DATEDIFF(day, created_at, GETDATE()) >= 3";
+
+            stmtSelect = conn.prepareStatement(sqlSelect);
+            rs = stmtSelect.executeQuery();
+
+            while (rs.next()) {
+                int orderId = rs.getInt("id");
+                int userId = rs.getInt("user_id");
+
+                // Hủy đơn hàng
+                boolean cancelled = cancelOrder(orderId, userId);
+                if (cancelled) {
+                    System.out.println("Automatically cancelled expired order: " + orderId);
+                } else {
+                    System.out.println("Failed to cancel expired order: " + orderId);
+                }
             }
-        } catch (SQLException ex) {
-            System.out.println("Rollback failed: " + ex.getMessage());
-        }
-    } finally {
-        try {
-            if (rs != null) rs.close();
-            if (stmtSelect != null) stmtSelect.close();
-            if (stmtUpdate != null) stmtUpdate.close();
-            if (conn != null) conn.setAutoCommit(true);
+
+            conn.commit();
         } catch (SQLException e) {
-            System.out.println("Error closing resources: " + e.getMessage());
+            System.out.println("Error checking expired orders: " + e.getMessage());
+            try {
+                if (conn != null) {
+                    conn.rollback();
+                }
+            } catch (SQLException ex) {
+                System.out.println("Rollback failed: " + ex.getMessage());
+            }
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmtSelect != null) {
+                    stmtSelect.close();
+                }
+                if (stmtUpdate != null) {
+                    stmtUpdate.close();
+                }
+                if (conn != null) {
+                    conn.setAutoCommit(true);
+                }
+            } catch (SQLException e) {
+                System.out.println("Error closing resources: " + e.getMessage());
+            }
         }
     }
-}
 }

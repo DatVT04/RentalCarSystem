@@ -9,13 +9,13 @@ package entity;
  * @author thanh
  */
 
-public class ProductSize {
+public class CarSize {
     private int id;
     private String size;
     private int sizeId;
     private int productId;
 
-    public ProductSize() {
+    public CarSize() {
     }
 
     public int getId() {

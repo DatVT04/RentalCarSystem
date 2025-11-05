@@ -6,7 +6,7 @@ package owner.Inventory;
 
 import DAO.CartDAO;
 import DAO.InventoryDAO;
-import DAO.ProductDAO;
+import DAO.CarDAO;
 import entity.Inventory;
 import entity.User;
 import entity.Variant;
@@ -31,12 +31,12 @@ public class InventoryDetailServlet extends HttpServlet {
             throws ServletException, IOException {
         InventoryDAO inventoryDAO = new InventoryDAO();
         try {
-            int productId = Integer.parseInt(request.getParameter("id"));
+            int carId = Integer.parseInt(request.getParameter("id"));
             String source = request.getParameter("source");
 
             // Lấy thông tin inventory
-            Inventory inventory = inventoryDAO.getInventoryDetail(productId);
-            List<Variant> variants = inventoryDAO.getProductVariants(productId);
+            Inventory inventory = inventoryDAO.getInventoryDetail(carId);
+            List<Variant> variants = inventoryDAO.getCarVariants(carId);
 
             request.setAttribute("inventory", inventory);
             request.setAttribute("variants", variants);
@@ -51,10 +51,10 @@ public class InventoryDetailServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
-        int productId = Integer.parseInt(request.getParameter("productId"));
+        int carId = Integer.parseInt(request.getParameter("carId"));
         String source = request.getParameter("source");
         InventoryDAO inventoryDAO = new InventoryDAO();
-        ProductDAO productDAO = new ProductDAO();
+        CarDAO carDAO = new CarDAO();
 
         System.out.println("Source in doPost: " + source);
 
@@ -77,14 +77,14 @@ public class InventoryDetailServlet extends HttpServlet {
                 // Xóa variant khỏi tất cả các bảng liên quan
                 boolean deleted = inventoryDAO.deleteVariant(variantId);
                 if (deleted) {
-                    List<Variant> remainingVariants = inventoryDAO.getProductVariants(productId);
+                    List<Variant> remainingVariants = inventoryDAO.getCarVariants(carId);
                     if (remainingVariants == null || remainingVariants.isEmpty()) {
                         // Nếu không còn variant nào, cập nhật trạng thái sản phẩm thành EOStock
-                        productDAO.updateProductStatus(productId, "EOStock");
+                        carDAO.updateCarStatus(carId, "EOStock");
                     }
                 }
 
-                String redirectUrl = "inventoryDetail?id=" + productId;
+                String redirectUrl = "inventoryDetail?id=" + carId;
                 redirectUrl += deleted ? "&success=delete" : "&error=delete";
                 if (source != null && !source.trim().isEmpty()) {
                     redirectUrl += "&source=" + source;
@@ -94,7 +94,7 @@ public class InventoryDetailServlet extends HttpServlet {
 
         } catch (Exception e) {
             // Tạo URL chuyển hướng khi có lỗi
-            String redirectUrl = "inventoryDetail?id=" + productId + "&error=delete";
+            String redirectUrl = "inventoryDetail?id=" + carId + "&error=delete";
             if (source != null && !source.trim().isEmpty()) {
                 redirectUrl += "&source=" + source;
             }

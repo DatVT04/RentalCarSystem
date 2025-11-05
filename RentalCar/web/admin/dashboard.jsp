@@ -174,17 +174,17 @@
                         </div>
                     </div>
 
-                    <!-- Product Stats -->
+                    <!-- Car Stats -->
                     <div class="col-md-3">
                         <div class="card dashboard-card h-100">
                             <div class="card-body d-flex justify-content-between align-items-start">
                                 <div>
                                     <p class="stat-title mb-1">Số lượng sản phẩm</p>
-                                    <h3 class="stat-value">${productStatusCount.totalProducts}</h3>
+                                    <h3 class="stat-value">${carStatusCount.totalCars}</h3>
                                     <div class="mt-2">
-                                        <span class="badge bg-success">${productStatusCount.activeCount} Hoạt động</span>
-                                        <span class="badge bg-danger">${productStatusCount.inactiveCount} Không hoạt động</span>
-                                        <span class="badge bg-warning">${productStatusCount.eoStockCount} Hết hàng</span>
+                                        <span class="badge bg-success">${carStatusCount.activeCount} Hoạt động</span>
+                                        <span class="badge bg-danger">${carStatusCount.inactiveCount} Không hoạt động</span>
+                                        <span class="badge bg-warning">${carStatusCount.eoStockCount} Hết hàng</span>
                                     </div>
                                 </div>
                                 <div class="icon-bg bg-warning bg-opacity-10">
@@ -247,9 +247,9 @@
                     </div>
                 </div>
 
-                <!-- Product Status & Customer Table Row -->
+                <!-- Car Status & Customer Table Row -->
                 <div class="row mb-4">
-                    <!-- Product Status Chart -->
+                    <!-- Car Status Chart -->
                     <div class="col-md-6">
                         <div class="card dashboard-card">
                             <div class="card-header bg-white">
@@ -257,7 +257,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="chart-container">
-                                    <canvas id="productStatusChart"></canvas>
+                                    <canvas id="carStatusChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -297,7 +297,7 @@
 
                 <!-- Time-based Charts Row -->
                 <div class="row mb-4">
-                    <!-- Monthly Product Additions Chart -->
+                    <!-- Monthly Car Additions Chart -->
                     <div class="col-md-6">
                         <div class="card dashboard-card">
                             <div class="card-header bg-white">
@@ -305,7 +305,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="chart-container">
-                                    <canvas id="monthlyProductChart"></canvas>
+                                    <canvas id="monthlyCarChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -366,19 +366,19 @@
                 }
             });
 
-            // Category Chart - Enhanced to better show product distribution
+            // Category Chart - Enhanced to better show car distribution
             const categoryData = ${categoryDataJson};
             const categoryNames = categoryData.map(item => item.name);
-            const categoryProductCounts = categoryData.map(item => item.productCount);
+            const categoryCarCounts = categoryData.map(item => item.carCount);
 
             const categoryCtx = document.getElementById('categoryChart').getContext('2d');
             const categoryChart = new Chart(categoryCtx, {
-                type: 'bar', // Changed from pie to bar for better product count visualization
+                type: 'bar', // Changed from pie to bar for better car count visualization
                 data: {
                     labels: categoryNames,
                     datasets: [{
                             label: 'Số lượng sản phẩm',
-                            data: categoryProductCounts,
+                            data: categoryCarCounts,
                             backgroundColor: [
                                 'rgba(54, 162, 235, 0.7)',
                                 'rgba(255, 99, 132, 0.7)',
@@ -436,18 +436,18 @@
                 }
             });
 
-            // Product Status Chart
-            const productStatusCtx = document.getElementById('productStatusChart').getContext('2d');
-            const productStatusChart = new Chart(productStatusCtx, {
+            // Car Status Chart
+            const carStatusCtx = document.getElementById('carStatusChart').getContext('2d');
+            const carStatusChart = new Chart(carStatusCtx, {
                 type: 'bar',
                 data: {
                     labels: ['Hoạt động', 'Không hoạt động', 'Hết hàng'],
                     datasets: [{
                             label: 'Số lượng sản phẩm',
                             data: [
-            ${productStatusCount.activeCount},
-            ${productStatusCount.inactiveCount},
-            ${productStatusCount.eoStockCount}
+            ${carStatusCount.activeCount},
+            ${carStatusCount.inactiveCount},
+            ${carStatusCount.eoStockCount}
                             ],
                             backgroundColor: [
                                 'rgba(40, 167, 69, 0.7)',
@@ -481,19 +481,19 @@
                 }
             });
 
-            // Monthly Product Additions Chart
-            const monthlyProductData = ${monthlyProductAdditionsJson};
-            const monthlyProductLabels = monthlyProductData.map(item => item.period);
-            const monthlyProductCounts = monthlyProductData.map(item => item.count);
+            // Monthly Car Additions Chart
+            const monthlyCarData = ${monthlyCarAdditionsJson};
+            const monthlyCarLabels = monthlyCarData.map(item => item.period);
+            const monthlyCarCounts = monthlyCarData.map(item => item.count);
 
-            const monthlyProductCtx = document.getElementById('monthlyProductChart').getContext('2d');
-            const monthlyProductChart = new Chart(monthlyProductCtx, {
+            const monthlyCarCtx = document.getElementById('monthlyCarChart').getContext('2d');
+            const monthlyCarChart = new Chart(monthlyCarCtx, {
                 type: 'line',
                 data: {
-                    labels: monthlyProductLabels,
+                    labels: monthlyCarLabels,
                     datasets: [{
                             label: 'Sản phẩm mới',
-                            data: monthlyProductCounts,
+                            data: monthlyCarCounts,
                             backgroundColor: 'rgba(75, 192, 192, 0.2)',
                             borderColor: 'rgba(75, 192, 192, 1)',
                             borderWidth: 2,

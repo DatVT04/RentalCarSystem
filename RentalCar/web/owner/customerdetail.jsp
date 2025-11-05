@@ -277,7 +277,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fas fa-save me-2"></i>Lưu thay đổi
                                 </button>
-                                <a href="${pageContext.request.contextPath}/marketing/customerlist" class="btn btn-secondary ms-2">
+                                <a href="${pageContext.request.contextPath}/owner/customerlist" class="btn btn-secondary ms-2">
                                     <i class="fas fa-times me-2"></i>Hủy
                                 </a>
 

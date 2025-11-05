@@ -363,7 +363,7 @@
                     </div>
                 </div>
 
-                <!-- Products Table -->
+                <!-- Cars Table -->
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
@@ -377,10 +377,10 @@
                                     <tr class="bg-light">
                                         <th class="text-center" style="width: 60px;">STT</th>
                                         <th>
-                                            <a href="inventorylist?search=${searchKeyword}&category=${selectedCategory}&sortField=product_name&sortOrder=${sortField == 'product_name' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
+                                            <a href="inventorylist?search=${searchKeyword}&category=${selectedCategory}&sortField=car_name&sortOrder=${sortField == 'car_name' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
                                                 Tên sản phẩm
                                                 <span class="sort-icons">
-                                                    ${sortField == 'product_name' ? (sortOrder == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
+                                                    ${sortField == 'car_name' ? (sortOrder == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
                                                 </span>
                                             </a>
                                         </th>
@@ -411,7 +411,7 @@
                                             <c:forEach items="${inventoryList}" var="item" varStatus="status">
                                                 <tr>
                                                     <td class="text-center">${status.index + 1 + (currentPage - 1)*10}</td>
-                                                    <td>${item.productName}</td>
+                                                    <td>${item.carName}</td>
                                                     <td><span class="badge bg-secondary rounded-pill">${item.category}</span></td>
                                                     <td>
                                                         <c:forEach items="${item.colorString.split(',')}" var="color" varStatus="colorStatus">
@@ -427,7 +427,7 @@
                                                         <span class="badge-quantity">${item.totalQuantity}</span>
                                                     </td>
                                                     <td class="text-center">
-                                                        <a href="inventoryDetail?id=${item.productId}&source=inventorylist" class="btn btn-outline-primary btn-sm">
+                                                        <a href="inventoryDetail?id=${item.carId}&source=inventorylist" class="btn btn-outline-primary btn-sm">
                                                             <i class="fas fa-eye me-1"></i> Xem
                                                         </a>
                                                     </td>

@@ -392,8 +392,8 @@
                                             <tr>
                                                 <td class="text-center">${status.index + 1 + (currentPage - 1)*10}</td>
                                                 <td>
-                                                    <img src="${feedback.productThumbnail}" alt="Thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
-                                                    ${feedback.productTitle}
+                                                    <img src="${feedback.carThumbnail}" alt="Thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
+                                                    ${feedback.carTitle}
                                                 </td>
                                                 <td>${feedback.userName}</td>
                                                 <td>
@@ -475,7 +475,7 @@
                                                             <form action="feedbackall" method="POST">
                                                                 <input type="hidden" name="action" value="deleteFeedback">
                                                                 <input type="hidden" name="id" value="${feedback.id}">
-                                                                <input type="hidden" name="productId" value="${feedback.productId}">
+                                                                <input type="hidden" name="carId" value="${feedback.carId}">
                                                                 <button type="submit" class="btn btn-danger">Xóa</button>
                                                             </form>
                                                         </div>

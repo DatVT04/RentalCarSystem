@@ -16,28 +16,28 @@ import java.util.stream.Collectors;
 
 public class Inventory {
 
-    private int productId;
-    private String productName;
+    private int carId;
+    private String carName;
     private String category;
     private Set<Color> colors;  // Dùng Set để loại bỏ trùng lặp
     private Set<Size> sizes;
     private int totalQuantity;
 
-    public Inventory(int productId, String productName, String category, Set<Color> colors, Set<Size> sizes, int totalQuantity) {
-        this.productId = productId;
-        this.productName = productName;
+    public Inventory(int carId, String carName, String category, Set<Color> colors, Set<Size> sizes, int totalQuantity) {
+        this.carId = carId;
+        this.carName = carName;
         this.category = category;
         this.colors = new TreeSet<>((c1, c2) -> c1.getName().compareToIgnoreCase(c2.getName())); 
         this.sizes = new TreeSet<>((s1, s2) -> s1.getName().compareToIgnoreCase(s2.getName()));  
         this.totalQuantity = totalQuantity;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getCarId() {
+        return carId;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getCarName() {
+        return carName;
     }
 
     public String getCategory() {

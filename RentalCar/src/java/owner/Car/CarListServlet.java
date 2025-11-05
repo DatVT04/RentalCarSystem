@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package owner.Product;
+package owner.Car;
 
 import DAO.CategoryDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import DAO.ProductDAO;
+import DAO.CarDAO;
 import entity.Category;
-import entity.Product;
+import entity.Car;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -25,15 +25,15 @@ import java.util.stream.Collectors;
  *
  * @author tphon
  */
-@WebServlet(name = "ProductListServlet", urlPatterns = {"/owner/productlist"})
-public class ProductListServlet extends HttpServlet {
+@WebServlet(name = "CarListServlet", urlPatterns = {"/owner/carlist"})
+public class CarListServlet extends HttpServlet {
 
-    private ProductDAO productDAO;
+    private CarDAO carDAO;
     private static final int RECORDS_PER_PAGE = 10;
 
     @Override
     public void init() throws ServletException {
-        productDAO = new ProductDAO();
+        carDAO = new CarDAO();
     }
 
     /**
@@ -53,10 +53,10 @@ public class ProductListServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ProductListServlet</title>");
+            out.println("<title>Servlet CarListServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ProductListServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CarListServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -95,10 +95,10 @@ public class ProductListServlet extends HttpServlet {
             }
 
             // Xây dựng câu query SQL
-//            StringBuilder sql = new StringBuilder("SELECT p.*, c.name as category_name FROM products p "
+//            StringBuilder sql = new StringBuilder("SELECT p.*, c.name as category_name FROM cars p "
 //                    + "JOIN categories c ON p.category_id = c.id WHERE 1=1");
 // Xây dựng câu query SQL
-            StringBuilder sql = new StringBuilder("SELECT p.*, c.name as category_name FROM products p "
+            StringBuilder sql = new StringBuilder("SELECT p.*, c.name as category_name FROM cars p "
                     + "JOIN categories c ON p.category_id = c.id WHERE 1=1 "); // Thêm điều kiện is_combo = false
 
             List<Object> params = new ArrayList<>();
@@ -130,7 +130,7 @@ public class ProductListServlet extends HttpServlet {
                 sql.append(" AND (p.title LIKE ?)");
                 params.add("%" + keyword + "%");
             }
-            int totalRecords = productDAO.getTotalFilteredRecords(sql.toString(), params);
+            int totalRecords = carDAO.getTotalFilteredRecords(sql.toString(), params);
 
             // Thêm sắp xếp
             if (sortField != null && !sortField.isEmpty()) {
@@ -153,17 +153,17 @@ public class ProductListServlet extends HttpServlet {
             params.add(RECORDS_PER_PAGE);
 
             // Thực hiện truy vấn
-            List<Product> products = productDAO.getProductsByFilter(sql.toString(), params);
+            List<Car> cars = carDAO.getCarsByFilter(sql.toString(), params);
 
 //            // Lấy thông tin về combo products - phần này sẽ dùng khi in ra sản phẩm combo liền nhau
 //            if ((sortField == null || sortField.isEmpty())
 //                    && (keyword == null || keyword.trim().isEmpty())
 //                    && (categoryId == null || categoryId.isEmpty())) {
-//                for (Product tempProduct : products) {
+//                for (Car tempProduct : products) {
 //                    if (tempProduct.getComboGroupId() > 0) { // Chỉ lấy combo cho sản phẩm có combo_group_id
 //                        List<Product> comboProducts = productDAO.getComboProduct(tempProduct.getComboGroupId());
 //                        if (!comboProducts.isEmpty()) {
-//                            tempProduct.setComboProducts(comboProducts);
+//                            tempCar.setComboCars(comboCars);
 //                        }
 //                    }
 //                }
@@ -175,7 +175,7 @@ public class ProductListServlet extends HttpServlet {
             request.setAttribute("categories", listCate);
 
             // Set attributes cho JSP
-            request.setAttribute("products", products);
+            request.setAttribute("cars", cars);
             request.setAttribute("currentPage", page);
             request.setAttribute("totalPages", totalPages);
             request.setAttribute("keyword", keyword);
@@ -186,7 +186,7 @@ public class ProductListServlet extends HttpServlet {
             request.setAttribute("totalItems", totalRecords);
 
             // Forward đến trang JSP
-            request.getRequestDispatcher("/owner/product/listProducts.jsp").forward(request, response);
+            request.getRequestDispatcher("/owner/car/listCars.jsp").forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();

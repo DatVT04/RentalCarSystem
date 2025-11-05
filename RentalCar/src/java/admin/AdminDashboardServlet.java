@@ -2,7 +2,7 @@ package admin;
 
 import DAO.AdminDashboardDAO;
 import entity.CategoryCount;
-import entity.ProductStatusCount;
+import entity.CarStatusCount;
 import entity.UserStatusCount;
 import entity.CustomerSpendData;
 import entity.TimeSeriesData;
@@ -37,9 +37,9 @@ public class AdminDashboardServlet extends HttpServlet {
         String categoryDataJson = gson.toJson(categoryData);
         request.setAttribute("categoryDataJson", categoryDataJson);
         
-        // Get product statistics
-        ProductStatusCount productStatusCount = dashboardDAO.getProductStatusCounts();
-        request.setAttribute("productStatusCount", productStatusCount);
+        // Get car statistics
+        CarStatusCount carStatusCount = dashboardDAO.getCarStatusCounts();
+        request.setAttribute("carStatusCount", carStatusCount);
         
         // Get customer spending statistics
         List<CustomerSpendData> topCustomers = dashboardDAO.getTopCustomersBySpend();
@@ -49,10 +49,10 @@ public class AdminDashboardServlet extends HttpServlet {
         request.setAttribute("totalCustomerStats", totalCustomerStats);
         
         // Get time-based data
-        List<TimeSeriesData> monthlyProductAdditions = dashboardDAO.getMonthlyProductAdditions();
-        request.setAttribute("monthlyProductAdditions", monthlyProductAdditions);
-        String monthlyProductAdditionsJson = gson.toJson(monthlyProductAdditions);
-        request.setAttribute("monthlyProductAdditionsJson", monthlyProductAdditionsJson);
+        List<TimeSeriesData> monthlyCarAdditions = dashboardDAO.getMonthlyCarAdditions();
+        request.setAttribute("monthlyCarAdditions", monthlyCarAdditions);
+        String monthlyCarAdditionsJson = gson.toJson(monthlyCarAdditions);
+        request.setAttribute("monthlyCarAdditionsJson", monthlyCarAdditionsJson);
         
         List<TimeSeriesData> monthlyOrderCounts = dashboardDAO.getMonthlyOrderCounts();
         request.setAttribute("monthlyOrderCounts", monthlyOrderCounts);

@@ -19,7 +19,7 @@
             .star-rating .active {
                 color: #ffc107;
             }
-            .product-image {
+            .car-image {
                 max-width: 150px;
                 max-height: 150px;
                 object-fit: cover;
@@ -72,10 +72,10 @@
                     <div class="card feedback-card">
                         <div class="card-header bg-light">
                             <div class="d-flex align-items-center">
-                                <img src="${item.productThumbnail}" 
-                                     alt="${item.productTitle}" 
-                                     class="product-image me-3">
-                                <h5 class="card-title mb-0">${item.productTitle}</h5>
+                                <img src="${item.carThumbnail}" 
+                                     alt="${item.carTitle}" 
+                                     class="car-image me-3">
+                                <h5 class="card-title mb-0">${item.carTitle}</h5>
                             </div>
                         </div>
                         <div class="card-body">

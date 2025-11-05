@@ -158,7 +158,7 @@
                 <div class="info-section">
                     <h5>Chỉnh Sửa Mẫu</h5>
                     <form action="editModel" method="POST">
-                        <input type="hidden" name="productId" value="${variant.productId}">
+                        <input type="hidden" name="carId" value="${variant.carId}">
                         <input type="hidden" name="variantId" value="${variant.id}">
                         <input type="hidden" name="source" value="${param.source}">
 

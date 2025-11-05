@@ -2,10 +2,10 @@ package Cart;
 
 import DAO.CartDAO;
 import DAO.InventoryDAO;
-import DAO.ProductDAO;
+import DAO.CarDAO;
 import entity.Cart;
 import entity.CartItem;
-import entity.Product;
+import entity.Car;
 import entity.User;
 import entity.Variant;
 import java.io.IOException;
@@ -24,7 +24,7 @@ import java.util.Map;
 @WebServlet(name = "CartDetail", urlPatterns = {"/cartdetail"})
 public class CartDetail extends HttpServlet {
 
-    private ProductDAO productDAO = new ProductDAO();
+    private CarDAO carDAO = new CarDAO();
     private CartDAO cartDAO = new CartDAO();
     private InventoryDAO inventoryDAO = new InventoryDAO();
 
@@ -66,18 +66,18 @@ public class CartDetail extends HttpServlet {
         }
         request.setAttribute("stockMap", stock);
 
-        Map<Integer, String> productStatusMap = new HashMap<>();
+        Map<Integer, String> carStatusMap = new HashMap<>();
         if (cart != null && cart.getItems() != null) {
             for (CartItem item : cart.getItems()) {
-                Product product = productDAO.getProductById(item.getProductId());
-                if (product != null) {
-                    productStatusMap.put(item.getId(), product.getStatus());
+                Car car = carDAO.getCarById(item.getCarId());
+                if (car != null) {
+                    carStatusMap.put(item.getId(), car.getStatus());
                 }
             }
         }
 
         // Truyền thông tin trạng thái sản phẩm tới JSP
-        request.setAttribute("productStatusMap", productStatusMap);
+        request.setAttribute("carStatusMap", carStatusMap);
 
         setupCartAttributes(request, cart);
         request.getRequestDispatcher("cartdetail.jsp").forward(request, response);

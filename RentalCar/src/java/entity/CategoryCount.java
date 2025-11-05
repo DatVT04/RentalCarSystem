@@ -2,7 +2,7 @@ package entity;
 
 public class CategoryCount {
     private String name;
-    private int productCount;
+    private int carCount;
     
     public String getName() {
         return name;
@@ -12,11 +12,11 @@ public class CategoryCount {
         this.name = name;
     }
     
-    public int getProductCount() {
-        return productCount;
+    public int getCarCount() {
+        return carCount;
     }
     
-    public void setProductCount(int productCount) {
-        this.productCount = productCount;
+    public void setCarCount(int carCount) {
+        this.carCount = carCount;
     }
 }

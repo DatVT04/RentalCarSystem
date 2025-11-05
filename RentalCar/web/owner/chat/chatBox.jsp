@@ -124,7 +124,7 @@
             <div class="main-content">
                 <div class="chat-header">
                     <h2><i class="fas fa-user me-2"></i>Phản hồi khách hàng trực tuyến</h2>
-                    <a href="/fashionshop/owner/chatlist" class="btn back-btn">
+                    <a href="/RentalCar/owner/chatlist" class="btn back-btn">
                         <i class="fas fa-arrow-left me-2"></i>Quay lại danh sách chat
                     </a>
                 </div>
@@ -171,7 +171,7 @@
     <script>
     var ownerId = "${ownerId}";
     var userId = "${userId}";
-    var wsUrl = (window.location.protocol === 'https:' ? 'wss://' : 'ws://') + "localhost:9999/fashionshop/chat/" + ownerId + "/" + userId;
+    var wsUrl = (window.location.protocol === 'https:' ? 'wss://' : 'ws://') + "localhost:9999/RentalCar/chat/" + ownerId + "/" + userId;
     var ws = null;
     var selectedImageUrl = null;
     const EMOJI_API_KEY = "4aa33f4f82f97c1a3d6fa6a3349c6d2a9b175fc7";
@@ -249,7 +249,7 @@
             formData.append("file", file);
             formData.append("ownerId", ownerId);
 
-            fetch("/fashionshop/uploadImage", {
+            fetch("/RentalCar/uploadImage", {
                 method: "POST",
                 body: formData
             })
@@ -282,7 +282,7 @@
     }
 
     function loadEmojis() {
-    fetch('/fashionshop/proxy/emoji')
+    fetch('/RentalCar/proxy/emoji')
         .then(response => {
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
             return response.json();

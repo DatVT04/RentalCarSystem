@@ -4,29 +4,29 @@ public class CartItem {
 
     private int id;
     private int cartId;
-    private int productId;
+    private int carId;
     private int variantId;
     private int quantity;
-    private String productTitle;
-    private String productThumbnail;
-    private double productPrice;
+    private String carTitle;
+    private String carThumbnail;
+    private double carPrice;
     private String size;
     private String color;
 
     public CartItem() {
     }
 
-    public CartItem(int id, int cartId, int productId, int variantId, int quantity) {
+    public CartItem(int id, int cartId, int carId, int variantId, int quantity) {
         this.id = id;
         this.cartId = cartId;
-        this.productId = productId;
+        this.carId = carId;
         this.variantId = variantId;
         this.quantity = quantity;
     }
 
-    public CartItem(int cartId, int productId, int variantId, int quantity) {
+    public CartItem(int cartId, int carId, int variantId, int quantity) {
         this.cartId = cartId;
-        this.productId = productId;
+        this.carId = carId;
         this.variantId = variantId;
         this.quantity = quantity;
     }
@@ -47,12 +47,12 @@ public class CartItem {
         this.cartId = cartId;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
     public int getVariantId() {
@@ -71,28 +71,28 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    public String getProductTitle() {
-        return productTitle;
+    public String getCarTitle() {
+        return carTitle;
     }
 
-    public void setProductTitle(String productTitle) {
-        this.productTitle = productTitle;
+    public void setCarTitle(String carTitle) {
+        this.carTitle = carTitle;
     }
 
-    public String getProductThumbnail() {
-        return productThumbnail;
+    public String getCarThumbnail() {
+        return carThumbnail;
     }
 
-    public void setProductThumbnail(String productThumbnail) {
-        this.productThumbnail = productThumbnail;
+    public void setCarThumbnail(String carThumbnail) {
+        this.carThumbnail = carThumbnail;
     }
 
-    public double getProductPrice() {
-        return productPrice;
+    public double getCarPrice() {
+        return carPrice;
     }
 
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
+    public void setCarPrice(double carPrice) {
+        this.carPrice = carPrice;
     }
 
     public String getSize() {

@@ -1,9 +1,9 @@
-package owner.Product;
+package owner.Car;
 
 import DAO.CategoryDAO;
 import entity.Category;
-import DAO.ProductDAO;
-import entity.Product;
+import DAO.CarDAO;
+import entity.Car;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -19,13 +19,13 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "AddProductServlet", urlPatterns = {"/owner/addproduct"})
+@WebServlet(name = "AddCarServlet", urlPatterns = {"/owner/addcar"})
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 2, // 2MB
         maxFileSize = 1024 * 1024 * 10, // 10MB
         maxRequestSize = 1024 * 1024 * 50 // 50MB
 )
-public class AddProductServlet extends HttpServlet {
+public class AddCarServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,10 +34,10 @@ public class AddProductServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AddProductServlet</title>");
+            out.println("<title>Servlet AddCarServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AddProductServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet AddCarServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -50,15 +50,15 @@ public class AddProductServlet extends HttpServlet {
         List<Category> listCate = cateDao.getThirdLevelCategories();
         request.setAttribute("categories", listCate);
 
-        ProductDAO productDao = new ProductDAO();
-        List<Product> comboProducts = productDao.getComboProducts();
-        request.setAttribute("comboProducts", comboProducts);
+        CarDAO carDao = new CarDAO();
+        List<Car> comboCars = carDao.getComboCars();
+        request.setAttribute("comboCars", comboCars);
         request.setAttribute("alert", request.getParameter("alert"));
 
-        request.getRequestDispatcher("/owner/product/addProduct.jsp").forward(request, response);
+        request.getRequestDispatcher("/owner/car/addCar.jsp").forward(request, response);
     }
 
-    ProductDAO productDAO = new ProductDAO();
+    CarDAO carDAO = new CarDAO();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -97,14 +97,14 @@ public class AddProductServlet extends HttpServlet {
             int categoryId = Integer.parseInt(request.getParameter("categoryId"));
             String description = request.getParameter("description");
 
-            if (productDAO.isProductExists(title, categoryId)) {
-                response.sendRedirect("addproduct?alert=ER_dp");
+            if (carDAO.isCarExists(title, categoryId)) {
+                response.sendRedirect("addcar?alert=ER_dp");
                 return;
             }
 
             BigDecimal originalPrice = new BigDecimal(request.getParameter("originalPrice").replace(".", ""));
             if (originalPrice.compareTo(BigDecimal.ZERO) < 1 || originalPrice.compareTo(BigDecimal.valueOf(100000000)) == 1) {
-                response.sendRedirect("addproduct?alert=oP_IV");
+                response.sendRedirect("addcar?alert=oP_IV");
                 return;
             }
             BigDecimal salePrice = new BigDecimal(request.getParameter("salePrice").replace(".", ""));
@@ -112,7 +112,7 @@ public class AddProductServlet extends HttpServlet {
             String comboGroupId = null;
 
             if (isCombo) {
-                int newComboGroupId = productDAO.getMaxComboGroupId() + 1;
+                int newComboGroupId = carDAO.getMaxComboGroupId() + 1;
                 comboGroupId = String.valueOf(newComboGroupId);
             } else {
                 comboGroupId = request.getParameter("comboGroupId");
@@ -121,7 +121,7 @@ public class AddProductServlet extends HttpServlet {
             for (Part part : request.getParts()) {
                 if ((part.getName().equals("subImages") || part.getName().equals("thumbnail")) && part.getSize() > 0) {
                     if (!isValidImage(part)) {
-                        response.sendRedirect("addproduct?alert=ER1_IVImg");
+                        response.sendRedirect("addcar?alert=ER1_IVImg");
                         return;
                     }
                 }
@@ -140,24 +140,24 @@ public class AddProductServlet extends HttpServlet {
                 }
             }
 
-            Product product = new Product();
-            product.setTitle(title);
-            product.setCategoryId(categoryId);
-            product.setDescription(description);
-            product.setOriginalPrice(originalPrice);
-            product.setSalePrice(salePrice);
-            product.setThumbnail(thumbnail);
-            product.setIsCombo(isCombo);
-            product.setComboGroupId(comboGroupId != null && !comboGroupId.isEmpty() ? Integer.parseInt(comboGroupId) : 0);
+            Car car = new Car();
+            car.setTitle(title);
+            car.setCategoryId(categoryId);
+            car.setDescription(description);
+            car.setOriginalPrice(originalPrice);
+            car.setSalePrice(salePrice);
+            car.setThumbnail(thumbnail);
+            car.setIsCombo(isCombo);
+            car.setComboGroupId(comboGroupId != null && !comboGroupId.isEmpty() ? Integer.parseInt(comboGroupId) : 0);
 
-            if (productDAO.addProduct(product, subImages)) {
-                response.sendRedirect("productlist?alert=SSA");
+            if (carDAO.addCar(car, subImages)) {
+                response.sendRedirect("carlist?alert=SSA");
             } else {
-                response.sendRedirect("addproduct?alert=ERR");
+                response.sendRedirect("addcar?alert=ERR");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("addproduct?alert=ERR");
+            response.sendRedirect("addcar?alert=ERR");
         }
     }
 
@@ -166,7 +166,7 @@ public class AddProductServlet extends HttpServlet {
             String oldFName = Paths.get(part.getSubmittedFileName()).getFileName().toString();
             String fileExtension = oldFName.substring(oldFName.lastIndexOf("."));
             String fileName = "img_" + System.currentTimeMillis() + fileExtension;
-            String uploadDir = request.getServletContext().getRealPath("/uploads/productImages");
+            String uploadDir = request.getServletContext().getRealPath("/uploads/carImages");
 
             File uploadFolder = new File(uploadDir);
             if (!uploadFolder.exists()) {
@@ -175,7 +175,7 @@ public class AddProductServlet extends HttpServlet {
 
             String filePath = uploadDir + File.separator + fileName;
             part.write(filePath);
-            return "uploads/productImages/" + fileName;
+            return "uploads/carImages/" + fileName;
         } catch (IOException e) {
             e.printStackTrace();
         }

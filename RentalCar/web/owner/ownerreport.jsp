@@ -310,8 +310,8 @@
                                     <option value="kpi" <c:if test="${selectedTable == 'kpi' || empty selectedTable}">selected</c:if>>KPI Tổng quan</option>
                                     <option value="ratingDistribution" <c:if test="${selectedTable == 'ratingDistribution'}">selected</c:if>>Phân bố Đánh giá theo Số Sao</option>
                                     <option value="mostActiveReviewers" <c:if test="${selectedTable == 'mostActiveReviewers'}">selected</c:if>>Người Đánh giá Tích cực Nhất</option>
-                                    <option value="highestRatedProducts" <c:if test="${selectedTable == 'highestRatedProducts'}">selected</c:if>>Sản phẩm Đánh giá Cao Nhất</option>
-                                    <option value="lowestRatedProducts" <c:if test="${selectedTable == 'lowestRatedProducts'}">selected</c:if>>Sản phẩm Đánh giá Thấp Nhất</option>
+                                    <option value="highestRatedCars" <c:if test="${selectedTable == 'highestRatedCars'}">selected</c:if>>Sản phẩm Đánh giá Cao Nhất</option>
+                                    <option value="lowestRatedCars" <c:if test="${selectedTable == 'lowestRatedCars'}">selected</c:if>>Sản phẩm Đánh giá Thấp Nhất</option>
                                     <option value="recommendations" <c:if test="${selectedTable == 'recommendations'}">selected</c:if>>Đề xuất</option>
                                     </select>
                                 </div>
@@ -333,7 +333,7 @@
                                         <tr><td>Tổng số đánh giá</td><td><c:set var="totalFeedback" value="0" /><c:forEach items="${feedbackByStatus}" var="entry"><c:set var="totalFeedback" value="${totalFeedback + entry.value}" /></c:forEach>${totalFeedback}</td></tr>
                                         <tr><td>Tỷ lệ phản hồi</td><td><fmt:formatNumber value="${customerFeedbackRate.feedback_rate}" pattern="#,##0.0" />%</td></tr>
                                         <tr><td>Đánh giá có hình ảnh</td><td>${feedbackWithImagesCount}</td></tr>
-                                        <tr><td>Tỷ lệ sản phẩm có đánh giá</td><td><fmt:formatNumber value="${productRatingCoverage.coverage_rate}" pattern="#,##0.0" />%</td></tr>
+                                        <tr><td>Tỷ lệ sản phẩm có đánh giá</td><td><fmt:formatNumber value="${carRatingCoverage.coverage_rate}" pattern="#,##0.0" />%</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -402,9 +402,9 @@
                         </div>
 
                         <!-- Bảng Sản phẩm Đánh giá Cao Nhất -->
-                        <div class="table-container <c:if test="${selectedTable == 'highestRatedProducts'}">active</c:if>" id="highestRatedProductsTableContainer">
+                        <div class="table-container <c:if test="${selectedTable == 'highestRatedCars'}">active</c:if>" id="highestRatedCarsTableContainer">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="highestRatedProductsTable">
+                                    <table class="table table-bordered" id="highestRatedCarsTable">
                                         <thead>
                                             <tr>
                                                 <th>Tên sản phẩm</th>
@@ -413,11 +413,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${highestRatedProducts}" var="product">
+                                        <c:forEach items="${highestRatedCars}" var="car">
                                             <tr>
-                                                <td>${product.title}</td>
-                                                <td><fmt:formatNumber value="${product.avg_rating}" pattern="#.0" /></td>
-                                                <td>${product.review_count}</td>
+                                                <td>${car.title}</td>
+                                                <td><fmt:formatNumber value="${car.avg_rating}" pattern="#.0" /></td>
+                                                <td>${car.review_count}</td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
@@ -426,9 +426,9 @@
                         </div>
 
                         <!-- Bảng Sản phẩm Đánh giá Thấp Nhất -->
-                        <div class="table-container <c:if test="${selectedTable == 'lowestRatedProducts'}">active</c:if>" id="lowestRatedProductsTableContainer">
+                        <div class="table-container <c:if test="${selectedTable == 'lowestRatedCars'}">active</c:if>" id="lowestRatedCarsTableContainer">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="lowestRatedProductsTable">
+                                    <table class="table table-bordered" id="lowestRatedCarsTable">
                                         <thead>
                                             <tr>
                                                 <th>Tên sản phẩm</th>
@@ -437,11 +437,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${lowestRatedProducts}" var="product">
+                                        <c:forEach items="${lowestRatedCars}" var="car">
                                             <tr>
-                                                <td>${product.title}</td>
-                                                <td><fmt:formatNumber value="${product.avg_rating}" pattern="#.0" /></td>
-                                                <td>${product.review_count}</td>
+                                                <td>${car.title}</td>
+                                                <td><fmt:formatNumber value="${car.avg_rating}" pattern="#.0" /></td>
+                                                <td>${car.review_count}</td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
@@ -464,8 +464,8 @@
                                                 <td>Sản phẩm tốt nhất</td>
                                                 <td>
                                                 <c:choose>
-                                                    <c:when test="${not empty highestRatedProducts && highestRatedProducts.size() > 0}">
-                                                        <strong>${highestRatedProducts[0].title}</strong> đạt ${highestRatedProducts[0].avg_rating} sao. Xem xét quảng bá sản phẩm này.
+                                                    <c:when test="${not empty highestRatedCars && highestRatedCars.size() > 0}">
+                                                        <strong>${highestRatedCars[0].title}</strong> đạt ${highestRatedCars[0].avg_rating} sao. Xem xét quảng bá sản phẩm này.
                                                     </c:when>
                                                     <c:otherwise>
                                                         Chưa có dữ liệu về sản phẩm được đánh giá cao.
@@ -477,8 +477,8 @@
                                             <td>Cải thiện sản phẩm</td>
                                             <td>
                                                 <c:choose>
-                                                    <c:when test="${not empty lowestRatedProducts && lowestRatedProducts.size() > 0}">
-                                                        <strong>${lowestRatedProducts[0].title}</strong> chỉ đạt ${lowestRatedProducts[0].avg_rating} sao. Xem xét cải thiện chất lượng.
+                                                    <c:when test="${not empty lowestRatedCars && lowestRatedCars.size() > 0}">
+                                                        <strong>${lowestRatedCars[0].title}</strong> chỉ đạt ${lowestRatedCars[0].avg_rating} sao. Xem xét cải thiện chất lượng.
                                                     </c:when>
                                                     <c:otherwise>
                                                         Chưa có dữ liệu về sản phẩm được đánh giá thấp.
@@ -506,23 +506,23 @@
                     </div>
                 </c:if>
 
-                <!-- 3. PRODUCT REPORT -->
-                <c:if test="${reportType == 'overview' || reportType == 'product'}">
-                    <div class="report-section bg-white" id="productReportSection" style="border: 5px solid #006666;">
+                <!-- 3. CAR REPORT -->
+                <c:if test="${reportType == 'overview' || reportType == 'car'}">
+                    <div class="report-section bg-white" id="carReportSection" style="border: 5px solid #006666;">
                         <div class="report-header">
                             <div>
                                 <h2>Báo cáo sản phẩm</h2>
 
                             </div>
-                            <button class="btn btn-export" id="exportProductBtn"><i class="fas fa-file-export me-1"></i> Xuất Excel</button>
+                            <button class="btn btn-export" id="exportCarBtn"><i class="fas fa-file-export me-1"></i> Xuất Excel</button>
                         </div>
 
                         <form method="get" action="">
                             <div class="form-group">
-                                <label for="productTableSelector">Chọn bảng hiển thị:</label>
-                                <select id="productTableSelector" name="selectedTable" class="form-control">
+                                <label for="carTableSelector">Chọn bảng hiển thị:</label>
+                                <select id="carTableSelector" name="selectedTable" class="form-control">
                                     <option value="kpi" <c:if test="${selectedTable == 'kpi' || empty selectedTable}">selected</c:if>>KPI Tổng quan</option>
-                                    <option value="bestSellingProducts" <c:if test="${selectedTable == 'bestSellingProducts'}">selected</c:if>>Sản phẩm Bán chạy Nhất</option>
+                                    <option value="bestSellingCars" <c:if test="${selectedTable == 'bestSellingCars'}">selected</c:if>>Sản phẩm Bán chạy Nhất</option>
                                     <option value="priceIncrease" <c:if test="${selectedTable == 'priceIncrease'}">selected</c:if>>Sản phẩm Tăng giá Cao Nhất</option>
                                     <option value="recommendations" <c:if test="${selectedTable == 'recommendations'}">selected</c:if>>Đề xuất</option>
                                     </select>
@@ -531,9 +531,9 @@
                             </form>
 
                             <!-- Bảng KPI Tổng quan -->
-                            <div class="table-container <c:if test="${selectedTable == 'kpi' || empty selectedTable}">active</c:if>" id="productKpiTableContainer">
+                            <div class="table-container <c:if test="${selectedTable == 'kpi' || empty selectedTable}">active</c:if>" id="carKpiTableContainer">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="productKpiTable">
+                                    <table class="table table-bordered" id="carKpiTable">
                                         <thead>
                                             <tr>
                                                 <th>Tiêu chí</th>
@@ -541,19 +541,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr><td>Tổng số sản phẩm</td><td><c:set var="totalProducts" value="0" /><c:forEach items="${productsByStatus}" var="entry"><c:set var="totalProducts" value="${totalProducts + entry.value}" /></c:forEach>${totalProducts}</td></tr>
-                                        <tr><td>Sản phẩm đang hoạt động</td><td><c:out value="${productsByStatus['active']}" default="0" /></td></tr>
-                                        <tr><td>Sản phẩm combo</td><td>${comboProductsCount}</td></tr>
-                                        <tr><td>Sản phẩm hết hàng</td><td><c:out value="${productsByStatus['EOStock']}" default="0" /></td></tr>
+                                            <tr><td>Tổng số sản phẩm</td><td><c:set var="totalCars" value="0" /><c:forEach items="${carsByStatus}" var="entry"><c:set var="totalCars" value="${totalCars + entry.value}" /></c:forEach>${totalCars}</td></tr>
+                                        <tr><td>Sản phẩm đang hoạt động</td><td><c:out value="${carsByStatus['active']}" default="0" /></td></tr>
+                                        <tr><td>Sản phẩm combo</td><td>${comboCarsCount}</td></tr>
+                                        <tr><td>Sản phẩm hết hàng</td><td><c:out value="${carsByStatus['EOStock']}" default="0" /></td></tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
 
                         <!-- Bảng Sản phẩm Bán chạy Nhất -->
-                        <div class="table-container <c:if test="${selectedTable == 'bestSellingProducts'}">active</c:if>" id="bestSellingProductsTableContainer">
+                        <div class="table-container <c:if test="${selectedTable == 'bestSellingCars'}">active</c:if>" id="bestSellingCarsTableContainer">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="bestSellingProductsTable">
+                                    <table class="table table-bordered" id="bestSellingCarsTable">
                                         <thead>
                                             <tr>
                                                 <th>Tên sản phẩm</th>
@@ -561,10 +561,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${bestSellingProducts}" var="product">
+                                        <c:forEach items="${bestSellingCars}" var="car">
                                             <tr>
-                                                <td>${product.title}</td>
-                                                <td>${product.total_sold}</td>
+                                                <td>${car.title}</td>
+                                                <td>${car.total_sold}</td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
@@ -575,10 +575,10 @@
                         <!-- Bảng Sản phẩm Tăng giá Cao Nhất -->
                         <div class="table-container <c:if test="${selectedTable == 'priceIncrease'}">active</c:if>" id="priceIncreaseTableContainer">
                                 <div class="table-responsive">
-                                <c:if test="${empty productsWithHighestPriceIncrease}">
+                                <c:if test="${empty carsWithHighestPriceIncrease}">
                                     <p class="text-center text-danger">Không có sản phẩm nào tăng giá!</p>
                                 </c:if>
-                                <table class="table table-bordered" id="priceIncreaseTable" <c:if test="${not empty productsWithHighestPriceIncrease}">style="display:block;"</c:if>>
+                                <table class="table table-bordered" id="priceIncreaseTable" <c:if test="${not empty carsWithHighestPriceIncrease}">style="display:block;"</c:if>>
                                         <thead>
                                             <tr>
                                                 <th>Tên sản phẩm</th>
@@ -588,12 +588,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${productsWithHighestPriceIncrease}" var="product">
+                                        <c:forEach items="${carsWithHighestPriceIncrease}" var="car">
                                             <tr>
-                                                <td>${product.title}</td>
-                                                <td><fmt:formatNumber value="${product.original_price}" pattern="#,###" /> VNĐ</td>
-                                                <td><fmt:formatNumber value="${product.sale_price}" pattern="#,###" /> VNĐ</td>
-                                                <td><span class="text-danger"><fmt:formatNumber value="${product.increase_percentage}" pattern="#,##0.0" />%</span></td>
+                                                <td>${car.title}</td>
+                                                <td><fmt:formatNumber value="${car.original_price}" pattern="#,###" /> VNĐ</td>
+                                                <td><fmt:formatNumber value="${car.sale_price}" pattern="#,###" /> VNĐ</td>
+                                                <td><span class="text-danger"><fmt:formatNumber value="${car.increase_percentage}" pattern="#,##0.0" />%</span></td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
@@ -603,9 +603,9 @@
 
 
                         <!-- Bảng Đề xuất -->
-                        <div class="table-container <c:if test="${selectedTable == 'recommendations'}">active</c:if>" id="productRecommendationsTableContainer">
+                        <div class="table-container <c:if test="${selectedTable == 'recommendations'}">active</c:if>" id="carRecommendationsTableContainer">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="productRecommendationsTable">
+                                    <table class="table table-bordered" id="carRecommendationsTable">
                                         <thead>
                                             <tr>
                                                 <th>Hạng mục</th>
@@ -637,8 +637,8 @@
                                         <tr>
                                             <td>Bổ sung hàng tồn kho</td>
                                             <td>
-                                                <c:out value="${productsByStatus['EOStock']}" default="0" /> sản phẩm hết hàng.
-                                                <c:if test="${productsByStatus['EOStock'] > 10}">
+                                                <c:out value="${carsByStatus['EOStock']}" default="0" /> sản phẩm hết hàng.
+                                                <c:if test="${carsByStatus['EOStock'] > 10}">
                                                     Ưu tiên bổ sung hàng cho các sản phẩm bán chạy.
                                                 </c:if>
                                             </td>
@@ -646,8 +646,8 @@
                                         <tr>
                                             <td>Tối ưu danh mục sản phẩm</td>
                                             <td>
-                                                Combo chiếm <fmt:formatNumber value="${comboProductsCount / totalProducts * 100}" pattern="#,##0.0" />% trong ${totalProducts} sản phẩm.
-                                                <c:if test="${comboProductsCount / totalProducts < 0.1}">
+                                                Combo chiếm <fmt:formatNumber value="${comboCarsCount / totalCars * 100}" pattern="#,##0.0" />% trong ${totalCars} sản phẩm.
+                                                <c:if test="${comboCarsCount / totalCars < 0.1}">
                                                     Tăng thêm sản phẩm combo để nâng giá trị đơn hàng.
                                                 </c:if>
                                             </td>
@@ -674,8 +674,8 @@
                                 <label for="inventoryTableSelector">Chọn bảng hiển thị:</label>
                                 <select id="inventoryTableSelector" name="selectedTable" class="form-control">
                                     <option value="kpi" <c:if test="${selectedTable == 'kpi' || empty selectedTable}">selected</c:if>>KPI Tổng quan</option>
-                                    <option value="lowStockProducts" <c:if test="${selectedTable == 'lowStockProducts'}">selected</c:if>>Sản phẩm Tồn kho Thấp</option>
-                                    <option value="inventoryByProduct" <c:if test="${selectedTable == 'inventoryByProduct'}">selected</c:if>>Tổng Tồn kho theo Sản phẩm</option>
+                                    <option value="lowStockCars" <c:if test="${selectedTable == 'lowStockCars'}">selected</c:if>>Sản phẩm Tồn kho Thấp</option>
+                                    <option value="inventoryByCar" <c:if test="${selectedTable == 'inventoryByCar'}">selected</c:if>>Tổng Tồn kho theo Sản phẩm</option>
                                     <option value="inventoryByCategory" <c:if test="${selectedTable == 'inventoryByCategory'}">selected</c:if>>Tổng Tồn kho theo Danh mục</option>
                                     <option value="recommendations" <c:if test="${selectedTable == 'recommendations'}">selected</c:if>>Đề xuất</option>
                                     </select>
@@ -695,22 +695,22 @@
                                         </thead>
                                         <tbody>
                                             <tr><td>Tổng giá trị tồn kho</td><td><fmt:formatNumber value="${totalInventoryValue}" pattern="#,##0 VNĐ" /></td></tr>
-                                        <tr><td>Sản phẩm tồn kho thấp (dưới 10)</td><td>${lowStockProducts.size()}</td></tr>
+                                        <tr><td>Sản phẩm tồn kho thấp (dưới 10)</td><td>${lowStockCars.size()}</td></tr>
                                         <tr><td>Tỷ lệ hết hàng</td><td><fmt:formatNumber value="${outOfStockRate.out_of_stock_rate}" pattern="#,##0.0" />%</td></tr>
-                                        <tr><td>Sản phẩm chưa nhập lại</td><td>${productsWithoutRecentRestocking.size()}</td></tr>
+                                        <tr><td>Sản phẩm chưa nhập lại</td><td>${carsWithoutRecentRestocking.size()}</td></tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
 
                         <!-- Bảng Sản phẩm tồn kho thấp -->
-                        <div class="table-container <c:if test="${selectedTable == 'lowStockProducts'}">active</c:if>" id="lowStockProductsTableContainer">
+                        <div class="table-container <c:if test="${selectedTable == 'lowStockCars'}">active</c:if>" id="lowStockCarsTableContainer">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="lowStockProductsTable">
+                                    <table class="table table-bordered" id="lowStockCarsTable">
                                         <thead>
                                             <tr>
-                                                <th>Product ID</th>
-                                                <th>Product Name</th>
+                                                <th>Car ID</th>
+                                                <th>Car Name</th>
                                                 <th>Size</th>
                                                 <th>Color</th>
                                                 <th>Stock</th>
@@ -718,19 +718,19 @@
                                         </thead>
                                         <tbody>
                                         <c:choose>
-                                            <c:when test="${not empty lowStockProducts}">
-                                                <c:forEach items="${lowStockProducts}" var="product">
+                                            <c:when test="${not empty lowStockCars}">
+                                                <c:forEach items="${lowStockCars}" var="car">
                                                     <tr>
-                                                        <td>${product.id}</td>
-                                                        <td>${product.title}</td>
-                                                        <td>${product.size}</td>
-                                                        <td>${product.color}</td>
-                                                        <td><span class="badge bg-danger">${product.stock_quantity}</span></td>
+                                                        <td>${car.id}</td>
+                                                        <td>${car.title}</td>
+                                                        <td>${car.size}</td>
+                                                        <td>${car.color}</td>
+                                                        <td><span class="badge bg-danger">${car.stock_quantity}</span></td>
                                                     </tr>
                                                 </c:forEach>
                                             </c:when>
                                             <c:otherwise>
-                                                <tr><td colspan="5" class="text-center">No low stock products</td></tr>
+                                                <tr><td colspan="5" class="text-center">No low stock cars</td></tr>
                                             </c:otherwise>
                                         </c:choose>
                                     </tbody>
@@ -739,9 +739,9 @@
                         </div>
 
                         <!-- Bảng Tổng Tồn kho theo Sản phẩm -->
-                        <div class="table-container <c:if test="${selectedTable == 'inventoryByProduct'}">active</c:if>" id="inventoryByProductTableContainer">
+                        <div class="table-container <c:if test="${selectedTable == 'inventoryByCar'}">active</c:if>" id="inventoryByCarTableContainer">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="inventoryByProductTable">
+                                    <table class="table table-bordered" id="inventoryByCarTable">
                                         <thead>
                                             <tr>
                                                 <th>Tên Sản phẩm</th>
@@ -750,11 +750,11 @@
                                         </thead>
                                         <tbody>
                                         <c:choose>
-                                            <c:when test="${not empty totalInventoryByProduct}">
-                                                <c:forEach items="${totalInventoryByProduct}" var="product">
+                                            <c:when test="${not empty totalInventoryByCar}">
+                                                <c:forEach items="${totalInventoryByCar}" var="car">
                                                     <tr>
-                                                        <td>${product.title}</td>
-                                                        <td>${product.total_stock}</td>
+                                                        <td>${car.title}</td>
+                                                        <td>${car.total_stock}</td>
                                                     </tr>
                                                 </c:forEach>
                                             </c:when>
@@ -811,8 +811,8 @@
                                                 <td>Ưu tiên bổ sung</td>
                                                 <td>
                                                 <c:choose>
-                                                    <c:when test="${not empty lowStockProducts && lowStockProducts.size() > 0}">
-                                                        <strong>${lowStockProducts[0].title}</strong> cần bổ sung ngay với ${lowStockProducts[0].total_stock} đơn vị.
+                                                    <c:when test="${not empty lowStockCars && lowStockCars.size() > 0}">
+                                                        <strong>${lowStockCars[0].title}</strong> cần bổ sung ngay với ${lowStockCars[0].total_stock} đơn vị.
                                                     </c:when>
                                                     <c:otherwise>
                                                         Không có yêu cầu bổ sung khẩn cấp.
@@ -824,8 +824,8 @@
                                             <td>Tồn kho dư thừa</td>
                                             <td>
                                                 <c:choose>
-                                                    <c:when test="${not empty productsWithoutRecentRestocking && productsWithoutRecentRestocking.size() > 0}">
-                                                        ${productsWithoutRecentRestocking.size()} sản phẩm chưa bán trong 29+ ngày. Xem xét khuyến mãi để giảm tồn kho.
+                                                    <c:when test="${not empty carsWithoutRecentRestocking && carsWithoutRecentRestocking.size() > 0}">
+                                                        ${carsWithoutRecentRestocking.size()} sản phẩm chưa bán trong 29+ ngày. Xem xét khuyến mãi để giảm tồn kho.
                                                     </c:when>
                                                     <c:otherwise>
                                                         Tồn kho đang luân chuyển tốt, không có dư thừa đáng kể.
@@ -836,16 +836,16 @@
                                         <tr>
                                             <td>Biến thể phổ biến</td>
                                             <td>
-                                                <c:if test="${not empty productVariationsBySize && not empty productVariationsByColor}">
+                                                <c:if test="${not empty carVariationsBySize && not empty carVariationsByColor}">
                                                     <c:set var="topSize" value="" /><c:set var="topSizeCount" value="0" />
-                                                    <c:forEach items="${productVariationsBySize}" var="entry">
+                                                    <c:forEach items="${carVariationsBySize}" var="entry">
                                                         <c:if test="${entry.value > topSizeCount}">
                                                             <c:set var="topSize" value="${entry.key}" />
                                                             <c:set var="topSizeCount" value="${entry.value}" />
                                                         </c:if>
                                                     </c:forEach>
                                                     <c:set var="topColor" value="" /><c:set var="topColorCount" value="0" />
-                                                    <c:forEach items="${productVariationsByColor}" var="entry">
+                                                    <c:forEach items="${carVariationsByColor}" var="entry">
                                                         <c:if test="${entry.value > topColorCount}">
                                                             <c:set var="topColor" value="${entry.key}" />
                                                             <c:set var="topColorCount" value="${entry.value}" />
@@ -1185,8 +1185,8 @@
             $('#exportFeedbackBtn').click(function() {
                 exportSectionToExcel('feedbackReportSection', 'feedback_report');
             });
-            $('#exportProductBtn').click(function() {
-                exportSectionToExcel('productReportSection', 'product_report');
+            $('#exportCarBtn').click(function() {
+                exportSectionToExcel('carReportSection', 'car_report');
             });
             $('#exportInventoryBtn').click(function() {
                 exportSectionToExcel('inventoryReportSection', 'inventory_report');

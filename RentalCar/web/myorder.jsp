@@ -666,7 +666,7 @@
                         <i class="fas fa-shopping-bag"></i>
                     </div>
                     <div class="empty-message">Bạn chưa có đơn hàng nào</div>
-                    <a href="listproduct" class="btn btn-primary">Tiếp tục mua sắm</a>
+                    <a href="listcar" class="btn btn-primary">Tiếp tục mua sắm</a>
                 </div>
             </c:when>
             <c:otherwise>
@@ -717,13 +717,13 @@
                                 <c:forEach items="${order.items}" var="item" varStatus="loop">
                                     <c:if test="${loop.index < 2}">
                                         <div class="item-row">
-                                            <img src="${item.productThumbnail}" alt="${item.productTitle}" class="item-image">
+                                            <img src="${item.carThumbnail}" alt="${item.carTitle}" class="item-image">
                                             <div class="item-details">
-                                                <div class="item-title">${item.productTitle}</div>
+                                                <div class="item-title">${item.carTitle}</div>
                                                 <div class="item-variant">Size: ${item.size} | Màu: ${item.color} | Số lượng: ${item.quantity}</div>
                                             </div>
                                             <div class="item-price">
-                                                <fmt:formatNumber value="${item.productPrice * item.quantity}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                                <fmt:formatNumber value="${item.carPrice * item.quantity}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
                                             </div>
                                         </div>
                                     </c:if>

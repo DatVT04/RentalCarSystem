@@ -5,12 +5,12 @@
 package Cart;
 
 import DAO.CartDAO;
-import DAO.ProductDAO;
+import DAO.CarDAO;
 import DAO.UserDAO;
 import com.google.gson.reflect.TypeToken;
 import entity.Cart;
 import entity.CartItem;
-import entity.Product;
+import entity.Car;
 import entity.User;
 import entity.UserAddress;
 import java.io.IOException;
@@ -85,30 +85,30 @@ public class CartContact extends HttpServlet {
     request.setAttribute("isGuest", user == null);
 
     // Lấy danh sách sản phẩm từ query parameters (nếu có, từ reorder)
-    String[] productIds = request.getParameterValues("productId");
+    String[] carIds = request.getParameterValues("carId");
     String[] sizes = request.getParameterValues("size");
     String[] colors = request.getParameterValues("color");
     String[] quantities = request.getParameterValues("quantity");
 
     List<CartItem> cartItems = new ArrayList<>();
-    if (productIds != null && sizes != null && colors != null && quantities != null
-            && productIds.length == sizes.length && sizes.length == colors.length && colors.length == quantities.length) {
-        for (int i = 0; i < productIds.length; i++) {
+    if (carIds != null && sizes != null && colors != null && quantities != null
+            && carIds.length == sizes.length && sizes.length == colors.length && colors.length == quantities.length) {
+        for (int i = 0; i < carIds.length; i++) {
             CartItem item = new CartItem();
-            item.setProductId(Integer.parseInt(productIds[i]));
+            item.setCarId(Integer.parseInt(carIds[i]));
             item.setSize(URLDecoder.decode(sizes[i], StandardCharsets.UTF_8.toString()));
             item.setColor(URLDecoder.decode(colors[i], StandardCharsets.UTF_8.toString()));
             item.setQuantity(Integer.parseInt(quantities[i]));
             // Tạo ID tạm thời cho CartItem
             item.setId((int) (System.currentTimeMillis() % Integer.MAX_VALUE) + i); // Đảm bảo ID duy nhất
 
-            // Lấy thông tin sản phẩm từ ProductDAO
-            ProductDAO productDAO = new ProductDAO();
-            Product product = productDAO.getProductById(item.getProductId());
-            if (product != null) {
-                item.setProductTitle(product.getTitle());
-                item.setProductThumbnail(product.getThumbnail());
-                item.setProductPrice(product.getSalePrice().doubleValue());
+            // Lấy thông tin sản phẩm từ CarDAO
+            CarDAO carDAO = new CarDAO();
+            Car car = carDAO.getCarById(item.getCarId());
+            if (car != null) {
+                item.setCarTitle(car.getTitle());
+                item.setCarThumbnail(car.getThumbnail());
+                item.setCarPrice(car.getSalePrice().doubleValue());
             }
             cartItems.add(item);
         }
@@ -148,7 +148,7 @@ public class CartContact extends HttpServlet {
     // Tính toán subtotal
     double subtotal = 0;
     for (CartItem item : cartItems) {
-        subtotal += item.getProductPrice() * item.getQuantity();
+        subtotal += item.getCarPrice() * item.getQuantity();
     }
 
     // Lấy địa chỉ giao hàng

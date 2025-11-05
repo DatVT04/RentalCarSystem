@@ -1,7 +1,7 @@
 package DAO;
 
 import entity.DashboardStats;
-import entity.LowStockProduct;
+import entity.LowStockCar;
 import Context.DBContext;
 import entity.Customer;
 
@@ -20,16 +20,16 @@ public class DashboardDAO extends DBContext {
         stats.setEndDate(endDate);
 
         try {
-            Map<String, Integer> productCounts = getProductCount();
+            Map<String, Integer> carCounts = getCarCount();
 
-            stats.setTotalProducts(productCounts.getOrDefault("Total", 0));
-            stats.setActiveProducts(productCounts.getOrDefault("active", 0));
-            stats.setOutOfStockProducts(productCounts.getOrDefault("EOStock", 0));
-            stats.setInactiveProducts(productCounts.getOrDefault("inactive", 0));
+            stats.setTotalCars(carCounts.getOrDefault("Total", 0));
+            stats.setActiveCars(carCounts.getOrDefault("active", 0));
+            stats.setOutOfStockCars(carCounts.getOrDefault("EOStock", 0));
+            stats.setInactiveCars(carCounts.getOrDefault("inactive", 0));
 
-            stats.setProductsByCategory(getProductsByCategory());
+            stats.setCarsByCategory(getCarsByCategory());
             stats.setTotalStock(getTotalStock());
-            stats.setLowStockProducts(getLowStockProducts(10));
+            stats.setLowStockCars(getLowStockCars(10));
 
             Map<String, Integer> customerStats = getAllCustomerCounts();
             stats.setTotalCustomers(customerStats.getOrDefault("Total", 0));
@@ -67,31 +67,31 @@ public class DashboardDAO extends DBContext {
         return stats;
     }
 
-    private Map<String, Integer> getProductCount() {
-        Map<String, Integer> productCounts = new HashMap<>();
+    private Map<String, Integer> getCarCount() {
+        Map<String, Integer> carCounts = new HashMap<>();
         try {
-            String totalSql = "SELECT COUNT(*) FROM products";
+            String totalSql = "SELECT COUNT(*) FROM cars";
             ps = connection.prepareStatement(totalSql);
             rs = ps.executeQuery();
             if (rs.next()) {
-                productCounts.put("Total", rs.getInt(1));
+                carCounts.put("Total", rs.getInt(1));
             }
 
-            String statusSql = "SELECT status, COUNT(*) FROM products GROUP BY status";
+            String statusSql = "SELECT status, COUNT(*) FROM cars GROUP BY status";
             ps = connection.prepareStatement(statusSql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                productCounts.put(rs.getString(1), rs.getInt(2));
+                carCounts.put(rs.getString(1), rs.getInt(2));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return productCounts;
+        return carCounts;
     }
 
-    // Get products by category
-    public Map<String, Integer> getProductsByCategory() {
-        Map<String, Integer> productsByCategory = new LinkedHashMap<>();
+    // Get cars by category
+    public Map<String, Integer> getCarsByCategory() {
+        Map<String, Integer> carsByCategory = new LinkedHashMap<>();
         String sql = "WITH CategoryHierarchy AS ( "
                 + "    SELECT c1.id, c1.name, c1.parent_id, "
                 + "        CASE "
@@ -104,33 +104,33 @@ public class DashboardDAO extends DBContext {
                 + "    LEFT JOIN categories c2 ON c1.parent_id = c2.id "
                 + "    LEFT JOIN categories c3 ON c2.parent_id = c3.id "
                 + ") "
-                + "SELECT TOP 5 c.name AS category_name, COUNT(p.id) AS product_count "
-                + "FROM products p "
+                + "SELECT TOP 5 c.name AS category_name, COUNT(p.id) AS car_count "
+                + "FROM cars p "
                 + "JOIN CategoryHierarchy ch ON p.category_id = ch.id "
                 + "JOIN categories c ON ch.top_level_id = c.id "
                 + "WHERE p.status = 'active' "
                 + "GROUP BY c.name "
-                + "ORDER BY product_count DESC;";
+                + "ORDER BY car_count DESC;";
 
         try (PreparedStatement ps = connection.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                productsByCategory.put(rs.getString("category_name"), rs.getInt("product_count"));
+                carsByCategory.put(rs.getString("category_name"), rs.getInt("car_count"));
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Error in getProductsByCategory: " + e.getMessage());
+            System.out.println("Error in getCarsByCategory: " + e.getMessage());
         }
 
-        return productsByCategory;
+        return carsByCategory;
     }
 
     // Get total inventory stock
     private int getTotalStock() {
         int count = 0;
         try {
-            String sql = "SELECT SUM(stock_quantity) FROM product_variants";
+            String sql = "SELECT SUM(stock_quantity) FROM car_variants";
 
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -144,15 +144,15 @@ public class DashboardDAO extends DBContext {
         return count;
     }
 
-    // Get low stock products
-    private List<LowStockProduct> getLowStockProducts(int threshold) {
-        List<LowStockProduct> lowStockProducts = new ArrayList<>();
+    // Get low stock cars
+    private List<LowStockCar> getLowStockCars(int threshold) {
+        List<LowStockCar> lowStockCars = new ArrayList<>();
         try {
             String sql = "SELECT p.id, p.title, ps.size, pc.color, pv.stock_quantity "
-                    + "FROM product_variants pv "
-                    + "JOIN products p ON pv.product_id = p.id "
-                    + "JOIN product_sizes ps ON pv.size_id = ps.id "
-                    + "JOIN product_colors pc ON pv.color_id = pc.id "
+                    + "FROM car_variants pv "
+                    + "JOIN cars p ON pv.car_id = p.id "
+                    + "JOIN car_sizes ps ON pv.size_id = ps.id "
+                    + "JOIN car_colors pc ON pv.color_id = pc.id "
                     + "WHERE pv.stock_quantity < ? "
                     + "ORDER BY pv.stock_quantity ASC";
 
@@ -161,18 +161,18 @@ public class DashboardDAO extends DBContext {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                LowStockProduct product = new LowStockProduct();
-                product.setProductId(rs.getInt("id"));
-                product.setProductName(rs.getString("title"));
-                product.setSize(rs.getString("size"));
-                product.setColor(rs.getString("color"));
-                product.setStockQuantity(rs.getInt("stock_quantity"));
-                lowStockProducts.add(product);
+                LowStockCar car = new LowStockCar();
+                car.setCarId(rs.getInt("id"));
+                car.setCarName(rs.getString("title"));
+                car.setSize(rs.getString("size"));
+                car.setColor(rs.getString("color"));
+                car.setStockQuantity(rs.getInt("stock_quantity"));
+                lowStockCars.add(car);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return lowStockProducts;
+        return lowStockCars;
     }
 
     // Get customer count based on status

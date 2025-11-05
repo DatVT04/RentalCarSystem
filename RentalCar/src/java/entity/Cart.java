@@ -68,7 +68,7 @@ public class Cart {
         this.totalAmount = 0;
         if (items != null) {
             for (CartItem item : items) {
-                this.totalAmount += item.getProductPrice() * item.getQuantity();
+                this.totalAmount += item.getCarPrice() * item.getQuantity();
             }
         }
     }

@@ -13,7 +13,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Chi tiết phản hồi - ${feedbackList[0].productTitle}</title>
+        <title>Chi tiết phản hồi - ${feedbackList[0].carTitle}</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
@@ -317,7 +317,7 @@
                 
                 
                 <h2 class="page-title">
-                    <i class="fas fa-comments me-2"></i>Chi tiết phản hồi - ${feedbackList[0].productTitle}
+                    <i class="fas fa-comments me-2"></i>Chi tiết phản hồi - ${feedbackList[0].carTitle}
                 </h2>
 
                 <div class="card filter-card">
@@ -326,7 +326,7 @@
                     </div>
                     <div class="card-body">
                         <form action="feedbackdetail" method="GET" class="row g-3">
-                            <input type="hidden" name="productId" value="${productId}">
+                            <input type="hidden" name="carId" value="${carId}">
                             <div class="col-md-4">
                                 <div class="input-group">
                                     <span class="input-group-text bg-white">
@@ -362,7 +362,7 @@
                                     <button type="submit" class="btn btn-primary me-md-2">
                                         <i class="fas fa-filter me-2"></i>Lọc
                                     </button>
-                                    <a href="feedbackdetail?productId=${productId}" class="btn btn-secondary">
+                                    <a href="feedbackdetail?carId=${carId}" class="btn btn-secondary">
                                         <i class="fas fa-eraser me-2"></i>Xóa bộ lọc
                                     </a>
                                 </div>
@@ -387,7 +387,7 @@
                                     <tr class="bg-light">
                                         <th class="text-center" style="width: 60px;">STT</th>
                                         <th>
-                                            <a href="feedbackdetail?productId=${productId}&searchKeywordfeedbackdetail?productId=${productId}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}&sortField=username&sortOrder=${sortField == 'username' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
+                                            <a href="feedbackdetail?carId=${carId}&searchKeywordfeedbackdetail?carId=${carId}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}&sortField=username&sortOrder=${sortField == 'username' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
                                                 Tài khoản
                                                 <span class="sort-icons">
                                                     ${sortField == 'username' ? (sortOrder == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
@@ -395,7 +395,7 @@
                                             </a>
                                         </th>
                                         <th>
-                                            <a href="feedbackdetail?productId=${productId}&searchKeywordfeedbackdetail?productId=${productId}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}&sortField=rating&sortOrder=${sortField == 'rating' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
+                                            <a href="feedbackdetail?carId=${carId}&searchKeywordfeedbackdetail?carId=${carId}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}&sortField=rating&sortOrder=${sortField == 'rating' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
                                                 Đánh giá
                                                 <span class="sort-icons">
                                                     ${sortField == 'rating' ? (sortOrder == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
@@ -404,7 +404,7 @@
                                         </th>
                                         <th>Nội dung</th>
                                         <th>
-                                        <a href="feedbackdetail?productId=${productId}&searchKeywordfeedbackdetail?productId=${productId}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}&sortField=created_at&sortOrder=${sortField == 'created_at' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
+                                        <a href="feedbackdetail?carId=${carId}&searchKeywordfeedbackdetail?carId=${carId}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}&sortField=created_at&sortOrder=${sortField == 'created_at' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
                                             Ngày tạo
                                             <span class="sort-icons">
                                                 ${sortField == 'created_at' ? (sortOrder == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
@@ -412,7 +412,7 @@
                                         </a>
                                     </th>
                                         <th>
-                                            <a href="feedbackdetail?productId=${productId}&searchKeywordfeedbackdetail?productId=${productId}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}&sortField=status&sortOrder=${sortField == 'status' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
+                                            <a href="feedbackdetail?carId=${carId}&searchKeywordfeedbackdetail?carId=${carId}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}&sortField=status&sortOrder=${sortField == 'status' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
                                                 Trạng thái
                                                 <span class="sort-icons">
                                                     ${sortField == 'status' ? (sortOrder == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
@@ -477,7 +477,7 @@
                                                             <form action="feedbackdetail" method="POST" style="display: inline;">
                                                                 <input type="hidden" name="action" value="updateStatus">
                                                                 <input type="hidden" name="id" value="${feedback.id}">
-                                                                <input type="hidden" name="productId" value="${feedback.productId}">
+                                                                <input type="hidden" name="carId" value="${feedback.carId}">
                                                                 <select name="status" onchange="this.form.submit()">
                                                                     <option value="pending" ${feedback.status == 'pending' ? 'selected' : ''}>Chưa xem</option>
                                                                     <option value="approved" ${feedback.status == 'approved' ? 'selected' : ''}>Hiện</option>
@@ -488,7 +488,7 @@
                                                         <button type="button" class="btn btn-outline-danger btn-sm ms-1" title="Xóa feedback" data-bs-toggle="modal" data-bs-target="#deleteModal${feedback.id}">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
-                                                        <a href="feedbackreply?feedbackId=${feedback.id}&returnUrl=feedbackdetail&productId=${feedback.productId}" class="btn btn-outline-primary btn-sm ms-1" title="Phản hồi">
+                                                        <a href="feedbackreply?feedbackId=${feedback.id}&returnUrl=feedbackdetail&carId=${feedback.carId}" class="btn btn-outline-primary btn-sm ms-1" title="Phản hồi">
                                                             <i class="fas fa-reply"></i>
                                                         </a>
                                                     </td>
@@ -509,7 +509,7 @@
                                                             <form action="feedbackdetail" method="POST">
                                                                 <input type="hidden" name="action" value="deleteFeedback">
                                                                 <input type="hidden" name="id" value="${feedback.id}">
-                                                                <input type="hidden" name="productId" value="${feedback.productId}">
+                                                                <input type="hidden" name="carId" value="${feedback.carId}">
                                                                 <button type="submit" class="btn btn-danger">Xóa</button>
                                                             </form>
                                                         </div>
@@ -541,7 +541,7 @@
                         <ul class="pagination">
                             <c:if test="${currentPage > 1}">
                                 <li class="page-item">
-                                    <a class="page-link" href="feedbackdetail?productId=${productId}&page=${currentPage-1}&sortField=${sortField}&sortOrder=${sortOrder}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}" aria-label="Previous">
+                                    <a class="page-link" href="feedbackdetail?carId=${carId}&page=${currentPage-1}&sortField=${sortField}&sortOrder=${sortOrder}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}" aria-label="Previous">
                                         <i class="fas fa-chevron-left"></i>
                                     </a>
                                 </li>
@@ -555,14 +555,14 @@
                                     </c:when>
                                     <c:otherwise>
                                         <li class="page-item">
-                                            <a class="page-link" href="feedbackdetail?productId=${productId}&page=${i}&sortField=${sortField}&sortOrder=${sortOrder}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}">${i}</a>
+                                            <a class="page-link" href="feedbackdetail?carId=${carId}&page=${i}&sortField=${sortField}&sortOrder=${sortOrder}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}">${i}</a>
                                         </li>
                                     </c:otherwise>
                                 </c:choose>
                             </c:forEach>
                             <c:if test="${currentPage < totalPages}">
                                 <li class="page-item">
-                                    <a class="page-link" href="feedbackdetail?productId=${productId}&page=${currentPage+1}&sortField=${sortField}&sortOrder=${sortOrder}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}" aria-label="Next">
+                                    <a class="page-link" href="feedbackdetail?carId=${carId}&page=${currentPage+1}&sortField=${sortField}&sortOrder=${sortOrder}&searchKeyword=${searchKeyword}&filterRating=${filterRating}&filterStatus=${filterStatus}" aria-label="Next">
                                         <i class="fas fa-chevron-right"></i>
                                     </a>
                                 </li>

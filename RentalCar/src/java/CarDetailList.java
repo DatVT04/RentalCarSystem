@@ -4,7 +4,7 @@
  */
 
 import DAO.CategoryDAO;
-import DAO.ProductDAO;
+import DAO.CarDAO;
 import DAO.CartDAO;
 import DAO.FeedbackDAO;
 import DAO.FeedbackReplyDAO;
@@ -15,7 +15,7 @@ import entity.Category;
 import entity.Color;
 import entity.Feedback;
 import entity.FeedbackReply;
-import entity.Product;
+import entity.Car;
 import entity.Size;
 import entity.User;
 import java.io.IOException;
@@ -33,8 +33,8 @@ import java.util.List;
  *
  * @author tphon
  */
-@WebServlet(urlPatterns = {"/productdetail"})
-public class ProductDetailList extends HttpServlet {
+@WebServlet(urlPatterns = {"/cardetail"})
+public class CarDetailList extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -53,10 +53,10 @@ public class ProductDetailList extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ProductDetailList</title>");
+            out.println("<title>Servlet CarDetailList</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ProductDetailList at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CarDetailList at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -75,43 +75,43 @@ public class ProductDetailList extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            int productId = Integer.parseInt(request.getParameter("id"));
-            ProductDAO productDAO = new ProductDAO();
+            int carId = Integer.parseInt(request.getParameter("id"));
+            CarDAO carDAO = new CarDAO();
             CategoryDAO categoryDAO = new CategoryDAO();
             FeedbackDAO feedbackDAO = new FeedbackDAO();
             FeedbackReplyDAO replyDAO = new FeedbackReplyDAO();
 
-            Product product = productDAO.getProductById(productId);
-            if (product == null) {
-                response.sendRedirect("listproduct?ErrNullID");
+            Car car = carDAO.getCarById(carId);
+            if (car == null) {
+                response.sendRedirect("listcar?ErrNullID");
                 return;
             }
 
-            String cateStatus = categoryDAO.getCategoryById(product.getCategoryId()).getStatus();
+            String cateStatus = categoryDAO.getCategoryById(car.getCategoryId()).getStatus();
             if (cateStatus.equals("inactive")) {
                 request.getRequestDispatcher("error/error.jsp").forward(request, response);
                 return;
             }
 
             // Xử lý lấy ảnh
-            List<String> subImages = productDAO.getProductImages(productId);
+            List<String> subImages = carDAO.getCarImages(carId);
             List<String> allImages = new ArrayList<>();
-            allImages.add(product.getThumbnail());
+            allImages.add(car.getThumbnail());
             allImages.addAll(subImages);
-            product.setSubImages(allImages);
+            car.setSubImages(allImages);
 
             // Lấy tên danh mục
-            Category category = categoryDAO.getCategoryById(product.getCategoryId());
+            Category category = categoryDAO.getCategoryById(car.getCategoryId());
             String categoryName = (category != null) ? category.getName() : "";
 
             // Lấy sản phẩm tương tự theo danh mục
-            List<Product> relatedProducts = productDAO.getRelatedProducts(productId, product.getCategoryId());
+            List<Car> relatedCars = carDAO.getRelatedCars(carId, car.getCategoryId());
 
             // Lấy size
-            List<Size> sizes = productDAO.getSizesByProductId(productId);
+            List<Size> sizes = carDAO.getSizesByCarId(carId);
 
             // Lấy màu
-            List<Color> colors = productDAO.getColorsByProductId(productId);
+            List<Color> colors = carDAO.getColorsByCarId(carId);
 
             // Lấy số lượng
             int stock = 0;
@@ -119,17 +119,17 @@ public class ProductDetailList extends HttpServlet {
             String colorId = request.getParameter("colorId");
 
             if (sizeId != null && !sizeId.isEmpty() && colorId != null && !colorId.isEmpty()) {
-                stock = productDAO.getTotalStockByProductId(productId, Integer.parseInt(sizeId), Integer.parseInt(colorId));
+                stock = carDAO.getTotalStockByCarId(carId, Integer.parseInt(sizeId), Integer.parseInt(colorId));
                 request.setAttribute("sizeId", Integer.valueOf(sizeId));
                 request.setAttribute("colorId", Integer.valueOf(colorId));
             } else if (sizeId != null && !sizeId.isEmpty()) {
-                stock = productDAO.getTotalStockByProductSize(productId, Integer.parseInt(sizeId));
+                stock = carDAO.getTotalStockByCarSize(carId, Integer.parseInt(sizeId));
                 request.setAttribute("sizeId", Integer.parseInt(sizeId));
             } else if (colorId != null && !colorId.isEmpty()) {
-                stock = productDAO.getTotalStockByProductColor(productId, Integer.parseInt(colorId));
+                stock = carDAO.getTotalStockByCarColor(carId, Integer.parseInt(colorId));
                 request.setAttribute("colorId", Integer.parseInt(colorId));
             } else {
-                stock = productDAO.getTotalStockByProductId(productId);
+                stock = carDAO.getTotalStockByCarId(carId);
             }
 
             int page = 1; // Trang mặc định
@@ -141,13 +141,13 @@ public class ProductDetailList extends HttpServlet {
             String filterStar = request.getParameter("filterStar");
 
             // Lấy danh sách đánh giá ko bị ẩn cho sản phẩm
-//            List<Feedback> feedbacks = feedbackDAO.getFeedbacksByProduct(
-//                null, filterStar, "approved", "created_at", "desc", productId, page, recordsPerPage
+//            List<Feedback> feedbacks = feedbackDAO.getFeedbacksByCar(
+//                null, filterStar, "approved", "created_at", "desc", carId, page, recordsPerPage
 //            );
-            List<Feedback> feedbacks = feedbackDAO.getFeedbacksByProduct(null, filterStar, "approved", null, "desc", productId, page, recordsPerPage);
+            List<Feedback> feedbacks = feedbackDAO.getFeedbacksByCar(null, filterStar, "approved", null, "desc", carId, page, recordsPerPage);
 
-//                    feedbackDAO.getFeedbacksByProduct(
-//                    filterStar, "rejected", productId, page, recordsPerPage
+//                    feedbackDAO.getFeedbacksByCar(
+//                    filterStar, "rejected", carId, page, recordsPerPage
 //            );
             // Lấy phản hồi của cửa hàng cho từng đánh giá
             for (Feedback feedback : feedbacks) {
@@ -161,16 +161,16 @@ public class ProductDetailList extends HttpServlet {
             }
 
             // Tính tổng số trang
-            int totalFeedbacks = feedbackDAO.getTotalFeedbacksByProduct(null, filterStar, "approved", productId);
+            int totalFeedbacks = feedbackDAO.getTotalFeedbacksByCar(null, filterStar, "approved", carId);
             int totalPages = (int) Math.ceil(totalFeedbacks * 1.0 / recordsPerPage);
 
-            product.setStock(stock);
-            request.setAttribute("product", product);
+            car.setStock(stock);
+            request.setAttribute("car", car);
             request.setAttribute("categoryName", categoryName);
             request.setAttribute("images", allImages);
             request.setAttribute("colors", colors);
             request.setAttribute("sizes", sizes);
-            request.setAttribute("similarProducts", relatedProducts);
+            request.setAttribute("similarCars", relatedCars);
             request.setAttribute("alert", request.getParameter("alert"));
 
             request.setAttribute("totalPages", totalPages);
@@ -180,8 +180,8 @@ public class ProductDetailList extends HttpServlet {
             request.setAttribute("filterStar", filterStar);
 
             // Tính sao trung bình
-            int[] ratingCounts = feedbackDAO.getRatingCountsByProduct(null, productId);
-            int allFeedbacks = feedbackDAO.getTotalFeedbacksByProduct(null, null, "approved", productId);
+            int[] ratingCounts = feedbackDAO.getRatingCountsByCar(null, carId);
+            int allFeedbacks = feedbackDAO.getTotalFeedbacksByCar(null, null, "approved", carId);
             double totalStar = 0;
             int i = 1;
             for (int star : ratingCounts) {
@@ -198,12 +198,12 @@ public class ProductDetailList extends HttpServlet {
             request.setAttribute("oneStarCount", ratingCounts[0]);
 
             // Forward to the JSP
-            request.getRequestDispatcher("productDetail.jsp").forward(request, response);
+            request.getRequestDispatcher("carDetail.jsp").forward(request, response);
 
         } catch (NumberFormatException e) {
-            response.sendRedirect("listproduct?ErrNumberF");
+            response.sendRedirect("listcar?ErrNumberF");
         } catch (Exception e) {
-            getServletContext().log("Error in ProductDetailServlet", e);
+            getServletContext().log("Error in CarDetailServlet", e);
             request.setAttribute("errorMessage", "There was an error processing your request. Please try again later.");
             request.getRequestDispatcher("error.jsp").forward(request, response);
         }
@@ -221,7 +221,7 @@ public class ProductDetailList extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
-        ProductDAO productDAO = new ProductDAO();
+        CarDAO carDAO = new CarDAO();
         InventoryDAO inventoryDAO = new InventoryDAO();
         CartDAO cartDAO = new CartDAO();
         HttpSession session = request.getSession();
@@ -229,105 +229,105 @@ public class ProductDetailList extends HttpServlet {
 
         if ("addToCart".equals(action)) {
             try {
-                int productId = Integer.parseInt(request.getParameter("id"));
+                int carId = Integer.parseInt(request.getParameter("id"));
                 int sizeId = Integer.parseInt(request.getParameter("sizeId"));
                 int colorId = Integer.parseInt(request.getParameter("colorId"));
                 int quantity = Integer.parseInt(request.getParameter("quantity"));
 
                 // Lấy thông tin sản phẩm
-                Product product = productDAO.getProductById(productId);
-                if (product.getStatus().equals("inactive") || product.getStatus().equals("EOStock")) {
-                    response.sendRedirect("productdetail?id=" + product.getId() + "&alert=EOS");
+                Car car = carDAO.getCarById(carId);
+                if (car.getStatus().equals("inactive") || car.getStatus().equals("EOStock")) {
+                    response.sendRedirect("cardetail?id=" + car.getId() + "&alert=EOS");
                     return;
                 }
 
                 // Kiểm tra tồn kho
-                int stock = productDAO.getTotalStockByProductId(productId, sizeId, colorId);
+                int stock = carDAO.getTotalStockByCarId(carId, sizeId, colorId);
                 if (quantity > stock) {
-                    response.sendRedirect("productdetail?id=" + product.getId() + "&alert=OutOfStock");
+                    response.sendRedirect("cardetail?id=" + car.getId() + "&alert=OutOfStock");
                     return;
                 }
 
                 // Lấy variant ID
-                int variantId = inventoryDAO.getVariantId(productId, colorId, sizeId);
+                int variantId = inventoryDAO.getVariantId(carId, colorId, sizeId);
 
                 // Lấy thông tin size và màu
-                String sizeName = getSizeName(productDAO, productId, sizeId);
-                String colorName = getColorName(productDAO, productId, colorId);
+                String sizeName = getSizeName(carDAO, carId, sizeId);
+                String colorName = getColorName(carDAO, carId, colorId);
 
                 if (user != null) {
                     // Người dùng đã đăng nhập, lưu vào database
                     Cart cart = getOrCreateCart(user.getId());
-                    CartItem item = new CartItem(cart.getId(), productId, variantId, quantity);
-                    item.setProductTitle(product.getTitle());
-                    item.setProductThumbnail(product.getThumbnail());
-                    item.setProductPrice(product.getSalePrice().doubleValue());
+                    CartItem item = new CartItem(cart.getId(), carId, variantId, quantity);
+                    item.setCarTitle(car.getTitle());
+                    item.setCarThumbnail(car.getThumbnail());
+                    item.setCarPrice(car.getSalePrice().doubleValue());
                     item.setSize(sizeName);
                     item.setColor(colorName);
 
                     if (cartDAO.addCartItem(item)) {
-                        response.sendRedirect("productdetail?id=" + product.getId() + "&alert=SS");
+                        response.sendRedirect("cardetail?id=" + car.getId() + "&alert=SS");
                     } else {
-                        response.sendRedirect("productdetail?id=" + product.getId() + "&alert=ERR");
+                        response.sendRedirect("cardetail?id=" + car.getId() + "&alert=ERR");
                     }
                 } else {
                     // Người dùng chưa đăng nhập, lưu vào cookie
                     CartItem item = new CartItem();
-                    item.setProductId(productId);
+                    item.setCarId(carId);
                     item.setVariantId(variantId);
                     item.setQuantity(quantity);
-                    item.setProductTitle(product.getTitle());
-                    item.setProductThumbnail(product.getThumbnail());
-                    item.setProductPrice(product.getSalePrice().doubleValue());
+                    item.setCarTitle(car.getTitle());
+                    item.setCarThumbnail(car.getThumbnail());
+                    item.setCarPrice(car.getSalePrice().doubleValue());
                     item.setSize(sizeName);
                     item.setColor(colorName);
 
                     cartDAO.addItemToCookieCart(request, response, item);
-                    response.sendRedirect("productdetail?id=" + product.getId() + "&alert=SS");
+                    response.sendRedirect("cardetail?id=" + car.getId() + "&alert=SS");
                 }
             } catch (NumberFormatException e) {
                 e.printStackTrace();
-                response.sendRedirect("listproduct?ErrNumber");
+                response.sendRedirect("listcar?ErrNumber");
             } catch (Exception e) {
                 e.printStackTrace();
-                response.sendRedirect("listproduct?ErrGeneral");
+                response.sendRedirect("listcar?ErrGeneral");
             }
         } else if ("buyNow".equals(action)) {
             try {
-                int productId = Integer.parseInt(request.getParameter("id"));
+                int carId = Integer.parseInt(request.getParameter("id"));
                 int sizeId = Integer.parseInt(request.getParameter("sizeId"));
                 int colorId = Integer.parseInt(request.getParameter("colorId"));
                 int quantity = Integer.parseInt(request.getParameter("quantity"));
 
                 // Lấy thông tin sản phẩm
-                Product product = productDAO.getProductById(productId);
-                if (product.getStatus().equals("inactive") || product.getStatus().equals("EOStock")) {
-                    response.sendRedirect("productdetail?id=" + product.getId() + "&alert=EOS");
+                Car car = carDAO.getCarById(carId);
+                if (car.getStatus().equals("inactive") || car.getStatus().equals("EOStock")) {
+                    response.sendRedirect("cardetail?id=" + car.getId() + "&alert=EOS");
                     return;
                 }
 
                 // Kiểm tra tồn kho
-                int stock = productDAO.getTotalStockByProductId(productId, sizeId, colorId);
+                int stock = carDAO.getTotalStockByCarId(carId, sizeId, colorId);
                 if (quantity > stock) {
-                    response.sendRedirect("productdetail?id=" + product.getId() + "&alert=OutOfStock");
+                    response.sendRedirect("cardetail?id=" + car.getId() + "&alert=OutOfStock");
                     return;
                 }
 
                 // Lấy variant ID
-                int variantId = inventoryDAO.getVariantId(productId, colorId, sizeId);
+                int variantId = inventoryDAO.getVariantId(carId, colorId, sizeId);
 
                 // Lấy thông tin size và màu
-                String sizeName = getSizeName(productDAO, productId, sizeId);
-                String colorName = getColorName(productDAO, productId, colorId);
+                String sizeName = getSizeName(carDAO, carId, sizeId);
+                String colorName = getColorName(carDAO, carId, colorId);
 
                 CartItem item;
                 if (user != null) {
                     // Người dùng đã đăng nhập, lưu vào database
                     Cart cart = getOrCreateCart(user.getId());
-                    item = new CartItem(cart.getId(), productId, variantId, quantity);
-                    item.setProductTitle(product.getTitle());
-                    item.setProductThumbnail(product.getThumbnail());
-                    item.setProductPrice(product.getSalePrice().doubleValue());
+                    item = new CartItem(cart.getId(), carId, variantId, quantity);
+                    item.setCarTitle(car.getTitle());
+                    item.setCarThumbnail(car.getThumbnail());
+                    item.setCarPrice(car.getSalePrice().doubleValue());
                     item.setSize(sizeName);
                     item.setColor(colorName);
 
@@ -342,17 +342,17 @@ public class ProductDetailList extends HttpServlet {
 
                         response.sendRedirect("cartcontact");
                     } else {
-                        response.sendRedirect("productdetail?id=" + product.getId() + "&alert=ERR");
+                        response.sendRedirect("cardetail?id=" + car.getId() + "&alert=ERR");
                     }
                 } else {
                     // Người dùng chưa đăng nhập, lưu vào cookie
                     item = new CartItem();
-                    item.setProductId(productId);
+                    item.setCarId(carId);
                     item.setVariantId(variantId);
                     item.setQuantity(quantity);
-                    item.setProductTitle(product.getTitle());
-                    item.setProductThumbnail(product.getThumbnail());
-                    item.setProductPrice(product.getSalePrice().doubleValue());
+                    item.setCarTitle(car.getTitle());
+                    item.setCarThumbnail(car.getThumbnail());
+                    item.setCarPrice(car.getSalePrice().doubleValue());
                     item.setSize(sizeName);
                     item.setColor(colorName);
                     item.setId((int) System.currentTimeMillis()); // ID tạm cho cookie
@@ -371,10 +371,10 @@ public class ProductDetailList extends HttpServlet {
                 }
             } catch (NumberFormatException e) {
                 e.printStackTrace();
-                response.sendRedirect("listproduct?ErrNumber");
+                response.sendRedirect("listcar?ErrNumber");
             } catch (Exception e) {
                 e.printStackTrace();
-                response.sendRedirect("listproduct?ErrGeneral");
+                response.sendRedirect("listcar?ErrGeneral");
             }
         }
     }
@@ -388,8 +388,8 @@ public class ProductDetailList extends HttpServlet {
         return cart;
     }
 
-    private String getSizeName(ProductDAO productDAO, int productId, int sizeId) {
-        List<Size> sizes = productDAO.getSizesByProductId(productId);
+    private String getSizeName(CarDAO carDAO, int carId, int sizeId) {
+        List<Size> sizes = carDAO.getSizesByCarId(carId);
         for (Size s : sizes) {
             if (s.getId() == sizeId) {
                 return s.getName();
@@ -398,8 +398,8 @@ public class ProductDetailList extends HttpServlet {
         return "";
     }
 
-    private String getColorName(ProductDAO productDAO, int productId, int colorId) {
-        List<Color> colors = productDAO.getColorsByProductId(productId);
+    private String getColorName(CarDAO carDAO, int carId, int colorId) {
+        List<Color> colors = carDAO.getColorsByCarId(carId);
         for (Color c : colors) {
             if (c.getId() == colorId) {
                 return c.getName();

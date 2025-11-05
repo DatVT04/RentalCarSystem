@@ -208,11 +208,11 @@
                                     <c:forEach items="${order.items}" var="item" varStatus="loop">
                                         <div class="d-flex justify-content-between align-items-center mb-2">
                                             <div>
-                                                <span class="fw-bold">${item.quantity}x</span> ${item.productTitle}
+                                                <span class="fw-bold">${item.quantity}x</span> ${item.carTitle}
                                                 <div class="small text-muted">Size: ${item.size}, Màu: ${item.color}</div>
                                             </div>
                                             <div>
-                                                <fmt:formatNumber value="${item.productPrice * item.quantity}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                                <fmt:formatNumber value="${item.carPrice * item.quantity}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
                                             </div>
                                         </div>
                                         <c:if test="${!loop.last}">
@@ -227,7 +227,7 @@
                                         <span>
                                             <c:set var="subtotal" value="0" />
                                             <c:forEach items="${order.items}" var="item">
-                                                <c:set var="subtotal" value="${subtotal + (item.productPrice * item.quantity)}" />
+                                                <c:set var="subtotal" value="${subtotal + (item.carPrice * item.quantity)}" />
                                             </c:forEach>
                                             <c:if test="${empty order.items}">
                                                 <span class="text-danger">Không có sản phẩm nào</span>
