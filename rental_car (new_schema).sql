@@ -1,4 +1,4 @@
-create database rental_car
+Ôªøcreate database rental_car
 GO
 
 USE rental_car;
@@ -100,7 +100,7 @@ CREATE TABLE car_variants (
 -- Orders table
 CREATE TABLE orders (
     id INT IDENTITY(1,1) PRIMARY KEY,
-    user_id INT, -- ID ng??i d˘ng (NULL n?u l‡ kh·ch v„ng lai)
+    user_id INT, -- ID ng??i d√πng (NULL n?u l√† kh√°ch v√£ng lai)
     status NVARCHAR(20) CHECK (status IN ('pending_pay','pending', 'processing', 'shipping', 'completed', 'returned', 'cancelled')) NOT NULL DEFAULT 'pending',
     total_amount DECIMAL(10,2) NOT NULL,
     recipient_name NVARCHAR(100) NOT NULL,
@@ -202,7 +202,7 @@ create table tokenPassword (
 
 CREATE TABLE cart (
     id INT IDENTITY(1,1) PRIMARY KEY,
-    user_id INT NULL,  -- NULL n?u l‡ kh·ch v„ng lai
+    user_id INT NULL,  -- NULL n?u l√† kh√°ch v√£ng lai
     created_at DATETIME2 DEFAULT GETDATE(),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -244,14 +244,14 @@ CREATE TABLE messages (
     sender_id INT NOT NULL, -- ID c?a ng??i g?i (t? b?ng users)
     receiver_id INT NOT NULL, -- ID c?a ng??i nh?n (t? b?ng users)
     content NVARCHAR(MAX), -- N?i dung tin nh?n
-    image_url NVARCHAR(255), -- ???ng d?n ?nh n?u cÛ
-    is_read BIT DEFAULT 0, -- Tr?ng th·i ?„ ??c (0: ch?a ??c, 1: ?„ ??c)
+    image_url NVARCHAR(255), -- ???ng d?n ?nh n?u c√≥
+    is_read BIT DEFAULT 0, -- Tr?ng th√°i ?√£ ??c (0: ch?a ??c, 1: ?√£ ??c)
     created_at DATETIME2 DEFAULT GETDATE(),
     FOREIGN KEY (sender_id) REFERENCES users(id),
     FOREIGN KEY (receiver_id) REFERENCES users(id)
 );
 GO
 
--- Index ?? t?i ?u hÛa tÏm ki?m tin nh?n
+-- Index ?? t?i ?u h√≥a t√¨m ki?m tin nh?n
 CREATE INDEX idx_messages_sender_receiver ON messages(sender_id, receiver_id, created_at);
 GO

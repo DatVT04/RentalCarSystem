@@ -1,4 +1,4 @@
-USE [rental_car]
+ÔªøUSE [rental_car]
 GO
 SET IDENTITY_INSERT [dbo].[users] ON 
 GO
@@ -8,43 +8,43 @@ INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [
 GO
 INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (3, N'owner123', N'huy412004@gmail.com', N'$2a$10$sYcqeKA5lzaWHHEHojLoxe378EtZni5873xBA8YfljCthxCADhmoy', N'Owner', N'male', N'0987654321', N'https://img.freepik.com/premium-photo/customer-service-representative-digital-avatar-generative-ai_934475-9273.jpg?w=360', N'owner', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (4, N'user123', N'user123@gmail.com', N'$2a$10$XFl8Zk5zSXQo/PjN4df.k.twXuumSIvYM7jLRqVcvx2heTFVyW0Ca', N'Kh·ch 1', N'male', N'0912345678', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEONEP1EegBp0dESaBFaDbw8G9fJY_k7oY5A&s', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (4, N'user123', N'user123@gmail.com', N'$2a$10$XFl8Zk5zSXQo/PjN4df.k.twXuumSIvYM7jLRqVcvx2heTFVyW0Ca', N'Kh√°ch 1', N'male', N'0912345678', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEONEP1EegBp0dESaBFaDbw8G9fJY_k7oY5A&s', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
 INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (5, N'sale123', N'sale123@gmail.com', N'$2a$10$ojVPuuE5ZVLPE/wWOSRFIeNKLkBZh/CZeHE57ij4F.cfKYsdmIxAO', N'Sale', N'male', N'0978123456', N'https://img.freepik.com/premium-photo/customer-service-representative-digital-avatar-generative-ai_934475-9075.jpg', N'sale', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (6, N'user321', N'user321@gmail.com', N'$2a$10$7d0sV4kA8mSbQoJhGmROJumQnBeqtpzzMxz7yslGGf5Z1lhx85M7O', N'Kh·ch 2', N'male', N'0934567890', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl5nDZUl0qC61tJ7SVbzLmlO_jKALvNrV0iw&s', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (6, N'user321', N'user321@gmail.com', N'$2a$10$7d0sV4kA8mSbQoJhGmROJumQnBeqtpzzMxz7yslGGf5Z1lhx85M7O', N'Kh√°ch 2', N'male', N'0934567890', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl5nDZUl0qC61tJ7SVbzLmlO_jKALvNrV0iw&s', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (7, N'user1234', N'XiaoDing@gmail.com', N'$2a$10$Yw.YHLgW3IAdZAvicADymOZ4CqopkkbD90.DW7m.0Nz3PxuF/pvsK', N'Kh·ch 3', N'male', N'0956781234', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd8RTFkScmVoIQoLsbDscznUGlMz4BMT7oGWYqr8-TJ2FuN55cES6KfCmAxSe1aBM6qYs&usqp=CAU', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-03-29T17:43:12.3400000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (7, N'user1234', N'XiaoDing@gmail.com', N'$2a$10$Yw.YHLgW3IAdZAvicADymOZ4CqopkkbD90.DW7m.0Nz3PxuF/pvsK', N'Kh√°ch 3', N'male', N'0956781234', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd8RTFkScmVoIQoLsbDscznUGlMz4BMT7oGWYqr8-TJ2FuN55cES6KfCmAxSe1aBM6qYs&usqp=CAU', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-03-29T17:43:12.3400000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (8, N'user12345', N'Medusa@gmail.com', N'$2a$10$7Wjzn5r0OX2pcdowGvA39OBnpNP9.b4MvoaXH4terFmIpSN/htzqa', N'Kh·ch 4', N'female', N'0923456789', N'https://png.pngtree.com/png-vector/20231019/ourlarge/pngtree-avatar-of-a-brunette-man-png-image_10214156.png', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (8, N'user12345', N'Medusa@gmail.com', N'$2a$10$7Wjzn5r0OX2pcdowGvA39OBnpNP9.b4MvoaXH4terFmIpSN/htzqa', N'Kh√°ch 4', N'female', N'0923456789', N'https://png.pngtree.com/png-vector/20231019/ourlarge/pngtree-avatar-of-a-brunette-man-png-image_10214156.png', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (9, N'user12346', N'CaiLin@gmail.com', N'$2a$10$de4mBMbt0qfpuKCs0jF1I.wHr5/dfWMYQikSJ8aJqbHyZ8qH2IxXu', N'Kh·ch 5', N'female', N'0965432109', N'https://png.pngtree.com/png-clipart/20231020/original/pngtree-avatar-of-a-brunette-man-png-image_13379740.png', N'customer', N'pending', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (9, N'user12346', N'CaiLin@gmail.com', N'$2a$10$de4mBMbt0qfpuKCs0jF1I.wHr5/dfWMYQikSJ8aJqbHyZ8qH2IxXu', N'Kh√°ch 5', N'female', N'0965432109', N'https://png.pngtree.com/png-clipart/20231020/original/pngtree-avatar-of-a-brunette-man-png-image_13379740.png', N'customer', N'pending', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (10, N'user123467', N'HaiBoDong@gmail.com', N'$2a$10$5l/p6PdL8crcmH0qAcniEuQGjrlNc1GYrSWKcYVeloYoxtqhczhOe', N'Kh·ch 6', N'male', N'0998765432', N'https://static.vecteezy.com/ti/vetor-gratis/t2/14176992-jovem-homem-barbudo-gratis-vetor.jpg', N'customer', N'inactive', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-03-29T17:43:25.1266667' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (10, N'user123467', N'HaiBoDong@gmail.com', N'$2a$10$5l/p6PdL8crcmH0qAcniEuQGjrlNc1GYrSWKcYVeloYoxtqhczhOe', N'Kh√°ch 6', N'male', N'0998765432', N'https://static.vecteezy.com/ti/vetor-gratis/t2/14176992-jovem-homem-barbudo-gratis-vetor.jpg', N'customer', N'inactive', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-03-29T17:43:25.1266667' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (11, N'user3210', N'NalanYanran@gmail.com', N'$2a$10$.Aa9sv.fZvHA4HIS6vcfNuSGM.zlr3ldxMuo8FccCVDGIgjaYP8pq', N'Kh·ch 7', N'female', N'0943216789', N'https://thumbs.dreamstime.com/b/retrato-de-um-homem-novo-com-barba-e-penteado-avatar-masculino-vetor-105082137.jpg', N'customer', N'inactive', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (11, N'user3210', N'NalanYanran@gmail.com', N'$2a$10$.Aa9sv.fZvHA4HIS6vcfNuSGM.zlr3ldxMuo8FccCVDGIgjaYP8pq', N'Kh√°ch 7', N'female', N'0943216789', N'https://thumbs.dreamstime.com/b/retrato-de-um-homem-novo-com-barba-e-penteado-avatar-masculino-vetor-105082137.jpg', N'customer', N'inactive', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (12, N'user4321', N'GuYuan@gmail.com', N'$2a$10$JaWF8M.AaFAxaCcq7e2zK.TLravMOCQvxG3NXAAoKlDMVnL/PVzq6', N'Kh·ch 8', N'male', N'0981234567', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMELTwIC8sNsdL8iJDfpcvyZ0M08ktRXe9nd4dy2E2_KBfwlNiTCUyrTe5I-Dsz4s19b4&usqp=CAU', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (12, N'user4321', N'GuYuan@gmail.com', N'$2a$10$JaWF8M.AaFAxaCcq7e2zK.TLravMOCQvxG3NXAAoKlDMVnL/PVzq6', N'Kh√°ch 8', N'male', N'0981234567', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMELTwIC8sNsdL8iJDfpcvyZ0M08ktRXe9nd4dy2E2_KBfwlNiTCUyrTe5I-Dsz4s19b4&usqp=CAU', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (13, N'user54321', N'GuXun@gmail.com', N'$2a$10$s.runNoG/32WCxknTJrbs.6oqxowlmPDAqgFdvEgs7xcOOYyrEbQW', N'Kh·ch 9', N'male', N'0976543210', N'https://png.pngtree.com/png-clipart/20230930/original/pngtree-man-avatar-isolated-png-image_13022161.png', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (13, N'user54321', N'GuXun@gmail.com', N'$2a$10$s.runNoG/32WCxknTJrbs.6oqxowlmPDAqgFdvEgs7xcOOYyrEbQW', N'Kh√°ch 9', N'male', N'0976543210', N'https://png.pngtree.com/png-clipart/20230930/original/pngtree-man-avatar-isolated-png-image_13022161.png', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (14, N'user654321', N'YunShan@gmail.com', N'$2a$10$tdQRtCI1.aPdt.qbe2ee.eOrC2Tq2XQymcNE9z9.6GChMVWVRHGYy', N'Kh·ch 10', N'male', N'0919876543', N'https://thuvienanime.net/wp-content/uploads/2023/07/van-son-van-lam-tong-thuvienanime-1.jpg', N'customer', N'inactive', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (14, N'user654321', N'YunShan@gmail.com', N'$2a$10$tdQRtCI1.aPdt.qbe2ee.eOrC2Tq2XQymcNE9z9.6GChMVWVRHGYy', N'Kh√°ch 10', N'male', N'0919876543', N'https://thuvienanime.net/wp-content/uploads/2023/07/van-son-van-lam-tong-thuvienanime-1.jpg', N'customer', N'inactive', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (15, N'user7654321', N'FaMa@gmail.com', N'$2a$10$T7bONEjEQCimeWWQGFDPzuhsN10hiSSbQFFugWa.MUOA93XyLYWTu', N'Kh·ch 11', N'male', N'0921987654', N'https://i.pinimg.com/1200x/97/79/fc/9779fc310f1bf2f3ff9e17f14b5143e8.jpg', N'customer', N'pending', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (15, N'user7654321', N'FaMa@gmail.com', N'$2a$10$T7bONEjEQCimeWWQGFDPzuhsN10hiSSbQFFugWa.MUOA93XyLYWTu', N'Kh√°ch 11', N'male', N'0921987654', N'https://i.pinimg.com/1200x/97/79/fc/9779fc310f1bf2f3ff9e17f14b5143e8.jpg', N'customer', N'pending', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (16, N'ur123', N'HuJia@gmail.com', N'$2a$10$3iPVuYw6ScoAZULHkjrkyOcMSbMzVWMiQH35Pnw.de1rnGNjxN2ku', N'Kh·ch 12', N'female', N'0932198765', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-CatM7FqGbzGe3AT3aq-D1l30ymqbT4TCw&s', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (16, N'ur123', N'HuJia@gmail.com', N'$2a$10$3iPVuYw6ScoAZULHkjrkyOcMSbMzVWMiQH35Pnw.de1rnGNjxN2ku', N'Kh√°ch 12', N'female', N'0932198765', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-CatM7FqGbzGe3AT3aq-D1l30ymqbT4TCw&s', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (17, N'ur1234', N'LingYing@gmail.com', N'$2a$10$/wuejts3V40G0e/NGB/pOuM5ciGBGTL.fPPNoMDOvb.NVdQmgIjU.', N'Kh·ch 13', N'male', N'0954321987', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2JlHW6h7apfGjoJtk5PyJ7lyEn9hhSPCWKD4zMyakPR285cDGKLszvZGiGDz3bWx3IRI&usqp=CAU', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (17, N'ur1234', N'LingYing@gmail.com', N'$2a$10$/wuejts3V40G0e/NGB/pOuM5ciGBGTL.fPPNoMDOvb.NVdQmgIjU.', N'Kh√°ch 13', N'male', N'0954321987', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2JlHW6h7apfGjoJtk5PyJ7lyEn9hhSPCWKD4zMyakPR285cDGKLszvZGiGDz3bWx3IRI&usqp=CAU', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (18, N'ur1235', N'YanXiao@gmail.com', N'$2a$10$7QRPlkWt96Ah6r.5Frgiku3/QCZpAwMDPyLuvurl61Uqij.fqJbTC', N'Kh·ch 14', N'male', N'0965432198', N'https://i.pinimg.com/736x/97/43/df/9743df24110f180466d0247ba76e5415.jpg', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (18, N'ur1235', N'YanXiao@gmail.com', N'$2a$10$7QRPlkWt96Ah6r.5Frgiku3/QCZpAwMDPyLuvurl61Uqij.fqJbTC', N'Kh√°ch 14', N'male', N'0965432198', N'https://i.pinimg.com/736x/97/43/df/9743df24110f180466d0247ba76e5415.jpg', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (19, N'ur1236', N'QingLin@gmail.com', N'$2a$10$5UThIZ.2xCuTFxaq3Xtd4OQUDPPQLhsWWlbrWXJydo574exxXviKO', N'Kh·ch 15', N'female', N'0976543219', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP6wBKSzroOocvJhUH4Beh3q5bK02NU-zIJQ&s', N'customer', N'inactive', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (19, N'ur1236', N'QingLin@gmail.com', N'$2a$10$5UThIZ.2xCuTFxaq3Xtd4OQUDPPQLhsWWlbrWXJydo574exxXviKO', N'Kh√°ch 15', N'female', N'0976543219', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP6wBKSzroOocvJhUH4Beh3q5bK02NU-zIJQ&s', N'customer', N'inactive', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (20, N'ur1237', N'XiaoLei@gmail.com', N'$2a$10$WIhlpSF/rOFJ06PxhnhQ7OLriyxm2rkxRKyq2ThvpkRtKQTlzDPcS', N'Kh·ch 16', N'male', N'0987654329', N'https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/483123vwz/anh-mo-ta.png', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (20, N'ur1237', N'XiaoLei@gmail.com', N'$2a$10$WIhlpSF/rOFJ06PxhnhQ7OLriyxm2rkxRKyq2ThvpkRtKQTlzDPcS', N'Kh√°ch 16', N'male', N'0987654329', N'https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/483123vwz/anh-mo-ta.png', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (21, N'ur321', N'FengLei@gmail.com', N'$2a$10$f68ZbQbQru4.i8erDSO4quX27/d/Czq0jRBJXCbOmsHH/zE80tD8.', N'Kh·ch 17', N'male', N'0998765431', N'https://cafebiz.cafebizcdn.vn/162123310254002176/2022/12/29/avatar-2-versus-thanos-cgi-1-1671044444279520813159-1672281093701-16722810940541552675226.jpg', N'customer', N'pending', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (21, N'ur321', N'FengLei@gmail.com', N'$2a$10$f68ZbQbQru4.i8erDSO4quX27/d/Czq0jRBJXCbOmsHH/zE80tD8.', N'Kh√°ch 17', N'male', N'0998765431', N'https://cafebiz.cafebizcdn.vn/162123310254002176/2022/12/29/avatar-2-versus-thanos-cgi-1-1671044444279520813159-1672281093701-16722810940541552675226.jpg', N'customer', N'pending', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
-INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (22, N'ur4321', N'ZiYan@gmail.com', N'$2a$10$ky5Lacc8ObH4QwmJ8LGeauTWFq5CT2/cxQhM98ug/lSH4xGYU.J7i', N'Kh·ch 18', N'female', N'0909876543', N'https://media.ngoisao.vn/news/2012/12/31/nghiengdau_3112.jpg', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
+INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (22, N'ur4321', N'ZiYan@gmail.com', N'$2a$10$ky5Lacc8ObH4QwmJ8LGeauTWFq5CT2/cxQhM98ug/lSH4xGYU.J7i', N'Kh√°ch 18', N'female', N'0909876543', N'https://media.ngoisao.vn/news/2012/12/31/nghiengdau_3112.jpg', N'customer', N'active', CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2), CAST(N'2025-02-10T03:04:56.3300000' AS DateTime2))
 GO
 INSERT [dbo].[users] ([id], [username], [email], [password_hash], [full_name], [gender], [mobile], [avatar], [role], [status], [created_at], [updated_at]) VALUES (23, N'datvthe186351', N'datvthe186351@fpt.edu.vn', N'accGoogle$2a$10$h44bRXTsQJQCici5AoAukOA5Ce2fTeBpM6lg/cZ.Nwv.rlR7Jrsi.', N'Vu Tien Dat (K18 HL)', N'other', NULL, N'https://lh3.googleusercontent.com/a/ACg8ocLQS4GRdIkgNSZsWOVpDwwFWXGhLH-yQipv1mlpgBm2-tQ_Af4=s96-c', N'customer', N'active', CAST(N'2025-03-29T03:29:25.0933333' AS DateTime2), CAST(N'2025-03-29T03:29:25.0933333' AS DateTime2))
 GO
@@ -81,102 +81,102 @@ GO
 SET IDENTITY_INSERT [dbo].[categories] ON 
 GO
 
--- Level 1: Lo?i xe chÌnh (5 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (1, N'Xe Sedan', N'Xe sedan ph? thÙng v‡ cao c?p', NULL, 1, N'active')
+-- Level 1: Lo?i xe ch√≠nh (5 categories)
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (1, N'Xe Sedan', N'Xe sedan ph·ªï th√¥ng v√† cao c·∫•p', NULL, 1, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (2, N'Xe SUV', N'Xe SUV v‡ ??a hÏnh', NULL, 1, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (2, N'Xe SUV', N'Xe SUV v√† ƒë·ªãa h√¨nh', NULL, 1, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (3, N'Xe Van/MPV', N'Xe ?a d?ng v‡ gia ?Ïnh', NULL, 1, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (3, N'Xe Van/MPV', N'Xe ƒëa d·∫°ng v√† gia ƒë√¨nh', NULL, 1, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (4, N'Xe Sang', N'Xe h?ng sang v‡ cao c?p', NULL, 1, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (4, N'Xe Sang', N'Xe h·∫°ng sang v√† cao c·∫•p', NULL, 1, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (5, N'Xe ??c Bi?t', N'Xe th? thao, c? ?i?n v‡ ??c bi?t', NULL, 1, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (5, N'Xe ƒë·∫∑c Bi·ªát', N'Xe th·ªÉ thao, c·ªï ƒëi·ªÉn v√† ƒë·∫∑c bi·ªát', NULL, 1, N'active')
 GO
 
--- Level 2: Ph‚n lo?i theo lo?i xe Sedan (6 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (6, N'Sedan 4 ch?', N'Xe sedan nh? g?n 4 ch? ng?i', 1, 2, N'active')
+-- Level 2: Ph√¢n lo?i theo lo?i xe Sedan (6 categories)
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (6, N'Sedan 4 ch·ªó', N'Xe sedan nh·ªè g·ªçn 4 ch·ªó ng·ªìi', 1, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (7, N'Sedan 5 ch?', N'Xe sedan tiÍu chu?n 5 ch? ng?i', 1, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (7, N'Sedan 5 ch·ªó', N'Xe sedan ti√™u chu·∫©n 5 ch·ªó ng·ªìi', 1, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (8, N'SUV 5 ch?', N'Xe SUV c? nh? v‡ trung 5 ch?', 2, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (8, N'SUV 5 ch·ªó', N'Xe SUV c·ª° nh·ªè v√† trung 5 ch·ªó', 2, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (9, N'SUV 7 ch?', N'Xe SUV c? l?n 7 ch?', 2, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (9, N'SUV 7 ch·ªó', N'Xe SUV c·ª° l·ªõn 7 ch·ªó', 2, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (10, N'Van 7 ch?', N'Xe van 7 ch? ng?i', 3, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (10, N'Van 7 ch·ªó', N'Xe van 7 ch·ªó ng·ªìi', 3, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (11, N'Van 9-16 ch?', N'Xe van l?n ?a d?ng', 3, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (11, N'Van 9-16 ch·ªó', N'Xe van l·ªõn ƒëa d·ª•ng', 3, 2, N'active')
 GO
 
 -- Level 3: Chi ti?t Sedan 4 ch? (4 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (12, N'Toyota Vios', N'Xe Toyota Vios c·c ??i', 7, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (12, 'Toyota Vios', N'Xe Toyota Vios c√°c ƒë·ªùi', 7, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (13, N'Honda City', N'Xe Honda City c·c ??i', 7, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (13, N'Honda City', N'Xe Honda City c√°c ƒë·ªùi', 7, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (14, N'Hyundai Accent', N'Xe Hyundai Accent c·c ??i', 7, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (14, N'Hyundai Accent', N'Xe Hyundai Accent c√°c ƒë·ªùi', 7, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (15, N'Mazda 3', N'Xe Mazda 3 c·c ??i', 7, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (15, N'Mazda 3', N'Xe Mazda 3 c√°c ƒë·ªùi', 7, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (16, N'Kia Cerato', N'Xe Kia Cerato c·c ??i', 7, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (16, N'Kia Cerato', N'Xe Kia Cerato c√°c ƒë·ªùi', 7, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (17, N'Honda Civic', N'Xe Honda Civic c·c ??i', 7, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (17, N'Honda Civic', N'Xe Honda Civic c√°c ƒë·ªùi', 7, 3, N'active')
 GO
 
 -- Level 3: Chi ti?t SUV 5 ch? (6 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (18, N'Honda CR-V', N'Xe Honda CR-V c·c ??i', 8, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (18, N'Honda CR-V', N'Xe Honda CR-V c√°c ƒë·ªùi', 8, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (19, N'Mazda CX-5', N'Xe Mazda CX-5 c·c ??i', 8, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (19, N'Mazda CX-5', N'Xe Mazda CX-5 c√°c ƒë·ªùi', 8, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (20, N'Ford EcoSport', N'Xe Ford EcoSport c·c ??i', 8, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (20, N'Ford EcoSport', N'Xe Ford EcoSport c√°c ƒë·ªùi', 8, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (21, N'Hyundai Tucson', N'Xe Hyundai Tucson c·c ??i', 8, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (21, N'Hyundai Tucson', N'Xe Hyundai Tucson c√°c ƒë·ªùi', 8, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (22, N'Kia Seltos', N'Xe Kia Seltos c·c i', 8, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (22, N'Kia Seltos', N'Xe Kia Seltos c√°c ƒë·ªùi', 8, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (23, N'Toyota Corolla Cross', N'Xe Toyota Corolla Cross c·c ??i', 8, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (23, N'Toyota Corolla Cross', N'Xe Toyota Corolla Cross c√°c ƒë·ªùi', 8, 3, N'active')
 GO
 
 -- Level 3: Chi ti?t SUV 7 ch? (5 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (24, N'Toyota Fortuner', N'Xe Toyota Fortuner c·c ??i', 9, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (24, N'Toyota Fortuner', N'Xe Toyota Fortuner c√°c ƒë·ªùi', 9, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (25, N'Ford Everest', N'Xe Ford Everest c·c ??i', 9, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (25, N'Ford Everest', N'Xe Ford Everest c√°c ƒë·ªùi', 9, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (26, N'Mazda CX-8', N'Xe Mazda CX-8 c·c ??i', 9, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (26, N'Mazda CX-8', N'Xe Mazda CX-8 c√°c ƒë·ªùi', 9, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (27, N'Hyundai SantaFe', N'Xe Hyundai SantaFe c·c ??i', 9, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (27, N'Hyundai SantaFe', N'Xe Hyundai SantaFe c√°c ƒë·ªùi', 9, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (28, N'Mitsubishi Xpander', N'Xe Mitsubishi Xpander c·c ??i', 9, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (28, N'Mitsubishi Xpander', N'Xe Mitsubishi Xpander c√°c ƒë·ªùi', 9, 3, N'active')
 GO
 
 -- Level 3: Chi ti?t Van 7 ch? (4 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (29, N'Toyota Innova', N'Xe Toyota Innova c·c ??i', 10, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (29, N'Toyota Innova', N'Xe Toyota Innova c√°c ƒë·ªùi', 10, 3, N'active')
 GO
 INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (30, N'Mitsubishi Xpander Cross', N'Xe Mitsubishi Xpander Cross', 10, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (31, N'Suzuki Ertiga', N'Xe Suzuki Ertiga c·c ??i', 10, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (31, N'Suzuki Ertiga', N'Xe Suzuki Ertiga c√°c ƒë·ªùi', 10, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (32, N'Kia Carnival', N'Xe Kia Carnival cao c?p', 10, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (32, N'Kia Carnival', N'Xe Kia Carnival cao c·∫•p', 10, 3, N'active')
 GO
 
 -- Level 3: Chi ti?t Van 9-16 ch? (3 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (33, N'Ford Transit', N'Xe Ford Transit 16 ch?', 11, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (33, N'Ford Transit', N'Xe Ford Transit 16 ch·ªó', 11, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (34, N'Hyundai Solati', N'Xe Hyundai Solati 16 ch?', 11, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (34, N'Hyundai Solati', N'Xe Hyundai Solati 16 ch√µ', 11, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (35, N'Mercedes Sprinter', N'Xe Mercedes Sprinter cao c?p', 11, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (35, N'Mercedes Sprinter', N'Xe Mercedes Sprinter cao c·∫•p', 11, 3, N'active')
 GO
 
 -- Level 2: Xe Sang (6 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (36, N'Sedan Sang', N'Xe sedan h?ng sang', 4, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (36, N'Sedan Sang', N'Xe sedan h·∫°ng sang', 4, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (37, N'SUV Sang', N'Xe SUV h?ng sang', 4, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (37, N'SUV Sang', N'Xe SUV h·∫°ng sang', 4, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (38, N'Sedan 4 ch? Nh?', N'Xe sedan c? nh? ti?t ki?m', 6, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (38, N'Sedan 4 ch·ªó Nh·ªè', N'Xe sedan c·ª° nh·ªè ti·∫øt ki·ªám', 6, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (39, N'Sedan 4 ch? Trung', N'Xe sedan 4 ch? c? trung', 6, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (39, N'Sedan 4 ch·ªó Trung', N'Xe sedan 4 ch·ªó c·ª° trung', 6, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (40, N'Xe Th? Thao', N'Xe th? thao v‡ coupe', 5, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (40, N'Xe Th·ªÉ Thao', N'Xe th·ªÉ thao v√† coupe', 5, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (41, N'Xe B·n T?i', N'Xe b·n t?i pickup', 5, 2, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (41, N'Xe B√°n T·∫£i', N'Xe b√°n t·∫£i pickup', 5, 2, N'active')
 GO
 
 -- Level 3: Sedan Sang (6 categories)
@@ -202,7 +202,7 @@ INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [s
 GO
 INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (51, N'Lexus RX', N'Xe Lexus RX', 37, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (52, N'Range Rover', N'Xe Range Rover c·c dÚng', 37, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (52, N'Range Rover', N'Xe Range Rover c√°c d√≤ng', 37, 3, N'active')
 GO
 
 -- Level 3: Sedan 4 ch? Nh? (4 categories)
@@ -224,31 +224,31 @@ INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [s
 GO
 
 -- Level 3: Xe Th? Thao (4 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (60, N'Mazda MX-5', N'Xe Mazda MX-5 mui tr?n', 40, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (60, N'Mazda MX-5', N'Xe Mazda MX-5 mui tr·∫ßn', 40, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (61, N'Ford Mustang', N'Xe Ford Mustang th? thao', 40, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (61, N'Ford Mustang', N'Xe Ford Mustang th·ªÉ thao', 40, 3, N'active')
 GO
 INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (62, N'BMW Z4', N'Xe BMW Z4 roadster', 40, 3, N'active')
 GO
 INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (63, N'Porsche 911', N'Xe Porsche 911', 40, 3, N'active')
 GO
 
--- Level 3: Xe B·n T?i (4 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (64, N'Ford Ranger', N'Xe Ford Ranger b·n t?i', 41, 3, N'active')
+-- Level 3: Xe B√°n T?i (4 categories)
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (64, N'Ford Ranger', N'Xe Ford Ranger b√°n t·∫£i', 41, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (65, N'Toyota Hilux', N'Xe Toyota Hilux b·n t?i', 41, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (65, N'Toyota Hilux', N'Xe Toyota Hilux b√°n t·∫£i', 41, 3, N'active')
 GO
 INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (66, N'Mitsubishi Triton', N'Xe Mitsubishi Triton', 41, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (67, N'Mazda BT-50', N'Xe Mazda BT-50 b·n t?i', 41, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (67, N'Mazda BT-50', N'Xe Mazda BT-50 b√°n t·∫£i', 41, 3, N'active')
 GO
 
--- ThÍm c·c categories b? sung ?? ?? 71 (4 categories)
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (68, N'Xe ?i?n', N'Xe ?i?n c·c lo?i', 5, 2, N'active')
+-- Th√™m c√°c categories b? sung ?? ?? 71 (4 categories)
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (68, N'Xe ƒëi·ªán', N'Xe ƒëi·ªán c√°c lo·∫°i', 5, 2, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (69, N'VinFast VF8', N'Xe VinFast VF8 ?i?n', 68, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (69, N'VinFast VF8', N'Xe VinFast VF8 ƒëi·ªán', 68, 3, N'active')
 GO
-INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (70, N'VinFast VF9', N'Xe VinFast VF9 ?i?n', 68, 3, N'active')
+INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (70, N'VinFast VF9', N'Xe VinFast VF9 ƒëi·ªán', 68, 3, N'active')
 GO
 INSERT [dbo].[categories] ([id], [name], [description], [parent_id], [level], [status]) VALUES (71, N'Tesla Model 3', N'Xe Tesla Model 3', 68, 3, N'active')
 GO
@@ -262,16 +262,16 @@ GO
 
 -- car 1: Toyota Vios
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (1, N'Toyota Vios 2023', 12, N'<p><strong>Toyota Vios 2023 ñ Sedan Ti?t Ki?m, B?n B?, Ph˘ H?p M?i Nhu C?u</strong></p>
-<p>?? <strong>Toyota Vios 2023</strong> l‡ m?u sedan 5 ch? ph? bi?n nh?t t?i Vi?t Nam, l?a ch?n ho‡n h?o cho gia ?Ïnh v‡ doanh nghi?p v?i chi phÌ h?p l˝.</p>
+VALUES (1, N'Toyota Vios 2023', 12, N'<p><strong>Toyota Vios 2023 ¬ñ Sedan Ti?t Ki?m, B?n B?, Ph√π H?p M?i Nhu C?u</strong></p>
+<p>?? <strong>Toyota Vios 2023</strong> l√† m?u sedan 5 ch? ph? bi?n nh?t t?i Vi?t Nam, l?a ch?n ho√†n h?o cho gia ?√¨nh v√† doanh nghi?p v?i chi ph√≠ h?p l√Ω.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? ti?t ki?m</strong>: 1.5L VVT-i, tiÍu th? nhiÍn li?u ch? 5.3L/100km.<br>
-? <strong>N?i th?t r?ng r„i</strong>: 5 ch? ng?i tho?i m·i, h? th?ng ?i?u hÚa m·t l?nh.<br>
-? <strong>An to‡n v??t tr?i</strong>: H? th?ng phanh ABS, EBD, 2 t˙i khÌ.<br>
-? <strong>V?n h‡nh Ím ·i</strong>: H?p s? t? ??ng CVT, l·i nh? nh‡ng trong th‡nh ph?.<br>
-? <strong>Gi· thuÍ c?nh tranh</strong>: Ph˘ h?p cho thuÍ theo ng‡y, th·ng ho?c h?p ??ng d‡i h?n.<br>
-? <strong>Ph˘ h?p m?i ??a hÏnh</strong>: ?i cÙng t·c, du l?ch gia ?Ïnh, d?ch v? taxi cÙng ngh?.</p>
-<p>?? <strong>ThuÍ ngay Toyota Vios 2023 ?? tr?i nghi?m s? ti?n l?i v‡ ti?t ki?m!</strong> ?</p>', 
+? <strong>??ng c? ti?t ki?m</strong>: 1.5L VVT-i, ti√™u th? nhi√™n li?u ch? 5.3L/100km.<br>
+? <strong>N?i th?t r?ng r√£i</strong>: 5 ch? ng?i tho?i m√°i, h? th?ng ?i?u h√≤a m√°t l?nh.<br>
+? <strong>An to√†n v??t tr?i</strong>: H? th?ng phanh ABS, EBD, 2 t√∫i kh√≠.<br>
+? <strong>V?n h√†nh √™m √°i</strong>: H?p s? t? ??ng CVT, l√°i nh? nh√†ng trong th√†nh ph?.<br>
+? <strong>Gi√° thu√™ c?nh tranh</strong>: Ph√π h?p cho thu√™ theo ng√†y, th√°ng ho?c h?p ??ng d√†i h?n.<br>
+? <strong>Ph√π h?p m?i ??a h√¨nh</strong>: ?i c√¥ng t√°c, du l?ch gia ?√¨nh, d?ch v? taxi c√¥ng ngh?.</p>
+<p>?? <strong>Thu√™ ngay Toyota Vios 2023 ?? tr?i nghi?m s? ti?n l?i v√† ti?t ki?m!</strong> ?</p>', 
 CAST(600000.00 AS Decimal(10, 2)), CAST(500000.00 AS Decimal(10, 2)), 
 N'https://i1-vnexpress.vnecdn.net/2023/05/08/vios-1683532902-8865-1683532941.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=m2w2CqYm7Lbnu2DcOgTz4w', 
 N'active', 1, N'1', 
@@ -280,16 +280,16 @@ GO
 
 -- car 2: Honda City
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (2, N'Honda City 2024', 13, N'<p><strong>Honda City 2024 ñ Sedan Sang Tr?ng, CÙng Ngh? Hi?n ??i</strong></p>
-<p>?? <strong>Honda City 2024</strong> n?i b?t v?i thi?t k? th? thao, n?i th?t cao c?p v‡ cÙng ngh? an to‡n h‡ng ??u ph‚n kh˙c sedan h?ng B.</p>
+VALUES (2, N'Honda City 2024', 13, N'<p><strong>Honda City 2024 ¬ñ Sedan Sang Tr?ng, C√¥ng Ngh? Hi?n ??i</strong></p>
+<p>?? <strong>Honda City 2024</strong> n?i b?t v?i thi?t k? th? thao, n?i th?t cao c?p v√† c√¥ng ngh? an to√†n h√†ng ??u ph√¢n kh√∫c sedan h?ng B.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? m?nh m?</strong>: 1.5L DOHC i-VTEC, cÙng su?t 119 m„ l?c.<br>
-? <strong>Thi?t k? th? thao</strong>: Ngo?i th?t n?ng ??ng, ?Ën LED full, la-z?ng h?p kim 16 inch.<br>
-? <strong>N?i th?t sang tr?ng</strong>: Gh? da, m‡n hÏnh c?m ?ng 8 inch, k?t n?i Apple CarPlay/Android Auto.<br>
-? <strong>CÙng ngh? an to‡n</strong>: Honda Sensing v?i 6 t˙i khÌ, c?nh b·o va ch?m, gi? l‡n ???ng.<br>
-? <strong>Ti?t ki?m nhiÍn li?u</strong>: Ch? 5.0L/100km, ph˘ h?p di chuy?n ???ng d‡i.<br>
-? <strong>Ph˘ h?p cho</strong>: CÙng t·c, du l?ch, ??a ?Ûn s‚n bay, d?ch v? cao c?p.</p>
-<p>?? <strong>??t xe Honda City 2024 ngay hÙm nay ?? tr?i nghi?m ??ng c?p!</strong> ?</p>', 
+? <strong>??ng c? m?nh m?</strong>: 1.5L DOHC i-VTEC, c√¥ng su?t 119 m√£ l?c.<br>
+? <strong>Thi?t k? th? thao</strong>: Ngo?i th?t n?ng ??ng, ?√®n LED full, la-z?ng h?p kim 16 inch.<br>
+? <strong>N?i th?t sang tr?ng</strong>: Gh? da, m√†n h√¨nh c?m ?ng 8 inch, k?t n?i Apple CarPlay/Android Auto.<br>
+? <strong>C√¥ng ngh? an to√†n</strong>: Honda Sensing v?i 6 t√∫i kh√≠, c?nh b√°o va ch?m, gi? l√†n ???ng.<br>
+? <strong>Ti?t ki?m nhi√™n li?u</strong>: Ch? 5.0L/100km, ph√π h?p di chuy?n ???ng d√†i.<br>
+? <strong>Ph√π h?p cho</strong>: C√¥ng t√°c, du l?ch, ??a ?√≥n s√¢n bay, d?ch v? cao c?p.</p>
+<p>?? <strong>??t xe Honda City 2024 ngay h√¥m nay ?? tr?i nghi?m ??ng c?p!</strong> ?</p>', 
 CAST(700000.00 AS Decimal(10, 2)), CAST(600000.00 AS Decimal(10, 2)), 
 N'https://otohondaquan2.vn/wp-content/uploads/2023/02/honda-city-rs-2024-10.jpg', 
 N'active', 0, N'0', 
@@ -298,16 +298,16 @@ GO
 
 -- car 3: Mazda CX-5
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (3, N'Mazda CX-5 2024', 19, N'<p><strong>Mazda CX-5 2024 ñ SUV Sang Tr?ng, V?n H‡nh M??t M‡</strong></p>
-<p>?? <strong>Mazda CX-5 2024</strong> l‡ m?u SUV 5 ch? cao c?p v?i thi?t k? KODO ??y c?m h?ng, ??ng c? SkyActiv v‡ cÙng ngh? i-Activsense tiÍn ti?n.</p>
+VALUES (3, N'Mazda CX-5 2024', 19, N'<p><strong>Mazda CX-5 2024 ¬ñ SUV Sang Tr?ng, V?n H√†nh M??t M√†</strong></p>
+<p>?? <strong>Mazda CX-5 2024</strong> l√† m?u SUV 5 ch? cao c?p v?i thi?t k? KODO ??y c?m h?ng, ??ng c? SkyActiv v√† c√¥ng ngh? i-Activsense ti√™n ti?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? m?nh m?</strong>: 2.0L SkyActiv-G ho?c 2.5L Turbo, v?n h‡nh Ím ·i.<br>
+? <strong>??ng c? m?nh m?</strong>: 2.0L SkyActiv-G ho?c 2.5L Turbo, v?n h√†nh √™m √°i.<br>
 ? <strong>Thi?t k? ??ng c?p</strong>: Ngo?i th?t th? thao, n?i th?t da Nappa cao c?p.<br>
-? <strong>CÙng ngh? hi?n ??i</strong>: M‡n hÏnh 10.25 inch, h? th?ng ‚m thanh Bose 10 loa.<br>
-? <strong>An to‡n to‡n di?n</strong>: i-Activsense v?i 6 t˙i khÌ, c?nh b·o ?i?m m˘, ki?m so·t h‡nh trÏnh.<br>
-? <strong>KhÙng gian r?ng r„i</strong>: 5 ch? ng?i sang tr?ng, c?p xe 442 lÌt.<br>
-? <strong>Ph˘ h?p cho</strong>: Du l?ch gia ?Ïnh, cÙng t·c xa, s? ki?n quan tr?ng.</p>
-<p>?? <strong>ThuÍ Mazda CX-5 2024 ?? tr?i nghi?m s? kh·c bi?t!</strong> ??</p>', 
+? <strong>C√¥ng ngh? hi?n ??i</strong>: M√†n h√¨nh 10.25 inch, h? th?ng √¢m thanh Bose 10 loa.<br>
+? <strong>An to√†n to√†n di?n</strong>: i-Activsense v?i 6 t√∫i kh√≠, c?nh b√°o ?i?m m√π, ki?m so√°t h√†nh tr√¨nh.<br>
+? <strong>Kh√¥ng gian r?ng r√£i</strong>: 5 ch? ng?i sang tr?ng, c?p xe 442 l√≠t.<br>
+? <strong>Ph√π h?p cho</strong>: Du l?ch gia ?√¨nh, c√¥ng t√°c xa, s? ki?n quan tr?ng.</p>
+<p>?? <strong>Thu√™ Mazda CX-5 2024 ?? tr?i nghi?m s? kh√°c bi?t!</strong> ??</p>', 
 CAST(1200000.00 AS Decimal(10, 2)), CAST(1000000.00 AS Decimal(10, 2)), 
 N'https://www.planetemazda.com/wp-content/uploads/2023/08/mazda-CX-5-models-KURO.jpg', 
 N'active', 0, N'0', 
@@ -316,16 +316,16 @@ GO
 
 -- car 4: Toyota Fortuner
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (4, N'Toyota Fortuner 2024', 24, N'<p><strong>Toyota Fortuner 2024 ñ SUV 7 Ch? M?nh M?, V??t M?i ??a HÏnh</strong></p>
-<p>?? <strong>Toyota Fortuner 2024</strong> l‡ m?u SUV 7 ch? h‡ng ??u v?i kh? n?ng v?n h‡nh m?nh m?, ph˘ h?p cho gia ?Ïnh ?Ùng ng??i v‡ c·c chuy?n ?i xa.</p>
+VALUES (4, N'Toyota Fortuner 2024', 24, N'<p><strong>Toyota Fortuner 2024 ¬ñ SUV 7 Ch? M?nh M?, V??t M?i ??a H√¨nh</strong></p>
+<p>?? <strong>Toyota Fortuner 2024</strong> l√† m?u SUV 7 ch? h√†ng ??u v?i kh? n?ng v?n h√†nh m?nh m?, ph√π h?p cho gia ?√¨nh ?√¥ng ng??i v√† c√°c chuy?n ?i xa.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? kh?e</strong>: 2.4L/2.8L Turbo Diesel, cÙng su?t 201 m„ l?c.<br>
-? <strong>Thi?t k? nam tÌnh</strong>: Ngo?i th?t h?m h?, ?Ën LED, la-z?ng 18 inch.<br>
-? <strong>7 ch? ng?i r?ng r„i</strong>: Gh? da, h‡ng gh? th? 3 g?p ?i?n, ?i?u hÚa 3 v˘ng ??c l?p.<br>
-? <strong>V??t ??a hÏnh</strong>: H? d?n ??ng 4WD, ch? ?? l·i ?a ??a hÏnh.<br>
-? <strong>An to‡n cao c?p</strong>: 7 t˙i khÌ, h? th?ng TSS (Toyota Safety Sense).<br>
-? <strong>Ph˘ h?p cho</strong>: Du l?ch gia ?Ïnh, ??a ?Ûn ?o‡n, ?i mi?n n˙i, bi?n.</p>
-<p>?? <strong>??t thuÍ Toyota Fortuner 2024 ngay ?? chinh ph?c m?i h‡nh trÏnh!</strong> ???</p>', 
+? <strong>??ng c? kh?e</strong>: 2.4L/2.8L Turbo Diesel, c√¥ng su?t 201 m√£ l?c.<br>
+? <strong>Thi?t k? nam t√≠nh</strong>: Ngo?i th?t h?m h?, ?√®n LED, la-z?ng 18 inch.<br>
+? <strong>7 ch? ng?i r?ng r√£i</strong>: Gh? da, h√†ng gh? th? 3 g?p ?i?n, ?i?u h√≤a 3 v√πng ??c l?p.<br>
+? <strong>V??t ??a h√¨nh</strong>: H? d?n ??ng 4WD, ch? ?? l√°i ?a ??a h√¨nh.<br>
+? <strong>An to√†n cao c?p</strong>: 7 t√∫i kh√≠, h? th?ng TSS (Toyota Safety Sense).<br>
+? <strong>Ph√π h?p cho</strong>: Du l?ch gia ?√¨nh, ??a ?√≥n ?o√†n, ?i mi?n n√∫i, bi?n.</p>
+<p>?? <strong>??t thu√™ Toyota Fortuner 2024 ngay ?? chinh ph?c m?i h√†nh tr√¨nh!</strong> ???</p>', 
 CAST(1500000.00 AS Decimal(10, 2)), CAST(1300000.00 AS Decimal(10, 2)), 
 N'https://images.carexpert.com.au/resize/3000/-/cms/v1/media/2024-04-2024-toyota-fortuner-crusade-my24-stills-13.jpg', 
 N'active', 0, N'0', 
@@ -334,16 +334,16 @@ GO
 
 -- car 5: Ford Everest
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (5, N'Ford Everest 2024', 25, N'<p><strong>Ford Everest 2024 ñ SUV 7 Ch? Cao C?p, CÙng Ngh? V??t Tr?i</strong></p>
-<p>?? <strong>Ford Everest 2024</strong> l‡ m?u SUV 7 ch? th? h? m?i v?i thi?t k? hi?n ??i, ??ng c? m?nh m? v‡ trang b? cÙng ngh? an to‡n h‡ng ??u ph‚n kh˙c.</p>
+VALUES (5, N'Ford Everest 2024', 25, N'<p><strong>Ford Everest 2024 ¬ñ SUV 7 Ch? Cao C?p, C√¥ng Ngh? V??t Tr?i</strong></p>
+<p>?? <strong>Ford Everest 2024</strong> l√† m?u SUV 7 ch? th? h? m?i v?i thi?t k? hi?n ??i, ??ng c? m?nh m? v√† trang b? c√¥ng ngh? an to√†n h√†ng ??u ph√¢n kh√∫c.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Bi-Turbo</strong>: 2.0L Bi-Turbo Diesel, 210 m„ l?c, mÙ-men xo?n 500Nm.<br>
-? <strong>Thi?t k? ??ng c?p</strong>: L??i t?n nhi?t Matrix, ?Ën LED thÙng minh.<br>
-? <strong>N?i th?t sang tr?ng</strong>: M‡n hÏnh 12 inch, gh? da cao c?p, c?a s? tr?i to‡n c?nh.<br>
-? <strong>CÙng ngh? an to‡n</strong>: Ford Co-Pilot360 v?i 9 t˙i khÌ.<br>
-? <strong>Kh? n?ng v??t ??a hÏnh</strong>: H? 4WD ?i?u khi?n ?i?n t?, ch? ?? l·i 7 ??a hÏnh.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh cao c?p, cÙng t·c VIP, tour du l?ch h?ng sang.</p>
-<p>?? <strong>ThuÍ Ford Everest 2024 ñ ??ng c?p trong t?m tay!</strong> ?</p>', 
+? <strong>??ng c? Bi-Turbo</strong>: 2.0L Bi-Turbo Diesel, 210 m√£ l?c, m√¥-men xo?n 500Nm.<br>
+? <strong>Thi?t k? ??ng c?p</strong>: L??i t?n nhi?t Matrix, ?√®n LED th√¥ng minh.<br>
+? <strong>N?i th?t sang tr?ng</strong>: M√†n h√¨nh 12 inch, gh? da cao c?p, c?a s? tr?i to√†n c?nh.<br>
+? <strong>C√¥ng ngh? an to√†n</strong>: Ford Co-Pilot360 v?i 9 t√∫i kh√≠.<br>
+? <strong>Kh? n?ng v??t ??a h√¨nh</strong>: H? 4WD ?i?u khi?n ?i?n t?, ch? ?? l√°i 7 ??a h√¨nh.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh cao c?p, c√¥ng t√°c VIP, tour du l?ch h?ng sang.</p>
+<p>?? <strong>Thu√™ Ford Everest 2024 ¬ñ ??ng c?p trong t?m tay!</strong> ?</p>', 
 CAST(1600000.00 AS Decimal(10, 2)), CAST(1400000.00 AS Decimal(10, 2)), 
 N'https://thaibinhford.com/public/upload/images/hinh_sanpham/ford-everest-the-he-moi-2024-platinum-4x4-at-ford-everest-the-he-moi-2024-platinum-4x4-at-1712982260306.jpg', 
 N'active', 1, N'2', 
@@ -352,16 +352,16 @@ GO
 
 -- car 6: Toyota Innova
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (6, N'Toyota Innova Cross 2024', 29, N'<p><strong>Toyota Innova Cross 2024 ñ MPV 7 Ch? ?a N?ng, Ti?n Nghi V??t Tr?i</strong></p>
-<p>?? <strong>Toyota Innova Cross 2024</strong> l‡ m?u MPV 7 ch? th? h? m?i v?i thi?t k? crossover hi?n ??i, khÙng gian r?ng r„i v‡ trang b? cÙng ngh? tiÍn ti?n.</p>
+VALUES (6, N'Toyota Innova Cross 2024', 29, N'<p><strong>Toyota Innova Cross 2024 ¬ñ MPV 7 Ch? ?a N?ng, Ti?n Nghi V??t Tr?i</strong></p>
+<p>?? <strong>Toyota Innova Cross 2024</strong> l√† m?u MPV 7 ch? th? h? m?i v?i thi?t k? crossover hi?n ??i, kh√¥ng gian r?ng r√£i v√† trang b? c√¥ng ngh? ti√™n ti?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Hybrid</strong>: 2.0L k?t h?p ??ng c? ?i?n, ti?t ki?m nhiÍn li?u t?i ?u.<br>
+? <strong>??ng c? Hybrid</strong>: 2.0L k?t h?p ??ng c? ?i?n, ti?t ki?m nhi√™n li?u t?i ?u.<br>
 ? <strong>Thi?t k? crossover</strong>: Ngo?i th?t tr? trung, g?m xe cao 200mm.<br>
-? <strong>KhÙng gian 7 ch?</strong>: H‡ng gh? 2 ki?u Captain Seat, ?i?u hÚa 3 v˘ng.<br>
-? <strong>CÙng ngh? hi?n ??i</strong>: M‡n hÏnh 10 inch, Toyota Safety Sense.<br>
-? <strong>V?n h‡nh Ím ·i</strong>: H? th?ng treo c?i ti?n, c·ch ‚m t?t.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh, ??a ?Ûn s‚n bay, tour du l?ch 7 ng??i.</p>
-<p>?? <strong>??t xe Toyota Innova Cross 2024 ngay hÙm nay!</strong> ?</p>', 
+? <strong>Kh√¥ng gian 7 ch?</strong>: H√†ng gh? 2 ki?u Captain Seat, ?i?u h√≤a 3 v√πng.<br>
+? <strong>C√¥ng ngh? hi?n ??i</strong>: M√†n h√¨nh 10 inch, Toyota Safety Sense.<br>
+? <strong>V?n h√†nh √™m √°i</strong>: H? th?ng treo c?i ti?n, c√°ch √¢m t?t.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh, ??a ?√≥n s√¢n bay, tour du l?ch 7 ng??i.</p>
+<p>?? <strong>??t xe Toyota Innova Cross 2024 ngay h√¥m nay!</strong> ?</p>', 
 CAST(1000000.00 AS Decimal(10, 2)), CAST(850000.00 AS Decimal(10, 2)), 
 N'https://drive.gianhangvn.com/image/9lhcu5l-2519801j24864.jpg', 
 N'active', 0, N'0', 
@@ -370,16 +370,16 @@ GO
 
 -- car 7: Ford Transit
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (7, N'Ford Transit 16 Ch? 2024', 33, N'<p><strong>Ford Transit 16 Ch? 2024 ñ Xe Kh·ch ?a D?ng, R?ng R„i, An To‡n</strong></p>
-<p>?? <strong>Ford Transit 16 ch? 2024</strong> l‡ l?a ch?n h‡ng ??u cho d?ch v? v?n chuy?n h‡nh kh·ch, tour du l?ch v‡ ??a ?Ûn nhÛm ?Ùng ng??i v?i khÙng gian r?ng r„i v‡ ti?n nghi.</p>
+VALUES (7, N'Ford Transit 16 Ch? 2024', 33, N'<p><strong>Ford Transit 16 Ch? 2024 ¬ñ Xe Kh√°ch ?a D?ng, R?ng R√£i, An To√†n</strong></p>
+<p>?? <strong>Ford Transit 16 ch? 2024</strong> l√† l?a ch?n h√†ng ??u cho d?ch v? v?n chuy?n h√†nh kh√°ch, tour du l?ch v√† ??a ?√≥n nh√≥m ?√¥ng ng??i v?i kh√¥ng gian r?ng r√£i v√† ti?n nghi.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? m?nh m?</strong>: 2.0L TDCi Turbo Diesel, 170 m„ l?c.<br>
-? <strong>16 ch? ng?i ti?n nghi</strong>: Gh? b?c da/n?, ?i?u hÚa 2 chi?u, c?a s? tr?i.<br>
-? <strong>Khoang h‡nh l˝ r?ng</strong>: C?p sau v‡ khoang trÍn ??u ?? ??.<br>
-? <strong>An to‡n cao</strong>: ABS, EBD, c?nh b·o ·p su?t l?p, camera l˘i.<br>
-? <strong>Ti?n nghi gi?i trÌ</strong>: M‡n hÏnh DVD, micro karaoke (t˘y ch?n).<br>
-? <strong>Ph˘ h?p cho</strong>: Tour du l?ch, ??a ?Ûn cÙng nh‚n, s? ki?n, d?ch v? limousine.</p>
-<p>?? <strong>ThuÍ Ford Transit 16 ch? ñ Gi?i ph·p v?n chuy?n nhÛm ho‡n h?o!</strong> ??</p>', 
+? <strong>??ng c? m?nh m?</strong>: 2.0L TDCi Turbo Diesel, 170 m√£ l?c.<br>
+? <strong>16 ch? ng?i ti?n nghi</strong>: Gh? b?c da/n?, ?i?u h√≤a 2 chi?u, c?a s? tr?i.<br>
+? <strong>Khoang h√†nh l√Ω r?ng</strong>: C?p sau v√† khoang tr√™n ??u ?? ??.<br>
+? <strong>An to√†n cao</strong>: ABS, EBD, c?nh b√°o √°p su?t l?p, camera l√πi.<br>
+? <strong>Ti?n nghi gi?i tr√≠</strong>: M√†n h√¨nh DVD, micro karaoke (t√πy ch?n).<br>
+? <strong>Ph√π h?p cho</strong>: Tour du l?ch, ??a ?√≥n c√¥ng nh√¢n, s? ki?n, d?ch v? limousine.</p>
+<p>?? <strong>Thu√™ Ford Transit 16 ch? ¬ñ Gi?i ph√°p v?n chuy?n nh√≥m ho√†n h?o!</strong> ??</p>', 
 CAST(1800000.00 AS Decimal(10, 2)), CAST(1600000.00 AS Decimal(10, 2)), 
 N'https://ford-benthanh.net/wp-content/uploads/2024/05/z5633379037721_b02b79cfaedf6f83156c258c4c0837a0.jpg', 
 N'active', 0, N'0', 
@@ -388,16 +388,16 @@ GO
 
 -- car 8: Mercedes C-Class
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (8, N'Mercedes C200 2024', 42, N'<p><strong>Mercedes C200 2024 ñ Sedan H?ng Sang, ??ng C?p Doanh Nh‚n</strong></p>
-<p>?? <strong>Mercedes C200 2024</strong> l‡ bi?u t??ng c?a s? sang tr?ng v‡ ??ng c?p, l?a ch?n ho‡n h?o cho doanh nh‚n v‡ kh·ch h‡ng VIP.</p>
+VALUES (8, N'Mercedes C200 2024', 42, N'<p><strong>Mercedes C200 2024 ¬ñ Sedan H?ng Sang, ??ng C?p Doanh Nh√¢n</strong></p>
+<p>?? <strong>Mercedes C200 2024</strong> l√† bi?u t??ng c?a s? sang tr?ng v√† ??ng c?p, l?a ch?n ho√†n h?o cho doanh nh√¢n v√† kh√°ch h√†ng VIP.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Ím ·i</strong>: 1.5L Turbo k?t h?p cÙng ngh? EQ Boost, 204 m„ l?c.<br>
-? <strong>Thi?t k? sang tr?ng</strong>: L??i t?n nhi?t ngÙi sao, ?Ën LED thÙng minh.<br>
-? <strong>N?i th?t xa hoa</strong>: Gh? da Nappa, m‡n hÏnh kÈp 12.3 inch, h? th?ng MBUX.<br>
-? <strong>CÙng ngh? an to‡n</strong>: 9 t˙i khÌ, h? tr? ?? xe t? ??ng, cruise control thÌch ?ng.<br>
-? <strong>¬m thanh cao c?p</strong>: H? th?ng Burmester 15 loa.<br>
-? <strong>Ph˘ h?p cho</strong>: ?Ûn ti?p kh·ch VIP, s? ki?n quan tr?ng, c??i h?i cao c?p.</p>
-<p>?? <strong>ThuÍ Mercedes C200 2024 ñ Kh?ng ??nh ??ng c?p!</strong> ?</p>', 
+? <strong>??ng c? √™m √°i</strong>: 1.5L Turbo k?t h?p c√¥ng ngh? EQ Boost, 204 m√£ l?c.<br>
+? <strong>Thi?t k? sang tr?ng</strong>: L??i t?n nhi?t ng√¥i sao, ?√®n LED th√¥ng minh.<br>
+? <strong>N?i th?t xa hoa</strong>: Gh? da Nappa, m√†n h√¨nh k√©p 12.3 inch, h? th?ng MBUX.<br>
+? <strong>C√¥ng ngh? an to√†n</strong>: 9 t√∫i kh√≠, h? tr? ?? xe t? ??ng, cruise control th√≠ch ?ng.<br>
+? <strong>√Çm thanh cao c?p</strong>: H? th?ng Burmester 15 loa.<br>
+? <strong>Ph√π h?p cho</strong>: ?√≥n ti?p kh√°ch VIP, s? ki?n quan tr?ng, c??i h?i cao c?p.</p>
+<p>?? <strong>Thu√™ Mercedes C200 2024 ¬ñ Kh?ng ??nh ??ng c?p!</strong> ?</p>', 
 CAST(2500000.00 AS Decimal(10, 2)), CAST(2200000.00 AS Decimal(10, 2)), 
 N'https://images.drive.com.au/driveau/image/upload/t_wp-default/v1/cms/uploads/pd7cptqcdxjwgv0vzc8s', 
 N'active', 0, N'0', 
@@ -406,16 +406,16 @@ GO
 
 -- car 9: BMW 5 Series
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (9, N'BMW 530i 2024', 46, N'<p><strong>BMW 530i 2024 ñ Sedan Th? Thao, CÙng Ngh? ??nh Cao</strong></p>
-<p>?? <strong>BMW 530i 2024</strong> k?t h?p ho‡n h?o gi?a s?c m?nh v?n h‡nh th? thao v‡ cÙng ngh? tiÍn ti?n, d‡nh cho nh?ng ng??i yÍu thÌch tr?i nghi?m l·i xe ??ng c?p.</p>
+VALUES (9, N'BMW 530i 2024', 46, N'<p><strong>BMW 530i 2024 ¬ñ Sedan Th? Thao, C√¥ng Ngh? ??nh Cao</strong></p>
+<p>?? <strong>BMW 530i 2024</strong> k?t h?p ho√†n h?o gi?a s?c m?nh v?n h√†nh th? thao v√† c√¥ng ngh? ti√™n ti?n, d√†nh cho nh?ng ng??i y√™u th√≠ch tr?i nghi?m l√°i xe ??ng c?p.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? m?nh m?</strong>: 2.0L TwinPower Turbo, 252 m„ l?c.<br>
-? <strong>Thi?t k? th? thao</strong>: L??i t?n nhi?t kidney ??c tr?ng, ?Ën laser.<br>
-? <strong>N?i th?t hi?n ??i</strong>: M‡n hÏnh c?m ?ng 12.3 inch, gh? da Vernasca, c?a s? tr?i.<br>
-? <strong>CÙng ngh? BMW iDrive</strong>: ?i?u khi?n b?ng gi?ng nÛi, k?t n?i khÙng d‚y.<br>
-? <strong>H? th?ng ‚m thanh</strong>: Harman Kardon 16 loa.<br>
-? <strong>Ph˘ h?p cho</strong>: Doanh nh‚n, s? ki?n cao c?p, xe c??i h?ng sang.</p>
-<p>?? <strong>ThuÍ BMW 530i 2024 ñ Tr?i nghi?m ??ng c?p Bavaria!</strong> ??</p>', 
+? <strong>??ng c? m?nh m?</strong>: 2.0L TwinPower Turbo, 252 m√£ l?c.<br>
+? <strong>Thi?t k? th? thao</strong>: L??i t?n nhi?t kidney ??c tr?ng, ?√®n laser.<br>
+? <strong>N?i th?t hi?n ??i</strong>: M√†n h√¨nh c?m ?ng 12.3 inch, gh? da Vernasca, c?a s? tr?i.<br>
+? <strong>C√¥ng ngh? BMW iDrive</strong>: ?i?u khi?n b?ng gi?ng n√≥i, k?t n?i kh√¥ng d√¢y.<br>
+? <strong>H? th?ng √¢m thanh</strong>: Harman Kardon 16 loa.<br>
+? <strong>Ph√π h?p cho</strong>: Doanh nh√¢n, s? ki?n cao c?p, xe c??i h?ng sang.</p>
+<p>?? <strong>Thu√™ BMW 530i 2024 ¬ñ Tr?i nghi?m ??ng c?p Bavaria!</strong> ??</p>', 
 CAST(2800000.00 AS Decimal(10, 2)), CAST(2500000.00 AS Decimal(10, 2)), 
 N'https://hips.hearstapps.com/hmg-prod/images/2024-bmw-530i-xdrive-118-65808a4c3d44a.jpg?crop=0.561xw:0.474xh;0.171xw,0.327xh&resize=1200:*', 
 N'active', 0, N'0', 
@@ -424,16 +424,16 @@ GO
 
 -- car 10: Hyundai Accent
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (10, N'Hyundai Accent 2024', 14, N'<p><strong>Hyundai Accent 2024 ñ Sedan ThÙng Minh, Ti?t Ki?m, ?·ng Tin C?y</strong></p>
-<p>?? <strong>Hyundai Accent 2024</strong> l‡ m?u sedan h?ng B v?i thi?t k? hi?n ??i, trang b? ??y ?? ti?n nghi v‡ gi· thuÍ h?p l˝, ph˘ h?p cho m?i nhu c?u di chuy?n.</p>
+VALUES (10, N'Hyundai Accent 2024', 14, N'<p><strong>Hyundai Accent 2024 ¬ñ Sedan Th√¥ng Minh, Ti?t Ki?m, ?√°ng Tin C?y</strong></p>
+<p>?? <strong>Hyundai Accent 2024</strong> l√† m?u sedan h?ng B v?i thi?t k? hi?n ??i, trang b? ??y ?? ti?n nghi v√† gi√° thu√™ h?p l√Ω, ph√π h?p cho m?i nhu c?u di chuy?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Smartstream</strong>: 1.5L, 115 m„ l?c, ti?t ki?m nhiÍn li?u.<br>
-? <strong>Thi?t k? hi?n ??i</strong>: Ngo?i th?t th? thao, ?Ën LED, la-z?ng 15 inch.<br>
-? <strong>N?i th?t ti?n nghi</strong>: M‡n hÏnh 8 inch, k?t n?i Apple CarPlay/Android Auto.<br>
-? <strong>An to‡n thÙng minh</strong>: 6 t˙i khÌ, c?m bi?n l˘i, camera 360 ??.<br>
-? <strong>KhÙng gian r?ng r„i</strong>: 5 ch? ng?i tho?i m·i, c?p xe 475 lÌt.<br>
-? <strong>Ph˘ h?p cho</strong>: ?i cÙng t·c, taxi cÙng ngh?, thuÍ th·ng cho c· nh‚n.</p>
-<p>?? <strong>ThuÍ Hyundai Accent 2024 ñ L?a ch?n thÙng minh cho m?i h‡nh trÏnh!</strong> ?</p>', 
+? <strong>??ng c? Smartstream</strong>: 1.5L, 115 m√£ l?c, ti?t ki?m nhi√™n li?u.<br>
+? <strong>Thi?t k? hi?n ??i</strong>: Ngo?i th?t th? thao, ?√®n LED, la-z?ng 15 inch.<br>
+? <strong>N?i th?t ti?n nghi</strong>: M√†n h√¨nh 8 inch, k?t n?i Apple CarPlay/Android Auto.<br>
+? <strong>An to√†n th√¥ng minh</strong>: 6 t√∫i kh√≠, c?m bi?n l√πi, camera 360 ??.<br>
+? <strong>Kh√¥ng gian r?ng r√£i</strong>: 5 ch? ng?i tho?i m√°i, c?p xe 475 l√≠t.<br>
+? <strong>Ph√π h?p cho</strong>: ?i c√¥ng t√°c, taxi c√¥ng ngh?, thu√™ th√°ng cho c√° nh√¢n.</p>
+<p>?? <strong>Thu√™ Hyundai Accent 2024 ¬ñ L?a ch?n th√¥ng minh cho m?i h√†nh tr√¨nh!</strong> ?</p>', 
 CAST(550000.00 AS Decimal(10, 2)), CAST(480000.00 AS Decimal(10, 2)), 
 N'https://hyundaibinhduong.com/wp-content/uploads/2023/10/Accent-all-new-thumb-02.png', 
 N'active', 0, N'0', 
@@ -442,16 +442,16 @@ GO
 
 -- car 11: Mazda 3
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (11, N'Mazda 3 2024', 15, N'<p><strong>Mazda 3 2024 ñ Sedan Th? Thao, Sang Tr?ng, V?n H‡nh ??nh Cao</strong></p>
-<p>?? <strong>Mazda 3 2024</strong> l‡ m?u sedan h?ng C n?i b?t v?i thi?t k? KODO ??ng c?p, cÙng ngh? SkyActiv v‡ tr?i nghi?m l·i xe th? thao.</p>
+VALUES (11, N'Mazda 3 2024', 15, N'<p><strong>Mazda 3 2024 ¬ñ Sedan Th? Thao, Sang Tr?ng, V?n H√†nh ??nh Cao</strong></p>
+<p>?? <strong>Mazda 3 2024</strong> l√† m?u sedan h?ng C n?i b?t v?i thi?t k? KODO ??ng c?p, c√¥ng ngh? SkyActiv v√† tr?i nghi?m l√°i xe th? thao.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? SkyActiv</strong>: 2.0L, 153 m„ l?c, v?n h‡nh m??t m‡.<br>
-? <strong>Thi?t k? ??p m?t</strong>: Ngo?i th?t sang tr?ng, ?Ën LED Matrix, la-z?ng 18 inch.<br>
-? <strong>N?i th?t cao c?p</strong>: Gh? da cao c?p, m‡n hÏnh 8.8 inch, ‚m thanh Bose 12 loa.<br>
-? <strong>CÙng ngh? i-Activsense</strong>: H? tr? phanh thÙng minh, c?nh b·o ?i?m m˘.<br>
-? <strong>V?n h‡nh th? thao</strong>: H? th?ng G-Vectoring Control Plus, l·i chÌnh x·c.<br>
-? <strong>Ph˘ h?p cho</strong>: Doanh nh‚n tr?, cÙng t·c, du l?ch t? l·i.</p>
-<p>?? <strong>ThuÍ Mazda 3 2024 ñ C?m nh?n s? kh·c bi?t!</strong> ??</p>', 
+? <strong>??ng c? SkyActiv</strong>: 2.0L, 153 m√£ l?c, v?n h√†nh m??t m√†.<br>
+? <strong>Thi?t k? ??p m?t</strong>: Ngo?i th?t sang tr?ng, ?√®n LED Matrix, la-z?ng 18 inch.<br>
+? <strong>N?i th?t cao c?p</strong>: Gh? da cao c?p, m√†n h√¨nh 8.8 inch, √¢m thanh Bose 12 loa.<br>
+? <strong>C√¥ng ngh? i-Activsense</strong>: H? tr? phanh th√¥ng minh, c?nh b√°o ?i?m m√π.<br>
+? <strong>V?n h√†nh th? thao</strong>: H? th?ng G-Vectoring Control Plus, l√°i ch√≠nh x√°c.<br>
+? <strong>Ph√π h?p cho</strong>: Doanh nh√¢n tr?, c√¥ng t√°c, du l?ch t? l√°i.</p>
+<p>?? <strong>Thu√™ Mazda 3 2024 ¬ñ C?m nh?n s? kh√°c bi?t!</strong> ??</p>', 
 CAST(750000.00 AS Decimal(10, 2)), CAST(650000.00 AS Decimal(10, 2)), 
 N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYli5hidQc8fj0Y7czy1y9T52wiktrim1pHw&s', 
 N'active', 0, N'2', 
@@ -460,16 +460,16 @@ GO
 
 -- car 12: Kia Cerato
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (12, N'Kia Cerato 2024', 16, N'<p><strong>Kia Cerato 2024 ñ Sedan Hi?n ??i, ??y ?? TÌnh N?ng, Gi· H?p L˝</strong></p>
-<p>?? <strong>Kia Cerato 2024</strong> l‡ m?u sedan h?ng C v?i thi?t k? tr? trung, trang b? cÙng ngh? hi?n ??i v‡ khÙng gian n?i th?t r?ng r„i, ph˘ h?p cho gia ?Ïnh v‡ doanh nghi?p.</p>
+VALUES (12, N'Kia Cerato 2024', 16, N'<p><strong>Kia Cerato 2024 ¬ñ Sedan Hi?n ??i, ??y ?? T√≠nh N?ng, Gi√° H?p L√Ω</strong></p>
+<p>?? <strong>Kia Cerato 2024</strong> l√† m?u sedan h?ng C v?i thi?t k? tr? trung, trang b? c√¥ng ngh? hi?n ??i v√† kh√¥ng gian n?i th?t r?ng r√£i, ph√π h?p cho gia ?√¨nh v√† doanh nghi?p.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Smartstream</strong>: 1.5L Turbo ho?c 2.0L, cÙng su?t 158 m„ l?c.<br>
-? <strong>Thi?t k? tr? trung</strong>: L??i t?n nhi?t Tiger Nose, ?Ën LED chi?u s·ng ban ng‡y.<br>
-? <strong>N?i th?t ti?n nghi</strong>: M‡n hÏnh 10.25 inch, vÙ l?ng b?c da, gh? da cao c?p.<br>
-? <strong>CÙng ngh? an to‡n</strong>: 6 t˙i khÌ, c?nh b·o va ch?m, h? tr? gi? l‡n.<br>
-? <strong>Ti?t ki?m nhiÍn li?u</strong>: Ch? 5.5L/100km, ph˘ h?p di chuy?n ???ng d‡i.<br>
-? <strong>Ph˘ h?p cho</strong>: Taxi cÙng ngh?, thuÍ d‡i h?n, cÙng t·c trong th‡nh ph?.</p>
-<p>?? <strong>??t thuÍ Kia Cerato 2024 ñ Gi?i ph·p di chuy?n thÙng minh!</strong> ?</p>', 
+? <strong>??ng c? Smartstream</strong>: 1.5L Turbo ho?c 2.0L, c√¥ng su?t 158 m√£ l?c.<br>
+? <strong>Thi?t k? tr? trung</strong>: L??i t?n nhi?t Tiger Nose, ?√®n LED chi?u s√°ng ban ng√†y.<br>
+? <strong>N?i th?t ti?n nghi</strong>: M√†n h√¨nh 10.25 inch, v√¥ l?ng b?c da, gh? da cao c?p.<br>
+? <strong>C√¥ng ngh? an to√†n</strong>: 6 t√∫i kh√≠, c?nh b√°o va ch?m, h? tr? gi? l√†n.<br>
+? <strong>Ti?t ki?m nhi√™n li?u</strong>: Ch? 5.5L/100km, ph√π h?p di chuy?n ???ng d√†i.<br>
+? <strong>Ph√π h?p cho</strong>: Taxi c√¥ng ngh?, thu√™ d√†i h?n, c√¥ng t√°c trong th√†nh ph?.</p>
+<p>?? <strong>??t thu√™ Kia Cerato 2024 ¬ñ Gi?i ph√°p di chuy?n th√¥ng minh!</strong> ?</p>', 
 CAST(650000.00 AS Decimal(10, 2)), CAST(550000.00 AS Decimal(10, 2)), 
 N'https://camco.vn/wp-content/uploads/2024/08/cam-xe-ngan-hang-uy-tin1-scaled.jpg', 
 N'active', 0, N'1', 
@@ -478,16 +478,16 @@ GO
 
 -- car 13: Honda CR-V
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (13, N'Honda CR-V 2024', 18, N'<p><strong>Honda CR-V 2024 ñ SUV 5 Ch? ?a N?ng, An To‡n, Ti?n Nghi</strong></p>
-<p>?? <strong>Honda CR-V 2024</strong> l‡ m?u SUV 5 ch? b·n ch?y nh?t ph‚n kh˙c v?i thi?t k? sang tr?ng, cÙng ngh? Honda Sensing v‡ khÙng gian linh ho?t.</p>
+VALUES (13, N'Honda CR-V 2024', 18, N'<p><strong>Honda CR-V 2024 ¬ñ SUV 5 Ch? ?a N?ng, An To√†n, Ti?n Nghi</strong></p>
+<p>?? <strong>Honda CR-V 2024</strong> l√† m?u SUV 5 ch? b√°n ch?y nh?t ph√¢n kh√∫c v?i thi?t k? sang tr?ng, c√¥ng ngh? Honda Sensing v√† kh√¥ng gian linh ho?t.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? VTEC Turbo</strong>: 1.5L Turbo, 188 m„ l?c, v?n h‡nh Ím ·i.<br>
-? <strong>Thi?t k? th? thao</strong>: Ngo?i th?t hi?n ??i, ?Ën LED to‡n ph?n, la-z?ng 19 inch.<br>
-? <strong>N?i th?t cao c?p</strong>: Gh? da, m‡n hÏnh 9 inch, c?a s? tr?i to‡n c?nh.<br>
-? <strong>Honda Sensing</strong>: Ki?m so·t h‡nh trÏnh thÌch ?ng, c?nh b·o va ch?m, ?Ën pha t? ??ng.<br>
-? <strong>KhÙng gian linh ho?t</strong>: Gh? sau g?p 60:40, c?p xe 522 lÌt.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh 4-5 ng??i, cÙng t·c, du l?ch cu?i tu?n.</p>
-<p>?? <strong>ThuÍ Honda CR-V 2024 ñ L?a ch?n ho‡n h?o cho gia ?Ïnh!</strong> ??</p>', 
+? <strong>??ng c? VTEC Turbo</strong>: 1.5L Turbo, 188 m√£ l?c, v?n h√†nh √™m √°i.<br>
+? <strong>Thi?t k? th? thao</strong>: Ngo?i th?t hi?n ??i, ?√®n LED to√†n ph?n, la-z?ng 19 inch.<br>
+? <strong>N?i th?t cao c?p</strong>: Gh? da, m√†n h√¨nh 9 inch, c?a s? tr?i to√†n c?nh.<br>
+? <strong>Honda Sensing</strong>: Ki?m so√°t h√†nh tr√¨nh th√≠ch ?ng, c?nh b√°o va ch?m, ?√®n pha t? ??ng.<br>
+? <strong>Kh√¥ng gian linh ho?t</strong>: Gh? sau g?p 60:40, c?p xe 522 l√≠t.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh 4-5 ng??i, c√¥ng t√°c, du l?ch cu?i tu?n.</p>
+<p>?? <strong>Thu√™ Honda CR-V 2024 ¬ñ L?a ch?n ho√†n h?o cho gia ?√¨nh!</strong> ??</p>', 
 CAST(1100000.00 AS Decimal(10, 2)), CAST(950000.00 AS Decimal(10, 2)), 
 N'https://i.ytimg.com/vi/tK5PVBxd6QY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBS7CkupWhHxt72K5XpnANAVHN17g', 
 N'active', 0, N'0', 
@@ -496,16 +496,16 @@ GO
 
 -- car 14: Hyundai Tucson
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (14, N'Hyundai Tucson 2024', 21, N'<p><strong>Hyundai Tucson 2024 ñ SUV CÙng Ngh?, Thi?t K? T??ng Lai</strong></p>
-<p>?? <strong>Hyundai Tucson 2024</strong> g‚y ?n t??ng v?i ngÙn ng? thi?t k? Parametric Dynamics t·o b?o, cÙng ngh? hi?n ??i v‡ ??ng c? Turbo m?nh m?.</p>
+VALUES (14, N'Hyundai Tucson 2024', 21, N'<p><strong>Hyundai Tucson 2024 ¬ñ SUV C√¥ng Ngh?, Thi?t K? T??ng Lai</strong></p>
+<p>?? <strong>Hyundai Tucson 2024</strong> g√¢y ?n t??ng v?i ng√¥n ng? thi?t k? Parametric Dynamics t√°o b?o, c√¥ng ngh? hi?n ??i v√† ??ng c? Turbo m?nh m?.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Smartstream</strong>: 1.6L Turbo ho?c 2.0L, cÙng su?t 180 m„ l?c.<br>
-? <strong>Thi?t k? ??c ?·o</strong>: L??i t?n nhi?t tham s? hÛa, ?Ën LED ?n.<br>
-? <strong>N?i th?t cÙng ngh?</strong>: M‡n hÏnh kÈp 10.25 inch li?n m?ch, HUD.<br>
-? <strong>SmartSense</strong>: H? tr? ?? xe t? xa, c?nh b·o ?i?m m˘, camera 360.<br>
-? <strong>KhÙng gian r?ng r„i</strong>: 5 ch? ng?i tho?i m·i, c?p 620 lÌt.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh hi?n ??i, doanh nghi?p, tour du l?ch.</p>
-<p>?? <strong>??t xe Hyundai Tucson 2024 ñ Tr?i nghi?m t??ng lai ngay hÙm nay!</strong> ??</p>', 
+? <strong>??ng c? Smartstream</strong>: 1.6L Turbo ho?c 2.0L, c√¥ng su?t 180 m√£ l?c.<br>
+? <strong>Thi?t k? ??c ?√°o</strong>: L??i t?n nhi?t tham s? h√≥a, ?√®n LED ?n.<br>
+? <strong>N?i th?t c√¥ng ngh?</strong>: M√†n h√¨nh k√©p 10.25 inch li?n m?ch, HUD.<br>
+? <strong>SmartSense</strong>: H? tr? ?? xe t? xa, c?nh b√°o ?i?m m√π, camera 360.<br>
+? <strong>Kh√¥ng gian r?ng r√£i</strong>: 5 ch? ng?i tho?i m√°i, c?p 620 l√≠t.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh hi?n ??i, doanh nghi?p, tour du l?ch.</p>
+<p>?? <strong>??t xe Hyundai Tucson 2024 ¬ñ Tr?i nghi?m t??ng lai ngay h√¥m nay!</strong> ??</p>', 
 CAST(1150000.00 AS Decimal(10, 2)), CAST(1000000.00 AS Decimal(10, 2)), 
 N'https://hyundaitphcm.vn/wp-content/uploads/2024/07/hyundaitphcm.com_.vn-21.jpg', 
 N'active', 0, N'0', 
@@ -514,16 +514,16 @@ GO
 
 -- car 15: Kia Seltos
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (15, N'Kia Seltos 2024', 22, N'<p><strong>Kia Seltos 2024 ñ SUV Tr? Trung, N?ng ??ng, ??y C· TÌnh</strong></p>
-<p>?? <strong>Kia Seltos 2024</strong> l‡ m?u SUV ?Ù th? v?i thi?t k? th? thao, cÙng ngh? k?t n?i thÙng minh v‡ kh? n?ng v?n h‡nh linh ho?t trong th‡nh ph?.</p>
+VALUES (15, N'Kia Seltos 2024', 22, N'<p><strong>Kia Seltos 2024 ¬ñ SUV Tr? Trung, N?ng ??ng, ??y C√° T√≠nh</strong></p>
+<p>?? <strong>Kia Seltos 2024</strong> l√† m?u SUV ?√¥ th? v?i thi?t k? th? thao, c√¥ng ngh? k?t n?i th√¥ng minh v√† kh? n?ng v?n h√†nh linh ho?t trong th√†nh ph?.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Smartstream</strong>: 1.5L Turbo, 160 m„ l?c, h?p s? CVT.<br>
-? <strong>Thi?t k? th? thao</strong>: Ngo?i th?t c· tÌnh, ?Ën LED, m‚m ?˙c 18 inch.<br>
-? <strong>N?i th?t hi?n ??i</strong>: M‡n hÏnh 10.25 inch, vÙ l?ng D-Cut th? thao.<br>
-? <strong>K?t n?i thÙng minh</strong>: Kia Connect, Apple CarPlay/Android Auto khÙng d‚y.<br>
-? <strong>An to‡n to‡n di?n</strong>: 6 t˙i khÌ, c?nh b·o ?i?m m˘, camera 360 ??.<br>
-? <strong>Ph˘ h?p cho</strong>: Gi?i tr?, gia ?Ïnh nh?, di chuy?n trong th‡nh ph?.</p>
-<p>?? <strong>ThuÍ Kia Seltos 2024 ñ Kh?ng ??nh phong c·ch c· nh‚n!</strong> ??</p>', 
+? <strong>??ng c? Smartstream</strong>: 1.5L Turbo, 160 m√£ l?c, h?p s? CVT.<br>
+? <strong>Thi?t k? th? thao</strong>: Ngo?i th?t c√° t√≠nh, ?√®n LED, m√¢m ?√∫c 18 inch.<br>
+? <strong>N?i th?t hi?n ??i</strong>: M√†n h√¨nh 10.25 inch, v√¥ l?ng D-Cut th? thao.<br>
+? <strong>K?t n?i th√¥ng minh</strong>: Kia Connect, Apple CarPlay/Android Auto kh√¥ng d√¢y.<br>
+? <strong>An to√†n to√†n di?n</strong>: 6 t√∫i kh√≠, c?nh b√°o ?i?m m√π, camera 360 ??.<br>
+? <strong>Ph√π h?p cho</strong>: Gi?i tr?, gia ?√¨nh nh?, di chuy?n trong th√†nh ph?.</p>
+<p>?? <strong>Thu√™ Kia Seltos 2024 ¬ñ Kh?ng ??nh phong c√°ch c√° nh√¢n!</strong> ??</p>', 
 CAST(950000.00 AS Decimal(10, 2)), CAST(820000.00 AS Decimal(10, 2)), 
 N'https://auto365.vn/uploads/images/tin%20t%E1%BB%A9c/2024/T1/kia-seltos-2024/kia-seltos-2024-1.jpg', 
 N'active', 0, N'0', 
@@ -532,16 +532,16 @@ GO
 
 -- car 16: Toyota Corolla Cross
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (16, N'Toyota Corolla Cross 2024', 23, N'<p><strong>Toyota Corolla Cross 2024 ñ SUV ?Ù Th?, Ti?n Nghi, ?·ng Tin C?y</strong></p>
-<p>?? <strong>Toyota Corolla Cross 2024</strong> l‡ m?u SUV ?Ù th? ho‡n h?o v?i thi?t k? th?i th??ng, cÙng ngh? an to‡n Toyota Safety Sense v‡ ?? tin c?y cao.</p>
+VALUES (16, N'Toyota Corolla Cross 2024', 23, N'<p><strong>Toyota Corolla Cross 2024 ¬ñ SUV ?√¥ Th?, Ti?n Nghi, ?√°ng Tin C?y</strong></p>
+<p>?? <strong>Toyota Corolla Cross 2024</strong> l√† m?u SUV ?√¥ th? ho√†n h?o v?i thi?t k? th?i th??ng, c√¥ng ngh? an to√†n Toyota Safety Sense v√† ?? tin c?y cao.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
 ? <strong>??ng c? Hybrid</strong>: 1.8L k?t h?p ??ng c? ?i?n, ti?t ki?m t?i ?u.<br>
-? <strong>Thi?t k? ?Ù th?</strong>: Ngo?i th?t hi?n ??i, g?m cao 161mm.<br>
-? <strong>N?i th?t ti?n nghi</strong>: M‡n hÏnh 9 inch, gh? da, c?a s? tr?i.<br>
-? <strong>Toyota Safety Sense</strong>: C?nh b·o va ch?m, h? tr? gi? l‡n, cruise control.<br>
-? <strong>KhÙng gian linh ho?t</strong>: 5 ch? r?ng r„i, c?p 440 lÌt.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh ?Ù th?, cÙng t·c, thuÍ th·ng d‡i h?n.</p>
-<p>?? <strong>??t thuÍ Toyota Corolla Cross 2024 ngay!</strong> ?</p>', 
+? <strong>Thi?t k? ?√¥ th?</strong>: Ngo?i th?t hi?n ??i, g?m cao 161mm.<br>
+? <strong>N?i th?t ti?n nghi</strong>: M√†n h√¨nh 9 inch, gh? da, c?a s? tr?i.<br>
+? <strong>Toyota Safety Sense</strong>: C?nh b√°o va ch?m, h? tr? gi? l√†n, cruise control.<br>
+? <strong>Kh√¥ng gian linh ho?t</strong>: 5 ch? r?ng r√£i, c?p 440 l√≠t.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh ?√¥ th?, c√¥ng t√°c, thu√™ th√°ng d√†i h?n.</p>
+<p>?? <strong>??t thu√™ Toyota Corolla Cross 2024 ngay!</strong> ?</p>', 
 CAST(900000.00 AS Decimal(10, 2)), CAST(780000.00 AS Decimal(10, 2)), 
 N'https://images2.thanhnien.vn/528068263637045248/2024/4/7/toyota-corolla-cross-2024-ban-ra-tai-viet-nam-tu-thang-5-1-xe-thanhnien-1712485293977811861623.jpg', 
 N'active', 0, N'0', 
@@ -550,16 +550,16 @@ GO
 
 -- car 17: Mitsubishi Xpander
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (17, N'Mitsubishi Xpander 2024', 28, N'<p><strong>Mitsubishi Xpander 2024 ñ MPV 7 Ch? Linh Ho?t, Ti?t Ki?m, ?a D?ng</strong></p>
-<p>?? <strong>Mitsubishi Xpander 2024</strong> l‡ m?u MPV 7 ch? ph? bi?n v?i thi?t k? crossover, khÙng gian linh ho?t v‡ gi· thuÍ h?p l˝ cho gia ?Ïnh.</p>
+VALUES (17, N'Mitsubishi Xpander 2024', 28, N'<p><strong>Mitsubishi Xpander 2024 ¬ñ MPV 7 Ch? Linh Ho?t, Ti?t Ki?m, ?a D?ng</strong></p>
+<p>?? <strong>Mitsubishi Xpander 2024</strong> l√† m?u MPV 7 ch? ph? bi?n v?i thi?t k? crossover, kh√¥ng gian linh ho?t v√† gi√° thu√™ h?p l√Ω cho gia ?√¨nh.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? MIVEC</strong>: 1.5L, 105 m„ l?c, ti?t ki?m nhiÍn li?u.<br>
+? <strong>??ng c? MIVEC</strong>: 1.5L, 105 m√£ l?c, ti?t ki?m nhi√™n li?u.<br>
 ? <strong>Thi?t k? crossover</strong>: Ngo?i th?t th? thao, g?m cao 225mm.<br>
-? <strong>KhÙng gian 7 ch?</strong>: H‡ng gh? 3 g?p 50:50, c?p r?ng 350 lÌt.<br>
-? <strong>Ti?n nghi ??y ??</strong>: M‡n hÏnh 9 inch, ?i?u hÚa t? ??ng, c?m bi?n l˘i.<br>
-? <strong>An to‡n c? b?n</strong>: ABS, EBD, 2 t˙i khÌ, khung xe ch?c ch?n.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh 5-7 ng??i, tour ng?n ng‡y, taxi cÙng ngh?.</p>
-<p>?? <strong>ThuÍ Mitsubishi Xpander 2024 ñ Gi?i ph·p ?a d?ng cho gia ?Ïnh!</strong> ???????????</p>', 
+? <strong>Kh√¥ng gian 7 ch?</strong>: H√†ng gh? 3 g?p 50:50, c?p r?ng 350 l√≠t.<br>
+? <strong>Ti?n nghi ??y ??</strong>: M√†n h√¨nh 9 inch, ?i?u h√≤a t? ??ng, c?m bi?n l√πi.<br>
+? <strong>An to√†n c? b?n</strong>: ABS, EBD, 2 t√∫i kh√≠, khung xe ch?c ch?n.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh 5-7 ng??i, tour ng?n ng√†y, taxi c√¥ng ngh?.</p>
+<p>?? <strong>Thu√™ Mitsubishi Xpander 2024 ¬ñ Gi?i ph√°p ?a d?ng cho gia ?√¨nh!</strong> ???????????</p>', 
 CAST(750000.00 AS Decimal(10, 2)), CAST(650000.00 AS Decimal(10, 2)), 
 N'https://static.vnfinance.vn/files/admin/2024/09/23/mitsubishi-xpander-2024-ra-mat-voi-thiet-ke-dep-long-lanh-trang-bi-cuc-chat-gia-tu-541-trieu-dong-anh-1-1157091.jpg', 
 N'active', 0, N'0', 
@@ -568,16 +568,16 @@ GO
 
 -- car 18: Hyundai SantaFe
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (18, N'Hyundai SantaFe 2024', 27, N'<p><strong>Hyundai SantaFe 2024 ñ SUV 7 Ch? Cao C?p, Sang Tr?ng, M?nh M?</strong></p>
-<p>?? <strong>Hyundai SantaFe 2024</strong> l‡ m?u SUV 7 ch? cao c?p v?i thi?t k? hi?n ??i, cÙng ngh? v??t tr?i v‡ khÙng gian n?i th?t sang tr?ng.</p>
+VALUES (18, N'Hyundai SantaFe 2024', 27, N'<p><strong>Hyundai SantaFe 2024 ¬ñ SUV 7 Ch? Cao C?p, Sang Tr?ng, M?nh M?</strong></p>
+<p>?? <strong>Hyundai SantaFe 2024</strong> l√† m?u SUV 7 ch? cao c?p v?i thi?t k? hi?n ??i, c√¥ng ngh? v??t tr?i v√† kh√¥ng gian n?i th?t sang tr?ng.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Smartstream</strong>: 2.5L Turbo ho?c Hybrid, 281 m„ l?c.<br>
-? <strong>Thi?t k? ?n t??ng</strong>: Ngo?i th?t hi?n ??i, ?Ën LED ?n tham s? hÛa.<br>
-? <strong>N?i th?t h?ng sang</strong>: Gh? da Nappa, m‡n hÏnh 12.3 inch kÈp, HUD.<br>
-? <strong>CÙng ngh? SmartSense</strong>: H? tr? ?? xe t? xa, ki?m so·t h‡nh trÏnh thÙng minh.<br>
-? <strong>7 ch? r?ng r„i</strong>: H‡ng gh? 2 Captain Seat, c?p 571 lÌt.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh cao c?p, doanh nghi?p, tour du l?ch VIP.</p>
-<p>?? <strong>??t thuÍ Hyundai SantaFe 2024 ñ ??ng c?p SUV 7 ch?!</strong> ?</p>', 
+? <strong>??ng c? Smartstream</strong>: 2.5L Turbo ho?c Hybrid, 281 m√£ l?c.<br>
+? <strong>Thi?t k? ?n t??ng</strong>: Ngo?i th?t hi?n ??i, ?√®n LED ?n tham s? h√≥a.<br>
+? <strong>N?i th?t h?ng sang</strong>: Gh? da Nappa, m√†n h√¨nh 12.3 inch k√©p, HUD.<br>
+? <strong>C√¥ng ngh? SmartSense</strong>: H? tr? ?? xe t? xa, ki?m so√°t h√†nh tr√¨nh th√¥ng minh.<br>
+? <strong>7 ch? r?ng r√£i</strong>: H√†ng gh? 2 Captain Seat, c?p 571 l√≠t.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh cao c?p, doanh nghi?p, tour du l?ch VIP.</p>
+<p>?? <strong>??t thu√™ Hyundai SantaFe 2024 ¬ñ ??ng c?p SUV 7 ch?!</strong> ?</p>', 
 CAST(1400000.00 AS Decimal(10, 2)), CAST(1200000.00 AS Decimal(10, 2)), 
 N'https://hyundaitaydo.vn/wp-content/uploads/2023/11/Hyundai-Santafe-White-Rung-29.webp', 
 N'active', 0, N'0', 
@@ -586,16 +586,16 @@ GO
 
 -- car 19: Mazda CX-8
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (19, N'Mazda CX-8 2024', 26, N'<p><strong>Mazda CX-8 2024 ñ SUV 7 Ch? Cao C?p, Sang Tr?ng, V?n H‡nh M??t M‡</strong></p>
-<p>?? <strong>Mazda CX-8 2024</strong> l‡ m?u SUV 7 ch? cao c?p v?i thi?t k? KODO ??ng c?p, cÙng ngh? SkyActiv v‡ tr?i nghi?m l·i xe th? thao.</p>
+VALUES (19, N'Mazda CX-8 2024', 26, N'<p><strong>Mazda CX-8 2024 ¬ñ SUV 7 Ch? Cao C?p, Sang Tr?ng, V?n H√†nh M??t M√†</strong></p>
+<p>?? <strong>Mazda CX-8 2024</strong> l√† m?u SUV 7 ch? cao c?p v?i thi?t k? KODO ??ng c?p, c√¥ng ngh? SkyActiv v√† tr?i nghi?m l√°i xe th? thao.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? SkyActiv</strong>: 2.5L Turbo, 230 m„ l?c, v?n h‡nh Ím ·i.<br>
+? <strong>??ng c? SkyActiv</strong>: 2.5L Turbo, 230 m√£ l?c, v?n h√†nh √™m √°i.<br>
 ? <strong>Thi?t k? sang tr?ng</strong>: Ngo?i th?t ??ng c?p, n?i th?t da Nappa cao c?p.<br>
-? <strong>KhÙng gian 7 ch?</strong>: H‡ng gh? 2 Captain Seat, c?p 209 lÌt (3 h‡ng gh?).<br>
-? <strong>CÙng ngh? i-Activsense</strong>: H? tr? phanh thÙng minh, c?nh b·o ?i?m m˘, cruise control.<br>
-? <strong>¬m thanh Bose</strong>: H? th?ng 10 loa cao c?p.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh th??ng l?u, kh·ch VIP, s? ki?n cao c?p.</p>
-<p>?? <strong>ThuÍ Mazda CX-8 2024 ñ Tr?i nghi?m ??ng c?p Nh?t B?n!</strong> ??</p>', 
+? <strong>Kh√¥ng gian 7 ch?</strong>: H√†ng gh? 2 Captain Seat, c?p 209 l√≠t (3 h√†ng gh?).<br>
+? <strong>C√¥ng ngh? i-Activsense</strong>: H? tr? phanh th√¥ng minh, c?nh b√°o ?i?m m√π, cruise control.<br>
+? <strong>√Çm thanh Bose</strong>: H? th?ng 10 loa cao c?p.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh th??ng l?u, kh√°ch VIP, s? ki?n cao c?p.</p>
+<p>?? <strong>Thu√™ Mazda CX-8 2024 ¬ñ Tr?i nghi?m ??ng c?p Nh?t B?n!</strong> ??</p>', 
 CAST(1300000.00 AS Decimal(10, 2)), CAST(1150000.00 AS Decimal(10, 2)), 
 N'https://cafefcdn.com/203337114487263232/2024/12/2/mazda-cx-8-5-1667563474011426380518-1733107926759-17331079269182058619599.jpg', 
 N'active', 0, N'0', 
@@ -604,16 +604,16 @@ GO
 
 -- car 20: Ford Ranger
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (20, N'Ford Ranger Wildtrak 2024', 64, N'<p><strong>Ford Ranger Wildtrak 2024 ñ B·n T?i M?nh M?, ?a D?ng, V??t M?i ??a HÏnh</strong></p>
-<p>?? <strong>Ford Ranger Wildtrak 2024</strong> l‡ m?u b·n t?i cao c?p v?i ??ng c? Bi-Turbo m?nh m?, kh? n?ng v??t ??a hÏnh t?t v‡ ti?n nghi nh? SUV.</p>
+VALUES (20, N'Ford Ranger Wildtrak 2024', 64, N'<p><strong>Ford Ranger Wildtrak 2024 ¬ñ B√°n T?i M?nh M?, ?a D?ng, V??t M?i ??a H√¨nh</strong></p>
+<p>?? <strong>Ford Ranger Wildtrak 2024</strong> l√† m?u b√°n t?i cao c?p v?i ??ng c? Bi-Turbo m?nh m?, kh? n?ng v??t ??a h√¨nh t?t v√† ti?n nghi nh? SUV.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Bi-Turbo</strong>: 2.0L Bi-Turbo Diesel, 210 m„ l?c, mÙ-men xo?n 500Nm.<br>
-? <strong>Thi?t k? m?nh m?</strong>: Ngo?i th?t h?m h?, ?Ën LED Matrix, m‚m 18 inch.<br>
-? <strong>N?i th?t cao c?p</strong>: Gh? da, m‡n hÏnh 12 inch SYNC 4, ‚m thanh B&O.<br>
-? <strong>CÙng ngh? an to‡n</strong>: Ford Co-Pilot360, 7 t˙i khÌ.<br>
-? <strong>Kh? n?ng ??a hÏnh</strong>: H? 4WD ?i?n t?, ch? ?? l·i 6 ??a hÏnh.<br>
-? <strong>Ph˘ h?p cho</strong>: V?n chuy?n h‡ng hÛa, du l?ch off-road, ?i mi?n n˙i.</p>
-<p>?? <strong>ThuÍ Ford Ranger Wildtrak 2024 ñ Chinh ph?c m?i th? th·ch!</strong> ???</p>', 
+? <strong>??ng c? Bi-Turbo</strong>: 2.0L Bi-Turbo Diesel, 210 m√£ l?c, m√¥-men xo?n 500Nm.<br>
+? <strong>Thi?t k? m?nh m?</strong>: Ngo?i th?t h?m h?, ?√®n LED Matrix, m√¢m 18 inch.<br>
+? <strong>N?i th?t cao c?p</strong>: Gh? da, m√†n h√¨nh 12 inch SYNC 4, √¢m thanh B&O.<br>
+? <strong>C√¥ng ngh? an to√†n</strong>: Ford Co-Pilot360, 7 t√∫i kh√≠.<br>
+? <strong>Kh? n?ng ??a h√¨nh</strong>: H? 4WD ?i?n t?, ch? ?? l√°i 6 ??a h√¨nh.<br>
+? <strong>Ph√π h?p cho</strong>: V?n chuy?n h√†ng h√≥a, du l?ch off-road, ?i mi?n n√∫i.</p>
+<p>?? <strong>Thu√™ Ford Ranger Wildtrak 2024 ¬ñ Chinh ph?c m?i th? th√°ch!</strong> ???</p>', 
 CAST(1500000.00 AS Decimal(10, 2)), CAST(1350000.00 AS Decimal(10, 2)), 
 N'https://www.ford.com.vn/content/dam/Ford/vn/nameplate/ranger/model/wildtrak/colorizer/360/%C4%91en/vn-wildtrak-absolute-black-01.webp', 
 N'active', 0, N'0', 
@@ -622,16 +622,16 @@ GO
 
 -- car 21: Toyota Hilux
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (21, N'Toyota Hilux 2024', 65, N'<p><strong>Toyota Hilux 2024 ñ B·n T?i B?n B?, Tin C?y, Kinh T?</strong></p>
-<p>?? <strong>Toyota Hilux 2024</strong> l‡ bi?u t??ng c?a s? b?n b? v‡ ?? tin c?y trong ph‚n kh˙c b·n t?i, ph˘ h?p cho m?i cÙng vi?c t? v?n chuy?n ??n off-road.</p>
+VALUES (21, N'Toyota Hilux 2024', 65, N'<p><strong>Toyota Hilux 2024 ¬ñ B√°n T?i B?n B?, Tin C?y, Kinh T?</strong></p>
+<p>?? <strong>Toyota Hilux 2024</strong> l√† bi?u t??ng c?a s? b?n b? v√† ?? tin c?y trong ph√¢n kh√∫c b√°n t?i, ph√π h?p cho m?i c√¥ng vi?c t? v?n chuy?n ??n off-road.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? b?n b?</strong>: 2.4L/2.8L Turbo Diesel, 204 m„ l?c.<br>
-? <strong>Thi?t k? m?nh m?</strong>: Ngo?i th?t nam tÌnh, ?Ën LED, m‚m h?p kim.<br>
-? <strong>N?i th?t ti?n nghi</strong>: Gh? da, m‡n hÏnh 8 inch, ?i?u hÚa t? ??ng.<br>
-? <strong>An to‡n Toyota</strong>: TSS (Toyota Safety Sense), 7 t˙i khÌ.<br>
-? <strong>Kh? n?ng ??a hÏnh</strong>: H? 4WD, khung g?m ch?c ch?n, t?i tr?ng 1 t?n.<br>
-? <strong>Ph˘ h?p cho</strong>: V?n chuy?n h‡ng, ?i cÙng tr??ng, du l?ch off-road.</p>
-<p>?? <strong>ThuÍ Toyota Hilux 2024 ñ B?n b? v??t th?i gian!</strong> ??</p>', 
+? <strong>??ng c? b?n b?</strong>: 2.4L/2.8L Turbo Diesel, 204 m√£ l?c.<br>
+? <strong>Thi?t k? m?nh m?</strong>: Ngo?i th?t nam t√≠nh, ?√®n LED, m√¢m h?p kim.<br>
+? <strong>N?i th?t ti?n nghi</strong>: Gh? da, m√†n h√¨nh 8 inch, ?i?u h√≤a t? ??ng.<br>
+? <strong>An to√†n Toyota</strong>: TSS (Toyota Safety Sense), 7 t√∫i kh√≠.<br>
+? <strong>Kh? n?ng ??a h√¨nh</strong>: H? 4WD, khung g?m ch?c ch?n, t?i tr?ng 1 t?n.<br>
+? <strong>Ph√π h?p cho</strong>: V?n chuy?n h√†ng, ?i c√¥ng tr??ng, du l?ch off-road.</p>
+<p>?? <strong>Thu√™ Toyota Hilux 2024 ¬ñ B?n b? v??t th?i gian!</strong> ??</p>', 
 CAST(1400000.00 AS Decimal(10, 2)), CAST(1250000.00 AS Decimal(10, 2)), 
 N'https://media.vov.vn/sites/default/files/styles/large/public/2024-02/toyota-hilux-2024-1-5560-1706861408.jpg', 
 N'active', 0, N'0', 
@@ -640,16 +640,16 @@ GO
 
 -- car 22: Hyundai Solati
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (22, N'Hyundai Solati 16 Ch? 2024', 34, N'<p><strong>Hyundai Solati 16 Ch? 2024 ñ Xe Kh·ch Cao C?p, Ti?n Nghi, An To‡n</strong></p>
-<p>?? <strong>Hyundai Solati 16 ch? 2024</strong> l‡ m?u xe kh·ch cao c?p v?i thi?t k? hi?n ??i, n?i th?t sang tr?ng v‡ cÙng ngh? an to‡n v??t tr?i.</p>
+VALUES (22, N'Hyundai Solati 16 Ch? 2024', 34, N'<p><strong>Hyundai Solati 16 Ch? 2024 ¬ñ Xe Kh√°ch Cao C?p, Ti?n Nghi, An To√†n</strong></p>
+<p>?? <strong>Hyundai Solati 16 ch? 2024</strong> l√† m?u xe kh√°ch cao c?p v?i thi?t k? hi?n ??i, n?i th?t sang tr?ng v√† c√¥ng ngh? an to√†n v??t tr?i.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? D4CB</strong>: 2.5L CRDi Turbo Diesel, 150 m„ l?c.<br>
-? <strong>16 ch? ng?i sang tr?ng</strong>: Gh? da cao c?p, ?i?u hÚa 2 chi?u ??c l?p.<br>
-? <strong>N?i th?t hi?n ??i</strong>: M‡n hÏnh gi?i trÌ, ?Ën LED, c?a s? kÌnh t?i m‡u.<br>
-? <strong>An to‡n to‡n di?n</strong>: ABS, EBD, c?m bi?n l˘i, camera 360 ??.<br>
-? <strong>Ti?n nghi cao c?p</strong>: C?a t? ??ng, khoang h‡nh l˝ r?ng r„i.<br>
-? <strong>Ph˘ h?p cho</strong>: Tour du l?ch cao c?p, ??a ?Ûn ?o‡n, d?ch v? limousine.</p>
-<p>?? <strong>ThuÍ Hyundai Solati 16 ch? ñ ??ng c?p d?ch v? v?n chuy?n!</strong> ?</p>', 
+? <strong>??ng c? D4CB</strong>: 2.5L CRDi Turbo Diesel, 150 m√£ l?c.<br>
+? <strong>16 ch? ng?i sang tr?ng</strong>: Gh? da cao c?p, ?i?u h√≤a 2 chi?u ??c l?p.<br>
+? <strong>N?i th?t hi?n ??i</strong>: M√†n h√¨nh gi?i tr√≠, ?√®n LED, c?a s? k√≠nh t?i m√†u.<br>
+? <strong>An to√†n to√†n di?n</strong>: ABS, EBD, c?m bi?n l√πi, camera 360 ??.<br>
+? <strong>Ti?n nghi cao c?p</strong>: C?a t? ??ng, khoang h√†nh l√Ω r?ng r√£i.<br>
+? <strong>Ph√π h?p cho</strong>: Tour du l?ch cao c?p, ??a ?√≥n ?o√†n, d?ch v? limousine.</p>
+<p>?? <strong>Thu√™ Hyundai Solati 16 ch? ¬ñ ??ng c?p d?ch v? v?n chuy?n!</strong> ?</p>', 
 CAST(1700000.00 AS Decimal(10, 2)), CAST(1500000.00 AS Decimal(10, 2)), 
 N'https://hyundaivn.com.vn/wp-content/uploads/2023/09/hyundai-solati-dl-2024-ghe-xe-bus-1024x614.jpg', 
 N'active', 0, N'0', 
@@ -657,16 +657,16 @@ CAST(N'2025-02-24T11:00:00.0000000' AS DateTime2), CAST(N'2025-03-29T18:29:35.78
 GO
 -- car 23: Mercedes GLC
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (23, N'Mercedes GLC 300 2024', 48, N'<p><strong>Mercedes GLC 300 2024 ñ SUV H?ng Sang, ??ng C?p, CÙng Ngh? ??nh Cao</strong></p>
-<p>?? <strong>Mercedes GLC 300 2024</strong> l‡ m?u SUV h?ng sang v?i thi?t k? tinh t?, cÙng ngh? MBUX thÙng minh v‡ tr?i nghi?m l·i xe ??ng c?p.</p>
+VALUES (23, N'Mercedes GLC 300 2024', 48, N'<p><strong>Mercedes GLC 300 2024 ¬ñ SUV H?ng Sang, ??ng C?p, C√¥ng Ngh? ??nh Cao</strong></p>
+<p>?? <strong>Mercedes GLC 300 2024</strong> l√† m?u SUV h?ng sang v?i thi?t k? tinh t?, c√¥ng ngh? MBUX th√¥ng minh v√† tr?i nghi?m l√°i xe ??ng c?p.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? m?nh m?</strong>: 2.0L Turbo k?t h?p cÙng ngh? EQ Boost, 258 m„ l?c.<br>
-? <strong>Thi?t k? sang tr?ng</strong>: Ngo?i th?t ??ng c?p, ?Ën LED thÙng minh, m‚m AMG 20 inch.<br>
-? <strong>N?i th?t xa hoa</strong>: Gh? da Nappa, m‡n hÏnh kÈp 12.3 inch, c?a s? tr?i to‡n c?nh.<br>
-? <strong>CÙng ngh? MBUX</strong>: ?i?u khi?n gi?ng nÛi "Hey Mercedes", k?t n?i khÙng d‚y.<br>
-? <strong>¬m thanh Burmester</strong>: H? th?ng 13 loa cao c?p.<br>
-? <strong>Ph˘ h?p cho</strong>: Kh·ch VIP, doanh nh‚n, s? ki?n cao c?p, xe c??i sang tr?ng.</p>
-<p>?? <strong>ThuÍ Mercedes GLC 300 2024 ñ Bi?u t??ng ??ng c?p!</strong> ??</p>', 
+? <strong>??ng c? m?nh m?</strong>: 2.0L Turbo k?t h?p c√¥ng ngh? EQ Boost, 258 m√£ l?c.<br>
+? <strong>Thi?t k? sang tr?ng</strong>: Ngo?i th?t ??ng c?p, ?√®n LED th√¥ng minh, m√¢m AMG 20 inch.<br>
+? <strong>N?i th?t xa hoa</strong>: Gh? da Nappa, m√†n h√¨nh k√©p 12.3 inch, c?a s? tr?i to√†n c?nh.<br>
+? <strong>C√¥ng ngh? MBUX</strong>: ?i?u khi?n gi?ng n√≥i "Hey Mercedes", k?t n?i kh√¥ng d√¢y.<br>
+? <strong>√Çm thanh Burmester</strong>: H? th?ng 13 loa cao c?p.<br>
+? <strong>Ph√π h?p cho</strong>: Kh√°ch VIP, doanh nh√¢n, s? ki?n cao c?p, xe c??i sang tr?ng.</p>
+<p>?? <strong>Thu√™ Mercedes GLC 300 2024 ¬ñ Bi?u t??ng ??ng c?p!</strong> ??</p>', 
 CAST(2800000.00 AS Decimal(10, 2)), CAST(2500000.00 AS Decimal(10, 2)), 
 N'https://mercedeshaxaco.com.vn/wp-content/uploads/mercedes-benz-glc-300-4matic-all-new-2023-2024-2025-2026-2027-2028-noi-that-ngoai-that-mercedeshaxaco-com-vn-3.jpg', 
 N'active', 0, N'0', 
@@ -675,16 +675,16 @@ GO
 
 -- car 24: BMW X3
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (24, N'BMW X3 xDrive30i 2024', 49, N'<p><strong>BMW X3 xDrive30i 2024 ñ SUV Th? Thao, Sang Tr?ng, V?n H‡nh ??nh Cao</strong></p>
-<p>?? <strong>BMW X3 xDrive30i 2024</strong> k?t h?p ho‡n h?o gi?a thi?t k? th? thao, cÙng ngh? hi?n ??i v‡ tr?i nghi?m l·i xe ??m ch?t BMW.</p>
+VALUES (24, N'BMW X3 xDrive30i 2024', 49, N'<p><strong>BMW X3 xDrive30i 2024 ¬ñ SUV Th? Thao, Sang Tr?ng, V?n H√†nh ??nh Cao</strong></p>
+<p>?? <strong>BMW X3 xDrive30i 2024</strong> k?t h?p ho√†n h?o gi?a thi?t k? th? thao, c√¥ng ngh? hi?n ??i v√† tr?i nghi?m l√°i xe ??m ch?t BMW.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? TwinPower</strong>: 2.0L TwinPower Turbo, 248 m„ l?c.<br>
-? <strong>Thi?t k? th? thao</strong>: L??i t?n nhi?t kidney l?n, ?Ën LED Adaptive, M Sport Package.<br>
-? <strong>N?i th?t cao c?p</strong>: Gh? da Vernasca, m‡n hÏnh 12.3 inch, c?a s? tr?i to‡n c?nh.<br>
-? <strong>CÙng ngh? iDrive 8</strong>: ?i?u khi?n c? ch?, tr? l˝ ?o BMW Intelligent Personal Assistant.<br>
-? <strong>H? d?n ??ng xDrive</strong>: 4 b·nh to‡n th?i gian, v?n h‡nh m??t m‡ m?i ??a hÏnh.<br>
-? <strong>Ph˘ h?p cho</strong>: Doanh nh‚n, kh·ch VIP, s? ki?n cao c?p, xe c??i h?ng sang.</p>
-<p>?? <strong>ThuÍ BMW X3 2024 ñ Tr?i nghi?m The Ultimate Driving Machine!</strong> ??</p>', 
+? <strong>??ng c? TwinPower</strong>: 2.0L TwinPower Turbo, 248 m√£ l?c.<br>
+? <strong>Thi?t k? th? thao</strong>: L??i t?n nhi?t kidney l?n, ?√®n LED Adaptive, M Sport Package.<br>
+? <strong>N?i th?t cao c?p</strong>: Gh? da Vernasca, m√†n h√¨nh 12.3 inch, c?a s? tr?i to√†n c?nh.<br>
+? <strong>C√¥ng ngh? iDrive 8</strong>: ?i?u khi?n c? ch?, tr? l√Ω ?o BMW Intelligent Personal Assistant.<br>
+? <strong>H? d?n ??ng xDrive</strong>: 4 b√°nh to√†n th?i gian, v?n h√†nh m??t m√† m?i ??a h√¨nh.<br>
+? <strong>Ph√π h?p cho</strong>: Doanh nh√¢n, kh√°ch VIP, s? ki?n cao c?p, xe c??i h?ng sang.</p>
+<p>?? <strong>Thu√™ BMW X3 2024 ¬ñ Tr?i nghi?m The Ultimate Driving Machine!</strong> ??</p>', 
 CAST(2900000.00 AS Decimal(10, 2)), CAST(2600000.00 AS Decimal(10, 2)), 
 N'https://hips.hearstapps.com/hmg-prod/images/2024-bmw-x3-101-64e782a68ab3d.jpg?crop=0.945xw:0.809xh;0,0.156xh&resize=2048:*', 
 N'active', 0, N'0', 
@@ -693,16 +693,16 @@ GO
 
 -- car 25: Lexus RX
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (25, N'Lexus RX 350 2024', 51, N'<p><strong>Lexus RX 350 2024 ñ SUV H?ng Sang,  m ¡i, ??ng C?p Nh?t B?n</strong></p>
-<p>?? <strong>Lexus RX 350 2024</strong> l‡ m?u SUV h?ng sang v?i thi?t k? tinh t?, n?i th?t xa hoa v‡ ?? Ím ·i v??t tr?i, ??i di?n cho ??ng c?p Omotenashi c?a Nh?t B?n.</p>
+VALUES (25, N'Lexus RX 350 2024', 51, N'<p><strong>Lexus RX 350 2024 ¬ñ SUV H?ng Sang, √äm √Åi, ??ng C?p Nh?t B?n</strong></p>
+<p>?? <strong>Lexus RX 350 2024</strong> l√† m?u SUV h?ng sang v?i thi?t k? tinh t?, n?i th?t xa hoa v√† ?? √™m √°i v??t tr?i, ??i di?n cho ??ng c?p Omotenashi c?a Nh?t B?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? V6</strong>: 3.5L V6, 295 m„ l?c, v?n h‡nh Ím ·i tuy?t ??i.<br>
+? <strong>??ng c? V6</strong>: 3.5L V6, 295 m√£ l?c, v?n h√†nh √™m √°i tuy?t ??i.<br>
 ? <strong>Thi?t k? Spindle Grille</strong>: Ngo?i th?t sang tr?ng ??c tr?ng Lexus.<br>
-? <strong>N?i th?t ngh? thu?t</strong>: Gh? da Semi-Aniline, g? Shimamoku, m‡n hÏnh 12.3 inch.<br>
-? <strong>Lexus Safety System+</strong>: CÙng ngh? an to‡n tiÍn ti?n nh?t.<br>
-? <strong>¬m thanh Mark Levinson</strong>: H? th?ng 15 loa cao c?p.<br>
-? <strong>Ph˘ h?p cho</strong>: Kh·ch VIP cao c?p, doanh nh‚n th??ng l?u, s? ki?n ??ng c?p.</p>
-<p>?? <strong>ThuÍ Lexus RX 350 2024 ñ ??ng c?p Takumi Nh?t B?n!</strong> ????</p>', 
+? <strong>N?i th?t ngh? thu?t</strong>: Gh? da Semi-Aniline, g? Shimamoku, m√†n h√¨nh 12.3 inch.<br>
+? <strong>Lexus Safety System+</strong>: C√¥ng ngh? an to√†n ti√™n ti?n nh?t.<br>
+? <strong>√Çm thanh Mark Levinson</strong>: H? th?ng 15 loa cao c?p.<br>
+? <strong>Ph√π h?p cho</strong>: Kh√°ch VIP cao c?p, doanh nh√¢n th??ng l?u, s? ki?n ??ng c?p.</p>
+<p>?? <strong>Thu√™ Lexus RX 350 2024 ¬ñ ??ng c?p Takumi Nh?t B?n!</strong> ????</p>', 
 CAST(3200000.00 AS Decimal(10, 2)), CAST(2900000.00 AS Decimal(10, 2)), 
 N'https://www.lexus.com.vn/content/dam/lexus-v3-blueprint/models/suv/rx/rx-350/my23/overview/lexus-rx-350-overview-mgp.jpg', 
 N'active', 0, N'0', 
@@ -711,16 +711,16 @@ GO
 
 -- car 26: VinFast VF8
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (26, N'VinFast VF8 Plus 2024', 69, N'<p><strong>VinFast VF8 Plus 2024 ñ SUV ?i?n Vi?t Nam, CÙng Ngh? Xanh, Hi?n ??i</strong></p>
-<p>?? <strong>VinFast VF8 Plus 2024</strong> l‡ m?u SUV ?i?n 5 ch? ??u tiÍn c?a Vi?t Nam v?i cÙng ngh? hi?n ??i, th‚n thi?n mÙi tr??ng v‡ chi phÌ v?n h‡nh siÍu ti?t ki?m.</p>
+VALUES (26, N'VinFast VF8 Plus 2024', 69, N'<p><strong>VinFast VF8 Plus 2024 ¬ñ SUV ?i?n Vi?t Nam, C√¥ng Ngh? Xanh, Hi?n ??i</strong></p>
+<p>?? <strong>VinFast VF8 Plus 2024</strong> l√† m?u SUV ?i?n 5 ch? ??u ti√™n c?a Vi?t Nam v?i c√¥ng ngh? hi?n ??i, th√¢n thi?n m√¥i tr??ng v√† chi ph√≠ v?n h√†nh si√™u ti?t ki?m.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? ?i?n</strong>: 2 mÙ-t? ?i?n, t?ng cÙng su?t 402 m„ l?c.<br>
+? <strong>??ng c? ?i?n</strong>: 2 m√¥-t? ?i?n, t?ng c√¥ng su?t 402 m√£ l?c.<br>
 ? <strong>Ph?m vi ho?t ??ng</strong>: 447km/l?n s?c ??y (chu?n WLTP).<br>
-? <strong>Thi?t k? hi?n ??i</strong>: Ngo?i th?t th? thao, ?Ën LED Matrix, m‚m 20 inch.<br>
-? <strong>N?i th?t cÙng ngh?</strong>: M‡n hÏnh 15.6 inch, gh? da cao c?p, c?a s? tr?i to‡n c?nh.<br>
-? <strong>CÙng ngh? ADAS</strong>: H? tr? l·i b·n t? ??ng c?p ?? 2, 11 t˙i khÌ.<br>
-? <strong>Ph˘ h?p cho</strong>: Kh·ch ?a cÙng ngh? xanh, di chuy?n trong th‡nh ph?, doanh nghi?p.</p>
-<p>?? <strong>ThuÍ VinFast VF8 ñ Tr?i nghi?m xe ?i?n Made in Vietnam!</strong> ?????</p>', 
+? <strong>Thi?t k? hi?n ??i</strong>: Ngo?i th?t th? thao, ?√®n LED Matrix, m√¢m 20 inch.<br>
+? <strong>N?i th?t c√¥ng ngh?</strong>: M√†n h√¨nh 15.6 inch, gh? da cao c?p, c?a s? tr?i to√†n c?nh.<br>
+? <strong>C√¥ng ngh? ADAS</strong>: H? tr? l√°i b√°n t? ??ng c?p ?? 2, 11 t√∫i kh√≠.<br>
+? <strong>Ph√π h?p cho</strong>: Kh√°ch ?a c√¥ng ngh? xanh, di chuy?n trong th√†nh ph?, doanh nghi?p.</p>
+<p>?? <strong>Thu√™ VinFast VF8 ¬ñ Tr?i nghi?m xe ?i?n Made in Vietnam!</strong> ?????</p>', 
 CAST(1300000.00 AS Decimal(10, 2)), CAST(1100000.00 AS Decimal(10, 2)), 
 N'https://i.gaw.to/vehicles/photos/40/36/403626-2024-vinfast-vf-8.jpg?640x400', 
 N'active', 0, N'0', 
@@ -729,16 +729,16 @@ GO
 
 -- car 27: Kia Carnival
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (27, N'Kia Carnival 2024', 32, N'<p><strong>Kia Carnival 2024 ñ MPV Cao C?p, Sang Tr?ng, ?a N?ng</strong></p>
-<p>?? <strong>Kia Carnival 2024</strong> l‡ m?u MPV cao c?p v?i thi?t k? sang tr?ng, khÙng gian r?ng r„i v‡ trang b? ti?n nghi ??ng c?p, x?ng danh "Limousine 7 ch?".</p>
+VALUES (27, N'Kia Carnival 2024', 32, N'<p><strong>Kia Carnival 2024 ¬ñ MPV Cao C?p, Sang Tr?ng, ?a N?ng</strong></p>
+<p>?? <strong>Kia Carnival 2024</strong> l√† m?u MPV cao c?p v?i thi?t k? sang tr?ng, kh√¥ng gian r?ng r√£i v√† trang b? ti?n nghi ??ng c?p, x?ng danh "Limousine 7 ch?".</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Smartstream</strong>: 2.2L Diesel ho?c 3.5L V6, cÙng su?t 202-294 m„ l?c.<br>
-? <strong>Thi?t k? sang tr?ng</strong>: Ngo?i th?t ??ng c?p, ?Ën LED chi?u xa, la-z?ng 19 inch.<br>
-? <strong>N?i th?t VIP</strong>: Gh? Captain Seat v?i massage/s??i/l‡m m·t, c?a tr??t ?i?n 2 bÍn.<br>
-? <strong>CÙng ngh? gi?i trÌ</strong>: M‡n hÏnh kÈp 12.3 inch, m‡n hÏnh tr?n 12.3 inch cho h‡ng gh? sau.<br>
-? <strong>An to‡n to‡n di?n</strong>: 9 t˙i khÌ, ADAS c?p ?? 2.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh cao c?p, ??a ?Ûn VIP, d?ch v? limousine 7 ch?.</p>
-<p>?? <strong>ThuÍ Kia Carnival 2024 ñ MPV ??ng c?p Limousine!</strong> ??</p>', 
+? <strong>??ng c? Smartstream</strong>: 2.2L Diesel ho?c 3.5L V6, c√¥ng su?t 202-294 m√£ l?c.<br>
+? <strong>Thi?t k? sang tr?ng</strong>: Ngo?i th?t ??ng c?p, ?√®n LED chi?u xa, la-z?ng 19 inch.<br>
+? <strong>N?i th?t VIP</strong>: Gh? Captain Seat v?i massage/s??i/l√†m m√°t, c?a tr??t ?i?n 2 b√™n.<br>
+? <strong>C√¥ng ngh? gi?i tr√≠</strong>: M√†n h√¨nh k√©p 12.3 inch, m√†n h√¨nh tr?n 12.3 inch cho h√†ng gh? sau.<br>
+? <strong>An to√†n to√†n di?n</strong>: 9 t√∫i kh√≠, ADAS c?p ?? 2.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh cao c?p, ??a ?√≥n VIP, d?ch v? limousine 7 ch?.</p>
+<p>?? <strong>Thu√™ Kia Carnival 2024 ¬ñ MPV ??ng c?p Limousine!</strong> ??</p>', 
 CAST(1600000.00 AS Decimal(10, 2)), CAST(1400000.00 AS Decimal(10, 2)), 
 N'https://www.bisonic.vn/wp-content/uploads/2024/03/kia-carnival-2022.jpg', 
 N'active', 0, N'0', 
@@ -747,16 +747,16 @@ GO
 
 -- car 28: Suzuki Ertiga
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (28, N'Suzuki Ertiga 2024', 31, N'<p><strong>Suzuki Ertiga 2024 ñ MPV 7 Ch? Ti?t Ki?m, Linh Ho?t, Ph˘ H?p Gia ?Ïnh</strong></p>
-<p>?? <strong>Suzuki Ertiga 2024</strong> l‡ m?u MPV 7 ch? v?i thi?t k? nh? g?n, ti?t ki?m nhiÍn li?u v‡ gi· thuÍ h?p l˝, l˝ t??ng cho gia ?Ïnh v‡ taxi cÙng ngh?.</p>
+VALUES (28, N'Suzuki Ertiga 2024', 31, N'<p><strong>Suzuki Ertiga 2024 ¬ñ MPV 7 Ch? Ti?t Ki?m, Linh Ho?t, Ph√π H?p Gia ?√¨nh</strong></p>
+<p>?? <strong>Suzuki Ertiga 2024</strong> l√† m?u MPV 7 ch? v?i thi?t k? nh? g?n, ti?t ki?m nhi√™n li?u v√† gi√° thu√™ h?p l√Ω, l√Ω t??ng cho gia ?√¨nh v√† taxi c√¥ng ngh?.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? ti?t ki?m</strong>: 1.5L VVT, 105 m„ l?c, tiÍu th? ch? 5.4L/100km.<br>
-? <strong>Thi?t k? nh? g?n</strong>: D? l·i trong th‡nh ph?, g?m cao 180mm.<br>
-? <strong>7 ch? linh ho?t</strong>: H‡ng gh? 3 g?p 50:50, c?p 153 lÌt (3 h‡ng gh?).<br>
-? <strong>Ti?n nghi c? b?n</strong>: M‡n hÏnh 7 inch, ?i?u hÚa 2 v˘ng, c?m bi?n l˘i.<br>
-? <strong>An to‡n ??y ??</strong>: ABS, EBD, 2 t˙i khÌ, khung xe Tect.<br>
-? <strong>Ph˘ h?p cho</strong>: Gia ?Ïnh nh? 5-7 ng??i, taxi cÙng ngh?, thuÍ th·ng gi· t?t.</p>
-<p>?? <strong>ThuÍ Suzuki Ertiga 2024 ñ Gi?i ph·p MPV ti?t ki?m!</strong> ??</p>', 
+? <strong>??ng c? ti?t ki?m</strong>: 1.5L VVT, 105 m√£ l?c, ti√™u th? ch? 5.4L/100km.<br>
+? <strong>Thi?t k? nh? g?n</strong>: D? l√°i trong th√†nh ph?, g?m cao 180mm.<br>
+? <strong>7 ch? linh ho?t</strong>: H√†ng gh? 3 g?p 50:50, c?p 153 l√≠t (3 h√†ng gh?).<br>
+? <strong>Ti?n nghi c? b?n</strong>: M√†n h√¨nh 7 inch, ?i?u h√≤a 2 v√πng, c?m bi?n l√πi.<br>
+? <strong>An to√†n ??y ??</strong>: ABS, EBD, 2 t√∫i kh√≠, khung xe Tect.<br>
+? <strong>Ph√π h?p cho</strong>: Gia ?√¨nh nh? 5-7 ng??i, taxi c√¥ng ngh?, thu√™ th√°ng gi√° t?t.</p>
+<p>?? <strong>Thu√™ Suzuki Ertiga 2024 ¬ñ Gi?i ph√°p MPV ti?t ki?m!</strong> ??</p>', 
 CAST(650000.00 AS Decimal(10, 2)), CAST(550000.00 AS Decimal(10, 2)), 
 N'https://giaxeoto.vn/admin/upload/images/suzuki-ertiga-2024-danh-gia-xe-gia-lan-banh-uu-dai-012024-1704852153.jpg', 
 N'active', 0, N'0', 
@@ -765,16 +765,16 @@ GO
 
 -- car 29: Honda Accord
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (29, N'Honda Accord 2024', 57, N'<p><strong>Honda Accord 2024 ñ Sedan H?ng D, Sang Tr?ng, CÙng Ngh? Hi?n ??i</strong></p>
-<p>?? <strong>Honda Accord 2024</strong> l‡ m?u sedan h?ng D v?i thi?t k? thanh l?ch, ??ng c? m?nh m? v‡ cÙng ngh? Honda Sensing tiÍn ti?n.</p>
+VALUES (29, N'Honda Accord 2024', 57, N'<p><strong>Honda Accord 2024 ¬ñ Sedan H?ng D, Sang Tr?ng, C√¥ng Ngh? Hi?n ??i</strong></p>
+<p>?? <strong>Honda Accord 2024</strong> l√† m?u sedan h?ng D v?i thi?t k? thanh l?ch, ??ng c? m?nh m? v√† c√¥ng ngh? Honda Sensing ti√™n ti?n.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? VTEC Turbo</strong>: 1.5L Turbo, 192 m„ l?c, v?n h‡nh m?nh m?.<br>
-? <strong>Thi?t k? thanh l?ch</strong>: Ngo?i th?t sang tr?ng, ?Ën LED to‡n ph?n, m‚m 18 inch.<br>
-? <strong>N?i th?t cao c?p</strong>: Gh? da, m‡n hÏnh 12.3 inch, HUD, c?a s? tr?i.<br>
-? <strong>Honda Sensing</strong>: Cruise control thÌch ?ng, c?nh b·o va ch?m, ?Ën pha t? ??ng.<br>
-? <strong>KhÙng gian r?ng r„i</strong>: 5 ch? tho?i m·i, c?p 473 lÌt.<br>
-? <strong>Ph˘ h?p cho</strong>: Doanh nh‚n, cÙng t·c cao c?p, xe c??i sang tr?ng.</p>
-<p>?? <strong>ThuÍ Honda Accord 2024 ñ ??ng c?p sedan h?ng D!</strong> ?</p>', 
+? <strong>??ng c? VTEC Turbo</strong>: 1.5L Turbo, 192 m√£ l?c, v?n h√†nh m?nh m?.<br>
+? <strong>Thi?t k? thanh l?ch</strong>: Ngo?i th?t sang tr?ng, ?√®n LED to√†n ph?n, m√¢m 18 inch.<br>
+? <strong>N?i th?t cao c?p</strong>: Gh? da, m√†n h√¨nh 12.3 inch, HUD, c?a s? tr?i.<br>
+? <strong>Honda Sensing</strong>: Cruise control th√≠ch ?ng, c?nh b√°o va ch?m, ?√®n pha t? ??ng.<br>
+? <strong>Kh√¥ng gian r?ng r√£i</strong>: 5 ch? tho?i m√°i, c?p 473 l√≠t.<br>
+? <strong>Ph√π h?p cho</strong>: Doanh nh√¢n, c√¥ng t√°c cao c?p, xe c??i sang tr?ng.</p>
+<p>?? <strong>Thu√™ Honda Accord 2024 ¬ñ ??ng c?p sedan h?ng D!</strong> ?</p>', 
 CAST(1100000.00 AS Decimal(10, 2)), CAST(950000.00 AS Decimal(10, 2)), 
 N'https://www.tonyhondahilo.com/blogs/4420/wp-content/uploads/2024/05/Capture2.jpg', 
 N'active', 0, N'0', 
@@ -783,16 +783,16 @@ GO
 
 -- car 30: Toyota Camry
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (30, N'Toyota Camry 2024', 58, N'<p><strong>Toyota Camry 2024 ñ Sedan H?ng D, ??ng C?p, B?n B?</strong></p>
-<p>?? <strong>Toyota Camry 2024</strong> l‡ m?u sedan h?ng D bi?u t??ng v?i thi?t k? sang tr?ng, ??ng c? Hybrid ti?t ki?m v‡ ?? b?n b? v??t th?i gian.</p>
+VALUES (30, N'Toyota Camry 2024', 58, N'<p><strong>Toyota Camry 2024 ¬ñ Sedan H?ng D, ??ng C?p, B?n B?</strong></p>
+<p>?? <strong>Toyota Camry 2024</strong> l√† m?u sedan h?ng D bi?u t??ng v?i thi?t k? sang tr?ng, ??ng c? Hybrid ti?t ki?m v√† ?? b?n b? v??t th?i gian.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? Hybrid</strong>: 2.5L k?t h?p ??ng c? ?i?n, ti?t ki?m nhiÍn li?u t?i ?u.<br>
-? <strong>Thi?t k? sang tr?ng</strong>: Ngo?i th?t ??ng c?p, ?Ën LED 3 ch˘m, m‚m 18 inch.<br>
-? <strong>N?i th?t xa hoa</strong>: Gh? da cao c?p, m‡n hÏnh 9 inch, HUD, c?a s? tr?i.<br>
-? <strong>Toyota Safety Sense</strong>: H? th?ng an to‡n ch? ??ng to‡n di?n.<br>
-? <strong>KhÙng gian r?ng r„i</strong>: 5 ch? tho?i m·i, c?p 524 lÌt.<br>
-? <strong>Ph˘ h?p cho</strong>: Doanh nh‚n, cÙng ty, ??a ?Ûn kh·ch VIP, xe c??i cao c?p.</p>
-<p>?? <strong>ThuÍ Toyota Camry 2024 ñ Bi?u t??ng sedan Nh?t B?n!</strong> ??</p>', 
+? <strong>??ng c? Hybrid</strong>: 2.5L k?t h?p ??ng c? ?i?n, ti?t ki?m nhi√™n li?u t?i ?u.<br>
+? <strong>Thi?t k? sang tr?ng</strong>: Ngo?i th?t ??ng c?p, ?√®n LED 3 ch√πm, m√¢m 18 inch.<br>
+? <strong>N?i th?t xa hoa</strong>: Gh? da cao c?p, m√†n h√¨nh 9 inch, HUD, c?a s? tr?i.<br>
+? <strong>Toyota Safety Sense</strong>: H? th?ng an to√†n ch? ??ng to√†n di?n.<br>
+? <strong>Kh√¥ng gian r?ng r√£i</strong>: 5 ch? tho?i m√°i, c?p 524 l√≠t.<br>
+? <strong>Ph√π h?p cho</strong>: Doanh nh√¢n, c√¥ng ty, ??a ?√≥n kh√°ch VIP, xe c??i cao c?p.</p>
+<p>?? <strong>Thu√™ Toyota Camry 2024 ¬ñ Bi?u t??ng sedan Nh?t B?n!</strong> ??</p>', 
 CAST(1200000.00 AS Decimal(10, 2)), CAST(1050000.00 AS Decimal(10, 2)), 
 N'https://i-vnexpress.vnecdn.net/2023/06/05/1-JPG-4069-1671024428-6515-1685951882.jpg', 
 N'active', 0, N'0', 
@@ -801,16 +801,16 @@ GO
 
 -- car 31: Mazda 6
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (31, N'Mazda 6 2024', 59, N'<p><strong>Mazda 6 2024 ñ Sedan H?ng D, Th? Thao, Sang Tr?ng</strong></p>
-<p>?? <strong>Mazda 6 2024</strong> l‡ m?u sedan h?ng D v?i thi?t k? KODO ??ng c?p, ??ng c? SkyActiv m?nh m? v‡ tr?i nghi?m l·i xe th? thao.</p>
+VALUES (31, N'Mazda 6 2024', 59, N'<p><strong>Mazda 6 2024 ¬ñ Sedan H?ng D, Th? Thao, Sang Tr?ng</strong></p>
+<p>?? <strong>Mazda 6 2024</strong> l√† m?u sedan h?ng D v?i thi?t k? KODO ??ng c?p, ??ng c? SkyActiv m?nh m? v√† tr?i nghi?m l√°i xe th? thao.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? SkyActiv</strong>: 2.0L ho?c 2.5L Turbo, cÙng su?t 188-250 m„ l?c.<br>
-? <strong>Thi?t k? th? thao</strong>: Ngo?i th?t sang tr?ng, ?Ën LED Matrix, m‚m 19 inch.<br>
-? <strong>N?i th?t cao c?p</strong>: Gh? da Nappa, m‡n hÏnh 10.25 inch, ‚m thanh Bose 11 loa.<br>
-? <strong>CÙng ngh? i-Activsense</strong>: H? tr? phanh thÙng minh, c?nh b·o ?i?m m˘, cruise control.<br>
-? <strong>V?n h‡nh th? thao</strong>: G-Vectoring Control Plus, l·i chÌnh x·c.<br>
-? <strong>Ph˘ h?p cho</strong>: Doanh nh‚n tr?, kh·ch yÍu thÌch v?n h‡nh, s? ki?n cao c?p.</p>
-<p>?? <strong>ThuÍ Mazda 6 2024 ñ Ngh? thu?t v?n h‡nh Nh?t B?n!</strong> ??</p>', 
+? <strong>??ng c? SkyActiv</strong>: 2.0L ho?c 2.5L Turbo, c√¥ng su?t 188-250 m√£ l?c.<br>
+? <strong>Thi?t k? th? thao</strong>: Ngo?i th?t sang tr?ng, ?√®n LED Matrix, m√¢m 19 inch.<br>
+? <strong>N?i th?t cao c?p</strong>: Gh? da Nappa, m√†n h√¨nh 10.25 inch, √¢m thanh Bose 11 loa.<br>
+? <strong>C√¥ng ngh? i-Activsense</strong>: H? tr? phanh th√¥ng minh, c?nh b√°o ?i?m m√π, cruise control.<br>
+? <strong>V?n h√†nh th? thao</strong>: G-Vectoring Control Plus, l√°i ch√≠nh x√°c.<br>
+? <strong>Ph√π h?p cho</strong>: Doanh nh√¢n tr?, kh√°ch y√™u th√≠ch v?n h√†nh, s? ki?n cao c?p.</p>
+<p>?? <strong>Thu√™ Mazda 6 2024 ¬ñ Ngh? thu?t v?n h√†nh Nh?t B?n!</strong> ??</p>', 
 CAST(1000000.00 AS Decimal(10, 2)), CAST(880000.00 AS Decimal(10, 2)), 
 N'https://images2.thanhnien.vn/528068263637045248/2024/8/13/mazda6-2-17235225055131572948703.jpg', 
 N'active', 0, N'0', 
@@ -819,16 +819,16 @@ GO
 
 --car 32: VinFast Lux A2.0
 INSERT [dbo].[cars] ([id], [title], [category_id], [description], [original_price], [sale_price], [thumbnail], [status], [is_combo], [combo_group_id], [created_at], [updated_at]) 
-VALUES (32, N'VinFast Lux A2.0 2024', 17, N'<p><strong>VinFast Lux A2.0 2024 ñ Sedan H?ng D Vi?t Nam, Sang Tr?ng, CÙng Ngh?</strong></p>
-<p>?? <strong>VinFast Lux A2.0 2024</strong> l‡ m?u sedan h?ng D ??u tiÍn c?a Vi?t Nam v?i thi?t k? sang tr?ng, cÙng ngh? hi?n ??i v‡ gi· thuÍ c?nh tranh.</p>
+VALUES (32, N'VinFast Lux A2.0 2024', 17, N'<p><strong>VinFast Lux A2.0 2024 ¬ñ Sedan H?ng D Vi?t Nam, Sang Tr?ng, C√¥ng Ngh?</strong></p>
+<p>?? <strong>VinFast Lux A2.0 2024</strong> l√† m?u sedan h?ng D ??u ti√™n c?a Vi?t Nam v?i thi?t k? sang tr?ng, c√¥ng ngh? hi?n ??i v√† gi√° thu√™ c?nh tranh.</p>
 <p>? <strong>??c ?i?m n?i b?t:</strong><br>
-? <strong>??ng c? m?nh m?</strong>: 2.0L Turbo, 174 m„ l?c, h?p s? 8 c?p.<br>
-? <strong>Thi?t k? ›</strong>: Ngo?i th?t sang tr?ng do Pininfarina thi?t k?, ?Ën LED to‡n ph?n.<br>
-? <strong>N?i th?t cao c?p</strong>: Gh? da Nappa, m‡n hÏnh 10.4 inch, c?a s? tr?i.<br>
-? <strong>CÙng ngh? ADAS</strong>: H? tr? l·i c?p ?? 2, 8 t˙i khÌ.<br>
-? <strong>KhÙng gian r?ng r„i</strong>: 5 ch? tho?i m·i, c?p 500 lÌt.<br>
-? <strong>Ph˘ h?p cho</strong>: Doanh nghi?p Vi?t Nam, cÙng t·c, xe c??i, ??a ?Ûn s‚n bay.</p>
-<p>?? <strong>ThuÍ VinFast Lux A2.0 ñ T? h‡o xe Vi?t Nam!</strong> ?????</p>', 
+? <strong>??ng c? m?nh m?</strong>: 2.0L Turbo, 174 m√£ l?c, h?p s? 8 c?p.<br>
+? <strong>Thi?t k? √ù</strong>: Ngo?i th?t sang tr?ng do Pininfarina thi?t k?, ?√®n LED to√†n ph?n.<br>
+? <strong>N?i th?t cao c?p</strong>: Gh? da Nappa, m√†n h√¨nh 10.4 inch, c?a s? tr?i.<br>
+? <strong>C√¥ng ngh? ADAS</strong>: H? tr? l√°i c?p ?? 2, 8 t√∫i kh√≠.<br>
+? <strong>Kh√¥ng gian r?ng r√£i</strong>: 5 ch? tho?i m√°i, c?p 500 l√≠t.<br>
+? <strong>Ph√π h?p cho</strong>: Doanh nghi?p Vi?t Nam, c√¥ng t√°c, xe c??i, ??a ?√≥n s√¢n bay.</p>
+<p>?? <strong>Thu√™ VinFast Lux A2.0 ¬ñ T? h√†o xe Vi?t Nam!</strong> ?????</p>', 
 CAST(900000.00 AS Decimal(10, 2)), CAST(780000.00 AS Decimal(10, 2)), 
 N'https://oto360.net/images/xe/VinfastLuxA2.0/A2.0-1.webp', 
 N'active', 0, N'0', 
@@ -842,319 +842,319 @@ SET IDENTITY_INSERT [dbo].[car_sizes] ON
 GO
 
 -- car 1: Toyota Vios (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (1, 1, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (1, 1, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (2, 1, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (2, 1, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (3, 1, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (3, 1, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (4, 1, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (4, 1, N'Thu√™ theo ng√†y')
 GO
 
 -- car 2: Honda City (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (5, 2, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (5, 2, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (6, 2, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (6, 2, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (7, 2, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (7, 2, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (8, 2, N'ThuÍ theo th·ng')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (8, 2, N'Thu√™ theo th√°ng')
 GO
 
 -- car 3: Mazda CX-5 (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (9, 3, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (9, 3, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (10, 3, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (10, 3, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (11, 3, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (11, 3, N'Thu√™ theo ng√†y')
 GO
 
 -- car 4: Toyota Fortuner (7 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (12, 4, N'7 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (12, 4, N'7 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (13, 4, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (13, 4, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (14, 4, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (14, 4, N'Thu√™ theo ng√†y')
 GO
 
 -- car 5: Ford Everest (7 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (15, 5, N'7 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (15, 5, N'7 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (16, 5, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (16, 5, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (17, 5, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (17, 5, N'C√≥ t√†i x·∫ø')
 GO
 
 -- car 6: Toyota Innova Cross (7 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (18, 6, N'7 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (18, 6, N'7 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (19, 6, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (19, 6, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (20, 6, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (20, 6, N'C√≥ t√†i x·∫ø')
 GO
 
 -- car 7: Ford Transit (16 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (21, 7, N'16 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (21, 7, N'16 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (22, 7, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (22, 7, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (23, 7, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (23, 7, N'Thu√™ theo ng√†y')
 GO
 
 -- car 8: Mercedes C200 (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (24, 8, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (24, 8, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (25, 8, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (25, 8, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (26, 8, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (26, 8, N'Xe c∆∞·ªõi')
 GO
 
 -- car 9: BMW 530i (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (28, 9, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (28, 9, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (29, 9, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (29, 9, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (30, 9, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (30, 9, N'Xe c∆∞·ªõi')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (31, 9, N'S? ki?n VIP')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (31, 9, N'S·ª± ki·ªán VIP')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (32, 9, N'ThuÍ theo gi?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (32, 9, N'Thu√™ theo ng√†y')
 GO
 
 -- car 10: Hyundai Accent (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (33, 10, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (33, 10, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (34, 10, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (34, 10, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (35, 10, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (35, 10, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (36, 10, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (36, 10, N'Thu√™ theo ng√†y')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (37, 10, N'ThuÍ theo th·ng')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (37, 10, N'Thu√™ theo th√°ng')
 GO
 
 -- car 11: Mazda 3 (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (38, 11, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (38, 11, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (39, 11, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (39, 11, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (40, 11, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (40, 11, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (41, 11, N'ThuÍ theo th·ng')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (41, 11, N'Thu√™ theo th√°ng')
 GO
 
 -- car 12: Kia Cerato (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (42, 12, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (42, 12, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (43, 12, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (43, 12, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (44, 12, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (44, 12, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (45, 12, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (45, 12, N'Thu√™ theo ng√†y')
 GO
 
 -- car 13: Honda CR-V (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (46, 13, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (46, 13, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (47, 13, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (47, 13, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (48, 13, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (48, 13, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (49, 13, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (49, 13, N'Thu√™ theo ng√†y')
 GO
 
 -- car 14: Hyundai Tucson (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (50, 14, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (50, 14, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (51, 14, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (51, 14, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (52, 14, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (52, 14, N'C√≥ t√†i x·∫ø')
 GO
 
 -- car 15: Kia Seltos (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (53, 15, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (53, 15, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (54, 15, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (54, 15, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (55, 15, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (55, 15, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (56, 15, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (56, 15, N'Thu√™ theo ng√†y')
 GO
 
 -- car 16: Toyota Corolla Cross (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (57, 16, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (57, 16, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (58, 16, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (58, 16, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (59, 16, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (59, 16, N'C√≥ t√†i x·∫ø')
 GO
 
 -- car 17: Mitsubishi Xpander (7 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (60, 17, N'7 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (60, 17, N'7 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (61, 17, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (61, 17, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (62, 17, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (62, 17, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (63, 17, N'ThuÍ theo th·ng')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (63, 17, N'Thu√™ theo th√°ng')
 GO
 
 -- car 18: Hyundai SantaFe (7 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (64, 18, N'7 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (64, 18, N'7 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (65, 18, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (65, 18, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (66, 18, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (66, 18, N'Thu√™ theo ng√†y')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (67, 18, N'Du l?ch gia ?Ïnh')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (67, 18, N'Du l·ªãch gia ƒë√¨nh')
 GO
 INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (68, 18, N'Xe VIP')
 GO
 
 -- car 19: Mazda CX-8 (7 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (69, 19, N'7 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (69, 19, N'7 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (70, 19, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (70, 19, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (71, 19, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (71, 19, N'Xe c∆∞·ªõi')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (72, 19, N'S? ki?n cao c?p')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (72, 19, N'S·ª± ki·ªán cao c·∫•p')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (73, 19, N'ThuÍ theo ng‡y')
-GO
-
--- car 20: Ford Ranger (B·n t?i 5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (74, 20, N'5 ch?')
-GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (75, 20, N'B·n t?i')
-GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (76, 20, N'T? l·i')
-GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (77, 20, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (73, 19, N'Thu√™ theo ng√†y')
 GO
 
--- car 21: Toyota Hilux (B·n t?i 5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (78, 21, N'5 ch?')
+-- car 20: Ford Ranger (B√°n t?i 5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (74, 20, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (79, 21, N'B·n t?i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (75, 20, N'B√°n t·∫£i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (80, 21, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (76, 20, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (81, 21, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (77, 20, N'C√≥ t√†i x·∫ø')
+GO
+
+-- car 21: Toyota Hilux (B√°n t?i 5 ch?)
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (78, 21, N'5 ch·ªó')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (79, 21, N'B√°n t·∫£i')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (80, 21, N'T·ª± l√°i')
+GO
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (81, 21, N'C√≥ t√†i x·∫ø')
 GO
 
 -- car 22: Hyundai Solati (16 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (82, 22, N'16 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (82, 22, N'16 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (83, 22, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (83, 22, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (84, 22, N'Tour du l?ch')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (84, 22, N'Tour du l·ªãch')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (85, 22, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (85, 22, N'Thu√™ theo ng√†y')
 GO
 INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (86, 22, N'Limousine')
 GO
 
 -- car 23: Mercedes GLC (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (87, 23, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (87, 23, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (88, 23, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (88, 23, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (89, 23, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (89, 23, N'Xe c∆∞·ªõi')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (90, 23, N'S? ki?n VIP')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (90, 23, N'S·ª± ki·ªán VIP')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (91, 23, N'Thu? theo gi?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (91, 23, N'Thu√™ theo gi·ªù')
 GO
 
 -- car 24: BMW X3 (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (92, 24, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (92, 24, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (93, 24, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (93, 24, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (94, 24, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (94, 24, N'Xe c∆∞·ªõi')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (95, 24, N'S? ki?n VIP')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (95, 24, N'S·ª± ki·ªán VIP')
 GO
 
 -- car 25: Lexus RX (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (96, 25, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (96, 25, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (97, 25, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (97, 25, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (98, 25, N'Xe c??i cao c?p')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (98, 25, N'Xe c∆∞·ªõi cao c·∫•p')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (99, 25, N'Kh·ch VIP')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (99, 25, N'Kh√°ch VIP')
 GO
 
 -- car 26: VinFast VF8 (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (100, 26, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (100, 26, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (101, 26, N'Xe ?i?n')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (101, 26, N'Xe ƒëi·ªán')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (102, 26, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (102, 26, N'T·ª± l√°i')
 GO
 
 -- car 27: Kia Carnival (7 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (103, 27, N'7 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (103, 27, N'7 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (104, 27, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (104, 27, N'C√≥ t√†i x·∫ø')
 GO
 INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (105, 27, N'Limousine')
 GO
 INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (106, 27, N'Xe VIP')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (107, 27, N'Du l?ch gia ?Ïnh')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (107, 27, N'Du l·ªãch gia ƒë√¨nh')
 GO
 
 -- car 28: Suzuki Ertiga (7 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (108, 28, N'7 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (108, 28, N'7 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (109, 28, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (109, 28, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (110, 28, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (110, 28, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (111, 28, N'ThuÍ theo th·ng')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (111, 28, N'Thu√™ theo th√°ng')
 GO
 
 -- car 29: Honda Accord (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (112, 29, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (112, 29, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (113, 29, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (113, 29, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (114, 29, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (114, 29, N'Xe c∆∞·ªõi')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (115, 29, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (115, 29, N'Thu√™ theo ng√†y')
 GO
 
 -- car 30: Toyota Camry (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (116, 30, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (116, 30, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (117, 30, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (117, 30, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (118, 30, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (118, 30, N'Xe c∆∞·ªõi')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (119, 30, N'??a ?Ûn s‚n bay')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (119, 30, N'ƒê∆∞a ƒë√≥n s√¢n bay')
 GO
 
 -- car 31: Mazda 6 (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (120, 31, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (120, 31, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (121, 31, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (121, 31, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (122, 31, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (122, 31, N'C√≥ t√†i x·∫ø')
 GO
 
 -- car 32: VinFast Lux A2.0 (5 ch?)
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (123, 32, N'5 ch?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (123, 32, N'5 ch·ªó')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (124, 32, N'T? l·i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (124, 32, N'T·ª± l√°i')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (125, 32, N'CÛ t‡i x?')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (125, 32, N'C√≥ t√†i x·∫ø')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (126, 32, N'Xe c??i')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (126, 32, N'Xe c∆∞·ªõi')
 GO
-INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (127, 32, N'ThuÍ theo ng‡y')
+INSERT [dbo].[car_sizes] ([id], [car_id], [size]) VALUES (127, 32, N'Thu√™ theo ng√†y')
 GO
 
 SET IDENTITY_INSERT [dbo].[car_sizes] OFF
@@ -1163,161 +1163,161 @@ GO
 
 SET IDENTITY_INSERT [dbo].[car_colors] ON 
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (1, 1, N'Tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (1, 1, N'Tr·∫Øng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (2, 1, N'Xanh nh?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (2, 1, N'Xanh nh·∫°t')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (3, 2, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (3, 2, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (4, 2, N'X·m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (4, 2, N'X√°m')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (5, 3, N'Hoa xanh')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (6, 3, N'Hoa ??')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (6, 3, N'Xanh ng·ªçc')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (7, 4, N'Xanh ??m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (7, 4, N'Xanh ƒë·∫≠m')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (8, 4, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (8, 4, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (9, 5, N'??')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (9, 5, N'ƒê·ªè')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (10, 5, N'Xanh')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (11, 6, N'Xanh navy')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (12, 6, N'X·m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (12, 6, N'X√°m')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (13, 7, N'N‚u')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (13, 7, N'N√¢u')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (14, 7, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (14, 7, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (17, 9, N'Tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (17, 9, N'Tr·∫Øng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (18, 9, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (18, 9, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (19, 10, N'Tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (19, 10, N'Tr·∫Øng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (20, 10, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (20, 10, N'ƒêen')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (21, 10, N'Xanh')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (22, 11, N'Xanh')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (23, 11, N'??')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (23, 11, N'ƒê·ªè')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (24, 12, N'Xanh')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (25, 12, N'Xanh ??m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (25, 12, N'Xanh ƒë·∫≠m')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (26, 13, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (26, 13, N'ƒêen')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (27, 13, N'Navy')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (29, 14, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (29, 14, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (30, 14, N'X·m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (30, 14, N'X√°m')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (31, 14, N'Xanh ??m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (31, 14, N'Xanh ƒê·∫≠m')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (32, 15, N'Tr?ng h?a ti?t hoa xanh')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (32, 15, N'Tr·∫Øng be')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (33, 15, N'H?ng h?a ti?t hoa tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (33, 15, N'Tr·∫Øng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (34, 16, N'Tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (34, 16, N'Tr·∫Øng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (35, 16, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (35, 16, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (36, 16, N'X·m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (36, 16, N'X√°m')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (37, 17, N'H?ng pastel')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (37, 17, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (38, 17, N'TÌm lavender')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (38, 17, N'ƒê·ªè')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (39, 18, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (39, 18, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (40, 18, N'X·m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (40, 18, N'X√°m')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (41, 18, N'Xanh navy')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (42, 19, N'B?c')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (42, 19, N'B·∫°c')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (43, 19, N'V‡ng h?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (43, 19, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (44, 20, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (44, 20, N'ƒêen')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (45, 20, N'Kem')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (46, 20, N'?? ?Ù')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (46, 20, N'Tr·∫Øng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (47, 21, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (47, 21, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (48, 21, N'N‚u')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (48, 21, N'N√¢u')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (49, 21, N'V‡ng gold')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (49, 21, N'V√†ng gold')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (50, 22, N'Tr?ng s?c xanh')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (50, 22, N'Tr·∫Øng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (51, 22, N'Tr?ng s?c ?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (51, 22, N'Tr·∫Øng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (52, 22, N'Xanh nh?t s?c tr?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (52, 22, N'Xanh')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (53, 23, N'Xanh ??m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (53, 23, N'Xanh')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (54, 23, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (54, 23, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (55, 23, N'Xanh nh?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (55, 23, N'Xanh nh·∫°t')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (56, 24, N'Kem')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (57, 24, N'X·m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (57, 24, N'X√°m')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (58, 24, N'N‚u')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (58, 24, N'N√¢u')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (59, 25, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (59, 25, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (60, 25, N'H?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (60, 25, N'N√¢u')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (61, 25, N'Kem')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (62, 26, N'B?c')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (62, 26, N'B·∫°c')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (63, 26, N'V‡ng h?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (63, 26, N'V√†ng')
 GO
 INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (64, 27, N'Kem')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (65, 27, N'Xanh mint')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (65, 27, N'Xanh')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (66, 27, N'H?ng nh?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (66, 27, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (67, 28, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (67, 28, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (68, 28, N'N‚u')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (68, 28, N'N√¢u')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (69, 29, N'Tr?ng h?a ti?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (69, 29, N'Tr·∫Øng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (70, 29, N'Xanh da tr?i h?a ti?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (70, 29, N'Xanh')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (71, 29, N'V‡ng h?a ti?t')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (71, 29, N'V√†ng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (72, 30, N'B?c')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (72, 30, N'B·∫°c')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (73, 30, N'V‡ng h?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (73, 30, N'V√†ng')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (74, 31, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (74, 31, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (75, 31, N'X·m')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (75, 31, N'X√°m')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (76, 31, N'K? caro')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (76, 31, N'ƒê·ªè')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (77, 32, N'Be')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (77, 32, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (78, 32, N'Xanh navy')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (78, 32, N'Xanh')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (79, 32, N'?en')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (79, 32, N'ƒêen')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (80, 32, N'H?ng')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (80, 32, N'X√°m')
 GO
-INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (81, 32, N'??')
+INSERT [dbo].[car_colors] ([id], [car_id], [color]) VALUES (81, 32, N'ƒê·ªè')
 GO
 SET IDENTITY_INSERT [dbo].[car_colors] OFF
 GO
@@ -1861,57 +1861,57 @@ SET IDENTITY_INSERT [dbo].[cart_items] OFF
 GO
 SET IDENTITY_INSERT [dbo].[orders] ON 
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (1, 4, N'pending', CAST(1050000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'thÙn 1, X„ Ng?c H?i, Huy?n Thanh TrÏ, Th‡nh ph? H‡ N?i', NULL, NULL, N'ORD1743241428405538', CAST(N'2025-03-29T16:43:48.4100000' AS DateTime2), CAST(N'2025-03-29T16:43:48.4100000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (1, 4, N'pending', CAST(1050000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'th√¥n 1, X√£ Ng?c H?i, Huy?n Thanh Tr√¨, Th√†nh ph? H√† N?i', NULL, NULL, N'ORD1743241428405538', CAST(N'2025-03-29T16:43:48.4100000' AS DateTime2), CAST(N'2025-03-29T16:43:48.4100000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (2, 4, N'shipping', CAST(711000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'thÙn 1, X„ Ng?c H?i, Huy?n Thanh TrÏ, Th‡nh ph? H‡ N?i', NULL, NULL, N'ORD1743241470259289', CAST(N'2025-03-29T16:44:30.2566667' AS DateTime2), CAST(N'2025-03-29T16:44:48.7100000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (2, 4, N'shipping', CAST(711000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'th√¥n 1, X√£ Ng?c H?i, Huy?n Thanh Tr√¨, Th√†nh ph? H√† N?i', NULL, NULL, N'ORD1743241470259289', CAST(N'2025-03-29T16:44:30.2566667' AS DateTime2), CAST(N'2025-03-29T16:44:48.7100000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (3, 4, N'processing', CAST(530000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'thÙn 1, X„ Ng?c H?i, Huy?n Thanh TrÏ, Th‡nh ph? H‡ N?i', NULL, NULL, N'ORD1743241514599980', CAST(N'2025-03-29T16:45:14.6000000' AS DateTime2), CAST(N'2025-03-29T16:45:23.3066667' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (3, 4, N'processing', CAST(530000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'th√¥n 1, X√£ Ng?c H?i, Huy?n Thanh Tr√¨, Th√†nh ph? H√† N?i', NULL, NULL, N'ORD1743241514599980', CAST(N'2025-03-29T16:45:14.6000000' AS DateTime2), CAST(N'2025-03-29T16:45:23.3066667' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (4, 4, N'completed', CAST(1300000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'thÙn 1, X„ Ng?c H?i, Huy?n Thanh TrÏ, Th‡nh ph? H‡ N?i', NULL, NULL, N'ORD1743241570395435', CAST(N'2025-03-29T16:46:10.3933333' AS DateTime2), CAST(N'2025-03-29T16:46:57.8066667' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (4, 4, N'completed', CAST(1300000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'th√¥n 1, X√£ Ng?c H?i, Huy?n Thanh Tr√¨, Th√†nh ph? H√† N?i', NULL, NULL, N'ORD1743241570395435', CAST(N'2025-03-29T16:46:10.3933333' AS DateTime2), CAST(N'2025-03-29T16:46:57.8066667' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (5, 4, N'returned', CAST(225000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'thÙn 1, X„ Ng?c H?i, Huy?n Thanh TrÏ, Th‡nh ph? H‡ N?i', NULL, NULL, N'ORD1743241646245155', CAST(N'2025-03-29T16:47:26.2466667' AS DateTime2), CAST(N'2025-03-29T16:47:58.3800000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (5, 4, N'returned', CAST(225000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'th√¥n 1, X√£ Ng?c H?i, Huy?n Thanh Tr√¨, Th√†nh ph? H√† N?i', NULL, NULL, N'ORD1743241646245155', CAST(N'2025-03-29T16:47:26.2466667' AS DateTime2), CAST(N'2025-03-29T16:47:58.3800000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (6, 4, N'completed', CAST(252000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'thÙn 1, X„ Ng?c H?i, Huy?n Thanh TrÏ, Th‡nh ph? H‡ N?i', NULL, NULL, N'ORD1743241725948883', CAST(N'2025-03-29T16:48:45.9466667' AS DateTime2), CAST(N'2025-03-29T16:49:21.6766667' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (6, 4, N'completed', CAST(252000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'th√¥n 1, X√£ Ng?c H?i, Huy?n Thanh Tr√¨, Th√†nh ph? H√† N?i', NULL, NULL, N'ORD1743241725948883', CAST(N'2025-03-29T16:48:45.9466667' AS DateTime2), CAST(N'2025-03-29T16:49:21.6766667' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (7, 4, N'completed', CAST(510000.00 AS Decimal(10, 2)), N'Nguy?n Thi B', N'user123@gmail.com', N'0866046585', N'thÙn 4, Ph??ng Duy?t Trung, Th‡nh ph? Cao B?ng, T?nh Cao B?ng', NULL, NULL, N'ORD1743241840947177', CAST(N'2025-03-29T16:50:40.9466667' AS DateTime2), CAST(N'2025-03-29T16:51:17.9600000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (7, 4, N'completed', CAST(510000.00 AS Decimal(10, 2)), N'Nguy?n Thi B', N'user123@gmail.com', N'0866046585', N'th√¥n 4, Ph??ng Duy?t Trung, Th√†nh ph? Cao B?ng, T?nh Cao B?ng', NULL, NULL, N'ORD1743241840947177', CAST(N'2025-03-29T16:50:40.9466667' AS DateTime2), CAST(N'2025-03-29T16:51:17.9600000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (8, 4, N'completed', CAST(830000.00 AS Decimal(10, 2)), N'Nguy?n V?n C', N'user123@gmail.com', N'0961004959', N'thÙn 5, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', NULL, NULL, N'ORD1743241990370593', CAST(N'2025-03-29T16:53:10.3700000' AS DateTime2), CAST(N'2025-03-29T16:53:57.3333333' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (8, 4, N'completed', CAST(830000.00 AS Decimal(10, 2)), N'Nguy?n V?n C', N'user123@gmail.com', N'0961004959', N'th√¥n 5, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', NULL, NULL, N'ORD1743241990370593', CAST(N'2025-03-29T16:53:10.3700000' AS DateTime2), CAST(N'2025-03-29T16:53:57.3333333' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (9, 6, N'completed', CAST(1430000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'thÙn 6, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', NULL, NULL, N'ORD1743242141730751', CAST(N'2025-03-29T16:55:41.7300000' AS DateTime2), CAST(N'2025-03-29T16:56:07.8400000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (9, 6, N'completed', CAST(1430000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'th√¥n 6, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', NULL, NULL, N'ORD1743242141730751', CAST(N'2025-03-29T16:55:41.7300000' AS DateTime2), CAST(N'2025-03-29T16:56:07.8400000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (10, 6, N'completed', CAST(580000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'thÙn 6, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', NULL, NULL, N'ORD1743242411259913', CAST(N'2025-03-29T17:00:11.2600000' AS DateTime2), CAST(N'2025-03-29T17:01:10.2233333' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (10, 6, N'completed', CAST(580000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'th√¥n 6, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', NULL, NULL, N'ORD1743242411259913', CAST(N'2025-03-29T17:00:11.2600000' AS DateTime2), CAST(N'2025-03-29T17:01:10.2233333' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (11, 6, N'pending', CAST(180000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'thÙn 6, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', NULL, NULL, N'ORD1743242501646465', CAST(N'2025-03-29T17:01:41.6466667' AS DateTime2), CAST(N'2025-03-29T17:01:41.6466667' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (11, 6, N'pending', CAST(180000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'th√¥n 6, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', NULL, NULL, N'ORD1743242501646465', CAST(N'2025-03-29T17:01:41.6466667' AS DateTime2), CAST(N'2025-03-29T17:01:41.6466667' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (12, 6, N'processing', CAST(260000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'thÙn 6, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', NULL, NULL, N'ORD1743242522880742', CAST(N'2025-03-29T17:02:02.8800000' AS DateTime2), CAST(N'2025-03-29T17:02:13.7933333' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (12, 6, N'processing', CAST(260000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'th√¥n 6, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', NULL, NULL, N'ORD1743242522880742', CAST(N'2025-03-29T17:02:02.8800000' AS DateTime2), CAST(N'2025-03-29T17:02:13.7933333' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (13, 8, N'completed', CAST(1380000.00 AS Decimal(10, 2)), N'Nguyen Van Anh', N'Medusa@gmail.com', N'0866046585', N'thÙn 4, Ph??ng Tr?n Ph˙, Th‡nh ph? H‡ Giang, T?nh H‡ Giang', NULL, NULL, N'ORD1743242625696490', CAST(N'2025-03-29T17:03:45.6933333' AS DateTime2), CAST(N'2025-03-29T17:04:09.4933333' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (13, 8, N'completed', CAST(1380000.00 AS Decimal(10, 2)), N'Nguyen Van Anh', N'Medusa@gmail.com', N'0866046585', N'th√¥n 4, Ph??ng Tr?n Ph√∫, Th√†nh ph? H√† Giang, T?nh H√† Giang', NULL, NULL, N'ORD1743242625696490', CAST(N'2025-03-29T17:03:45.6933333' AS DateTime2), CAST(N'2025-03-29T17:04:09.4933333' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (14, 8, N'shipping', CAST(180000.00 AS Decimal(10, 2)), N'Nguyen Van Anh', N'Medusa@gmail.com', N'0866046585', N'thÙn 4, Ph??ng Tr?n Ph˙, Th‡nh ph? H‡ Giang, T?nh H‡ Giang', NULL, NULL, N'ORD1743242680246480', CAST(N'2025-03-29T17:04:40.2466667' AS DateTime2), CAST(N'2025-03-29T17:04:59.4266667' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (14, 8, N'shipping', CAST(180000.00 AS Decimal(10, 2)), N'Nguyen Van Anh', N'Medusa@gmail.com', N'0866046585', N'th√¥n 4, Ph??ng Tr?n Ph√∫, Th√†nh ph? H√† Giang, T?nh H√† Giang', NULL, NULL, N'ORD1743242680246480', CAST(N'2025-03-29T17:04:40.2466667' AS DateTime2), CAST(N'2025-03-29T17:04:59.4266667' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (15, 8, N'cancelled', CAST(445000.00 AS Decimal(10, 2)), N'Nguyen Van Anh', N'Medusa@gmail.com', N'0866046585', N'thÙn 4, Ph??ng Tr?n Ph˙, Th‡nh ph? H‡ Giang, T?nh H‡ Giang', NULL, NULL, N'ORD1743242748011878', CAST(N'2025-03-29T17:05:48.0100000' AS DateTime2), CAST(N'2025-03-29T17:06:00.9800000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (15, 8, N'cancelled', CAST(445000.00 AS Decimal(10, 2)), N'Nguyen Van Anh', N'Medusa@gmail.com', N'0866046585', N'th√¥n 4, Ph??ng Tr?n Ph√∫, Th√†nh ph? H√† Giang, T?nh H√† Giang', NULL, NULL, N'ORD1743242748011878', CAST(N'2025-03-29T17:05:48.0100000' AS DateTime2), CAST(N'2025-03-29T17:06:00.9800000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (16, 8, N'returned', CAST(295000.00 AS Decimal(10, 2)), N'Nguyen Van Anh', N'Medusa@gmail.com', N'0866046585', N'thÙn 4, Ph??ng Tr?n Ph˙, Th‡nh ph? H‡ Giang, T?nh H‡ Giang', NULL, NULL, N'ORD1743242790299989', CAST(N'2025-03-29T17:06:30.3000000' AS DateTime2), CAST(N'2025-03-29T17:06:52.3733333' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (16, 8, N'returned', CAST(295000.00 AS Decimal(10, 2)), N'Nguyen Van Anh', N'Medusa@gmail.com', N'0866046585', N'th√¥n 4, Ph??ng Tr?n Ph√∫, Th√†nh ph? H√† Giang, T?nh H√† Giang', NULL, NULL, N'ORD1743242790299989', CAST(N'2025-03-29T17:06:30.3000000' AS DateTime2), CAST(N'2025-03-29T17:06:52.3733333' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (17, 12, N'completed', CAST(900000.00 AS Decimal(10, 2)), N'Nguyen Hong Hanh', N'GuYuan@gmail.com', N'0961004935', N'thÙn 5, X„ Qu?ng KhÍ, Huy?n Ba B?, T?nh B?c K?n', NULL, NULL, N'ORD1743242886766576', CAST(N'2025-03-29T17:08:06.7633333' AS DateTime2), CAST(N'2025-03-29T17:08:40.9600000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (17, 12, N'completed', CAST(900000.00 AS Decimal(10, 2)), N'Nguyen Hong Hanh', N'GuYuan@gmail.com', N'0961004935', N'th√¥n 5, X√£ Qu?ng Kh√™, Huy?n Ba B?, T?nh B?c K?n', NULL, NULL, N'ORD1743242886766576', CAST(N'2025-03-29T17:08:06.7633333' AS DateTime2), CAST(N'2025-03-29T17:08:40.9600000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (18, 12, N'completed', CAST(3230000.00 AS Decimal(10, 2)), N'Nguyen Hong Hanh', N'GuYuan@gmail.com', N'0961004935', N'thÙn 5, X„ Qu?ng KhÍ, Huy?n Ba B?, T?nh B?c K?n', NULL, NULL, N'ORD1743243013931542', CAST(N'2025-03-29T17:10:13.9300000' AS DateTime2), CAST(N'2025-03-29T17:10:40.6600000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (18, 12, N'completed', CAST(3230000.00 AS Decimal(10, 2)), N'Nguyen Hong Hanh', N'GuYuan@gmail.com', N'0961004935', N'th√¥n 5, X√£ Qu?ng Kh√™, Huy?n Ba B?, T?nh B?c K?n', NULL, NULL, N'ORD1743243013931542', CAST(N'2025-03-29T17:10:13.9300000' AS DateTime2), CAST(N'2025-03-29T17:10:40.6600000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (19, 12, N'cancelled', CAST(550000.00 AS Decimal(10, 2)), N'Nguyen Hong Hanh', N'GuYuan@gmail.com', N'0961004935', N'thÙn 5, X„ Qu?ng KhÍ, Huy?n Ba B?, T?nh B?c K?n', NULL, NULL, N'ORD1743243064277146', CAST(N'2025-03-29T17:11:04.2766667' AS DateTime2), CAST(N'2025-03-29T17:11:08.6900000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (19, 12, N'cancelled', CAST(550000.00 AS Decimal(10, 2)), N'Nguyen Hong Hanh', N'GuYuan@gmail.com', N'0961004935', N'th√¥n 5, X√£ Qu?ng Kh√™, Huy?n Ba B?, T?nh B?c K?n', NULL, NULL, N'ORD1743243064277146', CAST(N'2025-03-29T17:11:04.2766667' AS DateTime2), CAST(N'2025-03-29T17:11:08.6900000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (20, 7, N'completed', CAST(578000.00 AS Decimal(10, 2)), N'Nguy?n Thi D', N'XiaoDing@gmail.com', N'0866046543', N'thÙn 3, Ph??ng Ng?c H‡, Th‡nh ph? H‡ Giang, T?nh H‡ Giang', NULL, NULL, N'ORD1743245078046293', CAST(N'2025-03-29T17:44:38.0466667' AS DateTime2), CAST(N'2025-03-29T17:45:39.6066667' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (20, 7, N'completed', CAST(578000.00 AS Decimal(10, 2)), N'Nguy?n Thi D', N'XiaoDing@gmail.com', N'0866046543', N'th√¥n 3, Ph??ng Ng?c H√†, Th√†nh ph? H√† Giang, T?nh H√† Giang', NULL, NULL, N'ORD1743245078046293', CAST(N'2025-03-29T17:44:38.0466667' AS DateTime2), CAST(N'2025-03-29T17:45:39.6066667' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (21, 7, N'completed', CAST(1770000.00 AS Decimal(10, 2)), N'Nguy?n Thi D', N'XiaoDing@gmail.com', N'0866046543', N'thÙn 3, Ph??ng Ng?c H‡, Th‡nh ph? H‡ Giang, T?nh H‡ Giang', NULL, NULL, N'ORD1743245281309826', CAST(N'2025-03-29T17:48:01.3066667' AS DateTime2), CAST(N'2025-03-29T17:48:29.0633333' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (21, 7, N'completed', CAST(1770000.00 AS Decimal(10, 2)), N'Nguy?n Thi D', N'XiaoDing@gmail.com', N'0866046543', N'th√¥n 3, Ph??ng Ng?c H√†, Th√†nh ph? H√† Giang, T?nh H√† Giang', NULL, NULL, N'ORD1743245281309826', CAST(N'2025-03-29T17:48:01.3066667' AS DateTime2), CAST(N'2025-03-29T17:48:29.0633333' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (22, 6, N'completed', CAST(268000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'thÙn 6, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', NULL, NULL, N'ORD174324554941174', CAST(N'2025-03-29T17:52:29.4100000' AS DateTime2), CAST(N'2025-03-29T17:52:50.5066667' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (22, 6, N'completed', CAST(268000.00 AS Decimal(10, 2)), N'Nguyen Hanh Nhan', N'user321@gmail.com', N'0866046598', N'th√¥n 6, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', NULL, NULL, N'ORD174324554941174', CAST(N'2025-03-29T17:52:29.4100000' AS DateTime2), CAST(N'2025-03-29T17:52:50.5066667' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (23, 4, N'pending_pay', CAST(480000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'thÙn 1, X„ Ng?c H?i, Huy?n Thanh TrÏ, Th‡nh ph? H‡ N?i', NULL, NULL, N'ORD17432534094115', CAST(N'2025-03-29T20:03:29.4166667' AS DateTime2), CAST(N'2025-03-29T20:03:29.4766667' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (23, 4, N'pending_pay', CAST(480000.00 AS Decimal(10, 2)), N'Nguy?n V?n A', N'user123@gmail.com', N'0866046581', N'th√¥n 1, X√£ Ng?c H?i, Huy?n Thanh Tr√¨, Th√†nh ph? H√† N?i', NULL, NULL, N'ORD17432534094115', CAST(N'2025-03-29T20:03:29.4166667' AS DateTime2), CAST(N'2025-03-29T20:03:29.4766667' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (24, 4, N'processing', CAST(225000.00 AS Decimal(10, 2)), N'Nguy?n V?n C', N'user123@gmail.com', N'0961004959', N'thÙn 5, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', NULL, NULL, N'ORD1743253488997649', CAST(N'2025-03-29T20:04:48.9966667' AS DateTime2), CAST(N'2025-03-29T20:04:49.0233333' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (24, 4, N'processing', CAST(225000.00 AS Decimal(10, 2)), N'Nguy?n V?n C', N'user123@gmail.com', N'0961004959', N'th√¥n 5, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', NULL, NULL, N'ORD1743253488997649', CAST(N'2025-03-29T20:04:48.9966667' AS DateTime2), CAST(N'2025-03-29T20:04:49.0233333' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (25, 4, N'completed', CAST(237000.00 AS Decimal(10, 2)), N'Nguy?n V?n C', N'user123@gmail.com', N'0961004959', N'thÙn 5, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', NULL, NULL, N'ORD1743253560350921', CAST(N'2025-03-29T20:06:00.3500000' AS DateTime2), CAST(N'2025-03-29T20:06:27.8500000' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (25, 4, N'completed', CAST(237000.00 AS Decimal(10, 2)), N'Nguy?n V?n C', N'user123@gmail.com', N'0961004959', N'th√¥n 5, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', NULL, NULL, N'ORD1743253560350921', CAST(N'2025-03-29T20:06:00.3500000' AS DateTime2), CAST(N'2025-03-29T20:06:27.8500000' AS DateTime2))
 GO
-INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (26, 4, N'returned', CAST(180000.00 AS Decimal(10, 2)), N'Nguy?n Thi B', N'user123@gmail.com', N'0866046585', N'thÙn 4, Ph??ng Duy?t Trung, Th‡nh ph? Cao B?ng, T?nh Cao B?ng', NULL, NULL, N'ORD1743253679026823', CAST(N'2025-03-29T20:07:59.0233333' AS DateTime2), CAST(N'2025-03-29T20:08:25.3466667' AS DateTime2))
+INSERT [dbo].[orders] ([id], [user_id], [status], [total_amount], [recipient_name], [recipient_email], [recipient_phone], [recipient_address], [shipping_code], [shiping_name], [notes], [created_at], [updated_at]) VALUES (26, 4, N'returned', CAST(180000.00 AS Decimal(10, 2)), N'Nguy?n Thi B', N'user123@gmail.com', N'0866046585', N'th√¥n 4, Ph??ng Duy?t Trung, Th√†nh ph? Cao B?ng, T?nh Cao B?ng', NULL, NULL, N'ORD1743253679026823', CAST(N'2025-03-29T20:07:59.0233333' AS DateTime2), CAST(N'2025-03-29T20:08:25.3466667' AS DateTime2))
 GO
 SET IDENTITY_INSERT [dbo].[orders] OFF
 GO
@@ -1919,146 +1919,146 @@ SET IDENTITY_INSERT [dbo].[order_items] ON
 GO
 INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (1, 1, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'28 - Xanh navy', 3, CAST(350000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (2, 1, 29, N'¡o thun tr? em ho?t hÏnh', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (2, 1, 29, N'√Åo thun tr? em ho?t h√¨nh', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (3, 2, 11, N'Qu?n short siÍu nh‚n', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (3, 2, 11, N'Qu?n short si√™u nh√¢n', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
 GO
 INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (4, 2, 6, N'Qu?n short cotton', N'https://ardilla.com.vn/wp-content/uploads/2022/03/TB1601QST.jpg', N'2-4 - Xanh navy', 2, CAST(120000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (5, 3, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'S - X·m', 2, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (5, 3, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'S - X√°m', 2, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (6, 4, 10, N'Gi‡y sneaker', N'https://bizweb.dktcdn.net/thumb/large/100/041/044/cars/48f5343d-9f9a-4ed2-aa02-de2ad1f4fabc-jpeg.jpg?v=1694597357733', N'39 - ?en', 2, CAST(400000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (6, 4, 10, N'Gi√†y sneaker', N'https://bizweb.dktcdn.net/thumb/large/100/041/044/cars/48f5343d-9f9a-4ed2-aa02-de2ad1f4fabc-jpeg.jpg?v=1694597357733', N'39 - ?en', 2, CAST(400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (7, 4, 9, N'Gi‡y th? thao', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/car/2024/09/22/z5855779313414_2914371405362ca7f474791328971969.jpg', N'39 - Tr?ng', 1, CAST(500000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (7, 4, 9, N'Gi√†y th? thao', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/car/2024/09/22/z5855779313414_2914371405362ca7f474791328971969.jpg', N'39 - Tr?ng', 1, CAST(500000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (8, 5, 28, N'DÈp l‡o nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - N‚u', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (8, 5, 28, N'D√©p l√†o nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - N√¢u', 1, CAST(180000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (9, 6, 30, N'Nh?n b?c ?Ình ?· zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'6 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (9, 6, 30, N'Nh?n b?c ?√≠nh ?√° zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'6 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (10, 7, 31, N'Ch‚n v·y x?p ly d·ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - X·m', 2, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (10, 7, 31, N'Ch√¢n v√°y x?p ly d√°ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - X√°m', 2, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (11, 8, 12, N'¡o s? mi xanh', N'https://pos.nvncdn.com/a36e05-151378/ps/20230712_TkKQqMtkUO.jpeg', N'L - Xanh', 2, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (11, 8, 12, N'√Åo s? mi xanh', N'https://pos.nvncdn.com/a36e05-151378/ps/20230712_TkKQqMtkUO.jpeg', N'L - Xanh', 2, CAST(200000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (12, 8, 22, N'¡o s? mi nam k? s?c', N'https://aoxuanhe.com/upload/car/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'M - Tr?ng s?c ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (12, 8, 22, N'√Åo s? mi nam k? s?c', N'https://aoxuanhe.com/upload/car/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'M - Tr?ng s?c ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (13, 8, 1, N'¡o s? mi tr?ng', N'https://car.hstatic.net/1000333436/car/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Xanh nh?t', 2, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (13, 8, 1, N'√Åo s? mi tr?ng', N'https://car.hstatic.net/1000333436/car/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Xanh nh?t', 2, CAST(200000.00 AS Decimal(10, 2)))
 GO
 INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (14, 9, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'30 - Xanh navy', 2, CAST(350000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (15, 9, 31, N'Ch‚n v·y x?p ly d·ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - X·m', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (15, 9, 31, N'Ch√¢n v√°y x?p ly d√°ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - X√°m', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (16, 9, 4, N'Ch‚n v·y denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'L - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (16, 9, 4, N'Ch√¢n v√°y denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'L - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (17, 9, 25, N'T˙i ?eo chÈo n? mini', N'https://image.kacana.vn/images/car/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (17, 9, 25, N'T√∫i ?eo ch√©o n? mini', N'https://image.kacana.vn/images/car/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (18, 10, 3, N'??m hoa m˘a hË', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'M - Hoa ??', 1, CAST(400000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (18, 10, 3, N'??m hoa m√πa h√®', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'M - Hoa ??', 1, CAST(400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (19, 10, 28, N'DÈp l‡o nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - ?en', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (19, 10, 28, N'D√©p l√†o nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - ?en', 1, CAST(180000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (20, 11, 29, N'¡o thun tr? em ho?t hÏnh', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (20, 11, 29, N'√Åo thun tr? em ho?t h√¨nh', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (21, 12, 30, N'Nh?n b?c ?Ình ?· zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (21, 12, 30, N'Nh?n b?c ?√≠nh ?√° zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (22, 13, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'M - X·m', 2, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (22, 13, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'M - X√°m', 2, CAST(250000.00 AS Decimal(10, 2)))
 GO
 INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (23, 13, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'34 - Be', 2, CAST(350000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (24, 13, 28, N'DÈp l‡o nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'40 - N‚u', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (24, 13, 28, N'D√©p l√†o nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'40 - N√¢u', 1, CAST(180000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (25, 14, 5, N'¡o thun siÍu nh‚n', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'2-4 - Xanh', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (25, 14, 5, N'√Åo thun si√™u nh√¢n', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'2-4 - Xanh', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (26, 15, 15, N'??m maxi hoa nhÌ', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - H?ng h?a ti?t hoa tr?ng', 1, CAST(420000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (26, 15, 15, N'??m maxi hoa nh√≠', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - H?ng h?a ti?t hoa tr?ng', 1, CAST(420000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (27, 16, 25, N'T˙i ?eo chÈo n? mini', N'https://image.kacana.vn/images/car/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (27, 16, 25, N'T√∫i ?eo ch√©o n? mini', N'https://image.kacana.vn/images/car/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (28, 17, 29, N'¡o thun tr? em ho?t hÏnh', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 4, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (28, 17, 29, N'√Åo thun tr? em ho?t h√¨nh', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 4, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (29, 17, 5, N'¡o thun siÍu nh‚n', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'4-6 - ??', 2, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (29, 17, 5, N'√Åo thun si√™u nh√¢n', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'4-6 - ??', 2, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (30, 18, 2, N'Qu?n t‚y ?en', N'https://car.hstatic.net/200000053174/car/20_bddc67b2b01a4fc6a89b6d5ca1e78b33_master.jpg', N'M - ?en', 3, CAST(300000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (30, 18, 2, N'Qu?n t√¢y ?en', N'https://car.hstatic.net/200000053174/car/20_bddc67b2b01a4fc6a89b6d5ca1e78b33_master.jpg', N'M - ?en', 3, CAST(300000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (31, 18, 3, N'??m hoa m˘a hË', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'S - Hoa ??', 4, CAST(400000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (31, 18, 3, N'??m hoa m√πa h√®', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'S - Hoa ??', 4, CAST(400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (32, 18, 31, N'Ch‚n v·y x?p ly d·ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - X·m', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (32, 18, 31, N'Ch√¢n v√°y x?p ly d√°ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - X√°m', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (33, 18, 4, N'Ch‚n v·y denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (33, 18, 4, N'Ch√¢n v√°y denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (34, 18, 1, N'¡o s? mi tr?ng', N'https://car.hstatic.net/1000333436/car/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Tr?ng', 1, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (34, 18, 1, N'√Åo s? mi tr?ng', N'https://car.hstatic.net/1000333436/car/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Tr?ng', 1, CAST(200000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (35, 19, 11, N'Qu?n short siÍu nh‚n', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (35, 19, 11, N'Qu?n short si√™u nh√¢n', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (36, 20, 31, N'Ch‚n v·y x?p ly d·ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (36, 20, 31, N'Ch√¢n v√°y x?p ly d√°ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (37, 20, 4, N'Ch‚n v·y denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (37, 20, 4, N'Ch√¢n v√°y denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (38, 20, 26, N'BÙng tai b?c hÏnh gi?t n??c', N'https://lili.vn/wp-content/uploads/2021/12/Bong-tai-bac-nu-ma-bach-kim-dinh-da-CZ-hinh-giot-nuoc-LILI_416496_13.jpg', N'Onesize - B?c', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (38, 20, 26, N'B√¥ng tai b?c h√¨nh gi?t n??c', N'https://lili.vn/wp-content/uploads/2021/12/Bong-tai-bac-nu-ma-bach-kim-dinh-da-CZ-hinh-giot-nuoc-LILI_416496_13.jpg', N'Onesize - B?c', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (39, 21, 13, N'¡o kho·c bomber nam', N'https://ginstore.com.vn/files/sanpham/1885/1/png/ao-khoac-bomber-local-brand-rg-butterfly-varsity-jacket-nam-nu-tay-da-vasity-bong-chay-form-rong-unisex.png', N'S - ?en', 1, CAST(450000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (39, 21, 13, N'√Åo kho√°c bomber nam', N'https://ginstore.com.vn/files/sanpham/1885/1/png/ao-khoac-bomber-local-brand-rg-butterfly-varsity-jacket-nam-nu-tay-da-vasity-bong-chay-form-rong-unisex.png', N'S - ?en', 1, CAST(450000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (40, 21, 17, N'V·y cÙng ch˙a cho bÈ g·i', N'https://tutupetti.com/wp-content/uploads/2023/07/dam_dep_cho_be_du_tiec_04.jpg', N'4-6 - H?ng pastel', 1, CAST(320000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (40, 21, 17, N'V√°y c√¥ng ch√∫a cho b√© g√°i', N'https://tutupetti.com/wp-content/uploads/2023/07/dam_dep_cho_be_du_tiec_04.jpg', N'4-6 - H?ng pastel', 1, CAST(320000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (41, 21, 15, N'??m maxi hoa nhÌ', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - Tr?ng h?a ti?t hoa xanh', 1, CAST(420000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (41, 21, 15, N'??m maxi hoa nh√≠', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - Tr?ng h?a ti?t hoa xanh', 1, CAST(420000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (42, 21, 21, N'KÌnh m·t th?i trang', N'https://hoyahc.vn/wp-content/uploads/2022/01/kinh-redex-kinh-mat.jpg', N'Onesize - ?en', 1, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (42, 21, 21, N'K√≠nh m√°t th?i trang', N'https://hoyahc.vn/wp-content/uploads/2022/01/kinh-redex-kinh-mat.jpg', N'Onesize - ?en', 1, CAST(200000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (43, 21, 19, N'D‚y chuy?n b?c n?', N'https://pos.nvncdn.com/211f76-106986/ps/20240805_RdCu2zj3rc.jpeg', N'40cm - B?c', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (43, 21, 19, N'D√¢y chuy?n b?c n?', N'https://pos.nvncdn.com/211f76-106986/ps/20240805_RdCu2zj3rc.jpeg', N'40cm - B?c', 1, CAST(250000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (44, 21, 20, N'Gi‡y cao gÛt n?', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/car/2024/09/20/z5850479583248_27cb755c82bd913bc95a09019f771777.jpg', N'35 - Kem', 1, CAST(380000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (44, 21, 20, N'Gi√†y cao g√≥t n?', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/car/2024/09/20/z5850479583248_27cb755c82bd913bc95a09019f771777.jpg', N'35 - Kem', 1, CAST(380000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (45, 22, 22, N'¡o s? mi nam k? s?c', N'https://aoxuanhe.com/upload/car/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'S - Xanh nh?t s?c tr?ng', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (45, 22, 22, N'√Åo s? mi nam k? s?c', N'https://aoxuanhe.com/upload/car/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'S - Xanh nh?t s?c tr?ng', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (46, 23, 31, N'Ch‚n v·y x?p ly d·ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (46, 23, 31, N'Ch√¢n v√°y x?p ly d√°ng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (47, 23, 30, N'Nh?n b?c ?Ình ?· zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (47, 23, 30, N'Nh?n b?c ?√≠nh ?√° zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (48, 24, 16, N'¡o thun unisex', N'https://sure.vn/wp-content/uploads/2024/08/7-1-scaled.jpg', N'S - Tr?ng', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (48, 24, 16, N'√Åo thun unisex', N'https://sure.vn/wp-content/uploads/2024/08/7-1-scaled.jpg', N'S - Tr?ng', 1, CAST(180000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (49, 25, 30, N'Nh?n b?c ?Ình ?· zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - V‡ng h?ng', 1, CAST(230000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (49, 25, 30, N'Nh?n b?c ?√≠nh ?√° zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - V√†ng h?ng', 1, CAST(230000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (50, 26, 29, N'¡o thun tr? em ho?t hÏnh', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'4-6 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (50, 26, 29, N'√Åo thun tr? em ho?t h√¨nh', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'4-6 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
 GO
 SET IDENTITY_INSERT [dbo].[order_items] OFF
 GO
 
 SET IDENTITY_INSERT [dbo].[feedback] ON 
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (1, 30, 12, 5, N'Honda City 2024 ch?t l??ng r?t t?t, v?n h‡nh Ím ·i nh?ng v?n m?nh m?, ti?t ki?m nhiÍn li?u. Thi?t k? ??p m?t, r?t ph˘ h?p ?? ?i l‡m ho?c ?i du l?ch gia ?Ïnh. Giao xe nhanh, th? t?c c?n th?n. MÏnh s? ti?p t?c ?ng h? showroom!', N'approved', CAST(N'2025-03-29T17:22:11.5233333' AS DateTime2), CAST(N'2025-03-29T17:54:40.1633333' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (1, 30, 12, 5, N'Honda City 2024 ch?t l??ng r?t t?t, v?n h√†nh √™m √°i nh?ng v?n m?nh m?, ti?t ki?m nhi√™n li?u. Thi?t k? ??p m?t, r?t ph√π h?p ?? ?i l√†m ho?c ?i du l?ch gia ?√¨nh. Giao xe nhanh, th? t?c c?n th?n. M√¨nh s? ti?p t?c ?ng h? showroom!', N'approved', CAST(N'2025-03-29T17:22:11.5233333' AS DateTime2), CAST(N'2025-03-29T17:54:40.1633333' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (2, 31, 12, 4, N'Toyota Vios ??p, l?p r·p ch?c ch?n, ch?t li?u n?i th?t m?m m?i. Tuy nhiÍn, mÏnh ??t b?n tiÍu chu?n h?i thi?u tÌnh n?ng m?t ch˙t, l?n sau mÏnh s? ch?n b?n cao c?p h?n. NhÏn chung r?t ?·ng mua!', N'approved', CAST(N'2025-03-29T17:22:11.5433333' AS DateTime2), CAST(N'2025-03-29T17:56:39.7266667' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (2, 31, 12, 4, N'Toyota Vios ??p, l?p r√°p ch?c ch?n, ch?t li?u n?i th?t m?m m?i. Tuy nhi√™n, m√¨nh ??t b?n ti√™u chu?n h?i thi?u t√≠nh n?ng m?t ch√∫t, l?n sau m√¨nh s? ch?n b?n cao c?p h?n. Nh√¨n chung r?t ?√°ng mua!', N'approved', CAST(N'2025-03-29T17:22:11.5433333' AS DateTime2), CAST(N'2025-03-29T17:56:39.7266667' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (3, 32, 12, 3, N'Mazda 3 ??p, ch?t li?u gh? m?m m?i, l?p r·p ch?c ch?n. Tuy nhiÍn, ph?n c?p h?i nh? so v?i nhu c?u c?a mÏnh, ph?i s?p x?p l?i m?t ch˙t. Nh?ng t?ng th? v?n r?t ?·ng mua!', N'approved', CAST(N'2025-03-29T17:22:11.5500000' AS DateTime2), CAST(N'2025-03-29T17:56:51.6433333' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (3, 32, 12, 3, N'Mazda 3 ??p, ch?t li?u gh? m?m m?i, l?p r√°p ch?c ch?n. Tuy nhi√™n, ph?n c?p h?i nh? so v?i nhu c?u c?a m√¨nh, ph?i s?p x?p l?i m?t ch√∫t. Nh?ng t?ng th? v?n r?t ?√°ng mua!', N'approved', CAST(N'2025-03-29T17:22:11.5500000' AS DateTime2), CAST(N'2025-03-29T17:56:51.6433333' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (4, 33, 12, 2, N'Hyundai Accent cÛ thi?t k? ??p nh?ng ch?t l??ng ch?a t?t. H? th?ng treo c?ng v‡ h?i ?n, l·i khÙng tho?i m·i l?m. MÏnh ??t b?n s? s‡n nh?ng ph?n ly h?p h?i n?ng, ph?i ?i?u ch?nh l?i. Giao xe kh· l‚u so v?i d? ki?n. Hy v?ng showroom c?i thi?n ch?t l??ng v‡ d?ch v?!', N'approved', CAST(N'2025-03-29T17:22:11.5566667' AS DateTime2), CAST(N'2025-03-29T17:56:47.4100000' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (4, 33, 12, 2, N'Hyundai Accent c√≥ thi?t k? ??p nh?ng ch?t l??ng ch?a t?t. H? th?ng treo c?ng v√† h?i ?n, l√°i kh√¥ng tho?i m√°i l?m. M√¨nh ??t b?n s? s√†n nh?ng ph?n ly h?p h?i n?ng, ph?i ?i?u ch?nh l?i. Giao xe kh√° l√¢u so v?i d? ki?n. Hy v?ng showroom c?i thi?n ch?t l??ng v√† d?ch v?!', N'approved', CAST(N'2025-03-29T17:22:11.5566667' AS DateTime2), CAST(N'2025-03-29T17:56:47.4100000' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (5, 34, 12, 5, N'Mercedes C-Class ??p xu?t s?c! Ch?t li?u n?i th?t cao c?p, sang tr?ng, l·i r?t tho?i m·i. Thi?t k? thanh l?ch, lÍn d·ng ??ng c?p, ph˘ h?p c? ?i l‡m v‡ ?i ch?i. Giao xe nhanh, th? t?c c?n th?n. R?t h‡i lÚng, s? ?ng h? showroom l?n sau!', N'approved', CAST(N'2025-03-29T17:22:11.5600000' AS DateTime2), CAST(N'2025-03-29T17:56:43.9533333' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (5, 34, 12, 5, N'Mercedes C-Class ??p xu?t s?c! Ch?t li?u n?i th?t cao c?p, sang tr?ng, l√°i r?t tho?i m√°i. Thi?t k? thanh l?ch, l√™n d√°ng ??ng c?p, ph√π h?p c? ?i l√†m v√† ?i ch?i. Giao xe nhanh, th? t?c c?n th?n. R?t h√†i l√≤ng, s? ?ng h? showroom l?n sau!', N'approved', CAST(N'2025-03-29T17:22:11.5600000' AS DateTime2), CAST(N'2025-03-29T17:56:43.9533333' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (6, 28, 12, 5, N'Xe ??p tr? em siÍu d? th??ng! Ch?t li?u khung nh?, b·nh xe b·m ???ng t?t, h? th?ng phanh nh?y nÍn bÈ ??p r?t tho?i m·i. M‡u s?n s?c nÈt, khÙng b? bong trÛc sau th?i gian s? d?ng. Giao h‡ng nhanh, ?Ûng gÛi c?n th?n. R?t h‡i lÚng, s? mua thÍm m?u kh·c cho bÈ!', N'approved', CAST(N'2025-03-29T17:23:29.9666667' AS DateTime2), CAST(N'2025-03-29T17:54:36.8333333' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (6, 28, 12, 5, N'Xe ??p tr? em si√™u d? th??ng! Ch?t li?u khung nh?, b√°nh xe b√°m ???ng t?t, h? th?ng phanh nh?y n√™n b√© ??p r?t tho?i m√°i. M√†u s?n s?c n√©t, kh√¥ng b? bong tr√≥c sau th?i gian s? d?ng. Giao h√†ng nhanh, ?√≥ng g√≥i c?n th?n. R?t h√†i l√≤ng, s? mua th√™m m?u kh√°c cho b√©!', N'approved', CAST(N'2025-03-29T17:23:29.9666667' AS DateTime2), CAST(N'2025-03-29T17:54:36.8333333' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (7, 29, 12, 3, N'Xe m·y Honda Vision thi?t k? ??p, m‡u s?n rı nÈt nh?ng yÍn xe h?i m?ng so v?i mong ??i. Sau th?i gian s? d?ng, cÛ hi?n t??ng rung l?t nh?. Giao xe ?˙ng h?n, nh?ng mong showroom c?i thi?n ch?t l??ng h?n!', N'approved', CAST(N'2025-03-29T17:23:29.9733333' AS DateTime2), CAST(N'2025-03-29T17:54:31.2766667' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (7, 29, 12, 3, N'Xe m√°y Honda Vision thi?t k? ??p, m√†u s?n r√µ n√©t nh?ng y√™n xe h?i m?ng so v?i mong ??i. Sau th?i gian s? d?ng, c√≥ hi?n t??ng rung l?t nh?. Giao xe ?√∫ng h?n, nh?ng mong showroom c?i thi?n ch?t l??ng h?n!', N'approved', CAST(N'2025-03-29T17:23:29.9733333' AS DateTime2), CAST(N'2025-03-29T17:54:31.2766667' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (8, 18, 6, 4, N'Vinfast VF8 thi?t k? ??p, cÙng ngh? hi?n ??i, r?t ph˘ h?p cho th?i ??i xe ?i?n. Tuy nhiÍn, tr?m s?c cÚn Ìt v‡ c?n lÍn k? ho?ch k? tr??c khi ?i xa. T?m ho?t ??ng c?ng h?i ng?n so v?i k? v?ng. Giao xe nhanh, nh?ng mong h„ng c?i thi?n h? t?ng s?c h?n!', N'approved', CAST(N'2025-03-29T17:26:23.8400000' AS DateTime2), CAST(N'2025-03-29T17:54:27.4100000' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (8, 18, 6, 4, N'Vinfast VF8 thi?t k? ??p, c√¥ng ngh? hi?n ??i, r?t ph√π h?p cho th?i ??i xe ?i?n. Tuy nhi√™n, tr?m s?c c√≤n √≠t v√† c?n l√™n k? ho?ch k? tr??c khi ?i xa. T?m ho?t ??ng c?ng h?i ng?n so v?i k? v?ng. Giao xe nhanh, nh?ng mong h√£ng c?i thi?n h? t?ng s?c h?n!', N'approved', CAST(N'2025-03-29T17:26:23.8400000' AS DateTime2), CAST(N'2025-03-29T17:54:27.4100000' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (9, 19, 6, 5, N'L?p xe Michelin r?t b?n, ?? b·m ???ng t?t v‡ ?n ??nh, ch?y l‚u khÙng b? mÚn nhanh. Ch?t li?u cao c?p, khÙng cÛ m˘i khÛ ch?u. Thi?t k? gai l?p t?i ?u, r?t ?·ng ti?n. Giao h‡ng nhanh, ?Ûng gÛi c?n th?n. R?t h‡i lÚng!', N'approved', CAST(N'2025-03-29T17:26:23.8600000' AS DateTime2), CAST(N'2025-03-29T17:54:23.0566667' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (9, 19, 6, 5, N'L?p xe Michelin r?t b?n, ?? b√°m ???ng t?t v√† ?n ??nh, ch?y l√¢u kh√¥ng b? m√≤n nhanh. Ch?t li?u cao c?p, kh√¥ng c√≥ m√πi kh√≥ ch?u. Thi?t k? gai l?p t?i ?u, r?t ?√°ng ti?n. Giao h√†ng nhanh, ?√≥ng g√≥i c?n th?n. R?t h√†i l√≤ng!', N'approved', CAST(N'2025-03-29T17:26:23.8600000' AS DateTime2), CAST(N'2025-03-29T17:54:23.0566667' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (10, 14, 6, 4, N'Ford Ranger ch?t li?u t?t, khung g?m ch?c ch?n nh?ng v?n v?n h‡nh Ím, l·i kh· tho?i m·i. Thi?t k? b?n b?, l?p r·p ch?c ch?n. Tuy nhiÍn, m‡u s?n th?c t? h?i kh·c so v?i hÏnh ?nh. Giao xe nhanh, showroom t? v?n nhi?t tÏnh. NhÏn chung r?t h‡i lÚng!', N'approved', CAST(N'2025-03-29T17:28:21.6100000' AS DateTime2), CAST(N'2025-03-29T17:54:19.9366667' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (10, 14, 6, 4, N'Ford Ranger ch?t li?u t?t, khung g?m ch?c ch?n nh?ng v?n v?n h√†nh √™m, l√°i kh√° tho?i m√°i. Thi?t k? b?n b?, l?p r√°p ch?c ch?n. Tuy nhi√™n, m√†u s?n th?c t? h?i kh√°c so v?i h√¨nh ?nh. Giao xe nhanh, showroom t? v?n nhi?t t√¨nh. Nh√¨n chung r?t h√†i l√≤ng!', N'approved', CAST(N'2025-03-29T17:28:21.6100000' AS DateTime2), CAST(N'2025-03-29T17:54:19.9366667' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (11, 15, 6, 3, N'Kia Morning cÛ thi?t k? xinh, gi· ph?i ch?ng nh?ng ch?t li?u n?i th?t h?i ??n gi?n v‡ d? tr?y x??c. L?p r·p ch?a th?c s? ch?c ch?n, s? d?ng v‡i th·ng cÛ d?u hi?u kÍu l?ch c?ch nh?. Giao xe ?˙ng h?n. Mong showroom c?i thi?n ch?t l??ng h?n!', N'approved', CAST(N'2025-03-29T17:28:21.6133333' AS DateTime2), CAST(N'2025-03-29T17:54:17.9933333' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (11, 15, 6, 3, N'Kia Morning c√≥ thi?t k? xinh, gi√° ph?i ch?ng nh?ng ch?t li?u n?i th?t h?i ??n gi?n v√† d? tr?y x??c. L?p r√°p ch?a th?c s? ch?c ch?n, s? d?ng v√†i th√°ng c√≥ d?u hi?u k√™u l?ch c?ch nh?. Giao xe ?√∫ng h?n. Mong showroom c?i thi?n ch?t l??ng h?n!', N'approved', CAST(N'2025-03-29T17:28:21.6133333' AS DateTime2), CAST(N'2025-03-29T17:54:17.9933333' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (12, 16, 6, 3, N'Toyota Fortuner cÛ thi?t k? ??p, d? ph?i ??. Tuy nhiÍn, tiÍu hao nhiÍn li?u h?i cao v‡ khÙng Ím nh? mong ??i. M‡u s?n c?ng h?i kh·c so v?i hÏnh ?nh. Giao xe nhanh nh?ng mong showroom c?i thi?n ch?t l??ng ??ng c? h?n!', N'approved', CAST(N'2025-03-29T17:28:21.6200000' AS DateTime2), CAST(N'2025-03-29T17:54:15.6400000' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (12, 16, 6, 3, N'Toyota Fortuner c√≥ thi?t k? ??p, d? ph?i ??. Tuy nhi√™n, ti√™u hao nhi√™n li?u h?i cao v√† kh√¥ng √™m nh? mong ??i. M√†u s?n c?ng h?i kh√°c so v?i h√¨nh ?nh. Giao xe nhanh nh?ng mong showroom c?i thi?n ch?t l??ng ??ng c? h?n!', N'approved', CAST(N'2025-03-29T17:28:21.6200000' AS DateTime2), CAST(N'2025-03-29T17:54:15.6400000' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (13, 17, 6, 5, N'Ph? t˘ng ??ng c? Honda siÍu t?t, nh? g?n nh?ng ch?a ???c kh· nhi?u chi ti?t quan tr?ng. Ch?t li?u ??p, kim lo?i b?n b?, l?p r·p ch?c ch?n. D? l?p ??t v‡ b?o d??ng linh ho?t. R?t d? d˘ng, ph˘ h?p cho c? th? chuyÍn nghi?p v‡ ng??i t? s?a. Giao h‡ng nhanh, ?Ûng gÛi c?n th?n. R?t ?ng ˝!', N'approved', CAST(N'2025-03-29T17:28:21.6200000' AS DateTime2), CAST(N'2025-03-29T17:54:13.7066667' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (13, 17, 6, 5, N'Ph? t√πng ??ng c? Honda si√™u t?t, nh? g?n nh?ng ch?a ???c kh√° nhi?u chi ti?t quan tr?ng. Ch?t li?u ??p, kim lo?i b?n b?, l?p r√°p ch?c ch?n. D? l?p ??t v√† b?o d??ng linh ho?t. R?t d? d√πng, ph√π h?p cho c? th? chuy√™n nghi?p v√† ng??i t? s?a. Giao h√†ng nhanh, ?√≥ng g√≥i c?n th?n. R?t ?ng √Ω!', N'approved', CAST(N'2025-03-29T17:28:21.6200000' AS DateTime2), CAST(N'2025-03-29T17:54:13.7066667' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (14, 39, 7, 3, N'BMW 3 Series cÛ thi?t k? ??p, ki?u d·ng th? thao. Tuy nhiÍn, h? th?ng treo h?i c?ng h?n so v?i mong ??i, l·i trong th‡nh ph? khÙng ?? Ím. L?p r·p ?n nh?ng h? th?ng ?i?u hÚa h?i y?u. Giao xe ?˙ng h?n. Mong showroom c?i thi?n ch?t l??ng h?n!', N'approved', CAST(N'2025-03-29T17:51:07.7933333' AS DateTime2), CAST(N'2025-03-29T17:54:11.1800000' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (14, 39, 7, 3, N'BMW 3 Series c√≥ thi?t k? ??p, ki?u d√°ng th? thao. Tuy nhi√™n, h? th?ng treo h?i c?ng h?n so v?i mong ??i, l√°i trong th√†nh ph? kh√¥ng ?? √™m. L?p r√°p ?n nh?ng h? th?ng ?i?u h√≤a h?i y?u. Giao xe ?√∫ng h?n. Mong showroom c?i thi?n ch?t l??ng h?n!', N'approved', CAST(N'2025-03-29T17:51:07.7933333' AS DateTime2), CAST(N'2025-03-29T17:54:11.1800000' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (15, 40, 7, 5, N'Xe ??p mini cho bÈ siÍu ??p, bÈ nh‡ mÏnh r?t thÌch! Ch?t li?u khung nh?, khÙng g‚y ng?a hay khÛ ch?u. Thi?t k? ?·ng yÍu, m‡u s?c ?˙ng nh? hÏnh, l?p r·p ch?c ch?n. ??p lÍn nhÏn yÍu l?m! Giao h‡ng nhanh, ?Ûng gÛi c?n th?n. R?t h‡i lÚng!', N'approved', CAST(N'2025-03-29T17:51:07.8133333' AS DateTime2), CAST(N'2025-03-29T17:54:07.0966667' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (15, 40, 7, 5, N'Xe ??p mini cho b√© si√™u ??p, b√© nh√† m√¨nh r?t th√≠ch! Ch?t li?u khung nh?, kh√¥ng g√¢y ng?a hay kh√≥ ch?u. Thi?t k? ?√°ng y√™u, m√†u s?c ?√∫ng nh? h√¨nh, l?p r√°p ch?c ch?n. ??p l√™n nh√¨n y√™u l?m! Giao h√†ng nhanh, ?√≥ng g√≥i c?n th?n. R?t h√†i l√≤ng!', N'approved', CAST(N'2025-03-29T17:51:07.8133333' AS DateTime2), CAST(N'2025-03-29T17:54:07.0966667' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (16, 41, 7, 4, N'Mitsubishi Xpander r?t ti?n d?ng, thi?t k? nh? nh‡ng, ?a n?ng. N?i th?t r?ng r„i, tho·ng m·t, l·i m˘a hË r?t d? ch?u. Tuy nhiÍn, xe h?i d‡i h?n so v?i mong ??i, ?? xe ph?i c?n th?n m?t ch˙t. Giao xe nhanh, ?Ûng gÛi c?n th?n. NhÏn chung r?t h‡i lÚng!', N'approved', CAST(N'2025-03-29T17:51:07.8133333' AS DateTime2), CAST(N'2025-03-29T17:54:09.1333333' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (16, 41, 7, 4, N'Mitsubishi Xpander r?t ti?n d?ng, thi?t k? nh? nh√†ng, ?a n?ng. N?i th?t r?ng r√£i, tho√°ng m√°t, l√°i m√πa h√® r?t d? ch?u. Tuy nhi√™n, xe h?i d√†i h?n so v?i mong ??i, ?? xe ph?i c?n th?n m?t ch√∫t. Giao xe nhanh, ?√≥ng g√≥i c?n th?n. Nh√¨n chung r?t h√†i l√≤ng!', N'approved', CAST(N'2025-03-29T17:51:07.8133333' AS DateTime2), CAST(N'2025-03-29T17:54:09.1333333' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (17, 42, 7, 2, N'Camera h‡nh trÏnh cÛ thi?t k? ??p nh?ng ch?t l??ng ch?a t?t. ?ng kÌnh h?i m?, ?eo l‚u khÙng rı nÈt. Kh? n?ng quay ban ?Ím khÙng hi?u qu? nh? mong ??i. Giao h‡ng ?˙ng h?n nh?ng s?n ph?m ch?a th?c s? ?ng ˝. Mong shop c?i thi?n ch?t l??ng h?n!', N'approved', CAST(N'2025-03-29T17:51:07.8200000' AS DateTime2), CAST(N'2025-03-29T17:54:04.9000000' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (17, 42, 7, 2, N'Camera h√†nh tr√¨nh c√≥ thi?t k? ??p nh?ng ch?t l??ng ch?a t?t. ?ng k√≠nh h?i m?, ?eo l√¢u kh√¥ng r√µ n√©t. Kh? n?ng quay ban ?√™m kh√¥ng hi?u qu? nh? mong ??i. Giao h√†ng ?√∫ng h?n nh?ng s?n ph?m ch?a th?c s? ?ng √Ω. Mong shop c?i thi?n ch?t l??ng h?n!', N'approved', CAST(N'2025-03-29T17:51:07.8200000' AS DateTime2), CAST(N'2025-03-29T17:54:04.9000000' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (18, 43, 7, 4, N'D‚y curoa Ù tÙ ??p, thi?t k? tinh t? v‡ b?n b?. Ch?t li?u cao su t?t, l?p khÙng b? tr??t ??ng c?. Tuy nhiÍn, d‚y h?i c?ng h?n so v?i t??ng t??ng, c?n gi? gÏn c?n th?n. Giao h‡ng nhanh, ?Ûng gÛi c?n th?n. NhÏn chung r?t ?ng ˝!', N'approved', CAST(N'2025-03-29T17:51:07.8233333' AS DateTime2), CAST(N'2025-03-29T17:54:02.6400000' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (18, 43, 7, 4, N'D√¢y curoa √¥ t√¥ ??p, thi?t k? tinh t? v√† b?n b?. Ch?t li?u cao su t?t, l?p kh√¥ng b? tr??t ??ng c?. Tuy nhi√™n, d√¢y h?i c?ng h?n so v?i t??ng t??ng, c?n gi? g√¨n c?n th?n. Giao h√†ng nhanh, ?√≥ng g√≥i c?n th?n. Nh√¨n chung r?t ?ng √Ω!', N'approved', CAST(N'2025-03-29T17:51:07.8233333' AS DateTime2), CAST(N'2025-03-29T17:54:02.6400000' AS DateTime2))
 GO
-INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (19, 44, 7, 5, N'Lexus RX 350 c?c ??p, l·i r?t Ím, khÙng b? rung d˘ di chuy?n c? ng‡y. Ch?t li?u n?i th?t sang tr?ng, l?p r·p ch?c ch?n, thi?t k? thanh l?ch v‡ d? v?n h‡nh. Giao xe nhanh, th? t?c c?n th?n. R?t h‡i lÚng, s? ?ng h? showroom l?n sau!', N'approved', CAST(N'2025-03-29T17:51:07.8266667' AS DateTime2), CAST(N'2025-03-29T17:54:00.9266667' AS DateTime2))
+INSERT [dbo].[feedback] ([id], [order_item_id], [user_id], [rating], [comment], [status], [created_at], [updated_at]) VALUES (19, 44, 7, 5, N'Lexus RX 350 c?c ??p, l√°i r?t √™m, kh√¥ng b? rung d√π di chuy?n c? ng√†y. Ch?t li?u n?i th?t sang tr?ng, l?p r√°p ch?c ch?n, thi?t k? thanh l?ch v√† d? v?n h√†nh. Giao xe nhanh, th? t?c c?n th?n. R?t h√†i l√≤ng, s? ?ng h? showroom l?n sau!', N'approved', CAST(N'2025-03-29T17:51:07.8266667' AS DateTime2), CAST(N'2025-03-29T17:54:00.9266667' AS DateTime2))
 GO
 SET IDENTITY_INSERT [dbo].[feedback] OFF
 GO
@@ -2066,45 +2066,45 @@ GO
 
 SET IDENTITY_INSERT [dbo].[feedback_reply] ON 
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (1, 19, 3, N'C?m ?n anh/ch? ?„ d‡nh th?i gian ?·nh gi· s?n ph?m! ?? Showroom r?t vui khi bi?t anh/ch? h‡i lÚng v?i chi?c Lexus RX 350 ñ v?a ??p, v?a Ím ·i l?i tho?i m·i khi v?n h‡nh. ?? Ch˙ng em luÙn n? l?c mang ??n nh?ng s?n ph?m ch?t l??ng v‡ tr?i nghi?m mua xe tuy?t v?i nh?t. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n h? tr? gÏ, ??ng ng?i liÍn h? v?i showroom nhÈ!???', CAST(N'2025-03-29T17:58:46.1566667' AS DateTime2), CAST(N'2025-03-29T17:58:46.1566667' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (1, 19, 3, N'C?m ?n anh/ch? ?√£ d√†nh th?i gian ?√°nh gi√° s?n ph?m! ?? Showroom r?t vui khi bi?t anh/ch? h√†i l√≤ng v?i chi?c Lexus RX 350 ¬ñ v?a ??p, v?a √™m √°i l?i tho?i m√°i khi v?n h√†nh. ?? Ch√∫ng em lu√¥n n? l?c mang ??n nh?ng s?n ph?m ch?t l??ng v√† tr?i nghi?m mua xe tuy?t v?i nh?t. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n h? tr? g√¨, ??ng ng?i li√™n h? v?i showroom nh√©!???', CAST(N'2025-03-29T17:58:46.1566667' AS DateTime2), CAST(N'2025-03-29T17:58:46.1566667' AS DateTime2))
 GO
 INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (2, 18, 3, N'**Ph?n h?i t? Showroom:**  
 
-"C?m ?n anh/ch? ?„ tin t??ng v‡ d‡nh nh?ng l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h‡i lÚng v?i thi?t k? v‡ ch?t l??ng c?a d‚y curoa. ?? Showroom s? ti?p t?c c?i thi?n ?? mang ??n nh?ng s?n ph?m ng‡y c‡ng ho‡n thi?n h?n. N?u c?n t? v?n thÍm v? c·ch b?o qu?n ph? t˘ng ?? luÙn b?n ??p, anh/ch? c? nh?n showroom nhÈ! Hy v?ng s? ???c ph?c v? anh/ch? trong nh?ng l?n mua s?m ti?p theo! ??"  ', CAST(N'2025-03-29T17:59:18.0233333' AS DateTime2), CAST(N'2025-03-29T17:59:18.0233333' AS DateTime2))
+"C?m ?n anh/ch? ?√£ tin t??ng v√† d√†nh nh?ng l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h√†i l√≤ng v?i thi?t k? v√† ch?t l??ng c?a d√¢y curoa. ?? Showroom s? ti?p t?c c?i thi?n ?? mang ??n nh?ng s?n ph?m ng√†y c√†ng ho√†n thi?n h?n. N?u c?n t? v?n th√™m v? c√°ch b?o qu?n ph? t√πng ?? lu√¥n b?n ??p, anh/ch? c? nh?n showroom nh√©! Hy v?ng s? ???c ph?c v? anh/ch? trong nh?ng l?n mua s?m ti?p theo! ??"  ', CAST(N'2025-03-29T17:59:18.0233333' AS DateTime2), CAST(N'2025-03-29T17:59:18.0233333' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (3, 17, 3, N'C?m ?n anh/ch? ?„ d‡nh th?i gian chia s? ˝ ki?n v? s?n ph?m! ?? Showroom r?t ti?c khi s?n ph?m ch?a ?·p ?ng ho‡n to‡n mong ??i c?a anh/ch?. Ch˙ng em ghi nh?n gÛp ˝ v? ch?t l??ng camera v‡ s? l‡m vi?c v?i nh‡ cung c?p ?? c?i thi?n t?t h?n. N?u anh/ch? c?n h? tr? ??i tr? ho?c cÛ b?t k? th?c m?c n‡o, vui lÚng liÍn h? v?i showroom ?? ???c h? tr? nhanh nh?t ??. R?t mong cÛ c? h?i ph?c v? anh/ch? t?t h?n trong l?n mua xe ti?p theo! ??', CAST(N'2025-03-29T17:59:34.6433333' AS DateTime2), CAST(N'2025-03-29T17:59:34.6433333' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (3, 17, 3, N'C?m ?n anh/ch? ?√£ d√†nh th?i gian chia s? √Ω ki?n v? s?n ph?m! ?? Showroom r?t ti?c khi s?n ph?m ch?a ?√°p ?ng ho√†n to√†n mong ??i c?a anh/ch?. Ch√∫ng em ghi nh?n g√≥p √Ω v? ch?t l??ng camera v√† s? l√†m vi?c v?i nh√† cung c?p ?? c?i thi?n t?t h?n. N?u anh/ch? c?n h? tr? ??i tr? ho?c c√≥ b?t k? th?c m?c n√†o, vui l√≤ng li√™n h? v?i showroom ?? ???c h? tr? nhanh nh?t ??. R?t mong c√≥ c? h?i ph?c v? anh/ch? t?t h?n trong l?n mua xe ti?p theo! ??', CAST(N'2025-03-29T17:59:34.6433333' AS DateTime2), CAST(N'2025-03-29T17:59:34.6433333' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (4, 15, 3, N'C?m ?n anh/ch? ?„ tin t??ng v‡ d‡nh nh?ng l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi bÈ nh‡ mÏnh yÍu thÌch chi?c xe ??p mini n‡y! ???? Showroom luÙn c? g?ng mang ??n nh?ng m?u xe d? th??ng, ch?t li?u t?t nh?t cho bÈ yÍu. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? v‡ bÈ trong nh?ng l?n mua s?m ti?p theo! N?u c?n t? v?n thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T17:59:52.5233333' AS DateTime2), CAST(N'2025-03-29T17:59:52.5233333' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (4, 15, 3, N'C?m ?n anh/ch? ?√£ tin t??ng v√† d√†nh nh?ng l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi b√© nh√† m√¨nh y√™u th√≠ch chi?c xe ??p mini n√†y! ???? Showroom lu√¥n c? g?ng mang ??n nh?ng m?u xe d? th??ng, ch?t li?u t?t nh?t cho b√© y√™u. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? v√† b√© trong nh?ng l?n mua s?m ti?p theo! N?u c?n t? v?n th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T17:59:52.5233333' AS DateTime2), CAST(N'2025-03-29T17:59:52.5233333' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (5, 16, 3, N'"C?m ?n anh/ch? ?„ d‡nh th?i gian ?·nh gi· s?n ph?m! ?? R?t vui khi anh/ch? ?ng ˝ v?i thi?t k? v‡ n?i th?t c?a Mitsubishi Xpander. ??? Showroom ghi nh?n gÛp ˝ v? kÌch th??c xe v‡ s? xem xÈt ?? t? v?n k? h?n trong nh?ng l?n sau. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo. N?u c?n h? tr? gÏ thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:00:07.5200000' AS DateTime2), CAST(N'2025-03-29T18:00:07.5200000' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (5, 16, 3, N'"C?m ?n anh/ch? ?√£ d√†nh th?i gian ?√°nh gi√° s?n ph?m! ?? R?t vui khi anh/ch? ?ng √Ω v?i thi?t k? v√† n?i th?t c?a Mitsubishi Xpander. ??? Showroom ghi nh?n g√≥p √Ω v? k√≠ch th??c xe v√† s? xem x√©t ?? t? v?n k? h?n trong nh?ng l?n sau. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo. N?u c?n h? tr? g√¨ th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:00:07.5200000' AS DateTime2), CAST(N'2025-03-29T18:00:07.5200000' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (6, 14, 3, N'C?m ?n anh/ch? ?„ d‡nh th?i gian chia s? ?·nh gi·! ?? R?t vui khi anh/ch? ?ng ˝ v?i thi?t k? th? thao c?a BMW 3 Series. ??? Showroom ghi nh?n gÛp ˝ v? h? th?ng treo v‡ ?i?u hÚa, v‡ s? l‡m vi?c v?i h„ng ?? c?i thi?n ch?t l??ng t?t h?n. N?u c?n h? tr? thÍm, anh/ch? c? nh?n showroom nhÈ! Hy v?ng s? cÛ c? h?i ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! ??', CAST(N'2025-03-29T18:00:26.0566667' AS DateTime2), CAST(N'2025-03-29T18:00:26.0566667' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (6, 14, 3, N'C?m ?n anh/ch? ?√£ d√†nh th?i gian chia s? ?√°nh gi√°! ?? R?t vui khi anh/ch? ?ng √Ω v?i thi?t k? th? thao c?a BMW 3 Series. ??? Showroom ghi nh?n g√≥p √Ω v? h? th?ng treo v√† ?i?u h√≤a, v√† s? l√†m vi?c v?i h√£ng ?? c?i thi?n ch?t l??ng t?t h?n. N?u c?n h? tr? th√™m, anh/ch? c? nh?n showroom nh√©! Hy v?ng s? c√≥ c? h?i ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! ??', CAST(N'2025-03-29T18:00:26.0566667' AS DateTime2), CAST(N'2025-03-29T18:00:26.0566667' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (7, 12, 3, N'C?m ?n anh/ch? ?„ d‡nh th?i gian ?·nh gi· s?n ph?m! ?? R?t vui khi anh/ch? ?ng ˝ v?i thi?t k? c?a Toyota Fortuner. Showroom ghi nh?n gÛp ˝ v? m?c tiÍu hao nhiÍn li?u v‡ ?? Ím, v‡ s? xem xÈt ?? c?i thi?n h?n trong nh?ng ??i xe sau. ?? Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo. N?u c?n h? tr? gÏ thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:00:44.2233333' AS DateTime2), CAST(N'2025-03-29T18:00:44.2233333' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (7, 12, 3, N'C?m ?n anh/ch? ?√£ d√†nh th?i gian ?√°nh gi√° s?n ph?m! ?? R?t vui khi anh/ch? ?ng √Ω v?i thi?t k? c?a Toyota Fortuner. Showroom ghi nh?n g√≥p √Ω v? m?c ti√™u hao nhi√™n li?u v√† ?? √™m, v√† s? xem x√©t ?? c?i thi?n h?n trong nh?ng ??i xe sau. ?? Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo. N?u c?n h? tr? g√¨ th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:00:44.2233333' AS DateTime2), CAST(N'2025-03-29T18:00:44.2233333' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (8, 13, 3, N'C?m ?n anh/ch? ?„ tin t??ng v‡ d‡nh nh?ng l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h‡i lÚng v?i ph? t˘ng ??ng c? Honda ñ v?a nh? g?n, ti?n l?i l?i d? l?p ??t. ??? Showroom luÙn c? g?ng mang ??n nh?ng s?n ph?m ch?t l??ng v‡ tr?i nghi?m mua s?m t?t nh?t. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua s?m ti?p theo! N?u c?n h? tr? gÏ, ??ng ng?i nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:01:03.4733333' AS DateTime2), CAST(N'2025-03-29T18:01:03.4733333' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (8, 13, 3, N'C?m ?n anh/ch? ?√£ tin t??ng v√† d√†nh nh?ng l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h√†i l√≤ng v?i ph? t√πng ??ng c? Honda ¬ñ v?a nh? g?n, ti?n l?i l?i d? l?p ??t. ??? Showroom lu√¥n c? g?ng mang ??n nh?ng s?n ph?m ch?t l??ng v√† tr?i nghi?m mua s?m t?t nh?t. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua s?m ti?p theo! N?u c?n h? tr? g√¨, ??ng ng?i nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:01:03.4733333' AS DateTime2), CAST(N'2025-03-29T18:01:03.4733333' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (9, 11, 3, N'C?m ?n anh/ch? ?„ d‡nh th?i gian chia s? ?·nh gi·! ?? R?t vui khi anh/ch? ?ng ˝ v?i thi?t k? c?a Kia Morning. Showroom ghi nh?n gÛp ˝ v? ch?t li?u n?i th?t v‡ l?p r·p, v‡ s? l‡m vi?c v?i h„ng ?? c?i thi?n ch?t l??ng t?t h?n. ?? Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo. N?u c?n h? tr? gÏ thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:01:19.6366667' AS DateTime2), CAST(N'2025-03-29T18:01:19.6366667' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (9, 11, 3, N'C?m ?n anh/ch? ?√£ d√†nh th?i gian chia s? ?√°nh gi√°! ?? R?t vui khi anh/ch? ?ng √Ω v?i thi?t k? c?a Kia Morning. Showroom ghi nh?n g√≥p √Ω v? ch?t li?u n?i th?t v√† l?p r√°p, v√† s? l√†m vi?c v?i h√£ng ?? c?i thi?n ch?t l??ng t?t h?n. ?? Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo. N?u c?n h? tr? g√¨ th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:01:19.6366667' AS DateTime2), CAST(N'2025-03-29T18:01:19.6366667' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (10, 10, 3, N'C?m ?n anh/ch? ?„ tin t??ng v‡ d‡nh th?i gian ?·nh gi· s?n ph?m! ?? R?t vui khi anh/ch? h‡i lÚng v?i ch?t li?u, thi?t k? v‡ s? t? v?n nhi?t tÏnh t? showroom. ???? Showroom ghi nh?n gÛp ˝ v? m‡u s?n v‡ s? c? g?ng c?i thi?n hÏnh ?nh s?n ph?m ?? kh·ch h‡ng cÛ tr?i nghi?m mua xe t?t h?n. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n h? tr? gÏ thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:01:36.0066667' AS DateTime2), CAST(N'2025-03-29T18:01:36.0066667' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (10, 10, 3, N'C?m ?n anh/ch? ?√£ tin t??ng v√† d√†nh th?i gian ?√°nh gi√° s?n ph?m! ?? R?t vui khi anh/ch? h√†i l√≤ng v?i ch?t li?u, thi?t k? v√† s? t? v?n nhi?t t√¨nh t? showroom. ???? Showroom ghi nh?n g√≥p √Ω v? m√†u s?n v√† s? c? g?ng c?i thi?n h√¨nh ?nh s?n ph?m ?? kh√°ch h√†ng c√≥ tr?i nghi?m mua xe t?t h?n. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n h? tr? g√¨ th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:01:36.0066667' AS DateTime2), CAST(N'2025-03-29T18:01:36.0066667' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (11, 9, 3, N'C?m ?n anh/ch? ?„ d‡nh th?i gian ?·nh gi· s?n ph?m! ?? R?t vui khi anh/ch? h‡i lÚng v?i l?p xe Michelin ñ v?a b?n, b·m ???ng t?t l?i tho?i m·i khi s? d?ng. ??? Showroom luÙn c? g?ng mang ??n nh?ng s?n ph?m ch?t l??ng v‡ tr?i nghi?m mua s?m t?t nh?t. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua s?m ti?p theo! N?u c?n h? tr? gÏ, ??ng ng?i nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:01:53.8200000' AS DateTime2), CAST(N'2025-03-29T18:01:53.8200000' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (11, 9, 3, N'C?m ?n anh/ch? ?√£ d√†nh th?i gian ?√°nh gi√° s?n ph?m! ?? R?t vui khi anh/ch? h√†i l√≤ng v?i l?p xe Michelin ¬ñ v?a b?n, b√°m ???ng t?t l?i tho?i m√°i khi s? d?ng. ??? Showroom lu√¥n c? g?ng mang ??n nh?ng s?n ph?m ch?t l??ng v√† tr?i nghi?m mua s?m t?t nh?t. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua s?m ti?p theo! N?u c?n h? tr? g√¨, ??ng ng?i nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:01:53.8200000' AS DateTime2), CAST(N'2025-03-29T18:01:53.8200000' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (12, 8, 3, N'C?m ?n anh/ch? ?„ chia s? ?·nh gi· chi ti?t v? s?n ph?m! ?? R?t vui khi anh/ch? ?ng ˝ v?i thi?t k? v‡ cÙng ngh? c?a Vinfast VF8. ??? Showroom ghi nh?n gÛp ˝ v? h? t?ng tr?m s?c v‡ t?m ho?t ??ng, v‡ s? l‡m vi?c v?i h„ng ?? c?i thi?n tr?i nghi?m t?t h?n. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n h? tr? gÏ thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:02:18.8900000' AS DateTime2), CAST(N'2025-03-29T18:02:18.8900000' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (12, 8, 3, N'C?m ?n anh/ch? ?√£ chia s? ?√°nh gi√° chi ti?t v? s?n ph?m! ?? R?t vui khi anh/ch? ?ng √Ω v?i thi?t k? v√† c√¥ng ngh? c?a Vinfast VF8. ??? Showroom ghi nh?n g√≥p √Ω v? h? t?ng tr?m s?c v√† t?m ho?t ??ng, v√† s? l√†m vi?c v?i h√£ng ?? c?i thi?n tr?i nghi?m t?t h?n. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n h? tr? g√¨ th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:02:18.8900000' AS DateTime2), CAST(N'2025-03-29T18:02:18.8900000' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (13, 7, 3, N'C?m ?n anh/ch? ?„ d‡nh th?i gian ?·nh gi· s?n ph?m! ?? R?t vui khi anh/ch? h‡i lÚng v?i thi?t k? v‡ m‡u s?n c?a xe m·y Honda Vision. ??? Showroom ghi nh?n gÛp ˝ v? yÍn xe v‡ ?? rung, v‡ s? l‡m vi?c v?i h„ng ?? c?i thi?n h?n trong nh?ng ??i xe sau. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n h? tr? gÏ, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:02:37.6566667' AS DateTime2), CAST(N'2025-03-29T18:02:37.6566667' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (13, 7, 3, N'C?m ?n anh/ch? ?√£ d√†nh th?i gian ?√°nh gi√° s?n ph?m! ?? R?t vui khi anh/ch? h√†i l√≤ng v?i thi?t k? v√† m√†u s?n c?a xe m√°y Honda Vision. ??? Showroom ghi nh?n g√≥p √Ω v? y√™n xe v√† ?? rung, v√† s? l√†m vi?c v?i h√£ng ?? c?i thi?n h?n trong nh?ng ??i xe sau. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n h? tr? g√¨, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:02:37.6566667' AS DateTime2), CAST(N'2025-03-29T18:02:37.6566667' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (14, 6, 3, N'C?m ?n anh/ch? ?„ tin t??ng v‡ ?ng h? s?n ph?m c?a showroom! ?? R?t vui khi bÈ nh‡ mÏnh ??p xe tho?i m·i v‡ ?ng ˝ v?i ch?t l??ng s?n ph?m. ???? Showroom luÙn c? g?ng mang ??n nh?ng m?u xe d? th??ng, ch?t li?u t?t nh?t cho bÈ yÍu. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua s?m ti?p theo! N?u c?n t? v?n thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:02:57.6466667' AS DateTime2), CAST(N'2025-03-29T18:02:57.6466667' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (14, 6, 3, N'C?m ?n anh/ch? ?√£ tin t??ng v√† ?ng h? s?n ph?m c?a showroom! ?? R?t vui khi b√© nh√† m√¨nh ??p xe tho?i m√°i v√† ?ng √Ω v?i ch?t l??ng s?n ph?m. ???? Showroom lu√¥n c? g?ng mang ??n nh?ng m?u xe d? th??ng, ch?t li?u t?t nh?t cho b√© y√™u. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua s?m ti?p theo! N?u c?n t? v?n th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:02:57.6466667' AS DateTime2), CAST(N'2025-03-29T18:02:57.6466667' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (15, 5, 3, N'C?m ?n anh/ch? ?„ d‡nh nh?ng l?i khen tuy?t v?i cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h‡i lÚng v?i ch?t li?u, thi?t k? v‡ s? sang tr?ng c?a Mercedes C-Class. ??? Showroom luÙn c? g?ng mang ??n nh?ng s?n ph?m ch?t l??ng v‡ tr?i nghi?m mua xe t?t nh?t. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n t? v?n thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:03:17.1533333' AS DateTime2), CAST(N'2025-03-29T18:03:17.1533333' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (15, 5, 3, N'C?m ?n anh/ch? ?√£ d√†nh nh?ng l?i khen tuy?t v?i cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h√†i l√≤ng v?i ch?t li?u, thi?t k? v√† s? sang tr?ng c?a Mercedes C-Class. ??? Showroom lu√¥n c? g?ng mang ??n nh?ng s?n ph?m ch?t l??ng v√† tr?i nghi?m mua xe t?t nh?t. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n t? v?n th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:03:17.1533333' AS DateTime2), CAST(N'2025-03-29T18:03:17.1533333' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (16, 4, 3, N'C?m ?n anh/ch? ?„ chia s? ?·nh gi· chi ti?t v? s?n ph?m! ?? R?t ti?c khi Hyundai Accent ch?a ho‡n to‡n ?·p ?ng mong ??i c?a anh/ch?. Showroom ghi nh?n gÛp ˝ v? h? th?ng treo, ly h?p v‡ th?i gian giao xe ?? c?i thi?n t?t h?n trong t??ng lai. ?? N?u anh/ch? c?n h? tr? thÍm v? b?o d??ng ho?c b?t k? v?n ?? gÏ, ??ng ng?i liÍn h? v?i showroom nhÈ! Hy v?ng s? cÛ c? h?i ph?c v? anh/ch? t?t h?n trong l?n mua xe ti?p theo! ??', CAST(N'2025-03-29T18:03:40.1700000' AS DateTime2), CAST(N'2025-03-29T18:03:40.1700000' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (16, 4, 3, N'C?m ?n anh/ch? ?√£ chia s? ?√°nh gi√° chi ti?t v? s?n ph?m! ?? R?t ti?c khi Hyundai Accent ch?a ho√†n to√†n ?√°p ?ng mong ??i c?a anh/ch?. Showroom ghi nh?n g√≥p √Ω v? h? th?ng treo, ly h?p v√† th?i gian giao xe ?? c?i thi?n t?t h?n trong t??ng lai. ?? N?u anh/ch? c?n h? tr? th√™m v? b?o d??ng ho?c b?t k? v?n ?? g√¨, ??ng ng?i li√™n h? v?i showroom nh√©! Hy v?ng s? c√≥ c? h?i ph?c v? anh/ch? t?t h?n trong l?n mua xe ti?p theo! ??', CAST(N'2025-03-29T18:03:40.1700000' AS DateTime2), CAST(N'2025-03-29T18:03:40.1700000' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (17, 3, 3, N'C?m ?n anh/ch? ?„ tin t??ng v‡ d‡nh l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h‡i lÚng v?i ch?t li?u v‡ l?p r·p c?a Mazda 3. ?? Showroom ghi nh?n gÛp ˝ v? kÌch th??c c?p ?? c?i thi?n h?n trong nh?ng m?u sau. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n t? v?n thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:03:55.8633333' AS DateTime2), CAST(N'2025-03-29T18:03:55.8633333' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (17, 3, 3, N'C?m ?n anh/ch? ?√£ tin t??ng v√† d√†nh l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h√†i l√≤ng v?i ch?t li?u v√† l?p r√°p c?a Mazda 3. ?? Showroom ghi nh?n g√≥p √Ω v? k√≠ch th??c c?p ?? c?i thi?n h?n trong nh?ng m?u sau. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n t? v?n th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:03:55.8633333' AS DateTime2), CAST(N'2025-03-29T18:03:55.8633333' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (18, 2, 3, N'C?m ?n anh/ch? ?„ tin t??ng v‡ ?·nh gi· s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h‡i lÚng v?i ch?t li?u v‡ l?p r·p c?a Toyota Vios. ?? N?u c?n t? v?n k? h?n v? c·c phiÍn b?n ?? ch?n ???c s?n ph?m ph˘ h?p nh?t, anh/ch? c? nh?n showroom nhÈ! Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! ??', CAST(N'2025-03-29T18:04:10.7900000' AS DateTime2), CAST(N'2025-03-29T18:04:10.7900000' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (18, 2, 3, N'C?m ?n anh/ch? ?√£ tin t??ng v√† ?√°nh gi√° s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h√†i l√≤ng v?i ch?t li?u v√† l?p r√°p c?a Toyota Vios. ?? N?u c?n t? v?n k? h?n v? c√°c phi√™n b?n ?? ch?n ???c s?n ph?m ph√π h?p nh?t, anh/ch? c? nh?n showroom nh√©! Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! ??', CAST(N'2025-03-29T18:04:10.7900000' AS DateTime2), CAST(N'2025-03-29T18:04:10.7900000' AS DateTime2))
 GO
-INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (19, 1, 3, N'C?m ?n anh/ch? ?„ tin t??ng v‡ d‡nh l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h‡i lÚng v?i ch?t l??ng v?n h‡nh, thi?t k? v‡ s? ti?n d?ng c?a Honda City. ??? Showroom luÙn c? g?ng mang ??n nh?ng s?n ph?m t?t nh?t ?? kh·ch h‡ng cÛ tr?i nghi?m mua xe tuy?t v?i. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n t? v?n thÍm, anh/ch? c? nh?n showroom nhÈ! ??', CAST(N'2025-03-29T18:04:27.9233333' AS DateTime2), CAST(N'2025-03-29T18:04:27.9233333' AS DateTime2))
+INSERT [dbo].[feedback_reply] ([id], [feedback_id], [user_id], [comment], [created_at], [updated_at]) VALUES (19, 1, 3, N'C?m ?n anh/ch? ?√£ tin t??ng v√† d√†nh l?i khen cho s?n ph?m c?a showroom! ?? R?t vui khi anh/ch? h√†i l√≤ng v?i ch?t l??ng v?n h√†nh, thi?t k? v√† s? ti?n d?ng c?a Honda City. ??? Showroom lu√¥n c? g?ng mang ??n nh?ng s?n ph?m t?t nh?t ?? kh√°ch h√†ng c√≥ tr?i nghi?m mua xe tuy?t v?i. Hy v?ng s? ti?p t?c ???c ph?c v? anh/ch? trong nh?ng l?n mua xe ti?p theo! N?u c?n t? v?n th√™m, anh/ch? c? nh?n showroom nh√©! ??', CAST(N'2025-03-29T18:04:27.9233333' AS DateTime2), CAST(N'2025-03-29T18:04:27.9233333' AS DateTime2))
 GO
 SET IDENTITY_INSERT [dbo].[feedback_reply] OFF
 GO
@@ -2135,225 +2135,225 @@ SET IDENTITY_INSERT [dbo].[tokenPassword] OFF
 GO
 SET IDENTITY_INSERT [dbo].[user_addresses] ON 
 GO
-INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (1, 4, N'Nguy?n V?n A', N'0866046581', N'thÙn 1, X„ Ng?c H?i, Huy?n Thanh TrÏ, Th‡nh ph? H‡ N?i', 1)
+INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (1, 4, N'Nguy?n V?n A', N'0866046581', N'th√¥n 1, X√£ Ng?c H?i, Huy?n Thanh Tr√¨, Th√†nh ph? H√† N?i', 1)
 GO
-INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (2, 4, N'Nguy?n Thi B', N'0866046585', N'thÙn 4, Ph??ng Duy?t Trung, Th‡nh ph? Cao B?ng, T?nh Cao B?ng', 0)
+INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (2, 4, N'Nguy?n Thi B', N'0866046585', N'th√¥n 4, Ph??ng Duy?t Trung, Th√†nh ph? Cao B?ng, T?nh Cao B?ng', 0)
 GO
-INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (3, 4, N'Nguy?n V?n C', N'0961004959', N'thÙn 5, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', 0)
+INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (3, 4, N'Nguy?n V?n C', N'0961004959', N'th√¥n 5, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', 0)
 GO
-INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (4, 6, N'Nguyen Hanh Nhan', N'0866046598', N'thÙn 6, X„ MÙng ¬n, Huy?n B?o L‚m, T?nh Cao B?ng', 1)
+INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (4, 6, N'Nguyen Hanh Nhan', N'0866046598', N'th√¥n 6, X√£ M√¥ng √Çn, Huy?n B?o L√¢m, T?nh Cao B?ng', 1)
 GO
-INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (5, 8, N'Nguyen Van Anh', N'0866046585', N'thÙn 4, Ph??ng Tr?n Ph˙, Th‡nh ph? H‡ Giang, T?nh H‡ Giang', 1)
+INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (5, 8, N'Nguyen Van Anh', N'0866046585', N'th√¥n 4, Ph??ng Tr?n Ph√∫, Th√†nh ph? H√† Giang, T?nh H√† Giang', 1)
 GO
-INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (6, 12, N'Nguyen Hong Hanh', N'0961004935', N'thÙn 5, X„ Qu?ng KhÍ, Huy?n Ba B?, T?nh B?c K?n', 1)
+INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (6, 12, N'Nguyen Hong Hanh', N'0961004935', N'th√¥n 5, X√£ Qu?ng Kh√™, Huy?n Ba B?, T?nh B?c K?n', 1)
 GO
-INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (7, 7, N'Nguy?n Thi D', N'0866046543', N'thÙn 3, Ph??ng Ng?c H‡, Th‡nh ph? H‡ Giang, T?nh H‡ Giang', 1)
+INSERT [dbo].[user_addresses] ([id], [user_id], [recipient_name], [phone], [address], [is_default]) VALUES (7, 7, N'Nguy?n Thi D', N'0866046543', N'th√¥n 3, Ph??ng Ng?c H√†, Th√†nh ph? H√† Giang, T?nh H√† Giang', 1)
 GO
 SET IDENTITY_INSERT [dbo].[user_addresses] OFF
 GO
 SET IDENTITY_INSERT [dbo].[messages] ON 
 GO
-INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (0, 4, 3, N'tÙi c?n t? v?n', NULL, 1, CAST(N'2025-03-29T18:05:43.8466667' AS DateTime2))
+INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (0, 4, 3, N't√¥i c?n t? v?n', NULL, 1, CAST(N'2025-03-29T18:05:43.8466667' AS DateTime2))
 GO
-INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (1, 3, 4, N'Shop cÛ th? h? tr? gÏ cho b?n', NULL, 0, CAST(N'2025-03-29T18:05:57.8233333' AS DateTime2))
+INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (1, 3, 4, N'Shop c√≥ th? h? tr? g√¨ cho b?n', NULL, 0, CAST(N'2025-03-29T18:05:57.8233333' AS DateTime2))
 GO
-INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (2, 7, 3, N'xin ch‡o', NULL, 1, CAST(N'2025-03-29T18:06:16.3066667' AS DateTime2))
+INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (2, 7, 3, N'xin ch√†o', NULL, 1, CAST(N'2025-03-29T18:06:16.3066667' AS DateTime2))
 GO
-INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (3, 3, 7, N'ch‡o b?n, b?n c?n t? v?n gÏ ?!', NULL, 0, CAST(N'2025-03-29T18:06:38.2633333' AS DateTime2))
+INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (3, 3, 7, N'ch√†o b?n, b?n c?n t? v?n g√¨ ?!', NULL, 0, CAST(N'2025-03-29T18:06:38.2633333' AS DateTime2))
 GO
 INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (4, 6, 3, N'hi', NULL, 1, CAST(N'2025-03-29T18:06:52.4466667' AS DateTime2))
 GO
-INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (5, 3, 6, N'Xin ch‡o qu˝ kh·ch!', NULL, 0, CAST(N'2025-03-29T18:07:19.9533333' AS DateTime2))
+INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (5, 3, 6, N'Xin ch√†o qu√Ω kh√°ch!', NULL, 0, CAST(N'2025-03-29T18:07:19.9533333' AS DateTime2))
 GO
-INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (6, 12, 3, N'c?m ?n vÏ ?„ giao h‡ng k?p cho tÙi', NULL, 1, CAST(N'2025-03-29T18:07:42.1200000' AS DateTime2))
+INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (6, 12, 3, N'c?m ?n v√¨ ?√£ giao h√†ng k?p cho t√¥i', NULL, 1, CAST(N'2025-03-29T18:07:42.1200000' AS DateTime2))
 GO
-INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (7, 3, 12, N'r?t vui vÏ ???c ph?c v? q', NULL, 0, CAST(N'2025-03-29T18:07:50.7433333' AS DateTime2))
+INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (7, 3, 12, N'r?t vui v√¨ ???c ph?c v? q', NULL, 0, CAST(N'2025-03-29T18:07:50.7433333' AS DateTime2))
 GO
-INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (8, 4, 3, N'shop cÛ m?u n‡y khÙng', N'/fashionshop/uploads/message/d2cf9e16-8606-464d-8084-05847c22c9e5.jpg', 1, CAST(N'2025-03-29T18:08:21.5300000' AS DateTime2))
+INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (8, 4, 3, N'shop c√≥ m?u n√†y kh√¥ng', N'/fashionshop/uploads/message/d2cf9e16-8606-464d-8084-05847c22c9e5.jpg', 1, CAST(N'2025-03-29T18:08:21.5300000' AS DateTime2))
 GO
-INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (9, 3, 4, N'shop cÛ m?u qu?n t‚y kaki ?', N'/fashionshop/uploads/message/e9f600d9-a0ac-45b8-b851-0d360414883a.webp', 0, CAST(N'2025-03-29T18:09:24.5300000' AS DateTime2))
+INSERT [dbo].[messages] ([id], [sender_id], [receiver_id], [content], [image_url], [is_read], [created_at]) VALUES (9, 3, 4, N'shop c√≥ m?u qu?n t√¢y kaki ?', N'/fashionshop/uploads/message/e9f600d9-a0ac-45b8-b851-0d360414883a.webp', 0, CAST(N'2025-03-29T18:09:24.5300000' AS DateTime2))
 GO
 SET IDENTITY_INSERT [dbo].[messages] OFF
 GO
 SET IDENTITY_INSERT [dbo].[order_history] ON 
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (1, 1, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T16:43:48.4400000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (1, 1, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T16:43:48.4400000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (2, 2, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T16:44:30.2666667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (2, 2, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T16:44:30.2666667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (3, 2, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T16:44:35.6300000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (3, 2, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T16:44:35.6300000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (4, 2, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T16:44:48.7100000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (4, 2, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T16:44:48.7100000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (5, 3, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T16:45:14.6033333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (5, 3, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T16:45:14.6033333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (6, 3, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T16:45:23.3066667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (6, 3, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T16:45:23.3066667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (7, 4, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T16:46:10.4000000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (7, 4, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T16:46:10.4000000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (8, 4, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T16:46:17.1200000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (8, 4, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T16:46:17.1200000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (9, 4, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T16:46:52.0533333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (9, 4, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T16:46:52.0533333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (10, 4, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T16:46:57.8166667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (10, 4, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T16:46:57.8166667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (11, 5, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T16:47:26.2700000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (11, 5, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T16:47:26.2700000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (12, 5, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T16:47:33.2766667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (12, 5, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T16:47:33.2766667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (13, 5, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T16:47:42.3300000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (13, 5, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T16:47:42.3300000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (14, 5, 5, N'returned', N'C?p nh?t tr?ng th·i th‡nh returned', CAST(N'2025-03-29T16:47:58.3800000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (14, 5, 5, N'returned', N'C?p nh?t tr?ng th√°i th√†nh returned', CAST(N'2025-03-29T16:47:58.3800000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (15, 6, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T16:48:45.9633333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (15, 6, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T16:48:45.9633333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (16, 6, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T16:48:55.4100000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (16, 6, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T16:48:55.4100000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (17, 6, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T16:49:09.7800000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (17, 6, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T16:49:09.7800000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (18, 6, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T16:49:21.6833333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (18, 6, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T16:49:21.6833333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (19, 7, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T16:50:40.9633333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (19, 7, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T16:50:40.9633333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (20, 7, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T16:50:54.2633333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (20, 7, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T16:50:54.2633333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (21, 7, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T16:51:06.3933333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (21, 7, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T16:51:06.3933333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (22, 7, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T16:51:17.9600000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (22, 7, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T16:51:17.9600000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (23, 8, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T16:53:10.3966667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (23, 8, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T16:53:10.3966667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (24, 8, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T16:53:19.3566667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (24, 8, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T16:53:19.3566667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (25, 8, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T16:53:30.2933333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (25, 8, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T16:53:30.2933333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (26, 8, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T16:53:57.3466667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (26, 8, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T16:53:57.3466667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (27, 9, 6, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T16:55:41.7633333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (27, 9, 6, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T16:55:41.7633333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (28, 9, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T16:55:50.0966667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (28, 9, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T16:55:50.0966667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (29, 9, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T16:56:03.0400000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (29, 9, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T16:56:03.0400000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (30, 9, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T16:56:07.8433333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (30, 9, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T16:56:07.8433333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (31, 10, 6, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:00:11.3066667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (31, 10, 6, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:00:11.3066667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (32, 10, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:00:49.4700000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (32, 10, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:00:49.4700000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (33, 10, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T17:01:05.3133333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (33, 10, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T17:01:05.3133333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (34, 10, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T17:01:10.2266667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (34, 10, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T17:01:10.2266667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (35, 11, 6, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:01:41.6500000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (35, 11, 6, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:01:41.6500000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (36, 12, 6, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:02:02.8800000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (36, 12, 6, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:02:02.8800000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (37, 12, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:02:13.7933333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (37, 12, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:02:13.7933333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (38, 13, 8, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:03:45.7166667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (38, 13, 8, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:03:45.7166667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (39, 13, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:03:50.0400000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (39, 13, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:03:50.0400000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (40, 13, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T17:04:04.3433333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (40, 13, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T17:04:04.3433333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (41, 13, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T17:04:09.4966667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (41, 13, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T17:04:09.4966667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (42, 14, 8, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:04:40.2566667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (42, 14, 8, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:04:40.2566667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (43, 14, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:04:45.1566667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (43, 14, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:04:45.1566667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (44, 14, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T17:04:59.4300000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (44, 14, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T17:04:59.4300000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (45, 15, 8, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:05:48.0266667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (45, 15, 8, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:05:48.0266667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (46, 15, 5, N'cancelled', N'C?p nh?t tr?ng th·i th‡nh cancelled', CAST(N'2025-03-29T17:06:00.9900000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (46, 15, 5, N'cancelled', N'C?p nh?t tr?ng th√°i th√†nh cancelled', CAST(N'2025-03-29T17:06:00.9900000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (47, 16, 8, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:06:30.3133333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (47, 16, 8, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:06:30.3133333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (48, 16, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:06:36.5400000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (48, 16, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:06:36.5400000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (49, 16, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T17:06:46.6666667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (49, 16, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T17:06:46.6666667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (50, 16, 5, N'returned', N'C?p nh?t tr?ng th·i th‡nh returned', CAST(N'2025-03-29T17:06:52.3766667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (50, 16, 5, N'returned', N'C?p nh?t tr?ng th√°i th√†nh returned', CAST(N'2025-03-29T17:06:52.3766667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (51, 17, 12, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:08:06.7833333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (51, 17, 12, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:08:06.7833333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (52, 17, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:08:12.1266667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (52, 17, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:08:12.1266667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (53, 17, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T17:08:34.5966667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (53, 17, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T17:08:34.5966667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (54, 17, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T17:08:40.9600000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (54, 17, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T17:08:40.9600000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (55, 18, 12, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:10:13.9733333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (55, 18, 12, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:10:13.9733333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (56, 18, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:10:24.3600000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (56, 18, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:10:24.3600000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (57, 18, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T17:10:35.4966667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (57, 18, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T17:10:35.4966667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (58, 18, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T17:10:40.6600000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (58, 18, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T17:10:40.6600000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (59, 19, 12, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:11:04.2933333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (59, 19, 12, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:11:04.2933333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (60, 19, 5, N'cancelled', N'C?p nh?t tr?ng th·i th‡nh cancelled', CAST(N'2025-03-29T17:11:08.6933333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (60, 19, 5, N'cancelled', N'C?p nh?t tr?ng th√°i th√†nh cancelled', CAST(N'2025-03-29T17:11:08.6933333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (61, 20, 7, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:44:38.0933333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (61, 20, 7, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:44:38.0933333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (62, 20, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:45:21.7400000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (62, 20, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:45:21.7400000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (63, 20, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T17:45:34.0266667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (63, 20, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T17:45:34.0266667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (64, 20, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T17:45:39.6200000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (64, 20, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T17:45:39.6200000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (65, 21, 7, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:48:01.3533333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (65, 21, 7, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:48:01.3533333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (66, 21, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:48:08.7433333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (66, 21, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:48:08.7433333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (67, 21, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T17:48:20.0433333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (67, 21, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T17:48:20.0433333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (68, 21, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T17:48:29.0633333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (68, 21, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T17:48:29.0633333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (69, 22, 6, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T17:52:29.4133333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (69, 22, 6, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T17:52:29.4133333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (70, 22, 5, N'processing', N'C?p nh?t tr?ng th·i th‡nh processing', CAST(N'2025-03-29T17:52:35.2766667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (70, 22, 5, N'processing', N'C?p nh?t tr?ng th√°i th√†nh processing', CAST(N'2025-03-29T17:52:35.2766667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (71, 22, 5, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T17:52:44.9300000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (71, 22, 5, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T17:52:44.9300000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (72, 22, 5, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T17:52:50.5066667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (72, 22, 5, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T17:52:50.5066667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (73, 23, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T20:03:29.4500000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (73, 23, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T20:03:29.4500000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (74, 23, 1, N'pending_pay', N'?ang ch? thanh to·n', CAST(N'2025-03-29T20:03:29.4733333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (74, 23, 1, N'pending_pay', N'?ang ch? thanh to√°n', CAST(N'2025-03-29T20:03:29.4733333' AS DateTime2))
 GO
 INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (75, 23, 4, N'pending_pay', NULL, CAST(N'2025-03-29T20:03:29.4766667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (76, 24, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T20:04:49.0066667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (76, 24, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T20:04:49.0066667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (77, 24, 1, N'pending_pay', N'?„ thanh to·n th‡nh cÙng', CAST(N'2025-03-29T20:04:49.0233333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (77, 24, 1, N'pending_pay', N'?√£ thanh to√°n th√†nh c√¥ng', CAST(N'2025-03-29T20:04:49.0233333' AS DateTime2))
 GO
 INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (78, 24, 4, N'processing', NULL, CAST(N'2025-03-29T20:04:49.0233333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (79, 25, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T20:06:00.3500000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (79, 25, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T20:06:00.3500000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (80, 25, 1, N'pending_pay', N'?„ thanh to·n th‡nh cÙng', CAST(N'2025-03-29T20:06:00.3633333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (80, 25, 1, N'pending_pay', N'?√£ thanh to√°n th√†nh c√¥ng', CAST(N'2025-03-29T20:06:00.3633333' AS DateTime2))
 GO
 INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (81, 25, 4, N'processing', NULL, CAST(N'2025-03-29T20:06:00.3633333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (82, 25, 1, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T20:06:22.0566667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (82, 25, 1, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T20:06:22.0566667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (83, 25, 1, N'completed', N'C?p nh?t tr?ng th·i th‡nh completed', CAST(N'2025-03-29T20:06:27.8533333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (83, 25, 1, N'completed', N'C?p nh?t tr?ng th√°i th√†nh completed', CAST(N'2025-03-29T20:06:27.8533333' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (84, 26, 4, N'pending', N'??n h‡ng m?i ???c t?o', CAST(N'2025-03-29T20:07:59.0366667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (84, 26, 4, N'pending', N'??n h√†ng m?i ???c t?o', CAST(N'2025-03-29T20:07:59.0366667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (85, 26, 1, N'pending_pay', N'?„ thanh to·n th‡nh cÙng', CAST(N'2025-03-29T20:07:59.0500000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (85, 26, 1, N'pending_pay', N'?√£ thanh to√°n th√†nh c√¥ng', CAST(N'2025-03-29T20:07:59.0500000' AS DateTime2))
 GO
 INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (86, 26, 4, N'processing', NULL, CAST(N'2025-03-29T20:07:59.0500000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (87, 26, 1, N'shipping', N'C?p nh?t tr?ng th·i th‡nh shipping', CAST(N'2025-03-29T20:08:20.0000000' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (87, 26, 1, N'shipping', N'C?p nh?t tr?ng th√°i th√†nh shipping', CAST(N'2025-03-29T20:08:20.0000000' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (88, 26, 1, N'returned', N'C?p nh?t tr?ng th·i th‡nh returned', CAST(N'2025-03-29T20:08:25.3466667' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (88, 26, 1, N'returned', N'C?p nh?t tr?ng th√°i th√†nh returned', CAST(N'2025-03-29T20:08:25.3466667' AS DateTime2))
 GO
-INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (89, 23, 1, N'pending_pay', N'?ang ch? thanh to·n', CAST(N'2025-03-29T20:16:52.6333333' AS DateTime2))
+INSERT [dbo].[order_history] ([id], [order_id], [updated_by], [status], [notes], [updated_at]) VALUES (89, 23, 1, N'pending_pay', N'?ang ch? thanh to√°n', CAST(N'2025-03-29T20:16:52.6333333' AS DateTime2))
 GO
 SET IDENTITY_INSERT [dbo].[order_history] OFF
 GO
@@ -2506,4 +2506,3 @@ INSERT [dbo].[feedback_images] ([id], [feedback_id], [image_url], [created_at]) 
 GO
 SET IDENTITY_INSERT [dbo].[feedback_images] OFF
 GO
-
