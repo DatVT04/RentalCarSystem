@@ -56,7 +56,7 @@ public class Email {
             });
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(USERNAME, "Fasshion Shop"));
+            message.setFrom(new InternetAddress(USERNAME, "Rental Car"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(user.getEmail()));
             message.setSubject("Xác Minh Tài Khoản Của Bạn");
 
@@ -75,10 +75,10 @@ public class Email {
                     + "<div class='container'>"
                     + "<div class='header'><h2>Xác Minh Tài Khoản</h2></div>"
                     + "<div class='content'><p>Xin chào %s,</p>"
-                    + "<p>Fashion Shop xin thông bảo tài khoản của bạn đã được đăng ký thành công, vui lòng nhấp vào liên kết bên dưới để xác thực email của bạn.</p>"
+                    + "<p>Rental Car xin thông bảo tài khoản của bạn đã được đăng ký thành công, vui lòng nhấp vào liên kết bên dưới để xác thực email của bạn.</p>"
                     + "<a href='%s' style='display:block;width:max-content;margin:0 auto;padding:10px;text-align:center;color:#ffffff;background-color:#4CAF50;border-radius:5px;text-decoration:none;'>Verify Account</a>"
                     + "<p>Liên kết này sẽ hết hạn sau 30 phút.</p>"
-                    + "<p>Trân trọng,<br>Từ Fashion Shop</p></div>"
+                    + "<p>Trân trọng,<br>Từ Rental Car</p></div>"
                     + "</div>"
                     + "</body>"
                     + "</html>",
@@ -114,7 +114,7 @@ public class Email {
             });
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(USERNAME, "Fasshion Shop"));
+            message.setFrom(new InternetAddress(USERNAME, "Rental Car"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(user.getEmail()));
 //            message.setSubject("Đặt Lại Mật Khẩu");
             message.setSubject(MimeUtility.encodeText("Đặt Lại Mật Khẩu", "UTF-8", "B"));
@@ -142,7 +142,7 @@ public class Email {
                     + "<p>Nhấp vào nút bên dưới để đặt lại mật khẩu của bạn:</p>"
                     + "<a href='%s' class='button'>Đặt lại mật khẩu</a>"
                     + "<p><strong>Lưu ý:</strong> Liên kết này sẽ hết hạn sau 30 phút.</p>"
-                    + "<p>Trân trọng,<br>Đội ngũ hỗ trợ Fashion Shop</p>"
+                    + "<p>Trân trọng,<br>Đội ngũ hỗ trợ Rental Car</p>"
                     + "</div>"
                     + "<div class='footer'>Nếu bạn gặp vấn đề với nút trên, hãy sao chép và dán liên kết sau vào trình duyệt của bạn: <br>%s</div>"
                     + "</div>"
@@ -181,9 +181,9 @@ public class Email {
             });
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(USERNAME, "Fasshion Shop"));
+            message.setFrom(new InternetAddress(USERNAME, "Rental Car"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(order.getRecipientEmail()));
-            message.setSubject(MimeUtility.encodeText("Cập nhật trạng thái đơn hàng #" + order.getOrderCode(), "UTF-8", "B"));
+            message.setSubject(MimeUtility.encodeText("Cập nhật trạng thái đơn thuê #" + order.getOrderCode(), "UTF-8", "B"));
 
             // Tạo nội dung email
             StringBuilder htmlContent = new StringBuilder();
@@ -198,21 +198,21 @@ public class Email {
                     .append(".button {background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px;}")
                     .append(".footer {padding: 20px; text-align: center; color: #888888; font-size: 12px; border-top: 1px solid #dddddd;}")
                     .append("</style></head><body><div class='container'>")
-                    .append("<div class='header'><h2>Cập nhật trạng thái đơn hàng</h2></div>")
+                    .append("<div class='header'><h2>Cập nhật trạng thái đơn thuê</h2></div>")
                     .append("<div class='content'><p>Xin chào ").append(order.getRecipientName()).append(",</p>")
-                    .append("<p>Chúng tôi xin thông báo rằng đơn hàng <strong>#").append(order.getOrderCode()).append("</strong> của bạn đã được cập nhật sang trạng thái: <strong>").append(statusText).append("</strong>.</p>");
+                    .append("<p>Chúng tôi xin thông báo rằng đơn thuê <strong>#").append(order.getOrderCode()).append("</strong> của bạn đã được cập nhật sang trạng thái: <strong>").append(statusText).append("</strong>.</p>");
 
             // Thêm thông tin vận chuyển nếu trạng thái từ "shipping" trở đi
             if ("shipping".equals(newStatus) || "completed".equals(newStatus) || "returned".equals(newStatus)) {
                 htmlContent.append("<h3>Thông tin vận chuyển:</h3>")
-                        .append("<p><strong>Đơn vị vận chuyển:</strong> ").append(order.getShippingProvider()).append("</p>")
-                        .append("<p><strong>Mã vận đơn:</strong> ").append(order.getTrackingNumber()).append("</p>");
+                        .append("<p><strong>Nhân viên vận chuyển:</strong> ").append(order.getShippingProvider()).append("</p>")
+                        .append("<p><strong>Mã nhân viên:</strong> ").append(order.getTrackingNumber()).append("</p>");
             }
             
-            // Thêm chi tiết đơn hàng
-            htmlContent.append("<h3>Chi tiết đơn hàng:</h3>")
+            // Thêm chi tiết đơn thuê
+            htmlContent.append("<h3>Chi tiết đơn thuê:</h3>")
                     .append("<table class='car-table'><thead><tr>")
-                    .append("<th>Hình ảnh</th><th>Tên sản phẩm</th><th>Kích thước</th><th>Màu sắc</th><th>Số lượng</th><th>Đơn giá</th></tr></thead><tbody>");
+                    .append("<th>Hình ảnh</th><th>Tên xe</th><th>Loại</th><th>Màu sắc</th><th>Số ngày</th><th>Đơn giá</th></tr></thead><tbody>");
             for (CartItem item : order.getItems()) {
                 String imageUrl = item.getCarThumbnail();
                 if (!imageUrl.startsWith("http://") && !imageUrl.startsWith("https://")) {
@@ -232,7 +232,7 @@ public class Email {
             // Thêm phần footer
             htmlContent.append("</div><div class='footer'>")
                     .append("<p>Trân trọng,<br>Rental Car</p>")
-                    .append("<p>Liên hệ chúng tôi: support@fasshionshop.com | Hotline: 0123 456 789</p>")
+                    .append("<p>Liên hệ chúng tôi: support@rentalcar.com | Hotline: 0123 456 789</p>")
                     .append("</div></div></body></html>");
 
             message.setContent(htmlContent.toString(), "text/html; charset=UTF-8");

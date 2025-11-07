@@ -1917,106 +1917,209 @@ SET IDENTITY_INSERT [dbo].[orders] OFF
 GO
 SET IDENTITY_INSERT [dbo].[order_items] ON 
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (1, 1, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'28 - Xanh navy', 3, CAST(350000.00 AS Decimal(10, 2)))
+
+-- Order 1: Toyota Vios và Honda City
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (1, 1, 1, N'Toyota Vios 2023', N'https://i1-vnexpress.vnecdn.net/2023/05/08/vios-1683532902-8865-1683532941.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=m2w2CqYm7Lbnu2DcOgTz4w', N'Sedan 5 chỗ - Trắng', 3, CAST(500000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (2, 1, 29, N'Áo thun tr? em ho?t hình', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (2, 1, 2, N'Honda City 2024', N'https://otohondaquan2.vn/wp-content/uploads/2023/02/honda-city-rs-2024-10.jpg', N'Sedan 5 chỗ - Xanh', 1, CAST(600000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (3, 2, 11, N'Qu?n short siêu nhân', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
+
+-- Order 2: Mazda CX-5 và Toyota Corolla Cross
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (3, 2, 3, N'Mazda CX-5 2024', N'https://www.planetemazda.com/wp-content/uploads/2023/08/mazda-CX-5-models-KURO.jpg', N'SUV 5 chỗ - Đỏ', 1, CAST(1000000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (4, 2, 6, N'Qu?n short cotton', N'https://ardilla.com.vn/wp-content/uploads/2022/03/TB1601QST.jpg', N'2-4 - Xanh navy', 2, CAST(120000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (4, 2, 16, N'Toyota Corolla Cross 2024', N'https://images2.thanhnien.vn/528068263637045248/2024/4/7/toyota-corolla-cross-2024-ban-ra-tai-viet-nam-tu-thang-5-1-xe-thanhnien-1712485293977811861623.jpg', N'SUV 5 chỗ - Trắng', 2, CAST(780000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (5, 3, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'S - Xám', 2, CAST(250000.00 AS Decimal(10, 2)))
+
+-- Order 3: Hyundai Tucson
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (5, 3, 14, N'Hyundai Tucson 2024', N'https://hyundaitphcm.vn/wp-content/uploads/2024/07/hyundaitphcm.com_.vn-21.jpg', N'SUV 5 chỗ - Xám', 2, CAST(1000000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (6, 4, 10, N'Giày sneaker', N'https://bizweb.dktcdn.net/thumb/large/100/041/044/cars/48f5343d-9f9a-4ed2-aa02-de2ad1f4fabc-jpeg.jpg?v=1694597357733', N'39 - ?en', 2, CAST(400000.00 AS Decimal(10, 2)))
+
+-- Order 4: Hyundai Accent và Kia Cerato
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (6, 4, 10, N'Hyundai Accent 2024', N'https://hyundaibinhduong.com/wp-content/uploads/2023/10/Accent-all-new-thumb-02.png', N'Sedan 5 chỗ - Đen', 2, CAST(480000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (7, 4, 9, N'Giày th? thao', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/car/2024/09/22/z5855779313414_2914371405362ca7f474791328971969.jpg', N'39 - Tr?ng', 1, CAST(500000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (7, 4, 12, N'Kia Cerato 2024', N'https://camco.vn/wp-content/uploads/2024/08/cam-xe-ngan-hang-uy-tin1-scaled.jpg', N'Sedan 5 chỗ - Trắng', 1, CAST(550000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (8, 5, 28, N'Dép lào nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - Nâu', 1, CAST(180000.00 AS Decimal(10, 2)))
+
+-- Order 5: Suzuki Ertiga
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (8, 5, 28, N'Suzuki Ertiga 2024', N'https://giaxeoto.vn/admin/upload/images/suzuki-ertiga-2024-danh-gia-xe-gia-lan-banh-uu-dai-012024-1704852153.jpg', N'MPV 7 chỗ - Nâu', 1, CAST(550000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (9, 6, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'6 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
+
+-- Order 6: VinFast Lux A2.0
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (9, 6, 32, N'VinFast Lux A2.0 2024', N'https://oto360.net/images/xe/VinfastLuxA2.0/A2.0-1.webp', N'Sedan 5 chỗ - Bạc', 1, CAST(780000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (10, 7, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - Xám', 2, CAST(280000.00 AS Decimal(10, 2)))
+
+-- Order 7: Mazda 6
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (10, 7, 31, N'Mazda 6 2024', N'https://images2.thanhnien.vn/528068263637045248/2024/8/13/mazda6-2-17235225055131572948703.jpg', N'Sedan 5 chỗ - Xám', 2, CAST(880000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (11, 8, 12, N'Áo s? mi xanh', N'https://pos.nvncdn.com/a36e05-151378/ps/20230712_TkKQqMtkUO.jpeg', N'L - Xanh', 2, CAST(200000.00 AS Decimal(10, 2)))
+
+-- Order 8: Honda CR-V, Mazda 3 và Toyota Vios
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (11, 8, 13, N'Honda CR-V 2024', N'https://i.ytimg.com/vi/tK5PVBxd6QY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBS7CkupWhHxt72K5XpnANAVHN17g', N'SUV 5 chỗ - Xanh', 2, CAST(950000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (12, 8, 22, N'Áo s? mi nam k? s?c', N'https://aoxuanhe.com/upload/car/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'M - Tr?ng s?c ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (12, 8, 11, N'Mazda 3 2024', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYli5hidQc8fj0Y7czy1y9T52wiktrim1pHw&s', N'Sedan 5 chỗ - Trắng sọc đen', 1, CAST(650000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (13, 8, 1, N'Áo s? mi tr?ng', N'https://car.hstatic.net/1000333436/car/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Xanh nh?t', 2, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (13, 8, 1, N'Toyota Vios 2023', N'https://i1-vnexpress.vnecdn.net/2023/05/08/vios-1683532902-8865-1683532941.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=m2w2CqYm7Lbnu2DcOgTz4w', N'Sedan 5 chỗ - Xanh nhạt', 2, CAST(500000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (14, 9, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'30 - Xanh navy', 2, CAST(350000.00 AS Decimal(10, 2)))
+
+-- Order 9: VinFast Lux A2.0, Mazda 6, Toyota Camry và Kia Carnival
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (14, 9, 32, N'VinFast Lux A2.0 2024', N'https://oto360.net/images/xe/VinfastLuxA2.0/A2.0-1.webp', N'Sedan 5 chỗ - Xanh navy', 2, CAST(780000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (15, 9, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - Xám', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (15, 9, 31, N'Mazda 6 2024', N'https://images2.thanhnien.vn/528068263637045248/2024/8/13/mazda6-2-17235225055131572948703.jpg', N'Sedan 5 chỗ - Xám', 1, CAST(880000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (16, 9, 4, N'Chân váy denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'L - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (16, 9, 30, N'Toyota Camry 2024', N'https://i-vnexpress.vnecdn.net/2023/06/05/1-JPG-4069-1671024428-6515-1685951882.jpg', N'Sedan 5 chỗ - Xanh đậm', 1, CAST(1050000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (17, 9, 25, N'Túi ?eo chéo n? mini', N'https://image.kacana.vn/images/car/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (17, 9, 27, N'Kia Carnival 2024', N'https://www.bisonic.vn/wp-content/uploads/2024/03/kia-carnival-2022.jpg', N'MPV 7 chỗ - Đen', 1, CAST(1400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (18, 10, 3, N'??m hoa mùa hè', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'M - Hoa ??', 1, CAST(400000.00 AS Decimal(10, 2)))
+
+-- Order 10: Toyota Innova Cross và Suzuki Ertiga
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (18, 10, 6, N'Toyota Innova Cross 2024', N'https://drive.gianhangvn.com/image/9lhcu5l-2519801j24864.jpg', N'MPV 7 chỗ - Đỏ', 1, CAST(850000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (19, 10, 28, N'Dép lào nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'39 - ?en', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (19, 10, 28, N'Suzuki Ertiga 2024', N'https://giaxeoto.vn/admin/upload/images/suzuki-ertiga-2024-danh-gia-xe-gia-lan-banh-uu-dai-012024-1704852153.jpg', N'MPV 7 chỗ - Đen', 1, CAST(550000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (20, 11, 29, N'Áo thun tr? em ho?t hình', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
+
+-- Order 11: Honda Accord
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (20, 11, 29, N'Honda Accord 2024', N'https://www.tonyhondahilo.com/blogs/4420/wp-content/uploads/2024/05/Capture2.jpg', N'Sedan 5 chỗ - Xanh da trời', 1, CAST(950000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (21, 12, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
+
+-- Order 12: VinFast Lux A2.0
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (21, 12, 32, N'VinFast Lux A2.0 2024', N'https://oto360.net/images/xe/VinfastLuxA2.0/A2.0-1.webp', N'Sedan 5 chỗ - Bạc', 1, CAST(780000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (22, 13, 14, N'Qu?n jogger th? thao', N'https://thegioidotap.vn/wp-content/uploads/2020/12/quan-dai-the-thao-nam-jogger-sg10-3.jpg', N'M - Xám', 2, CAST(250000.00 AS Decimal(10, 2)))
+
+-- Order 13: Hyundai Tucson, VinFast Lux A2.0 và Suzuki Ertiga
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (22, 13, 14, N'Hyundai Tucson 2024', N'https://hyundaitphcm.vn/wp-content/uploads/2024/07/hyundaitphcm.com_.vn-21.jpg', N'SUV 5 chỗ - Xám', 2, CAST(1000000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (23, 13, 32, N'Qu?n kaki nam', N'https://vulcano.sgp1.digitaloceanspaces.com/media/18894/quan-khaki-3001t-vulcano01.webp', N'34 - Be', 2, CAST(350000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (23, 13, 32, N'VinFast Lux A2.0 2024', N'https://oto360.net/images/xe/VinfastLuxA2.0/A2.0-1.webp', N'Sedan 5 chỗ - Be', 2, CAST(780000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (24, 13, 28, N'Dép lào nam cao c?p', N'https://cf.shopee.vn/file/c6d1c6eb69fc0f5b382006d61baf5856', N'40 - Nâu', 1, CAST(180000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (24, 13, 28, N'Suzuki Ertiga 2024', N'https://giaxeoto.vn/admin/upload/images/suzuki-ertiga-2024-danh-gia-xe-gia-lan-banh-uu-dai-012024-1704852153.jpg', N'MPV 7 chỗ - Nâu', 1, CAST(550000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (25, 14, 5, N'Áo thun siêu nhân', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'2-4 - Xanh', 1, CAST(150000.00 AS Decimal(10, 2)))
+
+-- Order 14: Ford Everest
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (25, 14, 5, N'Ford Everest 2024', N'https://thaibinhford.com/public/upload/images/hinh_sanpham/ford-everest-the-he-moi-2024-platinum-4x4-at-ford-everest-the-he-moi-2024-platinum-4x4-at-1712982260306.jpg', N'SUV 7 chỗ - Xanh', 1, CAST(1400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (26, 15, 15, N'??m maxi hoa nhí', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - H?ng h?a ti?t hoa tr?ng', 1, CAST(420000.00 AS Decimal(10, 2)))
+
+-- Order 15: Mitsubishi Xpander
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (26, 15, 17, N'Mitsubishi Xpander 2024', N'https://static.vnfinance.vn/files/admin/2024/09/23/mitsubishi-xpander-2024-ra-mat-voi-thiet-ke-dep-long-lanh-trang-bi-cuc-chat-gia-tu-541-trieu-dong-anh-1-1157091.jpg', N'MPV 7 chỗ - Hồng', 1, CAST(650000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (27, 16, 25, N'Túi ?eo chéo n? mini', N'https://image.kacana.vn/images/car/tui-cheo-dung-dien-thoai-va-tien-you-2811-1720436440.jpg', N'Onesize - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
+
+-- Order 16: Kia Carnival
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (27, 16, 27, N'Kia Carnival 2024', N'https://www.bisonic.vn/wp-content/uploads/2024/03/kia-carnival-2022.jpg', N'MPV 7 chỗ - Đen', 1, CAST(1400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (28, 17, 29, N'Áo thun tr? em ho?t hình', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'2-4 - Xanh da tr?i h?a ti?t', 4, CAST(150000.00 AS Decimal(10, 2)))
+
+-- Order 17: Honda Accord và Ford Everest
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (28, 17, 29, N'Honda Accord 2024', N'https://www.tonyhondahilo.com/blogs/4420/wp-content/uploads/2024/05/Capture2.jpg', N'Sedan 5 chỗ - Xanh da trời', 4, CAST(950000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (29, 17, 5, N'Áo thun siêu nhân', N'https://target.scene7.com/is/image/Target/GUEST_1079d260-d8e2-4d6e-b757-7dd7254ddda5?wid=800&hei=800&qlt=80&fmt=webp', N'4-6 - ??', 2, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (29, 17, 5, N'Ford Everest 2024', N'https://thaibinhford.com/public/upload/images/hinh_sanpham/ford-everest-the-he-moi-2024-platinum-4x4-at-ford-everest-the-he-moi-2024-platinum-4x4-at-1712982260306.jpg', N'SUV 7 chỗ - Đỏ', 2, CAST(1400000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (30, 18, 2, N'Qu?n tây ?en', N'https://car.hstatic.net/200000053174/car/20_bddc67b2b01a4fc6a89b6d5ca1e78b33_master.jpg', N'M - ?en', 3, CAST(300000.00 AS Decimal(10, 2)))
+
+-- Order 18: Kia Cerato, Toyota Innova Cross, Mazda 6, Toyota Camry và Toyota Vios
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (30, 18, 12, N'Kia Cerato 2024', N'https://camco.vn/wp-content/uploads/2024/08/cam-xe-ngan-hang-uy-tin1-scaled.jpg', N'Sedan 5 chỗ - Đen', 3, CAST(550000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (31, 18, 3, N'??m hoa mùa hè', N'https://file.hstatic.net/200000503583/file/vay-hoa-mua-he__11__c2791afbbda941238c114b00b403ec57.jpg', N'S - Hoa ??', 4, CAST(400000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (31, 18, 6, N'Toyota Innova Cross 2024', N'https://drive.gianhangvn.com/image/9lhcu5l-2519801j24864.jpg', N'MPV 7 chỗ - Đỏ', 4, CAST(850000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (32, 18, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'M - Xám', 1, CAST(280000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (32, 18, 31, N'Mazda 6 2024', N'https://images2.thanhnien.vn/528068263637045248/2024/8/13/mazda6-2-17235225055131572948703.jpg', N'Sedan 5 chỗ - Xám', 1, CAST(880000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (33, 18, 4, N'Chân váy denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - ?en', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (33, 18, 30, N'Toyota Camry 2024', N'https://i-vnexpress.vnecdn.net/2023/06/05/1-JPG-4069-1671024428-6515-1685951882.jpg', N'Sedan 5 chỗ - Đen', 1, CAST(1050000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (34, 18, 1, N'Áo s? mi tr?ng', N'https://car.hstatic.net/1000333436/car/tx_03696_da789ffaa68d42d3b2ad129b099e15ae_master.jpg', N'M - Tr?ng', 1, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (34, 18, 1, N'Toyota Vios 2023', N'https://i1-vnexpress.vnecdn.net/2023/05/08/vios-1683532902-8865-1683532941.jpg?w=1020&h=0&q=100&dpr=1&fit=crop&s=m2w2CqYm7Lbnu2DcOgTz4w', N'Sedan 5 chỗ - Trắng', 1, CAST(500000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (35, 19, 11, N'Qu?n short siêu nhân', N'https://img.alicdn.com/imgextra/i3/350427093/O1CN01JDrMyz22GdnbaZ9Y6_!!350427093.jpg_600x600.jpg_.webp', N'2-4 - Xanh', 1, CAST(550000.00 AS Decimal(10, 2)))
+
+-- Order 19: Mazda 3
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (35, 19, 11, N'Mazda 3 2024', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYli5hidQc8fj0Y7czy1y9T52wiktrim1pHw&s', N'Sedan 5 chỗ - Xanh', 1, CAST(650000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (36, 20, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
+
+-- Order 20: Mazda 6, Toyota Camry và Mercedes C200
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (36, 20, 31, N'Mazda 6 2024', N'https://images2.thanhnien.vn/528068263637045248/2024/8/13/mazda6-2-17235225055131572948703.jpg', N'Sedan 5 chỗ - Đen', 1, CAST(880000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (37, 20, 4, N'Chân váy denim', N'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luaj8uf2in1bf1', N'M - Xanh ??m', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (37, 20, 30, N'Toyota Camry 2024', N'https://i-vnexpress.vnecdn.net/2023/06/05/1-JPG-4069-1671024428-6515-1685951882.jpg', N'Sedan 5 chỗ - Xanh đậm', 1, CAST(1050000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (38, 20, 26, N'Bông tai b?c hình gi?t n??c', N'https://lili.vn/wp-content/uploads/2021/12/Bong-tai-bac-nu-ma-bach-kim-dinh-da-CZ-hinh-giot-nuoc-LILI_416496_13.jpg', N'Onesize - B?c', 1, CAST(150000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (38, 20, 8, N'Mercedes C200 2024', N'https://images.drive.com.au/driveau/image/upload/t_wp-default/v1/cms/uploads/pd7cptqcdxjwgv0vzc8s', N'Sedan 5 chỗ - Bạc', 1, CAST(2200000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (39, 21, 13, N'Áo khoác bomber nam', N'https://ginstore.com.vn/files/sanpham/1885/1/png/ao-khoac-bomber-local-brand-rg-butterfly-varsity-jacket-nam-nu-tay-da-vasity-bong-chay-form-rong-unisex.png', N'S - ?en', 1, CAST(450000.00 AS Decimal(10, 2)))
+
+-- Order 21: BMW 530i, Mitsubishi Xpander, Lexus RX, Mercedes GLC, Mercedes C200 và BMW X3
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (39, 21, 9, N'BMW 530i 2024', N'https://hips.hearstapps.com/hmg-prod/images/2024-bmw-530i-xdrive-118-65808a4c3d44a.jpg?crop=0.561xw:0.474xh;0.171xw,0.327xh&resize=1200:*', N'Sedan 5 chỗ - Đen', 1, CAST(2500000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (40, 21, 17, N'Váy công chúa cho bé gái', N'https://tutupetti.com/wp-content/uploads/2023/07/dam_dep_cho_be_du_tiec_04.jpg', N'4-6 - H?ng pastel', 1, CAST(320000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (40, 21, 17, N'Mitsubishi Xpander 2024', N'https://static.vnfinance.vn/files/admin/2024/09/23/mitsubishi-xpander-2024-ra-mat-voi-thiet-ke-dep-long-lanh-trang-bi-cuc-chat-gia-tu-541-trieu-dong-anh-1-1157091.jpg', N'MPV 7 chỗ - Hồng pastel', 1, CAST(650000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (41, 21, 15, N'??m maxi hoa nhí', N'https://vayfashion.com/wp-content/uploads/2022/05/2c7cf97edbac2d98f120bf85c824f1aa.jpg', N'S - Tr?ng h?a ti?t hoa xanh', 1, CAST(420000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (41, 21, 25, N'Lexus RX 350 2024', N'https://www.lexus.com.vn/content/dam/lexus-v3-blueprint/models/suv/rx/rx-350/my23/overview/lexus-rx-350-overview-mgp.jpg', N'SUV 5 chỗ - Trắng', 1, CAST(2900000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (42, 21, 21, N'Kính mát th?i trang', N'https://hoyahc.vn/wp-content/uploads/2022/01/kinh-redex-kinh-mat.jpg', N'Onesize - ?en', 1, CAST(200000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (42, 21, 23, N'Mercedes GLC 300 2024', N'https://mercedeshaxaco.com.vn/wp-content/uploads/mercedes-benz-glc-300-4matic-all-new-2023-2024-2025-2026-2027-2028-noi-that-ngoai-that-mercedeshaxaco-com-vn-3.jpg', N'SUV 5 chỗ - Đen', 1, CAST(2500000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (43, 21, 19, N'Dây chuy?n b?c n?', N'https://pos.nvncdn.com/211f76-106986/ps/20240805_RdCu2zj3rc.jpeg', N'40cm - B?c', 1, CAST(250000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (43, 21, 8, N'Mercedes C200 2024', N'https://images.drive.com.au/driveau/image/upload/t_wp-default/v1/cms/uploads/pd7cptqcdxjwgv0vzc8s', N'Sedan 5 chỗ - Bạc', 1, CAST(2200000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (44, 21, 20, N'Giày cao gót n?', N'https://img.mwc.com.vn/giay-thoi-trang?w=480&h=510&FileInput=/Resources/car/2024/09/20/z5850479583248_27cb755c82bd913bc95a09019f771777.jpg', N'35 - Kem', 1, CAST(380000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (44, 21, 24, N'BMW X3 xDrive30i 2024', N'https://hips.hearstapps.com/hmg-prod/images/2024-bmw-x3-101-64e782a68ab3d.jpg?crop=0.945xw:0.809xh;0,0.156xh&resize=2048:*', N'SUV 5 chỗ - Kem', 1, CAST(2600000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (45, 22, 22, N'Áo s? mi nam k? s?c', N'https://aoxuanhe.com/upload/car/axh-111/ao-so-mi-nam-ke-soc-xanh-duong-1.jpg', N'S - Xanh nh?t s?c tr?ng', 1, CAST(280000.00 AS Decimal(10, 2)))
+
+-- Order 22: Mazda 3
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (45, 22, 11, N'Mazda 3 2024', N'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYli5hidQc8fj0Y7czy1y9T52wiktrim1pHw&s', N'Sedan 5 chỗ - Xanh nhạt sọc trắng', 1, CAST(650000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (46, 23, 31, N'Chân váy x?p ly dáng ng?n', N'https://down-vn.img.susercontent.com/file/55791d774c509649738b1bb8aba06a7d', N'S - ?en', 1, CAST(280000.00 AS Decimal(10, 2)))
+
+-- Order 23: Mazda 6 và VinFast Lux A2.0
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (46, 23, 31, N'Mazda 6 2024', N'https://images2.thanhnien.vn/528068263637045248/2024/8/13/mazda6-2-17235225055131572948703.jpg', N'Sedan 5 chỗ - Đen', 1, CAST(880000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (47, 23, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - B?c', 1, CAST(230000.00 AS Decimal(10, 2)))
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (47, 23, 32, N'VinFast Lux A2.0 2024', N'https://oto360.net/images/xe/VinfastLuxA2.0/A2.0-1.webp', N'Sedan 5 chỗ - Bạc', 1, CAST(780000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (48, 24, 16, N'Áo thun unisex', N'https://sure.vn/wp-content/uploads/2024/08/7-1-scaled.jpg', N'S - Tr?ng', 1, CAST(180000.00 AS Decimal(10, 2)))
+
+-- Order 24: Kia Seltos
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (48, 24, 15, N'Kia Seltos 2024', N'https://auto365.vn/uploads/images/tin%20t%E1%BB%A9c/2024/T1/kia-seltos-2024/kia-seltos-2024-1.jpg', N'SUV 5 chỗ - Trắng', 1, CAST(820000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (49, 25, 30, N'Nh?n b?c ?ính ?á zircon', N'https://lili.vn/wp-content/uploads/2021/08/Nhan-bac-dinh-da-Zircon-Royal-LILI_499436_2.jpg', N'5 - Vàng h?ng', 1, CAST(230000.00 AS Decimal(10, 2)))
+
+-- Order 25: VinFast Lux A2.0
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (49, 25, 32, N'VinFast Lux A2.0 2024', N'https://oto360.net/images/xe/VinfastLuxA2.0/A2.0-1.webp', N'Sedan 5 chỗ - Vàng hồng', 1, CAST(780000.00 AS Decimal(10, 2)))
 GO
-INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) VALUES (50, 26, 29, N'Áo thun tr? em ho?t hình', N'https://car.hstatic.net/1000387570/car/ao_sieu_nhan_dai_tay_be_trai_xanh_1_29b6db9d6dab4e649d6d1528a1cef68d_master.jpg', N'4-6 - Tr?ng h?a ti?t', 1, CAST(150000.00 AS Decimal(10, 2)))
+
+-- Order 26: Honda Accord
+INSERT [dbo].[order_items] ([id], [order_id], [car_id], [car_name], [car_image], [variant_name], [quantity], [unit_price_at_order]) 
+VALUES (50, 26, 29, N'Honda Accord 2024', N'https://www.tonyhondahilo.com/blogs/4420/wp-content/uploads/2024/05/Capture2.jpg', N'Sedan 5 chỗ - Trắng', 1, CAST(950000.00 AS Decimal(10, 2)))
 GO
+
 SET IDENTITY_INSERT [dbo].[order_items] OFF
 GO
 

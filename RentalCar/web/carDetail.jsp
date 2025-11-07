@@ -8,7 +8,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <style>
-    /* Global Typography and Color Palette (đồng bộ với carList.jsp) */
+    /* Global Typography and Color Palette */
     :root {
         --primary-color: #2c3e50;
         --secondary-color: #34495e;
@@ -45,16 +45,12 @@
 
     /* Car Images */
     .car-image-main {
-        width: calc(100% - 120px); /* Trừ đi chiều rộng của thumbnail-container + gap */
+        width: calc(100% - 120px);
         height: 600px;
         object-fit: cover;
         border-radius: 12px;
         transition: transform 0.4s ease;
     }
-
-    /*    .car-image-main:hover {
-            transform: scale(1.05);
-        }*/
 
     .image-section {
         display: flex;
@@ -74,14 +70,14 @@
     }
 
     .thumbnail {
-        width: 100%; /* Tràn hết chiều rộng của thumbnail-container */
-        height: 100px; /* Chiều cao cố định */
-        object-fit: cover; /* Đảm bảo ảnh lấp đầy khung */
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
         border-radius: 8px;
         cursor: pointer;
         border: 2px solid transparent;
         transition: all 0.3s ease;
-        display: block; /* Đảm bảo ảnh là block element */
+        display: block;
     }
 
     .thumbnail:hover, .thumbnail.active {
@@ -136,35 +132,92 @@
         line-height: 1.8;
     }
 
-    /* Options and Quantity */
-    .options-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
+    /* NEW: Options styling for car rental */
+    .options-section {
         margin-bottom: 25px;
-    }
-
-    .options-col {
-        flex: 1;
-        min-width: 150px;
     }
 
     .option-label {
         font-weight: 600;
         color: var(--secondary-color);
-        margin-bottom: 8px;
+        margin-bottom: 12px;
         display: block;
+        font-size: 1rem;
     }
 
-    .form-select, .quantity-input {
+    .option-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .option-btn {
+        padding: 12px 20px;
+        border: 2px solid #e0e0e0;
+        background: white;
         border-radius: 8px;
-        border: 1px solid #e0e0e0;
+        cursor: pointer;
         transition: all 0.3s ease;
+        font-weight: 500;
+        color: var(--text-color);
+        min-width: 120px;
+        text-align: center;
     }
 
-    .form-select:focus, .quantity-input:focus {
+    .option-btn:hover {
         border-color: var(--accent-color);
-        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        background: #f8f9fa;
+    }
+
+    .option-btn.selected {
+        border-color: var(--accent-color);
+        background: var(--accent-color);
+        color: white;
+    }
+
+    .option-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* Color buttons - special styling */
+    .color-option {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        border-radius: 50%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .color-option.selected::after {
+        content: '✓';
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        position: absolute;
+        text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+
+    .color-label {
+        margin-left: 8px;
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+
+    .hidden-select {
+        display: none;
+    }
+
+    /* Quantity */
+    .quantity-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
     }
 
     .quantity-selector {
@@ -177,6 +230,15 @@
         width: 70px;
         text-align: center;
         background-color: #f9f9f9;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        padding: 8px;
+    }
+
+    .quantity-input:focus {
+        border-color: var(--accent-color);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
     }
 
     .btn-outline-secondary {
@@ -193,7 +255,6 @@
     .stock-status {
         display: flex;
         align-items: center;
-        margin-left: 15px;
         font-weight: 500;
     }
 
@@ -385,7 +446,7 @@
 
     .car-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* Đồng bộ với carList.jsp */
+        grid-template-columns: repeat(4, 1fr);
         gap: 25px;
     }
 
@@ -431,13 +492,6 @@
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
-    }
-
-    .car-price {
-        color: var(--accent-color);
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin-bottom: 15px;
     }
 
     /* Pagination */
@@ -525,10 +579,10 @@
         .car-image-main {
             height: 300px;
         }
-        .options-row {
+        .option-buttons {
             flex-direction: column;
         }
-        .options-col {
+        .option-btn {
             width: 100%;
         }
         .car-grid {
@@ -566,13 +620,13 @@
                     <c:choose>
                         <c:when test="${alert.equals('EOS')}">
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                Sản phẩm đã hết hàng hoặc ngừng kinh doanh.
+                                Xe này hiện không có sẵn để cho thuê.
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </c:when>
                         <c:when test="${alert.equals('SS')}">
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                Thêm vào giỏ hàng thành công.
+                                Đã thêm vào danh sách thuê xe thành công.
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </c:when>
@@ -598,7 +652,6 @@
                                         </c:forEach>
                                     </c:when>
                                     <c:otherwise>
-                                        <!-- Placeholder khi không có ảnh phụ -->
                                         <div class="thumbnail-placeholder">
                                             <span>Không có ảnh phụ</span>
                                         </div>
@@ -615,45 +668,75 @@
 
                         <div class="car-price">
                             <div class="sale-price">
-                                <fmt:formatNumber value="${car.salePrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
+                                <fmt:formatNumber value="${car.salePrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>/ngày
                             </div>
-                            <%--<c:if test="${car.originalPrice > car.salePrice}">--%>
-                            <!--<div class="original-price">-->
-                            <%--<fmt:formatNumber value="${car.originalPrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>--%>
-                            <!--</div>-->
-                            <%--</c:if>--%>
                         </div>
 
-                        <form action="cardetail" method="POST">
+                        <form action="cardetail" method="POST" id="carForm">
                             <input type="hidden" name="id" value="${car.id}">
+                            
+                            <!-- Hidden selects to maintain backend compatibility -->
+                            <select id="sizeId" name="sizeId" class="hidden-select" required>
+                                <option value="">Chọn phiên bản</option>
+                                <c:forEach items="${sizes}" var="size">
+                                    <option value="${size.id}" ${sizeId == size.id ? 'selected' : ''}>${size.name}</option>
+                                </c:forEach>
+                            </select>
 
-                            <!-- Size và Color Selector trên cùng một hàng -->
-                            <div class="options-row">
-                                <div class="options-col">
-                                    <label for="sizeId" class="option-label">Chọn Size</label>
-                                    <select id="sizeId" name="sizeId" class="form-select" required="" onchange="changeSize(this.value)">
-                                        <option value="">Chọn Size</option>
-                                        <c:forEach items="${sizes}" var="size">
-                                            <option value="${size.id}" ${sizeId == size.id ? 'selected' : ''}>${size.name}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
+                            <select id="colorId" name="colorId" class="hidden-select" required>
+                                <option value="">Chọn màu</option>
+                                <c:forEach items="${colors}" var="color">
+                                    <option value="${color.id}" ${colorId == color.id ? 'selected' : ''}>${color.name}</option>
+                                </c:forEach>
+                            </select>
 
-                                <div class="options-col">
-                                    <label for="colorId" class="option-label">Chọn Màu</label>
-                                    <select id="colorId" name="colorId" class="form-select" required="" onchange="changeColor(this.value)">
-                                        <option value="">Chọn Màu</option>
-                                        <c:forEach items="${colors}" var="color">
-                                            <option value="${color.id}" ${colorId == color.id ? 'selected' : ''}>${color.name}</option>
-                                        </c:forEach>
-                                    </select>
+                            <!-- Car Version/Type Selection -->
+                            <div class="options-section">
+                                <label class="option-label">
+                                    <i class="fas fa-car"></i> Chọn Phiên Bản Xe
+                                </label>
+                                <div class="option-buttons">
+                                    <c:forEach items="${sizes}" var="size">
+                                        <button type="button" 
+                                                class="option-btn ${sizeId == size.id ? 'selected' : ''}"
+                                                onclick="selectSize('${size.id}')"
+                                                data-size-id="${size.id}">
+                                            ${size.name}
+                                        </button>
+                                    </c:forEach>
                                 </div>
                             </div>
 
-                            <!-- Quantity Selector và tình trạng hàng trên cùng một hàng -->
-                            <div class="options-row align-items-end">
-                                <div class="options-col">
-                                    <label for="quantity" class="option-label">Số Lượng</label>
+                            <!-- Color Selection -->
+                            <div class="options-section">
+                                <label class="option-label">
+                                    <i class="fas fa-palette"></i> Chọn Màu Xe
+                                </label>
+                                <div class="option-buttons">
+                                    <c:forEach items="${colors}" var="color">
+                                        <button type="button" 
+                                                class="option-btn color-option ${colorId == color.id ? 'selected' : ''}"
+                                                onclick="selectColor('${color.id}')"
+                                                data-color-id="${color.id}"
+                                                style="background-color: ${color.name.toLowerCase().contains('đen') ? '#000' : 
+                                                       color.name.toLowerCase().contains('trắng') ? '#fff' : 
+                                                       color.name.toLowerCase().contains('đỏ') ? '#dc3545' : 
+                                                       color.name.toLowerCase().contains('xanh') ? '#0d6efd' : 
+                                                       color.name.toLowerCase().contains('bạc') ? '#6c757d' : 
+                                                       color.name.toLowerCase().contains('xám') ? '#495057' : '#e0e0e0'};"
+                                                title="${color.name}">
+                                        </button>
+                                        <span class="color-label">${color.name}</span>
+                                    </c:forEach>
+                                </div>
+                            </div>
+
+                            <!-- Quantity and Stock -->
+                            <div class="quantity-section">
+                                <div>
+                                    <label class="option-label">
+                                        <i class="fas fa-calendar-alt"></i> Số Ngày Thuê
+                                    </label>
                                     <div class="quantity-selector">
                                         <button type="button" class="btn btn-outline-secondary" onclick="decrementQuantity()">
                                             <i class="fas fa-minus"></i>
@@ -665,16 +748,11 @@
                                     </div>
                                 </div>
 
-                                <div class="options-col">
-                                    <div class="stock-status ${car.stock>0 && car.status.equals('active') ? 'in-stock' : 'out-of-stock'}">
-                                        <i class="fas ${car.stock > 0 ? 'fa-check-circle' : 'fa-times-circle'}"></i>
-                                        <span class="ms-2">
-                                            <!--${car.stock > 0 ? 'Còn Hàng (' : 'Hết Hàng'}--> 
-                                            <!--${car.stock > 0 ? car.stock : ''}-->
-                                            <!--${car.stock > 0 ? ')' : ''}-->
-                                            ${car.stock>0 && car.status.equals('active') ? 'Còn Hàng' : car.status.equals('inactive') ? 'Ngưng Bán' : 'Hết Hàng'} 
-                                        </span>
-                                    </div>
+                                <div class="stock-status ${car.stock>0 && car.status.equals('active') ? 'in-stock' : 'out-of-stock'}">
+                                    <i class="fas ${car.stock > 0 && car.status.equals('active') ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                                    <span class="ms-2">
+                                        ${car.stock>0 && car.status.equals('active') ? 'Xe Có Sẵn' : car.status.equals('inactive') ? 'Ngừng Cho Thuê' : 'Đã Được Thuê'} 
+                                    </span>
                                 </div>
                             </div>
 
@@ -684,12 +762,12 @@
                                     <button type="submit" name="action" value="buyNow" 
                                             class="btn-buy-now" 
                                             ${car.stock <= 0 || !car.status.equals('active') ? 'disabled' : ''}>
-                                        <i class="fas fa-bolt"></i> Mua Ngay
+                                        <i class="fas fa-bolt"></i> Thuê Ngay
                                     </button>
                                     <button type="submit" name="action" value="addToCart" 
                                             class="btn-add-cart" 
                                             ${car.stock <= 0 || !car.status.equals('active') ? 'disabled' : ''}>
-                                        <i class="fas fa-shopping-cart"></i> Thêm Vào Giỏ
+                                        <i class="fas fa-list"></i> Thêm Vào Danh Sách
                                     </button>
                                 </div>
                             </c:if>
@@ -707,7 +785,7 @@
 
             <!-- Car Description Section -->
             <div class="car-description-section">
-                <h2 class="car-description-title">Mô Tả Sản Phẩm</h2>
+                <h2 class="car-description-title">Mô Tả Xe</h2>
                 <div class="car-description-content">
                     ${car.description}
                 </div>
@@ -715,7 +793,7 @@
 
             <!-- Feedback Section -->
             <div id="feedback_section" class="feedback-section">
-                <h2 class="feedback-title">Đánh Giá (${allFeedbacks>0 ? allFeedbacks : 0})</h2>
+                <h2 class="feedback-title">Đánh Giá Từ Khách Hàng (${allFeedbacks>0 ? allFeedbacks : 0})</h2>
                 <c:choose>
                     <c:when test="${not empty feedbacks}">
                         <!-- Trung Bình Sao và Nút Lọc -->
@@ -777,7 +855,7 @@
                                     <c:if test="${not empty feedback.replies}">
                                         <c:forEach items="${feedback.replies}" var="reply">
                                             <div class="reply" style="margin-left: 40px; margin-top: 10px;">
-                                                <div class="feedback-author">Fashion Shop</div>
+                                                <div class="feedback-author">Car Rental Service</div>
                                                 <div class="feedback-text">${reply.comment}</div>
                                                 <div class="feedback-date">
                                                     <fmt:formatDate value="${reply.createdAt}" pattern="dd/MM/yyyy HH:mm" />
@@ -792,7 +870,7 @@
                     <c:otherwise>
                         <div class="text-center py-5">
                             <i class="fas fa-comment-alt text-muted" style="font-size: 48px;"></i>
-                            <p class="mt-3 text-muted">Chưa có đánh giá nào cho sản phẩm này</p>
+                            <p class="mt-3 text-muted">Chưa có đánh giá nào cho xe này</p>
                         </div>
                     </c:otherwise>
                 </c:choose>
@@ -826,9 +904,9 @@
                 </nav>
             </div>
 
-            <!-- Similar Cars Section - Displays up to 4 similar cars from the same category -->
+            <!-- Similar Cars Section -->
             <div class="similar-cars-section">
-                <h2 class="similar-cars-title">Sản Phẩm Tương Tự</h2>
+                <h2 class="similar-cars-title">Xe Tương Tự</h2>
 
                 <div class="car-grid">
                     <c:forEach items="${similarCars}" var="similarCar" varStatus="status">
@@ -841,7 +919,7 @@
                                     <div class="car-info">
                                         <h5 class="car-title">${similarCar.title}</h5>
                                         <div class="car-price">
-                                            <span><fmt:formatNumber value="${similarCar.salePrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/></span>
+                                            <span><fmt:formatNumber value="${similarCar.salePrice}" type="currency" currencySymbol="đ" maxFractionDigits="0"/>/ngày</span>
                                         </div>
                                     </div>
                                 </a>
@@ -858,67 +936,88 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-                                            function changeMainImage(src) {
-                                                document.getElementById('main-car-image').src = src;
-                                                // Update active thumbnail
-                                                const thumbnails = document.querySelectorAll('.thumbnail');
-                                                thumbnails.forEach(thumb => {
-                                                    if (thumb.src === src) {
-                                                        thumb.classList.add('active');
-                                                    } else {
-                                                        thumb.classList.remove('active');
-                                                    }
-                                                });
-                                            }
+            function changeMainImage(src) {
+                document.getElementById('main-car-image').src = src;
+                // Update active thumbnail
+                const thumbnails = document.querySelectorAll('.thumbnail');
+                thumbnails.forEach(thumb => {
+                    if (thumb.src === src) {
+                        thumb.classList.add('active');
+                    } else {
+                        thumb.classList.remove('active');
+                    }
+                });
+            }
 
-                                            function changeSize(sizeID) {
-                                                setTimeout(() => { // Đợi một chút để đảm bảo giá trị mới được cập nhật
-                                                    const colorID = document.getElementById('colorId').value;
-                                                    window.location.href = 'cardetail?id=${car.id}&sizeId=' + sizeID + '&colorId=' + colorID;
-                                                }, 10);
-                                            }
+            function selectSize(sizeID) {
+                // Update hidden select
+                document.getElementById('sizeId').value = sizeID;
+                
+                // Update button states
+                document.querySelectorAll('[data-size-id]').forEach(btn => {
+                    if (btn.dataset.sizeId === sizeID) {
+                        btn.classList.add('selected');
+                    } else {
+                        btn.classList.remove('selected');
+                    }
+                });
+                
+                // Reload page with new selection
+                const colorID = document.getElementById('colorId').value;
+                window.location.href = 'cardetail?id=${car.id}&sizeId=' + sizeID + '&colorId=' + colorID;
+            }
 
-                                            function changeColor(colorID) {
-                                                setTimeout(() => {
-                                                    const sizeID = document.getElementById('sizeId').value;
-                                                    window.location.href = 'cardetail?id=${car.id}&sizeId=' + sizeID + '&colorId=' + colorID;
-                                                }, 10);
-                                            }
+            function selectColor(colorID) {
+                // Update hidden select
+                document.getElementById('colorId').value = colorID;
+                
+                // Update button states
+                document.querySelectorAll('[data-color-id]').forEach(btn => {
+                    if (btn.dataset.colorId === colorID) {
+                        btn.classList.add('selected');
+                    } else {
+                        btn.classList.remove('selected');
+                    }
+                });
+                
+                // Reload page with new selection
+                const sizeID = document.getElementById('sizeId').value;
+                window.location.href = 'cardetail?id=${car.id}&sizeId=' + sizeID + '&colorId=' + colorID;
+            }
 
-                                            function incrementQuantity() {
-                                                const quantityInput = document.getElementById('quantity');
-                                                const maxQuantity = ${car.stock};
-                                                if (parseInt(quantityInput.value) < maxQuantity) {
-                                                    quantityInput.value = parseInt(quantityInput.value) + 1;
-                                                }
-                                            }
+            function incrementQuantity() {
+                const quantityInput = document.getElementById('quantity');
+                const maxQuantity = ${car.stock};
+                if (parseInt(quantityInput.value) < maxQuantity) {
+                    quantityInput.value = parseInt(quantityInput.value) + 1;
+                }
+            }
 
-                                            function decrementQuantity() {
-                                                const quantityInput = document.getElementById('quantity');
-                                                if (parseInt(quantityInput.value) > 1) {
-                                                    quantityInput.value = parseInt(quantityInput.value) - 1;
-                                                }
-                                            }
+            function decrementQuantity() {
+                const quantityInput = document.getElementById('quantity');
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                }
+            }
 
-                                            // Kiểm tra số lượng
-                                            document.getElementById('quantity').addEventListener('change', function () {
-                                                const value = parseInt(this.value);
-                                                const maxQuantity = ${car.stock};
-                                                if (value < 1) {
-                                                    this.value = 1;
-                                                } else if (value > maxQuantity) {
-                                                    this.value = maxQuantity;
-                                                    alert('Số lượng tối đa có sẵn là ' + maxQuantity);
-                                                }
-                                            });
-                                            // Phóng to ảnh
-                                            function showImageModal(src) {
-                                                document.getElementById('modalImage').src = src;
-                                                var modal = new bootstrap.Modal(document.getElementById('imageModal'));
-                                                modal.show();
-                                            }
-
-
+            // Kiểm tra số lượng
+            document.getElementById('quantity').addEventListener('change', function () {
+                const value = parseInt(this.value);
+                const maxQuantity = ${car.stock};
+                if (value < 1) {
+                    this.value = 1;
+                } else if (value > maxQuantity) {
+                    this.value = maxQuantity;
+                    alert('Số ngày thuê tối đa là ' + maxQuantity);
+                }
+            });
+            
+            // Phóng to ảnh
+            function showImageModal(src) {
+                document.getElementById('modalImage').src = src;
+                var modal = new bootstrap.Modal(document.getElementById('imageModal'));
+                modal.show();
+            }
         </script>
-</body>
+    </body>
 </html>

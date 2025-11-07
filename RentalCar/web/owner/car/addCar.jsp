@@ -155,7 +155,7 @@
                     </c:when>
                     <c:when test="${alert.equals('ER_dp')}">
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            Sản phẩm đã tồn tại trong hệ thống.
+                            Xe đã tồn tại trong hệ thống.
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     </c:when>
@@ -168,18 +168,18 @@
                 </c:choose>
             </c:if>
             <h2 class="page-title">
-                <i class="fas fa-plus-circle me-2"></i>Thêm sản phẩm mới
+                <i class="fas fa-plus-circle me-2"></i>Thêm xe mới
             </h2>
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-info-circle me-2"></i>Thông tin sản phẩm
+                    <i class="fas fa-info-circle me-2"></i>Thông tin xe
                 </div>
                 <div class="card-body">
                     <form action="addcar" method="post" enctype="multipart/form-data" class="row g-3">
                         <div class="col-md-6">
-                            <label for="title" class="form-label">Tên sản phẩm</label>
+                            <label for="title" class="form-label">Tên xe</label>
                             <input type="text" class="form-control" id="title" name="title" maxlength="100" required />
-                            <div class="form-text">Nhập tên sản phẩm đầy đủ và chính xác</div>
+                            <div class="form-text">Nhập tên xe đầy đủ và chính xác</div>
                         </div>
 
                         <div class="col-md-6">
@@ -198,9 +198,9 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="salePrice" class="form-label">Giá bán (₫)</label>
+                            <label for="salePrice" class="form-label">Giá thuê (₫)</label>
                             <input type="text" class="form-control" id="salePrice" name="salePrice" required />
-                            <div class="form-text">Giá bán phải lớn hơn hoặc bằng giá gốc</div>
+                            <div class="form-text">Giá thuê phải lớn hơn hoặc bằng giá gốc</div>
                         </div>
 
                         <div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
@@ -208,7 +208,7 @@
                                 <div class="form-check d-flex justify-content-center align-items-center" style="height: 100%;">
                                     <input class="form-check-input me-2" type="checkbox" id="isCombo" name="isCombo">
                                     <label class="form-check-label" for="isCombo">
-                                        Là sản phẩm chính của combo
+                                        Là xe chính của combo
                                     </label>
                                 </div>
                             </label>
@@ -221,7 +221,7 @@
                         </div>
 
                         <div class="col-12">
-                            <label for="description" class="form-label">Mô tả sản phẩm</label>
+                            <label for="description" class="form-label">Mô tả xe</label>
                             <textarea class="form-control" id="description" name="description" rows="5" placeholder="Nhập mô tả chi tiết về sản phẩm..."></textarea>
                         </div>
 
@@ -235,14 +235,14 @@
                         <div class="col-md-6">
                             <label for="subImages" class="form-label">Ảnh phụ (tối đa 5 ảnh)</label>
                             <input type="file" class="form-control" id="subImages" name="subImages" accept="image/*" multiple onchange="previewSubImages(this)" />
-                            <div class="form-text">Chọn tối đa 5 ảnh chi tiết sản phẩm</div>
+                            <div class="form-text">Chọn tối đa 5 ảnh chi tiết xe</div>
                             <div id="subImagesPreview" class="sub-images-preview"></div>
                         </div>
 
                         <div class="col-12 mt-4">
                             <div class="d-flex gap-2">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-save me-2"></i>Thêm sản phẩm
+                                    <i class="fas fa-save me-2"></i>Thêm xe
                                 </button>
                                 <a href="carlist" class="btn btn-secondary">
                                     <i class="fas fa-arrow-left me-2"></i>Quay lại

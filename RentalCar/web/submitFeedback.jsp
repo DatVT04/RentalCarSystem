@@ -55,7 +55,7 @@
         <jsp:include page="header.jsp" />
 
         <div class="container py-5 feedback-container">
-            <h1 class="mb-4 text-center">Đánh Giá Đơn Hàng #${order.orderCode}</h1>
+            <h1 class="mb-4 text-center">Đánh Giá Đơn Thuê #${order.orderCode}</h1>
 
             <!-- Hiển thị thông tin người dùng -->
             <div class="user-info">
@@ -101,7 +101,7 @@
                                     id="comment-${item.id}" 
                                     class="form-control" 
                                     rows="3" 
-                                    placeholder="Chia sẻ trải nghiệm của bạn về sản phẩm"
+                                    placeholder="Chia sẻ trải nghiệm của bạn về dịch vụ"
                                     ></textarea>
                             </div>
 

@@ -14,7 +14,7 @@ public class ClientSecret {
 
     public static final String GOOGLE_CLIENT_SECRET = "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";
 
-    public static final String GOOGLE_REDIRECT_URI = "http://localhost:9999/fashionshop/login";
+    public static final String GOOGLE_REDIRECT_URI = "http://localhost:9999/RentalCar/login";
 
     public static final String GOOGLE_GRANT_TYPE = "authorization_code";
 

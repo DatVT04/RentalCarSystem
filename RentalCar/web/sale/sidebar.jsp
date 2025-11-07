@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="sidebar">
     <div class="sidebar-header p-3 border-bottom">
-        <h5 class="mt-2 mb-3">Quản Lý Bán Hàng</h5>
+        <h5 class="mt-2 mb-3">Quản Lý Thuê Xe</h5>
     </div>
 
     <!-- User Profile Section -->

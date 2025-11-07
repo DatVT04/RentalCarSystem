@@ -66,12 +66,12 @@ public class MyOrderServlet extends HttpServlet {
             }
         }
 
-        // Lấy danh sách đơn hàng
+        // Lấy danh sách đơn thuê
         List<Order> orders = orderDAO.getUserOrders(user.getId(), keyword, status, page, recordsPerPage);
         int noOfRecords = orderDAO.getNumberOfUserOrders(user.getId(), keyword, status);
         int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
 
-        // Kiểm tra trạng thái feedback cho từng đơn hàng
+        // Kiểm tra trạng thái feedback cho từng đơn thuê
         Map<Integer, Boolean> feedbackStatus = new HashMap<>();
         for (Order order : orders) {
             boolean hasFeedback = orderDAO.hasFeedback(order.getId());
@@ -117,7 +117,7 @@ public class MyOrderServlet extends HttpServlet {
             Order order = orderDAO.getOrderById(orderId);
 
             if (order == null || order.getUserId() != user.getId()) {
-                request.setAttribute("errorMessage", "Đơn hàng không tồn tại hoặc không thuộc về bạn!");
+                request.setAttribute("errorMessage", "Đơn thuê không tồn tại hoặc không thuộc về bạn!");
                 processRequest(request, response);
                 return;
             }
@@ -126,9 +126,9 @@ public class MyOrderServlet extends HttpServlet {
                 case "cancel":
                     boolean cancelled = orderDAO.cancelOrder(orderId, user.getId());
                     if (cancelled) {
-                        request.setAttribute("successMessage", "Đơn hàng đã được hủy thành công!");
+                        request.setAttribute("successMessage", "Đơn thuê đã được hủy thành công!");
                     } else {
-                        request.setAttribute("errorMessage", "Không thể hủy đơn hàng. Vui lòng thử lại!");
+                        request.setAttribute("errorMessage", "Không thể hủy đơn thuê. Vui lòng thử lại!");
                     }
                     break;
 
@@ -162,7 +162,7 @@ public class MyOrderServlet extends HttpServlet {
                             request.setAttribute("errorMessage", "Không thể khởi tạo lại thanh toán. Vui lòng thử lại!");
                         }
                     } else {
-                        request.setAttribute("errorMessage", "Đơn hàng không đủ điều kiện để thanh toán lại!");
+                        request.setAttribute("errorMessage", "Đơn thuê không đủ điều kiện để thanh toán lại!");
                     }
                     break;
             }

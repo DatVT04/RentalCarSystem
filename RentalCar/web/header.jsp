@@ -200,7 +200,7 @@
                         <!-- Cart -->
                         <c:if test="${sessionScope.acc.role == 'customer' || sessionScope.acc.role == null}">
                             <a href="${pageContext.request.contextPath}/cartdetail" class="cart-icon">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fas fa-list"></i>
                                 <span class="cart-count">${cartCount}</span>
                             </a>
                         </c:if>

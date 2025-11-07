@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Thông tin giao hàng</title>
+        <title>Thông tin thuê xe</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <style>
@@ -241,8 +241,8 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="cartdetail">Giỏ hàng</a></li>
-                    <li class="breadcrumb-item active">Thông tin giao hàng</li>
+                    <li class="breadcrumb-item"><a href="cartdetail">Danh sách xe</a></li>
+                    <li class="breadcrumb-item active">Thông tin thuê xe</li>
                 </ol>
             </nav>
 
@@ -252,13 +252,13 @@
                         <!-- Selected Cars Summary -->
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h5 class="card-title mb-3"><i class="fas fa-house me-2"></i>Sản phẩm đã chọn</h5>
+                                <h5 class="card-title mb-3"><i class="fas fa-house me-2"></i>Xe đã chọn</h5>
                                 <c:forEach items="${selectedItems}" var="item">
                                     <div class="car-item">
                                         <img src="${item.carThumbnail}" alt="${item.carTitle}" class="car-image">
                                         <div class="car-details">
                                             <div class="car-title">${item.carTitle}</div>
-                                            <div class="car-variant">Size: ${item.size} | Màu: ${item.color}</div>
+                                            <div class="car-variant">Loại: ${item.size} | Màu: ${item.color}</div>
                                             <div class="d-flex justify-content-between align-items-center mt-2">
                                                 <div>Số lượng: ${item.quantity}</div>
                                                 <div class="car-price">
@@ -276,13 +276,13 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <i class="fas fa-map-marker-alt me-2"></i>Địa chỉ giao hàng
+                                    <i class="fas fa-map-marker-alt me-2"></i>Địa điểm nhận xe
                                 </h5>
                                 <div class="address-list mb-3">
                                     <c:choose>
                                         <c:when test="${empty addresses}">
                                             <div class="alert alert-info">
-                                                <p>Bạn chưa có địa chỉ giao hàng nào. Vui lòng thêm địa chỉ mới.</p>
+                                                <p>Bạn chưa có địa chỉ nhận xe nào. Vui lòng thêm địa chỉ mới.</p>
                                             </div>
                                         </c:when>
                                         <c:otherwise>
@@ -313,7 +313,7 @@
                                 </div>
                                 <button type="button" class="btn btn-outline-primary" 
                                         data-bs-toggle="modal" data-bs-target="#addAddressModal">
-                                    <i class="fas fa-plus me-2"></i>Thêm địa chỉ mới
+                                    <i class="fas fa-plus me-2"></i>Thêm địa chỉ nhận xe mới
                                 </button>
                             </div>
                         </div>
@@ -328,7 +328,7 @@
                                         <input type="email" class="form-control" name="guest_email" value="${guestEmail}" required 
                                                placeholder="Nhập email ở đây" 
                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                                        <small class="text-muted">Lưu ý: Vui lòng nhập email chính xác. Chúng tôi sẽ gửi thông tin đơn hàng qua email này.</small>
+                                        <small class="text-muted">Email này sẽ được dùng để gửi hợp đồng, biên lai và thông tin liên quan.</small>
                                     </div>
                                 </div>
                             </div>
@@ -337,7 +337,7 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <i class="fas fa-truck me-2"></i>Phương thức vận chuyển
+                                    <i class="fas fa-truck me-2"></i>Hình thức nhận xe
                                 </h5>
                                 <div class="shipping-methods">
                                     <div class="shipping-method">
@@ -346,9 +346,9 @@
                                                    name="shipping_method" value="standard" checked
                                                    onchange="updateShippingFee(${subtotal > 500000 ? 0 : 30000})">
                                             <label class="form-check-label">
-                                                <strong>Giao hàng tiêu chuẩn</strong><br>
+                                                <strong>Giao xe phổ thông</strong><br>
                                                 <small class="text-muted">
-                                                    3-5 ngày - 
+                                                    2-4 giờ - 
                                                     <c:choose>
                                                         <c:when test="${subtotal > 500000}">Miễn phí</c:when>
                                                         <c:otherwise>30.000₫</c:otherwise>
@@ -363,9 +363,9 @@
                                                    name="shipping_method" value="express"
                                                    onchange="updateShippingFee(${subtotal > 500000 ? 0 : 45000})">
                                             <label class="form-check-label">
-                                                <strong>Giao hàng nhanh</strong><br>
+                                                <strong>Giao xe nhanh</strong><br>
                                                 <small class="text-muted">
-                                                    1-2 ngày - 
+                                                    1-2 giờ - 
                                                     <c:choose>
                                                         <c:when test="${subtotal > 500000}">Miễn phí</c:when>
                                                         <c:otherwise>45.000₫</c:otherwise>
@@ -375,6 +375,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                            <div class="alert alert-warning mt-3">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <small>Chuẩn bị sẵn CMND/CCCD + GPLX còn hiệu lực khi nhận xe</small>
+                            </div>
                             </div>
                         </div>
 
@@ -390,8 +394,8 @@
                                             <input type="radio" class="form-check-input" 
                                                    name="payment_method" value="cod" checked>
                                             <label class="form-check-label">
-                                                <strong>Thanh toán khi nhận hàng (COD)</strong><br>
-                                                <small class="text-muted">Thanh toán bằng tiền mặt khi nhận hàng</small>
+                                                <strong>Thanh toán khi nhận xe</strong><br>
+                                                <small class="text-muted">Tiền mặt hoặc quẹt thẻ tại chỗ</small>
                                             </label>
                                         </div>
                                     </div>
@@ -400,7 +404,7 @@
                                             <input type="radio" class="form-check-input" 
                                                    name="payment_method" value="bank">
                                             <label class="form-check-label">
-                                                <strong>Thanh toán trực tuyến</strong><br>
+                                                <strong>Chuyển khoản trước</strong><br>
                                                 <small class="text-muted">Chuyển khoản qua tài khoản ngân hàng</small>
                                             </label>
                                         </div>
@@ -411,10 +415,10 @@
                         <div class="d-block d-lg-none">
                             <div class="d-flex justify-content-between">
                                 <a href="cartdetail?from=contact" class="btn btn-outline-secondary">
-                                    <i class="fas fa-arrow-left me-2"></i>Quay lại giỏ hàng
+                                    <i class="fas fa-arrow-left me-2"></i>Quay lại
                                 </a>
                                 <button type="submit" class="btn btn-primary">
-                                    Tiếp tục<i class="fas fa-arrow-right ms-2"></i>
+                                    Xác nhận thuê<i class="fas fa-arrow-right ms-2"></i>
                                 </button>
                             </div>
                         </div>
@@ -424,30 +428,17 @@
                     <div class="col-lg-4 order-summary">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Tóm tắt đơn hàng</h5>
+                                <h5 class="card-title">Tổng chi phí thuê xe</h5>
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span>Tạm tính:</span>
+                                    <span>Tổng tiền thuê:</span>
                                     <span id="subtotal">
                                         <fmt:formatNumber value="${subtotal}" 
                                                           type="currency" currencySymbol="₫" maxFractionDigits="0"/>
                                     </span>
                                 </div>
-                                <c:if test="${discount != null && discount > 0}">
-                                    <div class="d-flex justify-content-between mb-2 text-success">
-                                        <span>Giảm giá:</span>
-                                        <span id="discount">
-                                            -<fmt:formatNumber value="${discount}" 
-                                                              type="currency" currencySymbol="₫" maxFractionDigits="0"/>
-                                        </span>
-                                    </div>
-                                    <c:if test="${not empty appliedCoupon}">
-                                        <div class="mb-2 text-success">
-                                            <small>Mã giảm giá: ${appliedCoupon}</small>
-                                        </div>
-                                    </c:if>
-                                </c:if>
+                                
                                 <div class="d-flex justify-content-between mb-2">
-                                    <span>Phí vận chuyển:</span>
+                                    <span>Phí giao xe:</span>
                                     <span id="shippingFee">
                                         <c:choose>
                                             <c:when test="${subtotal > 500000}">Miễn phí</c:when>
@@ -472,7 +463,7 @@
                                             Tiếp tục<i class="fas fa-arrow-right ms-2"></i>
                                         </button>
                                         <a href="cartdetail" class="btn btn-outline-secondary">
-                                            <i class="fas fa-arrow-left me-2"></i>Quay lại giỏ hàng
+                                            <i class="fas fa-arrow-left me-2"></i>Quay lại danh sách
                                         </a>
                                     </div>
                                 </div>
@@ -489,7 +480,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Thêm địa chỉ mới</h5>
+                        <h5 class="modal-title">Thêm địa chỉ nhận xe mới</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <form action="cartcontact" method="post">
@@ -707,5 +698,5 @@
                                                            loadProvinces();
                                                        }
         </script>
-    </body>
+    </body>ca
 </html>

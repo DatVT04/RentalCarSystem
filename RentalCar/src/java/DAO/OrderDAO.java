@@ -125,17 +125,12 @@ public class OrderDAO extends DBContext {
             stmtPayment.setString(3, paymentStatus);
             stmtPayment.executeUpdate();
 
-//            // Bước 4: Nếu có sử dụng mã giảm giá, lưu thông tin sử dụng mã giảm giá
-//            if (order.getCouponCode() != null && !order.getCouponCode().isEmpty() && order.getDiscountAmount() > 0) {
-//                applyCouponToOrder(conn, orderId, order.getCouponCode(), order.getDiscountAmount(), order.getRecipientEmail());
-//            }
-
-            // Bước 5: Thêm thông tin vận chuyển
+            // Bước 4: Thêm thông tin vận chuyển
             if (order.getShippingMethod() != null && !order.getShippingMethod().isEmpty()) {
                 addShippingInfo(conn, orderId, order.getShippingMethod());
             }
 
-            // Bước 6: Thêm lịch sử đơn hàng
+            // Bước 5: Thêm lịch sử đơn hàng
             addOrderHistory(conn, orderId, order.getUserId(), "pending", "Đơn hàng mới được tạo");
 
             conn.commit();
@@ -175,49 +170,6 @@ public class OrderDAO extends DBContext {
         }
     }
 
-    private void applyCouponToOrder(Connection conn, int orderId, String couponCode, double discountAmount, String userEmail) throws SQLException {
-        PreparedStatement stmtCoupon = null;
-        ResultSet rs = null;
-
-        try {
-            // Lấy ID của mã giảm giá từ bảng coupons
-            String sqlGetCoupon = "SELECT id FROM coupons WHERE code = ?";
-            stmtCoupon = conn.prepareStatement(sqlGetCoupon);
-            stmtCoupon.setString(1, couponCode);
-            rs = stmtCoupon.executeQuery();
-
-            if (rs.next()) {
-                int couponId = rs.getInt("id");
-                rs.close();
-                stmtCoupon.close();
-
-                // Thêm vào bảng order_coupons
-                String sqlOrderCoupon = "INSERT INTO order_coupons (order_id, coupon_id, user_email, discount_applied, created_at) "
-                        + "VALUES (?, ?, ?, ?, GETDATE())";
-                stmtCoupon = conn.prepareStatement(sqlOrderCoupon);
-                stmtCoupon.setInt(1, orderId);
-                stmtCoupon.setInt(2, couponId);
-                stmtCoupon.setString(3, userEmail);
-                stmtCoupon.setDouble(4, discountAmount);
-                stmtCoupon.executeUpdate();
-
-                // Cập nhật số lần sử dụng của mã giảm giá
-                String sqlUpdateCoupon = "UPDATE coupons SET used_count = used_count + 1 WHERE id = ?";
-                stmtCoupon.close();
-                stmtCoupon = conn.prepareStatement(sqlUpdateCoupon);
-                stmtCoupon.setInt(1, couponId);
-                stmtCoupon.executeUpdate();
-            }
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (stmtCoupon != null) {
-                stmtCoupon.close();
-            }
-        }
-    }
-
     private void addShippingInfo(Connection conn, int orderId, String shippingMethod) throws SQLException {
         PreparedStatement stmt = null;
 
@@ -237,7 +189,7 @@ public class OrderDAO extends DBContext {
             java.sql.Date estimatedDelivery = calculateEstimatedDelivery(shippingMethod);
 
             stmt.setString(2, provider);
-            stmt.setString(3, tempTrackingNumber); // Sử dụng mã theo dõi tạm thời thay vì NULL
+            stmt.setString(3, tempTrackingNumber);
             stmt.setDate(4, estimatedDelivery);
             stmt.executeUpdate();
         } finally {
@@ -255,7 +207,7 @@ public class OrderDAO extends DBContext {
                     + "VALUES (?, ?, ?, ?, GETDATE())";
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1, orderId);
-            stmt.setInt(2, userId > 0 ? userId : 1); // Sử dụng admin ID nếu là khách
+            stmt.setInt(2, userId > 0 ? userId : 1);
             stmt.setString(3, status);
             stmt.setString(4, notes);
             stmt.executeUpdate();
@@ -267,7 +219,6 @@ public class OrderDAO extends DBContext {
     }
 
     private java.sql.Date calculateEstimatedDelivery(String shippingMethod) {
-        // Tính ngày giao hàng dự kiến dựa trên phương thức vận chuyển
         java.util.Calendar cal = java.util.Calendar.getInstance();
         cal.add(java.util.Calendar.DATE, "express".equals(shippingMethod) ? 2 : 5);
         return new java.sql.Date(cal.getTimeInMillis());
@@ -279,10 +230,8 @@ public class OrderDAO extends DBContext {
         ResultSet rs = null;
 
         try {
-            // Tính vị trí bắt đầu
             int start = (page - 1) * recordsPerPage;
 
-            // Xây dựng query
             StringBuilder sql = new StringBuilder(
                     "SELECT o.*, p.payment_method, p.payment_status "
                     + "FROM orders o "
@@ -293,7 +242,6 @@ public class OrderDAO extends DBContext {
             List<Object> params = new ArrayList<>();
             params.add(userId);
 
-            // Thêm điều kiện tìm kiếm
             if (keyword != null && !keyword.trim().isEmpty()) {
                 sql.append("AND (o.notes LIKE ? OR o.recipient_name LIKE ? OR EXISTS (SELECT 1 FROM order_items oi "
                         + "INNER JOIN cars pr ON oi.car_id = pr.id "
@@ -303,18 +251,15 @@ public class OrderDAO extends DBContext {
                 params.add("%" + keyword + "%");
             }
 
-            // Thêm điều kiện lọc theo trạng thái
             if (status != null && !status.trim().isEmpty() && !status.equals("all")) {
                 sql.append("AND o.status = ? ");
                 params.add(status);
             }
 
-            // Thêm phần sắp xếp và phân trang
             sql.append("ORDER BY o.created_at DESC OFFSET ? ROWS FETCH NEXT ? ROWS ONLY");
             params.add(start);
             params.add(recordsPerPage);
 
-            // Thực thi truy vấn
             stmt = connection.prepareStatement(sql.toString());
             for (int i = 0; i < params.size(); i++) {
                 stmt.setObject(i + 1, params.get(i));
@@ -326,7 +271,7 @@ public class OrderDAO extends DBContext {
                 Order order = new Order();
                 order.setId(rs.getInt("id"));
                 order.setUserId(rs.getInt("user_id"));
-                order.setOrderCode(rs.getString("notes")); // Mã đơn hàng được lưu trong notes
+                order.setOrderCode(rs.getString("notes"));
                 order.setStatus(rs.getString("status"));
                 order.setTotal(rs.getDouble("total_amount"));
                 order.setRecipientName(rs.getString("recipient_name"));
@@ -337,7 +282,6 @@ public class OrderDAO extends DBContext {
                 order.setPaymentMethod(rs.getString("payment_method"));
                 order.setPaymentStatus(rs.getString("payment_status"));
 
-                // Lấy thông tin các sản phẩm trong đơn hàng
                 List<CartItem> items = getOrderItems(order.getId());
                 order.setItems(items);
 
@@ -367,7 +311,6 @@ public class OrderDAO extends DBContext {
         int count = 0;
 
         try {
-            // Xây dựng query đếm tổng số đơn hàng
             StringBuilder sql = new StringBuilder(
                     "SELECT COUNT(*) FROM orders o WHERE o.user_id = ? "
             );
@@ -375,7 +318,6 @@ public class OrderDAO extends DBContext {
             List<Object> params = new ArrayList<>();
             params.add(userId);
 
-            // Thêm điều kiện tìm kiếm
             if (keyword != null && !keyword.trim().isEmpty()) {
                 sql.append("AND (o.notes LIKE ? OR o.recipient_name LIKE ? OR EXISTS (SELECT 1 FROM order_items oi "
                         + "INNER JOIN cars pr ON oi.car_id = pr.id "
@@ -385,13 +327,11 @@ public class OrderDAO extends DBContext {
                 params.add("%" + keyword + "%");
             }
 
-            // Thêm điều kiện lọc theo trạng thái
             if (status != null && !status.trim().isEmpty() && !status.equals("all")) {
                 sql.append("AND o.status = ? ");
                 params.add(status);
             }
 
-            // Thực thi truy vấn
             PreparedStatement stmt = connection.prepareStatement(sql.toString());
             for (int i = 0; i < params.size(); i++) {
                 stmt.setObject(i + 1, params.get(i));
@@ -432,12 +372,10 @@ public class OrderDAO extends DBContext {
                 item.setId(rs.getInt("id"));
                 item.setCarId(rs.getInt("car_id"));
                 item.setQuantity(rs.getInt("quantity"));
-                // Sử dụng cột unit_price_at_order thay vì unit_price
                 item.setCarPrice(rs.getDouble("unit_price_at_order"));
                 item.setCarTitle(rs.getString("car_name"));
                 item.setCarThumbnail(rs.getString("car_image"));
 
-                // Lấy variant_name và tách thành size và color
                 String variantName = rs.getString("variant_name");
                 if (variantName != null && variantName.contains(" - ")) {
                     String[] variantParts = variantName.split(" - ");
@@ -449,11 +387,6 @@ public class OrderDAO extends DBContext {
                 }
 
                 items.add(item);
-
-            }
-
-            if (items.isEmpty()) {
-
             }
 
         } catch (SQLException e) {
@@ -475,7 +408,6 @@ public class OrderDAO extends DBContext {
         return items;
     }
 
-    // Add these methods to your existing OrderDAO.java class
     public Order getOrderById(int orderId) {
         Order order = null;
         PreparedStatement stmt = null;
@@ -507,7 +439,6 @@ public class OrderDAO extends DBContext {
                 order.setShippingProvider(rs.getString("shipping_provider"));
                 order.setTrackingNumber(rs.getString("tracking_number"));
 
-                // Thiết lập shippingMethod dựa trên shipping_provider
                 String shippingProvider = rs.getString("shipping_provider");
                 if (shippingProvider != null) {
                     if (shippingProvider.toLowerCase().contains("express")) {
@@ -515,10 +446,10 @@ public class OrderDAO extends DBContext {
                     } else if (shippingProvider.toLowerCase().contains("standard")) {
                         order.setShippingMethod("standard");
                     } else {
-                        order.setShippingMethod("standard"); // Mặc định là standard nếu không xác định được
+                        order.setShippingMethod("standard");
                     }
                 } else {
-                    order.setShippingMethod("standard"); // Mặc định nếu không có thông tin
+                    order.setShippingMethod("standard");
                 }
 
                 List<CartItem> items = getOrderItems(order.getId());
@@ -579,7 +510,6 @@ public class OrderDAO extends DBContext {
     }
 
     public boolean updateOrderStatus(int orderId, String status, int updatedBy) {
-        // Validate status
         String[] validStatuses = {"pending_pay", "pending", "processing", "shipped", "completed", "cancelled"};
         boolean isValidStatus = false;
         for (String validStatus : validStatuses) {
@@ -594,14 +524,12 @@ public class OrderDAO extends DBContext {
         }
 
         try {
-            // Update order status
             String sqlUpdateOrder = "UPDATE orders SET status = ?, updated_at = GETDATE() WHERE id = ?";
             PreparedStatement stmtUpdateOrder = connection.prepareStatement(sqlUpdateOrder);
             stmtUpdateOrder.setString(1, status);
             stmtUpdateOrder.setInt(2, orderId);
             stmtUpdateOrder.executeUpdate();
 
-            // Add to order history
             String sqlOrderHistory = "INSERT INTO order_history (order_id, updated_by, status, updated_at) "
                     + "VALUES (?, ?, ?, GETDATE())";
             PreparedStatement stmtOrderHistory = connection.prepareStatement(sqlOrderHistory);
@@ -626,7 +554,6 @@ public class OrderDAO extends DBContext {
             conn = connection;
             conn.setAutoCommit(false);
 
-            // Kiểm tra đơn hàng
             String sqlCheckOrder = "SELECT id, status FROM orders WHERE id = ? AND user_id = ?";
             PreparedStatement stmtCheckOrder = conn.prepareStatement(sqlCheckOrder);
             stmtCheckOrder.setInt(1, orderId);
@@ -644,13 +571,11 @@ public class OrderDAO extends DBContext {
             rs.close();
             stmtCheckOrder.close();
 
-            // Chỉ cho phép hủy nếu trạng thái là pending hoặc pending_pay
             if (!"pending".equals(currentStatus) && !"pending_pay".equals(currentStatus)) {
                 conn.rollback();
                 return false;
             }
 
-            // Lấy danh sách các item trong đơn hàng để hoàn lại kho
             List<CartItem> items = getOrderItems(orderId);
             for (CartItem item : items) {
                 int variantId = inventoryDAO.getVariantId(item.getCarId(),
@@ -666,25 +591,7 @@ public class OrderDAO extends DBContext {
                 }
             }
 
-            // Cập nhật trạng thái đơn hàng
             if (updateOrderStatus(orderId, "cancelled", userId)) {
-                // Xử lý mã giảm giá nếu có
-                String sqlGetCoupon = "SELECT oc.coupon_id FROM order_coupons oc WHERE oc.order_id = ?";
-                PreparedStatement stmtGetCoupon = conn.prepareStatement(sqlGetCoupon);
-                stmtGetCoupon.setInt(1, orderId);
-                ResultSet rsCoupon = stmtGetCoupon.executeQuery();
-
-                if (rsCoupon.next()) {
-                    int couponId = rsCoupon.getInt("coupon_id");
-                    String sqlUpdateCoupon = "UPDATE coupons SET used_count = used_count - 1 WHERE id = ? AND used_count > 0";
-                    PreparedStatement stmtUpdateCoupon = conn.prepareStatement(sqlUpdateCoupon);
-                    stmtUpdateCoupon.setInt(1, couponId);
-                    stmtUpdateCoupon.executeUpdate();
-                    stmtUpdateCoupon.close();
-                }
-                rsCoupon.close();
-                stmtGetCoupon.close();
-
                 conn.commit();
                 return true;
             }
@@ -715,20 +622,18 @@ public class OrderDAO extends DBContext {
     public List<Order> getOrdersByUserId(int userId) {
         return getUserOrders(userId, null, null, 1, Integer.MAX_VALUE);
     }
-// Add this method to your OrderDAO class
 
     public boolean updatePaymentStatus(int orderId, String status) {
         Connection conn = null;
         PreparedStatement stmt = null;
 
         try {
-            conn = connection; // Giả sử 'connection' là biến đã được khởi tạo trong class
+            conn = connection;
             conn.setAutoCommit(false);
 
-            // Câu lệnh SQL không bao gồm cột updated_at
             String sql = "UPDATE payments SET payment_status = ? WHERE order_id = ?";
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, status); // "pending", "completed", "failed", hoặc "refunded"
+            stmt.setString(1, status);
             stmt.setInt(2, orderId);
             int result = stmt.executeUpdate();
 
@@ -736,18 +641,12 @@ public class OrderDAO extends DBContext {
                 System.out.println("Warning: No payment record found for order ID: " + orderId);
             }
 
-            // Ghi lịch sử thay đổi trạng thái vào bảng order_history
             String historyNote = switch (status) {
-                case "pending" ->
-                    "Đang chờ thanh toán";
-                case "completed" ->
-                    "Đã thanh toán thành công";
-                case "failed" ->
-                    "Thanh toán không thành công";
-                case "refunded" ->
-                    "Đã hoàn tiền";
-                default ->
-                    "Cập nhật trạng thái thanh toán: " + status;
+                case "pending" -> "Đang chờ thanh toán";
+                case "completed" -> "Đã thanh toán thành công";
+                case "failed" -> "Thanh toán không thành công";
+                case "refunded" -> "Đã hoàn tiền";
+                default -> "Cập nhật trạng thái thanh toán: " + status;
             };
 
             stmt.close();
@@ -804,7 +703,7 @@ public class OrderDAO extends DBContext {
                 Order order = new Order();
                 order.setId(rs.getInt("id"));
                 order.setUserId(rs.getInt("user_id"));
-                order.setOrderCode(rs.getString("notes")); // Mã đơn hàng được lưu trong notes
+                order.setOrderCode(rs.getString("notes"));
                 order.setStatus(rs.getString("status"));
                 order.setTotal(rs.getDouble("total_amount"));
                 order.setRecipientName(rs.getString("recipient_name"));
@@ -815,7 +714,6 @@ public class OrderDAO extends DBContext {
                 order.setPaymentMethod(rs.getString("payment_method"));
                 order.setPaymentStatus(rs.getString("payment_status"));
 
-                // Get order items
                 List<CartItem> items = getOrderItems(order.getId());
                 order.setItems(items);
 
@@ -841,7 +739,6 @@ public class OrderDAO extends DBContext {
         return orders;
     }
 
-    //Các method để dùng cho Oder List, Oder Detail - Trần Phong
     public List<Order> getOrdersWithFilters(String sql, List<Object> params) {
         List<Order> orders = new ArrayList<>();
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -910,14 +807,12 @@ public class OrderDAO extends DBContext {
 
     public boolean updateOrderStatus(int orderId, String status, int updatedBy, String shippingProvider, String trackingNumber) {
         try {
-            // Cập nhật trạng thái đơn hàng
             String sqlUpdateOrder = "UPDATE orders SET status = ?, updated_at = GETDATE() WHERE id = ?";
             PreparedStatement stmtUpdateOrder = connection.prepareStatement(sqlUpdateOrder);
             stmtUpdateOrder.setString(1, status);
             stmtUpdateOrder.setInt(2, orderId);
             stmtUpdateOrder.executeUpdate();
 
-            // Thêm vào lịch sử đơn hàng
             String sqlOrderHistory = "INSERT INTO order_history (order_id, updated_by, status, notes, updated_at) "
                     + "VALUES (?, ?, ?, ?, GETDATE())";
             PreparedStatement stmtOrderHistory = connection.prepareStatement(sqlOrderHistory);
@@ -927,7 +822,6 @@ public class OrderDAO extends DBContext {
             stmtOrderHistory.setString(4, "Cập nhật trạng thái thành " + status);
             stmtOrderHistory.executeUpdate();
 
-            // Cập nhật thông tin vận chuyển nếu trạng thái là shipping
             if ("shipping".equals(status)) {
                 updateShippingInfo(orderId, shippingProvider, trackingNumber);
             }
@@ -957,7 +851,6 @@ public class OrderDAO extends DBContext {
         return false;
     }
 
-    // Cách method để dùng cho feedback - Trần Phong
     public boolean hasFeedback(int orderId) {
         String query = "SELECT COUNT(*) FROM feedback f JOIN order_items oi ON f.order_item_id = oi.id WHERE oi.order_id = ?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
@@ -982,7 +875,6 @@ public class OrderDAO extends DBContext {
             conn = connection;
             conn.setAutoCommit(false);
 
-            // Lấy tất cả đơn hàng pending_pay quá 3 ngày
             String sqlSelect = "SELECT id, user_id, created_at FROM orders "
                     + "WHERE status = 'pending_pay' AND "
                     + "DATEDIFF(day, created_at, GETDATE()) >= 3";
@@ -994,7 +886,6 @@ public class OrderDAO extends DBContext {
                 int orderId = rs.getInt("id");
                 int userId = rs.getInt("user_id");
 
-                // Hủy đơn hàng
                 boolean cancelled = cancelOrder(orderId, userId);
                 if (cancelled) {
                     System.out.println("Automatically cancelled expired order: " + orderId);
