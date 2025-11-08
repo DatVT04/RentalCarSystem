@@ -689,7 +689,7 @@
 
             if (newValue >= 1) {
                 if (maxStock > 0 && newValue > maxStock) {
-                    showStockMessage(input, `Vượt quá số lượng trong kho.`, true);
+                    showStockMessage(input, `Vượt quá số lượng ngày cho phép.`, true);
                     return;
                 }
 
