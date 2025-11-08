@@ -157,11 +157,11 @@
                                             <c:choose>
                                                 <c:when test="${sessionScope.acc.role == 'admin'}">
                                                     <a href="${pageContext.request.contextPath}/admin/dashboard">Trang quản trị</a>
-                                                    <a href="${pageContext.request.contextPath}/owner/dashboard">Trang tiếp thị</a>
+                                                    <a href="${pageContext.request.contextPath}/owner/carlist">Trang tiếp thị</a>
                                                     <a href="${pageContext.request.contextPath}/sale/dashboard">Trang bán hàng</a>
                                                 </c:when>
                                                 <c:when test="${sessionScope.acc.role == 'owner'}">
-                                                    <a href="${pageContext.request.contextPath}/owner/dashboard">Trang tiếp thị</a>
+                                                    <a href="${pageContext.request.contextPath}/owner/carlist">Trang tiếp thị</a>
                                                 </c:when>
                                                 <c:when test="${sessionScope.acc.role == 'sale'}">
                                                     <a href="${pageContext.request.contextPath}/sale/dashboard">Trang bán hàng</a>

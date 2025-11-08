@@ -1,4 +1,4 @@
-package owner;
+package sale;
 
 import DAO.CustomerDAO;
 import entity.Customer;
@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "CustomerDetailServlet", urlPatterns = {"/owner/customerdetail/*"})
+@WebServlet(name = "CustomerDetailServlet", urlPatterns = {"/sale/customerdetail/*"})
 public class CustomerDetailServlet extends HttpServlet {
 
     @Override
@@ -18,7 +18,7 @@ public class CustomerDetailServlet extends HttpServlet {
         String pathInfo = request.getPathInfo();
 
         if (pathInfo == null || pathInfo.equals("/")) {
-            response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+            response.sendRedirect(request.getContextPath() + "/sale/customerlist");
             return;
         }
 
@@ -36,7 +36,7 @@ public class CustomerDetailServlet extends HttpServlet {
                 deleteCustomer(request, response);
                 break;
             default:
-                response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+                response.sendRedirect(request.getContextPath() + "/sale/customerlist");
                 break;
         }
     }
@@ -46,7 +46,7 @@ public class CustomerDetailServlet extends HttpServlet {
         try {
             String customerId = request.getParameter("id");
             if (customerId == null || customerId.trim().isEmpty()) {
-                response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+                response.sendRedirect(request.getContextPath() + "/sale/customerlist");
                 return;
             }
 
@@ -55,15 +55,15 @@ public class CustomerDetailServlet extends HttpServlet {
             Customer customer = customerDAO.getCustomerById(id);
 
             if (customer == null) {
-                response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+                response.sendRedirect(request.getContextPath() + "/sale/customerlist");
                 return;
             }
 
             request.setAttribute("customer", customer);
-            request.getRequestDispatcher("/owner/customerdetail.jsp").forward(request, response);
+            request.getRequestDispatcher("/sale/customerdetail.jsp").forward(request, response);
 
         } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+            response.sendRedirect(request.getContextPath() + "/sale/customerlist");
         }
     }
 
@@ -80,9 +80,9 @@ public class CustomerDetailServlet extends HttpServlet {
                 request.getSession().setAttribute("errorMessage", "Không thể xóa khách hàng!");
             }
             
-            response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+            response.sendRedirect(request.getContextPath() + "/sale/customerlist");
         } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+            response.sendRedirect(request.getContextPath() + "/sale/customerlist");
         }
     }
 
@@ -91,7 +91,7 @@ public class CustomerDetailServlet extends HttpServlet {
             throws ServletException, IOException {
         String pathInfo = request.getPathInfo();
         if (pathInfo == null || pathInfo.equals("/")) {
-            response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+            response.sendRedirect(request.getContextPath() + "/sale/customerlist");
             return;
         }
 
@@ -101,7 +101,7 @@ public class CustomerDetailServlet extends HttpServlet {
         if ("edit".equals(action)) {
             updateCustomer(request, response);
         } else {
-            response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+            response.sendRedirect(request.getContextPath() + "/sale/customerlist");
         }
     }
 
@@ -123,7 +123,7 @@ public class CustomerDetailServlet extends HttpServlet {
             
             if (existingCustomer == null) {
                 request.getSession().setAttribute("errorMessage", "Không tìm thấy khách hàng!");
-                response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+                response.sendRedirect(request.getContextPath() + "/sale/customerlist");
                 return;
             }
 
@@ -146,14 +146,14 @@ public class CustomerDetailServlet extends HttpServlet {
             if (customerDAO.updateCustomer(customer)) {
                 request.getSession().setAttribute("successMessage", "Cập nhật thông tin khách hàng thành công!");
                 // Chuyển hướng về trang chi tiết khách hàng sau khi cập nhật
-                response.sendRedirect(request.getContextPath() + "/owner/customerdetail/view?id=" + customerId);
+                response.sendRedirect(request.getContextPath() + "/sale/customerdetail/view?id=" + customerId);
             } else {
                 request.getSession().setAttribute("errorMessage", "Cập nhật thông tin khách hàng thất bại!");
-                response.sendRedirect(request.getContextPath() + "/owner/customerdetail/view?id=" + customerId);
+                response.sendRedirect(request.getContextPath() + "/sale/customerdetail/view?id=" + customerId);
             }
 
         } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/owner/customerlist");
+            response.sendRedirect(request.getContextPath() + "/sale/customerlist");
         }
     }
 }

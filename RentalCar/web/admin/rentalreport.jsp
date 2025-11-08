@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin Reports</title>
+        <title>Báo Cáo Cho Thuê</title>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
@@ -261,7 +261,7 @@
         <div class="main-content">
             <div class="container-fluid p-4">
                 <h2 class="page-title">
-                    <i class="fas fa-file-alt me-2"></i>Báo cáo dữ liệu
+                    <i class="fas fa-file-alt me-2"></i>Báo Cáo Cho Thuê
                 </h2>
 
                 <!-- Navigation Bar for Reports -->
@@ -270,75 +270,12 @@
                         <a class="nav-link active" href="#user-report" data-report="user-report">Báo cáo người dùng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#order-report" data-report="order-report">Báo cáo đơn hàng</a>
+                        <a class="nav-link" href="#order-report" data-report="order-report">Báo cáo đơn thuê</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#car-report" data-report="car-report">Báo cáo sản phẩm</a>
+                        <a class="nav-link" href="#car-report" data-report="car-report">Báo cáo xe</a>
                     </li>
                 </ul>
-
-                <!-- Stats Cards -->
-                <!--                <div class="row g-3 mb-4">
-                                     User Stats 
-                                    <div class="col-md-4">
-                                        <div class="card dashboard-card h-100">
-                                            <div class="card-body d-flex justify-content-between align-items-start">
-                                                <div>
-                                                    <p class="stat-title mb-1">Tổng người dùng</p>
-                                                    <h3 class="stat-value">${userSummary.totalUsers}</h3>
-                                                    <div class="mt-2">
-                                                        <span class="badge bg-success">${userSummary.activeCount} Hoạt động</span>
-                                                        <span class="badge bg-danger">${userSummary.inactiveCount} Không hoạt động</span>
-                                                        <span class="badge bg-warning">${userSummary.pendingCount} Chờ xác nhận</span>
-                                                    </div>
-                                                </div>
-                                                <div class="icon-bg bg-primary bg-opacity-10">
-                                                    <i class="fas fa-users text-primary fa-2x"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                
-                                     Order Stats 
-                                    <div class="col-md-4">
-                                        <div class="card dashboard-card h-100">
-                                            <div class="card-body d-flex justify-content-between align-items-start">
-                                                <div>
-                                                    <p class="stat-title mb-1">Tổng đơn hàng</p>
-                                                    <h3 class="stat-value">${orderSummary.totalOrders}</h3>
-                                                    <div class="mt-2">
-                                                        <span class="badge bg-success">${orderSummary.completedCount} Hoàn thành</span>
-                                                        <span class="badge bg-warning">${orderSummary.pendingPayCount + orderSummary.pendingCount + orderSummary.processingCount + orderSummary.shippingCount} Đang xử lý</span>
-                                                        <span class="badge bg-danger">${orderSummary.cancelledCount} Đã hủy</span>
-                                                    </div>
-                                                </div>
-                                                <div class="icon-bg bg-success bg-opacity-10">
-                                                    <i class="fas fa-shopping-cart text-success fa-2x"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                
-                                     Car Stats 
-                                    <div class="col-md-4">
-                                        <div class="card dashboard-card h-100">
-                                            <div class="card-body d-flex justify-content-between align-items-start">
-                                                <div>
-                                                    <p class="stat-title mb-1">Tổng sản phẩm</p>
-                                                    <h3 class="stat-value">${carSummary.totalCars}</h3>
-                                                    <div class="mt-2">
-                                                        <span class="badge bg-success">${carSummary.activeCount} Có sẵn</span>
-                                                        <span class="badge bg-danger">${carSummary.inactiveCount} Không hoạt động</span>
-                                                        <span class="badge bg-warning">${carSummary.eoStockCount} Hết hàng</span>
-                                                    </div>
-                                                </div>
-                                                <div class="icon-bg bg-warning bg-opacity-10">
-                                                    <i class="fas fa-boxes text-warning fa-2x"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
 
                 <!-- User Reports Section -->
                 <div id="user-report" class="report-section report-card active">
@@ -359,7 +296,7 @@
                                         <th>Đang hoạt động</th>
                                         <th>Không hoạt động</th>
                                         <th>Tổng doanh thu từ khách</th>
-                                        <th>Tổng số đơn hàng</th>
+                                        <th>Tổng số đơn thuê</th>
                                         <th>Giá trị đơn trung bình</th>
                                     </tr>
                                 </thead>
@@ -435,16 +372,16 @@
                                         <div class="insight-item mb-2">
                                             <i class="fas fa-shopping-cart text-primary me-2"></i>
                                             <span>
-                                                <strong>Hiệu suất mua hàng:</strong> 
+                                                <strong>Hiệu suất thuê xe:</strong> 
                                                 <c:choose>
                                                     <c:when test="${userRoleTotalOrders gt 1000 && userRoleAvgOrderValue gt 500000}">
-                                                        Doanh số bán hàng mạnh với ${userRoleTotalOrders} đơn hàng và giá trị đơn trung bình cao.
+                                                        Doanh số cho thuê mạnh với ${userRoleTotalOrders} đơn thuê và giá trị đơn trung bình cao.
                                                     </c:when>
                                                     <c:when test="${userRoleTotalOrders gt 500}">
-                                                        Doanh số ở mức trung bình với ${userRoleTotalOrders} đơn hàng. Cần chiến lược tăng giá trị đơn hàng.
+                                                        Doanh số ở mức trung bình với ${userRoleTotalOrders} đơn thuê. Cần chiến lược tăng giá trị đơn thuê.
                                                     </c:when>
                                                     <c:otherwise>
-                                                        Doanh số cần cải thiện với chỉ ${userRoleTotalOrders} đơn hàng. Nên xem xét chiến dịch khuyến mãi mới.
+                                                        Doanh số cần cải thiện với chỉ ${userRoleTotalOrders} đơn thuê. Nên xem xét chiến dịch khuyến mãi mới.
                                                     </c:otherwise>
                                                 </c:choose>
                                             </span>
@@ -482,10 +419,10 @@
                                                 <li>Gửi email kích hoạt lại cho ${userRoleTotalInactive} tài khoản không hoạt động</li>
                                                 </c:if>
                                                 <c:if test="${userRoleAvgOrderValue lt 500000}">
-                                                <li>Tạo chiến dịch up-sell để tăng giá trị đơn hàng trung bình</li>
+                                                <li>Tạo chiến dịch up-sell để tăng giá trị đơn thuê trung bình</li>
                                                 </c:if>
                                                 <c:if test="${userRoleTotalOrders lt 500}">
-                                                <li>Tạo chương trình khuyến mãi để thu hút đơn hàng mới</li>
+                                                <li>Tạo chương trình khuyến mãi để thu hút đơn thuê mới</li>
                                                 </c:if>
                                             <li>Tiếp tục theo dõi tỷ lệ chuyển đổi của khách hàng để đánh giá hiệu quả</li>
                                         </ul>
@@ -497,253 +434,197 @@
                 </div>
 
                 <!-- Order Reports Section -->
-                <div id="order-report" class="report-section report-card">
-                    <div class="card-header bg-success text-white">
-                        <span><i class="fas fa-shopping-cart me-2"></i>Báo cáo đơn hàng</span>
-                        <button class="btn btn-light" id="exportOrderBtn">
-                            <i class="fas fa-file-export me-1"></i>Xuất báo cáo
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <!-- Filters -->
-                        <div class="filters p-3 bg-light rounded mb-3">
-                            <form action="${pageContext.request.contextPath}/admin/report" method="get" class="row">
-                                <div class="col-md-10 mb-3 mb-md-0">
-                                    <label for="orderStatus" class="form-label">Trạng thái đơn hàng</label>
-                                    <select class="form-select" id="orderStatus" name="orderStatus" onchange="this.form.submit()">
-                                        <option value="all" ${orderStatusFilter eq 'all' ? 'selected' : ''}>Tất cả trạng thái</option>
-                                        <option value="pending_pay" ${orderStatusFilter eq 'pending_pay' ? 'selected' : ''}>Chờ thanh toán</option>
-                                        <option value="pending" ${orderStatusFilter eq 'pending' ? 'selected' : ''}>Đang chờ</option>
-                                        <option value="processing" ${orderStatusFilter eq 'processing' ? 'selected' : ''}>Đang xử lý</option>
-                                        <option value="shipping" ${orderStatusFilter eq 'shipped' ? 'selected' : ''}>Đã gửi hàng</option>
-                                        <option value="completed" ${orderStatusFilter eq 'completed' ? 'selected' : ''}>Đã hoàn thành</option>
-                                        <option value="cancelled" ${orderStatusFilter eq 'cancelled' ? 'selected' : ''}>Đã hủy</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2 d-flex align-items-end">
-                                    <button type="submit" class="btn btn-success w-100">Lọc</button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <!-- Order Table -->
-                        <div class="table-responsive mt-3">
-                            <table class="table table-striped table-hover" id="orderTable">
-                                <thead class="table-success">
-                                    <tr>
-                                        <th>Trạng thái đơn hàng</th>
-                                        <th>Tổng số đơn hàng</th>
-                                        <th>Tổng giá trị đơn</th>
-                                        <th>Doanh thu thực tế</th>
-                                        <th>Tổng giảm giá áp dụng</th>
-                                        <th>Đơn hàng dùng mã giảm giá</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach items="${orderReports}" var="order">
-                                        <tr>
-                                            <td>
-                                                <c:choose>
-                                                    <c:when test="${order.status eq 'pending_pay'}">
-                                                        <span class="badge bg-secondary">Chờ thanh toán</span>
-                                                    </c:when>
-                                                    <c:when test="${order.status eq 'pending'}">
-                                                        <span class="badge bg-warning">Đang phê duyệt</span>
-                                                    </c:when>
-                                                    <c:when test="${order.status eq 'processing'}">
-                                                        <span class="badge bg-info">Đang xử lý</span>
-                                                    </c:when>
-                                                    <c:when test="${order.status eq 'shipping'}">
-                                                        <span class="badge bg-primary">Đã giao</span>
-                                                    </c:when>
-                                                    <c:when test="${order.status eq 'completed'}">
-                                                        <span class="badge bg-success">Đã hoàn thành</span>
-                                                    </c:when>
-                                                    <c:when test="${order.status eq 'cancelled'}">
-                                                        <span class="badge bg-danger">Đã huỷ</span>
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        <span class="badge bg-dark">Đã trả lại</span>
-                                                    </c:otherwise>
-                                                </c:choose>
-                                            </td>
-                                            <td>${order.orderCount}</td>
-                                            <td><fmt:formatNumber type="currency" value="${order.totalAmount}" currencySymbol="₫" maxFractionDigits="0"/></td>
-                                            <td><fmt:formatNumber type="currency" value="${order.actualRevenue}" currencySymbol="₫" maxFractionDigits="0"/></td>
-                                            <td><fmt:formatNumber type="currency" value="${order.totalDiscount}" currencySymbol="₫" maxFractionDigits="0"/></td>
-                                            <td>${order.discountedOrderCount}</td>
-                                        </tr>
-                                    </c:forEach>
-                                </tbody>
-                                <tfoot class="table-success fw-bold">
-                                    <tr class="summary-row">
-                                        <td>Tổng cộng</td>
-                                        <td>${orderReportTotalOrders}</td>
-                                        <td><fmt:formatNumber type="currency" value="${orderReportTotalAmount}" currencySymbol="₫" maxFractionDigits="0"/></td>
-                                        <td><fmt:formatNumber type="currency" value="${orderReportTotalActualRevenue}" currencySymbol="₫" maxFractionDigits="0"/></td>
-                                        <td><fmt:formatNumber type="currency" value="${orderReportTotalDiscount}" currencySymbol="₫" maxFractionDigits="0"/></td>
-                                        <td>${orderReportTotalDiscountedOrders}</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-
-                        <!-- Phần nhận xét tự động dựa vào số liệu đơn hàng -->
-                        <div class="mt-4 p-3 bg-light rounded">
-                            <h5 class="mb-3 text-success"><i class="fas fa-chart-pie me-2"></i>Nhận xét</h5>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <ul class="list-group">
-                                        <!-- Phân tích tỷ lệ hoàn thành đơn hàng -->
-                                        <li class="list-group-item">
-                                            <c:set var="completionRate" value="${0}" />
-                                            <c:forEach items="${orderReports}" var="order">
-                                                <c:if test="${order.status eq 'completed'}">
-                                                    <c:set var="completionRate" value="${(order.orderCount / orderReportTotalOrders) * 100}" />
-                                                </c:if>
-                                            </c:forEach>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span>Tỷ lệ hoàn thành đơn hàng: <span class="fw-bold"><fmt:formatNumber value="${completionRate}" maxFractionDigits="1"/>%</span></span>
-                                                <c:choose>
-                                                    <c:when test="${completionRate > 80}">
-                                                        <span class="badge bg-success">Tốt</span>
-                                                    </c:when>
-                                                    <c:when test="${completionRate > 60}">
-                                                        <span class="badge bg-info">Bình thường</span>
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        <span class="badge bg-warning text-dark">Cần cải thiện</span>
-                                                    </c:otherwise>
-                                                </c:choose>
-                                            </div>
-                                        </li>
-
-                                        <!-- Phân tích tỷ lệ hủy đơn hàng -->
-                                        <li class="list-group-item">
-                                            <c:set var="cancellationRate" value="${0}" />
-                                            <c:forEach items="${orderReports}" var="order">
-                                                <c:if test="${order.status eq 'cancelled'}">
-                                                    <c:set var="cancellationRate" value="${(order.orderCount / orderReportTotalOrders) * 100}" />
-                                                </c:if>
-                                            </c:forEach>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span>Tỷ lệ hủy đơn hàng: <span class="fw-bold"><fmt:formatNumber value="${cancellationRate}" maxFractionDigits="1"/>%</span></span>
-                                                <c:choose>
-                                                    <c:when test="${cancellationRate < 5}">
-                                                        <span class="badge bg-success">Tốt</span>
-                                                    </c:when>
-                                                    <c:when test="${cancellationRate < 10}">
-                                                        <span class="badge bg-info">Bình thường</span>
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        <span class="badge bg-danger">Cần xem xét nguyên nhân</span>
-                                                    </c:otherwise>
-                                                </c:choose>
-                                            </div>
-                                        </li>
-
-                                        <!-- Phân tích hiệu quả của mã giảm giá -->
-                                        <li class="list-group-item">
-                                            <c:set var="discountEffectiveness" value="${(orderReportTotalDiscountedOrders / orderReportTotalOrders) * 100}" />
-                                            <c:set var="avgDiscountValue" value="${orderReportTotalDiscount / orderReportTotalDiscountedOrders}" />
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span>Tỷ lệ sử dụng mã giảm giá: <span class="fw-bold"><fmt:formatNumber value="${discountEffectiveness}" maxFractionDigits="1"/>%</span></span>
-                                                <c:choose>
-                                                    <c:when test="${discountEffectiveness > 40}">
-                                                        <span class="badge bg-success">Hiệu quả cao</span>
-                                                    </c:when>
-                                                    <c:when test="${discountEffectiveness > 20}">
-                                                        <span class="badge bg-info">Hiệu quả trung bình</span>
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        <span class="badge bg-warning text-dark">Hiệu quả thấp</span>
-                                                    </c:otherwise>
-                                                </c:choose>
-                                            </div>
-                                            <div class="mt-2">
-                                                <span>Giá trị giảm giá trung bình: <span class="fw-bold"><fmt:formatNumber type="currency" value="${avgDiscountValue}" currencySymbol="₫" maxFractionDigits="0"/></span></span>
-                                            </div>
-                                        </li>
-
-                                        <!-- Phân tích tỷ lệ doanh thu thực tế so với tổng giá trị đơn -->
-                                        <li class="list-group-item">
-                                            <c:set var="revenueRatio" value="${(orderReportTotalActualRevenue / orderReportTotalAmount) * 100}" />
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span>Tỷ lệ doanh thu thực tế/tổng giá trị: <span class="fw-bold"><fmt:formatNumber value="${revenueRatio}" maxFractionDigits="1"/>%</span></span>
-                                                <c:choose>
-                                                    <c:when test="${revenueRatio > 90}">
-                                                        <span class="badge bg-success">Rất tốt</span>
-                                                    </c:when>
-                                                    <c:when test="${revenueRatio > 80}">
-                                                        <span class="badge bg-info">Tốt</span>
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        <span class="badge bg-warning text-dark">Cần xem xét chiến lược giảm giá</span>
-                                                    </c:otherwise>
-                                                </c:choose>
-                                            </div>
-                                        </li>
-
-                                        <!-- Đơn hàng đang xử lý -->
-                                        <li class="list-group-item">
-                                            <c:set var="pendingOrdersCount" value="${0}" />
-                                            <c:forEach items="${orderReports}" var="order">
-                                                <c:if test="${order.status eq 'pending' || order.status eq 'pending_pay' || order.status eq 'processing'}">
-                                                    <c:set var="pendingOrdersCount" value="${pendingOrdersCount + order.orderCount}" />
-                                                </c:if>
-                                            </c:forEach>
-                                            <c:set var="pendingOrdersRate" value="${(pendingOrdersCount / orderReportTotalOrders) * 100}" />
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span>Đơn hàng đang xử lý: <span class="fw-bold">${pendingOrdersCount} đơn (<fmt:formatNumber value="${pendingOrdersRate}" maxFractionDigits="1"/>%)</span></span>
-                                                <c:choose>
-                                                    <c:when test="${pendingOrdersRate > 30}">
-                                                        <span class="badge bg-warning text-dark">Cần tăng tốc xử lý</span>
-                                                    </c:when>
-                                                    <c:when test="${pendingOrdersRate > 15}">
-                                                        <span class="badge bg-info">Bình thường</span>
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        <span class="badge bg-success">Tốc độ xử lý tốt</span>
-                                                    </c:otherwise>
-                                                </c:choose>
-                                            </div>
-                                        </li>
-
-                                        <!-- Đề xuất hành động -->
-                                        <li class="list-group-item bg-light">
-                                            <strong>Đề xuất:</strong>
-                                            <ul class="mt-2">
-                                                <c:if test="${cancellationRate > 10}">
-                                                    <li>Kiểm tra nguyên nhân hủy đơn cao (${cancellationRate}%) và có biện pháp khắc phục.</li>
-                                                    </c:if>
-                                                    <c:if test="${pendingOrdersRate > 25}">
-                                                    <li>Cần tăng cường nhân sự xử lý đơn hàng đang chờ (${pendingOrdersCount} đơn).</li>
-                                                    </c:if>
-                                                    <c:if test="${discountEffectiveness < 20}">
-                                                    <li>Xem xét lại chiến dịch giảm giá để tăng tỷ lệ sử dụng.</li>
-                                                    </c:if>
-                                                    <c:if test="${revenueRatio < 80}">
-                                                    <li>Đánh giá lại chính sách giảm giá để tối ưu doanh thu thực tế.</li>
-                                                    </c:if>
-                                                    <c:if test="${completionRate < 60}">
-                                                    <li>Cải thiện quy trình để tăng tỷ lệ hoàn thành đơn hàng.</li>
-                                                    </c:if>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Order Reports Section -->
+<div id="order-report" class="report-section report-card">
+    <div class="card-header bg-success text-white">
+        <span><i class="fas fa-shopping-cart me-2"></i>Báo cáo đơn thuê</span>
+        <button class="btn btn-light" id="exportOrderBtn">
+            <i class="fas fa-file-export me-1"></i>Xuất báo cáo
+        </button>
+    </div>
+    <div class="card-body">
+        <!-- Filters -->
+        <div class="filters p-3 bg-light rounded mb-3">
+            <form action="${pageContext.request.contextPath}/admin/rentalreport" method="get" class="row">
+                <div class="col-md-10 mb-3 mb-md-0">
+                    <label for="orderStatus" class="form-label">Trạng thái đơn thuê</label>
+                    <select class="form-select" id="orderStatus" name="orderStatus" onchange="this.form.submit()">
+                        <option value="all" ${orderStatusFilter eq 'all' ? 'selected' : ''}>Tất cả trạng thái</option>
+                        <option value="pending_pay" ${orderStatusFilter eq 'pending_pay' ? 'selected' : ''}>Chờ thanh toán</option>
+                        <option value="pending" ${orderStatusFilter eq 'pending' ? 'selected' : ''}>Đang chờ</option>
+                        <option value="processing" ${orderStatusFilter eq 'processing' ? 'selected' : ''}>Đang xử lý</option>
+                        <option value="shipping" ${orderStatusFilter eq 'shipped' ? 'selected' : ''}>Đang bàn giao</option>
+                        <option value="completed" ${orderStatusFilter eq 'completed' ? 'selected' : ''}>Đã hoàn thành</option>
+                        <option value="cancelled" ${orderStatusFilter eq 'cancelled' ? 'selected' : ''}>Đã hủy</option>
+                    </select>
                 </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-success w-100">Lọc</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Order Table -->
+        <div class="table-responsive mt-3">
+            <table class="table table-striped table-hover" id="orderTable">
+                <thead class="table-success">
+                    <tr>
+                        <th>Trạng thái đơn thuê</th>
+                        <th>Tổng số đơn thuê</th>
+                        <th>Tổng giá trị đơn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${orderReports}" var="order">
+                        <tr>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${order.status eq 'pending_pay'}">
+                                        <span class="badge bg-secondary">Chờ thanh toán</span>
+                                    </c:when>
+                                    <c:when test="${order.status eq 'pending'}">
+                                        <span class="badge bg-warning">Đang phê duyệt</span>
+                                    </c:when>
+                                    <c:when test="${order.status eq 'processing'}">
+                                        <span class="badge bg-info">Đang xử lý</span>
+                                    </c:when>
+                                    <c:when test="${order.status eq 'shipping'}">
+                                        <span class="badge bg-primary">Đang bàn giao</span>
+                                    </c:when>
+                                    <c:when test="${order.status eq 'completed'}">
+                                        <span class="badge bg-success">Đã hoàn thành</span>
+                                    </c:when>
+                                    <c:when test="${order.status eq 'cancelled'}">
+                                        <span class="badge bg-danger">Đã huỷ</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span class="badge bg-dark">Đã trả lại</span>
+                                    </c:otherwise>
+                                </c:choose>
+                            </td>
+                            <td>${order.orderCount}</td>
+                            <td><fmt:formatNumber type="currency" value="${order.totalAmount}" currencySymbol="₫" maxFractionDigits="0"/></td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+                <tfoot class="table-success fw-bold">
+                    <tr class="summary-row">
+                        <td>Tổng cộng</td>
+                        <td>${orderReportTotalOrders}</td>
+                        <td><fmt:formatNumber type="currency" value="${orderReportTotalAmount}" currencySymbol="₫" maxFractionDigits="0"/></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- Phần nhận xét tự động dựa vào số liệu đơn thuê -->
+        <div class="mt-4 p-3 bg-light rounded">
+            <h5 class="mb-3 text-success"><i class="fas fa-chart-pie me-2"></i>Nhận xét</h5>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <!-- Phân tích tỷ lệ hoàn thành đơn thuê -->
+                        <li class="list-group-item">
+                            <c:set var="completionRate" value="${0}" />
+                            <c:forEach items="${orderReports}" var="order">
+                                <c:if test="${order.status eq 'completed'}">
+                                    <c:set var="completionRate" value="${(order.orderCount / orderReportTotalOrders) * 100}" />
+                                </c:if>
+                            </c:forEach>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Tỷ lệ hoàn thành đơn thuê: <span class="fw-bold"><fmt:formatNumber value="${completionRate}" maxFractionDigits="1"/>%</span></span>
+                                <c:choose>
+                                    <c:when test="${completionRate > 80}">
+                                        <span class="badge bg-success">Tốt</span>
+                                    </c:when>
+                                    <c:when test="${completionRate > 60}">
+                                        <span class="badge bg-info">Bình thường</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span class="badge bg-warning text-dark">Cần cải thiện</span>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+                        </li>
+
+                        <!-- Phân tích tỷ lệ hủy đơn thuê -->
+                        <li class="list-group-item">
+                            <c:set var="cancellationRate" value="${0}" />
+                            <c:forEach items="${orderReports}" var="order">
+                                <c:if test="${order.status eq 'cancelled'}">
+                                    <c:set var="cancellationRate" value="${(order.orderCount / orderReportTotalOrders) * 100}" />
+                                </c:if>
+                            </c:forEach>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Tỷ lệ hủy đơn thuê: <span class="fw-bold"><fmt:formatNumber value="${cancellationRate}" maxFractionDigits="1"/>%</span></span>
+                                <c:choose>
+                                    <c:when test="${cancellationRate < 5}">
+                                        <span class="badge bg-success">Tốt</span>
+                                    </c:when>
+                                    <c:when test="${cancellationRate < 10}">
+                                        <span class="badge bg-info">Bình thường</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span class="badge bg-danger">Cần xem xét nguyên nhân</span>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+                        </li>
+
+                        <!-- Đơn thuê đang xử lý -->
+                        <li class="list-group-item">
+                            <c:set var="pendingOrdersCount" value="${0}" />
+                            <c:forEach items="${orderReports}" var="order">
+                                <c:if test="${order.status eq 'pending' || order.status eq 'pending_pay' || order.status eq 'processing'}">
+                                    <c:set var="pendingOrdersCount" value="${pendingOrdersCount + order.orderCount}" />
+                                </c:if>
+                            </c:forEach>
+                            <c:set var="pendingOrdersRate" value="${(pendingOrdersCount / orderReportTotalOrders) * 100}" />
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Đơn thuê đang xử lý: <span class="fw-bold">${pendingOrdersCount} đơn (<fmt:formatNumber value="${pendingOrdersRate}" maxFractionDigits="1"/>%)</span></span>
+                                <c:choose>
+                                    <c:when test="${pendingOrdersRate > 30}">
+                                        <span class="badge bg-warning text-dark">Cần tăng tốc xử lý</span>
+                                    </c:when>
+                                    <c:when test="${pendingOrdersRate > 15}">
+                                        <span class="badge bg-info">Bình thường</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span class="badge bg-success">Tốc độ xử lý tốt</span>
+                                    </c:otherwise>
+                                </c:choose>
+                            </div>
+                        </li>
+
+                        <!-- Đề xuất hành động -->
+                        <li class="list-group-item bg-light">
+                            <strong>Đề xuất:</strong>
+                            <ul class="mt-2">
+                                <c:if test="${cancellationRate > 10}">
+                                    <li>Kiểm tra nguyên nhân hủy đơn cao (<fmt:formatNumber value="${cancellationRate}" maxFractionDigits="1"/>%) và có biện pháp khắc phục.</li>
+                                </c:if>
+                                <c:if test="${pendingOrdersRate > 25}">
+                                    <li>Cần tăng cường nhân sự xử lý đơn thuê đang chờ (${pendingOrdersCount} đơn).</li>
+                                </c:if>
+                                <c:if test="${completionRate < 60}">
+                                    <li>Cải thiện quy trình để tăng tỷ lệ hoàn thành đơn thuê.</li>
+                                </c:if>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <!-- Car Reports Section -->
                 <div id="car-report" class="report-section report-card">
                     <div class="card-header bg-warning text-dark">
-                        <span><i class="fas fa-boxes me-2"></i>Báo cáo sản phẩm</span>
+                        <span><i class="fas fa-boxes me-2"></i>Báo cáo xe</span>
                         <div>
                             <button class="btn btn-danger me-2" id="showLowStockBtn" data-bs-toggle="modal" data-bs-target="#lowStockModal">
-                                <i class="fas fa-exclamation-triangle me-1"></i>Sản phẩm tồn thấp
+                                <i class="fas fa-exclamation-triangle me-1"></i>Xe tồn thấp
                             </button>
                             <button class="btn btn-dark" id="exportCarBtn">
                                 <i class="fas fa-file-export me-1"></i>Xuất báo cáo
@@ -753,14 +634,14 @@
                     <div class="card-body">
                         <!-- Filters -->
                         <div class="filters p-3 bg-light rounded mb-3">
-                            <form action="${pageContext.request.contextPath}/admin/report" method="get" class="row">
+                            <form action="${pageContext.request.contextPath}/admin/rentalreport" method="get" class="row">
                                 <div class="col-md-10 mb-3 mb-md-0">
-                                    <label for="carStatus" class="form-label">Trạng thái sản phẩm</label>
+                                    <label for="carStatus" class="form-label">Trạng thái xe</label>
                                     <select class="form-select" id="carStatus" name="carStatus" onchange="this.form.submit()">
                                         <option value="all" ${carStatusFilter eq 'all' ? 'selected' : ''}>Tất cả trạng thái</option>
-                                        <option value="active" ${carStatusFilter eq 'active' ? 'selected' : ''}>Hoạt động</option>
-                                        <option value="inactive" ${carStatusFilter eq 'inactive' ? 'selected' : ''}>Không hoạt động</option>
-                                        <option value="EOStock" ${carStatusFilter eq 'EOStock' ? 'selected' : ''}>Hết hàng</option>
+                                        <option value="active" ${carStatusFilter eq 'active' ? 'selected' : ''}>Xe có sẵn</option>
+                                        <option value="inactive" ${carStatusFilter eq 'inactive' ? 'selected' : ''}>Xe ngừng cho thuê</option>
+                                        <option value="EOStock" ${carStatusFilter eq 'EOStock' ? 'selected' : ''}>Hết xe thuê</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2 d-flex align-items-end">
@@ -774,13 +655,13 @@
                             <table class="table table-striped table-hover" id="carTable">
                                 <thead class="table-warning">
                                     <tr>
-                                        <th>Trạng thái sản phẩm</th>
-                                        <th>Tổng số sản phẩm</th>
+                                        <th>Trạng thái xe</th>
+                                        <th>Tổng số xe</th>
                                         <th>Tổng tồn kho</th>
-                                        <th>Sản phẩm tồn thấp</th>
-                                        <th>Tổng số lượng bán ra</th>
+                                        <th>Xe tồn thấp</th>
+                                        <th>Tổng số lượng cho thuê</th>
                                         <!--                        <th>Tổng doanh thu</th>-->
-                                        <th>Sản phẩm bán chạy</th>
+                                        <th>Xe có đơn thuê chạy</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -794,13 +675,13 @@
                                             <td>
                                                 <c:choose>
                                                     <c:when test="${car.status eq 'active'}">
-                                                        <span class="badge bg-success">Hoạt động</span>
+                                                        <span class="badge bg-success">Xe có sẵn</span>
                                                     </c:when>
                                                     <c:when test="${car.status eq 'inactive'}">
-                                                        <span class="badge bg-danger">Không hoạt động</span>
+                                                        <span class="badge bg-danger">Xe ngừng cho thuê</span>
                                                     </c:when>
                                                     <c:otherwise>
-                                                        <span class="badge bg-warning text-dark">Hết hàng</span>
+                                                        <span class="badge bg-warning text-dark">Hết xe thuê</span>
                                                     </c:otherwise>
                                                 </c:choose>
                                             </td>
@@ -833,11 +714,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <ul class="list-group">
-                                        <!-- Nhận xét về tỷ lệ sản phẩm tồn thấp -->
+                                        <!-- Nhận xét về tỷ lệ xe tồn thấp -->
                                         <li class="list-group-item">
                                             <c:set var="lowStockPercentage" value="${(totalLowStockCount / carCount) * 100}" />
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <span>Tỷ lệ sản phẩm tồn thấp: <span class="fw-bold"><fmt:formatNumber value="${lowStockPercentage}" maxFractionDigits="1"/>%</span></span>
+                                                <span>Tỷ lệ xe tồn thấp: <span class="fw-bold"><fmt:formatNumber value="${lowStockPercentage}" maxFractionDigits="1"/>%</span></span>
                                                 <c:choose>
                                                     <c:when test="${lowStockPercentage > 20}">
                                                         <span class="badge bg-danger">Cần nhập thêm hàng</span>
@@ -852,11 +733,11 @@
                                             </div>
                                         </li>
 
-                                        <!-- Phân tích tốc độ bán hàng -->
+                                        <!-- Phân tích tốc độ cho thuê -->
                                         <li class="list-group-item">
                                             <c:set var="sellThroughRate" value="${(totalSoldQuantity / (totalSoldQuantity + totalStock)) * 100}" />
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <span>Tỷ lệ bán hàng: <span class="fw-bold"><fmt:formatNumber value="${sellThroughRate}" maxFractionDigits="1"/>%</span></span>
+                                                <span>Tỷ lệ cho thuê <span class="fw-bold"><fmt:formatNumber value="${sellThroughRate}" maxFractionDigits="1"/>%</span></span>
                                                 <c:choose>
                                                     <c:when test="${sellThroughRate > 70}">
                                                         <span class="badge bg-success">Tốt</span>
@@ -871,17 +752,17 @@
                                             </div>
                                         </li>
 
-                                        <!-- Phân tích sản phẩm bán chạy -->
+                                        <!-- Phân tích xe bán chạy -->
                                         <li class="list-group-item">
                                             <c:set var="bestSellerPercentage" value="${(totalBestSellerCount / carCount) * 100}" />
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <span>Tỷ lệ sản phẩm bán chạy: <span class="fw-bold"><fmt:formatNumber value="${bestSellerPercentage}" maxFractionDigits="1"/>%</span></span>
+                                                <span>Tỷ lệ xe cho thuê chạy: <span class="fw-bold"><fmt:formatNumber value="${bestSellerPercentage}" maxFractionDigits="1"/>%</span></span>
                                                 <c:choose>
                                                     <c:when test="${bestSellerPercentage < 10}">
                                                         <span class="badge bg-warning text-dark">Cần đa dạng hóa</span>
                                                     </c:when>
                                                     <c:when test="${bestSellerPercentage > 30}">
-                                                        <span class="badge bg-success">Danh mục sản phẩm hiệu quả</span>
+                                                        <span class="badge bg-success">Danh mục xe hiệu quả</span>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <span class="badge bg-info">Bình thường</span>
@@ -895,13 +776,13 @@
                                             <strong>Đề xuất:</strong>
                                             <ul class="mt-2">
                                                 <c:if test="${lowStockPercentage > 15}">
-                                                    <li>Cần nhập thêm hàng cho ${totalLowStockCount} sản phẩm đang tồn thấp.</li>
+                                                    <li>Cần nhập thêm hàng cho ${totalLowStockCount} xe đang tồn thấp.</li>
                                                     </c:if>
                                                     <c:if test="${sellThroughRate < 40}">
-                                                    <li>Xem xét áp dụng chương trình khuyến mãi để tăng tốc độ bán hàng.</li>
+                                                    <li>Xem xét áp dụng chương trình khuyến mãi để tăng tốc độ cho thuê xe.</li>
                                                     </c:if>
                                                     <c:if test="${bestSellerPercentage < 15}">
-                                                    <li>Cần phân tích và đẩy mạnh tiếp thị các sản phẩm tiềm năng.</li>
+                                                    <li>Cần phân tích và đẩy mạnh tiếp thị các xe tiềm năng.</li>
                                                     </c:if>
 
                                             </ul>
@@ -919,7 +800,7 @@
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header bg-danger text-white">
-                            <h5 class="modal-title" id="lowStockModalLabel"><i class="fas fa-exclamation-triangle me-2"></i>Sản phẩm tồn thấp</h5>
+                            <h5 class="modal-title" id="lowStockModalLabel"><i class="fas fa-exclamation-triangle me-2"></i>Xe tồn thấp</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -927,8 +808,8 @@
                                 <table class="table table-striped table-hover" id="lowStockTable">
                                     <thead class="table-danger">
                                         <tr>
-                                            <th>Mã sản phẩm</th>
-                                            <th>Tên sản phẩm</th>
+                                            <th>Mã Xe</th>
+                                            <th>Tên Xe</th>
                                             <th>Danh mục</th>
                                             <th>Kích thước</th>
                                             <th>Màu sắc</th>

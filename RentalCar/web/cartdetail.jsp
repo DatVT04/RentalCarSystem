@@ -433,7 +433,7 @@
                                                                         </a>
                                                                     </h6>
                                                                     <div class="car-meta">
-                                                                        Size: <span class="fw-semibold">${item.size}</span> | Màu: <span class="fw-semibold">${item.color}</span>
+                                                                        Loại: <span class="fw-semibold">${item.size}</span> | Màu: <span class="fw-semibold">${item.color}</span>
                                                                     </div>
                                                                 </div>
                                                             </div>

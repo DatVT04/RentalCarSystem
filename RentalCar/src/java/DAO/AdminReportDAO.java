@@ -23,10 +23,8 @@ public class AdminReportDAO extends DBContext {
     /**
      * Get user reports filtered by status and role
      *
-     * @param statusFilter Filter by user status (active, inactive, pending, or
-     * all)
-     * @param roleFilter Filter by user role (admin, sale, owner, customer,
-     * or all)
+     * @param statusFilter Filter by user status (active, inactive, pending, or all)
+     * @param roleFilter Filter by user role (admin, sale, owner, customer, or all)
      * @return List of UserReport objects
      */
     public List<UserReport> getUserReports(String statusFilter, String roleFilter) {
@@ -79,10 +77,9 @@ public class AdminReportDAO extends DBContext {
     }
 
     /**
-     * Get order reports filtered by status
+     * Get order reports filtered by status (NO DISCOUNT DATA)
      *
-     * @param statusFilter Filter by order status (pending, processing, shipped,
-     * delivered, cancelled, or all)
+     * @param statusFilter Filter by order status (pending, processing, shipped, delivered, cancelled, or all)
      * @return List of OrderReport objects
      */
     public List<OrderReport> getOrderReports(String statusFilter) {
@@ -93,11 +90,8 @@ public class AdminReportDAO extends DBContext {
                 + "    o.status AS 'Trạng thái đơn hàng', "
                 + "    COUNT(*) AS 'Tổng số đơn hàng', "
                 + "    COALESCE(SUM(o.total_amount), 0) AS 'Tổng giá trị đơn', "
-                + "    COALESCE(SUM(CASE WHEN o.status = 'completed' THEN o.total_amount ELSE 0 END), 0) AS 'Doanh thu thực tế', "
-                + "    COALESCE(SUM(oc.discount_applied), 0) AS 'Tổng giảm giá áp dụng', "
-                + "    COUNT(oc.order_id) AS 'Đơn hàng dùng mã giảm giá' "
+                + "    COALESCE(SUM(CASE WHEN o.status = 'completed' THEN o.total_amount ELSE 0 END), 0) AS 'Doanh thu thực tế' "
                 + "FROM orders o "
-                + "LEFT JOIN order_coupons oc ON o.id = oc.order_id "
                 + "WHERE 1=1"
         );
 
@@ -133,8 +127,6 @@ public class AdminReportDAO extends DBContext {
                 order.setOrderCount(rs.getInt("Tổng số đơn hàng"));
                 order.setTotalAmount(rs.getBigDecimal("Tổng giá trị đơn"));
                 order.setActualRevenue(rs.getBigDecimal("Doanh thu thực tế"));
-                order.setTotalDiscount(rs.getBigDecimal("Tổng giảm giá áp dụng"));
-                order.setDiscountedOrderCount(rs.getInt("Đơn hàng dùng mã giảm giá"));
                 orders.add(order);
             }
         } catch (SQLException e) {
@@ -147,8 +139,7 @@ public class AdminReportDAO extends DBContext {
     /**
      * Get car reports filtered by status
      *
-     * @param statusFilter Filter by car status (active, inactive, EOStock,
-     * or all)
+     * @param statusFilter Filter by car status (active, inactive, EOStock, or all)
      * @return List of CarReport objects
      */
     public List<CarReport> getCarReports(String statusFilter) {
@@ -328,8 +319,12 @@ public class AdminReportDAO extends DBContext {
 
         return summary;
     }
-///////////////////////////////////////////////////////////////////////////////////
 
+    /**
+     * Get user role reports
+     *
+     * @return List of UserRoleReport objects
+     */
     public List<UserRoleReport> getUserRoleReports() {
         List<UserRoleReport> reports = new ArrayList<>();
         String sql = "SELECT \n"
@@ -373,13 +368,11 @@ public class AdminReportDAO extends DBContext {
 
         return reports;
     }
-//////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Get car inventory reports grouped by status
      *
-     * @param statusFilter Filter by car status (active, inactive, EOStock,
-     * or all)
+     * @param statusFilter Filter by car status (active, inactive, EOStock, or all)
      * @return List of CarInventoryReport objects
      */
     public List<CarInventoryReport> getCarInventoryReports(String statusFilter) {
@@ -460,10 +453,8 @@ public class AdminReportDAO extends DBContext {
                 + "WHERE "
                 + "    p.status = 'active' "
                 + "    AND COALESCE(pv.stock_quantity, 0) <= 10 "
-                + // Loại bỏ điều kiện IS NULL
-                "GROUP BY p.id, p.title, c.name, ps.size, pc.color, pv.stock_quantity "
-                + // Tránh trùng lặp
-                "ORDER BY pv.stock_quantity ASC";
+                + "GROUP BY p.id, p.title, c.name, ps.size, pc.color, pv.stock_quantity "
+                + "ORDER BY pv.stock_quantity ASC";
 
         try {
             PreparedStatement st = connection.prepareStatement(sql);

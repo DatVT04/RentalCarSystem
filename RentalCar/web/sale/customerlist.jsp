@@ -1,9 +1,3 @@
-<%-- 
-    Document   : customerlist
-    Created on : Mar 18, 2025, 10:34:50 AM
-    Author     : VuxD4t
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -12,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Quản lý khách hàng</title>
+        <title>Danh Sách Khách Hàng</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
@@ -150,7 +144,7 @@
     </head>
     <body>
         <!-- Include the sidebar -->
-        <jsp:include page="/owner/sidebar.jsp" />
+        <jsp:include page="/sale/sidebar.jsp" />
 
         <button class="btn btn-primary sidebar-toggle">
             <i class="fas fa-bars"></i>
@@ -159,7 +153,7 @@
         <div class="main-content">
             <div class="container-fluid p-4">
                 <h2 class="page-title">
-                    <i class="fas fa-users me-2"></i>Quản lý khách hàng
+                    <i class="fas fa-users me-2"></i>Danh Sách Khách Hàng
                 </h2>
 
                 <!-- Alerts -->
@@ -295,7 +289,7 @@
                                                 <th class="text-center" style="width: 100px;">
                                                     <a href="customerlist?sortField=total_purchases&sortDir=${sortField == 'total_purchases' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&gender=${gender}&customerType=${customerType}&search=${search}"
                                                        class="sort-link">
-                                                        Đơn hàng
+                                                        Đơn thuê
                                                         <span class="sort-icons">
                                                             ${sortField == 'total_purchases' ? (sortDir == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
                                                         </span>
@@ -340,7 +334,7 @@
                                                     </td>
                                                     <td class="text-center">
 
-                                                        <a href="customerdetail/edit?id=${customer.id}" class="btn btn-primary btn-sm btn-action" title="Chỉnh sửa">
+                                                        <a href="customerdetail/edit?id=${customer.id}" class="btn btn-primary btn-sm btn-action" title="Lịch sử">
                                                             <i class="fas fa-eye"></i>
                                                         </a>
                                                         <a href="customerdetail/delete?id=${customer.id}" class="btn btn-danger btn-sm btn-action" title="Xóa"

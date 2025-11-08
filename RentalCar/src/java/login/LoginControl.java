@@ -183,7 +183,7 @@ public class LoginControl extends HttpServlet {
                             response.sendRedirect(request.getContextPath() + "/admin/dashboard");
                             break;
                         case "owner":
-                            response.sendRedirect(request.getContextPath() + "/owner/dashboard");
+                            response.sendRedirect(request.getContextPath() + "/owner/carlist");
                             break;
                         case "sale":
                             response.sendRedirect(request.getContextPath() + "/sale/dashboard");

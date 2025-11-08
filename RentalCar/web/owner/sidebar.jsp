@@ -1,9 +1,3 @@
-<%-- 
-    Document   : sidebar
-    Created on : Feb 9, 2025, 8:52:55 PM
-    Author     : tphon
---%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="sidebar">
@@ -43,27 +37,7 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu list-unstyled p-0 mt-3">
-        <li class="menu-item p-2">
-            <a href="dashboard" class="text-decoration-none text-light d-flex align-items-center">
-                <i class="fas fa-chart-bar me-2"></i>
-                Bảng điều khiển
-            </a>
-        </li>
-        
-        <li class="menu-item p-2">
-            <a href="report" class="text-decoration-none text-light d-flex align-items-center">
-                <i class="fas fa-file-alt me-2"></i>
-                Báo cáo
-            </a>
-        </li>
 
-        <li class="menu-item p-2">
-            <a href="${pageContext.request.contextPath}/Owner/customerlist" 
-               class="text-decoration-none text-light d-flex align-items-center">
-                <i class="fas fa-users me-2"></i>
-                Quản lý khách hàng
-            </a>
-        </li>
         
         <li class="menu-item p-2">
             <a href="#carSubmenu" data-bs-toggle="collapse" class="text-decoration-none text-light d-flex align-items-center justify-content-between collapsed">
@@ -79,24 +53,6 @@
                 </li>
                 <li class="submenu-item py-1">
                     <a href="${pageContext.request.contextPath}/owner/inventorylist" class="text-decoration-none text-light">Quản lý kho hàng</a>
-                </li>
-            </ul>
-        </li>
-
-        <li class="menu-item p-2">
-            <a href="#contentSubmenu" data-bs-toggle="collapse" class="text-decoration-none text-light d-flex align-items-center justify-content-between collapsed">
-                <div>
-                    <i class="fas fa-newspaper me-2"></i>
-                    Quản lý nội dung
-                </div>
-                <i class="fas fa-chevron-down ms-auto"></i>
-            </a>
-            <ul class="submenu collapse list-unstyled ms-3 mt-1" id="contentSubmenu">
-                <li class="submenu-item py-1">
-                    <a href="${pageContext.request.contextPath}/owner/postList" class="text-decoration-none text-light">Bài đăng</a>
-                </li>
-                <li class="submenu-item py-1">
-                    <a href="${pageContext.request.contextPath}/owner/sliderList" class="text-decoration-none text-light">Thanh Trượt</a>
                 </li>
             </ul>
         </li>
@@ -297,47 +253,12 @@
                 }
             }
         }
-        // Handle content management section
-        else if (currentPath.includes('/owner/postList') ||
-                currentPath.includes('/owner/sliderList')) {
-
-            // Show content submenu
-            const contentSubmenu = document.getElementById('contentSubmenu');
-            if (contentSubmenu) {
-                contentSubmenu.classList.add('show');
-            }
-
-            // Highlight parent menu item
-            const contentMenuItem = document.querySelector('a[href="#contentSubmenu"]').closest('.menu-item');
-            if (contentMenuItem) {
-                contentMenuItem.classList.add('active');
-            }
-
-            // Highlight specific submenu item based on current page
-            if (currentPath.includes('/owner/postList')) {
-                const postListItem = document.querySelector('a[href$="/owner/postList"]').closest('.submenu-item');
-                if (postListItem) {
-                    postListItem.classList.add('active');
-                }
-            } else if (currentPath.includes('/owner/sliderList')) {
-                const sliderListItem = document.querySelector('a[href$="/owner/sliderList"]').closest('.submenu-item');
-                if (sliderListItem) {
-                    sliderListItem.classList.add('active');
-                }
-            }
-        }
+        
         // Handle coupon page
         else if (currentPath.includes('/owner/couponlist')) {
             const couponMenuItem = document.querySelector('a[href$="/owner/couponlist"]').closest('.menu-item');
             if (couponMenuItem) {
                 couponMenuItem.classList.add('active');
-            }
-        }
-        // Handle dashboard page
-        else if (currentPath.includes('/owner/dashboard')) {
-            const dashboardMenuItem = document.querySelector('a[href="dashboard"]').closest('.menu-item');
-            if (dashboardMenuItem) {
-                dashboardMenuItem.classList.add('active');
             }
         }
         // Handle home page

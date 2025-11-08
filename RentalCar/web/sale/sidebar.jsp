@@ -1,13 +1,8 @@
-<%-- 
-    Document   : sidebar
-    Created on : Mar 22, 2025
-    Author     : nguye
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="sidebar">
     <div class="sidebar-header p-3 border-bottom">
-        <h5 class="mt-2 mb-3">Quản Lý Thuê Xe</h5>
+        <h5 class="mt-2 mb-3">Quản Lý Bán Hàng</h5>
     </div>
 
     <!-- User Profile Section -->
@@ -64,6 +59,14 @@
                class="text-decoration-none text-light d-flex align-items-center">
                 <i class="fas fa-shopping-cart me-2"></i>
                 Quản lý đơn hàng
+            </a>
+        </li>
+        
+        <li class="menu-item p-2">
+            <a href="${pageContext.request.contextPath}/sale/customerlist" 
+               class="text-decoration-none text-light d-flex align-items-center">
+                <i class="fas fa-users me-2"></i>
+                Quản lý khách hàng
             </a>
         </li>
 

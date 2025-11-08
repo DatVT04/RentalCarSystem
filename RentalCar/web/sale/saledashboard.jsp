@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bảng Điều Khiển Bán Hàng</title>
+    <title>Bảng Thống Kê Bán Hàng</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -110,7 +110,7 @@
             <!-- Page Header -->
             <div class="row mb-4">
                 <div class="col-12">
-                    <h2 class="text-dark fw-bold"><i class="fas fa-chart-line me-2"></i> Bảng Điều Khiển Bán Hàng</h2>
+                    <h2 class="text-dark fw-bold"><i class="fas fa-chart-line me-2"></i> Bảng Thống Kê Bán Hàng</h2>
                 </div>
             </div>
 
@@ -141,7 +141,7 @@
                                     <i class="fas fa-shopping-cart fa-2x"></i>
                                 </div>
                                 <div>
-                                    <div class="text-muted text-uppercase fw-bold small">Tổng Đơn Hàng</div>
+                                    <div class="text-muted text-uppercase fw-bold small">Tổng Đơn Thuê</div>
                                     <div class="h4 mb-0 fw-bold text-dark">${salesOverview.totalSales}</div>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
                                     <i class="fas fa-boxes fa-2x"></i>
                                 </div>
                                 <div>
-                                    <div class="text-muted text-uppercase fw-bold small">Tổng Doanh Số Bán Hàng</div>
+                                    <div class="text-muted text-uppercase fw-bold small">Tổng Doanh Số Cho Thuê</div>
                                     <div class="h4 mb-0 fw-bold text-dark">
                                         <fmt:formatNumber value="${salesOverview.completedSalesQuantity}" type="number" groupingUsed="true" />
                                     </div>
@@ -171,7 +171,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Trạng Thái Đơn Hàng</h5>
+                            <h5 class="mb-0">Trạng Thái Đơn Thuê</h5>
                         </div>
                         <div class="card-body">
                             <div class="row text-center">
@@ -188,7 +188,7 @@
                                     <h4 class="text-dark">${salesOverview.processingOrders}</h4>
                                 </div>
                                 <div class="col">
-                                    <div class="status-badge bg-shipping mb-2"><i class="fas fa-shipping-fast me-1"></i> Đang Giao</div>
+                                    <div class="status-badge bg-shipping mb-2"><i class="fas fa-shipping-fast me-1"></i> Đang Bàn Giao</div>
                                     <h4 class="text-dark">${salesOverview.shippingOrders}</h4>
                                 </div>
                             </div>
@@ -238,7 +238,7 @@
                 <div class="col-lg-8">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Xu Hướng Đơn Hàng Hằng Ngày</h5>
+                            <h5 class="mb-0">Xu Hướng Đơn Thuê Hằng Ngày</h5>
                         </div>
                         <div class="card-body">
                             <div class="chart-container">
@@ -250,7 +250,7 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Đơn Hàng Theo Danh Mục</h5>
+                            <h5 class="mb-0">Gía Trị Đơn Thuê Theo Danh Mục Xe</h5>
                         </div>
                         <div class="card-body">
                             <div class="chart-container">
@@ -265,7 +265,7 @@
                 <div class="col-lg-8">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Doanh Thu Đơn Hàng Hằng Ngày</h5>
+                            <h5 class="mb-0">Doanh Thu Đơn Thuê Hằng Ngày</h5>
                         </div>
                         <div class="card-body">
                             <div class="chart-container">
@@ -277,7 +277,7 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Phân Phối Trạng Thái Đơn Hàng</h5>
+                            <h5 class="mb-0">Phân Phối Trạng Thái Đơn Thuê</h5>
                         </div>
                         <div class="card-body">
                             <div class="chart-container">
@@ -301,7 +301,7 @@
                                     <thead>
                                         <tr>
                                             <th>Phương Thức Thanh Toán</th>
-                                            <th>Số Lượng Đơn Hàng</th>
+                                            <th>Số Lượng Đơn Thuê</th>
                                             <th>Doanh Thu</th>
                                             <th>% Tổng Doanh Thu</th>
                                         </tr>
@@ -338,7 +338,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">Đơn Hàng Theo Danh Mục</h5>
+                            <h5 class="mb-0">Đơn Thuê Theo Danh Mục Xe</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -346,7 +346,7 @@
                                     <thead>
                                         <tr>
                                             <th>Danh Mục</th>
-                                            <th>Các Mặt Hàng Đã Bán</th>
+                                            <th>Các Loại Xe Đã Cho Thuê</th>
                                             <th>Doanh Thu</th>
                                             <th>% Tổng Số</th>
                                         </tr>
@@ -413,7 +413,7 @@
                         tension: 0.3,
                         fill: true
                     }, {
-                        label: 'Đang Giao',
+                        label: 'Đang Bàn Giao',
                         data: [<c:forEach items="${orderStatusCounts}" var="status" varStatus="loop">${status.shippingCount}${!loop.last ? ',' : ''}</c:forEach>],
                         borderColor: '#28a745',
                         backgroundColor: 'rgba(40, 167, 69, 0.2)',
@@ -460,7 +460,7 @@
                         data: [<c:forEach items="${dailySalesData}" var="data" varStatus="loop">${data.totalAmount}${!loop.last ? ',' : ''}</c:forEach>],
                         backgroundColor: 'rgba(0, 123, 255, 0.8)'
                     }, {
-                        label: 'Đơn Hàng',
+                        label: 'Đơn Thuê',
                         data: [<c:forEach items="${dailySalesData}" var="data" varStatus="loop">${data.orderCount}${!loop.last ? ',' : ''}</c:forEach>],
                         backgroundColor: 'rgba(40, 167, 69, 0.8)',
                         yAxisID: 'y1'
@@ -471,7 +471,7 @@
                     maintainAspectRatio: false,
                     scales: {
                         y: { beginAtZero: true, title: { display: true, text: 'Doanh Thu (VNĐ)' } },
-                        y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Đơn Hàng' } }
+                        y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Đơn Thuê' } }
                     }
                 }
             });
@@ -497,7 +497,7 @@
             const statusDistChart = new Chart(statusDistCtx, {
                 type: 'pie',
                 data: {
-                    labels: ['Chờ Thanh Toán', 'Đang Phê Duyệt', 'Đang Xử Lý', 'Đang Giao', 'Đã Hoàn Thành', 'Đã Trả Lại', 'Đã Hủy'],
+                    labels: ['Chờ Thanh Toán', 'Đang Phê Duyệt', 'Đang Xử Lý', 'Đang Bàn Giao', 'Đã Hoàn Thành', 'Đã Trả Lại', 'Đã Hủy'],
                     datasets: [{
                         data: [${salesOverview.pendingPayOrders}, ${salesOverview.pendingOrders}, ${salesOverview.processingOrders}, ${salesOverview.shippingOrders}, ${salesOverview.completedOrders}, ${salesOverview.returnedOrders}, ${salesOverview.cancelledOrders}],
                         backgroundColor: ['#ff9800', '#ffca2c', '#007bff', '#28a745', '#17a2b8', '#9c27b0', '#dc3545']

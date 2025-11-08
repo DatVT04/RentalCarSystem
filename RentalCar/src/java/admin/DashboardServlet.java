@@ -1,4 +1,4 @@
-package owner;
+package admin;
 
 import DAO.DashboardDAO;
 import entity.DashboardStats;
@@ -14,7 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 
-@WebServlet(name = "DashboardServlet", urlPatterns = {"/owner/dashboard"})
+@WebServlet(name = "DashboardServlet", urlPatterns = {"/admin/dashboard"})
 public class DashboardServlet extends HttpServlet {
 
     @Override
@@ -42,7 +42,7 @@ public class DashboardServlet extends HttpServlet {
         request.setAttribute("customerContactStats", stats.getCustomerContactStats());
         request.setAttribute("topVIPCustomers", stats.getTopVIPCustomers());
 
-        request.getRequestDispatcher("/owner/ownerdashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("/admin/dashboard.jsp").forward(request, response);
     }
 
     @Override

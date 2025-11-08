@@ -7,7 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Chi tiết khách hàng</title>
+        <title>Lịch Sử Thuê Xe Khách hàng</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
@@ -172,7 +172,7 @@
     </head>
     <body>
         <!-- Include the sidebar -->
-        <jsp:include page="/owner/sidebar.jsp" />
+        <jsp:include page="/sale/sidebar.jsp" />
 
         <button class="btn btn-primary sidebar-toggle">
             <i class="fas fa-bars"></i>
@@ -182,7 +182,7 @@
             <div class="container-fluid p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="page-title">
-                        <i class="fas fa-user me-2"></i>Chi tiết khách hàng
+                        <i class="fas fa-user me-2"></i>Lịch Sử Thuê Xe Khách hàng
                     </h2>
 
                 </div>
@@ -212,7 +212,7 @@
                     </div>
                     <div class="card-body">
                         <!-- Form chỉnh sửa thông tin khách hàng -->
-                        <form action="${pageContext.request.contextPath}/owner/customerdetail/edit" method="post" class="row g-3">
+                        <form action="${pageContext.request.contextPath}/sale/customerdetail/edit" method="post" class="row g-3">
                             <input type="hidden" name="id" value="${customer.id}">
 
                             <div class="col-md-4">
@@ -264,12 +264,23 @@
                             <div class="timestamp-info">
                                 <div class="d-flex justify-content-between">
                                     <div>
-                                        <i class="fas fa-shopping-cart me-2"></i><strong>Tổng đơn hàng:</strong> ${customer.totalPurchases}
+                                        <i class="fas fa-shopping-cart me-2"></i><strong>Tổng đơn thuê:</strong> ${customer.totalPurchases}
                                     </div>
                                     <div>
                                         <i class="fas fa-money-bill-wave me-2"></i><strong>Tổng chi tiêu:</strong> 
                                             <fmt:formatNumber value="${customer.totalSpend}" type="currency" currencySymbol="₫" maxFractionDigits="0"/>
                                     </div>
+                                </div>
+                                <div class="mt-2">
+                                    <i class="fas fa-clock me-2"></i><strong>Thời gian hoàn thành giao dịch:</strong> 
+                                        <c:choose>
+                                            <c:when test="${customer.updatedAt != null}">
+                                                ${customer.updatedAt}
+                                            </c:when>
+                                            <c:otherwise>
+                                            Chưa cập nhật
+                                        </c:otherwise>
+                                    </c:choose>
                                 </div>
                             </div>
 
@@ -283,7 +294,7 @@
 
                             </div>-->
                             <div class="text-center mt-3">
-                                <a href="${pageContext.request.contextPath}/owner/customerlist" class="btn btn-secondary">
+                                <a href="${pageContext.request.contextPath}/sale/customerlist" class="btn btn-secondary">
                                     <i class="fas fa-arrow-left me-1"></i>Quay lại
                                 </a>
                             </div>

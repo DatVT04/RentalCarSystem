@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
-@WebServlet(name = "AdminReportServlet", urlPatterns = {"/admin/report"})
+@WebServlet(name = "AdminReportServlet", urlPatterns = {"/admin/rentalreport"})
 public class AdminReportServlet extends HttpServlet {
 
     @Override
@@ -39,19 +39,9 @@ public class AdminReportServlet extends HttpServlet {
         BigDecimal orderReportTotalAmount = orderReports.stream()
                 .map(OrderReport::getTotalAmount)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-        BigDecimal orderReportTotalActualRevenue = orderReports.stream()
-                .map(OrderReport::getActualRevenue)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
-        BigDecimal orderReportTotalDiscount = orderReports.stream()
-                .map(OrderReport::getTotalDiscount)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
-        int orderReportTotalDiscountedOrders = orderReports.stream().mapToInt(OrderReport::getDiscountedOrderCount).sum();
 
         request.setAttribute("orderReportTotalOrders", orderReportTotalOrders);
         request.setAttribute("orderReportTotalAmount", orderReportTotalAmount);
-        request.setAttribute("orderReportTotalActualRevenue", orderReportTotalActualRevenue);
-        request.setAttribute("orderReportTotalDiscount", orderReportTotalDiscount);
-        request.setAttribute("orderReportTotalDiscountedOrders", orderReportTotalDiscountedOrders);
 
         // Get car inventory report data
         String carStatusFilter = request.getParameter("carStatus") != null ? request.getParameter("carStatus") : "all";
@@ -104,6 +94,6 @@ public class AdminReportServlet extends HttpServlet {
         request.setAttribute("userRoleAvgOrderValue", userRoleAvgOrderValue);
 
         // Forward to the report JSP
-        request.getRequestDispatcher("/admin/report.jsp").forward(request, response);
+        request.getRequestDispatcher("/admin/rentalreport.jsp").forward(request, response);
     }
 }

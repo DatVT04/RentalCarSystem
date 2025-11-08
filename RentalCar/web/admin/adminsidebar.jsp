@@ -37,7 +37,7 @@
         </li>
         
         <li class="menu-item p-2">
-            <a href="${pageContext.request.contextPath}/admin/report" class="text-decoration-none text-light d-flex align-items-center">
+            <a href="${pageContext.request.contextPath}/admin/rentalreport" class="text-decoration-none text-light d-flex align-items-center">
                 <i class="fas fa-file-alt me-2"></i>
                 Báo cáo
             </a>
@@ -58,9 +58,6 @@
                 
                 <li class="submenu-item py-1">
                     <a href="${pageContext.request.contextPath}/admin/categorylists" class="text-decoration-none text-light">Danh sách danh mục</a>
-                </li>
-                <li class="submenu-item py-1">
-                    <a href="${pageContext.request.contextPath}/admin/footer-settings" class="text-decoration-none text-light">Thông tin chân trang</a>
                 </li>
             </ul>
         </li>
