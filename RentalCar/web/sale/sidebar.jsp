@@ -42,17 +42,11 @@
             <a href="${pageContext.request.contextPath}/sale/dashboard" 
                class="text-decoration-none text-light d-flex align-items-center">
                 <i class="fas fa-chart-bar me-2"></i>
-                Bảng điều khiển
+                Bảng thống kê
             </a>
         </li>
 
-        <li class="menu-item p-2">
-            <a href="${pageContext.request.contextPath}/sale/report" 
-               class="text-decoration-none text-light d-flex align-items-center">
-                <i class="fas fa-file-alt me-2"></i>
-                Báo cáo
-            </a>
-        </li>
+        
         
         <li class="menu-item p-2">
             <a href="${pageContext.request.contextPath}/sale/orderlist" 

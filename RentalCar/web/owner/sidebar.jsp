@@ -43,16 +43,16 @@
             <a href="#carSubmenu" data-bs-toggle="collapse" class="text-decoration-none text-light d-flex align-items-center justify-content-between collapsed">
                 <div>
                     <i class="fas fa-box me-2"></i>
-                    Quản lý sản phẩm
+                    Quản lý xe
                 </div>
                 <i class="fas fa-chevron-down ms-auto"></i>
             </a>
             <ul class="submenu collapse list-unstyled ms-3 mt-1" id="carSubmenu">
                 <li class="submenu-item py-1">
-                    <a href="${pageContext.request.contextPath}/owner/carlist" class="text-decoration-none text-light">Danh sách sản phẩm</a>
+                    <a href="${pageContext.request.contextPath}/owner/carlist" class="text-decoration-none text-light">Danh sách xe</a>
                 </li>
                 <li class="submenu-item py-1">
-                    <a href="${pageContext.request.contextPath}/owner/inventorylist" class="text-decoration-none text-light">Quản lý kho hàng</a>
+                    <a href="${pageContext.request.contextPath}/owner/inventorylist" class="text-decoration-none text-light">Quản lý kho xe</a>
                 </li>
             </ul>
         </li>
@@ -60,7 +60,7 @@
         <li class="menu-item p-2">
             <a href="${pageContext.request.contextPath}/owner/feedbacklist" class="text-decoration-none text-light d-flex align-items-center">
                 <i class="fas fa-comments me-2"></i>
-                Đánh giá sản phẩm
+                Đánh giá xe
             </a>
         </li>
         

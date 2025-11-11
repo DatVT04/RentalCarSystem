@@ -157,7 +157,7 @@
                 </c:if>
 
                 <div class="info-section">
-                    <h5>Thêm Mẫu Mới</h5>
+                    <h5>Thêm phiên bản mới</h5>
                     <form action="addModel" method="POST">
                         <input type="hidden" name="carId" value="${carId}">
                         <input type="hidden" name="source" value="${param.source}">
@@ -178,12 +178,12 @@
                             <div class="col-md-4">
                                 <div class="form-floating">
                                     <select class="form-select" id="sizeInput" name="size" required>
-                                        <option value="" disabled selected>Chọn hoặc nhập kích thước</option>
+                                        <option value="" disabled selected>Số ngày muốn cho thuê</option>
                                         <c:forEach var="size" items="${sizeList}">
                                             <option value="${size.name}" ${size.name == param.size ? 'selected' : ''}>${size.name}</option>
                                         </c:forEach>
                                     </select>
-                                    <label for="sizeInput">Kích thước</label>
+                                    <label for="sizeInput">Số ngày</label>
                                 </div>
                             </div>
 
@@ -208,13 +208,13 @@
                 </div>
                 <!-- Model Table Section -->
                 <div class="info-section mt-4">
-                    <h5 class="mb-3">Mẫu sản phẩm có sẵn</h5>
+                    <h5 class="mb-3">Phiên bản xe có sẵn</h5>
                     <div class="model-table-container">
                         <table class="table table-bordered table-hover" id="variantTable">
                             <thead class="table-light sticky-top">
                                 <tr>
                                     <th>Màu sắc</th>
-                                    <th>Kích thước</th>
+                                    <th>Số ngày</th>
                                     <th>Ngày cập nhật</th>
                                 </tr>
                             </thead>
@@ -252,9 +252,9 @@
                     }
                 });
 
-                // Khởi tạo Select2 cho kích thước
+                // Khởi tạo Select2 cho số ngày
                 $('#sizeInput').select2({
-                    placeholder: "Chọn hoặc nhập kích thước",
+                    placeholder: "Chọn hoặc nhập số ngày",
                     tags: true,
                     width: '100%',
                     dropdownParent: $('#sizeInput').closest('.form-floating'),
@@ -275,7 +275,7 @@
                     }
                 });
 
-                // Lọc bảng động khi thay đổi màu sắc hoặc kích thước
+                // Lọc bảng động khi thay đổi màu sắc hoặc số ngày
                 function filterTable() {
                     var selectedColor = $('#colorInput').val() ? $('#colorInput').val().toLowerCase() : '';
                     var selectedSize = $('#sizeInput').val() ? $('#sizeInput').val().toLowerCase() : '';

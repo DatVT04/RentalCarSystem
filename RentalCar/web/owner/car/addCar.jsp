@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm sản phẩm</title>
+    <title>Thêm xe</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Thêm CSS cho Summernote -->
@@ -222,7 +222,7 @@
 
                         <div class="col-12">
                             <label for="description" class="form-label">Mô tả xe</label>
-                            <textarea class="form-control" id="description" name="description" rows="5" placeholder="Nhập mô tả chi tiết về sản phẩm..."></textarea>
+                            <textarea class="form-control" id="description" name="description" rows="5" placeholder="Nhập mô tả chi tiết về xe..."></textarea>
                         </div>
 
                         <div class="col-md-6">

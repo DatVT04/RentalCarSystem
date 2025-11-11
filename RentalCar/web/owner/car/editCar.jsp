@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Chỉnh sửa sản phẩm</title>
+        <title>Chỉnh sửa xe</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
@@ -139,7 +139,7 @@
                     <c:choose>
                         <c:when test="${alert.equals('ER1_OP')}">
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                Sản phẩm đang có trong đơn hàng chưa hoàn thành.
+                                Xe đang có trong đơn hàng chưa hoàn thành.
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </c:when>
@@ -163,7 +163,7 @@
                         </c:when>
                         <c:when test="${alert.equals('ER_dp')}">
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                Sản phẩm đã tồn tại trong hệ thống.
+                                Xe đã tồn tại trong hệ thống.
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </c:when>
@@ -175,15 +175,15 @@
                         </c:when>
                     </c:choose>
                 </c:if>
-                <h2 class="page-title"><i class="fas fa-edit me-2"></i>Chỉnh sửa sản phẩm</h2>
+                <h2 class="page-title"><i class="fas fa-edit me-2"></i>Chỉnh sửa xe</h2>
                 <div class="card">
-                    <div class="card-header"><i class="fas fa-info-circle me-2"></i>Thông tin sản phẩm</div>
+                    <div class="card-header"><i class="fas fa-info-circle me-2"></i>Thông tin xe</div>
                     <div class="card-body">
                         <form action="editcar" method="post" enctype="multipart/form-data" class="row g-3">
                             <input type="hidden" name="action" value="updateCar">
                             <input type="hidden" name="carId" value="${car.id}">
                             <div class="col-md-6">
-                                <label for="title" class="form-label">Tên sản phẩm</label>
+                                <label for="title" class="form-label">Tên xe</label>
                                 <input type="text" class="form-control" id="title" name="title" value="${car.title}" maxlength="100" required />
                             </div>
                             <div class="col-md-6">
@@ -199,14 +199,14 @@
                                 <input type="text" class="form-control" id="originalPrice" name="originalPrice" value="${car.originalPrice.intValue()}" required />
                             </div>
                             <div class="col-md-6">
-                                <label for="salePrice" class="form-label">Giá bán (₫)</label>
+                                <label for="salePrice" class="form-label">Giá thuê (₫)</label>
                                 <input type="text" class="form-control" id="salePrice" name="salePrice" value="${car.salePrice.intValue()}" required />
                             </div>
                             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
                                 <label for="comboGroupId" class="form-label mb-2">
                                     <div class="form-check d-flex justify-content-center align-items-center">
                                         <input class="form-check-input me-2" type="checkbox" id="isCombo" name="isCombo" ${car.isCombo ? 'checked' : ''}>
-                                        <label class="form-check-label" for="isCombo">Là sản phẩm chính của combo</label>
+                                        <label class="form-check-label" for="isCombo">Là xe chính của combo</label>
                                     </div>
                                 </label>
                                 <select class="form-select" id="comboGroupId" name="comboGroupId" style="width: 50%;">
@@ -217,16 +217,16 @@
                                 </select>
                             </div>
                             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
-                                <label for="status" class="form-label mb-2">Trạng thái sản phẩm</label>
+                                <label for="status" class="form-label mb-2">Trạng thái xe</label>
                                 <select class="form-select" id="status" name="status" style="width: 50%;" ${car.status.equals('EOStock') ? 'disabled' : ''}>
-                                    <option value="active" ${car.status eq 'active' ? 'selected' : ''}>Đang Bán</option>
-                                    <option value="inactive" ${car.status eq 'inactive' ? 'selected' : ''}>Ngưng Bán</option>
+                                    <option value="active" ${car.status eq 'active' ? 'selected' : ''}>Đang Thuê</option>
+                                    <option value="inactive" ${car.status eq 'inactive' ? 'selected' : ''}>Ngưng Thuê</option>
                                     <option value="EOStock" ${car.status.equals('EOStock') ? 'selected' : ''}>Hết hàng</option>
                                 </select>
                             </div>
 
                             <div class="col-12">
-                                <label for="description" class="form-label">Mô tả sản phẩm</label>
+                                <label for="description" class="form-label">Mô tả xe</label>
                                 <textarea class="form-control" id="description" name="description">${car.description}</textarea>
                             </div>
 
@@ -350,7 +350,7 @@
                                             // Cấu hình Summernote với đầy đủ chức năng
                                             $('#description').summernote({
                                                 height: 300,
-                                                placeholder: 'Nhập mô tả chi tiết về sản phẩm...',
+                                                placeholder: 'Nhập mô tả chi tiết về xe...',
                                                 toolbar: [
                                                     ['style', ['style']],
                                                     ['font', ['bold', 'underline', 'italic', 'clear']],

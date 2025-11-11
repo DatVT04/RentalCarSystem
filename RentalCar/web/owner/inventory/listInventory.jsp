@@ -292,7 +292,7 @@
         <div class="main-content">
             <div class="container-fluid p-4">
                 <h2 class="page-title">
-                    <i class="fas fa-warehouse me-2"></i>Quản lý kho hàng
+                    <i class="fas fa-warehouse me-2"></i>Quản lý kho xe
                 </h2>
 
                 <!-- Filter Section -->
@@ -367,7 +367,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                            <i class="fas fa-boxes me-2"></i>Danh sách sản phẩm trong kho
+                            <i class="fas fa-boxes me-2"></i>Danh sách xe trong kho
                         </div>
                     </div>
                     <div class="card-body p-0">
@@ -378,7 +378,7 @@
                                         <th class="text-center" style="width: 60px;">STT</th>
                                         <th>
                                             <a href="inventorylist?search=${searchKeyword}&category=${selectedCategory}&sortField=car_name&sortOrder=${sortField == 'car_name' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
-                                                Tên sản phẩm
+                                                Tên xe
                                                 <span class="sort-icons">
                                                     ${sortField == 'car_name' ? (sortOrder == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
                                                 </span>
@@ -393,7 +393,7 @@
                                             </a>
                                         </th>
                                         <th>Màu sắc</th>
-                                        <th>Kích thước</th>
+                                        <th>Gói thuê</th>
                                         <th class="text-center">
                                             <a href="inventorylist?search=${searchKeyword}&category=${selectedCategory}&sortField=totalQuantity&sortOrder=${sortField == 'totalQuantity' && sortOrder == 'asc' ? 'desc' : 'asc'}" class="sort-link">
                                                 Tổng số lượng
@@ -438,7 +438,7 @@
                                             <tr>
                                                 <td colspan="7" class="empty-state">
                                                     <i class="fas fa-box-open fa-3x mb-3"></i>
-                                                    <p>Không tìm thấy sản phẩm nào trong kho. Vui lòng thử lại với điều kiện tìm kiếm khác.</p>
+                                                    <p>Không tìm thấy xe nào trong kho. Vui lòng thử lại với điều kiện tìm kiếm khác.</p>
                                                 </td>
                                             </tr>
                                         </c:otherwise>

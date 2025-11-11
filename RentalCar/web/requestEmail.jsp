@@ -22,7 +22,7 @@
                 margin: 0;
                 padding: 20px;
                 font-family: 'Poppins', sans-serif;
-                background: url('assests/css/requestEmail.jpg') no-repeat center center fixed;
+                background: url('assests/css/request.jpg') no-repeat center center fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;

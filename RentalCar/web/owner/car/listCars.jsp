@@ -293,13 +293,13 @@
                     <c:choose>
                         <c:when test="${alert.equals('ER1_OP')}">
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                Sản phẩm đang có trong đơn hàng chưa hoàn thành.
+                                Xe đang có trong đơn hàng chưa hoàn thành.
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </c:when>
                         <c:when test="${alert.equals('ER2_HS')}">
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                Sản phẩm còn tồn kho.
+                                Xe còn tồn kho.
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </c:when>
@@ -317,19 +317,19 @@
                         </c:when>
                         <c:when test="${alert.equals('SSD')}">
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                Xóa sản phẩm thành công
+                                Xóa xe thành công
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </c:when>
                         <c:when test="${alert.equals('SSA')}">
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                Thêm sản phẩm thành công
+                                Thêm xe thành công
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </c:when>
                         <c:when test="${alert.equals('SSU')}">
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                Sửa sản phẩm thành công
+                                Sửa xe thành công
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </c:when>
@@ -342,7 +342,7 @@
                     </c:choose>
                 </c:if>
                 <h2 class="page-title">
-                    <i class="fas fa-box me-2"></i>Danh sách sản phẩm
+                    <i class="fas fa-box me-2"></i>Danh sách xe
                 </h2>
 
                 <!-- Filter Section -->
@@ -357,7 +357,7 @@
                                     <span class="input-group-text bg-white">
                                         <i class="fas fa-search text-muted"></i>
                                     </span>
-                                    <input type="text" name="keyword" value="${keyword}" class="form-control search-box" placeholder="Tìm kiếm sản phẩm...">
+                                    <input type="text" name="keyword" value="${keyword}" class="form-control search-box" placeholder="Tìm kiếm xe...">
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -394,8 +394,8 @@
                             <div class="col-md-2">
                                 <select name="status" class="form-select">
                                     <option value="all">Tất cả trạng thái</option>
-                                    <option value="active" ${status == 'active' ? 'selected' : ''}>Đang bán</option>
-                                    <option value="inactive" ${status == 'inactive' ? 'selected' : ''}>Ngưng bán</option>
+                                    <option value="active" ${status == 'active' ? 'selected' : ''}>Đang thuê</option>
+                                    <option value="inactive" ${status == 'inactive' ? 'selected' : ''}>Ngưng thuê</option>
                                     <option value="EOStock" ${status == 'EOStock' ? 'selected' : ''}>Hết hàng</option>
                                 </select>
                             </div>
@@ -417,10 +417,10 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                            <i class="fas fa-list me-2"></i>Danh sách sản phẩm
+                            <i class="fas fa-list me-2"></i>Danh sách xe
                         </div>
                         <a href="addcar" class="btn btn-success">
-                            <i class="fas fa-plus me-2"></i>Thêm sản phẩm
+                            <i class="fas fa-plus me-2"></i>Thêm xe
                         </a>
                     </div>
                     <div class="card-body p-0">
@@ -432,7 +432,7 @@
                                         <th>Ảnh minh họa</th>
                                         <th>
                                             <a href="carlist?sortField=title&sortDir=${sortField == 'title' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
-                                                Tên sản phẩm
+                                                Tên xe
                                                 <span class="sort-icons">
                                                     ${sortField == 'title' ? (sortDir == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
                                                 </span>
@@ -456,7 +456,7 @@
                                         </th>
                                         <th>
                                             <a href="carlist?sortField=sale_price&sortDir=${sortField == 'sale_price' && sortDir == 'asc' ? 'desc' : 'asc'}&page=${currentPage}&keyword=${keyword}&categoryId=${categoryId}&status=${status}" class="sort-link">
-                                                Giá bán
+                                                Giá thuê
                                                 <span class="sort-icons">
                                                     ${sortField == 'sale_price' ? (sortDir == 'asc' ? '<i class="fas fa-sort-up"></i>' : '<i class="fas fa-sort-down"></i>') : '<i class="fas fa-sort text-muted"></i>'}
                                                 </span>
@@ -494,7 +494,7 @@
                                                     <td><fmt:formatNumber value="${car.salePrice}" type="currency" currencySymbol="₫" maxFractionDigits="0"/></td>
                                                     <td>
                                                         <span class="status-badge bg-${car.status == 'active' ? 'success' : car.status == 'inactive' ? 'danger' : 'warning'}">
-                                                            ${car.status == 'active' ? 'Đang bán' : car.status == 'inactive' ? 'Ngưng bán' : 'Hết hàng'}
+                                                            ${car.status == 'active' ? 'Đang thuê' : car.status == 'inactive' ? 'Ngưng thuê' : 'Hết hàng'}
                                                         </span>
                                                     </td>
                                                     <td class="text-center">
@@ -521,7 +521,7 @@
                                             <tr>
                                                 <td colspan="9" class="empty-state">
                                                     <i class="fas fa-box-open fa-3x mb-3"></i>
-                                                    <p>Không tìm thấy sản phẩm nào!!!</p>
+                                                    <p>Không tìm thấy xe nào!!!</p>
                                                 </td>
                                             </tr>
                                         </c:otherwise>
@@ -535,7 +535,7 @@
                 <!-- Pagination -->
                 <div class="d-flex justify-content-between align-items-center mt-3">
                     <div class="text-muted small">
-                        Hiển thị ${cars.size()} / ${totalItems} sản phẩm
+                        Hiển thị ${cars.size()} / ${totalItems} xe
                     </div>
                     <nav>
                         <ul class="pagination">
@@ -612,7 +612,7 @@
                                                             });
 
                                                             function deleteCar(id) {
-                                                                if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) {
+                                                                if (confirm('Bạn có chắc chắn muốn xóa xe này?')) {
                                                                     window.location.href = 'deletecar?carId=' + id;
                                                                 }
                                                             }

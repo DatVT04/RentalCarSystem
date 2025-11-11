@@ -120,13 +120,13 @@
                     <div class="alert alert-success alert-dismissible fade show" role="alert" id="successAlert">
                         <c:choose>
                             <c:when test="${param.success eq 'add'}">
-                                Thêm mẫu sản phẩm thành công!
+                                Thêm phiên bản xe thành công!
                             </c:when>
                             <c:when test="${param.success eq 'edit'}">
-                                Chỉnh sửa mẫu sản phẩm thành công!
+                                Chỉnh sửa phiên bản xe thành công!
                             </c:when>
                             <c:when test="${param.success eq 'delete'}">
-                                Xóa mẫu sản phẩm thành công!
+                                Xóa phiên bản xe thành công!
                             </c:when>
                         </c:choose>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -135,19 +135,19 @@
 
                 <c:if test="${not empty errorMessage || not empty param.error}">
                     <div class="alert alert-danger alert-dismissible fade show" role="alert" id="errorAlert">
-                        ${not empty errorMessage ? errorMessage : 'Không thể xóa mẫu sản phẩm. Vui lòng thử lại!'}
+                        ${not empty errorMessage ? errorMessage : 'Không thể xóa phiên bản xe. Vui lòng thử lại!'}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 </c:if>
 
                 <div class="info-section">
-                    <h5 class="mb-3">Thông tin sản phẩm</h5>
+                    <h5 class="mb-3">Thông tin xe</h5>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control read-only-field" id="carName" 
                                        value="${inventory.carName}" readonly>
-                                <label for="carName">Tên sản phẩm</label>
+                                <label for="carName">Tên xe</label>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -168,14 +168,14 @@
                 </div>
 
                 <div class="info-section">
-                    <h5 class="mb-3">Chi tiết mẫu sản phẩm</h5>
+                    <h5 class="mb-3">Chi tiết phiên bản xe</h5>
                     <div class="d-flex justify-content-between mb-3 search-container">
                         <div class="input-group" style="width: 300px;">
                             <span class="input-group-text"><i class="fas fa-search"></i></span>
-                            <input type="text" class="form-control" id="searchInput" placeholder="Tìm kiếm mẫu sản phẩm...">
+                            <input type="text" class="form-control" id="searchInput" placeholder="Tìm kiếm phiên bản xe...">
                         </div>
                         <a href="addModel?carId=${inventory.carId}&source=${param.source}" class="btn btn-success">
-                            <i class="fas fa-plus me-2"></i>Thêm Mẫu Mới
+                            <i class="fas fa-plus me-2"></i>Thêm phiên bản Mới
                         </a>
                     </div>
                     <div class="model-table-container">
@@ -183,7 +183,7 @@
                             <thead class="table-light sticky-top">
                                 <tr>
                                     <th>Màu sắc</th>
-                                    <th>Kích thước</th>
+                                    <th>Gói thuê</th>
                                     <th>Số lượng</th>
                                     <th>Ngày cập nhật</th>
                                     <th>Thao tác</th>
@@ -242,9 +242,9 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Bạn có chắc chắn muốn xóa mẫu sản phẩm này?<br>
+                            Bạn có chắc chắn muốn xóa phiên bản xe này?<br>
                             Màu sắc: <strong>${variant.color.name}</strong><br>
-                            Kích thước: <strong>${variant.size.name}</strong>
+                            Số ngày: <strong>${variant.size.name}</strong>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>

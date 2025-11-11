@@ -91,7 +91,7 @@ public class PaymentServlet extends HttpServlet {
             }
 
             String cleanOrderCode = order.getOrderCode().replaceAll("[^a-zA-Z0-9]", "");
-            String vnp_OrderInfo = "Thanh toan don hang " + order.getOrderCode();
+            String vnp_OrderInfo = "Thanh toan don thue " + order.getOrderCode();
             String vnp_TxnRef = cleanOrderCode;
             String vnp_IpAddr = getClientIpAddress(request);
 
@@ -164,7 +164,7 @@ public class PaymentServlet extends HttpServlet {
                 isValidTransaction = cleanOrderCode.equals(vnp_TxnRef)
                         && String.valueOf((long) (order.getTotal() * 100)).equals(vnp_Amount);
             } else {
-                String orderCode = vnp_OrderInfo.replace("Thanh toan don hang ", "");
+                String orderCode = vnp_OrderInfo.replace("Thanh toan don thue ", "");
                 List<Order> orders = orderDAO.getAllOrders();
                 for (Order o : orders) {
                     if (orderCode.equals(o.getOrderCode())) {
@@ -178,7 +178,7 @@ public class PaymentServlet extends HttpServlet {
             }
 
             if (order == null) {
-                throw new Exception("Không tìm thấy đơn hàng trong session hoặc database");
+                throw new Exception("Không tìm thấy đơn thuê trong session hoặc database");
             }
             
             if (order.getId() == 0) {
